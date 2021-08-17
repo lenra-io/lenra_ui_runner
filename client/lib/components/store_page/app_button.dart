@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/api/response_models/app_response.dart';
+import 'package:api/response_models/app_response.dart';
 
 class AppButton extends StatelessWidget {
   final AppResponse appInfo;

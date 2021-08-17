@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/api/response_models/app_response.dart';
-import 'package:fr_lenra_client/components/page/backoffice/side_menu.dart';
-import 'package:fr_lenra_client/components/page/backoffice/top_bar.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_color_theme_data.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme.dart';
+import 'package:api/response_models/app_response.dart';
+import 'package:components/page/backoffice/side_menu.dart';
+import 'package:components/page/backoffice/top_bar.dart';
+import 'package:lenra_components/theme/lenra_color_theme_data.dart';
+import 'package:lenra_components/theme/lenra_theme.dart';
 
 class BackofficePage extends StatelessWidget {
   final AppResponse? selectedApp;

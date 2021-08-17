@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/config/config.dart';
-import 'package:fr_lenra_client/models/auth_model.dart';
-import 'package:fr_lenra_client/models/user_application_model.dart';
+import 'package:config/config.dart';
+import 'package:models/auth_model.dart';
+import 'package:models/user_application_model.dart';
 import 'package:provider/provider.dart';
 
 class LenraImage extends StatelessWidget {

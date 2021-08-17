@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/lenra_components/lenra_button.dart';
+import 'package:lenra_components/lenra_button.dart';
 
 class LoadingButton extends StatelessWidget {
   final void Function()? onPressed;

@@ -1,14 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme_data.dart';
-import 'package:fr_lenra_client/models/app_socket_model.dart';
-import 'package:fr_lenra_client/models/auth_model.dart';
-import 'package:fr_lenra_client/models/build_model.dart';
-import 'package:fr_lenra_client/models/socket_model.dart';
-import 'package:fr_lenra_client/models/store_model.dart';
-import 'package:fr_lenra_client/models/user_application_model.dart';
-import 'package:fr_lenra_client/navigation/lenra_navigator.dart';
+import 'package:lenra_components/theme/lenra_theme.dart';
+import 'package:lenra_components/theme/lenra_theme_data.dart';
+import 'package:models/app_socket_model.dart';
+import 'package:models/auth_model.dart';
+import 'package:models/build_model.dart';
+import 'package:models/socket_model.dart';
+import 'package:models/store_model.dart';
+import 'package:models/user_application_model.dart';
+import 'package:navigation/lenra_navigator.dart';
 import 'package:provider/provider.dart';
 
 class Lenra extends StatelessWidget {

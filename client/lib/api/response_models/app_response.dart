@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/api/response_models/api_response.dart';
-import 'package:fr_lenra_client/utils/color_parser.dart';
+import 'package:api/response_models/api_response.dart';
+import 'package:utils/color_parser.dart';
 
 class AppResponse extends ApiResponse {
   int id;

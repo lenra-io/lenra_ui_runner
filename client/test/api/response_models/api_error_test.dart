@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fr_lenra_client/api/response_models/api_error.dart';
+import 'package:api/response_models/api_error.dart';
 
 void main() {
   test('from json', () {

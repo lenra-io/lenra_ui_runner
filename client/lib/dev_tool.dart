@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/lenra_application/lenra_ui_controller.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme_data.dart';
-import 'package:fr_lenra_client/models/dev_tools_socket_model.dart';
-import 'package:fr_lenra_client/models/socket_model.dart';
+import 'package:lenra_application/lenra_ui_controller.dart';
+import 'package:lenra_components/theme/lenra_theme.dart';
+import 'package:lenra_components/theme/lenra_theme_data.dart';
+import 'package:models/dev_tools_socket_model.dart';
+import 'package:models/socket_model.dart';
 import 'package:provider/provider.dart';
 
 void main() async {

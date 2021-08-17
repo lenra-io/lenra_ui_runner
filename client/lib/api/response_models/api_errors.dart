@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:fr_lenra_client/api/response_models/api_error.dart';
+import 'package:api/response_models/api_error.dart';
 
 class ApiErrors extends ListBase<ApiError> {
   List<ApiError> _list;

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/components/loading_button.dart';
-import 'package:fr_lenra_client/lenra_components/layout/lenra_column.dart';
-import 'package:fr_lenra_client/lenra_components/lenra_text_form_field.dart';
-import 'package:fr_lenra_client/models/user_application_model.dart';
-import 'package:fr_lenra_client/navigation/lenra_navigator.dart';
-import 'package:fr_lenra_client/utils/form_validators.dart';
+import 'package:components/loading_button.dart';
+import 'package:lenra_components/layout/lenra_column.dart';
+import 'package:lenra_components/lenra_text_form_field.dart';
+import 'package:models/user_application_model.dart';
+import 'package:navigation/lenra_navigator.dart';
+import 'package:utils/form_validators.dart';
 import 'package:provider/provider.dart';
 
 class CreateProjectForm extends StatefulWidget {

@@ -1,8 +1,8 @@
-import 'package:fr_lenra_client/models/socket_model.dart';
-import 'package:fr_lenra_client/socket/lenra_channel.dart';
-import 'package:fr_lenra_client/utils/connexion_utils_stub.dart'
-    if (dart.library.io) 'package:fr_lenra_client/utils/connexion_utils_io.dart'
-    if (dart.library.js) 'package:fr_lenra_client/utils/connexion_utils_web.dart';
+import 'package:models/socket_model.dart';
+import 'package:socket/lenra_channel.dart';
+import 'package:utils/connexion_utils_stub.dart'
+    if (dart.library.io) 'package:utils/connexion_utils_io.dart'
+    if (dart.library.js) 'package:utils/connexion_utils_web.dart';
 import 'package:phoenix_wings/phoenix_wings.dart';
 
 class DevToolsSocketModel extends SocketModel {

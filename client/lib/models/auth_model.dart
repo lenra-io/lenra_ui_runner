@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/api/lenra_http_client.dart';
-import 'package:fr_lenra_client/api/request_models/ask_code_lost_password_request.dart';
-import 'package:fr_lenra_client/api/request_models/change_password_request.dart';
-import 'package:fr_lenra_client/api/request_models/loginRequest.dart';
-import 'package:fr_lenra_client/api/request_models/register_request.dart';
-import 'package:fr_lenra_client/api/request_models/send_code_lost_password_request.dart';
-import 'package:fr_lenra_client/api/request_models/validate_dev_request.dart';
-import 'package:fr_lenra_client/api/request_models/validate_user_request.dart';
-import 'package:fr_lenra_client/api/response_models/auth_response.dart';
-import 'package:fr_lenra_client/api/response_models/empty_response.dart';
-import 'package:fr_lenra_client/api/response_models/user.dart';
-import 'package:fr_lenra_client/api/user_api.dart';
-import 'package:fr_lenra_client/models/status.dart';
-import 'package:fr_lenra_client/navigation/lenra_navigator.dart';
+import 'package:api/lenra_http_client.dart';
+import 'package:api/request_models/ask_code_lost_password_request.dart';
+import 'package:api/request_models/change_password_request.dart';
+import 'package:api/request_models/loginRequest.dart';
+import 'package:api/request_models/register_request.dart';
+import 'package:api/request_models/send_code_lost_password_request.dart';
+import 'package:api/request_models/validate_dev_request.dart';
+import 'package:api/request_models/validate_user_request.dart';
+import 'package:api/response_models/auth_response.dart';
+import 'package:api/response_models/empty_response.dart';
+import 'package:api/response_models/user.dart';
+import 'package:api/user_api.dart';
+import 'package:models/status.dart';
+import 'package:navigation/lenra_navigator.dart';
 
 class AuthModel extends ChangeNotifier {
   String? accessToken;

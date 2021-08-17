@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/components/profile_page/change_password_form.dart';
+import 'package:components/profile_page/change_password_form.dart';
 
 class ProfilePage extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/components/store_page/app_list.dart';
-import 'package:fr_lenra_client/components/store_page/logout_button.dart';
+import 'package:components/store_page/app_list.dart';
+import 'package:components/store_page/logout_button.dart';
 
 class StorePage extends StatefulWidget {
   StorePage({Key? key}) : super(key: key);

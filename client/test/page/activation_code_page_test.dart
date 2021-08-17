@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fr_lenra_client/components/page/backoffice/activation_code_page.dart';
-import 'package:fr_lenra_client/components/page/simple_page.dart';
-import 'package:fr_lenra_client/models/auth_model.dart';
+import 'package:components/page/backoffice/activation_code_page.dart';
+import 'package:components/page/simple_page.dart';
+import 'package:models/auth_model.dart';
 import 'package:provider/provider.dart';
 
 import 'lenra_page_test_help.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/components/verify_code_page/verify_code_form.dart';
+import 'package:components/verify_code_page/verify_code_form.dart';
 
 class VerifyingCodePage extends StatelessWidget {
   static const routeName = '/code';

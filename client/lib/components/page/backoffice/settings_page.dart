@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/api/response_models/app_response.dart';
-import 'package:fr_lenra_client/api/response_models/build_response.dart';
-import 'package:fr_lenra_client/components/page/backoffice_page.dart';
-import 'package:fr_lenra_client/lenra_components/lenra_button.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme.dart';
+import 'package:api/response_models/app_response.dart';
+import 'package:api/response_models/build_response.dart';
+import 'package:components/page/backoffice_page.dart';
+import 'package:lenra_components/lenra_button.dart';
+import 'package:lenra_components/theme/lenra_theme.dart';
 
 class SettingsPage extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/app.dart';
-import 'package:fr_lenra_client/config/config.dart';
+import 'package:app.dart';
+import 'package:config/config.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 void main() async {

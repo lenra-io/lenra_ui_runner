@@ -1,16 +1,16 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/api/response_models/api_errors.dart';
-import 'package:fr_lenra_client/components/error_list.dart';
-import 'package:fr_lenra_client/components/loading_button.dart';
-import 'package:fr_lenra_client/lenra_components/layout/lenra_column.dart';
-import 'package:fr_lenra_client/lenra_components/lenra_button.dart';
-import 'package:fr_lenra_client/lenra_components/lenra_text_form_field.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_text_theme_data.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme_data.dart';
-import 'package:fr_lenra_client/models/auth_model.dart';
-import 'package:fr_lenra_client/navigation/lenra_navigator.dart';
+import 'package:api/response_models/api_errors.dart';
+import 'package:components/error_list.dart';
+import 'package:components/loading_button.dart';
+import 'package:lenra_components/layout/lenra_column.dart';
+import 'package:lenra_components/lenra_button.dart';
+import 'package:lenra_components/lenra_text_form_field.dart';
+import 'package:lenra_components/theme/lenra_text_theme_data.dart';
+import 'package:lenra_components/theme/lenra_theme.dart';
+import 'package:lenra_components/theme/lenra_theme_data.dart';
+import 'package:models/auth_model.dart';
+import 'package:navigation/lenra_navigator.dart';
 import 'package:provider/provider.dart';
 
 class LoginForm extends StatefulWidget {

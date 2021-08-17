@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fr_lenra_client/components/login_page/login_form.dart';
-import 'package:fr_lenra_client/components/page/login_page.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme_data.dart';
-import 'package:fr_lenra_client/models/auth_model.dart';
+import 'package:components/login_page/login_form.dart';
+import 'package:components/page/login_page.dart';
+import 'package:lenra_components/theme/lenra_theme.dart';
+import 'package:lenra_components/theme/lenra_theme_data.dart';
+import 'package:models/auth_model.dart';
 import 'package:provider/provider.dart';
 
 void main() {

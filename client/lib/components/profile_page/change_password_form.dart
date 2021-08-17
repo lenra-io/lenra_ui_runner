@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/api/response_models/api_errors.dart';
-import 'package:fr_lenra_client/components/error_list.dart';
-import 'package:fr_lenra_client/components/loading_button.dart';
-import 'package:fr_lenra_client/models/auth_model.dart';
-import 'package:fr_lenra_client/utils/form_validators.dart';
+import 'package:api/response_models/api_errors.dart';
+import 'package:components/error_list.dart';
+import 'package:components/loading_button.dart';
+import 'package:models/auth_model.dart';
+import 'package:utils/form_validators.dart';
 import 'package:provider/provider.dart';
 
 class ChangePasswordForm extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:fr_lenra_client/components/page/simple_page.dart';
+import 'package:components/page/simple_page.dart';
 
 class Page404 extends StatelessWidget {
   static PageRouteBuilder pageRoutebuilder(RouteSettings settings) {

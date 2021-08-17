@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:fr_lenra_client/navigation/guard.dart';
+import 'package:navigation/guard.dart';
 
 class PageGuard extends StatefulWidget {
   final List<Guard> guards;

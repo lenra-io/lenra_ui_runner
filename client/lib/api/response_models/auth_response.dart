@@ -1,5 +1,5 @@
-import 'package:fr_lenra_client/api/response_models/api_response.dart';
-import 'package:fr_lenra_client/api/response_models/user.dart';
+import 'package:api/response_models/api_response.dart';
+import 'package:api/response_models/user.dart';
 
 class AuthResponse extends ApiResponse {
   String accessToken;

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:fr_lenra_client/components/create_first_project_page/create_project_form.dart';
-import 'package:fr_lenra_client/components/page/simple_page.dart';
-import 'package:fr_lenra_client/lenra_components/layout/lenra_column.dart';
+import 'package:components/create_first_project_page/create_project_form.dart';
+import 'package:components/page/simple_page.dart';
+import 'package:lenra_components/layout/lenra_column.dart';
 
 class CreateFirstProjectPage extends StatelessWidget {
   static const String TITLE_TEXT = 'Créez votre premier projet';

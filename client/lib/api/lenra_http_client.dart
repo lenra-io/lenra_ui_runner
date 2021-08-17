@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:fr_lenra_client/api/response_models/api_errors.dart';
-import 'package:fr_lenra_client/config/config.dart';
-import 'package:fr_lenra_client/utils/connexion_utils_stub.dart'
-    if (dart.library.io) 'package:fr_lenra_client/utils/connexion_utils_io.dart'
-    if (dart.library.js) 'package:fr_lenra_client/utils/connexion_utils_web.dart';
+import 'package:api/response_models/api_errors.dart';
+import 'package:config/config.dart';
+import 'package:utils/connexion_utils_stub.dart'
+    if (dart.library.io) 'package:utils/connexion_utils_io.dart'
+    if (dart.library.js) 'package:utils/connexion_utils_web.dart';
 import 'package:http/http.dart' as http;
 
 typedef T ResponseMapper<T>(dynamic json);

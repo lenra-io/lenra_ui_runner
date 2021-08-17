@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fr_lenra_client/api/response_models/auth_response.dart';
-import 'package:fr_lenra_client/api/response_models/user.dart';
+import 'package:api/response_models/auth_response.dart';
+import 'package:api/response_models/user.dart';
 
 void main() {
   test('from json', () {

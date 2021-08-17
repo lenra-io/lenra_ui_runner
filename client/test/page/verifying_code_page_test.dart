@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fr_lenra_client/components/page/verifiying_code_page.dart';
-import 'package:fr_lenra_client/components/verify_code_page/verify_code_form.dart';
+import 'package:components/page/verifiying_code_page.dart';
+import 'package:components/verify_code_page/verify_code_form.dart';
 
 import 'lenra_page_test_help.dart';
 

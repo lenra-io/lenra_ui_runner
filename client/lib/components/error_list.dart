@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/api/response_models/api_errors.dart';
-import 'package:fr_lenra_client/components/error.dart';
+import 'package:api/response_models/api_errors.dart';
+import 'package:components/error.dart';
 
 class ErrorList extends StatelessWidget {
   final ApiErrors? errors;

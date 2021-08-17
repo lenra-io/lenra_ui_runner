@@ -1,10 +1,10 @@
-import 'package:fr_lenra_client/api/lenra_http_client.dart';
-import 'package:fr_lenra_client/api/request_models/create_app_request.dart';
-import 'package:fr_lenra_client/api/request_models/create_build_request.dart';
-import 'package:fr_lenra_client/api/response_models/apps_response.dart';
-import 'package:fr_lenra_client/api/response_models/builds_response.dart';
-import 'package:fr_lenra_client/api/response_models/create_app_response.dart';
-import 'package:fr_lenra_client/api/response_models/create_build_response.dart';
+import 'package:api/lenra_http_client.dart';
+import 'package:api/request_models/create_app_request.dart';
+import 'package:api/request_models/create_build_request.dart';
+import 'package:api/response_models/apps_response.dart';
+import 'package:api/response_models/builds_response.dart';
+import 'package:api/response_models/create_app_response.dart';
+import 'package:api/response_models/create_build_response.dart';
 
 class ApplicationApi {
   static Future<AppsResponse> getApps() => LenraApi.instance.get(

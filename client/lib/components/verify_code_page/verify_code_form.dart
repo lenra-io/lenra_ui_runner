@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/models/auth_model.dart';
-import 'package:fr_lenra_client/utils/form_validators.dart';
+import 'package:models/auth_model.dart';
+import 'package:utils/form_validators.dart';
 import 'package:provider/provider.dart';
 
 class VerifyCodeForm extends StatefulWidget {

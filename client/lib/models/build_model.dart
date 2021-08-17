@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/api/application_api.dart';
-import 'package:fr_lenra_client/api/request_models/create_build_request.dart';
-import 'package:fr_lenra_client/api/response_models/build_response.dart';
-import 'package:fr_lenra_client/api/response_models/builds_response.dart';
-import 'package:fr_lenra_client/api/response_models/create_build_response.dart';
-import 'package:fr_lenra_client/models/status.dart';
+import 'package:api/application_api.dart';
+import 'package:api/request_models/create_build_request.dart';
+import 'package:api/response_models/build_response.dart';
+import 'package:api/response_models/builds_response.dart';
+import 'package:api/response_models/create_build_response.dart';
+import 'package:models/status.dart';
 
 class BuildModel extends ChangeNotifier {
   Status<BuildsResponse> fetchBuildsStatus = Status();

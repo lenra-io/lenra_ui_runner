@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/api/response_models/app_response.dart';
-import 'package:fr_lenra_client/lenra_components/layout/lenra_column.dart';
-import 'package:fr_lenra_client/lenra_components/layout/lenra_row.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_color_theme_data.dart';
-import 'package:fr_lenra_client/lenra_components/theme/lenra_theme.dart';
-import 'package:fr_lenra_client/models/auth_model.dart';
-import 'package:fr_lenra_client/navigation/lenra_navigator.dart';
+import 'package:api/response_models/app_response.dart';
+import 'package:lenra_components/layout/lenra_column.dart';
+import 'package:lenra_components/layout/lenra_row.dart';
+import 'package:lenra_components/theme/lenra_color_theme_data.dart';
+import 'package:lenra_components/theme/lenra_theme.dart';
+import 'package:models/auth_model.dart';
+import 'package:navigation/lenra_navigator.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 

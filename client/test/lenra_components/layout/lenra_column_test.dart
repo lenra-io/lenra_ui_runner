@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fr_lenra_client/lenra_components/layout/lenra_column.dart';
+import 'package:lenra_components/layout/lenra_column.dart';
 
 import '../../page/lenra_page_test_help.dart';
 

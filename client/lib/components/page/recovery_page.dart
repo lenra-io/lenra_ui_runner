@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/components/login_page/recovery_form.dart';
-import 'package:fr_lenra_client/components/page/simple_page.dart';
-import 'package:fr_lenra_client/navigation/lenra_navigator.dart';
+import 'package:components/login_page/recovery_form.dart';
+import 'package:components/page/simple_page.dart';
+import 'package:navigation/lenra_navigator.dart';
 
 class RecoveryPage extends StatelessWidget {
   @override

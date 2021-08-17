@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/components/login_page/change_lost_password_form.dart';
-import 'package:fr_lenra_client/components/page/simple_page.dart';
+import 'package:components/login_page/change_lost_password_form.dart';
+import 'package:components/page/simple_page.dart';
 
 class ChangeLostPasswordPage extends StatelessWidget {
   @override

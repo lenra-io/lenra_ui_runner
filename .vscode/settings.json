@@ -1,14 +1,5 @@
 {
-    "files.exclude": {
-        "server": true,
-        "client": true,
-        "documentation": true,
-        "json_validator": true,
-        "k8s": true
-    },
-    "elixirLS.projectDir": "server",
-    "editor.rulers": [
-        120,
+    "spellright.language": [
+        "en"
     ],
-    "dart.lineLength": 120,
 }

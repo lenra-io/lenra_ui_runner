@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
-import 'package:fr_lenra_client/api/response_models/api_errors.dart';
+import 'package:api/response_models/api_errors.dart';
 
 enum RequestStatus {
   none,

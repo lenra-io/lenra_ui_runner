@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fr_lenra_client/components/error_list.dart';
-import 'package:fr_lenra_client/components/store_page/app_button.dart';
-import 'package:fr_lenra_client/models/store_model.dart';
-import 'package:fr_lenra_client/navigation/lenra_navigator.dart';
+import 'package:components/error_list.dart';
+import 'package:components/store_page/app_button.dart';
+import 'package:models/store_model.dart';
+import 'package:navigation/lenra_navigator.dart';
 import 'package:provider/provider.dart';
 
 class AppList extends StatelessWidget {
