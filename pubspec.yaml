@@ -13,7 +13,6 @@ dependencies:
   lenra_components:
     git:
       url: git@github.com:lenra-io/lenra_components.git
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

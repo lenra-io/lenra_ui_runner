@@ -15,6 +15,9 @@ jobs:
         with:
           path: /opt/hostedtoolcache/flutter
           key: ${{ runner.OS }}-flutter-install-cache-${{ env.flutter_version }}
+      - uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.LENRA_COMPONENTS_SSH }}
       - name: Restore packages
         run: flutter pub get
 
