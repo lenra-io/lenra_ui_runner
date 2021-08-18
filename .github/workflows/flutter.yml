@@ -7,23 +7,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1.5.3
-        with:
-          flutter-version: ${{ env.flutter_version }}
       - name: Cache Flutter dependencies
         uses: actions/cache@v2
         with:
           path: /opt/hostedtoolcache/flutter
           key: ${{ runner.OS }}-flutter-install-cache-${{ env.flutter_version }}
+      - uses: subosito/flutter-action@v1.5.3
+        with:
+          flutter-version: ${{ env.flutter_version }}
       - uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.LENRA_COMPONENTS_SSH }}
       - name: Restore packages
         run: flutter pub get
-
       - name: Analyze
         run: flutter analyze --no-congratulate
-
       - name: Run tests
         run: flutter test --coverage
     # - name: Upload coverage to codecov
