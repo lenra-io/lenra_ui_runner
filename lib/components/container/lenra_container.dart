@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'components/lenra_component.dart';
-import 'lenra_component_builder.dart';
+import '../lenra_component.dart';
+import '../../lenra_component_builder.dart';
 import 'package:lenra_components/layout/lenra_flex.dart';
 
 // TODO : generate this from annotation on LenraContainer

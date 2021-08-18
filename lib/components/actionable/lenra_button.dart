@@ -3,7 +3,7 @@ import 'events/lenra_on_press_event.dart';
 import 'lenra_actionable.dart';
 import '../lenra_component.dart';
 import '../../lenra_component_builder.dart';
-import 'package:lenra_components/lenra_button.dart';
+import 'package:lenra_components/component/lenra_button.dart';
 
 // TODO : generate this from annotation on LenraButton
 class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {

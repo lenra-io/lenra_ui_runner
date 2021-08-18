@@ -9,10 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  provider: ^5.0.0
+  lenra_components:
+    git:
+      url: git@github.com:lenra-io/lenra_components.git
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  lenra_components:
-    git:
-      url: git@github.com:lenra-io/lenra_components.git

@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+
+import '../lenra_component_builder.dart';
+import '../lenra_ui_builder.dart';
+import '../props_parser.dart';
+import '../update_props_event.dart';
 import 'actionable/lenra_button.dart';
 import 'actionable/lenra_checkbox.dart';
 import 'actionable/lenra_radio.dart';
@@ -6,10 +11,6 @@ import 'actionable/lenra_textfield.dart';
 import 'container/lenra_container.dart';
 import 'lenra_image.dart';
 import 'lenra_text.dart';
-import '../lenra_component_builder.dart';
-import '../lenra_ui_builder.dart';
-import '../props_parser.dart';
-import '../update_props_event.dart';
 
 extension LenraComponentWrapperExt on LenraWrapper {
   static final Map<String, LenraComponentBuilder> componentsMapping = {

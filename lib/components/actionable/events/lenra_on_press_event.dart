@@ -1,4 +1,4 @@
-import 'components/actionable/events/lenra_event.dart';
+import 'lenra_event.dart';
 
 class LenraOnPressEvent extends LenraEvent {
   LenraOnPressEvent({

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'components/actionable/events/lenra_on_edit_event.dart';
-import 'components/actionable/lenra_actionable.dart';
-import 'components/lenra_component.dart';
-import 'lenra_component_builder.dart';
-import 'package:lenra_components/lenra_text_field.dart';
+import 'events/lenra_on_edit_event.dart';
+import 'lenra_actionable.dart';
+import '../lenra_component.dart';
+import '../../lenra_component_builder.dart';
+import 'package:lenra_components/component/lenra_text_field.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 
 // TODO : generate this from annotation on LenraTextfield

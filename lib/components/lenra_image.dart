@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'components/lenra_component.dart';
-import 'lenra_component_builder.dart';
-import 'package:lenra_components/lenra_image.dart';
+import 'package:lenra_ui_runner/lenra_application_model.dart';
+import 'lenra_component.dart';
+import '../lenra_component_builder.dart';
+import 'package:provider/provider.dart';
 
 // TODO : generate this from annotation on LenraImage
 class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
@@ -32,12 +33,10 @@ class LenraApplicationImage extends StatelessLenraComponent {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: manage an application model to get the datas
-    var authModel = context.read<AuthModel>();
-    String? appName = context.read<UserApplicationModel>().currentApp;
+    var model = context.read<LenraApplicationModel>();
 
     return Image.network(
-      "${Config.instance.httpEndpoint}/api/apps/$appName/resources/${this.path}?token=${authModel.accessToken}",
+      "${model.httpEndpoint}/api/apps/${model.applicationName}/resources/${this.path}?token=${model.accessToken}",
     );
   }
 }

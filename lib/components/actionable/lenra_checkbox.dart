@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'components/actionable/events/lenra_on_change_event.dart';
-import 'components/actionable/lenra_actionable.dart';
-import 'components/lenra_component.dart';
-import 'lenra_component_builder.dart';
-import 'package:lenra_components/lenra_checkbox.dart';
+import 'events/lenra_on_change_event.dart';
+import 'lenra_actionable.dart';
+import '../lenra_component.dart';
+import '../../lenra_component_builder.dart';
+import 'package:lenra_components/component/lenra_checkbox.dart';
 
 // TODO : generate this from annotation on LenraCheckbox
 class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbox> {

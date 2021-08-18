@@ -1,4 +1,4 @@
-import 'components/actionable/events/lenra_event.dart';
+import 'lenra_event.dart';
 
 class LenraOnFocusChangeEvent extends LenraEvent {
   LenraOnFocusChangeEvent({
