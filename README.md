@@ -6,7 +6,8 @@ Implementation of the Lenra Component API in Dart with the Flutter framework.
 
 ### LenraUiBuilder
 It is a Stateful Widget which takes care of transforming the UI and the Patch into widget/properties usable : 
- - It takes in input both streams (UI and Patch)
+ - It takes both streams (UI and Patch) as input 
+
  - It builds the components **LenraWrapper**.
  - It manages the modification of the property by the patch.
  - Notifies **LenraWrapper** when their properties change.
