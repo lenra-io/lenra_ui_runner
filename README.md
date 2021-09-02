@@ -17,6 +17,7 @@ It is a Stateful Widget which takes care of transforming the UI and Patchs into 
  - It displays the **LenraWrapper** corresponding to the "root" component of the UI.
 
 ### LenraWrapper
-This is the "intelligent" parent component of all Lenra display components.
+This is the "smart" parent component of all Lenra display components.
+
 - It instantiates the display component according to type.
 - It parses JSON properties into useful objects for the display component.
