@@ -106,7 +106,7 @@ class LenraApplicationTextfield extends StatelessLenraComponent implements Lenra
           LenraOnEditEvent(code: listener['code']!, event: {'value': value}).dispatch(context);
         }
       },
-      size: this.size ?? LenraComponentSize.Medium,
+      size: this.size ?? LenraComponentSize.medium,
       width: this.width ?? 200.0,
       focusNode: this._focusNode,
       controller: this._controller,

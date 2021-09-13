@@ -43,6 +43,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0"
+  cupertino_icons:
+    dependency: "direct main"
+    description:
+      name: cupertino_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   fake_async:
     dependency: transitive
     description:
@@ -68,6 +75,13 @@ packages:
       resolved-ref: d14bb7e6975b01f0441533fa373a8fb90ebff3e5
       url: "git@github.com:lenra-io/lenra_components.git"
     source: git
+    version: "0.0.0"
+  lenra_ui_runner:
+    dependency: "direct main"
+    description:
+      path: "../.."
+      relative: true
+    source: path
     version: "0.0.0"
   matcher:
     dependency: transitive
@@ -98,7 +112,7 @@ packages:
     source: hosted
     version: "1.8.0"
   provider:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: provider
       url: "https://pub.dartlang.org"
