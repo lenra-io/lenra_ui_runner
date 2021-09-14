@@ -44,8 +44,8 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
 
   @override
   void dispose() {
-    this.uiStreamController.close();
-    this.patchUiStream.close();
+    uiStreamController.close();
+    patchUiStream.close();
     super.dispose();
   }
 

@@ -1,11 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_components/theme/lenra_theme.dart';
-import 'package:lenra_ui_runner/lenra_ui_builder.dart';
 import 'package:showcase/my_app.dart';
-import 'package:showcase/ui_builder.dart';
 
 void main() {
   runApp(MyApp());
