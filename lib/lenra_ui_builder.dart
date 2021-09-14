@@ -145,7 +145,8 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   void patchUi(Iterable<UiPatchEvent> patches) {
     Set<String> widgetToUpdate = {};
-    patches.forEach((UiPatchEvent patch) {
+
+    for (var patch in patches) {
       widgetToUpdate.add(patch.id);
 
       switch (patch.operation) {
@@ -168,22 +169,23 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
           replaceChildOperation(patch);
           break;
       }
-    });
+    }
 
-    widgetToUpdate.forEach((String id) {
+    for (var id in widgetToUpdate) {
       Map<String, dynamic>? properties = componentsProperties[id];
       if (properties != null) updateWidgetStream.add(UpdatePropsEvent(id, properties));
-    });
+    }
   }
 
   List<Widget> getChildrenWidgets(List<String> ids) {
     List<Widget> childrenWidgets = [];
 
-    ids.forEach((id) {
+    for (var id in ids) {
       if (wrappers.containsKey(id)) {
         childrenWidgets.add(wrappers[id]!);
       }
-    });
+    }
+
     return childrenWidgets;
   }
 
