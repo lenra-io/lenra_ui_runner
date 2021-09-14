@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'events/lenra_on_change_event.dart';
+import 'package:lenra_ui_runner/components/actionable/events/lenra_on_press_event.dart';
+import 'package:lenra_ui_runner/components/lenra_component.dart';
+import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'lenra_actionable.dart';
-import '../lenra_component.dart';
-import '../../lenra_component_builder.dart';
 import 'package:lenra_components/component/lenra_checkbox.dart';
 
 // TODO : generate this from annotation on LenraCheckbox
@@ -34,12 +34,15 @@ class LenraApplicationCheckbox extends StatelessLenraComponent implements LenraA
     required this.listeners,
   }) : super();
 
-  void onChanged(bool? newValue, BuildContext context) {
-    final Map<String, String>? listener = this.listeners?['onChange'];
+  void onPressed(bool? newValue, BuildContext context) {
+    final Map<String, String>? listener = this.listeners?['onPressed'];
     if (listener != null && listener.containsKey("code")) {
-      LenraOnChangeEvent(code: listener['code']!, event: {
-        "value": newValue,
-      }).dispatch(context);
+      LenraOnPressEvent(
+        code: listener['code']!,
+        event: {
+          "value": newValue,
+        },
+      ).dispatch(context);
     }
   }
 
@@ -49,7 +52,7 @@ class LenraApplicationCheckbox extends StatelessLenraComponent implements LenraA
       value: this.value,
       label: this.label,
       disabled: this.disabled ?? false,
-      onChanged: (bool? value) => this.onChanged(value, context),
+      onChanged: (bool? value) => this.onPressed(value, context),
     );
   }
 }
