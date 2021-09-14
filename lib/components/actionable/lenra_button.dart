@@ -47,7 +47,7 @@ class LenraApplicationButton extends StatelessLenraComponent implements LenraAct
   }) : super();
 
   void onPressed(BuildContext context) {
-    final Map<String, String>? listener = this.listeners?['onClick'];
+    final Map<String, String>? listener = this.listeners?['onPressed'];
     if (listener != null && listener.containsKey("code")) {
       LenraOnPressEvent(code: listener['code']!, event: {}).dispatch(context);
     }
