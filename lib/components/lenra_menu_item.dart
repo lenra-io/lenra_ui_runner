@@ -43,7 +43,7 @@ class LenraApplicationMenuItem extends StatelessLenraComponent {
   }) : super();
 
   void onPressed(BuildContext context) {
-    final Map<String, String>? listener = this.listeners?['onPressed'];
+    final Map<String, String>? listener = this.listeners['onPressed'];
     if (listener != null && listener.containsKey("code")) {
       LenraOnPressEvent(code: listener['code']!, event: {}).dispatch(context);
     }
