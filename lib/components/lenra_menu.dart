@@ -12,13 +12,13 @@ class LenraMenuBuilder extends LenraComponentBuilder<LenraApplicationMenu> {
 
   Map<String, String> get propsTypes {
     return {
-      "children": "List<Widget>",
+      "children": "List<LenraMenuItem>",
     };
   }
 }
 
 class LenraApplicationMenu extends StatelessLenraComponent {
-  final List<Widget> children;
+  final List<LenraMenuItem> children;
 
   LenraApplicationMenu({
     required this.children,
