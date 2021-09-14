@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/actionable/events/lenra_on_press_event.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/utils/icon_util.dart';
 import 'lenra_component.dart';
 
 // TODO generate this from annotation on LenraMenuItem
@@ -55,7 +56,7 @@ class LenraApplicationMenuItem extends StatelessLenraComponent {
       text: text,
       isSelected: isSelected,
       disabled: disabled,
-      // TODO: How to add icon ?? icon: Icon(Icons[icon]), 
+      icon: IconUtil.fromString(icon),
       onPressed: () => this.onPressed(context),
     );
   }
