@@ -4,7 +4,7 @@ import 'package:lenra_ui_runner/components/actionable/events/lenra_on_press_even
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'lenra_component.dart';
 
-// TODO generate this from annotation on LenraMenu
+// TODO generate this from annotation on LenraMenuItem
 class LenraMenuItemBuilder extends LenraComponentBuilder<LenraApplicationMenuItem> {
   LenraApplicationMenuItem map({text, isSelected, disabled, icon, listeners}) {
     return LenraApplicationMenuItem(
