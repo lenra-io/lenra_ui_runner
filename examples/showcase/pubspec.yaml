@@ -34,6 +34,7 @@ dependencies:
     git:
       url: git@github.com:lenra-io/lenra_components.git
       ref: beta
+  json_patch: ^3.0.0
 
 dev_dependencies:
   flutter_test:
