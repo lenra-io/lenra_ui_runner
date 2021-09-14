@@ -55,7 +55,7 @@ class LenraApplicationMenuItem extends StatelessLenraComponent {
       text: text,
       isSelected: isSelected,
       disabled: disabled,
-      icon: ,
+      // TODO: How to add icon ?? icon: Icon(Icons[icon]), 
       onPressed: () => this.onPressed(context),
     );
   }
