@@ -5,7 +5,7 @@ import 'package:lenra_ui_runner/components/actionable/lenra_actionable.dart';
 import 'package:lenra_ui_runner/components/lenra_component.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 
-// TODO : generate this from annotation on LenraCheckbox
+// TODO : generate this from annotation on LenraToggle
 class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
   LenraApplicationToggle map({value, label, disabled, listeners}) {
     return LenraApplicationToggle(value: value, label: label, disabled: disabled, listeners: listeners);
