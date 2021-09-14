@@ -25,8 +25,8 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   @override
   void initState() {
     super.initState();
-    widget.uiStream.stream.listen(this.replaceUi);
-    widget.patchUiStream.stream.listen(this.patchUi);
+    widget.uiStream.stream.listen(replaceUi);
+    widget.patchUiStream.stream.listen(patchUi);
   }
 
   @override
@@ -37,7 +37,7 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   void replaceUi(Map<String, dynamic> ui) {
     setState(() {
-      this.registerComponent(ui["root"] as Map<String, dynamic>, "/root");
+      registerComponent(ui["root"] as Map<String, dynamic>, "/root");
     });
   }
 
@@ -53,18 +53,18 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   void registerComponent(Map<String, dynamic> properties, String path) {
     if (properties.containsKey("children")) {
-      List<String> newChildrenProps = this.registerChildren(properties["children"] as List, path);
+      List<String> newChildrenProps = registerChildren(properties["children"] as List, path);
       properties["children"] = newChildrenProps;
     }
-    this.registerProperties(path, properties);
-    this.createWrapper(path, properties);
+    registerProperties(path, properties);
+    createWrapper(path, properties);
   }
 
   List<String> registerChildren(List children, String path) {
     int idx = 0;
     return children.map((dynamic child) {
       String id = "$path/children/$idx";
-      this.registerComponent(child as Map<String, dynamic>, id);
+      registerComponent(child as Map<String, dynamic>, id);
       idx++;
       return id;
     }).toList();
@@ -75,23 +75,23 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   }
 
   void replaceOperation(UiPatchEvent patch) {
-    this.addOperation(patch);
+    addOperation(patch);
   }
 
   void addOperation(UiPatchEvent patch) {
-    Map<String, dynamic>? properties = this.componentsProperties[patch.id];
+    Map<String, dynamic>? properties = componentsProperties[patch.id];
     if (properties == null) return;
 
     if (patch.propertyPathList.last == "children") {
-      List<String> newChildrenProps = this.registerChildren(patch.value as List, patch.id);
+      List<String> newChildrenProps = registerChildren(patch.value as List, patch.id);
 
-      this.setProperty(
+      setProperty(
         properties,
         patch.propertyPathList,
         newChildrenProps,
       );
     } else {
-      this.setProperty(
+      setProperty(
         properties,
         patch.propertyPathList,
         patch.value,
@@ -100,9 +100,9 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   }
 
   void removeOperation(UiPatchEvent patch) {
-    Map<String, dynamic>? properties = this.componentsProperties[patch.id];
+    Map<String, dynamic>? properties = componentsProperties[patch.id];
     if (properties == null) return;
-    this.removeProperty(properties, patch.propertyPathList);
+    removeProperty(properties, patch.propertyPathList);
   }
 
   void removeProperty(Map<String, dynamic> properties, List<String> propertyPathList) {
@@ -122,56 +122,56 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   }
 
   void addChildOperation(UiPatchEvent patch) {
-    Map<String, dynamic>? properties = this.componentsProperties[patch.id];
+    Map<String, dynamic>? properties = componentsProperties[patch.id];
     if (properties == null) return;
     if (patch.childId == null) return;
 
-    this.registerComponent(patch.value as Map<String, dynamic>, patch.childId!);
+    registerComponent(patch.value as Map<String, dynamic>, patch.childId!);
     (properties["children"] as List?)?.insert(patch.childIndex, patch.childId);
   }
 
   void removeChildOperation(UiPatchEvent patch) {
-    Map<String, dynamic>? properties = this.componentsProperties[patch.id];
+    Map<String, dynamic>? properties = componentsProperties[patch.id];
     if (properties == null) return;
 
     dynamic childId = (properties["children"] as List?)?.removeAt(patch.childIndex);
-    this.wrappers.remove(childId);
+    wrappers.remove(childId);
   }
 
   void replaceChildOperation(UiPatchEvent patch) {
-    this.removeChildOperation(patch);
-    this.addChildOperation(patch);
+    removeChildOperation(patch);
+    addChildOperation(patch);
   }
 
   void patchUi(Iterable<UiPatchEvent> patches) {
-    Set<String> widgetToUpdate = Set();
+    Set<String> widgetToUpdate = {};
     patches.forEach((UiPatchEvent patch) {
       widgetToUpdate.add(patch.id);
 
       switch (patch.operation) {
         case UIPatchOperation.replace:
-          this.replaceOperation(patch);
+          replaceOperation(patch);
           break;
         case UIPatchOperation.add:
-          this.addOperation(patch);
+          addOperation(patch);
           break;
         case UIPatchOperation.remove:
-          this.removeOperation(patch);
+          removeOperation(patch);
           break;
         case UIPatchOperation.addChild:
-          this.addChildOperation(patch);
+          addChildOperation(patch);
           break;
         case UIPatchOperation.removeChild:
-          this.removeChildOperation(patch);
+          removeChildOperation(patch);
           break;
         case UIPatchOperation.replaceChild:
-          this.replaceChildOperation(patch);
+          replaceChildOperation(patch);
           break;
       }
     });
 
     widgetToUpdate.forEach((String id) {
-      Map<String, dynamic>? properties = this.componentsProperties[id];
+      Map<String, dynamic>? properties = componentsProperties[id];
       if (properties != null) updateWidgetStream.add(UpdatePropsEvent(id, properties));
     });
   }
