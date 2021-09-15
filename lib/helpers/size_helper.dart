@@ -1,7 +1,7 @@
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 
 class SizeHelper {
-  static LenraComponentSize fromString(String size) {
+  static LenraComponentSize fromString(String? size) {
     switch (size) {
       case "medium":
         return LenraComponentSize.medium;

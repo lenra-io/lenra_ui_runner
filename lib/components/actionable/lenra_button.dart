@@ -34,8 +34,8 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
 class LenraApplicationButton extends StatelessLenraComponent implements LenraActionable {
   final String text;
   final bool? disabled;
-  final String size;
-  final String mainStyle;
+  final String? size;
+  final String? mainStyle;
   final Map<String, dynamic>? listeners;
 
   LenraApplicationButton({
