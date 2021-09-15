@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_components/theme/lenra_theme.dart';
-import 'package:showcase/left_menu.dart';
-import 'package:showcase/my_app.dart';
+
+import './left_menu.dart';
+import './my_app.dart';
+import 'pages/lenra_button_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,6 +24,8 @@ class _MyAppState extends State<MyApp> {
     switch (currentMenu) {
       case LeftMenu.myTestApp:
         return MyTestApp();
+      case LeftMenu.lenraButtonPage:
+        return LenraButtonPage();
     }
     return Text("N/A");
   }

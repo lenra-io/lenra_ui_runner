@@ -7,6 +7,7 @@ class LeftMenu extends StatelessWidget {
   final String currentMenu;
 
   static const myTestApp = "myTestApp";
+  static const lenraButtonPage = "lenraButtonPage";
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class LeftMenu extends StatelessWidget {
           child: Text('Examples'),
         ),
         createMenu(context, 'MyTestApp', myTestApp),
+        createMenu(context, 'LenraButtonPage', lenraButtonPage),
       ],
     );
   }

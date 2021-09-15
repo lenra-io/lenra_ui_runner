@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
-import 'package:showcase/ui_builder.dart';
+import './ui_builder.dart';
 
 class MyTestApp extends StatefulWidget {
   @override
