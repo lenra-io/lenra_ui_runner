@@ -42,9 +42,6 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   }
 
   void createWrapper(String id, Map<String, dynamic> properties) {
-    print("IN");
-    print(id);
-    print(properties);
     LenraWrapper wrapper = LenraWrapper(
       id,
       this,
