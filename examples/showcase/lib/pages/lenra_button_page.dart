@@ -21,7 +21,7 @@ class _LenraButtonPageState extends UiBuilderState<LenraButtonPage, bool> {
             "type": "button",
             "text": "basic",
             "listeners": {
-              "onClick": {
+              "onPressed": {
                 "code": "myCode",
               }
             }
@@ -31,7 +31,7 @@ class _LenraButtonPageState extends UiBuilderState<LenraButtonPage, bool> {
             "text": "disabled",
             "disabled": true,
             "listeners": {
-              "onClick": {
+              "onPressed": {
                 "code": "myCode",
               }
             }
@@ -40,7 +40,7 @@ class _LenraButtonPageState extends UiBuilderState<LenraButtonPage, bool> {
             "type": "button",
             "text": "Changing value $data",
             "listeners": {
-              "onClick": {
+              "onPressed": {
                 "code": "myCode",
               }
             }
@@ -51,7 +51,7 @@ class _LenraButtonPageState extends UiBuilderState<LenraButtonPage, bool> {
             "size": "large",
             "mainStyle": "secondary",
             "listeners": {
-              "onClick": {
+              "onPressed": {
                 "code": "myCode",
               }
             }
@@ -62,7 +62,7 @@ class _LenraButtonPageState extends UiBuilderState<LenraButtonPage, bool> {
             "size": "small",
             "mainStyle": "tertiary",
             "listeners": {
-              "onClick": {
+              "onPressed": {
                 "code": "myCode",
               }
             }
