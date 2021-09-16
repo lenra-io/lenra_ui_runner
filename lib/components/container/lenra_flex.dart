@@ -42,12 +42,12 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
 
 class LenraApplicationFlex extends StatelessLenraComponent {
   final List<Widget> children;
-  final String direction;
-  final String mainAxisAlignment;
-  final String crossAxisAlignment;
-  final double spacing;
-  final bool fillParent;
-  final bool scroll;
+  final String? direction;
+  final String? mainAxisAlignment;
+  final String? crossAxisAlignment;
+  final double? spacing;
+  final bool? fillParent;
+  final bool? scroll;
 
   LenraApplicationFlex({
     required this.children,
@@ -59,7 +59,7 @@ class LenraApplicationFlex extends StatelessLenraComponent {
     required this.scroll,
   }) : super();
 
-  static MainAxisAlignment mainAxisAlignmentFromString(String alignment) {
+  static MainAxisAlignment mainAxisAlignmentFromString(String? alignment) {
     switch (alignment) {
       case "start":
         return MainAxisAlignment.start;
@@ -84,7 +84,7 @@ class LenraApplicationFlex extends StatelessLenraComponent {
     }
   }
 
-  static CrossAxisAlignment crossAxisAlignmentFromString(String alignment) {
+  static CrossAxisAlignment crossAxisAlignmentFromString(String? alignment) {
     switch (alignment) {
       case "start":
         return CrossAxisAlignment.start;
@@ -121,9 +121,9 @@ class LenraApplicationFlex extends StatelessLenraComponent {
       direction: direction,
       mainAxisAlignment: LenraApplicationFlex.mainAxisAlignmentFromString(mainAxisAlignment),
       crossAxisAlignment: LenraApplicationFlex.crossAxisAlignmentFromString(crossAxisAlignment),
-      spacing: spacing,
-      fillParent: fillParent,
-      scroll: scroll,
+      spacing: spacing ?? 0,
+      fillParent: fillParent ?? false,
+      scroll: scroll ?? false,
     );
   }
 }
