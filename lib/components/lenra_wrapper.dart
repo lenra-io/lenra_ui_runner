@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_ui_runner/components/lenra_menu.dart';
+import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
 
 import '../lenra_component_builder.dart';
 import '../lenra_ui_builder.dart';
@@ -21,6 +23,8 @@ extension LenraComponentWrapperExt on LenraWrapper {
     'checkbox': LenraCheckboxBuilder(),
     'image': LenraImageBuilder(),
     'radio': LenraRadioBuilder(),
+    'menu': LenraMenuBuilder(),
+    'menuItem': LenraMenuItemBuilder(),
     // 'table': LenraTableBuilder(),
   };
 }
