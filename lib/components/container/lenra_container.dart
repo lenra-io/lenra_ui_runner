@@ -10,6 +10,7 @@ class LenraContainerBuilder extends LenraComponentBuilder<LenraContainer> {
     return LenraContainer(children: children, backgroundColor: backgroundColor, direction: direction);
   }
 
+  @override
   Map<String, String> get propsTypes {
     return {
       "children": "List<Widget>",
@@ -41,10 +42,10 @@ class LenraContainer extends StatelessLenraComponent {
     }
 
     return Container(
-      color: this.backgroundColor,
+      color: backgroundColor,
       child: LenraFlex(
         direction: direction,
-        children: this.children,
+        children: children,
       ),
     );
   }

@@ -7,10 +7,12 @@ import 'package:lenra_components/component/lenra_button.dart';
 
 // TODO : generate this from annotation on LenraButton
 class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
+  @override
   LenraApplicationButton map({value, disabled, listeners}) {
     return LenraApplicationButton(value: value, disabled: disabled, listeners: listeners);
   }
 
+  @override
   Map<String, String> get propsTypes {
     return {
       "value": "String",
@@ -28,7 +30,7 @@ class LenraApplicationButton extends StatelessLenraComponent implements LenraAct
   LenraApplicationButton({required this.value, required this.disabled, required this.listeners}) : super();
 
   void onPressed(BuildContext context) {
-    final Map<String, String>? listener = this.listeners?['onClick'];
+    final Map<String, String>? listener = listeners?['onClick'];
     if (listener != null && listener.containsKey("code")) {
       LenraOnPressEvent(code: listener['code']!, event: {}).dispatch(context);
     }
@@ -37,9 +39,9 @@ class LenraApplicationButton extends StatelessLenraComponent implements LenraAct
   @override
   Widget build(BuildContext context) {
     return LenraButton(
-      text: this.value,
-      disabled: this.disabled ?? false,
-      onPressed: () => this.onPressed(context),
+      text: value,
+      disabled: disabled ?? false,
+      onPressed: () => onPressed(context),
     );
   }
 }

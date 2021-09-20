@@ -45,7 +45,7 @@ class Parser {
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, String> propsTypes) {
-    Map<Symbol, dynamic> transformedProps = Map();
+    Map<Symbol, dynamic> transformedProps = {};
 
     props.forEach((key, value) {
       if (propsTypes.containsKey(key)) {
