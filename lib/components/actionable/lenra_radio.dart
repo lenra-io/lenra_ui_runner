@@ -7,6 +7,7 @@ import 'package:lenra_components/component/lenra_radio.dart';
 
 // TODO : generate this from annotation on LenraRadio
 class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
+  @override
   LenraApplicationRadio map({value, label, groupValue, disabled, listeners}) {
     return LenraApplicationRadio(
       value: value,
@@ -17,6 +18,7 @@ class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
     );
   }
 
+  @override
   Map<String, String> get propsTypes {
     return {
       "value": "String",
@@ -44,7 +46,7 @@ class LenraApplicationRadio extends StatelessLenraComponent implements LenraActi
   });
 
   void onChanged(String? newValue, BuildContext context) {
-    final Map<String, String>? listener = this.listeners?['onChange'];
+    final Map<String, String>? listener = listeners?['onChange'];
     if (listener != null && listener.containsKey("code")) {
       LenraOnChangeEvent(code: listener['code']!, event: {
         "value": newValue,
@@ -55,11 +57,11 @@ class LenraApplicationRadio extends StatelessLenraComponent implements LenraActi
   @override
   Widget build(BuildContext context) {
     return LenraRadio<String>(
-      value: this.value,
-      label: this.label,
-      groupValue: this.groupValue,
-      disabled: this.disabled ?? false,
-      onChanged: (String? newValue) => this.onChanged(newValue, context),
+      value: value,
+      label: label,
+      groupValue: groupValue,
+      disabled: disabled ?? false,
+      onChanged: (String? newValue) => onChanged(newValue, context),
     );
   }
 }
