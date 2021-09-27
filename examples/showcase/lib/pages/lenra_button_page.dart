@@ -14,7 +14,7 @@ class _LenraButtonPageState extends UiBuilderState<LenraButtonPage, bool> {
   Map<String, dynamic> get ui {
     return {
       "root": {
-        "type": "container",
+        "type": "flex",
         "children": [
           {
             "type": "button",
