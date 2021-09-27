@@ -22,9 +22,9 @@ class _MyTestAppState extends UiBuilderState<MyTestApp, bool> {
           },
           {
             "type": "button",
-            "value": "MyButton",
+            "text": "MyButton",
             "listeners": {
-              "onClick": {
+              "onPressed": {
                 "code": "myCode",
               }
             }

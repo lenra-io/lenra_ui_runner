@@ -4,6 +4,8 @@ import 'package:lenra_components/theme/lenra_theme.dart';
 import 'package:showcase/left_menu.dart';
 import 'package:showcase/my_app.dart';
 import 'package:showcase/pages/lenra_status_sticker_page.dart';
+import 'package:showcase/pages/lenra_button_page.dart';
+import 'package:showcase/pages/lenra_flex_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,6 +27,10 @@ class _MyAppState extends State<MyApp> {
         return MyTestApp();
       case LeftMenu.lenraStatusStickerPage:
         return LenraStatusStickerPage();
+      case LeftMenu.lenraButtonPage:
+        return LenraButtonPage();
+      case LeftMenu.lenraFlexPage:
+        return LenraFlexPage();
     }
     return Text("N/A");
   }
