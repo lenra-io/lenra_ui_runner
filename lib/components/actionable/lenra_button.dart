@@ -10,6 +10,7 @@ import 'package:lenra_components/component/lenra_button.dart';
 
 // TODO : generate this from annotation on LenraButton
 class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
+  @override
   LenraApplicationButton map({text, disabled, size, mainStyle, onPressed}) {
     return LenraApplicationButton(
       text: text,
