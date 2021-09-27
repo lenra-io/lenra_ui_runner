@@ -14,11 +14,11 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
   Map<String, dynamic> get ui {
     return {
       "root": {
-        "type": "container",
+        "type": "flex",
         "backgroundColor": "888888",
         "children": [
           {
-            "type": "container",
+            "type": "flex",
             "backgroundColor": "8899AA",
             "children": [
               {
@@ -33,7 +33,7 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
             ],
           },
           {
-            "type": "container",
+            "type": "flex",
             "backgroundColor": "CCDDEE",
             "children": [
               {

@@ -9,29 +9,18 @@ class LenraStatusStickerPage extends StatefulWidget {
   }
 }
 
-class _LenraStatusStickerPageState extends UiBuilderState<LenraStatusStickerPage, bool> {
+class _LenraStatusStickerPageState
+    extends UiBuilderState<LenraStatusStickerPage, bool> {
   @override
   Map<String, dynamic> get ui {
     return {
       "root": {
-        "type": "container",
+        "type": "flex",
         "children": [
-          {
-            "type": "statusSticker",
-            "status": "success"
-          },
-          {
-            "type": "statusSticker",
-            "status": "warning"
-          },
-          {
-            "type": "statusSticker",
-            "status": "error"
-          },
-          {
-            "type": "statusSticker",
-            "status": "pending"
-          },
+          {"type": "statusSticker", "status": "success"},
+          {"type": "statusSticker", "status": "warning"},
+          {"type": "statusSticker", "status": "error"},
+          {"type": "statusSticker", "status": "pending"},
         ]
       }
     };
