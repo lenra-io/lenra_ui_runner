@@ -1,47 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_ui_runner/components/lenra_component.dart';
+import 'package:lenra_ui_runner/helpers/size_helper.dart';
+import 'package:lenra_ui_runner/helpers/style_helper.dart';
+import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'events/lenra_on_press_event.dart';
 import 'lenra_actionable.dart';
-import '../lenra_component.dart';
-import '../../lenra_component_builder.dart';
+
 import 'package:lenra_components/component/lenra_button.dart';
 
 // TODO : generate this from annotation on LenraButton
 class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
   @override
-  LenraApplicationButton map({value, disabled, listeners}) {
-    return LenraApplicationButton(value: value, disabled: disabled, listeners: listeners);
+  LenraApplicationButton map({text, disabled, size, mainStyle, onPressed}) {
+    return LenraApplicationButton(
+      text: text,
+      disabled: disabled,
+      size: size,
+      mainStyle: mainStyle,
+      onPressed: onPressed,
+    );
   }
 
   @override
   Map<String, String> get propsTypes {
     return {
-      "value": "String",
+      "text": "String",
       "disabled": "bool",
-      "listeners": "Map<String, dynamic>",
+      "size": "String",
+      "mainStyle": "String",
+      "onPressed": "Map<String, dynamic>",
     };
   }
 }
 
-class LenraApplicationButton extends StatelessLenraComponent implements LenraActionable {
-  final String value;
+class LenraApplicationButton extends StatelessLenraComponent
+    implements LenraActionable {
+  final String text;
   final bool? disabled;
-  final Map<String, dynamic>? listeners;
+  final String? size;
+  final String? mainStyle;
+  final Map<String, dynamic>? onPressed;
 
-  LenraApplicationButton({required this.value, required this.disabled, required this.listeners}) : super();
+  LenraApplicationButton({
+    required this.text,
+    required this.disabled,
+    required this.size,
+    required this.mainStyle,
+    required this.onPressed,
+  }) : super();
 
-  void onPressed(BuildContext context) {
-    final Map<String, String>? listener = listeners?['onClick'];
-    if (listener != null && listener.containsKey("code")) {
-      LenraOnPressEvent(code: listener['code']!, event: {}).dispatch(context);
+  void onButtonPressed(BuildContext context) {
+    if (onPressed != null && onPressed!.containsKey("code")) {
+      LenraOnPressEvent(code: onPressed!['code']!, event: {}).dispatch(context);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return LenraButton(
-      text: value,
+      text: text,
       disabled: disabled ?? false,
-      onPressed: () => onPressed(context),
+      size: SizeHelper.fromString(size),
+      type: TypeHelper.fromString(mainStyle),
+      onPressed: () => onButtonPressed(context),
     );
   }
 }

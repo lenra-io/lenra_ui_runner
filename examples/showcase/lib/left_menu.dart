@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class LeftMenu extends StatelessWidget {
-  LeftMenu({Key? key, required this.onMenuTapped, required this.currentMenu}) : super(key: key);
+  LeftMenu({Key? key, required this.onMenuTapped, required this.currentMenu})
+      : super(key: key);
 
   final Function(String) onMenuTapped;
   final String currentMenu;
 
   static const myTestApp = "myTestApp";
+  static const lenraButtonPage = "lenraButtonPage";
   static const lenraFlexPage = "lenraFlexPage";
 
   @override
@@ -22,6 +24,7 @@ class LeftMenu extends StatelessWidget {
           child: Text('Examples'),
         ),
         createMenu(context, 'MyTestApp', myTestApp),
+        createMenu(context, 'LenraButtonPage', lenraButtonPage),
         createMenu(context, 'Lenra Flex', lenraFlexPage),
       ],
     );
@@ -29,7 +32,9 @@ class LeftMenu extends StatelessWidget {
 
   Widget createMenu(BuildContext context, String title, String id) {
     return ListTile(
-      title: Text(title, style: TextStyle(color: id == this.currentMenu ? Colors.grey : Colors.blue)),
+      title: Text(title,
+          style: TextStyle(
+              color: id == this.currentMenu ? Colors.grey : Colors.blue)),
       onTap: () {
         onMenuTapped(id);
         Navigator.of(context).pop();
