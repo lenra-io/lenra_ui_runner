@@ -5,11 +5,14 @@ import 'lenra_component.dart';
 import '../lenra_component_builder.dart';
 
 // TODO generate this from annotation on LenraStatusSticker
-class LenraStatusStickerBuilder extends LenraComponentBuilder<LenraApplicationStatusSticker> {
+class LenraStatusStickerBuilder
+    extends LenraComponentBuilder<LenraApplicationStatusSticker> {
+  @override
   LenraApplicationStatusSticker map({status}) {
     return LenraApplicationStatusSticker(status: status);
   }
 
+  @override
   Map<String, String> get propsTypes {
     return {
       "status": "String",
