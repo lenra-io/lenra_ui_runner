@@ -3,6 +3,7 @@ import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_components/theme/lenra_theme.dart';
 import 'package:showcase/left_menu.dart';
 import 'package:showcase/my_app.dart';
+import 'package:showcase/pages/lenra_radio_page.dart';
 import 'package:showcase/pages/lenra_checkbox_page.dart';
 import 'package:showcase/pages/lenra_toggle_page.dart';
 import 'package:showcase/pages/lenra_status_sticker_page.dart';
@@ -27,6 +28,8 @@ class _MyAppState extends State<MyApp> {
     switch (currentMenu) {
       case LeftMenu.myTestApp:
         return MyTestApp();
+      case LeftMenu.radioExample:
+        return RadioExample();
       case LeftMenu.lenraCheckboxPage:
         return LenraCheckboxPage();
       case LeftMenu.lenraTogglePage:
