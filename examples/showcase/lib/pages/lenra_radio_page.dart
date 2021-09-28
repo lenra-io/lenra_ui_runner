@@ -14,17 +14,15 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
   Map<String, dynamic> get ui {
     return {
       "root": {
-        "type": "container",
+        "type": "flex",
         "children": [
           {
             "type": "radio",
             "label": "Basic selected",
             "value": "a",
             "groupValue": "a",
-            "listeners": {
-              "onChange": {
-                "code": "myCode",
-              }
+            "onPressed": {
+              "code": "myCode",
             }
           },
           {
@@ -33,10 +31,8 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
             "disabled": true,
             "value": "a",
             "groupValue": "a",
-            "listeners": {
-              "onChange": {
-                "code": "myCode",
-              }
+            "onPressed": {
+              "code": "myCode",
             }
           },
           {
@@ -44,10 +40,8 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
             "label": "Basic",
             "value": "a",
             "groupValue": "b",
-            "listeners": {
-              "onChange": {
-                "code": "myCode",
-              }
+            "onPressed": {
+              "code": "myCode",
             }
           },
           {
@@ -56,10 +50,8 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
             "disabled": true,
             "value": "a",
             "groupValue": "b",
-            "listeners": {
-              "onChange": {
-                "code": "myCode",
-              }
+            "onPressed": {
+              "code": "myCode",
             }
           },
           {
@@ -67,33 +59,21 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
             "label": "Interactive 1",
             "value": "a",
             "groupValue": data,
-            "listeners": {
-              "onChange": {
-                "code": "myCode",
-              }
-            }
+            "onPressed": {"code": "actionA"}
           },
           {
             "type": "radio",
             "label": "Interactive 2",
             "value": "b",
             "groupValue": data,
-            "listeners": {
-              "onChange": {
-                "code": "myCode",
-              }
-            }
+            "onPressed": {"code": "actionB"}
           },
           {
             "type": "radio",
             "label": "Interactive 3",
             "value": "c",
             "groupValue": data,
-            "listeners": {
-              "onChange": {
-                "code": "myCode",
-              }
-            }
+            "onPressed": {"code": "actionC"}
           }
         ]
       }
@@ -102,12 +82,17 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
 
   @override
   getData(LenraEvent event) {
-    if (event.code == "InitData") {
-      return "a";
-    } else if (event.code == "myCode") {
-      return event.event["value"];
-    } else {
-      return "a";
+    switch (event.code) {
+      case "InitData":
+        return "a";
+      case "actionA":
+        return "a";
+      case "actionB":
+        return "b";
+      case "actionC":
+        return "c";
+      default:
+        return "a";
     }
   }
 }
