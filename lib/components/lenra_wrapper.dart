@@ -25,7 +25,6 @@ extension LenraComponentWrapperExt on LenraWrapper {
     'radio': LenraRadioBuilder(),
     'menu': LenraMenuBuilder(),
     'menuItem': LenraMenuItemBuilder(),
-    // 'table': LenraTableBuilder(),
     'toggle': LenraToggleBuilder(),
     'statusSticker': LenraStatusStickerBuilder(),
     'flex': LenraFlexBuilder(),

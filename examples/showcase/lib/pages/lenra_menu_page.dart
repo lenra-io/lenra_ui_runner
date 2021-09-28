@@ -14,7 +14,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
   Map<String, dynamic> get ui {
     return {
       "root": {
-        "type": "container",
+        "type": "flex",
         "children": [
           {
             "type": "menu",
@@ -22,13 +22,28 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
               {
                 "type": "menuItem",
                 "text": "First",
-                "isSelected": true,
+                "isSelected": data == "first",
                 "disabled": true,
                 "icon": "ac_unit",
-                "listeners": {
-                  "onPressed": {
-                    "code": "myCode",
-                  }
+                "onPressed": {
+                  "code": "first",
+                }
+              },
+              {
+                "type": "menuItem",
+                "text": "Second",
+                "isSelected": data == "second",
+                "onPressed": {
+                  "code": "second",
+                }
+              },
+              {
+                "type": "menuItem",
+                "text": "Third",
+                "isSelected": data == "third",
+                "icon": "unarchive",
+                "onPressed": {
+                  "code": "third",
                 }
               }
             ]
@@ -40,12 +55,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
 
   @override
   getData(LenraEvent event) {
-    if (event.code == "InitData") {
-      return true;
-    } else if (event.code == "myCode") {
-      return !data;
-    } else {
-      return false;
-    }
+    print(event.code);
+    return false;
   }
 }
