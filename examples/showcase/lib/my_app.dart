@@ -14,7 +14,7 @@ class _MyTestAppState extends UiBuilderState<MyTestApp, bool> {
   Map<String, dynamic> get ui {
     return {
       "root": {
-        "type": "container",
+        "type": "flex",
         "children": [
           {
             "type": "text",
@@ -22,9 +22,9 @@ class _MyTestAppState extends UiBuilderState<MyTestApp, bool> {
           },
           {
             "type": "button",
-            "value": "MyButton",
+            "text": "MyButton",
             "listeners": {
-              "onClick": {
+              "onPressed": {
                 "code": "myCode",
               }
             }
