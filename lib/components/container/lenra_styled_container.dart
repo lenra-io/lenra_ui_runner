@@ -4,7 +4,8 @@ import '../lenra_component.dart';
 import '../../lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraApplicationStyledContainer
-class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplicationStyledContainer> {
+class LenraStyledContainerBuilder
+    extends LenraComponentBuilder<LenraApplicationStyledContainer> {
   @override
   LenraApplicationStyledContainer map({
     child,
@@ -43,10 +44,10 @@ class LenraApplicationStyledContainer extends StatelessLenraComponent {
 
   LenraApplicationStyledContainer({
     required this.child,
-    this.backgroundColor,
-    this.border,
-    this.borderRadius,
-    this.boxShadow,
+    required this.backgroundColor,
+    required this.border,
+    required this.borderRadius,
+    required this.boxShadow,
   }) : super();
 
   @override

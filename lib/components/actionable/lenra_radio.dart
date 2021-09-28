@@ -8,13 +8,13 @@ import 'package:lenra_components/component/lenra_radio.dart';
 // TODO : generate this from annotation on LenraRadio
 class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
   @override
-  LenraApplicationRadio map({value, label, groupValue, disabled, listeners}) {
+  LenraApplicationRadio map({value, label, groupValue, disabled, onPressed}) {
     return LenraApplicationRadio(
       value: value,
       label: label,
       groupValue: groupValue,
       disabled: disabled,
-      listeners: listeners,
+      onPressed: onPressed,
     );
   }
 
@@ -25,32 +25,31 @@ class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
       "label": "String",
       "groupValue": "String",
       "disabled": "bool",
-      "listeners": "Map<String, dynamic>",
+      "onPressed": "Map<String, dynamic>",
     };
   }
 }
 
-class LenraApplicationRadio extends StatelessLenraComponent implements LenraActionable {
+class LenraApplicationRadio extends StatelessLenraComponent
+    implements LenraActionable {
   final String value;
   final String groupValue;
   final String? label;
   final bool? disabled;
-  final Map<String, dynamic>? listeners;
+  final Map<String, dynamic>? onPressed;
 
   LenraApplicationRadio({
     required this.value,
     required this.label,
     required this.groupValue,
     required this.disabled,
-    required this.listeners,
+    required this.onPressed,
   });
 
-  void onChanged(String? newValue, BuildContext context) {
-    final Map<String, String>? listener = listeners?['onChange'];
-    if (listener != null && listener.containsKey("code")) {
-      LenraOnChangeEvent(code: listener['code']!, event: {
-        "value": newValue,
-      }).dispatch(context);
+  void onRadioPressed(BuildContext context) {
+    if (onPressed != null && onPressed!.containsKey("code")) {
+      LenraOnChangeEvent(code: onPressed!['code']!, event: {})
+          .dispatch(context);
     }
   }
 
@@ -61,7 +60,7 @@ class LenraApplicationRadio extends StatelessLenraComponent implements LenraActi
       label: label,
       groupValue: groupValue,
       disabled: disabled ?? false,
-      onChanged: (String? newValue) => onChanged(newValue, context),
+      onPressed: () => onRadioPressed(context),
     );
   }
 }

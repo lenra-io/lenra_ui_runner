@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_components/component/lenra_toggle.dart';
 import 'package:lenra_ui_runner/components/actionable/events/lenra_on_press_event.dart';
+import 'package:lenra_ui_runner/components/actionable/lenra_actionable.dart';
 import 'package:lenra_ui_runner/components/lenra_component.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
-import 'lenra_actionable.dart';
-import 'package:lenra_components/component/lenra_checkbox.dart';
 
-// TODO : generate this from annotation on LenraCheckbox
-class LenraCheckboxBuilder
-    extends LenraComponentBuilder<LenraApplicationCheckbox> {
+// TODO : generate this from annotation on LenraToggle
+class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
   @override
-  LenraApplicationCheckbox map({value, label, disabled, onPressed}) {
-    return LenraApplicationCheckbox(
+  LenraApplicationToggle map({value, label, disabled, onPressed}) {
+    return LenraApplicationToggle(
         value: value, label: label, disabled: disabled, onPressed: onPressed);
   }
 
@@ -25,21 +24,21 @@ class LenraCheckboxBuilder
   }
 }
 
-class LenraApplicationCheckbox extends StatelessLenraComponent
+class LenraApplicationToggle extends StatelessLenraComponent
     implements LenraActionable {
   final bool value;
   final String? label;
   final bool? disabled;
   final Map<String, dynamic>? onPressed;
 
-  LenraApplicationCheckbox({
+  LenraApplicationToggle({
     required this.value,
     required this.label,
     required this.disabled,
     required this.onPressed,
   }) : super();
 
-  void onCheckboxPressed(BuildContext context) {
+  void onTogglePressed(BuildContext context) {
     if (onPressed != null && onPressed!.containsKey("code")) {
       LenraOnPressEvent(code: onPressed!['code']!, event: {}).dispatch(context);
     }
@@ -47,11 +46,11 @@ class LenraApplicationCheckbox extends StatelessLenraComponent
 
   @override
   Widget build(BuildContext context) {
-    return LenraCheckbox(
+    return LenraToggle(
       value: value,
       label: label,
       disabled: disabled ?? false,
-      onPressed: () => onCheckboxPressed(context),
+      onPressed: () => onTogglePressed(context),
     );
   }
 }
