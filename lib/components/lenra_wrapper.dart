@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_ui_runner/components/lenra_menu.dart';
+import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
 import 'package:lenra_ui_runner/components/actionable/lenra_toggle.dart';
 import 'package:lenra_ui_runner/components/lenra_status_sticker.dart';
 import 'package:lenra_ui_runner/components/container/lenra_flex.dart';
@@ -21,6 +23,8 @@ extension LenraComponentWrapperExt on LenraWrapper {
     'checkbox': LenraCheckboxBuilder(),
     'image': LenraImageBuilder(),
     'radio': LenraRadioBuilder(),
+    'menu': LenraMenuBuilder(),
+    'menuItem': LenraMenuItemBuilder(),
     'toggle': LenraToggleBuilder(),
     'statusSticker': LenraStatusStickerBuilder(),
     'flex': LenraFlexBuilder(),
