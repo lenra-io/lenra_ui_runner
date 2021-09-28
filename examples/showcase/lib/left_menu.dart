@@ -8,6 +8,7 @@ class LeftMenu extends StatelessWidget {
   final String currentMenu;
 
   static const myTestApp = "myTestApp";
+  static const lenraCheckboxPage = "lenraCheckboxPage";
   static const lenraTogglePage = "lenraTogglePage";
   static const lenraStatusStickerPage = "lenraStatusStickerPage";
   static const lenraButtonPage = "lenraButtonPage";
@@ -26,6 +27,7 @@ class LeftMenu extends StatelessWidget {
           child: Text('Examples'),
         ),
         createMenu(context, 'MyTestApp', myTestApp),
+        createMenu(context, 'Lenra Checkbox', lenraCheckboxPage),
         createMenu(context, 'Lenra Toggle', lenraTogglePage),
         createMenu(context, 'Lenra Status Sticker', lenraStatusStickerPage),
         createMenu(context, 'LenraButtonPage', lenraButtonPage),

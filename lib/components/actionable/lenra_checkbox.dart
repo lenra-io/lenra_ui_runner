@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'events/lenra_on_change_event.dart';
+import 'package:lenra_ui_runner/components/actionable/events/lenra_on_press_event.dart';
+import 'package:lenra_ui_runner/components/lenra_component.dart';
+import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'lenra_actionable.dart';
-import '../lenra_component.dart';
-import '../../lenra_component_builder.dart';
 import 'package:lenra_components/component/lenra_checkbox.dart';
 
 // TODO : generate this from annotation on LenraCheckbox
-class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbox> {
+class LenraCheckboxBuilder
+    extends LenraComponentBuilder<LenraApplicationCheckbox> {
   @override
-  LenraApplicationCheckbox map({value, label, disabled, listeners}) {
-    return LenraApplicationCheckbox(value: value, label: label, disabled: disabled, listeners: listeners);
+  LenraApplicationCheckbox map({value, label, disabled, onPressed}) {
+    return LenraApplicationCheckbox(
+        value: value, label: label, disabled: disabled, onPressed: onPressed);
   }
 
   @override
@@ -18,30 +20,28 @@ class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbo
       "value": "bool",
       "label": "String",
       "disabled": "bool",
-      "listeners": "Map<String, dynamic>",
+      "onPressed": "Map<String, dynamic>",
     };
   }
 }
 
-class LenraApplicationCheckbox extends StatelessLenraComponent implements LenraActionable {
+class LenraApplicationCheckbox extends StatelessLenraComponent
+    implements LenraActionable {
   final bool value;
   final String? label;
   final bool? disabled;
-  final Map<String, dynamic>? listeners;
+  final Map<String, dynamic>? onPressed;
 
   LenraApplicationCheckbox({
     required this.value,
     required this.label,
     required this.disabled,
-    required this.listeners,
+    required this.onPressed,
   }) : super();
 
-  void onChanged(bool? newValue, BuildContext context) {
-    final Map<String, String>? listener = listeners?['onChange'];
-    if (listener != null && listener.containsKey("code")) {
-      LenraOnChangeEvent(code: listener['code']!, event: {
-        "value": newValue,
-      }).dispatch(context);
+  void onCheckboxPressed(BuildContext context) {
+    if (onPressed != null && onPressed!.containsKey("code")) {
+      LenraOnPressEvent(code: onPressed!['code']!, event: {}).dispatch(context);
     }
   }
 
@@ -51,7 +51,7 @@ class LenraApplicationCheckbox extends StatelessLenraComponent implements LenraA
       value: value,
       label: label,
       disabled: disabled ?? false,
-      onChanged: (bool? value) => onChanged(value, context),
+      onPressed: () => onCheckboxPressed(context),
     );
   }
 }
