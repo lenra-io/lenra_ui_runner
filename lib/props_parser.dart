@@ -58,8 +58,8 @@ class Parser {
 
   static BorderSide parseBorderSide(Map<String, dynamic> props) {
     return BorderSide(
-      width: props.containsKey("width") ? props["width"] : 1.0,
-      color: props.containsKey("color") ? props["color"] : const Color(4278190080),
+      width: props.containsKey("width") ? parseDouble(props["width"]) : 1.0,
+      color: props.containsKey("color") ? parseColor(props["color"]) : const Color(4278190080),
     );
   }
 

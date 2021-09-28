@@ -43,7 +43,7 @@ class LenraApplicationStyledContainer extends StatelessLenraComponent {
 
   LenraApplicationStyledContainer({
     required this.child,
-    required this.backgroundColor,
+    this.backgroundColor,
     this.border,
     this.borderRadius,
     this.boxShadow,
