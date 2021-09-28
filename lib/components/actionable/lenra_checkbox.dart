@@ -7,10 +7,12 @@ import 'package:lenra_components/component/lenra_checkbox.dart';
 
 // TODO : generate this from annotation on LenraCheckbox
 class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbox> {
+  @override
   LenraApplicationCheckbox map({value, label, disabled, listeners}) {
     return LenraApplicationCheckbox(value: value, label: label, disabled: disabled, listeners: listeners);
   }
 
+  @override
   Map<String, String> get propsTypes {
     return {
       "value": "bool",
@@ -35,7 +37,7 @@ class LenraApplicationCheckbox extends StatelessLenraComponent implements LenraA
   }) : super();
 
   void onChanged(bool? newValue, BuildContext context) {
-    final Map<String, String>? listener = this.listeners?['onChange'];
+    final Map<String, String>? listener = listeners?['onChange'];
     if (listener != null && listener.containsKey("code")) {
       LenraOnChangeEvent(code: listener['code']!, event: {
         "value": newValue,
@@ -46,10 +48,10 @@ class LenraApplicationCheckbox extends StatelessLenraComponent implements LenraA
   @override
   Widget build(BuildContext context) {
     return LenraCheckbox(
-      value: this.value,
-      label: this.label,
-      disabled: this.disabled ?? false,
-      onChanged: (bool? value) => this.onChanged(value, context),
+      value: value,
+      label: label,
+      disabled: disabled ?? false,
+      onChanged: (bool? value) => onChanged(value, context),
     );
   }
 }

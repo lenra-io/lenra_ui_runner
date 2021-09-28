@@ -2,33 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
 import 'package:showcase/ui_builder.dart';
 
-class MyTestApp extends StatefulWidget {
+class LenraStatusStickerPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _MyTestAppState();
+    return _LenraStatusStickerPageState();
   }
 }
 
-class _MyTestAppState extends UiBuilderState<MyTestApp, bool> {
+class _LenraStatusStickerPageState
+    extends UiBuilderState<LenraStatusStickerPage, bool> {
   @override
   Map<String, dynamic> get ui {
     return {
       "root": {
         "type": "flex",
         "children": [
-          {
-            "type": "text",
-            "value": "test: $data",
-          },
-          {
-            "type": "button",
-            "text": "MyButton",
-            "listeners": {
-              "onPressed": {
-                "code": "myCode",
-              }
-            }
-          },
+          {"type": "statusSticker", "status": "success"},
+          {"type": "statusSticker", "status": "warning"},
+          {"type": "statusSticker", "status": "error"},
+          {"type": "statusSticker", "status": "pending"},
         ]
       }
     };
