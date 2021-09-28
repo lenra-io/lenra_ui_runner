@@ -4,10 +4,12 @@ import '../lenra_component_builder.dart';
 
 // TODO generate this from annotation on LenraText
 class LenraTextBuilder extends LenraComponentBuilder<LenraText> {
+  @override
   LenraText map({color, backgroundColor, value}) {
     return LenraText(color: color, backgroundColor: backgroundColor, value: value);
   }
 
+  @override
   Map<String, String> get propsTypes {
     return {
       "value": "String",
@@ -31,8 +33,8 @@ class LenraText extends StatelessLenraComponent {
   @override
   Widget build(BuildContext context) {
     return Text(
-      this.value,
-      style: TextStyle(color: this.color, backgroundColor: this.backgroundColor),
+      value,
+      style: TextStyle(color: color, backgroundColor: backgroundColor),
     );
   }
 }

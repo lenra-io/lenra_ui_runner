@@ -11,6 +11,7 @@ class LenraTableBuilder extends LenraComponentBuilder<LenraApplicationTable> {
     return LenraApplicationTable(children: children, border: border);
   }
 
+  @override
   Map<String, String> get propsTypes {
     return {
       "children": "List<Widget>",
@@ -33,8 +34,8 @@ class LenraApplicationTable extends StatelessLenraComponent {
   @override
   Widget build(BuildContext context) {
     return LenraTable(
-      children: this.children,
-      border: this.border ?? false,
+      children: children,
+      border: border ?? false,
     );
   }
 }
