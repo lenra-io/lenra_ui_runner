@@ -7,10 +7,13 @@ import 'package:lenra_ui_runner/lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraToggle
 class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
-  LenraApplicationToggle map({value, label, disabled, listeners}) {
-    return LenraApplicationToggle(value: value, label: label, disabled: disabled, listeners: listeners);
+  @override
+  LenraApplicationToggle map({value, label, disabled, onPressed}) {
+    return LenraApplicationToggle(
+        value: value, label: label, disabled: disabled, onPressed: onPressed);
   }
 
+  @override
   Map<String, String> get propsTypes {
     return {
       "value": "bool",
@@ -21,23 +24,23 @@ class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
   }
 }
 
-class LenraApplicationToggle extends StatelessLenraComponent implements LenraActionable {
+class LenraApplicationToggle extends StatelessLenraComponent
+    implements LenraActionable {
   final bool value;
   final String? label;
   final bool? disabled;
-  final Map<String, dynamic>? listeners;
+  final Map<String, dynamic>? onPressed;
 
   LenraApplicationToggle({
     required this.value,
     required this.label,
     required this.disabled,
-    required this.listeners,
+    required this.onPressed,
   }) : super();
 
-  void onPressed(bool? newValue, BuildContext context) {
-    final Map<String, String>? listener = this.listeners?['onPressed'];
-    if (listener != null && listener.containsKey("code")) {
-      LenraOnPressEvent(code: listener['code']!, event: {
+  void onTogglePressed(bool? newValue, BuildContext context) {
+    if (onPressed != null && onPressed!.containsKey("code")) {
+      LenraOnPressEvent(code: onPressed!['code']!, event: {
         "value": newValue,
       }).dispatch(context);
     }
@@ -46,10 +49,10 @@ class LenraApplicationToggle extends StatelessLenraComponent implements LenraAct
   @override
   Widget build(BuildContext context) {
     return LenraToggle(
-      value: this.value,
-      label: this.label,
-      disabled: this.disabled ?? false,
-      onPressed: () => this.onPressed(value, context),
+      value: value,
+      label: label,
+      disabled: disabled ?? false,
+      onPressed: () => onTogglePressed(value, context),
     );
   }
 }
