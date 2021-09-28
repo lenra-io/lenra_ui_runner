@@ -19,7 +19,7 @@ class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
       "value": "bool",
       "label": "String",
       "disabled": "bool",
-      "listeners": "Map<String, dynamic>",
+      "onPressed": "Map<String, dynamic>",
     };
   }
 }
@@ -38,11 +38,9 @@ class LenraApplicationToggle extends StatelessLenraComponent
     required this.onPressed,
   }) : super();
 
-  void onTogglePressed(bool? newValue, BuildContext context) {
+  void onTogglePressed(BuildContext context) {
     if (onPressed != null && onPressed!.containsKey("code")) {
-      LenraOnPressEvent(code: onPressed!['code']!, event: {
-        "value": newValue,
-      }).dispatch(context);
+      LenraOnPressEvent(code: onPressed!['code']!, event: {}).dispatch(context);
     }
   }
 
@@ -52,7 +50,7 @@ class LenraApplicationToggle extends StatelessLenraComponent
       value: value,
       label: label,
       disabled: disabled ?? false,
-      onPressed: () => onTogglePressed(value, context),
+      onPressed: () => onTogglePressed(context),
     );
   }
 }

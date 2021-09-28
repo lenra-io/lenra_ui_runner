@@ -14,16 +14,14 @@ class _LenraTogglePageState extends UiBuilderState<LenraTogglePage, bool> {
   Map<String, dynamic> get ui {
     return {
       "root": {
-        "type": "container",
+        "type": "flex",
         "children": [
           {
             "type": "toggle",
             "value": data,
             "label": "basic",
-            "listeners": {
-              "onPressed": {
-                "code": "myCode",
-              }
+            "onPressed": {
+              "code": "myCode",
             }
           },
           {
@@ -31,10 +29,8 @@ class _LenraTogglePageState extends UiBuilderState<LenraTogglePage, bool> {
             "value": !data,
             "label": "disabled",
             "disabled": true,
-            "listeners": {
-              "onPressed": {
-                "code": "myCode",
-              }
+            "onPressed": {
+              "code": "myCode",
             }
           },
         ]
