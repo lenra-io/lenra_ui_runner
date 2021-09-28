@@ -64,11 +64,18 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: beta
-      resolved-ref: d14bb7e6975b01f0441533fa373a8fb90ebff3e5
+      ref: "v1.0.0-beta.11"
+      resolved-ref: afac80dfd2c27fab17fd5fa6b65c968138349d09
       url: "git@github.com:lenra-io/lenra_components.git"
     source: git
     version: "0.0.0"
+  lints:
+    dependency: "direct dev"
+    description:
+      name: lints
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   matcher:
     dependency: transitive
     description:

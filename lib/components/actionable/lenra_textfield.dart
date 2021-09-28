@@ -8,6 +8,7 @@ import 'package:lenra_components/theme/lenra_theme_data.dart';
 
 // TODO : generate this from annotation on LenraTextfield
 class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfield> {
+  @override
   LenraApplicationTextfield map({
     value,
     label,
@@ -38,6 +39,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
     );
   }
 
+  @override
   Map<String, String> get propsTypes {
     return {
       "value": "String",
@@ -85,31 +87,31 @@ class LenraApplicationTextfield extends StatelessLenraComponent implements Lenra
     required this.width,
     required this.size,
     required this.listeners,
-  })  : this._controller = TextEditingController(text: value),
-        this._focusNode = FocusNode(),
+  })  : _controller = TextEditingController(text: value),
+        _focusNode = FocusNode(),
         super();
 
   @override
   Widget build(BuildContext context) {
     return LenraTextField(
-      label: this.label,
-      hintText: this.hintText,
-      description: this.description,
-      errorMessage: this.errorMessage,
-      obscure: this.obscure ?? false,
-      disabled: this.disabled ?? false,
-      inRow: this.inRow ?? false,
-      error: this.error ?? false,
+      label: label,
+      hintText: hintText,
+      description: description,
+      errorMessage: errorMessage,
+      obscure: obscure ?? false,
+      disabled: disabled ?? false,
+      inRow: inRow ?? false,
+      error: error ?? false,
       onSubmitted: (value) {
-        final Map<String, dynamic>? listener = this.listeners?['onChange'];
+        final Map<String, dynamic>? listener = listeners?['onChange'];
         if (listener != null && listener.containsKey("code")) {
           LenraOnEditEvent(code: listener['code']!, event: {'value': value}).dispatch(context);
         }
       },
-      size: this.size ?? LenraComponentSize.medium,
-      width: this.width ?? 200.0,
-      focusNode: this._focusNode,
-      controller: this._controller,
+      size: size ?? LenraComponentSize.medium,
+      width: width ?? 200.0,
+      focusNode: _focusNode,
+      controller: _controller,
     );
   }
 }

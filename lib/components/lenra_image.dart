@@ -6,10 +6,12 @@ import 'package:provider/provider.dart';
 
 // TODO : generate this from annotation on LenraImage
 class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
+  @override
   LenraApplicationImage map({path, backgroundColor, height, width}) {
     return LenraApplicationImage(path: path, width: width, height: height);
   }
 
+  @override
   Map<String, String> get propsTypes {
     return {
       "path": "String",
@@ -36,7 +38,7 @@ class LenraApplicationImage extends StatelessLenraComponent {
     var model = context.read<LenraApplicationModel>();
 
     return Image.network(
-      "${model.httpEndpoint}/api/apps/${model.applicationName}/resources/${this.path}?token=${model.accessToken}",
+      "${model.httpEndpoint}/api/apps/${model.applicationName}/resources/$path?token=${model.accessToken}",
     );
   }
 }
