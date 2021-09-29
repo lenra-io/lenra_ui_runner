@@ -8,7 +8,7 @@ class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplication
   @override
   LenraApplicationStyledContainer map({
     child,
-    backgroundColor,
+    color,
     border,
     borderRadius,
     boxShadow,
