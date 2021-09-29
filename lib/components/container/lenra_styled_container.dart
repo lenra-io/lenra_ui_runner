@@ -4,8 +4,7 @@ import '../lenra_component.dart';
 import '../../lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraApplicationStyledContainer
-class LenraStyledContainerBuilder
-    extends LenraComponentBuilder<LenraApplicationStyledContainer> {
+class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplicationStyledContainer> {
   @override
   LenraApplicationStyledContainer map({
     child,
@@ -26,12 +25,16 @@ class LenraStyledContainerBuilder
   @override
   Map<String, String> get propsTypes {
     return {
-      "child": "Widget",
       "backgroundColor": "Color",
       "border": "Border",
       "borderRadius": "BorderRadius",
       "boxShadow": "BoxShadow",
     };
+  }
+
+  @override
+  List<String> get childKeys {
+    return ["child"];
   }
 }
 

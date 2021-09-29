@@ -2,4 +2,5 @@
     "spellright.language": [
         "en"
     ],
+    "dart.lineLength": 120,
 }

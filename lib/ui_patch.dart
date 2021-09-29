@@ -1,3 +1,5 @@
+import 'components/lenra_wrapper.dart';
+
 enum UIPatchOperation {
   add,
   addChild,
@@ -47,11 +49,8 @@ class UiPatchEvent {
   UIPatchOperation operation;
   List<String> propertyPathList;
   dynamic value;
-  int childIndex;
+  String? childIndex;
   String? childId;
-
-  static RegExp regex = RegExp(
-      r"^(?<target>\/root(?:\/children\/\d+)*)(?<property>(?:\/children)?(?:\/(?!children)(?:[\da-zA-Z_-])+)*)$");
 
   UiPatchEvent(
     this.id,
@@ -87,36 +86,46 @@ Breaks apart :
 
 */
 
-  factory UiPatchEvent.fromPatch(Map<String, dynamic> patch) {
+  factory UiPatchEvent.fromPatch(Map<String, dynamic> patch, Map<String, LenraWrapper> wrappers) {
+    print(patch);
     UIPatchOperation operation = (patch['op'] as String).toLenraUiPatchOperation();
     dynamic value = patch['value'];
+    String path = patch["path"];
+    List<String> pathList = path.split("/")..removeAt(0);
+    String childPath = "/${pathList.removeAt(0)}";
+    bool isChildChange = false;
+    bool stop = false;
 
-    RegExpMatch? match = regex.firstMatch(patch["path"]);
-    if (match == null) {
-      throw "Could not match path regex";
+    while (!stop && pathList.isNotEmpty) {
+      LenraWrapper wrapper = wrappers[childPath]!;
+      String type = wrapper.initialProperties["type"];
+      List<String> childKeys = LenraComponentWrapperExt.componentsMapping[type]!.childKeys;
+      List<String> childrenKeys = LenraComponentWrapperExt.componentsMapping[type]!.childrenKeys;
+      String pathItem = pathList.elementAt(0);
+      if (childKeys.contains(pathItem)) {
+        if (pathList.length == 1) {
+          stop = true;
+          isChildChange = true;
+        } else {
+          childPath = "$childPath/${pathList.removeAt(0)}";
+        }
+      } else if (childrenKeys.contains(pathItem)) {
+        if (pathList.length == 2) {
+          stop = true;
+          isChildChange = true;
+        } else {
+          childPath = "$childPath/${pathList.removeAt(0)}/${pathList.removeAt(0)}";
+        }
+      } else {
+        stop = true;
+      }
     }
 
-    String? target = match.namedGroup("target");
-    String? property = match.namedGroup("property");
-    if (target == null) throw "Could not match target group in regex";
-    if (property == null) throw "Could not match property group in regex";
-
-    List<String> propertyPathList = property.split("/");
-    propertyPathList.removeAt(0);
-    List<String> targetPathList = target.split('/');
-
-    // 2 possibilities here :
-    // 1 - property list is empty => We have to send the event to the parent to add/replace/remove the child
-    // 2 - End with any component property => Send the event to the component.
-    bool changeOneChild = propertyPathList.isEmpty;
-
-    if (changeOneChild) {
-      int childIndex = int.parse(targetPathList.last);
-      String id = targetPathList.sublist(0, targetPathList.length - 2).join('/');
-
-      return UiPatchEvent(id, operation.toChildOperation(), propertyPathList, value, childIndex, target);
+    if (isChildChange) {
+      String childId = "$childPath/${pathList.join("/")}";
+      return UiPatchEvent(childPath, operation.toChildOperation(), pathList, value, pathList.last, childId);
     }
 
-    return UiPatchEvent(target, operation, propertyPathList, value, -1, null);
+    return UiPatchEvent(childPath, operation, pathList, value, null, null);
   }
 }

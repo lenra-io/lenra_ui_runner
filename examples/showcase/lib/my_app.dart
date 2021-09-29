@@ -9,7 +9,22 @@ class MyTestApp extends StatefulWidget {
   }
 }
 
-class _MyTestAppState extends UiBuilderState<MyTestApp, bool> {
+class MyData {
+  bool isOn;
+  List<String> elements;
+
+  MyData(this.isOn, this.elements);
+
+  void toggleIsOn() {
+    isOn = !isOn;
+  }
+
+  void addElement() {
+    elements.add("Foo");
+  }
+}
+
+class _MyTestAppState extends UiBuilderState<MyTestApp, MyData> {
   @override
   Map<String, dynamic> get ui {
     return {
@@ -17,16 +32,33 @@ class _MyTestAppState extends UiBuilderState<MyTestApp, bool> {
         "type": "flex",
         "children": [
           {
-            "type": "text",
-            "value": "test: $data",
+            "type": "styledContainer",
+            "child": data.isOn
+                ? {
+                    "type": "button",
+                    "text": "foo",
+                  }
+                : {
+                    "type": "text",
+                    "value": "bar",
+                  }
+          },
+          {
+            "type": "flex",
+            "children": data.elements.map((e) => {"type": "text", "value": e}).toList(),
           },
           {
             "type": "button",
-            "text": "MyButton",
-            "listeners": {
-              "onPressed": {
-                "code": "myCode",
-              }
+            "text": "toggle",
+            "onPressed": {
+              "code": "toggle",
+            }
+          },
+          {
+            "type": "button",
+            "text": "add",
+            "onPressed": {
+              "code": "add",
             }
           },
         ]
@@ -37,11 +69,12 @@ class _MyTestAppState extends UiBuilderState<MyTestApp, bool> {
   @override
   getData(LenraEvent event) {
     if (event.code == "InitData") {
-      return true;
-    } else if (event.code == "myCode") {
-      return !data;
-    } else {
-      return false;
+      return MyData(false, []);
+    } else if (event.code == "toggle") {
+      data.toggleIsOn();
+    } else if (event.code == "add") {
+      data.addElement();
     }
+    return data;
   }
 }
