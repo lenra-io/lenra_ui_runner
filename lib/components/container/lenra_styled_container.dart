@@ -15,7 +15,7 @@ class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplication
   }) {
     return LenraApplicationStyledContainer(
       child: child,
-      backgroundColor: backgroundColor,
+      color: color,
       border: border,
       borderRadius: borderRadius,
       boxShadow: boxShadow,
@@ -25,7 +25,7 @@ class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplication
   @override
   Map<String, String> get propsTypes {
     return {
-      "backgroundColor": "Color",
+      "color": "Color",
       "border": "Border",
       "borderRadius": "BorderRadius",
       "boxShadow": "BoxShadow",
@@ -40,14 +40,14 @@ class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplication
 
 class LenraApplicationStyledContainer extends StatelessLenraComponent {
   final Widget child;
-  final Color? backgroundColor;
+  final Color? color;
   final Border? border;
   final BorderRadius? borderRadius;
   final BoxShadow? boxShadow;
 
   LenraApplicationStyledContainer({
     required this.child,
-    required this.backgroundColor,
+    required this.color,
     required this.border,
     required this.borderRadius,
     required this.boxShadow,
@@ -57,7 +57,7 @@ class LenraApplicationStyledContainer extends StatelessLenraComponent {
   Widget build(BuildContext context) {
     return LenraStyledContainer(
       child: child,
-      color: backgroundColor,
+      color: color,
       border: border,
       borderRadius: borderRadius,
       boxShadow: boxShadow,
