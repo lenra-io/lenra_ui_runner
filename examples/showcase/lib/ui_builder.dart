@@ -6,10 +6,9 @@ import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
 import 'package:lenra_ui_runner/lenra_ui_builder.dart';
 import 'package:lenra_ui_runner/ui_patch.dart';
 
-
 abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
   StreamController<Map<String, dynamic>> uiStreamController = StreamController();
-  StreamController<Iterable<UiPatchEvent>> patchUiStream = StreamController();
+  StreamController<Iterable<Map<String, dynamic>>> patchUiStream = StreamController();
   late Map<String, dynamic> lastUi;
   late D data;
 
@@ -35,9 +34,7 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
     var newUi = this.ui;
     var diff = JsonPatch.diff(lastUi, newUi);
     lastUi = newUi;
-    var patchEvents = diff.map((e) => UiPatchEvent.fromPatch(e));
-
-    patchUiStream.add(patchEvents);
+    patchUiStream.add(diff);
 
     return true;
   }

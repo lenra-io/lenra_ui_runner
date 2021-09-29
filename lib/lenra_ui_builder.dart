@@ -7,7 +7,7 @@ import 'update_props_event.dart';
 
 class LenraUiBuilder extends StatefulWidget {
   final StreamController<Map<String, dynamic>> uiStream;
-  final StreamController<Iterable<UiPatchEvent>> patchUiStream;
+  final StreamController<Iterable<Map<String, dynamic>>> patchUiStream;
 
   LenraUiBuilder({required this.uiStream, required this.patchUiStream}) : super();
 
@@ -18,7 +18,7 @@ class LenraUiBuilder extends StatefulWidget {
 }
 
 class LenraUiBuilderState extends State<LenraUiBuilder> {
-  final Map<String, Widget> wrappers = {};
+  final Map<String, LenraWrapper> wrappers = {};
   final Map<String, Map<String, dynamic>> componentsProperties = {};
   final StreamController<UpdatePropsEvent> updateWidgetStream = StreamController.broadcast();
 
@@ -52,18 +52,71 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   }
 
   void registerComponent(Map<String, dynamic> properties, String path) {
-    if (properties.containsKey("children")) {
-      List<String> newChildrenProps = registerChildren(properties["children"] as List, path);
-      properties["children"] = newChildrenProps;
-    }
+    registerChildrenOf(properties, path);
+    registerChildOf(properties, path);
     registerProperties(path, properties);
     createWrapper(path, properties);
   }
 
-  List<String> registerChildren(List children, String path) {
+  List<String> getChildrenKeys(Map<String, dynamic> properties) {
+    String type = properties["type"] as String;
+    return LenraComponentWrapperExt.componentsMapping[type]!.childrenKeys;
+  }
+
+  List<String> getChildKeys(Map<String, dynamic> properties) {
+    String type = properties["type"] as String;
+    return LenraComponentWrapperExt.componentsMapping[type]!.childKeys;
+  }
+
+  void registerChildrenOf(Map<String, dynamic> properties, String path) {
+    List<String> childrenKeys = getChildrenKeys(properties);
+    for (var childrenKey in childrenKeys) {
+      registerChildrenKey(properties, childrenKey, path);
+    }
+  }
+
+  void registerChildrenKey(
+    Map<String, dynamic> properties,
+    String childrenKey,
+    String path,
+  ) {
+    List<String> newChildrenProps = registerChildren(properties[childrenKey] as List, childrenKey, path);
+    properties[childrenKey] = newChildrenProps;
+  }
+
+  void registerChildOf(Map<String, dynamic> properties, String path) {
+    List<String> childKeys = getChildKeys(properties);
+    for (var childKey in childKeys) {
+      registerChildKey(properties, childKey, path);
+    }
+  }
+
+  void registerChildKey(
+    Map<String, dynamic> properties,
+    String childKey,
+    String path,
+  ) {
+    properties[childKey] = registerChild(properties, childKey, path);
+  }
+
+  String registerChild(
+    Map<String, dynamic> properties,
+    String childKey,
+    String path,
+  ) {
+    String id = "$path/$childKey";
+    registerComponent(properties[childKey] as Map<String, dynamic>, id);
+    return id;
+  }
+
+  List<String> registerChildren(
+    List children,
+    String childrenKey,
+    String path,
+  ) {
     int idx = 0;
     return children.map((dynamic child) {
-      String id = "$path/children/$idx";
+      String id = "$path/$childrenKey/$idx";
       registerComponent(child as Map<String, dynamic>, id);
       idx++;
       return id;
@@ -81,22 +134,23 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   void addOperation(UiPatchEvent patch) {
     Map<String, dynamic>? properties = componentsProperties[patch.id];
     if (properties == null) return;
+    var value = patch.value;
 
-    if (patch.propertyPathList.last == "children") {
-      List<String> newChildrenProps = registerChildren(patch.value as List, patch.id);
-
-      setProperty(
-        properties,
-        patch.propertyPathList,
-        newChildrenProps,
-      );
-    } else {
-      setProperty(
-        properties,
-        patch.propertyPathList,
-        patch.value,
-      );
+    List<String> childrenKeys = getChildrenKeys(properties);
+    if (childrenKeys.contains(patch.propertyPathList.last)) {
+      value = registerChildren(patch.value as List, patch.propertyPathList.last, patch.id);
     }
+
+    List<String> childKeys = getChildKeys(properties);
+    if (childKeys.contains(patch.propertyPathList.last)) {
+      value = registerChild(patch.value as Map<String, dynamic>, patch.propertyPathList.last, patch.id);
+    }
+
+    setProperty(
+      properties,
+      patch.propertyPathList,
+      value,
+    );
   }
 
   void removeOperation(UiPatchEvent patch) {
@@ -127,14 +181,27 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     if (patch.childId == null) return;
 
     registerComponent(patch.value as Map<String, dynamic>, patch.childId!);
-    (properties["children"] as List?)?.insert(patch.childIndex, patch.childId);
+    if (patch.childIndex == null) {
+      properties[patch.propertyPathList.first] = patch.childId;
+    } else {
+      if (patch.childIndex == '-') {
+        (properties[patch.propertyPathList.first] as List?)?.add(patch.childId);
+      } else {
+        (properties[patch.propertyPathList.first] as List?)?.insert(int.parse(patch.childIndex!), patch.childId);
+      }
+    }
   }
 
   void removeChildOperation(UiPatchEvent patch) {
     Map<String, dynamic>? properties = componentsProperties[patch.id];
     if (properties == null) return;
 
-    dynamic childId = (properties["children"] as List?)?.removeAt(patch.childIndex);
+    dynamic childId;
+    if (patch.childIndex == null) {
+      childId = properties.remove(patch.propertyPathList.first);
+    } else {
+      childId = (properties[patch.propertyPathList.first] as List?)?.removeAt(int.parse(patch.childIndex!));
+    }
     wrappers.remove(childId);
   }
 
@@ -143,10 +210,11 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     addChildOperation(patch);
   }
 
-  void patchUi(Iterable<UiPatchEvent> patches) {
+  void patchUi(Iterable<Map<String, dynamic>> patches) {
+    var parsedPatches = patches.map((e) => UiPatchEvent.fromPatch(e, wrappers));
     Set<String> widgetToUpdate = {};
 
-    for (var patch in patches) {
+    for (var patch in parsedPatches) {
       widgetToUpdate.add(patch.id);
 
       switch (patch.operation) {
@@ -173,7 +241,9 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
     for (var id in widgetToUpdate) {
       Map<String, dynamic>? properties = componentsProperties[id];
-      if (properties != null) updateWidgetStream.add(UpdatePropsEvent(id, properties));
+      if (properties != null) {
+        updateWidgetStream.add(UpdatePropsEvent(id, properties));
+      }
     }
   }
 
@@ -187,6 +257,10 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     }
 
     return childrenWidgets;
+  }
+
+  Widget getChildWidget(String id) {
+    return wrappers[id]!;
   }
 
   @override

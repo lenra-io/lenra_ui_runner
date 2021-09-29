@@ -30,7 +30,6 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
   @override
   Map<String, String> get propsTypes {
     return {
-      "children": "List<Widget>",
       "direction": "Axis",
       "mainAxisAlignment": "MainAxisAlignment",
       "crossAxisAlignment": "CrossAxisAlignment",
@@ -38,6 +37,11 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
       "fillParent": "bool",
       "scroll": "bool",
     };
+  }
+
+  @override
+  List<String> get childrenKeys {
+    return ["children"];
   }
 }
 
@@ -64,9 +68,15 @@ class LenraApplicationFlex extends StatelessLenraComponent {
   Widget build(BuildContext context) {
     return LenraFlex(
       children: children,
+<<<<<<< HEAD
       direction: direction ?? Axis.horizontal,
       mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
       crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.start,
+=======
+      direction: direction,
+      mainAxisAlignment: LenraApplicationFlex.mainAxisAlignmentFromString(mainAxisAlignment),
+      crossAxisAlignment: LenraApplicationFlex.crossAxisAlignmentFromString(crossAxisAlignment),
+>>>>>>> beta
       spacing: spacing ?? 0,
       fillParent: fillParent ?? false,
       scroll: scroll ?? false,

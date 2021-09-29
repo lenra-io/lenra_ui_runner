@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_ui_runner/components/container/lenra_styled_container.dart';
 import 'package:lenra_ui_runner/components/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
 import 'package:lenra_ui_runner/components/actionable/lenra_toggle.dart';
@@ -28,6 +29,7 @@ extension LenraComponentWrapperExt on LenraWrapper {
     'toggle': LenraToggleBuilder(),
     'statusSticker': LenraStatusStickerBuilder(),
     'flex': LenraFlexBuilder(),
+    'styledContainer': LenraStyledContainerBuilder(),
   };
 }
 
@@ -36,9 +38,7 @@ class LenraWrapper extends StatefulWidget {
   final Map<String, dynamic> initialProperties;
   final String id;
 
-  LenraWrapper(this.id, this.lenraUiBuilderState, this.initialProperties,
-      {Key? key})
-      : super(key: key);
+  LenraWrapper(this.id, this.lenraUiBuilderState, this.initialProperties, {Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -55,8 +55,7 @@ class LenraWrapperState extends State<LenraWrapper> {
   void initState() {
     super.initState();
     parseProps(widget.initialProperties);
-    widget.lenraUiBuilderState.updateWidgetStream.stream
-        .listen((UpdatePropsEvent event) {
+    widget.lenraUiBuilderState.updateWidgetStream.stream.listen((UpdatePropsEvent event) {
       if (event.id == widget.id) {
         updateProperties(event.properties);
       }
@@ -72,9 +71,12 @@ class LenraWrapperState extends State<LenraWrapper> {
     componentBuilder = LenraComponentWrapperExt.componentsMapping[type]!;
     parsedProps = Parser.parseProps(properties, componentBuilder.propsTypes);
 
-    if (properties["children"] != null) {
-      parsedProps[Symbol("children")] =
-          widget.lenraUiBuilderState.getChildrenWidgets(properties["children"]);
+    for (var childrenKey in componentBuilder.childrenKeys) {
+      parsedProps[Symbol(childrenKey)] = widget.lenraUiBuilderState.getChildrenWidgets(properties[childrenKey]);
+    }
+
+    for (var childKey in componentBuilder.childKeys) {
+      parsedProps[Symbol(childKey)] = widget.lenraUiBuilderState.getChildWidget(properties[childKey]);
     }
   }
 
