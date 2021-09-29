@@ -12,6 +12,9 @@ extension ParserExt on Parser {
     "double": Parser.parseDouble,
     "Color": Parser.parseColor,
     "Map<String, dynamic>": Parser.parseListeners,
+    "MainAxisAlignment": Parser.parseMainAxisAlignment,
+    "CrossAxisAlignment": Parser.parseCrossAxisAlignment,
+    "Axis": Parser.parseAxis,
     "Border": Parser.parseBorder,
     "BorderRadius": Parser.parseBorderRadius,
     "BoxShadow": Parser.parseBoxShadow,
@@ -19,6 +22,64 @@ extension ParserExt on Parser {
 }
 
 class Parser {
+  static Axis parseAxis(String axis) {
+    switch (axis) {
+      case "col":
+        return Axis.vertical;
+      case "row":
+        return Axis.horizontal;
+      default:
+        return Axis.horizontal;
+    }
+  }
+
+  static MainAxisAlignment parseMainAxisAlignment(String alignment) {
+    switch (alignment) {
+      case "start":
+        return MainAxisAlignment.start;
+
+      case "end":
+        return MainAxisAlignment.end;
+
+      case "center":
+        return MainAxisAlignment.center;
+
+      case "spaceBetween":
+        return MainAxisAlignment.spaceBetween;
+
+      case "spaceAround":
+        return MainAxisAlignment.spaceAround;
+
+      case "spaceEvenly":
+        return MainAxisAlignment.spaceEvenly;
+
+      default:
+        return MainAxisAlignment.start;
+    }
+  }
+
+  static CrossAxisAlignment parseCrossAxisAlignment(String alignment) {
+    switch (alignment) {
+      case "start":
+        return CrossAxisAlignment.start;
+
+      case "end":
+        return CrossAxisAlignment.end;
+
+      case "center":
+        return CrossAxisAlignment.center;
+
+      case "stretch":
+        return CrossAxisAlignment.stretch;
+
+      case "baseline":
+        return CrossAxisAlignment.baseline;
+
+      default:
+        return CrossAxisAlignment.start;
+    }
+  }
+
   static Color parseColor(String color) {
     return color.parseColor();
   }
