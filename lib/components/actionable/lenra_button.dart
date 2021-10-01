@@ -43,8 +43,8 @@ class LenraApplicationButton extends StatelessLenraComponent implements LenraAct
   final String? size;
   final String? mainStyle;
   final Map<String, dynamic>? onPressed;
-  final Icon leftIcon;
-  final Icon rightIcon;
+  final Icon? leftIcon;
+  final Icon? rightIcon;
 
   LenraApplicationButton({
     required this.text,
