@@ -66,7 +66,7 @@ void main() {
 
     patchUiStream.add(patches);
     await tester.pump();
-    //    lenraUiBuilderState = tester.state(find.byType(LenraUiBuilder));
+
     expect(lenraUiBuilderState.wrappers.containsKey("/root/children/0"), false);
   });
 
