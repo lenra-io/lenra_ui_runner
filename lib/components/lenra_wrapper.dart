@@ -72,11 +72,15 @@ class LenraWrapperState extends State<LenraWrapper> {
     parsedProps = Parser.parseProps(properties, componentBuilder.propsTypes);
 
     for (var childrenKey in componentBuilder.childrenKeys) {
-      parsedProps[Symbol(childrenKey)] = widget.lenraUiBuilderState.getChildrenWidgets(properties[childrenKey]);
+      if (properties.containsKey(childrenKey)) {
+        parsedProps[Symbol(childrenKey)] = widget.lenraUiBuilderState.getChildrenWidgets(properties[childrenKey]);
+      }
     }
 
     for (var childKey in componentBuilder.childKeys) {
-      parsedProps[Symbol(childKey)] = widget.lenraUiBuilderState.getChildWidget(properties[childKey]);
+      if (properties.containsKey(childKey)) {
+        parsedProps[Symbol(childKey)] = widget.lenraUiBuilderState.getChildWidget(properties[childKey]);
+      }
     }
   }
 

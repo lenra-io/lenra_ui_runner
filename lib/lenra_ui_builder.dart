@@ -128,6 +128,7 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   }
 
   void replaceOperation(UiPatchEvent patch) {
+    removeOperation(patch);
     addOperation(patch);
   }
 
@@ -153,9 +154,52 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     );
   }
 
+/*
+  {
+    "type": "flex",
+    "children": [
+      {"type": "text", "value": "foo"}
+    ]
+  }
+
+  properties: {
+    "/root": {type: flex}
+  }
+
+  wrappers: {
+    "/root": wrapper
+  }
+
+  /root/children
+  [
+    {"type": "text", "value": "bar"}
+  ]
+
+  properties: {
+    "/root": {type: flex, children: ["/root/children/0"]}
+  }
+*/
+
   void removeOperation(UiPatchEvent patch) {
     Map<String, dynamic>? properties = componentsProperties[patch.id];
     if (properties == null) return;
+
+    List<String> childrenKeys = getChildrenKeys(properties);
+    if (childrenKeys.contains(patch.propertyPathList.last)) {
+      List<String> children = properties[patch.propertyPathList.last];
+      for (var child in children) {
+        properties.remove(child);
+        wrappers.remove(child);
+      }
+    }
+
+    List<String> childKeys = getChildKeys(properties);
+    if (childKeys.contains(patch.propertyPathList.last)) {
+      String child = properties[patch.propertyPathList.last];
+      properties.remove(child);
+      wrappers.remove(child);
+    }
+
     removeProperty(properties, patch.propertyPathList);
   }
 

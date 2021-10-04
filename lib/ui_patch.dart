@@ -87,7 +87,6 @@ Breaks apart :
 */
 
   factory UiPatchEvent.fromPatch(Map<String, dynamic> patch, Map<String, LenraWrapper> wrappers) {
-    print(patch);
     UIPatchOperation operation = (patch['op'] as String).toLenraUiPatchOperation();
     dynamic value = patch['value'];
     String path = patch["path"];
@@ -113,6 +112,8 @@ Breaks apart :
         if (pathList.length == 2) {
           stop = true;
           isChildChange = true;
+        } else if (pathList.length == 1) {
+          stop = true;
         } else {
           childPath = "$childPath/${pathList.removeAt(0)}/${pathList.removeAt(0)}";
         }
