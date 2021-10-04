@@ -7,7 +7,7 @@ import 'update_props_event.dart';
 
 class LenraUiBuilder extends StatefulWidget {
   final StreamController<Map<String, dynamic>> uiStream;
-  final StreamController<Iterable<Map<String, dynamic>>> patchUiStream;
+  final StreamController<Iterable<dynamic>> patchUiStream;
 
   LenraUiBuilder({required this.uiStream, required this.patchUiStream}) : super();
 
@@ -210,8 +210,8 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     addChildOperation(patch);
   }
 
-  void patchUi(Iterable<Map<String, dynamic>> patches) {
-    var parsedPatches = patches.map((e) => UiPatchEvent.fromPatch(e, wrappers));
+  void patchUi(Iterable<dynamic> patches) {
+    var parsedPatches = patches.map((e) => UiPatchEvent.fromPatch(e as Map<String, dynamic>, wrappers));
     Set<String> widgetToUpdate = {};
 
     for (var patch in parsedPatches) {
