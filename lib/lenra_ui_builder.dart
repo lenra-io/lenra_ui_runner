@@ -154,32 +154,6 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     );
   }
 
-/*
-  {
-    "type": "flex",
-    "children": [
-      {"type": "text", "value": "foo"}
-    ]
-  }
-
-  properties: {
-    "/root": {type: flex}
-  }
-
-  wrappers: {
-    "/root": wrapper
-  }
-
-  /root/children
-  [
-    {"type": "text", "value": "bar"}
-  ]
-
-  properties: {
-    "/root": {type: flex, children: ["/root/children/0"]}
-  }
-*/
-
   void removeOperation(UiPatchEvent patch) {
     Map<String, dynamic>? properties = componentsProperties[patch.id];
     if (properties == null) return;
