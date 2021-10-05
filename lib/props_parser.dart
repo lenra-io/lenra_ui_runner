@@ -2,6 +2,7 @@ library props_parser;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:lenra_ui_runner/utils/icon_util.dart';
 
 extension ParserExt on Parser {
   // TODO : Generate this from annotation on class Parser
@@ -18,6 +19,7 @@ extension ParserExt on Parser {
     "BorderRadius": Parser.parseBorderRadius,
     "BoxShadow": Parser.parseBoxShadow,
     "EdgeInsets": Parser.parseEdgeInsets,
+    "Icon": Parser.parseIcon,
   };
 }
 
@@ -163,6 +165,10 @@ class Parser {
       right: props.containsKey("right") ? parseDouble(props["right"]) : 0,
       bottom: props.containsKey("bottom") ? parseDouble(props["bottom"]) : 0,
     );
+  }
+  
+  static Icon parseIcon(String value) {
+    return Icon(IconUtil.fromString(value));
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, String> propsTypes) {
