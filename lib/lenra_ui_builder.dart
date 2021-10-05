@@ -137,14 +137,16 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     if (properties == null) return;
     var value = patch.value;
 
-    List<String> childrenKeys = getChildrenKeys(properties);
-    if (childrenKeys.contains(patch.propertyPathList.last)) {
-      value = registerChildren(patch.value as List, patch.propertyPathList.last, patch.id);
-    }
+    if (patch.propertyPathList.last != "type") {
+      List<String> childrenKeys = getChildrenKeys(properties);
+      if (childrenKeys.contains(patch.propertyPathList.last)) {
+        value = registerChildren(patch.value as List, patch.propertyPathList.last, patch.id);
+      }
 
-    List<String> childKeys = getChildKeys(properties);
-    if (childKeys.contains(patch.propertyPathList.last)) {
-      value = registerChild(patch.value as Map<String, dynamic>, patch.propertyPathList.last, patch.id);
+      List<String> childKeys = getChildKeys(properties);
+      if (childKeys.contains(patch.propertyPathList.last)) {
+        value = registerChild(patch.value as Map<String, dynamic>, patch.propertyPathList.last, patch.id);
+      }
     }
 
     setProperty(
