@@ -15,11 +15,9 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
     return {
       "root": {
         "type": "flex",
-        "backgroundColor": "888888",
         "children": [
           {
             "type": "flex",
-            "backgroundColor": "8899AA",
             "children": [
               {
                 "type": "flex",
@@ -34,7 +32,6 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
           },
           {
             "type": "flex",
-            "backgroundColor": "CCDDEE",
             "children": [
               {
                 "type": "flex",
@@ -48,20 +45,27 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
             ],
           },
           {
-            "type": "flex",
-            "backgroundColor": 0xff0000dd,
-            "padding": {
-              "top": 100,
-              "left": 100,
-              "right": 100,
-              "bottom": 100
-            },
-            "children": [
-              {
-                "type": "text",
-                "value": "padding",
-              }
-            ]
+            "type": "styledContainer",
+            "color": 0xffaabbcc,
+            "child": {
+              "type": "flex",
+              "padding": {
+                "top": 100,
+                "left": 100,
+                "right": 100,
+                "bottom": 100,
+              },
+              "children": [
+                {
+                  "type": "styledContainer",
+                  "color": 0xffffffff,
+                  "child": {
+                    "type": "text",
+                    "value": "padding",
+                  }
+                }
+              ]
+            }
           }
         ]
       }
