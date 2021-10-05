@@ -2,7 +2,6 @@ library props_parser;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:lenra_components/utils/color_parser.dart';
 
 extension ParserExt on Parser {
   // TODO : Generate this from annotation on class Parser
@@ -80,8 +79,8 @@ class Parser {
     }
   }
 
-  static Color parseColor(String color) {
-    return color.parseColor();
+  static Color parseColor(int color) {
+    return Color(color);
   }
 
   static String parseString(dynamic value) {
