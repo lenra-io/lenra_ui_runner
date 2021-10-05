@@ -106,4 +106,38 @@ void main() {
     expect(find.text("foo"), findsNothing);
     expect(find.text("bar"), findsOneWidget);
   });
+
+  testWidgets('Change children of flex', (WidgetTester tester) async {
+    StreamController<Map<String, dynamic>> uiStream = StreamController();
+    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+      ),
+    );
+
+    Map<String, dynamic> ui = {
+      "root": {"type": "text", "value": "foo"}
+    };
+
+    List<Map<String, dynamic>> patches = [
+      {"path": "/root/type", "value": "button", "op": "replace"},
+      {"path": "/root/value", "op": "remove"},
+      {"path": "/root/text", "value": "bar", "op": "add"}
+    ];
+
+    uiStream.add(ui);
+    await tester.pump();
+
+    expect(find.text("foo"), findsOneWidget);
+    expect(find.text("bar"), findsNothing);
+
+    patchUiStream.add(patches);
+    await tester.pump();
+    await tester.pump();
+
+    expect(find.text("foo"), findsNothing);
+    expect(find.text("bar"), findsOneWidget);
+  });
 }
