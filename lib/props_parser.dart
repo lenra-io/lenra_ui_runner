@@ -2,6 +2,7 @@ library props_parser;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 
 extension ParserExt on Parser {
@@ -24,6 +25,8 @@ extension ParserExt on Parser {
 }
 
 class Parser {
+  static LenraThemeData theme = LenraThemeData();
+
   static Axis parseAxis(String axis) {
     switch (axis) {
       case "col":
@@ -160,10 +163,10 @@ class Parser {
 
   static EdgeInsets parseEdgeInsets(Map<String, dynamic> props) {
     return EdgeInsets.only(
-      left: props.containsKey("left") ? parseDouble(props["left"]) : 0,
-      top: props.containsKey("top") ? parseDouble(props["top"]) : 0,
-      right: props.containsKey("right") ? parseDouble(props["right"]) : 0,
-      bottom: props.containsKey("bottom") ? parseDouble(props["bottom"]) : 0,
+      left: props.containsKey("left") ? parseDouble(props["left"]) * theme.baseSize : 0,
+      top: props.containsKey("top") ? parseDouble(props["top"]) * theme.baseSize : 0,
+      right: props.containsKey("right") ? parseDouble(props["right"]) * theme.baseSize : 0,
+      bottom: props.containsKey("bottom") ? parseDouble(props["bottom"]) * theme.baseSize : 0,
     );
   }
   
