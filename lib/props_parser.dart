@@ -80,8 +80,8 @@ class Parser {
     }
   }
 
-  static Color parseColor(int color) {
-    return Color(color);
+  static Color parseColor(String color) {
+    return Color(int.parse(color));
   }
 
   static String parseString(dynamic value) {
