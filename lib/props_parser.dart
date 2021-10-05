@@ -18,6 +18,7 @@ extension ParserExt on Parser {
     "Border": Parser.parseBorder,
     "BorderRadius": Parser.parseBorderRadius,
     "BoxShadow": Parser.parseBoxShadow,
+    "EdgeInsets": Parser.parseEdgeInsets,
   };
 }
 
@@ -153,6 +154,15 @@ class Parser {
     return Offset(
       props.containsKey("dx") ? parseDouble(props["dx"]) : 0,
       props.containsKey("dy") ? parseDouble(props["dy"]) : 0,
+    );
+  }
+
+  static EdgeInsets parseEdgeInsets(Map<String, dynamic> props) {
+    return EdgeInsets.only(
+      left: props.containsKey("left") ? parseDouble(props["left"]) : 0,
+      top: props.containsKey("top") ? parseDouble(props["top"]) : 0,
+      right: props.containsKey("right") ? parseDouble(props["right"]) : 0,
+      bottom: props.containsKey("bottom") ? parseDouble(props["bottom"]) : 0,
     );
   }
 
