@@ -15,6 +15,7 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
     spacing,
     fillParent,
     scroll,
+    padding,
   }) {
     return LenraApplicationFlex(
       children: children,
@@ -24,6 +25,7 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
       spacing: spacing,
       fillParent: fillParent,
       scroll: scroll,
+      padding: padding,
     );
   }
 
@@ -36,6 +38,7 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
       "spacing": "double",
       "fillParent": "bool",
       "scroll": "bool",
+      "padding": "EdgeInsets",
     };
   }
 
@@ -53,6 +56,7 @@ class LenraApplicationFlex extends StatelessLenraComponent {
   final double? spacing;
   final bool? fillParent;
   final bool? scroll;
+  final EdgeInsets? padding;
 
   LenraApplicationFlex({
     required this.children,
@@ -62,6 +66,7 @@ class LenraApplicationFlex extends StatelessLenraComponent {
     required this.spacing,
     required this.fillParent,
     required this.scroll,
+    required this.padding,
   }) : super();
 
   @override
@@ -74,6 +79,7 @@ class LenraApplicationFlex extends StatelessLenraComponent {
       spacing: spacing ?? 0,
       fillParent: fillParent ?? false,
       scroll: scroll ?? false,
+      padding: padding,
     );
   }
 }

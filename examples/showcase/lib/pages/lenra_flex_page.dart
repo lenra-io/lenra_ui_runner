@@ -47,6 +47,22 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
               },
             ],
           },
+          {
+            "type": "flex",
+            "backgroundColor": 0xff0000dd,
+            "padding": {
+              "top": 100,
+              "left": 100,
+              "right": 100,
+              "bottom": 100
+            },
+            "children": [
+              {
+                "type": "text",
+                "value": "padding",
+              }
+            ]
+          }
         ]
       }
     };
