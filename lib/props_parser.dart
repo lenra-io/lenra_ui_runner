@@ -166,9 +166,9 @@ class Parser {
       bottom: props.containsKey("bottom") ? parseDouble(props["bottom"]) : 0,
     );
   }
-
-  static Icon parseIcon(dynamic value) {
-    return Icon(IconUtil.fromString(parseString(value)));
+  
+  static Icon parseIcon(String value) {
+    return Icon(IconUtil.fromString(value));
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, String> propsTypes) {
