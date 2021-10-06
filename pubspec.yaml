@@ -14,7 +14,7 @@ dependencies:
   lenra_components:
     git:
       url: git@github.com:lenra-io/lenra_components.git
-      ref: v1.0.0-beta.16
+      ref: v1.0.0-beta.17
 dev_dependencies:
   flutter_test:
     sdk: flutter
