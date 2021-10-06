@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:json_patch/json_patch.dart';
 import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
 import 'package:lenra_ui_runner/lenra_ui_builder.dart';
-import 'package:lenra_ui_runner/ui_patch.dart';
 
 abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
   StreamController<Map<String, dynamic>> uiStreamController = StreamController();
