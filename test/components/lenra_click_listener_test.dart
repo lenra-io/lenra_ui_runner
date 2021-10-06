@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
 
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
@@ -11,9 +13,18 @@ void main() {
     StreamController<Map<String, dynamic>> uiStream = StreamController();
     StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
 
+    bool listenerEntered = false;
+
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: NotificationListener(
+          child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+          onNotification: (LenraEvent e) {
+            expect(e.code, "click");
+            listenerEntered = true;
+            return true;
+          },
+        ),
       ),
     );
 
@@ -22,13 +33,10 @@ void main() {
         "type": "clickListener",
         "child": {
           "type": "text",
-          "value": "foo"
+          "value": "foo",
         },
         "onPressed": {
-          "action": "click",
-          "props": {
-            "clickedProp": "bar"
-          }
+          "code": "click",
         }
       }
     };
@@ -38,5 +46,8 @@ void main() {
     await tester.pump();
     expect(find.text("foo"), findsOneWidget);
     expect(find.byType(InkWell), findsOneWidget);
+
+    await tester.tap(find.byType(InkWell));
+    expect(listenerEntered, true);
   });
 }
