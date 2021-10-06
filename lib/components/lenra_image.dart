@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/lenra_application_model.dart';
-import 'lenra_component.dart';
 import '../lenra_component_builder.dart';
 import 'package:provider/provider.dart';
 
@@ -12,16 +11,16 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "path": "String",
-      "width": "double",
-      "height": "double",
+      "path": String,
+      "width": double,
+      "height": double,
     };
   }
 }
 
-class LenraApplicationImage extends StatelessLenraComponent {
+class LenraApplicationImage extends StatelessWidget {
   final String path;
   // TODO: For future features add handling for image resizing
   final double? height;

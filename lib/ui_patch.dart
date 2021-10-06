@@ -61,31 +61,6 @@ class UiPatchEvent {
     this.childId,
   );
 
-/*
-
-^(\/root(?:\/children\/\d+)*(?:\/children)?)((?:\/(?!children)(?:[\da-zA-Z_-])+)*)$
-
-Breaks apart : 
-^(\/root(?:\/children\/\d+)*(?:\/children)?)
-  => Start with /root (mandatory)
-  => can have 0 to N of :
-    => /children/xx
-
-((?:\/(?!children)(?:[\da-zA-Z_-])+)*)$
-  => 0 to N of : 
-   /<json_key>
-   Excepting /children
-
- /root/children/0/children/1 /value
- /root/children/0/children/1 /listeners/onClick/code
-
-^\/root(\/children\/\d+)+$ => /root/children/0/children/0
-^\/root(\/children\/\d+)*\/children$ => 
-/root/children/0/children
-/root/children
-
-*/
-
   factory UiPatchEvent.fromPatch(Map<String, dynamic> patch, Map<String, LenraWrapper> wrappers) {
     UIPatchOperation operation = (patch['op'] as String).toLenraUiPatchOperation();
     dynamic value = patch['value'];

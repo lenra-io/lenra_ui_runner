@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:showcase/ui_builder.dart';
 
 class RadioExample extends StatefulWidget {
@@ -81,7 +81,7 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
   }
 
   @override
-  getData(LenraEvent event) {
+  getData(Event event) {
     switch (event.code) {
       case "InitData":
         return "a";

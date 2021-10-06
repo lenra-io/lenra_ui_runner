@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_menu.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
-import 'lenra_component.dart';
 
 // TODO generate this from annotation on LenraMenu
 class LenraMenuBuilder extends LenraComponentBuilder<LenraApplicationMenu> {
@@ -11,14 +10,15 @@ class LenraMenuBuilder extends LenraComponentBuilder<LenraApplicationMenu> {
   }
 
   @override
-  Map<String, String> get propsTypes {
-    return {
-      "children": "List<Widget>",
-    };
+  Map<String, Type> get propsTypes {
+    return {};
   }
+
+  @override
+  List<String> get childrenKeys => ["children"];
 }
 
-class LenraApplicationMenu extends StatelessLenraComponent {
+class LenraApplicationMenu extends StatelessWidget {
   final List<Widget> children;
 
   LenraApplicationMenu({

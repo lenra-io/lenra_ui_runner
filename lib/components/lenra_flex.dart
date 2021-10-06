@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:lenra_components/layout/lenra_flex.dart';
-import 'package:lenra_ui_runner/components/lenra_component.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraFlex
@@ -30,15 +29,15 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "direction": "Axis",
-      "mainAxisAlignment": "MainAxisAlignment",
-      "crossAxisAlignment": "CrossAxisAlignment",
-      "spacing": "double",
-      "fillParent": "bool",
-      "scroll": "bool",
-      "padding": "EdgeInsets",
+      "direction": Axis,
+      "mainAxisAlignment": MainAxisAlignment,
+      "crossAxisAlignment": CrossAxisAlignment,
+      "spacing": double,
+      "fillParent": bool,
+      "scroll": bool,
+      "padding": EdgeInsets,
     };
   }
 
@@ -48,7 +47,7 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
   }
 }
 
-class LenraApplicationFlex extends StatelessLenraComponent {
+class LenraApplicationFlex extends StatelessWidget {
   final List<Widget> children;
   final Axis? direction;
   final MainAxisAlignment? mainAxisAlignment;

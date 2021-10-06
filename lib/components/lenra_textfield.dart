@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'events/lenra_on_edit_event.dart';
-import 'lenra_actionable.dart';
-import '../lenra_component.dart';
+import 'package:lenra_ui_runner/components/events/data/value_data.dart';
+import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
+import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import '../../lenra_component_builder.dart';
 import 'package:lenra_components/component/lenra_text_field.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
@@ -40,26 +40,26 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "value": "String",
-      "label": "String",
-      "hintText": "String",
-      "description": "String",
-      "errorMessage": "String",
-      "obscure": "bool",
-      "disabled": "bool",
-      "inRow": "bool",
-      "error": "bool",
-      "width": "double",
-      "onChanged": "Map<String, dynamic>",
-      "size": "LenraComponentSize"
+      "value": String,
+      "label": String,
+      "hintText": String,
+      "description": String,
+      "errorMessage": String,
+      "obscure": bool,
+      "disabled": bool,
+      "inRow": bool,
+      "error": bool,
+      "width": double,
+      "onChanged": Listener,
+      "size": LenraComponentSize
     };
   }
 }
 
 // ignore: must_be_immutable
-class LenraApplicationTextfield extends StatelessLenraComponent implements LenraActionable {
+class LenraApplicationTextfield extends StatelessWidget {
   String? label;
   String? hintText;
   String? description;
@@ -70,7 +70,7 @@ class LenraApplicationTextfield extends StatelessLenraComponent implements Lenra
   bool? error;
   double? width;
   LenraComponentSize? size;
-  final Map<String, dynamic>? onChanged;
+  final lenra.Listener? onChanged;
   final FocusNode _focusNode;
   final TextEditingController _controller;
 
@@ -103,8 +103,8 @@ class LenraApplicationTextfield extends StatelessLenraComponent implements Lenra
       inRow: inRow ?? false,
       error: error ?? false,
       onSubmitted: (value) {
-        if (onChanged != null && onChanged!.containsKey("code")) {
-          LenraOnEditEvent(code: onChanged!['code'], event: {'value': value}).dispatch(context);
+        if (onChanged != null) {
+          OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
         }
       },
       size: size ?? LenraComponentSize.medium,

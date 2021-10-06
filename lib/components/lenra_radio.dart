@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'events/lenra_on_change_event.dart';
-import 'lenra_actionable.dart';
-import '../lenra_component.dart';
+import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
+import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import '../../lenra_component_builder.dart';
 import 'package:lenra_components/component/lenra_radio.dart';
 
@@ -19,24 +18,23 @@ class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "value": "String",
-      "label": "String",
-      "groupValue": "String",
-      "disabled": "bool",
-      "onPressed": "Map<String, dynamic>",
+      "value": String,
+      "label": String,
+      "groupValue": String,
+      "disabled": bool,
+      "onPressed": Listener,
     };
   }
 }
 
-class LenraApplicationRadio extends StatelessLenraComponent
-    implements LenraActionable {
+class LenraApplicationRadio extends StatelessWidget {
   final String value;
   final String groupValue;
   final String? label;
   final bool? disabled;
-  final Map<String, dynamic>? onPressed;
+  final lenra.Listener? onPressed;
 
   LenraApplicationRadio({
     required this.value,
@@ -47,9 +45,8 @@ class LenraApplicationRadio extends StatelessLenraComponent
   });
 
   void onRadioPressed(BuildContext context) {
-    if (onPressed != null && onPressed!.containsKey("code")) {
-      LenraOnChangeEvent(code: onPressed!['code']!, event: {})
-          .dispatch(context);
+    if (onPressed != null) {
+      OnPressedEvent(code: onPressed!.code).dispatch(context);
     }
   }
 

@@ -18,8 +18,7 @@ class IconUtil {
     "access_time_filled": IconData(0xe03b, fontFamily: 'MaterialIcons'),
     "access_time_filled_sharp": IconData(0xe73a, fontFamily: 'MaterialIcons'),
     "access_time_filled_rounded": IconData(0xf519, fontFamily: 'MaterialIcons'),
-    "access_time_filled_outlined":
-        IconData(0xee2c, fontFamily: 'MaterialIcons'),
+    "access_time_filled_outlined": IconData(0xee2c, fontFamily: 'MaterialIcons'),
     "access_time_sharp": IconData(0xe73b, fontFamily: 'MaterialIcons'),
     "access_time_rounded": IconData(0xf51a, fontFamily: 'MaterialIcons'),
     "access_time_outlined": IconData(0xee2d, fontFamily: 'MaterialIcons'),
@@ -35,8 +34,7 @@ class IconUtil {
     "accessible_forward": IconData(0xe03f, fontFamily: 'MaterialIcons'),
     "accessible_forward_sharp": IconData(0xe73e, fontFamily: 'MaterialIcons'),
     "accessible_forward_rounded": IconData(0xf51d, fontFamily: 'MaterialIcons'),
-    "accessible_forward_outlined":
-        IconData(0xee30, fontFamily: 'MaterialIcons'),
+    "accessible_forward_outlined": IconData(0xee30, fontFamily: 'MaterialIcons'),
     "accessible_sharp": IconData(0xe73f, fontFamily: 'MaterialIcons'),
     "accessible_rounded": IconData(0xf51e, fontFamily: 'MaterialIcons'),
     "accessible_outlined": IconData(0xee31, fontFamily: 'MaterialIcons'),
@@ -45,12 +43,9 @@ class IconUtil {
     "account_balance_rounded": IconData(0xf51f, fontFamily: 'MaterialIcons'),
     "account_balance_outlined": IconData(0xee32, fontFamily: 'MaterialIcons'),
     "account_balance_wallet": IconData(0xe041, fontFamily: 'MaterialIcons'),
-    "account_balance_wallet_sharp":
-        IconData(0xe741, fontFamily: 'MaterialIcons'),
-    "account_balance_wallet_rounded":
-        IconData(0xf520, fontFamily: 'MaterialIcons'),
-    "account_balance_wallet_outlined":
-        IconData(0xee33, fontFamily: 'MaterialIcons'),
+    "account_balance_wallet_sharp": IconData(0xe741, fontFamily: 'MaterialIcons'),
+    "account_balance_wallet_rounded": IconData(0xf520, fontFamily: 'MaterialIcons'),
+    "account_balance_wallet_outlined": IconData(0xee33, fontFamily: 'MaterialIcons'),
     "account_box": IconData(0xe042, fontFamily: 'MaterialIcons'),
     "account_box_sharp": IconData(0xe742, fontFamily: 'MaterialIcons'),
     "account_box_rounded": IconData(0xf521, fontFamily: 'MaterialIcons'),
@@ -101,8 +96,7 @@ class IconUtil {
     "add_circle_outline": IconData(0xe050, fontFamily: 'MaterialIcons'),
     "add_circle_outline_sharp": IconData(0xe74d, fontFamily: 'MaterialIcons'),
     "add_circle_outline_rounded": IconData(0xf52c, fontFamily: 'MaterialIcons'),
-    "add_circle_outline_outlined":
-        IconData(0xee3f, fontFamily: 'MaterialIcons'),
+    "add_circle_outline_outlined": IconData(0xee3f, fontFamily: 'MaterialIcons'),
     "add_circle_sharp": IconData(0xe74e, fontFamily: 'MaterialIcons'),
     "add_circle_rounded": IconData(0xf52d, fontFamily: 'MaterialIcons'),
     "add_circle_outlined": IconData(0xee40, fontFamily: 'MaterialIcons'),
@@ -132,10 +126,8 @@ class IconUtil {
     "add_moderator_outlined": IconData(0xee46, fontFamily: 'MaterialIcons'),
     "add_photo_alternate": IconData(0xe057, fontFamily: 'MaterialIcons'),
     "add_photo_alternate_sharp": IconData(0xe755, fontFamily: 'MaterialIcons'),
-    "add_photo_alternate_rounded":
-        IconData(0xf534, fontFamily: 'MaterialIcons'),
-    "add_photo_alternate_outlined":
-        IconData(0xee48, fontFamily: 'MaterialIcons'),
+    "add_photo_alternate_rounded": IconData(0xf534, fontFamily: 'MaterialIcons'),
+    "add_photo_alternate_outlined": IconData(0xee48, fontFamily: 'MaterialIcons'),
     "add_reaction": IconData(0xe058, fontFamily: 'MaterialIcons'),
     "add_reaction_sharp": IconData(0xe756, fontFamily: 'MaterialIcons'),
     "add_reaction_rounded": IconData(0xf535, fontFamily: 'MaterialIcons'),
@@ -162,8 +154,7 @@ class IconUtil {
     "add_to_home_screen": IconData(0xe05d, fontFamily: 'MaterialIcons'),
     "add_to_home_screen_sharp": IconData(0xe75c, fontFamily: 'MaterialIcons'),
     "add_to_home_screen_rounded": IconData(0xf53b, fontFamily: 'MaterialIcons'),
-    "add_to_home_screen_outlined":
-        IconData(0xee4e, fontFamily: 'MaterialIcons'),
+    "add_to_home_screen_outlined": IconData(0xee4e, fontFamily: 'MaterialIcons'),
     "add_to_photos": IconData(0xe05e, fontFamily: 'MaterialIcons'),
     "add_to_photos_sharp": IconData(0xe75d, fontFamily: 'MaterialIcons'),
     "add_to_photos_rounded": IconData(0xf53c, fontFamily: 'MaterialIcons'),
@@ -182,10 +173,8 @@ class IconUtil {
     "adjust_outlined": IconData(0xee52, fontFamily: 'MaterialIcons'),
     "admin_panel_settings": IconData(0xe062, fontFamily: 'MaterialIcons'),
     "admin_panel_settings_sharp": IconData(0xe761, fontFamily: 'MaterialIcons'),
-    "admin_panel_settings_rounded":
-        IconData(0xf540, fontFamily: 'MaterialIcons'),
-    "admin_panel_settings_outlined":
-        IconData(0xee53, fontFamily: 'MaterialIcons'),
+    "admin_panel_settings_rounded": IconData(0xf540, fontFamily: 'MaterialIcons'),
+    "admin_panel_settings_outlined": IconData(0xee53, fontFamily: 'MaterialIcons'),
     "agriculture": IconData(0xe063, fontFamily: 'MaterialIcons'),
     "agriculture_sharp": IconData(0xe762, fontFamily: 'MaterialIcons'),
     "agriculture_rounded": IconData(0xf541, fontFamily: 'MaterialIcons'),
@@ -196,78 +185,48 @@ class IconUtil {
     "air_outlined": IconData(0xee55, fontFamily: 'MaterialIcons'),
     "airline_seat_flat": IconData(0xe065, fontFamily: 'MaterialIcons'),
     "airline_seat_flat_angled": IconData(0xe066, fontFamily: 'MaterialIcons'),
-    "airline_seat_flat_angled_sharp":
-        IconData(0xe764, fontFamily: 'MaterialIcons'),
-    "airline_seat_flat_angled_rounded":
-        IconData(0xf543, fontFamily: 'MaterialIcons'),
-    "airline_seat_flat_angled_outlined":
-        IconData(0xee56, fontFamily: 'MaterialIcons'),
+    "airline_seat_flat_angled_sharp": IconData(0xe764, fontFamily: 'MaterialIcons'),
+    "airline_seat_flat_angled_rounded": IconData(0xf543, fontFamily: 'MaterialIcons'),
+    "airline_seat_flat_angled_outlined": IconData(0xee56, fontFamily: 'MaterialIcons'),
     "airline_seat_flat_sharp": IconData(0xe765, fontFamily: 'MaterialIcons'),
     "airline_seat_flat_rounded": IconData(0xf544, fontFamily: 'MaterialIcons'),
     "airline_seat_flat_outlined": IconData(0xee57, fontFamily: 'MaterialIcons'),
-    "airline_seat_individual_suite":
-        IconData(0xe067, fontFamily: 'MaterialIcons'),
-    "airline_seat_individual_suite_sharp":
-        IconData(0xe766, fontFamily: 'MaterialIcons'),
-    "airline_seat_individual_suite_rounded":
-        IconData(0xf545, fontFamily: 'MaterialIcons'),
-    "airline_seat_individual_suite_outlined":
-        IconData(0xee58, fontFamily: 'MaterialIcons'),
+    "airline_seat_individual_suite": IconData(0xe067, fontFamily: 'MaterialIcons'),
+    "airline_seat_individual_suite_sharp": IconData(0xe766, fontFamily: 'MaterialIcons'),
+    "airline_seat_individual_suite_rounded": IconData(0xf545, fontFamily: 'MaterialIcons'),
+    "airline_seat_individual_suite_outlined": IconData(0xee58, fontFamily: 'MaterialIcons'),
     "airline_seat_legroom_extra": IconData(0xe068, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_extra_sharp":
-        IconData(0xe767, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_extra_rounded":
-        IconData(0xf546, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_extra_outlined":
-        IconData(0xee59, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_normal":
-        IconData(0xe069, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_normal_sharp":
-        IconData(0xe768, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_normal_rounded":
-        IconData(0xf547, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_normal_outlined":
-        IconData(0xee5a, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_reduced":
-        IconData(0xe06a, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_reduced_sharp":
-        IconData(0xe769, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_reduced_rounded":
-        IconData(0xf548, fontFamily: 'MaterialIcons'),
-    "airline_seat_legroom_reduced_outlined":
-        IconData(0xee5b, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_extra_sharp": IconData(0xe767, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_extra_rounded": IconData(0xf546, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_extra_outlined": IconData(0xee59, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_normal": IconData(0xe069, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_normal_sharp": IconData(0xe768, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_normal_rounded": IconData(0xf547, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_normal_outlined": IconData(0xee5a, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_reduced": IconData(0xe06a, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_reduced_sharp": IconData(0xe769, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_reduced_rounded": IconData(0xf548, fontFamily: 'MaterialIcons'),
+    "airline_seat_legroom_reduced_outlined": IconData(0xee5b, fontFamily: 'MaterialIcons'),
     "airline_seat_recline_extra": IconData(0xe06b, fontFamily: 'MaterialIcons'),
-    "airline_seat_recline_extra_sharp":
-        IconData(0xe76a, fontFamily: 'MaterialIcons'),
-    "airline_seat_recline_extra_rounded":
-        IconData(0xf549, fontFamily: 'MaterialIcons'),
-    "airline_seat_recline_extra_outlined":
-        IconData(0xee5c, fontFamily: 'MaterialIcons'),
-    "airline_seat_recline_normal":
-        IconData(0xe06c, fontFamily: 'MaterialIcons'),
-    "airline_seat_recline_normal_sharp":
-        IconData(0xe76b, fontFamily: 'MaterialIcons'),
-    "airline_seat_recline_normal_rounded":
-        IconData(0xf54a, fontFamily: 'MaterialIcons'),
-    "airline_seat_recline_normal_outlined":
-        IconData(0xee5d, fontFamily: 'MaterialIcons'),
+    "airline_seat_recline_extra_sharp": IconData(0xe76a, fontFamily: 'MaterialIcons'),
+    "airline_seat_recline_extra_rounded": IconData(0xf549, fontFamily: 'MaterialIcons'),
+    "airline_seat_recline_extra_outlined": IconData(0xee5c, fontFamily: 'MaterialIcons'),
+    "airline_seat_recline_normal": IconData(0xe06c, fontFamily: 'MaterialIcons'),
+    "airline_seat_recline_normal_sharp": IconData(0xe76b, fontFamily: 'MaterialIcons'),
+    "airline_seat_recline_normal_rounded": IconData(0xf54a, fontFamily: 'MaterialIcons'),
+    "airline_seat_recline_normal_outlined": IconData(0xee5d, fontFamily: 'MaterialIcons'),
     "airplane_ticket": IconData(0xe06d, fontFamily: 'MaterialIcons'),
     "airplane_ticket_sharp": IconData(0xe76c, fontFamily: 'MaterialIcons'),
     "airplane_ticket_rounded": IconData(0xf54b, fontFamily: 'MaterialIcons'),
     "airplane_ticket_outlined": IconData(0xee5e, fontFamily: 'MaterialIcons'),
     "airplanemode_active": IconData(0xe06e, fontFamily: 'MaterialIcons'),
     "airplanemode_active_sharp": IconData(0xe76d, fontFamily: 'MaterialIcons'),
-    "airplanemode_active_rounded":
-        IconData(0xf54c, fontFamily: 'MaterialIcons'),
-    "airplanemode_active_outlined":
-        IconData(0xee5f, fontFamily: 'MaterialIcons'),
+    "airplanemode_active_rounded": IconData(0xf54c, fontFamily: 'MaterialIcons'),
+    "airplanemode_active_outlined": IconData(0xee5f, fontFamily: 'MaterialIcons'),
     "airplanemode_inactive": IconData(0xe06f, fontFamily: 'MaterialIcons'),
-    "airplanemode_inactive_sharp":
-        IconData(0xe76e, fontFamily: 'MaterialIcons'),
-    "airplanemode_inactive_rounded":
-        IconData(0xf54d, fontFamily: 'MaterialIcons'),
-    "airplanemode_inactive_outlined":
-        IconData(0xee60, fontFamily: 'MaterialIcons'),
+    "airplanemode_inactive_sharp": IconData(0xe76e, fontFamily: 'MaterialIcons'),
+    "airplanemode_inactive_rounded": IconData(0xf54d, fontFamily: 'MaterialIcons'),
+    "airplanemode_inactive_outlined": IconData(0xee60, fontFamily: 'MaterialIcons'),
     "airplanemode_off": IconData(0xe06f, fontFamily: 'MaterialIcons'),
     "airplanemode_off_sharp": IconData(0xe76e, fontFamily: 'MaterialIcons'),
     "airplanemode_off_rounded": IconData(0xf54d, fontFamily: 'MaterialIcons'),
@@ -305,45 +264,29 @@ class IconUtil {
     "album_rounded": IconData(0xf554, fontFamily: 'MaterialIcons'),
     "album_outlined": IconData(0xee67, fontFamily: 'MaterialIcons'),
     "align_horizontal_center": IconData(0xe077, fontFamily: 'MaterialIcons'),
-    "align_horizontal_center_sharp":
-        IconData(0xe776, fontFamily: 'MaterialIcons'),
-    "align_horizontal_center_rounded":
-        IconData(0xf555, fontFamily: 'MaterialIcons'),
-    "align_horizontal_center_outlined":
-        IconData(0xee68, fontFamily: 'MaterialIcons'),
+    "align_horizontal_center_sharp": IconData(0xe776, fontFamily: 'MaterialIcons'),
+    "align_horizontal_center_rounded": IconData(0xf555, fontFamily: 'MaterialIcons'),
+    "align_horizontal_center_outlined": IconData(0xee68, fontFamily: 'MaterialIcons'),
     "align_horizontal_left": IconData(0xe078, fontFamily: 'MaterialIcons'),
-    "align_horizontal_left_sharp":
-        IconData(0xe777, fontFamily: 'MaterialIcons'),
-    "align_horizontal_left_rounded":
-        IconData(0xf556, fontFamily: 'MaterialIcons'),
-    "align_horizontal_left_outlined":
-        IconData(0xee69, fontFamily: 'MaterialIcons'),
+    "align_horizontal_left_sharp": IconData(0xe777, fontFamily: 'MaterialIcons'),
+    "align_horizontal_left_rounded": IconData(0xf556, fontFamily: 'MaterialIcons'),
+    "align_horizontal_left_outlined": IconData(0xee69, fontFamily: 'MaterialIcons'),
     "align_horizontal_right": IconData(0xe079, fontFamily: 'MaterialIcons'),
-    "align_horizontal_right_sharp":
-        IconData(0xe778, fontFamily: 'MaterialIcons'),
-    "align_horizontal_right_rounded":
-        IconData(0xf557, fontFamily: 'MaterialIcons'),
-    "align_horizontal_right_outlined":
-        IconData(0xee6a, fontFamily: 'MaterialIcons'),
+    "align_horizontal_right_sharp": IconData(0xe778, fontFamily: 'MaterialIcons'),
+    "align_horizontal_right_rounded": IconData(0xf557, fontFamily: 'MaterialIcons'),
+    "align_horizontal_right_outlined": IconData(0xee6a, fontFamily: 'MaterialIcons'),
     "align_vertical_bottom": IconData(0xe07a, fontFamily: 'MaterialIcons'),
-    "align_vertical_bottom_sharp":
-        IconData(0xe779, fontFamily: 'MaterialIcons'),
-    "align_vertical_bottom_rounded":
-        IconData(0xf558, fontFamily: 'MaterialIcons'),
-    "align_vertical_bottom_outlined":
-        IconData(0xee6b, fontFamily: 'MaterialIcons'),
+    "align_vertical_bottom_sharp": IconData(0xe779, fontFamily: 'MaterialIcons'),
+    "align_vertical_bottom_rounded": IconData(0xf558, fontFamily: 'MaterialIcons'),
+    "align_vertical_bottom_outlined": IconData(0xee6b, fontFamily: 'MaterialIcons'),
     "align_vertical_center": IconData(0xe07b, fontFamily: 'MaterialIcons'),
-    "align_vertical_center_sharp":
-        IconData(0xe77a, fontFamily: 'MaterialIcons'),
-    "align_vertical_center_rounded":
-        IconData(0xf559, fontFamily: 'MaterialIcons'),
-    "align_vertical_center_outlined":
-        IconData(0xee6c, fontFamily: 'MaterialIcons'),
+    "align_vertical_center_sharp": IconData(0xe77a, fontFamily: 'MaterialIcons'),
+    "align_vertical_center_rounded": IconData(0xf559, fontFamily: 'MaterialIcons'),
+    "align_vertical_center_outlined": IconData(0xee6c, fontFamily: 'MaterialIcons'),
     "align_vertical_top": IconData(0xe07c, fontFamily: 'MaterialIcons'),
     "align_vertical_top_sharp": IconData(0xe77b, fontFamily: 'MaterialIcons'),
     "align_vertical_top_rounded": IconData(0xf55a, fontFamily: 'MaterialIcons'),
-    "align_vertical_top_outlined":
-        IconData(0xee6d, fontFamily: 'MaterialIcons'),
+    "align_vertical_top_outlined": IconData(0xee6d, fontFamily: 'MaterialIcons'),
     "all_inbox": IconData(0xe07d, fontFamily: 'MaterialIcons'),
     "all_inbox_sharp": IconData(0xe77c, fontFamily: 'MaterialIcons'),
     "all_inbox_rounded": IconData(0xf55b, fontFamily: 'MaterialIcons'),
@@ -428,27 +371,18 @@ class IconUtil {
     "archive_sharp": IconData(0xe790, fontFamily: 'MaterialIcons'),
     "archive_rounded": IconData(0xf56f, fontFamily: 'MaterialIcons'),
     "archive_outlined": IconData(0xee82, fontFamily: 'MaterialIcons'),
-    "arrow_back":
-        IconData(0xe092, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_back_ios":
-        IconData(0xe093, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_back": IconData(0xe092, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_back_ios": IconData(0xe093, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "arrow_back_ios_new": IconData(0xe094, fontFamily: 'MaterialIcons'),
     "arrow_back_ios_new_sharp": IconData(0xe791, fontFamily: 'MaterialIcons'),
     "arrow_back_ios_new_rounded": IconData(0xf570, fontFamily: 'MaterialIcons'),
-    "arrow_back_ios_new_outlined":
-        IconData(0xee83, fontFamily: 'MaterialIcons'),
-    "arrow_back_ios_sharp":
-        IconData(0xe792, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_back_ios_rounded":
-        IconData(0xf571, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_back_ios_outlined":
-        IconData(0xee84, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_back_sharp":
-        IconData(0xe793, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_back_rounded":
-        IconData(0xf572, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_back_outlined":
-        IconData(0xee85, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_back_ios_new_outlined": IconData(0xee83, fontFamily: 'MaterialIcons'),
+    "arrow_back_ios_sharp": IconData(0xe792, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_back_ios_rounded": IconData(0xf571, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_back_ios_outlined": IconData(0xee84, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_back_sharp": IconData(0xe793, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_back_rounded": IconData(0xf572, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_back_outlined": IconData(0xee85, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "arrow_circle_down": IconData(0xe095, fontFamily: 'MaterialIcons'),
     "arrow_circle_down_sharp": IconData(0xe794, fontFamily: 'MaterialIcons'),
     "arrow_circle_down_rounded": IconData(0xf573, fontFamily: 'MaterialIcons'),
@@ -463,12 +397,9 @@ class IconUtil {
     "arrow_downward_outlined": IconData(0xee88, fontFamily: 'MaterialIcons'),
     "arrow_drop_down": IconData(0xe098, fontFamily: 'MaterialIcons'),
     "arrow_drop_down_circle": IconData(0xe099, fontFamily: 'MaterialIcons'),
-    "arrow_drop_down_circle_sharp":
-        IconData(0xe797, fontFamily: 'MaterialIcons'),
-    "arrow_drop_down_circle_rounded":
-        IconData(0xf576, fontFamily: 'MaterialIcons'),
-    "arrow_drop_down_circle_outlined":
-        IconData(0xee89, fontFamily: 'MaterialIcons'),
+    "arrow_drop_down_circle_sharp": IconData(0xe797, fontFamily: 'MaterialIcons'),
+    "arrow_drop_down_circle_rounded": IconData(0xf576, fontFamily: 'MaterialIcons'),
+    "arrow_drop_down_circle_outlined": IconData(0xee89, fontFamily: 'MaterialIcons'),
     "arrow_drop_down_sharp": IconData(0xe798, fontFamily: 'MaterialIcons'),
     "arrow_drop_down_rounded": IconData(0xf577, fontFamily: 'MaterialIcons'),
     "arrow_drop_down_outlined": IconData(0xee8a, fontFamily: 'MaterialIcons'),
@@ -476,42 +407,26 @@ class IconUtil {
     "arrow_drop_up_sharp": IconData(0xe799, fontFamily: 'MaterialIcons'),
     "arrow_drop_up_rounded": IconData(0xf578, fontFamily: 'MaterialIcons'),
     "arrow_drop_up_outlined": IconData(0xee8b, fontFamily: 'MaterialIcons'),
-    "arrow_forward":
-        IconData(0xe09b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_forward_ios":
-        IconData(0xe09c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_forward_ios_sharp":
-        IconData(0xe79a, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_forward_ios_rounded":
-        IconData(0xf579, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_forward_ios_outlined":
-        IconData(0xee8c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_forward_sharp":
-        IconData(0xe79b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_forward_rounded":
-        IconData(0xf57a, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_forward_outlined":
-        IconData(0xee8d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_left":
-        IconData(0xe09d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_left_sharp":
-        IconData(0xe79c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_left_rounded":
-        IconData(0xf57b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_left_outlined":
-        IconData(0xee8e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_right":
-        IconData(0xe09e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_forward": IconData(0xe09b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_forward_ios": IconData(0xe09c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_forward_ios_sharp": IconData(0xe79a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_forward_ios_rounded": IconData(0xf579, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_forward_ios_outlined": IconData(0xee8c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_forward_sharp": IconData(0xe79b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_forward_rounded": IconData(0xf57a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_forward_outlined": IconData(0xee8d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_left": IconData(0xe09d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_left_sharp": IconData(0xe79c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_left_rounded": IconData(0xf57b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_left_outlined": IconData(0xee8e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_right": IconData(0xe09e, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "arrow_right_alt": IconData(0xe09f, fontFamily: 'MaterialIcons'),
     "arrow_right_alt_sharp": IconData(0xe79d, fontFamily: 'MaterialIcons'),
     "arrow_right_alt_rounded": IconData(0xf57c, fontFamily: 'MaterialIcons'),
     "arrow_right_alt_outlined": IconData(0xee8f, fontFamily: 'MaterialIcons'),
-    "arrow_right_sharp":
-        IconData(0xe79e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_right_rounded":
-        IconData(0xf57d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "arrow_right_outlined":
-        IconData(0xee90, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_right_sharp": IconData(0xe79e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_right_rounded": IconData(0xf57d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "arrow_right_outlined": IconData(0xee90, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "arrow_upward": IconData(0xe0a0, fontFamily: 'MaterialIcons'),
     "arrow_upward_sharp": IconData(0xe79f, fontFamily: 'MaterialIcons'),
     "arrow_upward_rounded": IconData(0xf57e, fontFamily: 'MaterialIcons'),
@@ -532,8 +447,7 @@ class IconUtil {
     "assessment_sharp": IconData(0xe7a3, fontFamily: 'MaterialIcons'),
     "assessment_rounded": IconData(0xf582, fontFamily: 'MaterialIcons'),
     "assessment_outlined": IconData(0xee95, fontFamily: 'MaterialIcons'),
-    "assignment":
-        IconData(0xe0a5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "assignment": IconData(0xe0a5, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "assignment_ind": IconData(0xe0a6, fontFamily: 'MaterialIcons'),
     "assignment_ind_sharp": IconData(0xe7a4, fontFamily: 'MaterialIcons'),
     "assignment_ind_rounded": IconData(0xf583, fontFamily: 'MaterialIcons'),
@@ -542,39 +456,26 @@ class IconUtil {
     "assignment_late_sharp": IconData(0xe7a5, fontFamily: 'MaterialIcons'),
     "assignment_late_rounded": IconData(0xf584, fontFamily: 'MaterialIcons'),
     "assignment_late_outlined": IconData(0xee97, fontFamily: 'MaterialIcons'),
-    "assignment_outlined":
-        IconData(0xee98, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "assignment_return":
-        IconData(0xe0a8, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "assignment_return_sharp":
-        IconData(0xe7a6, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "assignment_return_rounded":
-        IconData(0xf585, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "assignment_return_outlined":
-        IconData(0xee99, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "assignment_outlined": IconData(0xee98, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "assignment_return": IconData(0xe0a8, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "assignment_return_sharp": IconData(0xe7a6, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "assignment_return_rounded": IconData(0xf585, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "assignment_return_outlined": IconData(0xee99, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "assignment_returned": IconData(0xe0a9, fontFamily: 'MaterialIcons'),
     "assignment_returned_sharp": IconData(0xe7a7, fontFamily: 'MaterialIcons'),
-    "assignment_returned_rounded":
-        IconData(0xf586, fontFamily: 'MaterialIcons'),
-    "assignment_returned_outlined":
-        IconData(0xee9a, fontFamily: 'MaterialIcons'),
-    "assignment_sharp":
-        IconData(0xe7a8, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "assignment_rounded":
-        IconData(0xf587, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "assignment_returned_rounded": IconData(0xf586, fontFamily: 'MaterialIcons'),
+    "assignment_returned_outlined": IconData(0xee9a, fontFamily: 'MaterialIcons'),
+    "assignment_sharp": IconData(0xe7a8, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "assignment_rounded": IconData(0xf587, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "assignment_turned_in": IconData(0xe0aa, fontFamily: 'MaterialIcons'),
     "assignment_turned_in_sharp": IconData(0xe7a9, fontFamily: 'MaterialIcons'),
-    "assignment_turned_in_rounded":
-        IconData(0xf588, fontFamily: 'MaterialIcons'),
-    "assignment_turned_in_outlined":
-        IconData(0xee9b, fontFamily: 'MaterialIcons'),
+    "assignment_turned_in_rounded": IconData(0xf588, fontFamily: 'MaterialIcons'),
+    "assignment_turned_in_outlined": IconData(0xee9b, fontFamily: 'MaterialIcons'),
     "assistant": IconData(0xe0ab, fontFamily: 'MaterialIcons'),
     "assistant_direction": IconData(0xe0ac, fontFamily: 'MaterialIcons'),
     "assistant_direction_sharp": IconData(0xe7aa, fontFamily: 'MaterialIcons'),
-    "assistant_direction_rounded":
-        IconData(0xf589, fontFamily: 'MaterialIcons'),
-    "assistant_direction_outlined":
-        IconData(0xee9c, fontFamily: 'MaterialIcons'),
+    "assistant_direction_rounded": IconData(0xf589, fontFamily: 'MaterialIcons'),
+    "assistant_direction_outlined": IconData(0xee9c, fontFamily: 'MaterialIcons'),
     "assistant_navigation": IconData(0xe0ad, fontFamily: 'MaterialIcons'),
     "assistant_photo": IconData(0xe0ae, fontFamily: 'MaterialIcons'),
     "assistant_photo_sharp": IconData(0xe7ab, fontFamily: 'MaterialIcons'),
@@ -618,16 +519,12 @@ class IconUtil {
     "auto_awesome": IconData(0xe0b7, fontFamily: 'MaterialIcons'),
     "auto_awesome_mosaic": IconData(0xe0b8, fontFamily: 'MaterialIcons'),
     "auto_awesome_mosaic_sharp": IconData(0xe7b5, fontFamily: 'MaterialIcons'),
-    "auto_awesome_mosaic_rounded":
-        IconData(0xf594, fontFamily: 'MaterialIcons'),
-    "auto_awesome_mosaic_outlined":
-        IconData(0xeea7, fontFamily: 'MaterialIcons'),
+    "auto_awesome_mosaic_rounded": IconData(0xf594, fontFamily: 'MaterialIcons'),
+    "auto_awesome_mosaic_outlined": IconData(0xeea7, fontFamily: 'MaterialIcons'),
     "auto_awesome_motion": IconData(0xe0b9, fontFamily: 'MaterialIcons'),
     "auto_awesome_motion_sharp": IconData(0xe7b6, fontFamily: 'MaterialIcons'),
-    "auto_awesome_motion_rounded":
-        IconData(0xf595, fontFamily: 'MaterialIcons'),
-    "auto_awesome_motion_outlined":
-        IconData(0xeea8, fontFamily: 'MaterialIcons'),
+    "auto_awesome_motion_rounded": IconData(0xf595, fontFamily: 'MaterialIcons'),
+    "auto_awesome_motion_outlined": IconData(0xeea8, fontFamily: 'MaterialIcons'),
     "auto_awesome_sharp": IconData(0xe7b7, fontFamily: 'MaterialIcons'),
     "auto_awesome_rounded": IconData(0xf596, fontFamily: 'MaterialIcons'),
     "auto_awesome_outlined": IconData(0xeea9, fontFamily: 'MaterialIcons'),
@@ -668,24 +565,17 @@ class IconUtil {
     "av_timer_rounded": IconData(0xf59f, fontFamily: 'MaterialIcons'),
     "av_timer_outlined": IconData(0xeeb2, fontFamily: 'MaterialIcons'),
     "baby_changing_station": IconData(0xe0c3, fontFamily: 'MaterialIcons'),
-    "baby_changing_station_sharp":
-        IconData(0xe7c1, fontFamily: 'MaterialIcons'),
-    "baby_changing_station_rounded":
-        IconData(0xf5a0, fontFamily: 'MaterialIcons'),
-    "baby_changing_station_outlined":
-        IconData(0xeeb3, fontFamily: 'MaterialIcons'),
+    "baby_changing_station_sharp": IconData(0xe7c1, fontFamily: 'MaterialIcons'),
+    "baby_changing_station_rounded": IconData(0xf5a0, fontFamily: 'MaterialIcons'),
+    "baby_changing_station_outlined": IconData(0xeeb3, fontFamily: 'MaterialIcons'),
     "backpack": IconData(0xe0c4, fontFamily: 'MaterialIcons'),
     "backpack_sharp": IconData(0xe7c2, fontFamily: 'MaterialIcons'),
     "backpack_rounded": IconData(0xf5a1, fontFamily: 'MaterialIcons'),
     "backpack_outlined": IconData(0xeeb4, fontFamily: 'MaterialIcons'),
-    "backspace":
-        IconData(0xe0c5, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "backspace_sharp":
-        IconData(0xe7c3, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "backspace_rounded":
-        IconData(0xf5a2, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "backspace_outlined":
-        IconData(0xeeb5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "backspace": IconData(0xe0c5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "backspace_sharp": IconData(0xe7c3, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "backspace_rounded": IconData(0xf5a2, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "backspace_outlined": IconData(0xeeb5, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "backup": IconData(0xe0c6, fontFamily: 'MaterialIcons'),
     "backup_sharp": IconData(0xe7c4, fontFamily: 'MaterialIcons'),
     "backup_rounded": IconData(0xf5a3, fontFamily: 'MaterialIcons'),
@@ -731,12 +621,9 @@ class IconUtil {
     "battery_alert_rounded": IconData(0xf5ad, fontFamily: 'MaterialIcons'),
     "battery_alert_outlined": IconData(0xeec0, fontFamily: 'MaterialIcons'),
     "battery_charging_full": IconData(0xe0d1, fontFamily: 'MaterialIcons'),
-    "battery_charging_full_sharp":
-        IconData(0xe7cf, fontFamily: 'MaterialIcons'),
-    "battery_charging_full_rounded":
-        IconData(0xf5ae, fontFamily: 'MaterialIcons'),
-    "battery_charging_full_outlined":
-        IconData(0xeec1, fontFamily: 'MaterialIcons'),
+    "battery_charging_full_sharp": IconData(0xe7cf, fontFamily: 'MaterialIcons'),
+    "battery_charging_full_rounded": IconData(0xf5ae, fontFamily: 'MaterialIcons'),
+    "battery_charging_full_outlined": IconData(0xeec1, fontFamily: 'MaterialIcons'),
     "battery_full": IconData(0xe0d2, fontFamily: 'MaterialIcons'),
     "battery_full_sharp": IconData(0xe7d0, fontFamily: 'MaterialIcons'),
     "battery_full_rounded": IconData(0xf5af, fontFamily: 'MaterialIcons'),
@@ -749,14 +636,10 @@ class IconUtil {
     "battery_std_sharp": IconData(0xe7d2, fontFamily: 'MaterialIcons'),
     "battery_std_rounded": IconData(0xf5b1, fontFamily: 'MaterialIcons'),
     "battery_std_outlined": IconData(0xeec4, fontFamily: 'MaterialIcons'),
-    "battery_unknown":
-        IconData(0xe0d5, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "battery_unknown_sharp":
-        IconData(0xe7d3, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "battery_unknown_rounded":
-        IconData(0xf5b2, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "battery_unknown_outlined":
-        IconData(0xeec5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "battery_unknown": IconData(0xe0d5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "battery_unknown_sharp": IconData(0xe7d3, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "battery_unknown_rounded": IconData(0xf5b2, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "battery_unknown_outlined": IconData(0xeec5, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "beach_access": IconData(0xe0d6, fontFamily: 'MaterialIcons'),
     "beach_access_sharp": IconData(0xe7d4, fontFamily: 'MaterialIcons'),
     "beach_access_rounded": IconData(0xf5b3, fontFamily: 'MaterialIcons'),
@@ -817,15 +700,12 @@ class IconUtil {
     "bluetooth_audio_outlined": IconData(0xeed3, fontFamily: 'MaterialIcons'),
     "bluetooth_connected": IconData(0xe0e6, fontFamily: 'MaterialIcons'),
     "bluetooth_connected_sharp": IconData(0xe7e2, fontFamily: 'MaterialIcons'),
-    "bluetooth_connected_rounded":
-        IconData(0xf5c1, fontFamily: 'MaterialIcons'),
-    "bluetooth_connected_outlined":
-        IconData(0xeed4, fontFamily: 'MaterialIcons'),
+    "bluetooth_connected_rounded": IconData(0xf5c1, fontFamily: 'MaterialIcons'),
+    "bluetooth_connected_outlined": IconData(0xeed4, fontFamily: 'MaterialIcons'),
     "bluetooth_disabled": IconData(0xe0e7, fontFamily: 'MaterialIcons'),
     "bluetooth_disabled_sharp": IconData(0xe7e3, fontFamily: 'MaterialIcons'),
     "bluetooth_disabled_rounded": IconData(0xf5c2, fontFamily: 'MaterialIcons'),
-    "bluetooth_disabled_outlined":
-        IconData(0xeed5, fontFamily: 'MaterialIcons'),
+    "bluetooth_disabled_outlined": IconData(0xeed5, fontFamily: 'MaterialIcons'),
     "bluetooth_drive": IconData(0xe0e8, fontFamily: 'MaterialIcons'),
     "bluetooth_drive_sharp": IconData(0xe7e4, fontFamily: 'MaterialIcons'),
     "bluetooth_drive_rounded": IconData(0xf5c3, fontFamily: 'MaterialIcons'),
@@ -834,10 +714,8 @@ class IconUtil {
     "bluetooth_outlined": IconData(0xeed7, fontFamily: 'MaterialIcons'),
     "bluetooth_searching": IconData(0xe0e9, fontFamily: 'MaterialIcons'),
     "bluetooth_searching_sharp": IconData(0xe7e5, fontFamily: 'MaterialIcons'),
-    "bluetooth_searching_rounded":
-        IconData(0xf5c5, fontFamily: 'MaterialIcons'),
-    "bluetooth_searching_outlined":
-        IconData(0xeed8, fontFamily: 'MaterialIcons'),
+    "bluetooth_searching_rounded": IconData(0xf5c5, fontFamily: 'MaterialIcons'),
+    "bluetooth_searching_outlined": IconData(0xeed8, fontFamily: 'MaterialIcons'),
     "bluetooth_sharp": IconData(0xe7e6, fontFamily: 'MaterialIcons'),
     "blur_circular": IconData(0xe0ea, fontFamily: 'MaterialIcons'),
     "blur_circular_sharp": IconData(0xe7e7, fontFamily: 'MaterialIcons'),
@@ -946,8 +824,7 @@ class IconUtil {
     "branding_watermark": IconData(0xe103, fontFamily: 'MaterialIcons'),
     "branding_watermark_sharp": IconData(0xe800, fontFamily: 'MaterialIcons'),
     "branding_watermark_rounded": IconData(0xf5df, fontFamily: 'MaterialIcons'),
-    "branding_watermark_outlined":
-        IconData(0xeef2, fontFamily: 'MaterialIcons'),
+    "branding_watermark_outlined": IconData(0xeef2, fontFamily: 'MaterialIcons'),
     "breakfast_dining": IconData(0xe104, fontFamily: 'MaterialIcons'),
     "breakfast_dining_sharp": IconData(0xe801, fontFamily: 'MaterialIcons'),
     "breakfast_dining_rounded": IconData(0xf5e0, fontFamily: 'MaterialIcons'),
@@ -1001,12 +878,9 @@ class IconUtil {
     "broken_image_rounded": IconData(0xf5ec, fontFamily: 'MaterialIcons'),
     "broken_image_outlined": IconData(0xeeff, fontFamily: 'MaterialIcons'),
     "browser_not_supported": IconData(0xe111, fontFamily: 'MaterialIcons'),
-    "browser_not_supported_sharp":
-        IconData(0xe80e, fontFamily: 'MaterialIcons'),
-    "browser_not_supported_rounded":
-        IconData(0xf5ed, fontFamily: 'MaterialIcons'),
-    "browser_not_supported_outlined":
-        IconData(0xef00, fontFamily: 'MaterialIcons'),
+    "browser_not_supported_sharp": IconData(0xe80e, fontFamily: 'MaterialIcons'),
+    "browser_not_supported_rounded": IconData(0xf5ed, fontFamily: 'MaterialIcons'),
+    "browser_not_supported_outlined": IconData(0xef00, fontFamily: 'MaterialIcons'),
     "brunch_dining": IconData(0xe112, fontFamily: 'MaterialIcons'),
     "brunch_dining_sharp": IconData(0xe80f, fontFamily: 'MaterialIcons'),
     "brunch_dining_rounded": IconData(0xf5ee, fontFamily: 'MaterialIcons'),
@@ -1081,71 +955,44 @@ class IconUtil {
     "calendar_view_day_outlined": IconData(0xef12, fontFamily: 'MaterialIcons'),
     "calendar_view_month": IconData(0xe124, fontFamily: 'MaterialIcons'),
     "calendar_view_month_sharp": IconData(0xe821, fontFamily: 'MaterialIcons'),
-    "calendar_view_month_rounded":
-        IconData(0xf600, fontFamily: 'MaterialIcons'),
-    "calendar_view_month_outlined":
-        IconData(0xef13, fontFamily: 'MaterialIcons'),
+    "calendar_view_month_rounded": IconData(0xf600, fontFamily: 'MaterialIcons'),
+    "calendar_view_month_outlined": IconData(0xef13, fontFamily: 'MaterialIcons'),
     "calendar_view_week": IconData(0xe125, fontFamily: 'MaterialIcons'),
     "calendar_view_week_sharp": IconData(0xe822, fontFamily: 'MaterialIcons'),
     "calendar_view_week_rounded": IconData(0xf601, fontFamily: 'MaterialIcons'),
-    "calendar_view_week_outlined":
-        IconData(0xef14, fontFamily: 'MaterialIcons'),
+    "calendar_view_week_outlined": IconData(0xef14, fontFamily: 'MaterialIcons'),
     "call": IconData(0xe126, fontFamily: 'MaterialIcons'),
     "call_end": IconData(0xe127, fontFamily: 'MaterialIcons'),
     "call_end_sharp": IconData(0xe823, fontFamily: 'MaterialIcons'),
     "call_end_rounded": IconData(0xf602, fontFamily: 'MaterialIcons'),
     "call_end_outlined": IconData(0xef15, fontFamily: 'MaterialIcons'),
-    "call_made":
-        IconData(0xe128, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_made_sharp":
-        IconData(0xe824, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_made_rounded":
-        IconData(0xf603, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_made_outlined":
-        IconData(0xef16, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_merge":
-        IconData(0xe129, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_merge_sharp":
-        IconData(0xe825, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_merge_rounded":
-        IconData(0xf604, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_merge_outlined":
-        IconData(0xef17, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_missed":
-        IconData(0xe12a, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_missed_outgoing":
-        IconData(0xe12b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_missed_outgoing_sharp":
-        IconData(0xe826, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_missed_outgoing_rounded":
-        IconData(0xf605, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_missed_outgoing_outlined":
-        IconData(0xef18, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_missed_sharp":
-        IconData(0xe827, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_missed_rounded":
-        IconData(0xf606, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_missed_outlined":
-        IconData(0xef19, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_received":
-        IconData(0xe12c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_received_rounded":
-        IconData(0xf607, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_received_outlined":
-        IconData(0xef1b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_made": IconData(0xe128, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_made_sharp": IconData(0xe824, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_made_rounded": IconData(0xf603, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_made_outlined": IconData(0xef16, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_merge": IconData(0xe129, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_merge_sharp": IconData(0xe825, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_merge_rounded": IconData(0xf604, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_merge_outlined": IconData(0xef17, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_missed": IconData(0xe12a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_missed_outgoing": IconData(0xe12b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_missed_outgoing_sharp": IconData(0xe826, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_missed_outgoing_rounded": IconData(0xf605, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_missed_outgoing_outlined": IconData(0xef18, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_missed_sharp": IconData(0xe827, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_missed_rounded": IconData(0xf606, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_missed_outlined": IconData(0xef19, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_received": IconData(0xe12c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_received_rounded": IconData(0xf607, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_received_outlined": IconData(0xef1b, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "call_sharp": IconData(0xe829, fontFamily: 'MaterialIcons'),
     "call_rounded": IconData(0xf608, fontFamily: 'MaterialIcons'),
     "call_outlined": IconData(0xef1a, fontFamily: 'MaterialIcons'),
-    "call_received_sharp":
-        IconData(0xe828, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_split":
-        IconData(0xe12d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_split_sharp":
-        IconData(0xe82a, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_split_rounded":
-        IconData(0xf609, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "call_split_outlined":
-        IconData(0xef1c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_received_sharp": IconData(0xe828, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_split": IconData(0xe12d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_split_sharp": IconData(0xe82a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_split_rounded": IconData(0xf609, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "call_split_outlined": IconData(0xef1c, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "call_to_action": IconData(0xe12e, fontFamily: 'MaterialIcons'),
     "call_to_action_sharp": IconData(0xe82b, fontFamily: 'MaterialIcons'),
     "call_to_action_rounded": IconData(0xf60a, fontFamily: 'MaterialIcons'),
@@ -1194,17 +1041,13 @@ class IconUtil {
     "cancel_outlined": IconData(0xef28, fontFamily: 'MaterialIcons'),
     "cancel_presentation": IconData(0xe13a, fontFamily: 'MaterialIcons'),
     "cancel_presentation_sharp": IconData(0xe836, fontFamily: 'MaterialIcons'),
-    "cancel_presentation_rounded":
-        IconData(0xf615, fontFamily: 'MaterialIcons'),
-    "cancel_presentation_outlined":
-        IconData(0xef29, fontFamily: 'MaterialIcons'),
+    "cancel_presentation_rounded": IconData(0xf615, fontFamily: 'MaterialIcons'),
+    "cancel_presentation_outlined": IconData(0xef29, fontFamily: 'MaterialIcons'),
     "cancel_rounded": IconData(0xf616, fontFamily: 'MaterialIcons'),
     "cancel_schedule_send": IconData(0xe13b, fontFamily: 'MaterialIcons'),
     "cancel_schedule_send_sharp": IconData(0xe837, fontFamily: 'MaterialIcons'),
-    "cancel_schedule_send_rounded":
-        IconData(0xf617, fontFamily: 'MaterialIcons'),
-    "cancel_schedule_send_outlined":
-        IconData(0xef2a, fontFamily: 'MaterialIcons'),
+    "cancel_schedule_send_rounded": IconData(0xf617, fontFamily: 'MaterialIcons'),
+    "cancel_schedule_send_outlined": IconData(0xef2a, fontFamily: 'MaterialIcons'),
     "cancel_sharp": IconData(0xe838, fontFamily: 'MaterialIcons'),
     "car_rental": IconData(0xe13c, fontFamily: 'MaterialIcons'),
     "car_rental_sharp": IconData(0xe839, fontFamily: 'MaterialIcons'),
@@ -1246,8 +1089,7 @@ class IconUtil {
     "cast_for_education": IconData(0xe146, fontFamily: 'MaterialIcons'),
     "cast_for_education_sharp": IconData(0xe842, fontFamily: 'MaterialIcons'),
     "cast_for_education_rounded": IconData(0xf621, fontFamily: 'MaterialIcons'),
-    "cast_for_education_outlined":
-        IconData(0xef34, fontFamily: 'MaterialIcons'),
+    "cast_for_education_outlined": IconData(0xef34, fontFamily: 'MaterialIcons'),
     "cast_sharp": IconData(0xe843, fontFamily: 'MaterialIcons'),
     "cast_rounded": IconData(0xf622, fontFamily: 'MaterialIcons'),
     "cast_outlined": IconData(0xef35, fontFamily: 'MaterialIcons'),
@@ -1269,10 +1111,8 @@ class IconUtil {
     "cell_wifi_outlined": IconData(0xef39, fontFamily: 'MaterialIcons'),
     "center_focus_strong": IconData(0xe14b, fontFamily: 'MaterialIcons'),
     "center_focus_strong_sharp": IconData(0xe848, fontFamily: 'MaterialIcons'),
-    "center_focus_strong_rounded":
-        IconData(0xf627, fontFamily: 'MaterialIcons'),
-    "center_focus_strong_outlined":
-        IconData(0xef3a, fontFamily: 'MaterialIcons'),
+    "center_focus_strong_rounded": IconData(0xf627, fontFamily: 'MaterialIcons'),
+    "center_focus_strong_outlined": IconData(0xef3a, fontFamily: 'MaterialIcons'),
     "center_focus_weak": IconData(0xe14c, fontFamily: 'MaterialIcons'),
     "center_focus_weak_sharp": IconData(0xe849, fontFamily: 'MaterialIcons'),
     "center_focus_weak_rounded": IconData(0xf628, fontFamily: 'MaterialIcons'),
@@ -1305,10 +1145,8 @@ class IconUtil {
     "chat_bubble": IconData(0xe154, fontFamily: 'MaterialIcons'),
     "chat_bubble_outline": IconData(0xe155, fontFamily: 'MaterialIcons'),
     "chat_bubble_outline_sharp": IconData(0xe850, fontFamily: 'MaterialIcons'),
-    "chat_bubble_outline_rounded":
-        IconData(0xf62f, fontFamily: 'MaterialIcons'),
-    "chat_bubble_outline_outlined":
-        IconData(0xef42, fontFamily: 'MaterialIcons'),
+    "chat_bubble_outline_rounded": IconData(0xf62f, fontFamily: 'MaterialIcons'),
+    "chat_bubble_outline_outlined": IconData(0xef42, fontFamily: 'MaterialIcons'),
     "chat_bubble_sharp": IconData(0xe851, fontFamily: 'MaterialIcons'),
     "chat_bubble_rounded": IconData(0xf630, fontFamily: 'MaterialIcons'),
     "chat_bubble_outlined": IconData(0xef43, fontFamily: 'MaterialIcons'),
@@ -1318,22 +1156,17 @@ class IconUtil {
     "check": IconData(0xe156, fontFamily: 'MaterialIcons'),
     "check_box": IconData(0xe157, fontFamily: 'MaterialIcons'),
     "check_box_outline_blank": IconData(0xe158, fontFamily: 'MaterialIcons'),
-    "check_box_outline_blank_sharp":
-        IconData(0xe853, fontFamily: 'MaterialIcons'),
-    "check_box_outline_blank_rounded":
-        IconData(0xf632, fontFamily: 'MaterialIcons'),
-    "check_box_outline_blank_outlined":
-        IconData(0xef45, fontFamily: 'MaterialIcons'),
+    "check_box_outline_blank_sharp": IconData(0xe853, fontFamily: 'MaterialIcons'),
+    "check_box_outline_blank_rounded": IconData(0xf632, fontFamily: 'MaterialIcons'),
+    "check_box_outline_blank_outlined": IconData(0xef45, fontFamily: 'MaterialIcons'),
     "check_box_sharp": IconData(0xe854, fontFamily: 'MaterialIcons'),
     "check_box_rounded": IconData(0xf633, fontFamily: 'MaterialIcons'),
     "check_box_outlined": IconData(0xef46, fontFamily: 'MaterialIcons'),
     "check_circle": IconData(0xe159, fontFamily: 'MaterialIcons'),
     "check_circle_outline": IconData(0xe15a, fontFamily: 'MaterialIcons'),
     "check_circle_outline_sharp": IconData(0xe855, fontFamily: 'MaterialIcons'),
-    "check_circle_outline_rounded":
-        IconData(0xf634, fontFamily: 'MaterialIcons'),
-    "check_circle_outline_outlined":
-        IconData(0xef47, fontFamily: 'MaterialIcons'),
+    "check_circle_outline_rounded": IconData(0xf634, fontFamily: 'MaterialIcons'),
+    "check_circle_outline_outlined": IconData(0xef47, fontFamily: 'MaterialIcons'),
     "check_circle_sharp": IconData(0xe856, fontFamily: 'MaterialIcons'),
     "check_circle_rounded": IconData(0xf635, fontFamily: 'MaterialIcons'),
     "check_circle_outlined": IconData(0xef48, fontFamily: 'MaterialIcons'),
@@ -1352,22 +1185,14 @@ class IconUtil {
     "checkroom_sharp": IconData(0xe85a, fontFamily: 'MaterialIcons'),
     "checkroom_rounded": IconData(0xf639, fontFamily: 'MaterialIcons'),
     "checkroom_outlined": IconData(0xef4c, fontFamily: 'MaterialIcons'),
-    "chevron_left":
-        IconData(0xe15e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "chevron_left_sharp":
-        IconData(0xe85b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "chevron_left_rounded":
-        IconData(0xf63a, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "chevron_left_outlined":
-        IconData(0xef4d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "chevron_right":
-        IconData(0xe15f, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "chevron_right_sharp":
-        IconData(0xe85c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "chevron_right_rounded":
-        IconData(0xf63b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "chevron_right_outlined":
-        IconData(0xef4e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chevron_left": IconData(0xe15e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chevron_left_sharp": IconData(0xe85b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chevron_left_rounded": IconData(0xf63a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chevron_left_outlined": IconData(0xef4d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chevron_right": IconData(0xe15f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chevron_right_sharp": IconData(0xe85c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chevron_right_rounded": IconData(0xf63b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chevron_right_outlined": IconData(0xef4e, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "child_care": IconData(0xe160, fontFamily: 'MaterialIcons'),
     "child_care_sharp": IconData(0xe85d, fontFamily: 'MaterialIcons'),
     "child_care_rounded": IconData(0xf63c, fontFamily: 'MaterialIcons'),
@@ -1376,21 +1201,15 @@ class IconUtil {
     "child_friendly_sharp": IconData(0xe85e, fontFamily: 'MaterialIcons'),
     "child_friendly_rounded": IconData(0xf63d, fontFamily: 'MaterialIcons'),
     "child_friendly_outlined": IconData(0xef50, fontFamily: 'MaterialIcons'),
-    "chrome_reader_mode":
-        IconData(0xe162, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "chrome_reader_mode_sharp":
-        IconData(0xe85f, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "chrome_reader_mode_rounded":
-        IconData(0xf63e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "chrome_reader_mode_outlined":
-        IconData(0xef51, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chrome_reader_mode": IconData(0xe162, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chrome_reader_mode_sharp": IconData(0xe85f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chrome_reader_mode_rounded": IconData(0xf63e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "chrome_reader_mode_outlined": IconData(0xef51, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "circle": IconData(0xe163, fontFamily: 'MaterialIcons'),
     "circle_notifications": IconData(0xe164, fontFamily: 'MaterialIcons'),
     "circle_notifications_sharp": IconData(0xe860, fontFamily: 'MaterialIcons'),
-    "circle_notifications_rounded":
-        IconData(0xf63f, fontFamily: 'MaterialIcons'),
-    "circle_notifications_outlined":
-        IconData(0xef52, fontFamily: 'MaterialIcons'),
+    "circle_notifications_rounded": IconData(0xf63f, fontFamily: 'MaterialIcons'),
+    "circle_notifications_outlined": IconData(0xef52, fontFamily: 'MaterialIcons'),
     "circle_sharp": IconData(0xe861, fontFamily: 'MaterialIcons'),
     "circle_rounded": IconData(0xf640, fontFamily: 'MaterialIcons'),
     "circle_outlined": IconData(0xef53, fontFamily: 'MaterialIcons'),
@@ -1424,17 +1243,13 @@ class IconUtil {
     "close_outlined": IconData(0xef5a, fontFamily: 'MaterialIcons'),
     "closed_caption": IconData(0xe16c, fontFamily: 'MaterialIcons'),
     "closed_caption_disabled": IconData(0xe16d, fontFamily: 'MaterialIcons'),
-    "closed_caption_disabled_sharp":
-        IconData(0xe869, fontFamily: 'MaterialIcons'),
-    "closed_caption_disabled_rounded":
-        IconData(0xf648, fontFamily: 'MaterialIcons'),
-    "closed_caption_disabled_outlined":
-        IconData(0xef5b, fontFamily: 'MaterialIcons'),
+    "closed_caption_disabled_sharp": IconData(0xe869, fontFamily: 'MaterialIcons'),
+    "closed_caption_disabled_rounded": IconData(0xf648, fontFamily: 'MaterialIcons'),
+    "closed_caption_disabled_outlined": IconData(0xef5b, fontFamily: 'MaterialIcons'),
     "closed_caption_off": IconData(0xe16e, fontFamily: 'MaterialIcons'),
     "closed_caption_off_sharp": IconData(0xe86a, fontFamily: 'MaterialIcons'),
     "closed_caption_off_rounded": IconData(0xf649, fontFamily: 'MaterialIcons'),
-    "closed_caption_off_outlined":
-        IconData(0xef5c, fontFamily: 'MaterialIcons'),
+    "closed_caption_off_outlined": IconData(0xef5c, fontFamily: 'MaterialIcons'),
     "closed_caption_sharp": IconData(0xe86b, fontFamily: 'MaterialIcons'),
     "closed_caption_rounded": IconData(0xf64a, fontFamily: 'MaterialIcons'),
     "closed_caption_outlined": IconData(0xef5d, fontFamily: 'MaterialIcons'),
@@ -1485,10 +1300,8 @@ class IconUtil {
     "collections": IconData(0xe17a, fontFamily: 'MaterialIcons'),
     "collections_bookmark": IconData(0xe17b, fontFamily: 'MaterialIcons'),
     "collections_bookmark_sharp": IconData(0xe877, fontFamily: 'MaterialIcons'),
-    "collections_bookmark_rounded":
-        IconData(0xf656, fontFamily: 'MaterialIcons'),
-    "collections_bookmark_outlined":
-        IconData(0xef69, fontFamily: 'MaterialIcons'),
+    "collections_bookmark_rounded": IconData(0xf656, fontFamily: 'MaterialIcons'),
+    "collections_bookmark_outlined": IconData(0xef69, fontFamily: 'MaterialIcons'),
     "collections_sharp": IconData(0xe878, fontFamily: 'MaterialIcons'),
     "collections_rounded": IconData(0xf657, fontFamily: 'MaterialIcons'),
     "collections_outlined": IconData(0xef6a, fontFamily: 'MaterialIcons'),
@@ -1522,10 +1335,8 @@ class IconUtil {
     "compare_outlined": IconData(0xef71, fontFamily: 'MaterialIcons'),
     "compass_calibration": IconData(0xe183, fontFamily: 'MaterialIcons'),
     "compass_calibration_sharp": IconData(0xe880, fontFamily: 'MaterialIcons'),
-    "compass_calibration_rounded":
-        IconData(0xf65f, fontFamily: 'MaterialIcons'),
-    "compass_calibration_outlined":
-        IconData(0xef72, fontFamily: 'MaterialIcons'),
+    "compass_calibration_rounded": IconData(0xf65f, fontFamily: 'MaterialIcons'),
+    "compass_calibration_outlined": IconData(0xef72, fontFamily: 'MaterialIcons'),
     "compress": IconData(0xe184, fontFamily: 'MaterialIcons'),
     "compress_sharp": IconData(0xe881, fontFamily: 'MaterialIcons'),
     "compress_rounded": IconData(0xf660, fontFamily: 'MaterialIcons'),
@@ -1540,17 +1351,12 @@ class IconUtil {
     "confirmation_num_outlined": IconData(0xef75, fontFamily: 'MaterialIcons'),
     "confirmation_number": IconData(0xe186, fontFamily: 'MaterialIcons'),
     "confirmation_number_sharp": IconData(0xe883, fontFamily: 'MaterialIcons'),
-    "confirmation_number_rounded":
-        IconData(0xf662, fontFamily: 'MaterialIcons'),
-    "confirmation_number_outlined":
-        IconData(0xef75, fontFamily: 'MaterialIcons'),
+    "confirmation_number_rounded": IconData(0xf662, fontFamily: 'MaterialIcons'),
+    "confirmation_number_outlined": IconData(0xef75, fontFamily: 'MaterialIcons'),
     "connect_without_contact": IconData(0xe187, fontFamily: 'MaterialIcons'),
-    "connect_without_contact_sharp":
-        IconData(0xe884, fontFamily: 'MaterialIcons'),
-    "connect_without_contact_rounded":
-        IconData(0xf663, fontFamily: 'MaterialIcons'),
-    "connect_without_contact_outlined":
-        IconData(0xef76, fontFamily: 'MaterialIcons'),
+    "connect_without_contact_sharp": IconData(0xe884, fontFamily: 'MaterialIcons'),
+    "connect_without_contact_rounded": IconData(0xf663, fontFamily: 'MaterialIcons'),
+    "connect_without_contact_outlined": IconData(0xef76, fontFamily: 'MaterialIcons'),
     "connected_tv": IconData(0xe188, fontFamily: 'MaterialIcons'),
     "connected_tv_sharp": IconData(0xe885, fontFamily: 'MaterialIcons'),
     "connected_tv_rounded": IconData(0xf664, fontFamily: 'MaterialIcons'),
@@ -1605,12 +1411,9 @@ class IconUtil {
     "control_camera_outlined": IconData(0xef83, fontFamily: 'MaterialIcons'),
     "control_point": IconData(0xe195, fontFamily: 'MaterialIcons'),
     "control_point_duplicate": IconData(0xe196, fontFamily: 'MaterialIcons'),
-    "control_point_duplicate_sharp":
-        IconData(0xe892, fontFamily: 'MaterialIcons'),
-    "control_point_duplicate_rounded":
-        IconData(0xf671, fontFamily: 'MaterialIcons'),
-    "control_point_duplicate_outlined":
-        IconData(0xef84, fontFamily: 'MaterialIcons'),
+    "control_point_duplicate_sharp": IconData(0xe892, fontFamily: 'MaterialIcons'),
+    "control_point_duplicate_rounded": IconData(0xf671, fontFamily: 'MaterialIcons'),
+    "control_point_duplicate_outlined": IconData(0xef84, fontFamily: 'MaterialIcons'),
     "control_point_sharp": IconData(0xe893, fontFamily: 'MaterialIcons'),
     "control_point_rounded": IconData(0xf672, fontFamily: 'MaterialIcons'),
     "control_point_outlined": IconData(0xef85, fontFamily: 'MaterialIcons'),
@@ -1729,10 +1532,8 @@ class IconUtil {
     "dashboard": IconData(0xe1b1, fontFamily: 'MaterialIcons'),
     "dashboard_customize": IconData(0xe1b2, fontFamily: 'MaterialIcons'),
     "dashboard_customize_sharp": IconData(0xe8ae, fontFamily: 'MaterialIcons'),
-    "dashboard_customize_rounded":
-        IconData(0xf68d, fontFamily: 'MaterialIcons'),
-    "dashboard_customize_outlined":
-        IconData(0xefa0, fontFamily: 'MaterialIcons'),
+    "dashboard_customize_rounded": IconData(0xf68d, fontFamily: 'MaterialIcons'),
+    "dashboard_customize_outlined": IconData(0xefa0, fontFamily: 'MaterialIcons'),
     "dashboard_sharp": IconData(0xe8af, fontFamily: 'MaterialIcons'),
     "dashboard_rounded": IconData(0xf68e, fontFamily: 'MaterialIcons'),
     "dashboard_outlined": IconData(0xefa1, fontFamily: 'MaterialIcons'),
@@ -1793,12 +1594,9 @@ class IconUtil {
     "design_services_rounded": IconData(0xf69c, fontFamily: 'MaterialIcons'),
     "design_services_outlined": IconData(0xefaf, fontFamily: 'MaterialIcons'),
     "desktop_access_disabled": IconData(0xe1c1, fontFamily: 'MaterialIcons'),
-    "desktop_access_disabled_sharp":
-        IconData(0xe8be, fontFamily: 'MaterialIcons'),
-    "desktop_access_disabled_rounded":
-        IconData(0xf69d, fontFamily: 'MaterialIcons'),
-    "desktop_access_disabled_outlined":
-        IconData(0xefb0, fontFamily: 'MaterialIcons'),
+    "desktop_access_disabled_sharp": IconData(0xe8be, fontFamily: 'MaterialIcons'),
+    "desktop_access_disabled_rounded": IconData(0xf69d, fontFamily: 'MaterialIcons'),
+    "desktop_access_disabled_outlined": IconData(0xefb0, fontFamily: 'MaterialIcons'),
     "desktop_mac": IconData(0xe1c2, fontFamily: 'MaterialIcons'),
     "desktop_mac_sharp": IconData(0xe8bf, fontFamily: 'MaterialIcons'),
     "desktop_mac_rounded": IconData(0xf69e, fontFamily: 'MaterialIcons'),
@@ -1814,10 +1612,8 @@ class IconUtil {
     "developer_board": IconData(0xe1c5, fontFamily: 'MaterialIcons'),
     "developer_board_off": IconData(0xe1c6, fontFamily: 'MaterialIcons'),
     "developer_board_off_sharp": IconData(0xe8c2, fontFamily: 'MaterialIcons'),
-    "developer_board_off_rounded":
-        IconData(0xf6a1, fontFamily: 'MaterialIcons'),
-    "developer_board_off_outlined":
-        IconData(0xefb4, fontFamily: 'MaterialIcons'),
+    "developer_board_off_rounded": IconData(0xf6a1, fontFamily: 'MaterialIcons'),
+    "developer_board_off_outlined": IconData(0xefb4, fontFamily: 'MaterialIcons'),
     "developer_board_sharp": IconData(0xe8c3, fontFamily: 'MaterialIcons'),
     "developer_board_rounded": IconData(0xf6a2, fontFamily: 'MaterialIcons'),
     "developer_board_outlined": IconData(0xefb5, fontFamily: 'MaterialIcons'),
@@ -1833,14 +1629,10 @@ class IconUtil {
     "device_thermostat_sharp": IconData(0xe8c6, fontFamily: 'MaterialIcons'),
     "device_thermostat_rounded": IconData(0xf6a5, fontFamily: 'MaterialIcons'),
     "device_thermostat_outlined": IconData(0xefb8, fontFamily: 'MaterialIcons'),
-    "device_unknown":
-        IconData(0xe1ca, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "device_unknown_sharp":
-        IconData(0xe8c7, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "device_unknown_rounded":
-        IconData(0xf6a6, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "device_unknown_outlined":
-        IconData(0xefb9, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "device_unknown": IconData(0xe1ca, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "device_unknown_sharp": IconData(0xe8c7, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "device_unknown_rounded": IconData(0xf6a6, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "device_unknown_outlined": IconData(0xefb9, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "devices": IconData(0xe1cb, fontFamily: 'MaterialIcons'),
     "devices_other": IconData(0xe1cc, fontFamily: 'MaterialIcons'),
     "devices_other_sharp": IconData(0xe8c8, fontFamily: 'MaterialIcons'),
@@ -1872,34 +1664,25 @@ class IconUtil {
     "directions_bike_outlined": IconData(0xefc0, fontFamily: 'MaterialIcons'),
     "directions_boat": IconData(0xe1d3, fontFamily: 'MaterialIcons'),
     "directions_boat_filled": IconData(0xe1d4, fontFamily: 'MaterialIcons'),
-    "directions_boat_filled_sharp":
-        IconData(0xe8cf, fontFamily: 'MaterialIcons'),
-    "directions_boat_filled_rounded":
-        IconData(0xf6ae, fontFamily: 'MaterialIcons'),
-    "directions_boat_filled_outlined":
-        IconData(0xefc1, fontFamily: 'MaterialIcons'),
+    "directions_boat_filled_sharp": IconData(0xe8cf, fontFamily: 'MaterialIcons'),
+    "directions_boat_filled_rounded": IconData(0xf6ae, fontFamily: 'MaterialIcons'),
+    "directions_boat_filled_outlined": IconData(0xefc1, fontFamily: 'MaterialIcons'),
     "directions_boat_sharp": IconData(0xe8d0, fontFamily: 'MaterialIcons'),
     "directions_boat_rounded": IconData(0xf6af, fontFamily: 'MaterialIcons'),
     "directions_boat_outlined": IconData(0xefc2, fontFamily: 'MaterialIcons'),
     "directions_bus": IconData(0xe1d5, fontFamily: 'MaterialIcons'),
     "directions_bus_filled": IconData(0xe1d6, fontFamily: 'MaterialIcons'),
-    "directions_bus_filled_sharp":
-        IconData(0xe8d1, fontFamily: 'MaterialIcons'),
-    "directions_bus_filled_rounded":
-        IconData(0xf6b0, fontFamily: 'MaterialIcons'),
-    "directions_bus_filled_outlined":
-        IconData(0xefc3, fontFamily: 'MaterialIcons'),
+    "directions_bus_filled_sharp": IconData(0xe8d1, fontFamily: 'MaterialIcons'),
+    "directions_bus_filled_rounded": IconData(0xf6b0, fontFamily: 'MaterialIcons'),
+    "directions_bus_filled_outlined": IconData(0xefc3, fontFamily: 'MaterialIcons'),
     "directions_bus_sharp": IconData(0xe8d2, fontFamily: 'MaterialIcons'),
     "directions_bus_rounded": IconData(0xf6b1, fontFamily: 'MaterialIcons'),
     "directions_bus_outlined": IconData(0xefc4, fontFamily: 'MaterialIcons'),
     "directions_car": IconData(0xe1d7, fontFamily: 'MaterialIcons'),
     "directions_car_filled": IconData(0xe1d8, fontFamily: 'MaterialIcons'),
-    "directions_car_filled_sharp":
-        IconData(0xe8d3, fontFamily: 'MaterialIcons'),
-    "directions_car_filled_rounded":
-        IconData(0xf6b2, fontFamily: 'MaterialIcons'),
-    "directions_car_filled_outlined":
-        IconData(0xefc5, fontFamily: 'MaterialIcons'),
+    "directions_car_filled_sharp": IconData(0xe8d3, fontFamily: 'MaterialIcons'),
+    "directions_car_filled_rounded": IconData(0xf6b2, fontFamily: 'MaterialIcons'),
+    "directions_car_filled_outlined": IconData(0xefc5, fontFamily: 'MaterialIcons'),
     "directions_car_sharp": IconData(0xe8d4, fontFamily: 'MaterialIcons'),
     "directions_car_rounded": IconData(0xf6b3, fontFamily: 'MaterialIcons'),
     "directions_car_outlined": IconData(0xefc6, fontFamily: 'MaterialIcons'),
@@ -1912,16 +1695,12 @@ class IconUtil {
     "directions_off_rounded": IconData(0xf6b4, fontFamily: 'MaterialIcons'),
     "directions_off_outlined": IconData(0xefc7, fontFamily: 'MaterialIcons'),
     "directions_railway_filled": IconData(0xe1db, fontFamily: 'MaterialIcons'),
-    "directions_railway_filled_sharp":
-        IconData(0xe8d6, fontFamily: 'MaterialIcons'),
-    "directions_railway_filled_rounded":
-        IconData(0xf6b5, fontFamily: 'MaterialIcons'),
-    "directions_railway_filled_outlined":
-        IconData(0xefc9, fontFamily: 'MaterialIcons'),
+    "directions_railway_filled_sharp": IconData(0xe8d6, fontFamily: 'MaterialIcons'),
+    "directions_railway_filled_rounded": IconData(0xf6b5, fontFamily: 'MaterialIcons'),
+    "directions_railway_filled_outlined": IconData(0xefc9, fontFamily: 'MaterialIcons'),
     "directions_railway_sharp": IconData(0xe8d7, fontFamily: 'MaterialIcons'),
     "directions_railway_rounded": IconData(0xf6b6, fontFamily: 'MaterialIcons'),
-    "directions_railway_outlined":
-        IconData(0xefca, fontFamily: 'MaterialIcons'),
+    "directions_railway_outlined": IconData(0xefca, fontFamily: 'MaterialIcons'),
     "directions_run": IconData(0xe1dc, fontFamily: 'MaterialIcons'),
     "directions_run_sharp": IconData(0xe8d8, fontFamily: 'MaterialIcons'),
     "directions_run_rounded": IconData(0xf6b8, fontFamily: 'MaterialIcons'),
@@ -1932,12 +1711,9 @@ class IconUtil {
     "directions_railway": IconData(0xe1da, fontFamily: 'MaterialIcons'),
     "directions_subway": IconData(0xe1dd, fontFamily: 'MaterialIcons'),
     "directions_subway_filled": IconData(0xe1de, fontFamily: 'MaterialIcons'),
-    "directions_subway_filled_sharp":
-        IconData(0xe8da, fontFamily: 'MaterialIcons'),
-    "directions_subway_filled_rounded":
-        IconData(0xf6b9, fontFamily: 'MaterialIcons'),
-    "directions_subway_filled_outlined":
-        IconData(0xefcc, fontFamily: 'MaterialIcons'),
+    "directions_subway_filled_sharp": IconData(0xe8da, fontFamily: 'MaterialIcons'),
+    "directions_subway_filled_rounded": IconData(0xf6b9, fontFamily: 'MaterialIcons'),
+    "directions_subway_filled_outlined": IconData(0xefcc, fontFamily: 'MaterialIcons'),
     "directions_subway_sharp": IconData(0xe8db, fontFamily: 'MaterialIcons'),
     "directions_subway_rounded": IconData(0xf6ba, fontFamily: 'MaterialIcons'),
     "directions_subway_outlined": IconData(0xefcd, fontFamily: 'MaterialIcons'),
@@ -1947,16 +1723,12 @@ class IconUtil {
     "directions_train_outlined": IconData(0xefca, fontFamily: 'MaterialIcons'),
     "directions_transit": IconData(0xe1df, fontFamily: 'MaterialIcons'),
     "directions_transit_filled": IconData(0xe1e0, fontFamily: 'MaterialIcons'),
-    "directions_transit_filled_sharp":
-        IconData(0xe8dc, fontFamily: 'MaterialIcons'),
-    "directions_transit_filled_rounded":
-        IconData(0xf6bb, fontFamily: 'MaterialIcons'),
-    "directions_transit_filled_outlined":
-        IconData(0xefce, fontFamily: 'MaterialIcons'),
+    "directions_transit_filled_sharp": IconData(0xe8dc, fontFamily: 'MaterialIcons'),
+    "directions_transit_filled_rounded": IconData(0xf6bb, fontFamily: 'MaterialIcons'),
+    "directions_transit_filled_outlined": IconData(0xefce, fontFamily: 'MaterialIcons'),
     "directions_transit_sharp": IconData(0xe8dd, fontFamily: 'MaterialIcons'),
     "directions_transit_rounded": IconData(0xf6bc, fontFamily: 'MaterialIcons'),
-    "directions_transit_outlined":
-        IconData(0xefcf, fontFamily: 'MaterialIcons'),
+    "directions_transit_outlined": IconData(0xefcf, fontFamily: 'MaterialIcons'),
     "directions_walk": IconData(0xe1e1, fontFamily: 'MaterialIcons'),
     "directions_walk_sharp": IconData(0xe8de, fontFamily: 'MaterialIcons'),
     "directions_walk_rounded": IconData(0xf6bd, fontFamily: 'MaterialIcons'),
@@ -1967,10 +1739,8 @@ class IconUtil {
     "dirty_lens_outlined": IconData(0xefd1, fontFamily: 'MaterialIcons'),
     "disabled_by_default": IconData(0xe1e3, fontFamily: 'MaterialIcons'),
     "disabled_by_default_sharp": IconData(0xe8e0, fontFamily: 'MaterialIcons'),
-    "disabled_by_default_rounded":
-        IconData(0xf6bf, fontFamily: 'MaterialIcons'),
-    "disabled_by_default_outlined":
-        IconData(0xefd2, fontFamily: 'MaterialIcons'),
+    "disabled_by_default_rounded": IconData(0xf6bf, fontFamily: 'MaterialIcons'),
+    "disabled_by_default_outlined": IconData(0xefd2, fontFamily: 'MaterialIcons'),
     "disc_full": IconData(0xe1e4, fontFamily: 'MaterialIcons'),
     "disc_full_sharp": IconData(0xe8e1, fontFamily: 'MaterialIcons'),
     "disc_full_rounded": IconData(0xf6c0, fontFamily: 'MaterialIcons'),
@@ -2003,25 +1773,19 @@ class IconUtil {
     "do_not_disturb_alt": IconData(0xe1eb, fontFamily: 'MaterialIcons'),
     "do_not_disturb_alt_sharp": IconData(0xe8e7, fontFamily: 'MaterialIcons'),
     "do_not_disturb_alt_rounded": IconData(0xf6c6, fontFamily: 'MaterialIcons'),
-    "do_not_disturb_alt_outlined":
-        IconData(0xefd9, fontFamily: 'MaterialIcons'),
+    "do_not_disturb_alt_outlined": IconData(0xefd9, fontFamily: 'MaterialIcons'),
     "do_not_disturb_off": IconData(0xe1ec, fontFamily: 'MaterialIcons'),
     "do_not_disturb_off_sharp": IconData(0xe8e8, fontFamily: 'MaterialIcons'),
     "do_not_disturb_off_rounded": IconData(0xf6c7, fontFamily: 'MaterialIcons'),
-    "do_not_disturb_off_outlined":
-        IconData(0xefda, fontFamily: 'MaterialIcons'),
+    "do_not_disturb_off_outlined": IconData(0xefda, fontFamily: 'MaterialIcons'),
     "do_not_disturb_on": IconData(0xe1ed, fontFamily: 'MaterialIcons'),
     "do_not_disturb_on_sharp": IconData(0xe8e9, fontFamily: 'MaterialIcons'),
     "do_not_disturb_on_rounded": IconData(0xf6c8, fontFamily: 'MaterialIcons'),
     "do_not_disturb_on_outlined": IconData(0xefdb, fontFamily: 'MaterialIcons'),
-    "do_not_disturb_on_total_silence":
-        IconData(0xe1ee, fontFamily: 'MaterialIcons'),
-    "do_not_disturb_on_total_silence_sharp":
-        IconData(0xe8ea, fontFamily: 'MaterialIcons'),
-    "do_not_disturb_on_total_silence_rounded":
-        IconData(0xf6c9, fontFamily: 'MaterialIcons'),
-    "do_not_disturb_on_total_silence_outlined":
-        IconData(0xefdc, fontFamily: 'MaterialIcons'),
+    "do_not_disturb_on_total_silence": IconData(0xe1ee, fontFamily: 'MaterialIcons'),
+    "do_not_disturb_on_total_silence_sharp": IconData(0xe8ea, fontFamily: 'MaterialIcons'),
+    "do_not_disturb_on_total_silence_rounded": IconData(0xf6c9, fontFamily: 'MaterialIcons'),
+    "do_not_disturb_on_total_silence_outlined": IconData(0xefdc, fontFamily: 'MaterialIcons'),
     "do_not_disturb_sharp": IconData(0xe8eb, fontFamily: 'MaterialIcons'),
     "do_not_disturb_rounded": IconData(0xf6ca, fontFamily: 'MaterialIcons'),
     "do_not_disturb_outlined": IconData(0xefdd, fontFamily: 'MaterialIcons'),
@@ -2051,10 +1815,8 @@ class IconUtil {
     "domain_outlined": IconData(0xefe3, fontFamily: 'MaterialIcons'),
     "domain_verification": IconData(0xe1f5, fontFamily: 'MaterialIcons'),
     "domain_verification_sharp": IconData(0xe8f2, fontFamily: 'MaterialIcons'),
-    "domain_verification_rounded":
-        IconData(0xf6d1, fontFamily: 'MaterialIcons'),
-    "domain_verification_outlined":
-        IconData(0xefe4, fontFamily: 'MaterialIcons'),
+    "domain_verification_rounded": IconData(0xf6d1, fontFamily: 'MaterialIcons'),
+    "domain_verification_outlined": IconData(0xefe4, fontFamily: 'MaterialIcons'),
     "done": IconData(0xe1f6, fontFamily: 'MaterialIcons'),
     "done_all": IconData(0xe1f7, fontFamily: 'MaterialIcons'),
     "done_all_sharp": IconData(0xe8f3, fontFamily: 'MaterialIcons'),
@@ -2106,10 +1868,8 @@ class IconUtil {
     "download_done_outlined": IconData(0xeff0, fontFamily: 'MaterialIcons'),
     "download_for_offline": IconData(0xe203, fontFamily: 'MaterialIcons'),
     "download_for_offline_sharp": IconData(0xe8ff, fontFamily: 'MaterialIcons'),
-    "download_for_offline_rounded":
-        IconData(0xf6de, fontFamily: 'MaterialIcons'),
-    "download_for_offline_outlined":
-        IconData(0xeff1, fontFamily: 'MaterialIcons'),
+    "download_for_offline_rounded": IconData(0xf6de, fontFamily: 'MaterialIcons'),
+    "download_for_offline_outlined": IconData(0xeff1, fontFamily: 'MaterialIcons'),
     "download_sharp": IconData(0xe900, fontFamily: 'MaterialIcons'),
     "download_rounded": IconData(0xf6df, fontFamily: 'MaterialIcons'),
     "download_outlined": IconData(0xeff2, fontFamily: 'MaterialIcons'),
@@ -2139,18 +1899,13 @@ class IconUtil {
     "drive_file_move_rounded": IconData(0xf6e5, fontFamily: 'MaterialIcons'),
     "drive_file_move_outlined": IconData(0xeff8, fontFamily: 'MaterialIcons'),
     "drive_file_rename_outline": IconData(0xe20b, fontFamily: 'MaterialIcons'),
-    "drive_file_rename_outline_sharp":
-        IconData(0xe907, fontFamily: 'MaterialIcons'),
-    "drive_file_rename_outline_rounded":
-        IconData(0xf6e6, fontFamily: 'MaterialIcons'),
-    "drive_file_rename_outline_outlined":
-        IconData(0xeff9, fontFamily: 'MaterialIcons'),
+    "drive_file_rename_outline_sharp": IconData(0xe907, fontFamily: 'MaterialIcons'),
+    "drive_file_rename_outline_rounded": IconData(0xf6e6, fontFamily: 'MaterialIcons'),
+    "drive_file_rename_outline_outlined": IconData(0xeff9, fontFamily: 'MaterialIcons'),
     "drive_folder_upload": IconData(0xe20c, fontFamily: 'MaterialIcons'),
     "drive_folder_upload_sharp": IconData(0xe908, fontFamily: 'MaterialIcons'),
-    "drive_folder_upload_rounded":
-        IconData(0xf6e7, fontFamily: 'MaterialIcons'),
-    "drive_folder_upload_outlined":
-        IconData(0xeffa, fontFamily: 'MaterialIcons'),
+    "drive_folder_upload_rounded": IconData(0xf6e7, fontFamily: 'MaterialIcons'),
+    "drive_folder_upload_outlined": IconData(0xeffa, fontFamily: 'MaterialIcons'),
     "dry": IconData(0xe20d, fontFamily: 'MaterialIcons'),
     "dry_cleaning": IconData(0xe20e, fontFamily: 'MaterialIcons'),
     "dry_cleaning_sharp": IconData(0xe909, fontFamily: 'MaterialIcons'),
@@ -2163,14 +1918,10 @@ class IconUtil {
     "duo_sharp": IconData(0xe90b, fontFamily: 'MaterialIcons'),
     "duo_rounded": IconData(0xf6ea, fontFamily: 'MaterialIcons'),
     "duo_outlined": IconData(0xeffd, fontFamily: 'MaterialIcons'),
-    "dvr":
-        IconData(0xe210, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "dvr_sharp":
-        IconData(0xe90c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "dvr_rounded":
-        IconData(0xf6eb, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "dvr_outlined":
-        IconData(0xeffe, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "dvr": IconData(0xe210, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "dvr_sharp": IconData(0xe90c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "dvr_rounded": IconData(0xf6eb, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "dvr_outlined": IconData(0xeffe, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "dynamic_feed": IconData(0xe211, fontFamily: 'MaterialIcons'),
     "dynamic_feed_sharp": IconData(0xe90d, fontFamily: 'MaterialIcons'),
     "dynamic_feed_rounded": IconData(0xf6ec, fontFamily: 'MaterialIcons'),
@@ -2223,8 +1974,7 @@ class IconUtil {
     "edit_notifications": IconData(0xe21e, fontFamily: 'MaterialIcons'),
     "edit_notifications_sharp": IconData(0xe919, fontFamily: 'MaterialIcons'),
     "edit_notifications_rounded": IconData(0xf6f8, fontFamily: 'MaterialIcons'),
-    "edit_notifications_outlined":
-        IconData(0xf00b, fontFamily: 'MaterialIcons'),
+    "edit_notifications_outlined": IconData(0xf00b, fontFamily: 'MaterialIcons'),
     "edit_off": IconData(0xe21f, fontFamily: 'MaterialIcons'),
     "edit_off_sharp": IconData(0xe91a, fontFamily: 'MaterialIcons'),
     "edit_off_rounded": IconData(0xf6f9, fontFamily: 'MaterialIcons'),
@@ -2282,10 +2032,8 @@ class IconUtil {
     "electric_scooter_outlined": IconData(0xf015, fontFamily: 'MaterialIcons'),
     "electrical_services": IconData(0xe228, fontFamily: 'MaterialIcons'),
     "electrical_services_sharp": IconData(0xe924, fontFamily: 'MaterialIcons'),
-    "electrical_services_rounded":
-        IconData(0xf703, fontFamily: 'MaterialIcons'),
-    "electrical_services_outlined":
-        IconData(0xf016, fontFamily: 'MaterialIcons'),
+    "electrical_services_rounded": IconData(0xf703, fontFamily: 'MaterialIcons'),
+    "electrical_services_outlined": IconData(0xf016, fontFamily: 'MaterialIcons'),
     "elevator": IconData(0xe229, fontFamily: 'MaterialIcons'),
     "elevator_sharp": IconData(0xe925, fontFamily: 'MaterialIcons'),
     "elevator_rounded": IconData(0xf704, fontFamily: 'MaterialIcons'),
@@ -2312,10 +2060,8 @@ class IconUtil {
     "emoji_flags_outlined": IconData(0xf01b, fontFamily: 'MaterialIcons'),
     "emoji_food_beverage": IconData(0xe22e, fontFamily: 'MaterialIcons'),
     "emoji_food_beverage_sharp": IconData(0xe92a, fontFamily: 'MaterialIcons'),
-    "emoji_food_beverage_rounded":
-        IconData(0xf709, fontFamily: 'MaterialIcons'),
-    "emoji_food_beverage_outlined":
-        IconData(0xf01c, fontFamily: 'MaterialIcons'),
+    "emoji_food_beverage_rounded": IconData(0xf709, fontFamily: 'MaterialIcons'),
+    "emoji_food_beverage_outlined": IconData(0xf01c, fontFamily: 'MaterialIcons'),
     "emoji_nature": IconData(0xe22f, fontFamily: 'MaterialIcons'),
     "emoji_nature_sharp": IconData(0xe92b, fontFamily: 'MaterialIcons'),
     "emoji_nature_rounded": IconData(0xf70a, fontFamily: 'MaterialIcons'),
@@ -2334,27 +2080,20 @@ class IconUtil {
     "emoji_symbols_outlined": IconData(0xf020, fontFamily: 'MaterialIcons'),
     "emoji_transportation": IconData(0xe233, fontFamily: 'MaterialIcons'),
     "emoji_transportation_sharp": IconData(0xe92f, fontFamily: 'MaterialIcons'),
-    "emoji_transportation_rounded":
-        IconData(0xf70e, fontFamily: 'MaterialIcons'),
-    "emoji_transportation_outlined":
-        IconData(0xf021, fontFamily: 'MaterialIcons'),
+    "emoji_transportation_rounded": IconData(0xf70e, fontFamily: 'MaterialIcons'),
+    "emoji_transportation_outlined": IconData(0xf021, fontFamily: 'MaterialIcons'),
     "engineering": IconData(0xe234, fontFamily: 'MaterialIcons'),
     "engineering_sharp": IconData(0xe930, fontFamily: 'MaterialIcons'),
     "engineering_rounded": IconData(0xf70f, fontFamily: 'MaterialIcons'),
     "engineering_outlined": IconData(0xf022, fontFamily: 'MaterialIcons'),
     "enhance_photo_translate": IconData(0xe131, fontFamily: 'MaterialIcons'),
-    "enhance_photo_translate_sharp":
-        IconData(0xe82d, fontFamily: 'MaterialIcons'),
-    "enhance_photo_translate_rounded":
-        IconData(0xf60c, fontFamily: 'MaterialIcons'),
-    "enhance_photo_translate_outlined":
-        IconData(0xef1f, fontFamily: 'MaterialIcons'),
+    "enhance_photo_translate_sharp": IconData(0xe82d, fontFamily: 'MaterialIcons'),
+    "enhance_photo_translate_rounded": IconData(0xf60c, fontFamily: 'MaterialIcons'),
+    "enhance_photo_translate_outlined": IconData(0xef1f, fontFamily: 'MaterialIcons'),
     "enhanced_encryption": IconData(0xe235, fontFamily: 'MaterialIcons'),
     "enhanced_encryption_sharp": IconData(0xe931, fontFamily: 'MaterialIcons'),
-    "enhanced_encryption_rounded":
-        IconData(0xf710, fontFamily: 'MaterialIcons'),
-    "enhanced_encryption_outlined":
-        IconData(0xf023, fontFamily: 'MaterialIcons'),
+    "enhanced_encryption_rounded": IconData(0xf710, fontFamily: 'MaterialIcons'),
+    "enhanced_encryption_outlined": IconData(0xf023, fontFamily: 'MaterialIcons'),
     "equalizer": IconData(0xe236, fontFamily: 'MaterialIcons'),
     "equalizer_sharp": IconData(0xe932, fontFamily: 'MaterialIcons'),
     "equalizer_rounded": IconData(0xf711, fontFamily: 'MaterialIcons'),
@@ -2396,14 +2135,10 @@ class IconUtil {
     "event_busy_sharp": IconData(0xe93b, fontFamily: 'MaterialIcons'),
     "event_busy_rounded": IconData(0xf71a, fontFamily: 'MaterialIcons'),
     "event_busy_outlined": IconData(0xf02d, fontFamily: 'MaterialIcons'),
-    "event_note":
-        IconData(0xe241, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "event_note_sharp":
-        IconData(0xe93c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "event_note_rounded":
-        IconData(0xf71b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "event_note_outlined":
-        IconData(0xf02e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "event_note": IconData(0xe241, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "event_note_sharp": IconData(0xe93c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "event_note_rounded": IconData(0xf71b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "event_note_outlined": IconData(0xf02e, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "event_rounded": IconData(0xf71c, fontFamily: 'MaterialIcons'),
     "event_outlined": IconData(0xf02f, fontFamily: 'MaterialIcons'),
     "event_seat": IconData(0xe242, fontFamily: 'MaterialIcons'),
@@ -2480,17 +2215,12 @@ class IconUtil {
     "extension_rounded": IconData(0xf72c, fontFamily: 'MaterialIcons'),
     "extension_outlined": IconData(0xf03f, fontFamily: 'MaterialIcons'),
     "face": IconData(0xe252, fontFamily: 'MaterialIcons'),
-    "face_retouching_natural_sharp":
-        IconData(0xe94e, fontFamily: 'MaterialIcons'),
-    "face_retouching_natural_rounded":
-        IconData(0xf72d, fontFamily: 'MaterialIcons'),
-    "face_retouching_natural_outlined":
-        IconData(0xf041, fontFamily: 'MaterialIcons'),
+    "face_retouching_natural_sharp": IconData(0xe94e, fontFamily: 'MaterialIcons'),
+    "face_retouching_natural_rounded": IconData(0xf72d, fontFamily: 'MaterialIcons'),
+    "face_retouching_natural_outlined": IconData(0xf041, fontFamily: 'MaterialIcons'),
     "face_retouching_off": IconData(0xe254, fontFamily: 'MaterialIcons'),
-    "face_retouching_off_rounded":
-        IconData(0xf72e, fontFamily: 'MaterialIcons'),
-    "face_retouching_off_outlined":
-        IconData(0xf042, fontFamily: 'MaterialIcons'),
+    "face_retouching_off_rounded": IconData(0xf72e, fontFamily: 'MaterialIcons'),
+    "face_retouching_off_outlined": IconData(0xf042, fontFamily: 'MaterialIcons'),
     "face_sharp": IconData(0xe950, fontFamily: 'MaterialIcons'),
     "face_rounded": IconData(0xf72f, fontFamily: 'MaterialIcons'),
     "face_outlined": IconData(0xf040, fontFamily: 'MaterialIcons'),
@@ -2535,22 +2265,14 @@ class IconUtil {
     "favorite_sharp": IconData(0xe959, fontFamily: 'MaterialIcons'),
     "favorite_rounded": IconData(0xf738, fontFamily: 'MaterialIcons'),
     "favorite_outlined": IconData(0xf04b, fontFamily: 'MaterialIcons'),
-    "featured_play_list":
-        IconData(0xe25d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "featured_play_list_sharp":
-        IconData(0xe95a, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "featured_play_list_rounded":
-        IconData(0xf739, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "featured_play_list_outlined":
-        IconData(0xf04c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "featured_video":
-        IconData(0xe25e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "featured_video_sharp":
-        IconData(0xe95b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "featured_video_rounded":
-        IconData(0xf73a, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "featured_video_outlined":
-        IconData(0xf04d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "featured_play_list": IconData(0xe25d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "featured_play_list_sharp": IconData(0xe95a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "featured_play_list_rounded": IconData(0xf739, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "featured_play_list_outlined": IconData(0xf04c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "featured_video": IconData(0xe25e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "featured_video_sharp": IconData(0xe95b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "featured_video_rounded": IconData(0xf73a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "featured_video_outlined": IconData(0xf04d, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "feed": IconData(0xe25f, fontFamily: 'MaterialIcons'),
     "feed_sharp": IconData(0xe95c, fontFamily: 'MaterialIcons'),
     "feed_rounded": IconData(0xf73b, fontFamily: 'MaterialIcons'),
@@ -2577,10 +2299,8 @@ class IconUtil {
     "fiber_dvr_outlined": IconData(0xf053, fontFamily: 'MaterialIcons'),
     "fiber_manual_record": IconData(0xe265, fontFamily: 'MaterialIcons'),
     "fiber_manual_record_sharp": IconData(0xe962, fontFamily: 'MaterialIcons'),
-    "fiber_manual_record_rounded":
-        IconData(0xf741, fontFamily: 'MaterialIcons'),
-    "fiber_manual_record_outlined":
-        IconData(0xf054, fontFamily: 'MaterialIcons'),
+    "fiber_manual_record_rounded": IconData(0xf741, fontFamily: 'MaterialIcons'),
+    "fiber_manual_record_outlined": IconData(0xf054, fontFamily: 'MaterialIcons'),
     "fiber_new": IconData(0xe266, fontFamily: 'MaterialIcons'),
     "fiber_new_sharp": IconData(0xe963, fontFamily: 'MaterialIcons'),
     "fiber_new_rounded": IconData(0xf742, fontFamily: 'MaterialIcons'),
@@ -2592,8 +2312,7 @@ class IconUtil {
     "fiber_smart_record": IconData(0xe268, fontFamily: 'MaterialIcons'),
     "fiber_smart_record_sharp": IconData(0xe965, fontFamily: 'MaterialIcons'),
     "fiber_smart_record_rounded": IconData(0xf744, fontFamily: 'MaterialIcons'),
-    "fiber_smart_record_outlined":
-        IconData(0xf057, fontFamily: 'MaterialIcons'),
+    "fiber_smart_record_outlined": IconData(0xf057, fontFamily: 'MaterialIcons'),
     "fifteen_mp": IconData(0xe006, fontFamily: 'MaterialIcons'),
     "fifteen_mp_sharp": IconData(0xe706, fontFamily: 'MaterialIcons'),
     "fifteen_mp_rounded": IconData(0xf4e5, fontFamily: 'MaterialIcons'),
@@ -2606,8 +2325,7 @@ class IconUtil {
     "file_download_done": IconData(0xe26b, fontFamily: 'MaterialIcons'),
     "file_download_done_sharp": IconData(0xe967, fontFamily: 'MaterialIcons'),
     "file_download_done_rounded": IconData(0xf746, fontFamily: 'MaterialIcons'),
-    "file_download_done_outlined":
-        IconData(0xf059, fontFamily: 'MaterialIcons'),
+    "file_download_done_outlined": IconData(0xf059, fontFamily: 'MaterialIcons'),
     "file_download_off": IconData(0xe26c, fontFamily: 'MaterialIcons'),
     "file_download_off_sharp": IconData(0xe968, fontFamily: 'MaterialIcons'),
     "file_download_off_rounded": IconData(0xf747, fontFamily: 'MaterialIcons'),
@@ -2674,10 +2392,8 @@ class IconUtil {
     "filter_b_and_w_outlined": IconData(0xf069, fontFamily: 'MaterialIcons'),
     "filter_center_focus": IconData(0xe27c, fontFamily: 'MaterialIcons'),
     "filter_center_focus_sharp": IconData(0xe978, fontFamily: 'MaterialIcons'),
-    "filter_center_focus_rounded":
-        IconData(0xf757, fontFamily: 'MaterialIcons'),
-    "filter_center_focus_outlined":
-        IconData(0xf06a, fontFamily: 'MaterialIcons'),
+    "filter_center_focus_rounded": IconData(0xf757, fontFamily: 'MaterialIcons'),
+    "filter_center_focus_outlined": IconData(0xf06a, fontFamily: 'MaterialIcons'),
     "filter_drama": IconData(0xe27d, fontFamily: 'MaterialIcons'),
     "filter_drama_sharp": IconData(0xe979, fontFamily: 'MaterialIcons'),
     "filter_drama_rounded": IconData(0xf758, fontFamily: 'MaterialIcons'),
@@ -2731,14 +2447,10 @@ class IconUtil {
     "fireplace_sharp": IconData(0xe985, fontFamily: 'MaterialIcons'),
     "fireplace_rounded": IconData(0xf764, fontFamily: 'MaterialIcons'),
     "fireplace_outlined": IconData(0xf077, fontFamily: 'MaterialIcons'),
-    "first_page":
-        IconData(0xe28b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "first_page_sharp":
-        IconData(0xe986, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "first_page_rounded":
-        IconData(0xf765, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "first_page_outlined":
-        IconData(0xf078, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "first_page": IconData(0xe28b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "first_page_sharp": IconData(0xe986, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "first_page_rounded": IconData(0xf765, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "first_page_outlined": IconData(0xf078, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "fit_screen": IconData(0xe28c, fontFamily: 'MaterialIcons'),
     "fit_screen_sharp": IconData(0xe987, fontFamily: 'MaterialIcons'),
     "fit_screen_rounded": IconData(0xf766, fontFamily: 'MaterialIcons'),
@@ -2800,32 +2512,22 @@ class IconUtil {
     "flatware_rounded": IconData(0xf770, fontFamily: 'MaterialIcons'),
     "flatware_outlined": IconData(0xf083, fontFamily: 'MaterialIcons'),
     "flight": IconData(0xe297, fontFamily: 'MaterialIcons'),
-    "flight_land":
-        IconData(0xe298, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "flight_land_sharp":
-        IconData(0xe992, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "flight_land_rounded":
-        IconData(0xf771, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "flight_land_outlined":
-        IconData(0xf084, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "flight_land": IconData(0xe298, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "flight_land_sharp": IconData(0xe992, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "flight_land_rounded": IconData(0xf771, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "flight_land_outlined": IconData(0xf084, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "flight_sharp": IconData(0xe993, fontFamily: 'MaterialIcons'),
     "flight_rounded": IconData(0xf772, fontFamily: 'MaterialIcons'),
     "flight_outlined": IconData(0xf085, fontFamily: 'MaterialIcons'),
-    "flight_takeoff":
-        IconData(0xe299, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "flight_takeoff_sharp":
-        IconData(0xe994, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "flight_takeoff_rounded":
-        IconData(0xf773, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "flight_takeoff_outlined":
-        IconData(0xf086, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "flight_takeoff": IconData(0xe299, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "flight_takeoff_sharp": IconData(0xe994, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "flight_takeoff_rounded": IconData(0xf773, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "flight_takeoff_outlined": IconData(0xf086, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "flip": IconData(0xe29a, fontFamily: 'MaterialIcons'),
     "flip_camera_android": IconData(0xe29b, fontFamily: 'MaterialIcons'),
     "flip_camera_android_sharp": IconData(0xe995, fontFamily: 'MaterialIcons'),
-    "flip_camera_android_rounded":
-        IconData(0xf774, fontFamily: 'MaterialIcons'),
-    "flip_camera_android_outlined":
-        IconData(0xf087, fontFamily: 'MaterialIcons'),
+    "flip_camera_android_rounded": IconData(0xf774, fontFamily: 'MaterialIcons'),
+    "flip_camera_android_outlined": IconData(0xf087, fontFamily: 'MaterialIcons'),
     "flip_camera_ios": IconData(0xe29c, fontFamily: 'MaterialIcons'),
     "flip_camera_ios_sharp": IconData(0xe996, fontFamily: 'MaterialIcons'),
     "flip_camera_ios_rounded": IconData(0xf775, fontFamily: 'MaterialIcons'),
@@ -2891,16 +2593,12 @@ class IconUtil {
     "food_bank_outlined": IconData(0xf097, fontFamily: 'MaterialIcons'),
     "format_align_center": IconData(0xe2ab, fontFamily: 'MaterialIcons'),
     "format_align_center_sharp": IconData(0xe9a6, fontFamily: 'MaterialIcons'),
-    "format_align_center_rounded":
-        IconData(0xf785, fontFamily: 'MaterialIcons'),
-    "format_align_center_outlined":
-        IconData(0xf098, fontFamily: 'MaterialIcons'),
+    "format_align_center_rounded": IconData(0xf785, fontFamily: 'MaterialIcons'),
+    "format_align_center_outlined": IconData(0xf098, fontFamily: 'MaterialIcons'),
     "format_align_justify": IconData(0xe2ac, fontFamily: 'MaterialIcons'),
     "format_align_justify_sharp": IconData(0xe9a7, fontFamily: 'MaterialIcons'),
-    "format_align_justify_rounded":
-        IconData(0xf786, fontFamily: 'MaterialIcons'),
-    "format_align_justify_outlined":
-        IconData(0xf099, fontFamily: 'MaterialIcons'),
+    "format_align_justify_rounded": IconData(0xf786, fontFamily: 'MaterialIcons'),
+    "format_align_justify_outlined": IconData(0xf099, fontFamily: 'MaterialIcons'),
     "format_align_left": IconData(0xe2ad, fontFamily: 'MaterialIcons'),
     "format_align_left_sharp": IconData(0xe9a8, fontFamily: 'MaterialIcons'),
     "format_align_left_rounded": IconData(0xf787, fontFamily: 'MaterialIcons'),
@@ -2908,8 +2606,7 @@ class IconUtil {
     "format_align_right": IconData(0xe2ae, fontFamily: 'MaterialIcons'),
     "format_align_right_sharp": IconData(0xe9a9, fontFamily: 'MaterialIcons'),
     "format_align_right_rounded": IconData(0xf788, fontFamily: 'MaterialIcons'),
-    "format_align_right_outlined":
-        IconData(0xf09b, fontFamily: 'MaterialIcons'),
+    "format_align_right_outlined": IconData(0xf09b, fontFamily: 'MaterialIcons'),
     "format_bold": IconData(0xe2af, fontFamily: 'MaterialIcons'),
     "format_bold_sharp": IconData(0xe9aa, fontFamily: 'MaterialIcons'),
     "format_bold_rounded": IconData(0xf789, fontFamily: 'MaterialIcons'),
@@ -2925,58 +2622,38 @@ class IconUtil {
     "format_color_reset": IconData(0xe2b2, fontFamily: 'MaterialIcons'),
     "format_color_reset_sharp": IconData(0xe9ad, fontFamily: 'MaterialIcons'),
     "format_color_reset_rounded": IconData(0xf78c, fontFamily: 'MaterialIcons'),
-    "format_color_reset_outlined":
-        IconData(0xf09f, fontFamily: 'MaterialIcons'),
+    "format_color_reset_outlined": IconData(0xf09f, fontFamily: 'MaterialIcons'),
     "format_color_text": IconData(0xe2b3, fontFamily: 'MaterialIcons'),
     "format_color_text_sharp": IconData(0xe9ae, fontFamily: 'MaterialIcons'),
     "format_color_text_rounded": IconData(0xf78d, fontFamily: 'MaterialIcons'),
     "format_color_text_outlined": IconData(0xf0a0, fontFamily: 'MaterialIcons'),
-    "format_indent_decrease":
-        IconData(0xe2b4, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "format_indent_decrease_sharp":
-        IconData(0xe9af, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "format_indent_decrease_rounded":
-        IconData(0xf78e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "format_indent_decrease_outlined":
-        IconData(0xf0a1, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "format_indent_increase":
-        IconData(0xe2b5, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "format_indent_increase_sharp":
-        IconData(0xe9b0, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "format_indent_increase_rounded":
-        IconData(0xf78f, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "format_indent_increase_outlined":
-        IconData(0xf0a2, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_indent_decrease": IconData(0xe2b4, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_indent_decrease_sharp": IconData(0xe9af, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_indent_decrease_rounded": IconData(0xf78e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_indent_decrease_outlined": IconData(0xf0a1, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_indent_increase": IconData(0xe2b5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_indent_increase_sharp": IconData(0xe9b0, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_indent_increase_rounded": IconData(0xf78f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_indent_increase_outlined": IconData(0xf0a2, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "format_italic": IconData(0xe2b6, fontFamily: 'MaterialIcons'),
     "format_italic_sharp": IconData(0xe9b1, fontFamily: 'MaterialIcons'),
     "format_italic_rounded": IconData(0xf790, fontFamily: 'MaterialIcons'),
     "format_italic_outlined": IconData(0xf0a3, fontFamily: 'MaterialIcons'),
     "format_line_spacing": IconData(0xe2b7, fontFamily: 'MaterialIcons'),
     "format_line_spacing_sharp": IconData(0xe9b2, fontFamily: 'MaterialIcons'),
-    "format_line_spacing_rounded":
-        IconData(0xf791, fontFamily: 'MaterialIcons'),
-    "format_line_spacing_outlined":
-        IconData(0xf0a4, fontFamily: 'MaterialIcons'),
-    "format_list_bulleted":
-        IconData(0xe2b8, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "format_list_bulleted_sharp":
-        IconData(0xe9b3, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "format_list_bulleted_rounded":
-        IconData(0xf792, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "format_list_bulleted_outlined":
-        IconData(0xf0a5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_line_spacing_rounded": IconData(0xf791, fontFamily: 'MaterialIcons'),
+    "format_line_spacing_outlined": IconData(0xf0a4, fontFamily: 'MaterialIcons'),
+    "format_list_bulleted": IconData(0xe2b8, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_list_bulleted_sharp": IconData(0xe9b3, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_list_bulleted_rounded": IconData(0xf792, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "format_list_bulleted_outlined": IconData(0xf0a5, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "format_list_numbered": IconData(0xe2b9, fontFamily: 'MaterialIcons'),
-    "format_list_numbered_rounded":
-        IconData(0xf793, fontFamily: 'MaterialIcons'),
-    "format_list_numbered_outlined":
-        IconData(0xf0a6, fontFamily: 'MaterialIcons'),
+    "format_list_numbered_rounded": IconData(0xf793, fontFamily: 'MaterialIcons'),
+    "format_list_numbered_outlined": IconData(0xf0a6, fontFamily: 'MaterialIcons'),
     "format_list_numbered_rtl": IconData(0xe2ba, fontFamily: 'MaterialIcons'),
-    "format_list_numbered_rtl_sharp":
-        IconData(0xe9b4, fontFamily: 'MaterialIcons'),
-    "format_list_numbered_rtl_rounded":
-        IconData(0xf794, fontFamily: 'MaterialIcons'),
-    "format_list_numbered_rtl_outlined":
-        IconData(0xf0a7, fontFamily: 'MaterialIcons'),
+    "format_list_numbered_rtl_sharp": IconData(0xe9b4, fontFamily: 'MaterialIcons'),
+    "format_list_numbered_rtl_rounded": IconData(0xf794, fontFamily: 'MaterialIcons'),
+    "format_list_numbered_rtl_outlined": IconData(0xf0a7, fontFamily: 'MaterialIcons'),
     "format_list_numbered_sharp": IconData(0xe9b5, fontFamily: 'MaterialIcons'),
     "format_paint": IconData(0xe2bb, fontFamily: 'MaterialIcons'),
     "format_paint_sharp": IconData(0xe9b6, fontFamily: 'MaterialIcons'),
@@ -2996,26 +2673,16 @@ class IconUtil {
     "format_size_outlined": IconData(0xf0ab, fontFamily: 'MaterialIcons'),
     "format_strikethrough": IconData(0xe2bf, fontFamily: 'MaterialIcons'),
     "format_strikethrough_sharp": IconData(0xe9ba, fontFamily: 'MaterialIcons'),
-    "format_strikethrough_rounded":
-        IconData(0xf799, fontFamily: 'MaterialIcons'),
-    "format_strikethrough_outlined":
-        IconData(0xf0ac, fontFamily: 'MaterialIcons'),
-    "format_textdirection_l_to_r":
-        IconData(0xe2c0, fontFamily: 'MaterialIcons'),
-    "format_textdirection_l_to_r_sharp":
-        IconData(0xe9bb, fontFamily: 'MaterialIcons'),
-    "format_textdirection_l_to_r_rounded":
-        IconData(0xf79a, fontFamily: 'MaterialIcons'),
-    "format_textdirection_l_to_r_outlined":
-        IconData(0xf0ad, fontFamily: 'MaterialIcons'),
-    "format_textdirection_r_to_l":
-        IconData(0xe2c1, fontFamily: 'MaterialIcons'),
-    "format_textdirection_r_to_l_sharp":
-        IconData(0xe9bc, fontFamily: 'MaterialIcons'),
-    "format_textdirection_r_to_l_rounded":
-        IconData(0xf79b, fontFamily: 'MaterialIcons'),
-    "format_textdirection_r_to_l_outlined":
-        IconData(0xf0ae, fontFamily: 'MaterialIcons'),
+    "format_strikethrough_rounded": IconData(0xf799, fontFamily: 'MaterialIcons'),
+    "format_strikethrough_outlined": IconData(0xf0ac, fontFamily: 'MaterialIcons'),
+    "format_textdirection_l_to_r": IconData(0xe2c0, fontFamily: 'MaterialIcons'),
+    "format_textdirection_l_to_r_sharp": IconData(0xe9bb, fontFamily: 'MaterialIcons'),
+    "format_textdirection_l_to_r_rounded": IconData(0xf79a, fontFamily: 'MaterialIcons'),
+    "format_textdirection_l_to_r_outlined": IconData(0xf0ad, fontFamily: 'MaterialIcons'),
+    "format_textdirection_r_to_l": IconData(0xe2c1, fontFamily: 'MaterialIcons'),
+    "format_textdirection_r_to_l_sharp": IconData(0xe9bc, fontFamily: 'MaterialIcons'),
+    "format_textdirection_r_to_l_rounded": IconData(0xf79b, fontFamily: 'MaterialIcons'),
+    "format_textdirection_r_to_l_outlined": IconData(0xf0ae, fontFamily: 'MaterialIcons'),
     "format_underline": IconData(0xe2c2, fontFamily: 'MaterialIcons'),
     "format_underline_sharp": IconData(0xe9bd, fontFamily: 'MaterialIcons'),
     "format_underline_rounded": IconData(0xf79c, fontFamily: 'MaterialIcons'),
@@ -3028,8 +2695,7 @@ class IconUtil {
     "forum_sharp": IconData(0xe9be, fontFamily: 'MaterialIcons'),
     "forum_rounded": IconData(0xf79d, fontFamily: 'MaterialIcons'),
     "forum_outlined": IconData(0xf0b0, fontFamily: 'MaterialIcons'),
-    "forward":
-        IconData(0xe2c4, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "forward": IconData(0xe2c4, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "forward_10": IconData(0xe2c5, fontFamily: 'MaterialIcons'),
     "forward_10_sharp": IconData(0xe9bf, fontFamily: 'MaterialIcons'),
     "forward_10_rounded": IconData(0xf79e, fontFamily: 'MaterialIcons'),
@@ -3042,12 +2708,9 @@ class IconUtil {
     "forward_5_sharp": IconData(0xe9c1, fontFamily: 'MaterialIcons'),
     "forward_5_rounded": IconData(0xf7a0, fontFamily: 'MaterialIcons'),
     "forward_5_outlined": IconData(0xf0b3, fontFamily: 'MaterialIcons'),
-    "forward_sharp":
-        IconData(0xe9c2, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "forward_rounded":
-        IconData(0xf7a1, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "forward_outlined":
-        IconData(0xf0b4, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "forward_sharp": IconData(0xe9c2, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "forward_rounded": IconData(0xf7a1, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "forward_outlined": IconData(0xf0b4, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "forward_to_inbox": IconData(0xe2c8, fontFamily: 'MaterialIcons'),
     "forward_to_inbox_sharp": IconData(0xe9c3, fontFamily: 'MaterialIcons'),
     "forward_to_inbox_rounded": IconData(0xf7a2, fontFamily: 'MaterialIcons'),
@@ -3061,12 +2724,9 @@ class IconUtil {
     "four_g_mobiledata_rounded": IconData(0xf4fe, fontFamily: 'MaterialIcons'),
     "four_g_mobiledata_outlined": IconData(0xee11, fontFamily: 'MaterialIcons'),
     "four_g_plus_mobiledata": IconData(0xe020, fontFamily: 'MaterialIcons'),
-    "four_g_plus_mobiledata_sharp":
-        IconData(0xe720, fontFamily: 'MaterialIcons'),
-    "four_g_plus_mobiledata_rounded":
-        IconData(0xf4ff, fontFamily: 'MaterialIcons'),
-    "four_g_plus_mobiledata_outlined":
-        IconData(0xee12, fontFamily: 'MaterialIcons'),
+    "four_g_plus_mobiledata_sharp": IconData(0xe720, fontFamily: 'MaterialIcons'),
+    "four_g_plus_mobiledata_rounded": IconData(0xf4ff, fontFamily: 'MaterialIcons'),
+    "four_g_plus_mobiledata_outlined": IconData(0xee12, fontFamily: 'MaterialIcons'),
     "four_k": IconData(0xe021, fontFamily: 'MaterialIcons'),
     "four_k_plus": IconData(0xe022, fontFamily: 'MaterialIcons'),
     "four_k_plus_sharp": IconData(0xe721, fontFamily: 'MaterialIcons'),
@@ -3095,14 +2755,10 @@ class IconUtil {
     "fullscreen_sharp": IconData(0xe9c7, fontFamily: 'MaterialIcons'),
     "fullscreen_rounded": IconData(0xf7a6, fontFamily: 'MaterialIcons'),
     "fullscreen_outlined": IconData(0xf0b9, fontFamily: 'MaterialIcons'),
-    "functions":
-        IconData(0xe2cd, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "functions_sharp":
-        IconData(0xe9c8, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "functions_rounded":
-        IconData(0xf7a7, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "functions_outlined":
-        IconData(0xf0ba, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "functions": IconData(0xe2cd, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "functions_sharp": IconData(0xe9c8, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "functions_rounded": IconData(0xf7a7, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "functions_outlined": IconData(0xf0ba, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "g_mobiledata": IconData(0xe2ce, fontFamily: 'MaterialIcons'),
     "g_mobiledata_sharp": IconData(0xe9c9, fontFamily: 'MaterialIcons'),
     "g_mobiledata_rounded": IconData(0xf7a8, fontFamily: 'MaterialIcons'),
@@ -3269,10 +2925,8 @@ class IconUtil {
     "hdr_auto_sharp": IconData(0xe9f1, fontFamily: 'MaterialIcons'),
     "hdr_enhanced_select": IconData(0xe2f7, fontFamily: 'MaterialIcons'),
     "hdr_enhanced_select_sharp": IconData(0xe9f2, fontFamily: 'MaterialIcons'),
-    "hdr_enhanced_select_rounded":
-        IconData(0xf7d1, fontFamily: 'MaterialIcons'),
-    "hdr_enhanced_select_outlined":
-        IconData(0xf0e4, fontFamily: 'MaterialIcons'),
+    "hdr_enhanced_select_rounded": IconData(0xf7d1, fontFamily: 'MaterialIcons'),
+    "hdr_enhanced_select_outlined": IconData(0xf0e4, fontFamily: 'MaterialIcons'),
     "hdr_off": IconData(0xe2f8, fontFamily: 'MaterialIcons'),
     "hdr_off_select": IconData(0xe2f9, fontFamily: 'MaterialIcons'),
     "hdr_off_select_sharp": IconData(0xe9f3, fontFamily: 'MaterialIcons'),
@@ -3305,8 +2959,7 @@ class IconUtil {
     "headphones_battery": IconData(0xe300, fontFamily: 'MaterialIcons'),
     "headphones_battery_sharp": IconData(0xe9fa, fontFamily: 'MaterialIcons'),
     "headphones_battery_rounded": IconData(0xf7d9, fontFamily: 'MaterialIcons'),
-    "headphones_battery_outlined":
-        IconData(0xf0ec, fontFamily: 'MaterialIcons'),
+    "headphones_battery_outlined": IconData(0xf0ec, fontFamily: 'MaterialIcons'),
     "headphones_sharp": IconData(0xe9fb, fontFamily: 'MaterialIcons'),
     "headphones_rounded": IconData(0xf7da, fontFamily: 'MaterialIcons'),
     "headphones_outlined": IconData(0xf0ed, fontFamily: 'MaterialIcons'),
@@ -3342,26 +2995,18 @@ class IconUtil {
     "height_sharp": IconData(0xea03, fontFamily: 'MaterialIcons'),
     "height_rounded": IconData(0xf7e2, fontFamily: 'MaterialIcons'),
     "height_outlined": IconData(0xf0f5, fontFamily: 'MaterialIcons'),
-    "help":
-        IconData(0xe309, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "help": IconData(0xe309, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "help_center": IconData(0xe30a, fontFamily: 'MaterialIcons'),
     "help_center_sharp": IconData(0xea04, fontFamily: 'MaterialIcons'),
     "help_center_rounded": IconData(0xf7e3, fontFamily: 'MaterialIcons'),
     "help_center_outlined": IconData(0xf0f6, fontFamily: 'MaterialIcons'),
-    "help_outline":
-        IconData(0xe30b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "help_outline_sharp":
-        IconData(0xea05, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "help_outline_rounded":
-        IconData(0xf7e4, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "help_outline_outlined":
-        IconData(0xf0f7, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "help_sharp":
-        IconData(0xea06, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "help_rounded":
-        IconData(0xf7e5, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "help_outlined":
-        IconData(0xf0f8, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "help_outline": IconData(0xe30b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "help_outline_sharp": IconData(0xea05, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "help_outline_rounded": IconData(0xf7e4, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "help_outline_outlined": IconData(0xf0f7, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "help_sharp": IconData(0xea06, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "help_rounded": IconData(0xf7e5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "help_outlined": IconData(0xf0f8, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "hevc": IconData(0xe30c, fontFamily: 'MaterialIcons'),
     "hevc_sharp": IconData(0xea07, fontFamily: 'MaterialIcons'),
     "hevc_rounded": IconData(0xf7e6, fontFamily: 'MaterialIcons'),
@@ -3409,8 +3054,7 @@ class IconUtil {
     "history_toggle_off": IconData(0xe316, fontFamily: 'MaterialIcons'),
     "history_toggle_off_sharp": IconData(0xea11, fontFamily: 'MaterialIcons'),
     "history_toggle_off_rounded": IconData(0xf7f0, fontFamily: 'MaterialIcons'),
-    "history_toggle_off_outlined":
-        IconData(0xf103, fontFamily: 'MaterialIcons'),
+    "history_toggle_off_outlined": IconData(0xf103, fontFamily: 'MaterialIcons'),
     "holiday_village": IconData(0xe317, fontFamily: 'MaterialIcons'),
     "holiday_village_sharp": IconData(0xea12, fontFamily: 'MaterialIcons'),
     "holiday_village_rounded": IconData(0xf7f1, fontFamily: 'MaterialIcons'),
@@ -3429,22 +3073,17 @@ class IconUtil {
     "home_outlined": IconData(0xf107, fontFamily: 'MaterialIcons'),
     "home_repair_service": IconData(0xe31c, fontFamily: 'MaterialIcons'),
     "home_repair_service_sharp": IconData(0xea15, fontFamily: 'MaterialIcons'),
-    "home_repair_service_rounded":
-        IconData(0xf7f4, fontFamily: 'MaterialIcons'),
-    "home_repair_service_outlined":
-        IconData(0xf108, fontFamily: 'MaterialIcons'),
+    "home_repair_service_rounded": IconData(0xf7f4, fontFamily: 'MaterialIcons'),
+    "home_repair_service_outlined": IconData(0xf108, fontFamily: 'MaterialIcons'),
     "home_rounded": IconData(0xf7f5, fontFamily: 'MaterialIcons'),
     "home_work": IconData(0xe31d, fontFamily: 'MaterialIcons'),
     "home_work_sharp": IconData(0xea17, fontFamily: 'MaterialIcons'),
     "home_work_rounded": IconData(0xf7f6, fontFamily: 'MaterialIcons'),
     "home_work_outlined": IconData(0xf109, fontFamily: 'MaterialIcons'),
     "horizontal_distribute": IconData(0xe31e, fontFamily: 'MaterialIcons'),
-    "horizontal_distribute_sharp":
-        IconData(0xea18, fontFamily: 'MaterialIcons'),
-    "horizontal_distribute_rounded":
-        IconData(0xf7f7, fontFamily: 'MaterialIcons'),
-    "horizontal_distribute_outlined":
-        IconData(0xf10a, fontFamily: 'MaterialIcons'),
+    "horizontal_distribute_sharp": IconData(0xea18, fontFamily: 'MaterialIcons'),
+    "horizontal_distribute_rounded": IconData(0xf7f7, fontFamily: 'MaterialIcons'),
+    "horizontal_distribute_outlined": IconData(0xf10a, fontFamily: 'MaterialIcons'),
     "horizontal_rule": IconData(0xe31f, fontFamily: 'MaterialIcons'),
     "horizontal_rule_sharp": IconData(0xea19, fontFamily: 'MaterialIcons'),
     "horizontal_rule_rounded": IconData(0xf7f8, fontFamily: 'MaterialIcons'),
@@ -3468,8 +3107,7 @@ class IconUtil {
     "hourglass_disabled": IconData(0xe324, fontFamily: 'MaterialIcons'),
     "hourglass_disabled_sharp": IconData(0xea1e, fontFamily: 'MaterialIcons'),
     "hourglass_disabled_rounded": IconData(0xf7fd, fontFamily: 'MaterialIcons'),
-    "hourglass_disabled_outlined":
-        IconData(0xf110, fontFamily: 'MaterialIcons'),
+    "hourglass_disabled_outlined": IconData(0xf110, fontFamily: 'MaterialIcons'),
     "hourglass_empty": IconData(0xe325, fontFamily: 'MaterialIcons'),
     "hourglass_empty_sharp": IconData(0xea1f, fontFamily: 'MaterialIcons'),
     "hourglass_empty_rounded": IconData(0xf7fe, fontFamily: 'MaterialIcons'),
@@ -3526,14 +3164,11 @@ class IconUtil {
     "image_aspect_ratio": IconData(0xe333, fontFamily: 'MaterialIcons'),
     "image_aspect_ratio_sharp": IconData(0xea2c, fontFamily: 'MaterialIcons'),
     "image_aspect_ratio_rounded": IconData(0xf80b, fontFamily: 'MaterialIcons'),
-    "image_aspect_ratio_outlined":
-        IconData(0xf11e, fontFamily: 'MaterialIcons'),
+    "image_aspect_ratio_outlined": IconData(0xf11e, fontFamily: 'MaterialIcons'),
     "image_not_supported": IconData(0xe334, fontFamily: 'MaterialIcons'),
     "image_not_supported_sharp": IconData(0xea2d, fontFamily: 'MaterialIcons'),
-    "image_not_supported_rounded":
-        IconData(0xf80c, fontFamily: 'MaterialIcons'),
-    "image_not_supported_outlined":
-        IconData(0xf11f, fontFamily: 'MaterialIcons'),
+    "image_not_supported_rounded": IconData(0xf80c, fontFamily: 'MaterialIcons'),
+    "image_not_supported_outlined": IconData(0xf11f, fontFamily: 'MaterialIcons'),
     "image_sharp": IconData(0xea2f, fontFamily: 'MaterialIcons'),
     "image_rounded": IconData(0xf80d, fontFamily: 'MaterialIcons'),
     "image_outlined": IconData(0xf120, fontFamily: 'MaterialIcons'),
@@ -3544,8 +3179,7 @@ class IconUtil {
     "imagesearch_roller": IconData(0xe336, fontFamily: 'MaterialIcons'),
     "imagesearch_roller_sharp": IconData(0xea30, fontFamily: 'MaterialIcons'),
     "imagesearch_roller_rounded": IconData(0xf80f, fontFamily: 'MaterialIcons'),
-    "imagesearch_roller_outlined":
-        IconData(0xf122, fontFamily: 'MaterialIcons'),
+    "imagesearch_roller_outlined": IconData(0xf122, fontFamily: 'MaterialIcons'),
     "import_contacts": IconData(0xe337, fontFamily: 'MaterialIcons'),
     "import_contacts_sharp": IconData(0xea31, fontFamily: 'MaterialIcons'),
     "import_contacts_rounded": IconData(0xf810, fontFamily: 'MaterialIcons'),
@@ -3563,12 +3197,9 @@ class IconUtil {
     "inbox_rounded": IconData(0xf813, fontFamily: 'MaterialIcons'),
     "inbox_outlined": IconData(0xf126, fontFamily: 'MaterialIcons'),
     "indeterminate_check_box": IconData(0xe33b, fontFamily: 'MaterialIcons'),
-    "indeterminate_check_box_sharp":
-        IconData(0xea35, fontFamily: 'MaterialIcons'),
-    "indeterminate_check_box_rounded":
-        IconData(0xf814, fontFamily: 'MaterialIcons'),
-    "indeterminate_check_box_outlined":
-        IconData(0xf127, fontFamily: 'MaterialIcons'),
+    "indeterminate_check_box_sharp": IconData(0xea35, fontFamily: 'MaterialIcons'),
+    "indeterminate_check_box_rounded": IconData(0xf814, fontFamily: 'MaterialIcons'),
+    "indeterminate_check_box_outlined": IconData(0xf127, fontFamily: 'MaterialIcons'),
     "info": IconData(0xe33c, fontFamily: 'MaterialIcons'),
     "info_outline": IconData(0xe33d, fontFamily: 'MaterialIcons'),
     "info_outline_sharp": IconData(0xea36, fontFamily: 'MaterialIcons'),
@@ -3576,22 +3207,15 @@ class IconUtil {
     "info_sharp": IconData(0xea37, fontFamily: 'MaterialIcons'),
     "info_rounded": IconData(0xf816, fontFamily: 'MaterialIcons'),
     "info_outlined": IconData(0xf128, fontFamily: 'MaterialIcons'),
-    "input":
-        IconData(0xe33e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "input_sharp":
-        IconData(0xea38, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "input_rounded":
-        IconData(0xf817, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "input_outlined":
-        IconData(0xf129, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "input": IconData(0xe33e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "input_sharp": IconData(0xea38, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "input_rounded": IconData(0xf817, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "input_outlined": IconData(0xf129, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "insert_chart": IconData(0xe33f, fontFamily: 'MaterialIcons'),
     "insert_chart_outlined": IconData(0xf12a, fontFamily: 'MaterialIcons'),
-    "insert_chart_outlined_sharp":
-        IconData(0xea39, fontFamily: 'MaterialIcons'),
-    "insert_chart_outlined_rounded":
-        IconData(0xf818, fontFamily: 'MaterialIcons'),
-    "insert_chart_outlined_outlined":
-        IconData(0xf12b, fontFamily: 'MaterialIcons'),
+    "insert_chart_outlined_sharp": IconData(0xea39, fontFamily: 'MaterialIcons'),
+    "insert_chart_outlined_rounded": IconData(0xf818, fontFamily: 'MaterialIcons'),
+    "insert_chart_outlined_outlined": IconData(0xf12b, fontFamily: 'MaterialIcons'),
     "insert_chart_sharp": IconData(0xea3a, fontFamily: 'MaterialIcons'),
     "insert_chart_rounded": IconData(0xf819, fontFamily: 'MaterialIcons'),
     "insert_comment": IconData(0xe341, fontFamily: 'MaterialIcons'),
@@ -3623,12 +3247,9 @@ class IconUtil {
     "insights_rounded": IconData(0xf820, fontFamily: 'MaterialIcons'),
     "insights_outlined": IconData(0xf132, fontFamily: 'MaterialIcons'),
     "integration_instructions": IconData(0xe348, fontFamily: 'MaterialIcons'),
-    "integration_instructions_sharp":
-        IconData(0xea42, fontFamily: 'MaterialIcons'),
-    "integration_instructions_rounded":
-        IconData(0xf821, fontFamily: 'MaterialIcons'),
-    "integration_instructions_outlined":
-        IconData(0xf133, fontFamily: 'MaterialIcons'),
+    "integration_instructions_sharp": IconData(0xea42, fontFamily: 'MaterialIcons'),
+    "integration_instructions_rounded": IconData(0xf821, fontFamily: 'MaterialIcons'),
+    "integration_instructions_outlined": IconData(0xf133, fontFamily: 'MaterialIcons'),
     "inventory": IconData(0xe349, fontFamily: 'MaterialIcons'),
     "inventory_2": IconData(0xe34a, fontFamily: 'MaterialIcons'),
     "inventory_2_sharp": IconData(0xea43, fontFamily: 'MaterialIcons'),
@@ -3672,34 +3293,24 @@ class IconUtil {
     "keyboard_alt_outlined": IconData(0xf13c, fontFamily: 'MaterialIcons'),
     "keyboard_arrow_down": IconData(0xe353, fontFamily: 'MaterialIcons'),
     "keyboard_arrow_down_sharp": IconData(0xea4c, fontFamily: 'MaterialIcons'),
-    "keyboard_arrow_down_rounded":
-        IconData(0xf82b, fontFamily: 'MaterialIcons'),
-    "keyboard_arrow_down_outlined":
-        IconData(0xf13d, fontFamily: 'MaterialIcons'),
+    "keyboard_arrow_down_rounded": IconData(0xf82b, fontFamily: 'MaterialIcons'),
+    "keyboard_arrow_down_outlined": IconData(0xf13d, fontFamily: 'MaterialIcons'),
     "keyboard_arrow_left": IconData(0xe354, fontFamily: 'MaterialIcons'),
     "keyboard_arrow_left_sharp": IconData(0xea4d, fontFamily: 'MaterialIcons'),
-    "keyboard_arrow_left_rounded":
-        IconData(0xf82c, fontFamily: 'MaterialIcons'),
-    "keyboard_arrow_left_outlined":
-        IconData(0xf13e, fontFamily: 'MaterialIcons'),
+    "keyboard_arrow_left_rounded": IconData(0xf82c, fontFamily: 'MaterialIcons'),
+    "keyboard_arrow_left_outlined": IconData(0xf13e, fontFamily: 'MaterialIcons'),
     "keyboard_arrow_right": IconData(0xe355, fontFamily: 'MaterialIcons'),
     "keyboard_arrow_right_sharp": IconData(0xea4e, fontFamily: 'MaterialIcons'),
-    "keyboard_arrow_right_rounded":
-        IconData(0xf82d, fontFamily: 'MaterialIcons'),
-    "keyboard_arrow_right_outlined":
-        IconData(0xf13f, fontFamily: 'MaterialIcons'),
+    "keyboard_arrow_right_rounded": IconData(0xf82d, fontFamily: 'MaterialIcons'),
+    "keyboard_arrow_right_outlined": IconData(0xf13f, fontFamily: 'MaterialIcons'),
     "keyboard_arrow_up": IconData(0xe356, fontFamily: 'MaterialIcons'),
     "keyboard_arrow_up_sharp": IconData(0xea4f, fontFamily: 'MaterialIcons'),
     "keyboard_arrow_up_rounded": IconData(0xf82e, fontFamily: 'MaterialIcons'),
     "keyboard_arrow_up_outlined": IconData(0xf140, fontFamily: 'MaterialIcons'),
-    "keyboard_backspace":
-        IconData(0xe357, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "keyboard_backspace_sharp":
-        IconData(0xea50, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "keyboard_backspace_rounded":
-        IconData(0xf82f, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "keyboard_backspace_outlined":
-        IconData(0xf141, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "keyboard_backspace": IconData(0xe357, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "keyboard_backspace_sharp": IconData(0xea50, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "keyboard_backspace_rounded": IconData(0xf82f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "keyboard_backspace_outlined": IconData(0xf141, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "keyboard_capslock": IconData(0xe358, fontFamily: 'MaterialIcons'),
     "keyboard_capslock_sharp": IconData(0xea51, fontFamily: 'MaterialIcons'),
     "keyboard_capslock_rounded": IconData(0xf830, fontFamily: 'MaterialIcons'),
@@ -3719,14 +3330,10 @@ class IconUtil {
     "keyboard_return_sharp": IconData(0xea53, fontFamily: 'MaterialIcons'),
     "keyboard_return_rounded": IconData(0xf832, fontFamily: 'MaterialIcons'),
     "keyboard_return_outlined": IconData(0xf145, fontFamily: 'MaterialIcons'),
-    "keyboard_tab":
-        IconData(0xe35b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "keyboard_tab_sharp":
-        IconData(0xea55, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "keyboard_tab_rounded":
-        IconData(0xf834, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "keyboard_tab_outlined":
-        IconData(0xf146, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "keyboard_tab": IconData(0xe35b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "keyboard_tab_sharp": IconData(0xea55, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "keyboard_tab_rounded": IconData(0xf834, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "keyboard_tab_outlined": IconData(0xf146, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "keyboard_voice": IconData(0xe35c, fontFamily: 'MaterialIcons'),
     "keyboard_voice_sharp": IconData(0xea56, fontFamily: 'MaterialIcons'),
     "keyboard_voice_rounded": IconData(0xf835, fontFamily: 'MaterialIcons'),
@@ -3743,37 +3350,24 @@ class IconUtil {
     "kitesurfing_sharp": IconData(0xea59, fontFamily: 'MaterialIcons'),
     "kitesurfing_rounded": IconData(0xf838, fontFamily: 'MaterialIcons'),
     "kitesurfing_outlined": IconData(0xf14a, fontFamily: 'MaterialIcons'),
-    "label":
-        IconData(0xe360, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "label_important":
-        IconData(0xe361, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label": IconData(0xe360, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label_important": IconData(0xe361, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "label_important_outline": IconData(0xe362, fontFamily: 'MaterialIcons'),
-    "label_important_outline_sharp":
-        IconData(0xea5a, fontFamily: 'MaterialIcons'),
-    "label_important_outline_rounded":
-        IconData(0xf839, fontFamily: 'MaterialIcons'),
-    "label_important_sharp":
-        IconData(0xea5b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "label_important_rounded":
-        IconData(0xf83a, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "label_important_outlined":
-        IconData(0xf14b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label_important_outline_sharp": IconData(0xea5a, fontFamily: 'MaterialIcons'),
+    "label_important_outline_rounded": IconData(0xf839, fontFamily: 'MaterialIcons'),
+    "label_important_sharp": IconData(0xea5b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label_important_rounded": IconData(0xf83a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label_important_outlined": IconData(0xf14b, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "label_off": IconData(0xe363, fontFamily: 'MaterialIcons'),
     "label_off_sharp": IconData(0xea5c, fontFamily: 'MaterialIcons'),
     "label_off_rounded": IconData(0xf83b, fontFamily: 'MaterialIcons'),
     "label_off_outlined": IconData(0xf14c, fontFamily: 'MaterialIcons'),
-    "label_outline":
-        IconData(0xe364, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "label_outline_sharp":
-        IconData(0xea5d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "label_outline_rounded":
-        IconData(0xf83c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "label_sharp":
-        IconData(0xea5e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "label_rounded":
-        IconData(0xf83d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "label_outlined":
-        IconData(0xf14d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label_outline": IconData(0xe364, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label_outline_sharp": IconData(0xea5d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label_outline_rounded": IconData(0xf83c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label_sharp": IconData(0xea5e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label_rounded": IconData(0xf83d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "label_outlined": IconData(0xf14d, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "landscape": IconData(0xe365, fontFamily: 'MaterialIcons'),
     "landscape_sharp": IconData(0xea5f, fontFamily: 'MaterialIcons'),
     "landscape_rounded": IconData(0xf83e, fontFamily: 'MaterialIcons'),
@@ -3798,22 +3392,14 @@ class IconUtil {
     "laptop_windows_sharp": IconData(0xea64, fontFamily: 'MaterialIcons'),
     "laptop_windows_rounded": IconData(0xf843, fontFamily: 'MaterialIcons'),
     "laptop_windows_outlined": IconData(0xf153, fontFamily: 'MaterialIcons'),
-    "last_page":
-        IconData(0xe36b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "last_page_sharp":
-        IconData(0xea65, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "last_page_rounded":
-        IconData(0xf844, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "last_page_outlined":
-        IconData(0xf154, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "launch":
-        IconData(0xe36c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "launch_sharp":
-        IconData(0xea66, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "launch_rounded":
-        IconData(0xf845, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "launch_outlined":
-        IconData(0xf155, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "last_page": IconData(0xe36b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "last_page_sharp": IconData(0xea65, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "last_page_rounded": IconData(0xf844, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "last_page_outlined": IconData(0xf154, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "launch": IconData(0xe36c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "launch_sharp": IconData(0xea66, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "launch_rounded": IconData(0xf845, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "launch_outlined": IconData(0xf155, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "layers": IconData(0xe36d, fontFamily: 'MaterialIcons'),
     "layers_clear": IconData(0xe36e, fontFamily: 'MaterialIcons'),
     "layers_clear_sharp": IconData(0xea67, fontFamily: 'MaterialIcons'),
@@ -3836,10 +3422,8 @@ class IconUtil {
     "leak_remove_outlined": IconData(0xf15a, fontFamily: 'MaterialIcons'),
     "leave_bags_at_home": IconData(0xe439, fontFamily: 'MaterialIcons'),
     "leave_bags_at_home_sharp": IconData(0xeb32, fontFamily: 'MaterialIcons'),
-    "leave_bags_at_home_rounded":
-        IconData(0xf0011, fontFamily: 'MaterialIcons'),
-    "leave_bags_at_home_outlined":
-        IconData(0xf21f, fontFamily: 'MaterialIcons'),
+    "leave_bags_at_home_rounded": IconData(0xf0011, fontFamily: 'MaterialIcons'),
+    "leave_bags_at_home_outlined": IconData(0xf21f, fontFamily: 'MaterialIcons'),
     "legend_toggle": IconData(0xe372, fontFamily: 'MaterialIcons'),
     "legend_toggle_sharp": IconData(0xea6c, fontFamily: 'MaterialIcons'),
     "legend_toggle_rounded": IconData(0xf84b, fontFamily: 'MaterialIcons'),
@@ -3911,26 +3495,18 @@ class IconUtil {
     "liquor_sharp": IconData(0xea7d, fontFamily: 'MaterialIcons'),
     "liquor_rounded": IconData(0xf85c, fontFamily: 'MaterialIcons'),
     "liquor_outlined": IconData(0xf16b, fontFamily: 'MaterialIcons'),
-    "list":
-        IconData(0xe384, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "list": IconData(0xe384, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "list_alt": IconData(0xe385, fontFamily: 'MaterialIcons'),
     "list_alt_sharp": IconData(0xea7e, fontFamily: 'MaterialIcons'),
     "list_alt_rounded": IconData(0xf85d, fontFamily: 'MaterialIcons'),
     "list_alt_outlined": IconData(0xf16c, fontFamily: 'MaterialIcons'),
-    "list_sharp":
-        IconData(0xea7f, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "list_rounded":
-        IconData(0xf85e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "list_outlined":
-        IconData(0xf16d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "live_help":
-        IconData(0xe386, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "live_help_sharp":
-        IconData(0xea80, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "live_help_rounded":
-        IconData(0xf85f, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "live_help_outlined":
-        IconData(0xf16e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "list_sharp": IconData(0xea7f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "list_rounded": IconData(0xf85e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "list_outlined": IconData(0xf16d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "live_help": IconData(0xe386, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "live_help_sharp": IconData(0xea80, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "live_help_rounded": IconData(0xf85f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "live_help_outlined": IconData(0xf16e, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "live_tv": IconData(0xe387, fontFamily: 'MaterialIcons'),
     "live_tv_sharp": IconData(0xea81, fontFamily: 'MaterialIcons'),
     "live_tv_rounded": IconData(0xf860, fontFamily: 'MaterialIcons'),
@@ -3968,12 +3544,9 @@ class IconUtil {
     "local_car_wash_rounded": IconData(0xf867, fontFamily: 'MaterialIcons'),
     "local_car_wash_outlined": IconData(0xf176, fontFamily: 'MaterialIcons'),
     "local_convenience_store": IconData(0xe38f, fontFamily: 'MaterialIcons'),
-    "local_convenience_store_sharp":
-        IconData(0xea89, fontFamily: 'MaterialIcons'),
-    "local_convenience_store_rounded":
-        IconData(0xf868, fontFamily: 'MaterialIcons'),
-    "local_convenience_store_outlined":
-        IconData(0xf177, fontFamily: 'MaterialIcons'),
+    "local_convenience_store_sharp": IconData(0xea89, fontFamily: 'MaterialIcons'),
+    "local_convenience_store_rounded": IconData(0xf868, fontFamily: 'MaterialIcons'),
+    "local_convenience_store_outlined": IconData(0xf177, fontFamily: 'MaterialIcons'),
     "local_dining": IconData(0xe390, fontFamily: 'MaterialIcons'),
     "local_dining_sharp": IconData(0xea8a, fontFamily: 'MaterialIcons'),
     "local_dining_rounded": IconData(0xf869, fontFamily: 'MaterialIcons'),
@@ -3983,12 +3556,9 @@ class IconUtil {
     "local_drink_rounded": IconData(0xf86a, fontFamily: 'MaterialIcons'),
     "local_drink_outlined": IconData(0xf179, fontFamily: 'MaterialIcons'),
     "local_fire_department": IconData(0xe392, fontFamily: 'MaterialIcons'),
-    "local_fire_department_sharp":
-        IconData(0xea8c, fontFamily: 'MaterialIcons'),
-    "local_fire_department_rounded":
-        IconData(0xf86b, fontFamily: 'MaterialIcons'),
-    "local_fire_department_outlined":
-        IconData(0xf17a, fontFamily: 'MaterialIcons'),
+    "local_fire_department_sharp": IconData(0xea8c, fontFamily: 'MaterialIcons'),
+    "local_fire_department_rounded": IconData(0xf86b, fontFamily: 'MaterialIcons'),
+    "local_fire_department_outlined": IconData(0xf17a, fontFamily: 'MaterialIcons'),
     "local_florist": IconData(0xe393, fontFamily: 'MaterialIcons'),
     "local_florist_sharp": IconData(0xea8d, fontFamily: 'MaterialIcons'),
     "local_florist_rounded": IconData(0xf86c, fontFamily: 'MaterialIcons'),
@@ -3999,10 +3569,8 @@ class IconUtil {
     "local_gas_station_outlined": IconData(0xf17c, fontFamily: 'MaterialIcons'),
     "local_grocery_store": IconData(0xe395, fontFamily: 'MaterialIcons'),
     "local_grocery_store_sharp": IconData(0xea8f, fontFamily: 'MaterialIcons'),
-    "local_grocery_store_rounded":
-        IconData(0xf86e, fontFamily: 'MaterialIcons'),
-    "local_grocery_store_outlined":
-        IconData(0xf17d, fontFamily: 'MaterialIcons'),
+    "local_grocery_store_rounded": IconData(0xf86e, fontFamily: 'MaterialIcons'),
+    "local_grocery_store_outlined": IconData(0xf17d, fontFamily: 'MaterialIcons'),
     "local_hospital": IconData(0xe396, fontFamily: 'MaterialIcons'),
     "local_hospital_sharp": IconData(0xea90, fontFamily: 'MaterialIcons'),
     "local_hospital_rounded": IconData(0xf86f, fontFamily: 'MaterialIcons'),
@@ -4012,12 +3580,9 @@ class IconUtil {
     "local_hotel_rounded": IconData(0xf870, fontFamily: 'MaterialIcons'),
     "local_hotel_outlined": IconData(0xf17f, fontFamily: 'MaterialIcons'),
     "local_laundry_service": IconData(0xe398, fontFamily: 'MaterialIcons'),
-    "local_laundry_service_sharp":
-        IconData(0xea92, fontFamily: 'MaterialIcons'),
-    "local_laundry_service_rounded":
-        IconData(0xf871, fontFamily: 'MaterialIcons'),
-    "local_laundry_service_outlined":
-        IconData(0xf180, fontFamily: 'MaterialIcons'),
+    "local_laundry_service_sharp": IconData(0xea92, fontFamily: 'MaterialIcons'),
+    "local_laundry_service_rounded": IconData(0xf871, fontFamily: 'MaterialIcons'),
+    "local_laundry_service_outlined": IconData(0xf180, fontFamily: 'MaterialIcons'),
     "local_library": IconData(0xe399, fontFamily: 'MaterialIcons'),
     "local_library_sharp": IconData(0xea93, fontFamily: 'MaterialIcons'),
     "local_library_rounded": IconData(0xf872, fontFamily: 'MaterialIcons'),
@@ -4110,8 +3675,7 @@ class IconUtil {
     "location_searching": IconData(0xe3ad, fontFamily: 'MaterialIcons'),
     "location_searching_sharp": IconData(0xeaa6, fontFamily: 'MaterialIcons'),
     "location_searching_rounded": IconData(0xf885, fontFamily: 'MaterialIcons'),
-    "location_searching_outlined":
-        IconData(0xf194, fontFamily: 'MaterialIcons'),
+    "location_searching_outlined": IconData(0xf194, fontFamily: 'MaterialIcons'),
     "lock": IconData(0xe3ae, fontFamily: 'MaterialIcons'),
     "lock_clock": IconData(0xe3af, fontFamily: 'MaterialIcons'),
     "lock_clock_sharp": IconData(0xeaa7, fontFamily: 'MaterialIcons'),
@@ -4185,10 +3749,8 @@ class IconUtil {
     "lte_mobiledata_outlined": IconData(0xf1a5, fontFamily: 'MaterialIcons'),
     "lte_plus_mobiledata": IconData(0xe3c0, fontFamily: 'MaterialIcons'),
     "lte_plus_mobiledata_sharp": IconData(0xeab9, fontFamily: 'MaterialIcons'),
-    "lte_plus_mobiledata_rounded":
-        IconData(0xf898, fontFamily: 'MaterialIcons'),
-    "lte_plus_mobiledata_outlined":
-        IconData(0xf1a6, fontFamily: 'MaterialIcons'),
+    "lte_plus_mobiledata_rounded": IconData(0xf898, fontFamily: 'MaterialIcons'),
+    "lte_plus_mobiledata_outlined": IconData(0xf1a6, fontFamily: 'MaterialIcons'),
     "luggage": IconData(0xe3c1, fontFamily: 'MaterialIcons'),
     "luggage_sharp": IconData(0xeaba, fontFamily: 'MaterialIcons'),
     "luggage_rounded": IconData(0xf899, fontFamily: 'MaterialIcons'),
@@ -4257,8 +3819,7 @@ class IconUtil {
     "markunread_mailbox": IconData(0xe3d2, fontFamily: 'MaterialIcons'),
     "markunread_mailbox_sharp": IconData(0xeaca, fontFamily: 'MaterialIcons'),
     "markunread_mailbox_rounded": IconData(0xf8a9, fontFamily: 'MaterialIcons'),
-    "markunread_mailbox_outlined":
-        IconData(0xf1b7, fontFamily: 'MaterialIcons'),
+    "markunread_mailbox_outlined": IconData(0xf1b7, fontFamily: 'MaterialIcons'),
     "markunread_sharp": IconData(0xeacb, fontFamily: 'MaterialIcons'),
     "markunread_rounded": IconData(0xf8aa, fontFamily: 'MaterialIcons'),
     "markunread_outlined": IconData(0xf1b8, fontFamily: 'MaterialIcons'),
@@ -4272,15 +3833,12 @@ class IconUtil {
     "maximize_outlined": IconData(0xf1ba, fontFamily: 'MaterialIcons'),
     "media_bluetooth_off": IconData(0xe3d5, fontFamily: 'MaterialIcons'),
     "media_bluetooth_off_sharp": IconData(0xeace, fontFamily: 'MaterialIcons'),
-    "media_bluetooth_off_rounded":
-        IconData(0xf8ad, fontFamily: 'MaterialIcons'),
-    "media_bluetooth_off_outlined":
-        IconData(0xf1bb, fontFamily: 'MaterialIcons'),
+    "media_bluetooth_off_rounded": IconData(0xf8ad, fontFamily: 'MaterialIcons'),
+    "media_bluetooth_off_outlined": IconData(0xf1bb, fontFamily: 'MaterialIcons'),
     "media_bluetooth_on": IconData(0xe3d6, fontFamily: 'MaterialIcons'),
     "media_bluetooth_on_sharp": IconData(0xeacf, fontFamily: 'MaterialIcons'),
     "media_bluetooth_on_rounded": IconData(0xf8ae, fontFamily: 'MaterialIcons'),
-    "media_bluetooth_on_outlined":
-        IconData(0xf1bc, fontFamily: 'MaterialIcons'),
+    "media_bluetooth_on_outlined": IconData(0xf1bc, fontFamily: 'MaterialIcons'),
     "mediation": IconData(0xe3d7, fontFamily: 'MaterialIcons'),
     "mediation_sharp": IconData(0xead0, fontFamily: 'MaterialIcons'),
     "mediation_rounded": IconData(0xf8af, fontFamily: 'MaterialIcons'),
@@ -4362,12 +3920,9 @@ class IconUtil {
     "minimize_rounded": IconData(0xf8c0, fontFamily: 'MaterialIcons'),
     "minimize_outlined": IconData(0xf1ce, fontFamily: 'MaterialIcons'),
     "miscellaneous_services": IconData(0xe3e9, fontFamily: 'MaterialIcons'),
-    "miscellaneous_services_sharp":
-        IconData(0xeae2, fontFamily: 'MaterialIcons'),
-    "miscellaneous_services_rounded":
-        IconData(0xf8c1, fontFamily: 'MaterialIcons'),
-    "miscellaneous_services_outlined":
-        IconData(0xf1cf, fontFamily: 'MaterialIcons'),
+    "miscellaneous_services_sharp": IconData(0xeae2, fontFamily: 'MaterialIcons'),
+    "miscellaneous_services_rounded": IconData(0xf8c1, fontFamily: 'MaterialIcons'),
+    "miscellaneous_services_outlined": IconData(0xf1cf, fontFamily: 'MaterialIcons'),
     "missed_video_call": IconData(0xe3ea, fontFamily: 'MaterialIcons'),
     "missed_video_call_sharp": IconData(0xeae3, fontFamily: 'MaterialIcons'),
     "missed_video_call_rounded": IconData(0xf8c2, fontFamily: 'MaterialIcons'),
@@ -4384,14 +3939,10 @@ class IconUtil {
     "mobile_off_sharp": IconData(0xeae6, fontFamily: 'MaterialIcons'),
     "mobile_off_rounded": IconData(0xf8c5, fontFamily: 'MaterialIcons'),
     "mobile_off_outlined": IconData(0xf1d3, fontFamily: 'MaterialIcons'),
-    "mobile_screen_share":
-        IconData(0xe3ee, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "mobile_screen_share_sharp":
-        IconData(0xeae7, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "mobile_screen_share_rounded":
-        IconData(0xf8c6, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "mobile_screen_share_outlined":
-        IconData(0xf1d4, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "mobile_screen_share": IconData(0xe3ee, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "mobile_screen_share_sharp": IconData(0xeae7, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "mobile_screen_share_rounded": IconData(0xf8c6, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "mobile_screen_share_outlined": IconData(0xf1d4, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "mobiledata_off": IconData(0xe3ef, fontFamily: 'MaterialIcons'),
     "mobiledata_off_sharp": IconData(0xeae8, fontFamily: 'MaterialIcons'),
     "mobiledata_off_rounded": IconData(0xf8c7, fontFamily: 'MaterialIcons'),
@@ -4483,8 +4034,7 @@ class IconUtil {
     "motion_photos_auto": IconData(0xe405, fontFamily: 'MaterialIcons'),
     "motion_photos_auto_sharp": IconData(0xeafe, fontFamily: 'MaterialIcons'),
     "motion_photos_auto_rounded": IconData(0xf8dd, fontFamily: 'MaterialIcons'),
-    "motion_photos_auto_outlined":
-        IconData(0xf1eb, fontFamily: 'MaterialIcons'),
+    "motion_photos_auto_outlined": IconData(0xf1eb, fontFamily: 'MaterialIcons'),
     "motion_photos_off": IconData(0xe406, fontFamily: 'MaterialIcons'),
     "motion_photos_off_sharp": IconData(0xeaff, fontFamily: 'MaterialIcons'),
     "motion_photos_off_rounded": IconData(0xf8de, fontFamily: 'MaterialIcons'),
@@ -4495,16 +4045,12 @@ class IconUtil {
     "motion_photos_on_outlined": IconData(0xf1ed, fontFamily: 'MaterialIcons'),
     "motion_photos_pause": IconData(0xe408, fontFamily: 'MaterialIcons'),
     "motion_photos_pause_sharp": IconData(0xeb01, fontFamily: 'MaterialIcons'),
-    "motion_photos_pause_rounded":
-        IconData(0xf8e0, fontFamily: 'MaterialIcons'),
-    "motion_photos_pause_outlined":
-        IconData(0xf1ee, fontFamily: 'MaterialIcons'),
+    "motion_photos_pause_rounded": IconData(0xf8e0, fontFamily: 'MaterialIcons'),
+    "motion_photos_pause_outlined": IconData(0xf1ee, fontFamily: 'MaterialIcons'),
     "motion_photos_paused": IconData(0xe409, fontFamily: 'MaterialIcons'),
     "motion_photos_paused_sharp": IconData(0xeb02, fontFamily: 'MaterialIcons'),
-    "motion_photos_paused_rounded":
-        IconData(0xf8e1, fontFamily: 'MaterialIcons'),
-    "motion_photos_paused_outlined":
-        IconData(0xf1ef, fontFamily: 'MaterialIcons'),
+    "motion_photos_paused_rounded": IconData(0xf8e1, fontFamily: 'MaterialIcons'),
+    "motion_photos_paused_outlined": IconData(0xf1ef, fontFamily: 'MaterialIcons'),
     "motorcycle": IconData(0xe40a, fontFamily: 'MaterialIcons'),
     "motorcycle_sharp": IconData(0xeb03, fontFamily: 'MaterialIcons'),
     "motorcycle_rounded": IconData(0xf8e2, fontFamily: 'MaterialIcons'),
@@ -4537,14 +4083,10 @@ class IconUtil {
     "mp_sharp": IconData(0xeb0a, fontFamily: 'MaterialIcons'),
     "mp_rounded": IconData(0xf8e9, fontFamily: 'MaterialIcons'),
     "mp_outlined": IconData(0xf1f7, fontFamily: 'MaterialIcons'),
-    "multiline_chart":
-        IconData(0xe412, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "multiline_chart_sharp":
-        IconData(0xeb0b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "multiline_chart_rounded":
-        IconData(0xf8ea, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "multiline_chart_outlined":
-        IconData(0xf1f8, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "multiline_chart": IconData(0xe412, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "multiline_chart_sharp": IconData(0xeb0b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "multiline_chart_rounded": IconData(0xf8ea, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "multiline_chart_outlined": IconData(0xf1f8, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "multiple_stop": IconData(0xe413, fontFamily: 'MaterialIcons'),
     "multiple_stop_sharp": IconData(0xeb0c, fontFamily: 'MaterialIcons'),
     "multiple_stop_rounded": IconData(0xf8eb, fontFamily: 'MaterialIcons'),
@@ -4597,22 +4139,14 @@ class IconUtil {
     "nature_outlined": IconData(0xf200, fontFamily: 'MaterialIcons'),
     "nature_people": IconData(0xe41b, fontFamily: 'MaterialIcons'),
     "nature_people_sharp": IconData(0xeb13, fontFamily: 'MaterialIcons'),
-    "navigate_before":
-        IconData(0xe41c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "navigate_before_sharp":
-        IconData(0xeb15, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "navigate_before_rounded":
-        IconData(0xf8f4, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "navigate_before_outlined":
-        IconData(0xf202, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "navigate_next":
-        IconData(0xe41d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "navigate_next_sharp":
-        IconData(0xeb16, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "navigate_next_rounded":
-        IconData(0xf8f5, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "navigate_next_outlined":
-        IconData(0xf203, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "navigate_before": IconData(0xe41c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "navigate_before_sharp": IconData(0xeb15, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "navigate_before_rounded": IconData(0xf8f4, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "navigate_before_outlined": IconData(0xf202, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "navigate_next": IconData(0xe41d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "navigate_next_sharp": IconData(0xeb16, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "navigate_next_rounded": IconData(0xf8f5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "navigate_next_outlined": IconData(0xf203, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "navigation": IconData(0xe41e, fontFamily: 'MaterialIcons'),
     "navigation_sharp": IconData(0xeb17, fontFamily: 'MaterialIcons'),
     "navigation_rounded": IconData(0xf8f6, fontFamily: 'MaterialIcons'),
@@ -4661,14 +4195,10 @@ class IconUtil {
     "next_plan_sharp": IconData(0xeb22, fontFamily: 'MaterialIcons'),
     "next_plan_rounded": IconData(0xf0001, fontFamily: 'MaterialIcons'),
     "next_plan_outlined": IconData(0xf20f, fontFamily: 'MaterialIcons'),
-    "next_week":
-        IconData(0xe42a, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "next_week_sharp":
-        IconData(0xeb23, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "next_week_rounded": IconData(0xf0002,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "next_week_outlined":
-        IconData(0xf210, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "next_week": IconData(0xe42a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "next_week_sharp": IconData(0xeb23, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "next_week_rounded": IconData(0xf0002, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "next_week_outlined": IconData(0xf210, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "nfc": IconData(0xe42b, fontFamily: 'MaterialIcons'),
     "nfc_sharp": IconData(0xeb24, fontFamily: 'MaterialIcons'),
     "nfc_rounded": IconData(0xf0003, fontFamily: 'MaterialIcons'),
@@ -4726,14 +4256,10 @@ class IconUtil {
     "no_drinks_rounded": IconData(0xf000c, fontFamily: 'MaterialIcons'),
     "no_drinks_outlined": IconData(0xf21a, fontFamily: 'MaterialIcons'),
     "no_encryption": IconData(0xe435, fontFamily: 'MaterialIcons'),
-    "no_encryption_gmailerrorred":
-        IconData(0xe436, fontFamily: 'MaterialIcons'),
-    "no_encryption_gmailerrorred_sharp":
-        IconData(0xeb2e, fontFamily: 'MaterialIcons'),
-    "no_encryption_gmailerrorred_rounded":
-        IconData(0xf000d, fontFamily: 'MaterialIcons'),
-    "no_encryption_gmailerrorred_outlined":
-        IconData(0xf21b, fontFamily: 'MaterialIcons'),
+    "no_encryption_gmailerrorred": IconData(0xe436, fontFamily: 'MaterialIcons'),
+    "no_encryption_gmailerrorred_sharp": IconData(0xeb2e, fontFamily: 'MaterialIcons'),
+    "no_encryption_gmailerrorred_rounded": IconData(0xf000d, fontFamily: 'MaterialIcons'),
+    "no_encryption_gmailerrorred_outlined": IconData(0xf21b, fontFamily: 'MaterialIcons'),
     "no_encryption_sharp": IconData(0xeb2f, fontFamily: 'MaterialIcons'),
     "no_encryption_rounded": IconData(0xf000e, fontFamily: 'MaterialIcons'),
     "no_encryption_outlined": IconData(0xf21c, fontFamily: 'MaterialIcons'),
@@ -4800,16 +4326,13 @@ class IconUtil {
     "not_interested_outlined": IconData(0xf22b, fontFamily: 'MaterialIcons'),
     "not_listed_location": IconData(0xe447, fontFamily: 'MaterialIcons'),
     "not_listed_location_sharp": IconData(0xeb3f, fontFamily: 'MaterialIcons'),
-    "not_listed_location_rounded":
-        IconData(0xf001e, fontFamily: 'MaterialIcons'),
-    "not_listed_location_outlined":
-        IconData(0xf22c, fontFamily: 'MaterialIcons'),
+    "not_listed_location_rounded": IconData(0xf001e, fontFamily: 'MaterialIcons'),
+    "not_listed_location_outlined": IconData(0xf22c, fontFamily: 'MaterialIcons'),
     "not_started": IconData(0xe448, fontFamily: 'MaterialIcons'),
     "not_started_sharp": IconData(0xeb40, fontFamily: 'MaterialIcons'),
     "not_started_rounded": IconData(0xf001f, fontFamily: 'MaterialIcons'),
     "not_started_outlined": IconData(0xf22d, fontFamily: 'MaterialIcons'),
-    "note":
-        IconData(0xe449, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "note": IconData(0xe449, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "note_add": IconData(0xe44a, fontFamily: 'MaterialIcons'),
     "note_add_sharp": IconData(0xeb41, fontFamily: 'MaterialIcons'),
     "note_add_rounded": IconData(0xf0020, fontFamily: 'MaterialIcons'),
@@ -4818,12 +4341,9 @@ class IconUtil {
     "note_alt_sharp": IconData(0xeb42, fontFamily: 'MaterialIcons'),
     "note_alt_rounded": IconData(0xf0021, fontFamily: 'MaterialIcons'),
     "note_alt_outlined": IconData(0xf22f, fontFamily: 'MaterialIcons'),
-    "note_sharp":
-        IconData(0xeb43, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "note_rounded": IconData(0xf0022,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "note_outlined":
-        IconData(0xf230, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "note_sharp": IconData(0xeb43, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "note_rounded": IconData(0xf0022, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "note_outlined": IconData(0xf230, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "notes": IconData(0xe44c, fontFamily: 'MaterialIcons'),
     "notes_sharp": IconData(0xeb44, fontFamily: 'MaterialIcons'),
     "notes_rounded": IconData(0xf0023, fontFamily: 'MaterialIcons'),
@@ -4833,25 +4353,18 @@ class IconUtil {
     "notification_add_rounded": IconData(0xf0024, fontFamily: 'MaterialIcons'),
     "notification_add_outlined": IconData(0xf232, fontFamily: 'MaterialIcons'),
     "notification_important": IconData(0xe44e, fontFamily: 'MaterialIcons'),
-    "notification_important_sharp":
-        IconData(0xeb46, fontFamily: 'MaterialIcons'),
-    "notification_important_rounded":
-        IconData(0xf0025, fontFamily: 'MaterialIcons'),
-    "notification_important_outlined":
-        IconData(0xf233, fontFamily: 'MaterialIcons'),
+    "notification_important_sharp": IconData(0xeb46, fontFamily: 'MaterialIcons'),
+    "notification_important_rounded": IconData(0xf0025, fontFamily: 'MaterialIcons'),
+    "notification_important_outlined": IconData(0xf233, fontFamily: 'MaterialIcons'),
     "notifications": IconData(0xe44f, fontFamily: 'MaterialIcons'),
     "notifications_active": IconData(0xe450, fontFamily: 'MaterialIcons'),
     "notifications_active_sharp": IconData(0xeb47, fontFamily: 'MaterialIcons'),
-    "notifications_active_rounded":
-        IconData(0xf0026, fontFamily: 'MaterialIcons'),
-    "notifications_active_outlined":
-        IconData(0xf234, fontFamily: 'MaterialIcons'),
+    "notifications_active_rounded": IconData(0xf0026, fontFamily: 'MaterialIcons'),
+    "notifications_active_outlined": IconData(0xf234, fontFamily: 'MaterialIcons'),
     "notifications_none": IconData(0xe451, fontFamily: 'MaterialIcons'),
     "notifications_none_sharp": IconData(0xeb48, fontFamily: 'MaterialIcons'),
-    "notifications_none_rounded":
-        IconData(0xf0027, fontFamily: 'MaterialIcons'),
-    "notifications_none_outlined":
-        IconData(0xf235, fontFamily: 'MaterialIcons'),
+    "notifications_none_rounded": IconData(0xf0027, fontFamily: 'MaterialIcons'),
+    "notifications_none_outlined": IconData(0xf235, fontFamily: 'MaterialIcons'),
     "notifications_off": IconData(0xe452, fontFamily: 'MaterialIcons'),
     "notifications_off_sharp": IconData(0xeb49, fontFamily: 'MaterialIcons'),
     "notifications_off_rounded": IconData(0xf0028, fontFamily: 'MaterialIcons'),
@@ -4863,10 +4376,8 @@ class IconUtil {
     "notifications_outlined": IconData(0xf237, fontFamily: 'MaterialIcons'),
     "notifications_paused": IconData(0xe453, fontFamily: 'MaterialIcons'),
     "notifications_paused_sharp": IconData(0xeb4a, fontFamily: 'MaterialIcons'),
-    "notifications_paused_rounded":
-        IconData(0xf0029, fontFamily: 'MaterialIcons'),
-    "notifications_paused_outlined":
-        IconData(0xf238, fontFamily: 'MaterialIcons'),
+    "notifications_paused_rounded": IconData(0xf0029, fontFamily: 'MaterialIcons'),
+    "notifications_paused_outlined": IconData(0xf238, fontFamily: 'MaterialIcons'),
     "notifications_sharp": IconData(0xeb4b, fontFamily: 'MaterialIcons'),
     "notifications_rounded": IconData(0xf002a, fontFamily: 'MaterialIcons'),
     "now_wallpaper": IconData(0xe6ca, fontFamily: 'MaterialIcons'),
@@ -4921,18 +4432,14 @@ class IconUtil {
     "open_in_full_sharp": IconData(0xeb53, fontFamily: 'MaterialIcons'),
     "open_in_full_rounded": IconData(0xf0032, fontFamily: 'MaterialIcons'),
     "open_in_full_outlined": IconData(0xf240, fontFamily: 'MaterialIcons'),
-    "open_in_new":
-        IconData(0xe45c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "open_in_new": IconData(0xe45c, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "open_in_new_off": IconData(0xe45d, fontFamily: 'MaterialIcons'),
     "open_in_new_off_sharp": IconData(0xeb54, fontFamily: 'MaterialIcons'),
     "open_in_new_off_rounded": IconData(0xf0033, fontFamily: 'MaterialIcons'),
     "open_in_new_off_outlined": IconData(0xf241, fontFamily: 'MaterialIcons'),
-    "open_in_new_sharp":
-        IconData(0xeb55, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "open_in_new_rounded": IconData(0xf0034,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "open_in_new_outlined":
-        IconData(0xf242, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "open_in_new_sharp": IconData(0xeb55, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "open_in_new_rounded": IconData(0xf0034, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "open_in_new_outlined": IconData(0xf242, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "open_with": IconData(0xe45e, fontFamily: 'MaterialIcons'),
     "open_with_sharp": IconData(0xeb56, fontFamily: 'MaterialIcons'),
     "open_with_rounded": IconData(0xf0035, fontFamily: 'MaterialIcons'),
@@ -5001,32 +4508,21 @@ class IconUtil {
     "panorama_fisheye_outlined": IconData(0xf251, fontFamily: 'MaterialIcons'),
     "panorama_horizontal": IconData(0xe46f, fontFamily: 'MaterialIcons'),
     "panorama_horizontal_select": IconData(0xe470, fontFamily: 'MaterialIcons'),
-    "panorama_horizontal_select_sharp":
-        IconData(0xeb65, fontFamily: 'MaterialIcons'),
-    "panorama_horizontal_select_rounded":
-        IconData(0xf0045, fontFamily: 'MaterialIcons'),
-    "panorama_horizontal_select_outlined":
-        IconData(0xf253, fontFamily: 'MaterialIcons'),
+    "panorama_horizontal_select_sharp": IconData(0xeb65, fontFamily: 'MaterialIcons'),
+    "panorama_horizontal_select_rounded": IconData(0xf0045, fontFamily: 'MaterialIcons'),
+    "panorama_horizontal_select_outlined": IconData(0xf253, fontFamily: 'MaterialIcons'),
     "panorama_horizontal_sharp": IconData(0xeb66, fontFamily: 'MaterialIcons'),
-    "panorama_horizontal_rounded":
-        IconData(0xf0044, fontFamily: 'MaterialIcons'),
-    "panorama_horizontal_outlined":
-        IconData(0xf252, fontFamily: 'MaterialIcons'),
+    "panorama_horizontal_rounded": IconData(0xf0044, fontFamily: 'MaterialIcons'),
+    "panorama_horizontal_outlined": IconData(0xf252, fontFamily: 'MaterialIcons'),
     "panorama_outlined": IconData(0xf254, fontFamily: 'MaterialIcons'),
     "panorama_photosphere": IconData(0xe471, fontFamily: 'MaterialIcons'),
-    "panorama_photosphere_select":
-        IconData(0xe472, fontFamily: 'MaterialIcons'),
+    "panorama_photosphere_select": IconData(0xe472, fontFamily: 'MaterialIcons'),
     "panorama_photosphere_sharp": IconData(0xeb68, fontFamily: 'MaterialIcons'),
-    "panorama_photosphere_rounded":
-        IconData(0xf0046, fontFamily: 'MaterialIcons'),
-    "panorama_photosphere_outlined":
-        IconData(0xf255, fontFamily: 'MaterialIcons'),
-    "panorama_photosphere_select_sharp":
-        IconData(0xeb67, fontFamily: 'MaterialIcons'),
-    "panorama_photosphere_select_rounded":
-        IconData(0xf0047, fontFamily: 'MaterialIcons'),
-    "panorama_photosphere_select_outlined":
-        IconData(0xf256, fontFamily: 'MaterialIcons'),
+    "panorama_photosphere_rounded": IconData(0xf0046, fontFamily: 'MaterialIcons'),
+    "panorama_photosphere_outlined": IconData(0xf255, fontFamily: 'MaterialIcons'),
+    "panorama_photosphere_select_sharp": IconData(0xeb67, fontFamily: 'MaterialIcons'),
+    "panorama_photosphere_select_rounded": IconData(0xf0047, fontFamily: 'MaterialIcons'),
+    "panorama_photosphere_select_outlined": IconData(0xf256, fontFamily: 'MaterialIcons'),
     "panorama_sharp": IconData(0xeb69, fontFamily: 'MaterialIcons'),
     "panorama_rounded": IconData(0xf0048, fontFamily: 'MaterialIcons'),
     "panorama_vertical": IconData(0xe473, fontFamily: 'MaterialIcons'),
@@ -5034,25 +4530,17 @@ class IconUtil {
     "panorama_vertical_rounded": IconData(0xf0049, fontFamily: 'MaterialIcons'),
     "panorama_vertical_outlined": IconData(0xf257, fontFamily: 'MaterialIcons'),
     "panorama_vertical_select": IconData(0xe474, fontFamily: 'MaterialIcons'),
-    "panorama_vertical_select_sharp":
-        IconData(0xeb6a, fontFamily: 'MaterialIcons'),
-    "panorama_vertical_select_rounded":
-        IconData(0xf004a, fontFamily: 'MaterialIcons'),
-    "panorama_vertical_select_outlined":
-        IconData(0xf258, fontFamily: 'MaterialIcons'),
+    "panorama_vertical_select_sharp": IconData(0xeb6a, fontFamily: 'MaterialIcons'),
+    "panorama_vertical_select_rounded": IconData(0xf004a, fontFamily: 'MaterialIcons'),
+    "panorama_vertical_select_outlined": IconData(0xf258, fontFamily: 'MaterialIcons'),
     "panorama_wide_angle": IconData(0xe475, fontFamily: 'MaterialIcons'),
     "panorama_wide_angle_sharp": IconData(0xeb6d, fontFamily: 'MaterialIcons'),
-    "panorama_wide_angle_rounded":
-        IconData(0xf004b, fontFamily: 'MaterialIcons'),
-    "panorama_wide_angle_outlined":
-        IconData(0xf259, fontFamily: 'MaterialIcons'),
+    "panorama_wide_angle_rounded": IconData(0xf004b, fontFamily: 'MaterialIcons'),
+    "panorama_wide_angle_outlined": IconData(0xf259, fontFamily: 'MaterialIcons'),
     "panorama_wide_angle_select": IconData(0xe476, fontFamily: 'MaterialIcons'),
-    "panorama_wide_angle_select_sharp":
-        IconData(0xeb6c, fontFamily: 'MaterialIcons'),
-    "panorama_wide_angle_select_rounded":
-        IconData(0xf004c, fontFamily: 'MaterialIcons'),
-    "panorama_wide_angle_select_outlined":
-        IconData(0xf25a, fontFamily: 'MaterialIcons'),
+    "panorama_wide_angle_select_sharp": IconData(0xeb6c, fontFamily: 'MaterialIcons'),
+    "panorama_wide_angle_select_rounded": IconData(0xf004c, fontFamily: 'MaterialIcons'),
+    "panorama_wide_angle_select_outlined": IconData(0xf25a, fontFamily: 'MaterialIcons'),
     "paragliding": IconData(0xe477, fontFamily: 'MaterialIcons'),
     "paragliding_sharp": IconData(0xeb6e, fontFamily: 'MaterialIcons'),
     "paragliding_rounded": IconData(0xf004d, fontFamily: 'MaterialIcons'),
@@ -5081,24 +4569,18 @@ class IconUtil {
     "pause_circle": IconData(0xe47d, fontFamily: 'MaterialIcons'),
     "pause_circle_filled": IconData(0xe47e, fontFamily: 'MaterialIcons'),
     "pause_circle_filled_sharp": IconData(0xeb73, fontFamily: 'MaterialIcons'),
-    "pause_circle_filled_rounded":
-        IconData(0xf0052, fontFamily: 'MaterialIcons'),
-    "pause_circle_filled_outlined":
-        IconData(0xf260, fontFamily: 'MaterialIcons'),
+    "pause_circle_filled_rounded": IconData(0xf0052, fontFamily: 'MaterialIcons'),
+    "pause_circle_filled_outlined": IconData(0xf260, fontFamily: 'MaterialIcons'),
     "pause_circle_outline": IconData(0xe47f, fontFamily: 'MaterialIcons'),
     "pause_circle_outline_sharp": IconData(0xeb74, fontFamily: 'MaterialIcons'),
-    "pause_circle_outline_rounded":
-        IconData(0xf0053, fontFamily: 'MaterialIcons'),
-    "pause_circle_outline_outlined":
-        IconData(0xf261, fontFamily: 'MaterialIcons'),
+    "pause_circle_outline_rounded": IconData(0xf0053, fontFamily: 'MaterialIcons'),
+    "pause_circle_outline_outlined": IconData(0xf261, fontFamily: 'MaterialIcons'),
     "pause_circle_sharp": IconData(0xeb75, fontFamily: 'MaterialIcons'),
     "pause_circle_rounded": IconData(0xf0054, fontFamily: 'MaterialIcons'),
     "pause_circle_outlined": IconData(0xf262, fontFamily: 'MaterialIcons'),
     "pause_presentation": IconData(0xe480, fontFamily: 'MaterialIcons'),
-    "pause_presentation_rounded":
-        IconData(0xf0055, fontFamily: 'MaterialIcons'),
-    "pause_presentation_outlined":
-        IconData(0xf264, fontFamily: 'MaterialIcons'),
+    "pause_presentation_rounded": IconData(0xf0055, fontFamily: 'MaterialIcons'),
+    "pause_presentation_outlined": IconData(0xf264, fontFamily: 'MaterialIcons'),
     "pause_sharp": IconData(0xeb77, fontFamily: 'MaterialIcons'),
     "pause_rounded": IconData(0xf0056, fontFamily: 'MaterialIcons'),
     "pause_outlined": IconData(0xf263, fontFamily: 'MaterialIcons'),
@@ -5144,12 +4626,9 @@ class IconUtil {
     "perm_contact_cal_rounded": IconData(0xf0060, fontFamily: 'MaterialIcons'),
     "perm_contact_cal_outlined": IconData(0xf26e, fontFamily: 'MaterialIcons'),
     "perm_contact_calendar": IconData(0xe48a, fontFamily: 'MaterialIcons'),
-    "perm_contact_calendar_sharp":
-        IconData(0xeb81, fontFamily: 'MaterialIcons'),
-    "perm_contact_calendar_rounded":
-        IconData(0xf0060, fontFamily: 'MaterialIcons'),
-    "perm_contact_calendar_outlined":
-        IconData(0xf26e, fontFamily: 'MaterialIcons'),
+    "perm_contact_calendar_sharp": IconData(0xeb81, fontFamily: 'MaterialIcons'),
+    "perm_contact_calendar_rounded": IconData(0xf0060, fontFamily: 'MaterialIcons'),
+    "perm_contact_calendar_outlined": IconData(0xf26e, fontFamily: 'MaterialIcons'),
     "perm_data_setting": IconData(0xe48b, fontFamily: 'MaterialIcons'),
     "perm_data_setting_sharp": IconData(0xeb82, fontFamily: 'MaterialIcons'),
     "perm_data_setting_rounded": IconData(0xf0061, fontFamily: 'MaterialIcons'),
@@ -5159,12 +4638,9 @@ class IconUtil {
     "perm_device_info_rounded": IconData(0xf0062, fontFamily: 'MaterialIcons'),
     "perm_device_info_outlined": IconData(0xf270, fontFamily: 'MaterialIcons'),
     "perm_device_information": IconData(0xe48c, fontFamily: 'MaterialIcons'),
-    "perm_device_information_sharp":
-        IconData(0xeb83, fontFamily: 'MaterialIcons'),
-    "perm_device_information_rounded":
-        IconData(0xf0062, fontFamily: 'MaterialIcons'),
-    "perm_device_information_outlined":
-        IconData(0xf270, fontFamily: 'MaterialIcons'),
+    "perm_device_information_sharp": IconData(0xeb83, fontFamily: 'MaterialIcons'),
+    "perm_device_information_rounded": IconData(0xf0062, fontFamily: 'MaterialIcons'),
+    "perm_device_information_outlined": IconData(0xf270, fontFamily: 'MaterialIcons'),
     "perm_identity": IconData(0xe48d, fontFamily: 'MaterialIcons'),
     "perm_identity_sharp": IconData(0xeb84, fontFamily: 'MaterialIcons'),
     "perm_identity_rounded": IconData(0xf0063, fontFamily: 'MaterialIcons'),
@@ -5193,10 +4669,8 @@ class IconUtil {
     "person_add_alt_outlined": IconData(0xf276, fontFamily: 'MaterialIcons'),
     "person_add_disabled": IconData(0xe495, fontFamily: 'MaterialIcons'),
     "person_add_disabled_sharp": IconData(0xeb8a, fontFamily: 'MaterialIcons'),
-    "person_add_disabled_rounded":
-        IconData(0xf0069, fontFamily: 'MaterialIcons'),
-    "person_add_disabled_outlined":
-        IconData(0xf277, fontFamily: 'MaterialIcons'),
+    "person_add_disabled_rounded": IconData(0xf0069, fontFamily: 'MaterialIcons'),
+    "person_add_disabled_outlined": IconData(0xf277, fontFamily: 'MaterialIcons'),
     "person_add_sharp": IconData(0xeb8b, fontFamily: 'MaterialIcons'),
     "person_add_rounded": IconData(0xf006a, fontFamily: 'MaterialIcons'),
     "person_add_outlined": IconData(0xf278, fontFamily: 'MaterialIcons'),
@@ -5220,10 +4694,8 @@ class IconUtil {
     "person_remove": IconData(0xe49a, fontFamily: 'MaterialIcons'),
     "person_remove_alt_1": IconData(0xe49b, fontFamily: 'MaterialIcons'),
     "person_remove_alt_1_sharp": IconData(0xeb90, fontFamily: 'MaterialIcons'),
-    "person_remove_alt_1_rounded":
-        IconData(0xf006f, fontFamily: 'MaterialIcons'),
-    "person_remove_alt_1_outlined":
-        IconData(0xf27e, fontFamily: 'MaterialIcons'),
+    "person_remove_alt_1_rounded": IconData(0xf006f, fontFamily: 'MaterialIcons'),
+    "person_remove_alt_1_outlined": IconData(0xf27e, fontFamily: 'MaterialIcons'),
     "person_remove_sharp": IconData(0xeb91, fontFamily: 'MaterialIcons'),
     "person_remove_rounded": IconData(0xf0070, fontFamily: 'MaterialIcons'),
     "person_remove_outlined": IconData(0xf27f, fontFamily: 'MaterialIcons'),
@@ -5245,10 +4717,8 @@ class IconUtil {
     "pest_control_outlined": IconData(0xf283, fontFamily: 'MaterialIcons'),
     "pest_control_rodent": IconData(0xe4a0, fontFamily: 'MaterialIcons'),
     "pest_control_rodent_sharp": IconData(0xeb96, fontFamily: 'MaterialIcons'),
-    "pest_control_rodent_rounded":
-        IconData(0xf0075, fontFamily: 'MaterialIcons'),
-    "pest_control_rodent_outlined":
-        IconData(0xf284, fontFamily: 'MaterialIcons'),
+    "pest_control_rodent_rounded": IconData(0xf0075, fontFamily: 'MaterialIcons'),
+    "pest_control_rodent_outlined": IconData(0xf284, fontFamily: 'MaterialIcons'),
     "pest_control_sharp": IconData(0xeb97, fontFamily: 'MaterialIcons'),
     "pest_control_rounded": IconData(0xf0076, fontFamily: 'MaterialIcons'),
     "pets": IconData(0xe4a1, fontFamily: 'MaterialIcons'),
@@ -5261,12 +4731,9 @@ class IconUtil {
     "phone_android_rounded": IconData(0xf0078, fontFamily: 'MaterialIcons'),
     "phone_android_outlined": IconData(0xf286, fontFamily: 'MaterialIcons'),
     "phone_bluetooth_speaker": IconData(0xe4a4, fontFamily: 'MaterialIcons'),
-    "phone_bluetooth_speaker_sharp":
-        IconData(0xeb9a, fontFamily: 'MaterialIcons'),
-    "phone_bluetooth_speaker_rounded":
-        IconData(0xf0079, fontFamily: 'MaterialIcons'),
-    "phone_bluetooth_speaker_outlined":
-        IconData(0xf287, fontFamily: 'MaterialIcons'),
+    "phone_bluetooth_speaker_sharp": IconData(0xeb9a, fontFamily: 'MaterialIcons'),
+    "phone_bluetooth_speaker_rounded": IconData(0xf0079, fontFamily: 'MaterialIcons'),
+    "phone_bluetooth_speaker_outlined": IconData(0xf287, fontFamily: 'MaterialIcons'),
     "phone_callback": IconData(0xe4a5, fontFamily: 'MaterialIcons'),
     "phone_callback_sharp": IconData(0xeb9b, fontFamily: 'MaterialIcons'),
     "phone_callback_rounded": IconData(0xf007a, fontFamily: 'MaterialIcons'),
@@ -5342,10 +4809,8 @@ class IconUtil {
     "photo_camera_back_outlined": IconData(0xf299, fontFamily: 'MaterialIcons'),
     "photo_camera_front": IconData(0xe4b8, fontFamily: 'MaterialIcons'),
     "photo_camera_front_sharp": IconData(0xebad, fontFamily: 'MaterialIcons'),
-    "photo_camera_front_rounded":
-        IconData(0xf008c, fontFamily: 'MaterialIcons'),
-    "photo_camera_front_outlined":
-        IconData(0xf29a, fontFamily: 'MaterialIcons'),
+    "photo_camera_front_rounded": IconData(0xf008c, fontFamily: 'MaterialIcons'),
+    "photo_camera_front_outlined": IconData(0xf29a, fontFamily: 'MaterialIcons'),
     "photo_camera_sharp": IconData(0xebae, fontFamily: 'MaterialIcons'),
     "photo_camera_rounded": IconData(0xf008d, fontFamily: 'MaterialIcons'),
     "photo_camera_outlined": IconData(0xf29b, fontFamily: 'MaterialIcons'),
@@ -5361,26 +4826,17 @@ class IconUtil {
     "photo_rounded": IconData(0xf0090, fontFamily: 'MaterialIcons'),
     "photo_outlined": IconData(0xf29e, fontFamily: 'MaterialIcons'),
     "photo_size_select_actual": IconData(0xe4bb, fontFamily: 'MaterialIcons'),
-    "photo_size_select_actual_sharp":
-        IconData(0xebb2, fontFamily: 'MaterialIcons'),
-    "photo_size_select_actual_rounded":
-        IconData(0xf0091, fontFamily: 'MaterialIcons'),
-    "photo_size_select_actual_outlined":
-        IconData(0xf29f, fontFamily: 'MaterialIcons'),
+    "photo_size_select_actual_sharp": IconData(0xebb2, fontFamily: 'MaterialIcons'),
+    "photo_size_select_actual_rounded": IconData(0xf0091, fontFamily: 'MaterialIcons'),
+    "photo_size_select_actual_outlined": IconData(0xf29f, fontFamily: 'MaterialIcons'),
     "photo_size_select_large": IconData(0xe4bc, fontFamily: 'MaterialIcons'),
-    "photo_size_select_large_sharp":
-        IconData(0xebb3, fontFamily: 'MaterialIcons'),
-    "photo_size_select_large_rounded":
-        IconData(0xf0092, fontFamily: 'MaterialIcons'),
-    "photo_size_select_large_outlined":
-        IconData(0xf2a0, fontFamily: 'MaterialIcons'),
+    "photo_size_select_large_sharp": IconData(0xebb3, fontFamily: 'MaterialIcons'),
+    "photo_size_select_large_rounded": IconData(0xf0092, fontFamily: 'MaterialIcons'),
+    "photo_size_select_large_outlined": IconData(0xf2a0, fontFamily: 'MaterialIcons'),
     "photo_size_select_small": IconData(0xe4bd, fontFamily: 'MaterialIcons'),
-    "photo_size_select_small_sharp":
-        IconData(0xebb4, fontFamily: 'MaterialIcons'),
-    "photo_size_select_small_rounded":
-        IconData(0xf0093, fontFamily: 'MaterialIcons'),
-    "photo_size_select_small_outlined":
-        IconData(0xf2a1, fontFamily: 'MaterialIcons'),
+    "photo_size_select_small_sharp": IconData(0xebb4, fontFamily: 'MaterialIcons'),
+    "photo_size_select_small_rounded": IconData(0xf0093, fontFamily: 'MaterialIcons'),
+    "photo_size_select_small_outlined": IconData(0xf2a1, fontFamily: 'MaterialIcons'),
     "piano": IconData(0xe4be, fontFamily: 'MaterialIcons'),
     "piano_off": IconData(0xe4bf, fontFamily: 'MaterialIcons'),
     "piano_off_sharp": IconData(0xebb5, fontFamily: 'MaterialIcons'),
@@ -5395,17 +4851,12 @@ class IconUtil {
     "picture_as_pdf_outlined": IconData(0xf2a4, fontFamily: 'MaterialIcons'),
     "picture_in_picture": IconData(0xe4c1, fontFamily: 'MaterialIcons'),
     "picture_in_picture_alt": IconData(0xe4c2, fontFamily: 'MaterialIcons'),
-    "picture_in_picture_alt_sharp":
-        IconData(0xebb8, fontFamily: 'MaterialIcons'),
-    "picture_in_picture_alt_rounded":
-        IconData(0xf0097, fontFamily: 'MaterialIcons'),
-    "picture_in_picture_alt_outlined":
-        IconData(0xf2a5, fontFamily: 'MaterialIcons'),
+    "picture_in_picture_alt_sharp": IconData(0xebb8, fontFamily: 'MaterialIcons'),
+    "picture_in_picture_alt_rounded": IconData(0xf0097, fontFamily: 'MaterialIcons'),
+    "picture_in_picture_alt_outlined": IconData(0xf2a5, fontFamily: 'MaterialIcons'),
     "picture_in_picture_sharp": IconData(0xebb9, fontFamily: 'MaterialIcons'),
-    "picture_in_picture_rounded":
-        IconData(0xf0098, fontFamily: 'MaterialIcons'),
-    "picture_in_picture_outlined":
-        IconData(0xf2a6, fontFamily: 'MaterialIcons'),
+    "picture_in_picture_rounded": IconData(0xf0098, fontFamily: 'MaterialIcons'),
+    "picture_in_picture_outlined": IconData(0xf2a6, fontFamily: 'MaterialIcons'),
     "pie_chart": IconData(0xe4c3, fontFamily: 'MaterialIcons'),
     "pie_chart_outline": IconData(0xe4c5, fontFamily: 'MaterialIcons'),
     "pie_chart_outline_sharp": IconData(0xebba, fontFamily: 'MaterialIcons'),
@@ -5445,16 +4896,12 @@ class IconUtil {
     "play_circle_fill_outlined": IconData(0xf2af, fontFamily: 'MaterialIcons'),
     "play_circle_filled": IconData(0xe4cd, fontFamily: 'MaterialIcons'),
     "play_circle_filled_sharp": IconData(0xebc2, fontFamily: 'MaterialIcons'),
-    "play_circle_filled_rounded":
-        IconData(0xf00a1, fontFamily: 'MaterialIcons'),
-    "play_circle_filled_outlined":
-        IconData(0xf2af, fontFamily: 'MaterialIcons'),
+    "play_circle_filled_rounded": IconData(0xf00a1, fontFamily: 'MaterialIcons'),
+    "play_circle_filled_outlined": IconData(0xf2af, fontFamily: 'MaterialIcons'),
     "play_circle_outline": IconData(0xe4ce, fontFamily: 'MaterialIcons'),
     "play_circle_outline_sharp": IconData(0xebc3, fontFamily: 'MaterialIcons'),
-    "play_circle_outline_rounded":
-        IconData(0xf00a2, fontFamily: 'MaterialIcons'),
-    "play_circle_outline_outlined":
-        IconData(0xf2b0, fontFamily: 'MaterialIcons'),
+    "play_circle_outline_rounded": IconData(0xf00a2, fontFamily: 'MaterialIcons'),
+    "play_circle_outline_outlined": IconData(0xf2b0, fontFamily: 'MaterialIcons'),
     "play_circle_sharp": IconData(0xebc4, fontFamily: 'MaterialIcons'),
     "play_circle_rounded": IconData(0xf00a3, fontFamily: 'MaterialIcons'),
     "play_circle_outlined": IconData(0xf2b1, fontFamily: 'MaterialIcons'),
@@ -5470,20 +4917,14 @@ class IconUtil {
     "play_lesson_sharp": IconData(0xebc7, fontFamily: 'MaterialIcons'),
     "play_lesson_rounded": IconData(0xf00a6, fontFamily: 'MaterialIcons'),
     "play_lesson_outlined": IconData(0xf2b4, fontFamily: 'MaterialIcons'),
-    "playlist_add":
-        IconData(0xe4d2, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "playlist_add": IconData(0xe4d2, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "playlist_add_check": IconData(0xe4d3, fontFamily: 'MaterialIcons'),
     "playlist_add_check_sharp": IconData(0xebc8, fontFamily: 'MaterialIcons'),
-    "playlist_add_check_rounded":
-        IconData(0xf00a7, fontFamily: 'MaterialIcons'),
-    "playlist_add_check_outlined":
-        IconData(0xf2b5, fontFamily: 'MaterialIcons'),
-    "playlist_add_sharp":
-        IconData(0xebc9, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "playlist_add_rounded": IconData(0xf00a8,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "playlist_add_outlined":
-        IconData(0xf2b6, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "playlist_add_check_rounded": IconData(0xf00a7, fontFamily: 'MaterialIcons'),
+    "playlist_add_check_outlined": IconData(0xf2b5, fontFamily: 'MaterialIcons'),
+    "playlist_add_sharp": IconData(0xebc9, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "playlist_add_rounded": IconData(0xf00a8, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "playlist_add_outlined": IconData(0xf2b6, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "playlist_play": IconData(0xe4d4, fontFamily: 'MaterialIcons'),
     "playlist_play_sharp": IconData(0xebca, fontFamily: 'MaterialIcons'),
     "playlist_play_rounded": IconData(0xf00a9, fontFamily: 'MaterialIcons'),
@@ -5543,20 +4984,15 @@ class IconUtil {
     "power_off_outlined": IconData(0xf2c4, fontFamily: 'MaterialIcons'),
     "power_rounded": IconData(0xf00b7, fontFamily: 'MaterialIcons'),
     "power_settings_new_sharp": IconData(0xebd8, fontFamily: 'MaterialIcons'),
-    "power_settings_new_rounded":
-        IconData(0xf00b8, fontFamily: 'MaterialIcons'),
-    "power_settings_new_outlined":
-        IconData(0xf2c6, fontFamily: 'MaterialIcons'),
+    "power_settings_new_rounded": IconData(0xf00b8, fontFamily: 'MaterialIcons'),
+    "power_settings_new_outlined": IconData(0xf2c6, fontFamily: 'MaterialIcons'),
     "power_sharp": IconData(0xebd9, fontFamily: 'MaterialIcons'),
     "power_outlined": IconData(0xf2c5, fontFamily: 'MaterialIcons'),
     "power_settings_new": IconData(0xe4e3, fontFamily: 'MaterialIcons'),
     "precision_manufacturing": IconData(0xe4e4, fontFamily: 'MaterialIcons'),
-    "precision_manufacturing_sharp":
-        IconData(0xebda, fontFamily: 'MaterialIcons'),
-    "precision_manufacturing_rounded":
-        IconData(0xf00b9, fontFamily: 'MaterialIcons'),
-    "precision_manufacturing_outlined":
-        IconData(0xf2c7, fontFamily: 'MaterialIcons'),
+    "precision_manufacturing_sharp": IconData(0xebda, fontFamily: 'MaterialIcons'),
+    "precision_manufacturing_rounded": IconData(0xf00b9, fontFamily: 'MaterialIcons'),
+    "precision_manufacturing_outlined": IconData(0xf2c7, fontFamily: 'MaterialIcons'),
     "pregnant_woman": IconData(0xe4e5, fontFamily: 'MaterialIcons'),
     "pregnant_woman_sharp": IconData(0xebdb, fontFamily: 'MaterialIcons'),
     "pregnant_woman_rounded": IconData(0xf00ba, fontFamily: 'MaterialIcons'),
@@ -5594,12 +5030,9 @@ class IconUtil {
     "privacy_tip_rounded": IconData(0xf00c2, fontFamily: 'MaterialIcons'),
     "privacy_tip_outlined": IconData(0xf2d0, fontFamily: 'MaterialIcons'),
     "production_quantity_limits": IconData(0xe4ee, fontFamily: 'MaterialIcons'),
-    "production_quantity_limits_sharp":
-        IconData(0xebe4, fontFamily: 'MaterialIcons'),
-    "production_quantity_limits_rounded":
-        IconData(0xf00c3, fontFamily: 'MaterialIcons'),
-    "production_quantity_limits_outlined":
-        IconData(0xf2d1, fontFamily: 'MaterialIcons'),
+    "production_quantity_limits_sharp": IconData(0xebe4, fontFamily: 'MaterialIcons'),
+    "production_quantity_limits_rounded": IconData(0xf00c3, fontFamily: 'MaterialIcons'),
+    "production_quantity_limits_outlined": IconData(0xf2d1, fontFamily: 'MaterialIcons'),
     "psychology": IconData(0xe4ef, fontFamily: 'MaterialIcons'),
     "psychology_sharp": IconData(0xebe5, fontFamily: 'MaterialIcons'),
     "psychology_rounded": IconData(0xf00c4, fontFamily: 'MaterialIcons'),
@@ -5617,12 +5050,9 @@ class IconUtil {
     "publish_rounded": IconData(0xf00c7, fontFamily: 'MaterialIcons'),
     "publish_outlined": IconData(0xf2d5, fontFamily: 'MaterialIcons'),
     "published_with_changes": IconData(0xe4f3, fontFamily: 'MaterialIcons'),
-    "published_with_changes_sharp":
-        IconData(0xebe9, fontFamily: 'MaterialIcons'),
-    "published_with_changes_rounded":
-        IconData(0xf00c8, fontFamily: 'MaterialIcons'),
-    "published_with_changes_outlined":
-        IconData(0xf2d6, fontFamily: 'MaterialIcons'),
+    "published_with_changes_sharp": IconData(0xebe9, fontFamily: 'MaterialIcons'),
+    "published_with_changes_rounded": IconData(0xf00c8, fontFamily: 'MaterialIcons'),
+    "published_with_changes_outlined": IconData(0xf2d6, fontFamily: 'MaterialIcons'),
     "push_pin": IconData(0xe4f4, fontFamily: 'MaterialIcons'),
     "push_pin_sharp": IconData(0xebea, fontFamily: 'MaterialIcons'),
     "push_pin_rounded": IconData(0xf00c9, fontFamily: 'MaterialIcons'),
@@ -5652,14 +5082,10 @@ class IconUtil {
     "question_answer_rounded": IconData(0xf00cf, fontFamily: 'MaterialIcons'),
     "question_answer_outlined": IconData(0xf2dd, fontFamily: 'MaterialIcons'),
     "queue": IconData(0xe4fb, fontFamily: 'MaterialIcons'),
-    "queue_music":
-        IconData(0xe4fc, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "queue_music_sharp":
-        IconData(0xebf1, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "queue_music_rounded": IconData(0xf00d0,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "queue_music_outlined":
-        IconData(0xf2de, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "queue_music": IconData(0xe4fc, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "queue_music_sharp": IconData(0xebf1, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "queue_music_rounded": IconData(0xf00d0, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "queue_music_outlined": IconData(0xf2de, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "queue_outlined": IconData(0xf2df, fontFamily: 'MaterialIcons'),
     "queue_play_next": IconData(0xe4fd, fontFamily: 'MaterialIcons'),
     "queue_play_next_sharp": IconData(0xebf2, fontFamily: 'MaterialIcons'),
@@ -5668,18 +5094,13 @@ class IconUtil {
     "queue_sharp": IconData(0xebf3, fontFamily: 'MaterialIcons'),
     "queue_rounded": IconData(0xf00d2, fontFamily: 'MaterialIcons'),
     "quick_contacts_dialer": IconData(0xe18c, fontFamily: 'MaterialIcons'),
-    "quick_contacts_dialer_sharp":
-        IconData(0xe889, fontFamily: 'MaterialIcons'),
-    "quick_contacts_dialer_rounded":
-        IconData(0xf668, fontFamily: 'MaterialIcons'),
-    "quick_contacts_dialer_outlined":
-        IconData(0xef7b, fontFamily: 'MaterialIcons'),
+    "quick_contacts_dialer_sharp": IconData(0xe889, fontFamily: 'MaterialIcons'),
+    "quick_contacts_dialer_rounded": IconData(0xf668, fontFamily: 'MaterialIcons'),
+    "quick_contacts_dialer_outlined": IconData(0xef7b, fontFamily: 'MaterialIcons'),
     "quick_contacts_mail": IconData(0xe18a, fontFamily: 'MaterialIcons'),
     "quick_contacts_mail_sharp": IconData(0xe887, fontFamily: 'MaterialIcons'),
-    "quick_contacts_mail_rounded":
-        IconData(0xf666, fontFamily: 'MaterialIcons'),
-    "quick_contacts_mail_outlined":
-        IconData(0xef79, fontFamily: 'MaterialIcons'),
+    "quick_contacts_mail_rounded": IconData(0xf666, fontFamily: 'MaterialIcons'),
+    "quick_contacts_mail_outlined": IconData(0xef79, fontFamily: 'MaterialIcons'),
     "quickreply": IconData(0xe4fe, fontFamily: 'MaterialIcons'),
     "quickreply_sharp": IconData(0xebf4, fontFamily: 'MaterialIcons'),
     "quickreply_rounded": IconData(0xf00d3, fontFamily: 'MaterialIcons'),
@@ -5699,10 +5120,8 @@ class IconUtil {
     "radio": IconData(0xe502, fontFamily: 'MaterialIcons'),
     "radio_button_checked": IconData(0xe503, fontFamily: 'MaterialIcons'),
     "radio_button_checked_sharp": IconData(0xebf8, fontFamily: 'MaterialIcons'),
-    "radio_button_checked_rounded":
-        IconData(0xf00d7, fontFamily: 'MaterialIcons'),
-    "radio_button_checked_outlined":
-        IconData(0xf2e5, fontFamily: 'MaterialIcons'),
+    "radio_button_checked_rounded": IconData(0xf00d7, fontFamily: 'MaterialIcons'),
+    "radio_button_checked_outlined": IconData(0xf2e5, fontFamily: 'MaterialIcons'),
     "radio_button_off": IconData(0xe504, fontFamily: 'MaterialIcons'),
     "radio_button_off_sharp": IconData(0xebf9, fontFamily: 'MaterialIcons'),
     "radio_button_off_rounded": IconData(0xf00d8, fontFamily: 'MaterialIcons'),
@@ -5712,12 +5131,9 @@ class IconUtil {
     "radio_button_on_rounded": IconData(0xf00d7, fontFamily: 'MaterialIcons'),
     "radio_button_on_outlined": IconData(0xf2e5, fontFamily: 'MaterialIcons'),
     "radio_button_unchecked": IconData(0xe504, fontFamily: 'MaterialIcons'),
-    "radio_button_unchecked_sharp":
-        IconData(0xebf9, fontFamily: 'MaterialIcons'),
-    "radio_button_unchecked_rounded":
-        IconData(0xf00d8, fontFamily: 'MaterialIcons'),
-    "radio_button_unchecked_outlined":
-        IconData(0xf2e6, fontFamily: 'MaterialIcons'),
+    "radio_button_unchecked_sharp": IconData(0xebf9, fontFamily: 'MaterialIcons'),
+    "radio_button_unchecked_rounded": IconData(0xf00d8, fontFamily: 'MaterialIcons'),
+    "radio_button_unchecked_outlined": IconData(0xf2e6, fontFamily: 'MaterialIcons'),
     "radio_sharp": IconData(0xebfa, fontFamily: 'MaterialIcons'),
     "radio_rounded": IconData(0xf00d9, fontFamily: 'MaterialIcons'),
     "radio_outlined": IconData(0xf2e7, fontFamily: 'MaterialIcons'),
@@ -5773,14 +5189,10 @@ class IconUtil {
     "redeem_sharp": IconData(0xec07, fontFamily: 'MaterialIcons'),
     "redeem_rounded": IconData(0xf00e6, fontFamily: 'MaterialIcons'),
     "redeem_outlined": IconData(0xf2f4, fontFamily: 'MaterialIcons'),
-    "redo":
-        IconData(0xe512, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "redo_sharp":
-        IconData(0xec08, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "redo_rounded": IconData(0xf00e7,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "redo_outlined":
-        IconData(0xf2f5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "redo": IconData(0xe512, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "redo_sharp": IconData(0xec08, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "redo_rounded": IconData(0xf00e7, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "redo_outlined": IconData(0xf2f5, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "reduce_capacity": IconData(0xe513, fontFamily: 'MaterialIcons'),
     "reduce_capacity_sharp": IconData(0xec09, fontFamily: 'MaterialIcons'),
     "reduce_capacity_rounded": IconData(0xf00e8, fontFamily: 'MaterialIcons'),
@@ -5796,12 +5208,9 @@ class IconUtil {
     "remove": IconData(0xe516, fontFamily: 'MaterialIcons'),
     "remove_circle": IconData(0xe517, fontFamily: 'MaterialIcons'),
     "remove_circle_outline": IconData(0xe518, fontFamily: 'MaterialIcons'),
-    "remove_circle_outline_sharp":
-        IconData(0xec0c, fontFamily: 'MaterialIcons'),
-    "remove_circle_outline_rounded":
-        IconData(0xf00eb, fontFamily: 'MaterialIcons'),
-    "remove_circle_outline_outlined":
-        IconData(0xf2f9, fontFamily: 'MaterialIcons'),
+    "remove_circle_outline_sharp": IconData(0xec0c, fontFamily: 'MaterialIcons'),
+    "remove_circle_outline_rounded": IconData(0xf00eb, fontFamily: 'MaterialIcons'),
+    "remove_circle_outline_outlined": IconData(0xf2f9, fontFamily: 'MaterialIcons'),
     "remove_circle_sharp": IconData(0xec0d, fontFamily: 'MaterialIcons'),
     "remove_circle_rounded": IconData(0xf00ec, fontFamily: 'MaterialIcons'),
     "remove_circle_outlined": IconData(0xf2fa, fontFamily: 'MaterialIcons'),
@@ -5826,10 +5235,8 @@ class IconUtil {
     "remove_outlined": IconData(0xf2fe, fontFamily: 'MaterialIcons'),
     "remove_shopping_cart": IconData(0xe51d, fontFamily: 'MaterialIcons'),
     "remove_shopping_cart_sharp": IconData(0xec13, fontFamily: 'MaterialIcons'),
-    "remove_shopping_cart_rounded":
-        IconData(0xf00f2, fontFamily: 'MaterialIcons'),
-    "remove_shopping_cart_outlined":
-        IconData(0xf300, fontFamily: 'MaterialIcons'),
+    "remove_shopping_cart_rounded": IconData(0xf00f2, fontFamily: 'MaterialIcons'),
+    "remove_shopping_cart_outlined": IconData(0xf300, fontFamily: 'MaterialIcons'),
     "reorder": IconData(0xe51e, fontFamily: 'MaterialIcons'),
     "reorder_sharp": IconData(0xec14, fontFamily: 'MaterialIcons'),
     "reorder_rounded": IconData(0xf00f3, fontFamily: 'MaterialIcons'),
@@ -5865,36 +5272,24 @@ class IconUtil {
     "replay_5_outlined": IconData(0xf308, fontFamily: 'MaterialIcons'),
     "replay_circle_filled": IconData(0xe527, fontFamily: 'MaterialIcons'),
     "replay_circle_filled_sharp": IconData(0xec1c, fontFamily: 'MaterialIcons'),
-    "replay_circle_filled_rounded":
-        IconData(0xf00fb, fontFamily: 'MaterialIcons'),
-    "replay_circle_filled_outlined":
-        IconData(0xf309, fontFamily: 'MaterialIcons'),
+    "replay_circle_filled_rounded": IconData(0xf00fb, fontFamily: 'MaterialIcons'),
+    "replay_circle_filled_outlined": IconData(0xf309, fontFamily: 'MaterialIcons'),
     "replay_sharp": IconData(0xec1d, fontFamily: 'MaterialIcons'),
     "replay_rounded": IconData(0xf00fc, fontFamily: 'MaterialIcons'),
     "replay_outlined": IconData(0xf30a, fontFamily: 'MaterialIcons'),
-    "reply":
-        IconData(0xe528, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "reply_all":
-        IconData(0xe529, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "reply_all_sharp":
-        IconData(0xec1e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "reply_all_rounded": IconData(0xf00fd,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "reply_all_outlined":
-        IconData(0xf30b, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "reply_sharp":
-        IconData(0xec1f, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "reply_rounded": IconData(0xf00fe,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "reply_outlined":
-        IconData(0xf30c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "reply": IconData(0xe528, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "reply_all": IconData(0xe529, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "reply_all_sharp": IconData(0xec1e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "reply_all_rounded": IconData(0xf00fd, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "reply_all_outlined": IconData(0xf30b, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "reply_sharp": IconData(0xec1f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "reply_rounded": IconData(0xf00fe, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "reply_outlined": IconData(0xf30c, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "report": IconData(0xe52a, fontFamily: 'MaterialIcons'),
     "report_gmailerrorred": IconData(0xe52b, fontFamily: 'MaterialIcons'),
     "report_gmailerrorred_sharp": IconData(0xec20, fontFamily: 'MaterialIcons'),
-    "report_gmailerrorred_rounded":
-        IconData(0xf00ff, fontFamily: 'MaterialIcons'),
-    "report_gmailerrorred_outlined":
-        IconData(0xf30d, fontFamily: 'MaterialIcons'),
+    "report_gmailerrorred_rounded": IconData(0xf00ff, fontFamily: 'MaterialIcons'),
+    "report_gmailerrorred_outlined": IconData(0xf30d, fontFamily: 'MaterialIcons'),
     "report_off": IconData(0xe52c, fontFamily: 'MaterialIcons'),
     "report_off_sharp": IconData(0xec21, fontFamily: 'MaterialIcons'),
     "report_off_rounded": IconData(0xf0100, fontFamily: 'MaterialIcons'),
@@ -5933,10 +5328,8 @@ class IconUtil {
     "restore": IconData(0xe534, fontFamily: 'MaterialIcons'),
     "restore_from_trash": IconData(0xe535, fontFamily: 'MaterialIcons'),
     "restore_from_trash_sharp": IconData(0xec2a, fontFamily: 'MaterialIcons'),
-    "restore_from_trash_rounded":
-        IconData(0xf0109, fontFamily: 'MaterialIcons'),
-    "restore_from_trash_outlined":
-        IconData(0xf317, fontFamily: 'MaterialIcons'),
+    "restore_from_trash_rounded": IconData(0xf0109, fontFamily: 'MaterialIcons'),
+    "restore_from_trash_outlined": IconData(0xf317, fontFamily: 'MaterialIcons'),
     "restore_sharp": IconData(0xec2c, fontFamily: 'MaterialIcons'),
     "restore_rounded": IconData(0xf010b, fontFamily: 'MaterialIcons'),
     "restore_outlined": IconData(0xf318, fontFamily: 'MaterialIcons'),
@@ -5973,12 +5366,9 @@ class IconUtil {
     "room_service_rounded": IconData(0xf0112, fontFamily: 'MaterialIcons'),
     "room_service_outlined": IconData(0xf320, fontFamily: 'MaterialIcons'),
     "rotate_90_degrees_ccw": IconData(0xe53e, fontFamily: 'MaterialIcons'),
-    "rotate_90_degrees_ccw_sharp":
-        IconData(0xec34, fontFamily: 'MaterialIcons'),
-    "rotate_90_degrees_ccw_rounded":
-        IconData(0xf0113, fontFamily: 'MaterialIcons'),
-    "rotate_90_degrees_ccw_outlined":
-        IconData(0xf321, fontFamily: 'MaterialIcons'),
+    "rotate_90_degrees_ccw_sharp": IconData(0xec34, fontFamily: 'MaterialIcons'),
+    "rotate_90_degrees_ccw_rounded": IconData(0xf0113, fontFamily: 'MaterialIcons'),
+    "rotate_90_degrees_ccw_outlined": IconData(0xf321, fontFamily: 'MaterialIcons'),
     "rotate_left": IconData(0xe53f, fontFamily: 'MaterialIcons'),
     "rotate_left_sharp": IconData(0xec35, fontFamily: 'MaterialIcons'),
     "rotate_left_rounded": IconData(0xf0114, fontFamily: 'MaterialIcons'),
@@ -6025,10 +5415,8 @@ class IconUtil {
     "run_circle_outlined": IconData(0xf32c, fontFamily: 'MaterialIcons'),
     "running_with_errors": IconData(0xe54a, fontFamily: 'MaterialIcons'),
     "running_with_errors_sharp": IconData(0xec40, fontFamily: 'MaterialIcons'),
-    "running_with_errors_rounded":
-        IconData(0xf011f, fontFamily: 'MaterialIcons'),
-    "running_with_errors_outlined":
-        IconData(0xf32d, fontFamily: 'MaterialIcons'),
+    "running_with_errors_rounded": IconData(0xf011f, fontFamily: 'MaterialIcons'),
+    "running_with_errors_outlined": IconData(0xf32d, fontFamily: 'MaterialIcons'),
     "rv_hookup": IconData(0xe54b, fontFamily: 'MaterialIcons'),
     "rv_hookup_sharp": IconData(0xec41, fontFamily: 'MaterialIcons'),
     "rv_hookup_rounded": IconData(0xf0120, fontFamily: 'MaterialIcons'),
@@ -6098,43 +5486,29 @@ class IconUtil {
     "score_rounded": IconData(0xf0130, fontFamily: 'MaterialIcons'),
     "score_outlined": IconData(0xf33e, fontFamily: 'MaterialIcons'),
     "screen_lock_landscape": IconData(0xe55c, fontFamily: 'MaterialIcons'),
-    "screen_lock_landscape_sharp":
-        IconData(0xec52, fontFamily: 'MaterialIcons'),
-    "screen_lock_landscape_rounded":
-        IconData(0xf0131, fontFamily: 'MaterialIcons'),
-    "screen_lock_landscape_outlined":
-        IconData(0xf33f, fontFamily: 'MaterialIcons'),
+    "screen_lock_landscape_sharp": IconData(0xec52, fontFamily: 'MaterialIcons'),
+    "screen_lock_landscape_rounded": IconData(0xf0131, fontFamily: 'MaterialIcons'),
+    "screen_lock_landscape_outlined": IconData(0xf33f, fontFamily: 'MaterialIcons'),
     "screen_lock_portrait": IconData(0xe55d, fontFamily: 'MaterialIcons'),
     "screen_lock_portrait_sharp": IconData(0xec53, fontFamily: 'MaterialIcons'),
-    "screen_lock_portrait_rounded":
-        IconData(0xf0132, fontFamily: 'MaterialIcons'),
-    "screen_lock_portrait_outlined":
-        IconData(0xf340, fontFamily: 'MaterialIcons'),
+    "screen_lock_portrait_rounded": IconData(0xf0132, fontFamily: 'MaterialIcons'),
+    "screen_lock_portrait_outlined": IconData(0xf340, fontFamily: 'MaterialIcons'),
     "screen_lock_rotation": IconData(0xe55e, fontFamily: 'MaterialIcons'),
     "screen_lock_rotation_sharp": IconData(0xec54, fontFamily: 'MaterialIcons'),
-    "screen_lock_rotation_rounded":
-        IconData(0xf0133, fontFamily: 'MaterialIcons'),
-    "screen_lock_rotation_outlined":
-        IconData(0xf341, fontFamily: 'MaterialIcons'),
+    "screen_lock_rotation_rounded": IconData(0xf0133, fontFamily: 'MaterialIcons'),
+    "screen_lock_rotation_outlined": IconData(0xf341, fontFamily: 'MaterialIcons'),
     "screen_rotation": IconData(0xe55f, fontFamily: 'MaterialIcons'),
     "screen_rotation_sharp": IconData(0xec55, fontFamily: 'MaterialIcons'),
     "screen_rotation_rounded": IconData(0xf0134, fontFamily: 'MaterialIcons'),
     "screen_rotation_outlined": IconData(0xf342, fontFamily: 'MaterialIcons'),
     "screen_search_desktop": IconData(0xe560, fontFamily: 'MaterialIcons'),
-    "screen_search_desktop_sharp":
-        IconData(0xec56, fontFamily: 'MaterialIcons'),
-    "screen_search_desktop_rounded":
-        IconData(0xf0135, fontFamily: 'MaterialIcons'),
-    "screen_search_desktop_outlined":
-        IconData(0xf343, fontFamily: 'MaterialIcons'),
-    "screen_share":
-        IconData(0xe561, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "screen_share_sharp":
-        IconData(0xec57, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "screen_share_rounded": IconData(0xf0136,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "screen_share_outlined":
-        IconData(0xf344, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "screen_search_desktop_sharp": IconData(0xec56, fontFamily: 'MaterialIcons'),
+    "screen_search_desktop_rounded": IconData(0xf0135, fontFamily: 'MaterialIcons'),
+    "screen_search_desktop_outlined": IconData(0xf343, fontFamily: 'MaterialIcons'),
+    "screen_share": IconData(0xe561, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "screen_share_sharp": IconData(0xec57, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "screen_share_rounded": IconData(0xf0136, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "screen_share_outlined": IconData(0xf344, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "screenshot": IconData(0xe562, fontFamily: 'MaterialIcons'),
     "screenshot_sharp": IconData(0xec58, fontFamily: 'MaterialIcons'),
     "screenshot_rounded": IconData(0xf0137, fontFamily: 'MaterialIcons'),
@@ -6170,20 +5544,15 @@ class IconUtil {
     "security_update": IconData(0xe56a, fontFamily: 'MaterialIcons'),
     "security_update_good": IconData(0xe56b, fontFamily: 'MaterialIcons'),
     "security_update_good_sharp": IconData(0xec60, fontFamily: 'MaterialIcons'),
-    "security_update_good_rounded":
-        IconData(0xf013f, fontFamily: 'MaterialIcons'),
-    "security_update_good_outlined":
-        IconData(0xf34d, fontFamily: 'MaterialIcons'),
+    "security_update_good_rounded": IconData(0xf013f, fontFamily: 'MaterialIcons'),
+    "security_update_good_outlined": IconData(0xf34d, fontFamily: 'MaterialIcons'),
     "security_update_sharp": IconData(0xec61, fontFamily: 'MaterialIcons'),
     "security_update_rounded": IconData(0xf0140, fontFamily: 'MaterialIcons'),
     "security_update_outlined": IconData(0xf34e, fontFamily: 'MaterialIcons'),
     "security_update_warning": IconData(0xe56c, fontFamily: 'MaterialIcons'),
-    "security_update_warning_sharp":
-        IconData(0xec62, fontFamily: 'MaterialIcons'),
-    "security_update_warning_rounded":
-        IconData(0xf0141, fontFamily: 'MaterialIcons'),
-    "security_update_warning_outlined":
-        IconData(0xf34f, fontFamily: 'MaterialIcons'),
+    "security_update_warning_sharp": IconData(0xec62, fontFamily: 'MaterialIcons'),
+    "security_update_warning_rounded": IconData(0xf0141, fontFamily: 'MaterialIcons'),
+    "security_update_warning_outlined": IconData(0xf34f, fontFamily: 'MaterialIcons'),
     "segment": IconData(0xe56d, fontFamily: 'MaterialIcons'),
     "segment_sharp": IconData(0xec63, fontFamily: 'MaterialIcons'),
     "segment_rounded": IconData(0xf0142, fontFamily: 'MaterialIcons'),
@@ -6200,18 +5569,14 @@ class IconUtil {
     "sell_sharp": IconData(0xec66, fontFamily: 'MaterialIcons'),
     "sell_rounded": IconData(0xf0145, fontFamily: 'MaterialIcons'),
     "sell_outlined": IconData(0xf353, fontFamily: 'MaterialIcons'),
-    "send":
-        IconData(0xe571, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "send": IconData(0xe571, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "send_and_archive": IconData(0xe572, fontFamily: 'MaterialIcons'),
     "send_and_archive_sharp": IconData(0xec67, fontFamily: 'MaterialIcons'),
     "send_and_archive_rounded": IconData(0xf0146, fontFamily: 'MaterialIcons'),
     "send_and_archive_outlined": IconData(0xf354, fontFamily: 'MaterialIcons'),
-    "send_sharp":
-        IconData(0xec68, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "send_rounded": IconData(0xf0147,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "send_outlined":
-        IconData(0xf355, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "send_sharp": IconData(0xec68, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "send_rounded": IconData(0xf0147, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "send_outlined": IconData(0xf355, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "send_to_mobile": IconData(0xe573, fontFamily: 'MaterialIcons'),
     "send_to_mobile_sharp": IconData(0xec69, fontFamily: 'MaterialIcons'),
     "send_to_mobile_rounded": IconData(0xf0148, fontFamily: 'MaterialIcons'),
@@ -6233,82 +5598,54 @@ class IconUtil {
     "sensors_rounded": IconData(0xf014c, fontFamily: 'MaterialIcons'),
     "sensors_outlined": IconData(0xf35a, fontFamily: 'MaterialIcons'),
     "sentiment_dissatisfied": IconData(0xe578, fontFamily: 'MaterialIcons'),
-    "sentiment_dissatisfied_sharp":
-        IconData(0xec6e, fontFamily: 'MaterialIcons'),
-    "sentiment_dissatisfied_rounded":
-        IconData(0xf014d, fontFamily: 'MaterialIcons'),
-    "sentiment_dissatisfied_outlined":
-        IconData(0xf35b, fontFamily: 'MaterialIcons'),
+    "sentiment_dissatisfied_sharp": IconData(0xec6e, fontFamily: 'MaterialIcons'),
+    "sentiment_dissatisfied_rounded": IconData(0xf014d, fontFamily: 'MaterialIcons'),
+    "sentiment_dissatisfied_outlined": IconData(0xf35b, fontFamily: 'MaterialIcons'),
     "sentiment_neutral": IconData(0xe579, fontFamily: 'MaterialIcons'),
     "sentiment_neutral_sharp": IconData(0xec6f, fontFamily: 'MaterialIcons'),
     "sentiment_neutral_rounded": IconData(0xf014e, fontFamily: 'MaterialIcons'),
     "sentiment_neutral_outlined": IconData(0xf35c, fontFamily: 'MaterialIcons'),
     "sentiment_satisfied": IconData(0xe57a, fontFamily: 'MaterialIcons'),
     "sentiment_satisfied_alt": IconData(0xe57b, fontFamily: 'MaterialIcons'),
-    "sentiment_satisfied_alt_sharp":
-        IconData(0xec70, fontFamily: 'MaterialIcons'),
-    "sentiment_satisfied_alt_rounded":
-        IconData(0xf014f, fontFamily: 'MaterialIcons'),
-    "sentiment_satisfied_alt_outlined":
-        IconData(0xf35d, fontFamily: 'MaterialIcons'),
+    "sentiment_satisfied_alt_sharp": IconData(0xec70, fontFamily: 'MaterialIcons'),
+    "sentiment_satisfied_alt_rounded": IconData(0xf014f, fontFamily: 'MaterialIcons'),
+    "sentiment_satisfied_alt_outlined": IconData(0xf35d, fontFamily: 'MaterialIcons'),
     "sentiment_satisfied_sharp": IconData(0xec71, fontFamily: 'MaterialIcons'),
-    "sentiment_satisfied_rounded":
-        IconData(0xf0150, fontFamily: 'MaterialIcons'),
-    "sentiment_satisfied_outlined":
-        IconData(0xf35e, fontFamily: 'MaterialIcons'),
-    "sentiment_very_dissatisfied":
-        IconData(0xe57c, fontFamily: 'MaterialIcons'),
-    "sentiment_very_dissatisfied_sharp":
-        IconData(0xec72, fontFamily: 'MaterialIcons'),
-    "sentiment_very_dissatisfied_rounded":
-        IconData(0xf0151, fontFamily: 'MaterialIcons'),
-    "sentiment_very_dissatisfied_outlined":
-        IconData(0xf35f, fontFamily: 'MaterialIcons'),
+    "sentiment_satisfied_rounded": IconData(0xf0150, fontFamily: 'MaterialIcons'),
+    "sentiment_satisfied_outlined": IconData(0xf35e, fontFamily: 'MaterialIcons'),
+    "sentiment_very_dissatisfied": IconData(0xe57c, fontFamily: 'MaterialIcons'),
+    "sentiment_very_dissatisfied_sharp": IconData(0xec72, fontFamily: 'MaterialIcons'),
+    "sentiment_very_dissatisfied_rounded": IconData(0xf0151, fontFamily: 'MaterialIcons'),
+    "sentiment_very_dissatisfied_outlined": IconData(0xf35f, fontFamily: 'MaterialIcons'),
     "sentiment_very_satisfied": IconData(0xe57d, fontFamily: 'MaterialIcons'),
-    "sentiment_very_satisfied_sharp":
-        IconData(0xec73, fontFamily: 'MaterialIcons'),
-    "sentiment_very_satisfied_rounded":
-        IconData(0xf0152, fontFamily: 'MaterialIcons'),
-    "sentiment_very_satisfied_outlined":
-        IconData(0xf360, fontFamily: 'MaterialIcons'),
+    "sentiment_very_satisfied_sharp": IconData(0xec73, fontFamily: 'MaterialIcons'),
+    "sentiment_very_satisfied_rounded": IconData(0xf0152, fontFamily: 'MaterialIcons'),
+    "sentiment_very_satisfied_outlined": IconData(0xf360, fontFamily: 'MaterialIcons'),
     "set_meal": IconData(0xe57e, fontFamily: 'MaterialIcons'),
     "set_meal_sharp": IconData(0xec74, fontFamily: 'MaterialIcons'),
     "set_meal_rounded": IconData(0xf0153, fontFamily: 'MaterialIcons'),
     "set_meal_outlined": IconData(0xf361, fontFamily: 'MaterialIcons'),
     "settings": IconData(0xe57f, fontFamily: 'MaterialIcons'),
     "settings_accessibility": IconData(0xe580, fontFamily: 'MaterialIcons'),
-    "settings_accessibility_sharp":
-        IconData(0xec75, fontFamily: 'MaterialIcons'),
-    "settings_accessibility_rounded":
-        IconData(0xf0154, fontFamily: 'MaterialIcons'),
-    "settings_accessibility_outlined":
-        IconData(0xf362, fontFamily: 'MaterialIcons'),
+    "settings_accessibility_sharp": IconData(0xec75, fontFamily: 'MaterialIcons'),
+    "settings_accessibility_rounded": IconData(0xf0154, fontFamily: 'MaterialIcons'),
+    "settings_accessibility_outlined": IconData(0xf362, fontFamily: 'MaterialIcons'),
     "settings_applications": IconData(0xe581, fontFamily: 'MaterialIcons'),
-    "settings_applications_sharp":
-        IconData(0xec76, fontFamily: 'MaterialIcons'),
-    "settings_applications_rounded":
-        IconData(0xf0155, fontFamily: 'MaterialIcons'),
-    "settings_applications_outlined":
-        IconData(0xf363, fontFamily: 'MaterialIcons'),
+    "settings_applications_sharp": IconData(0xec76, fontFamily: 'MaterialIcons'),
+    "settings_applications_rounded": IconData(0xf0155, fontFamily: 'MaterialIcons'),
+    "settings_applications_outlined": IconData(0xf363, fontFamily: 'MaterialIcons'),
     "settings_backup_restore": IconData(0xe582, fontFamily: 'MaterialIcons'),
-    "settings_backup_restore_sharp":
-        IconData(0xec77, fontFamily: 'MaterialIcons'),
-    "settings_backup_restore_rounded":
-        IconData(0xf0156, fontFamily: 'MaterialIcons'),
-    "settings_backup_restore_outlined":
-        IconData(0xf364, fontFamily: 'MaterialIcons'),
+    "settings_backup_restore_sharp": IconData(0xec77, fontFamily: 'MaterialIcons'),
+    "settings_backup_restore_rounded": IconData(0xf0156, fontFamily: 'MaterialIcons'),
+    "settings_backup_restore_outlined": IconData(0xf364, fontFamily: 'MaterialIcons'),
     "settings_bluetooth": IconData(0xe583, fontFamily: 'MaterialIcons'),
     "settings_bluetooth_sharp": IconData(0xec78, fontFamily: 'MaterialIcons'),
-    "settings_bluetooth_rounded":
-        IconData(0xf0157, fontFamily: 'MaterialIcons'),
-    "settings_bluetooth_outlined":
-        IconData(0xf365, fontFamily: 'MaterialIcons'),
+    "settings_bluetooth_rounded": IconData(0xf0157, fontFamily: 'MaterialIcons'),
+    "settings_bluetooth_outlined": IconData(0xf365, fontFamily: 'MaterialIcons'),
     "settings_brightness": IconData(0xe584, fontFamily: 'MaterialIcons'),
     "settings_brightness_sharp": IconData(0xec79, fontFamily: 'MaterialIcons'),
-    "settings_brightness_rounded":
-        IconData(0xf0158, fontFamily: 'MaterialIcons'),
-    "settings_brightness_outlined":
-        IconData(0xf366, fontFamily: 'MaterialIcons'),
+    "settings_brightness_rounded": IconData(0xf0158, fontFamily: 'MaterialIcons'),
+    "settings_brightness_outlined": IconData(0xf366, fontFamily: 'MaterialIcons'),
     "settings_cell": IconData(0xe585, fontFamily: 'MaterialIcons'),
     "settings_cell_sharp": IconData(0xec7a, fontFamily: 'MaterialIcons'),
     "settings_cell_rounded": IconData(0xf0159, fontFamily: 'MaterialIcons'),
@@ -6322,39 +5659,25 @@ class IconUtil {
     "settings_ethernet_rounded": IconData(0xf015a, fontFamily: 'MaterialIcons'),
     "settings_ethernet_outlined": IconData(0xf368, fontFamily: 'MaterialIcons'),
     "settings_input_antenna": IconData(0xe587, fontFamily: 'MaterialIcons'),
-    "settings_input_antenna_sharp":
-        IconData(0xec7c, fontFamily: 'MaterialIcons'),
-    "settings_input_antenna_rounded":
-        IconData(0xf015b, fontFamily: 'MaterialIcons'),
-    "settings_input_antenna_outlined":
-        IconData(0xf369, fontFamily: 'MaterialIcons'),
+    "settings_input_antenna_sharp": IconData(0xec7c, fontFamily: 'MaterialIcons'),
+    "settings_input_antenna_rounded": IconData(0xf015b, fontFamily: 'MaterialIcons'),
+    "settings_input_antenna_outlined": IconData(0xf369, fontFamily: 'MaterialIcons'),
     "settings_input_component": IconData(0xe588, fontFamily: 'MaterialIcons'),
-    "settings_input_component_sharp":
-        IconData(0xec7d, fontFamily: 'MaterialIcons'),
-    "settings_input_component_rounded":
-        IconData(0xf015c, fontFamily: 'MaterialIcons'),
-    "settings_input_component_outlined":
-        IconData(0xf36a, fontFamily: 'MaterialIcons'),
+    "settings_input_component_sharp": IconData(0xec7d, fontFamily: 'MaterialIcons'),
+    "settings_input_component_rounded": IconData(0xf015c, fontFamily: 'MaterialIcons'),
+    "settings_input_component_outlined": IconData(0xf36a, fontFamily: 'MaterialIcons'),
     "settings_input_composite": IconData(0xe589, fontFamily: 'MaterialIcons'),
-    "settings_input_composite_sharp":
-        IconData(0xec7e, fontFamily: 'MaterialIcons'),
-    "settings_input_composite_rounded":
-        IconData(0xf015d, fontFamily: 'MaterialIcons'),
-    "settings_input_composite_outlined":
-        IconData(0xf36b, fontFamily: 'MaterialIcons'),
+    "settings_input_composite_sharp": IconData(0xec7e, fontFamily: 'MaterialIcons'),
+    "settings_input_composite_rounded": IconData(0xf015d, fontFamily: 'MaterialIcons'),
+    "settings_input_composite_outlined": IconData(0xf36b, fontFamily: 'MaterialIcons'),
     "settings_input_hdmi": IconData(0xe58a, fontFamily: 'MaterialIcons'),
     "settings_input_hdmi_sharp": IconData(0xec7f, fontFamily: 'MaterialIcons'),
-    "settings_input_hdmi_rounded":
-        IconData(0xf015e, fontFamily: 'MaterialIcons'),
-    "settings_input_hdmi_outlined":
-        IconData(0xf36c, fontFamily: 'MaterialIcons'),
+    "settings_input_hdmi_rounded": IconData(0xf015e, fontFamily: 'MaterialIcons'),
+    "settings_input_hdmi_outlined": IconData(0xf36c, fontFamily: 'MaterialIcons'),
     "settings_input_svideo": IconData(0xe58b, fontFamily: 'MaterialIcons'),
-    "settings_input_svideo_sharp":
-        IconData(0xec80, fontFamily: 'MaterialIcons'),
-    "settings_input_svideo_rounded":
-        IconData(0xf015f, fontFamily: 'MaterialIcons'),
-    "settings_input_svideo_outlined":
-        IconData(0xf36d, fontFamily: 'MaterialIcons'),
+    "settings_input_svideo_sharp": IconData(0xec80, fontFamily: 'MaterialIcons'),
+    "settings_input_svideo_rounded": IconData(0xf015f, fontFamily: 'MaterialIcons'),
+    "settings_input_svideo_outlined": IconData(0xf36d, fontFamily: 'MaterialIcons'),
     "settings_outlined": IconData(0xf36e, fontFamily: 'MaterialIcons'),
     "settings_overscan": IconData(0xe58c, fontFamily: 'MaterialIcons'),
     "settings_overscan_sharp": IconData(0xec81, fontFamily: 'MaterialIcons'),
@@ -6379,12 +5702,9 @@ class IconUtil {
     "settings_suggest_rounded": IconData(0xf0165, fontFamily: 'MaterialIcons'),
     "settings_suggest_outlined": IconData(0xf373, fontFamily: 'MaterialIcons'),
     "settings_system_daydream": IconData(0xe591, fontFamily: 'MaterialIcons'),
-    "settings_system_daydream_sharp":
-        IconData(0xec87, fontFamily: 'MaterialIcons'),
-    "settings_system_daydream_rounded":
-        IconData(0xf0166, fontFamily: 'MaterialIcons'),
-    "settings_system_daydream_outlined":
-        IconData(0xf374, fontFamily: 'MaterialIcons'),
+    "settings_system_daydream_sharp": IconData(0xec87, fontFamily: 'MaterialIcons'),
+    "settings_system_daydream_rounded": IconData(0xf0166, fontFamily: 'MaterialIcons'),
+    "settings_system_daydream_outlined": IconData(0xf374, fontFamily: 'MaterialIcons'),
     "settings_voice": IconData(0xe592, fontFamily: 'MaterialIcons'),
     "settings_voice_sharp": IconData(0xec88, fontFamily: 'MaterialIcons'),
     "settings_voice_rounded": IconData(0xf0167, fontFamily: 'MaterialIcons'),
@@ -6408,10 +5728,8 @@ class IconUtil {
     "share": IconData(0xe593, fontFamily: 'MaterialIcons'),
     "share_arrival_time": IconData(0xe594, fontFamily: 'MaterialIcons'),
     "share_arrival_time_sharp": IconData(0xec89, fontFamily: 'MaterialIcons'),
-    "share_arrival_time_rounded":
-        IconData(0xf0168, fontFamily: 'MaterialIcons'),
-    "share_arrival_time_outlined":
-        IconData(0xf376, fontFamily: 'MaterialIcons'),
+    "share_arrival_time_rounded": IconData(0xf0168, fontFamily: 'MaterialIcons'),
+    "share_arrival_time_outlined": IconData(0xf376, fontFamily: 'MaterialIcons'),
     "share_location": IconData(0xe595, fontFamily: 'MaterialIcons'),
     "share_location_sharp": IconData(0xec8a, fontFamily: 'MaterialIcons'),
     "share_location_rounded": IconData(0xf0169, fontFamily: 'MaterialIcons'),
@@ -6447,26 +5765,18 @@ class IconUtil {
     "shopping_cart_sharp": IconData(0xec92, fontFamily: 'MaterialIcons'),
     "shopping_cart_rounded": IconData(0xf0171, fontFamily: 'MaterialIcons'),
     "shopping_cart_outlined": IconData(0xf37f, fontFamily: 'MaterialIcons'),
-    "short_text":
-        IconData(0xe59d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "short_text_sharp":
-        IconData(0xec93, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "short_text_rounded": IconData(0xf0172,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "short_text_outlined":
-        IconData(0xf380, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "short_text": IconData(0xe59d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "short_text_sharp": IconData(0xec93, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "short_text_rounded": IconData(0xf0172, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "short_text_outlined": IconData(0xf380, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "shortcut": IconData(0xe59e, fontFamily: 'MaterialIcons'),
     "shortcut_sharp": IconData(0xec94, fontFamily: 'MaterialIcons'),
     "shortcut_rounded": IconData(0xf0173, fontFamily: 'MaterialIcons'),
     "shortcut_outlined": IconData(0xf381, fontFamily: 'MaterialIcons'),
-    "show_chart":
-        IconData(0xe59f, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "show_chart_sharp":
-        IconData(0xec95, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "show_chart_rounded": IconData(0xf0174,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "show_chart_outlined":
-        IconData(0xf382, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "show_chart": IconData(0xe59f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "show_chart_sharp": IconData(0xec95, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "show_chart_rounded": IconData(0xf0174, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "show_chart_outlined": IconData(0xf382, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "shower": IconData(0xe5a0, fontFamily: 'MaterialIcons'),
     "shower_sharp": IconData(0xec96, fontFamily: 'MaterialIcons'),
     "shower_rounded": IconData(0xf0175, fontFamily: 'MaterialIcons'),
@@ -6488,79 +5798,50 @@ class IconUtil {
     "sick_rounded": IconData(0xf0179, fontFamily: 'MaterialIcons'),
     "sick_outlined": IconData(0xf387, fontFamily: 'MaterialIcons'),
     "signal_cellular_0_bar": IconData(0xe5a5, fontFamily: 'MaterialIcons'),
-    "signal_cellular_0_bar_sharp":
-        IconData(0xec9b, fontFamily: 'MaterialIcons'),
-    "signal_cellular_0_bar_rounded":
-        IconData(0xf017a, fontFamily: 'MaterialIcons'),
-    "signal_cellular_0_bar_outlined":
-        IconData(0xf388, fontFamily: 'MaterialIcons'),
+    "signal_cellular_0_bar_sharp": IconData(0xec9b, fontFamily: 'MaterialIcons'),
+    "signal_cellular_0_bar_rounded": IconData(0xf017a, fontFamily: 'MaterialIcons'),
+    "signal_cellular_0_bar_outlined": IconData(0xf388, fontFamily: 'MaterialIcons'),
     "signal_cellular_4_bar": IconData(0xe5a6, fontFamily: 'MaterialIcons'),
-    "signal_cellular_4_bar_sharp":
-        IconData(0xec9c, fontFamily: 'MaterialIcons'),
-    "signal_cellular_4_bar_rounded":
-        IconData(0xf017b, fontFamily: 'MaterialIcons'),
-    "signal_cellular_4_bar_outlined":
-        IconData(0xf389, fontFamily: 'MaterialIcons'),
+    "signal_cellular_4_bar_sharp": IconData(0xec9c, fontFamily: 'MaterialIcons'),
+    "signal_cellular_4_bar_rounded": IconData(0xf017b, fontFamily: 'MaterialIcons'),
+    "signal_cellular_4_bar_outlined": IconData(0xf389, fontFamily: 'MaterialIcons'),
     "signal_cellular_alt": IconData(0xe5a7, fontFamily: 'MaterialIcons'),
     "signal_cellular_alt_sharp": IconData(0xec9d, fontFamily: 'MaterialIcons'),
-    "signal_cellular_alt_rounded":
-        IconData(0xf017c, fontFamily: 'MaterialIcons'),
-    "signal_cellular_alt_outlined":
-        IconData(0xf38a, fontFamily: 'MaterialIcons'),
-    "signal_cellular_connected_no_internet_0_bar":
-        IconData(0xe5a8, fontFamily: 'MaterialIcons'),
-    "signal_cellular_connected_no_internet_0_bar_sharp":
-        IconData(0xec9e, fontFamily: 'MaterialIcons'),
-    "signal_cellular_connected_no_internet_0_bar_rounded":
-        IconData(0xf017d, fontFamily: 'MaterialIcons'),
-    "signal_cellular_connected_no_internet_0_bar_outlined":
-        IconData(0xf38b, fontFamily: 'MaterialIcons'),
-    "signal_cellular_connected_no_internet_4_bar":
-        IconData(0xe5a9, fontFamily: 'MaterialIcons'),
-    "signal_cellular_connected_no_internet_4_bar_sharp":
-        IconData(0xec9f, fontFamily: 'MaterialIcons'),
-    "signal_cellular_connected_no_internet_4_bar_rounded":
-        IconData(0xf017e, fontFamily: 'MaterialIcons'),
-    "signal_cellular_connected_no_internet_4_bar_outlined":
-        IconData(0xf38c, fontFamily: 'MaterialIcons'),
+    "signal_cellular_alt_rounded": IconData(0xf017c, fontFamily: 'MaterialIcons'),
+    "signal_cellular_alt_outlined": IconData(0xf38a, fontFamily: 'MaterialIcons'),
+    "signal_cellular_connected_no_internet_0_bar": IconData(0xe5a8, fontFamily: 'MaterialIcons'),
+    "signal_cellular_connected_no_internet_0_bar_sharp": IconData(0xec9e, fontFamily: 'MaterialIcons'),
+    "signal_cellular_connected_no_internet_0_bar_rounded": IconData(0xf017d, fontFamily: 'MaterialIcons'),
+    "signal_cellular_connected_no_internet_0_bar_outlined": IconData(0xf38b, fontFamily: 'MaterialIcons'),
+    "signal_cellular_connected_no_internet_4_bar": IconData(0xe5a9, fontFamily: 'MaterialIcons'),
+    "signal_cellular_connected_no_internet_4_bar_sharp": IconData(0xec9f, fontFamily: 'MaterialIcons'),
+    "signal_cellular_connected_no_internet_4_bar_rounded": IconData(0xf017e, fontFamily: 'MaterialIcons'),
+    "signal_cellular_connected_no_internet_4_bar_outlined": IconData(0xf38c, fontFamily: 'MaterialIcons'),
     "signal_cellular_no_sim": IconData(0xe5aa, fontFamily: 'MaterialIcons'),
-    "signal_cellular_no_sim_sharp":
-        IconData(0xeca0, fontFamily: 'MaterialIcons'),
-    "signal_cellular_no_sim_rounded":
-        IconData(0xf017f, fontFamily: 'MaterialIcons'),
-    "signal_cellular_no_sim_outlined":
-        IconData(0xf38d, fontFamily: 'MaterialIcons'),
+    "signal_cellular_no_sim_sharp": IconData(0xeca0, fontFamily: 'MaterialIcons'),
+    "signal_cellular_no_sim_rounded": IconData(0xf017f, fontFamily: 'MaterialIcons'),
+    "signal_cellular_no_sim_outlined": IconData(0xf38d, fontFamily: 'MaterialIcons'),
     "signal_cellular_nodata": IconData(0xe5ab, fontFamily: 'MaterialIcons'),
-    "signal_cellular_nodata_sharp":
-        IconData(0xeca1, fontFamily: 'MaterialIcons'),
-    "signal_cellular_nodata_rounded":
-        IconData(0xf0180, fontFamily: 'MaterialIcons'),
-    "signal_cellular_nodata_outlined":
-        IconData(0xf38e, fontFamily: 'MaterialIcons'),
+    "signal_cellular_nodata_sharp": IconData(0xeca1, fontFamily: 'MaterialIcons'),
+    "signal_cellular_nodata_rounded": IconData(0xf0180, fontFamily: 'MaterialIcons'),
+    "signal_cellular_nodata_outlined": IconData(0xf38e, fontFamily: 'MaterialIcons'),
     "signal_cellular_null": IconData(0xe5ac, fontFamily: 'MaterialIcons'),
     "signal_cellular_null_sharp": IconData(0xeca2, fontFamily: 'MaterialIcons'),
-    "signal_cellular_null_rounded":
-        IconData(0xf0181, fontFamily: 'MaterialIcons'),
-    "signal_cellular_null_outlined":
-        IconData(0xf38f, fontFamily: 'MaterialIcons'),
+    "signal_cellular_null_rounded": IconData(0xf0181, fontFamily: 'MaterialIcons'),
+    "signal_cellular_null_outlined": IconData(0xf38f, fontFamily: 'MaterialIcons'),
     "signal_cellular_off": IconData(0xe5ad, fontFamily: 'MaterialIcons'),
     "signal_cellular_off_sharp": IconData(0xeca3, fontFamily: 'MaterialIcons'),
-    "signal_cellular_off_rounded":
-        IconData(0xf0182, fontFamily: 'MaterialIcons'),
-    "signal_cellular_off_outlined":
-        IconData(0xf390, fontFamily: 'MaterialIcons'),
+    "signal_cellular_off_rounded": IconData(0xf0182, fontFamily: 'MaterialIcons'),
+    "signal_cellular_off_outlined": IconData(0xf390, fontFamily: 'MaterialIcons'),
     "signal_wifi_0_bar": IconData(0xe5ae, fontFamily: 'MaterialIcons'),
     "signal_wifi_0_bar_sharp": IconData(0xeca4, fontFamily: 'MaterialIcons'),
     "signal_wifi_0_bar_rounded": IconData(0xf0183, fontFamily: 'MaterialIcons'),
     "signal_wifi_0_bar_outlined": IconData(0xf391, fontFamily: 'MaterialIcons'),
     "signal_wifi_4_bar": IconData(0xe5af, fontFamily: 'MaterialIcons'),
     "signal_wifi_4_bar_lock": IconData(0xe5b0, fontFamily: 'MaterialIcons'),
-    "signal_wifi_4_bar_lock_sharp":
-        IconData(0xeca5, fontFamily: 'MaterialIcons'),
-    "signal_wifi_4_bar_lock_rounded":
-        IconData(0xf0184, fontFamily: 'MaterialIcons'),
-    "signal_wifi_4_bar_lock_outlined":
-        IconData(0xf392, fontFamily: 'MaterialIcons'),
+    "signal_wifi_4_bar_lock_sharp": IconData(0xeca5, fontFamily: 'MaterialIcons'),
+    "signal_wifi_4_bar_lock_rounded": IconData(0xf0184, fontFamily: 'MaterialIcons'),
+    "signal_wifi_4_bar_lock_outlined": IconData(0xf392, fontFamily: 'MaterialIcons'),
     "signal_wifi_4_bar_sharp": IconData(0xeca6, fontFamily: 'MaterialIcons'),
     "signal_wifi_4_bar_rounded": IconData(0xf0185, fontFamily: 'MaterialIcons'),
     "signal_wifi_4_bar_outlined": IconData(0xf393, fontFamily: 'MaterialIcons'),
@@ -6568,41 +5849,26 @@ class IconUtil {
     "signal_wifi_bad_sharp": IconData(0xeca7, fontFamily: 'MaterialIcons'),
     "signal_wifi_bad_rounded": IconData(0xf0186, fontFamily: 'MaterialIcons'),
     "signal_wifi_bad_outlined": IconData(0xf394, fontFamily: 'MaterialIcons'),
-    "signal_wifi_connected_no_internet_4":
-        IconData(0xe5b2, fontFamily: 'MaterialIcons'),
-    "signal_wifi_connected_no_internet_4_sharp":
-        IconData(0xeca8, fontFamily: 'MaterialIcons'),
-    "signal_wifi_connected_no_internet_4_rounded":
-        IconData(0xf0187, fontFamily: 'MaterialIcons'),
-    "signal_wifi_connected_no_internet_4_outlined":
-        IconData(0xf395, fontFamily: 'MaterialIcons'),
+    "signal_wifi_connected_no_internet_4": IconData(0xe5b2, fontFamily: 'MaterialIcons'),
+    "signal_wifi_connected_no_internet_4_sharp": IconData(0xeca8, fontFamily: 'MaterialIcons'),
+    "signal_wifi_connected_no_internet_4_rounded": IconData(0xf0187, fontFamily: 'MaterialIcons'),
+    "signal_wifi_connected_no_internet_4_outlined": IconData(0xf395, fontFamily: 'MaterialIcons'),
     "signal_wifi_off": IconData(0xe5b3, fontFamily: 'MaterialIcons'),
     "signal_wifi_off_sharp": IconData(0xeca9, fontFamily: 'MaterialIcons'),
     "signal_wifi_off_rounded": IconData(0xf0188, fontFamily: 'MaterialIcons'),
     "signal_wifi_off_outlined": IconData(0xf396, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_4_bar":
-        IconData(0xe5b4, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_4_bar_sharp":
-        IconData(0xecaa, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_4_bar_rounded":
-        IconData(0xf0189, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_4_bar_outlined":
-        IconData(0xf397, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_connected_no_internet_4":
-        IconData(0xe5b5, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_connected_no_internet_4_sharp":
-        IconData(0xecab, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_connected_no_internet_4_rounded":
-        IconData(0xf018a, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_connected_no_internet_4_outlined":
-        IconData(0xf398, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_4_bar": IconData(0xe5b4, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_4_bar_sharp": IconData(0xecaa, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_4_bar_rounded": IconData(0xf0189, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_4_bar_outlined": IconData(0xf397, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_connected_no_internet_4": IconData(0xe5b5, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_connected_no_internet_4_sharp": IconData(0xecab, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_connected_no_internet_4_rounded": IconData(0xf018a, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_connected_no_internet_4_outlined": IconData(0xf398, fontFamily: 'MaterialIcons'),
     "signal_wifi_statusbar_null": IconData(0xe5b6, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_null_sharp":
-        IconData(0xecac, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_null_rounded":
-        IconData(0xf018b, fontFamily: 'MaterialIcons'),
-    "signal_wifi_statusbar_null_outlined":
-        IconData(0xf399, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_null_sharp": IconData(0xecac, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_null_rounded": IconData(0xf018b, fontFamily: 'MaterialIcons'),
+    "signal_wifi_statusbar_null_outlined": IconData(0xf399, fontFamily: 'MaterialIcons'),
     "sim_card": IconData(0xe5b7, fontFamily: 'MaterialIcons'),
     "sim_card_alert": IconData(0xe5b8, fontFamily: 'MaterialIcons'),
     "sim_card_alert_sharp": IconData(0xecad, fontFamily: 'MaterialIcons'),
@@ -6739,18 +6005,14 @@ class IconUtil {
     "social_distance_sharp": IconData(0xecc7, fontFamily: 'MaterialIcons'),
     "social_distance_rounded": IconData(0xf01a6, fontFamily: 'MaterialIcons'),
     "social_distance_outlined": IconData(0xf3b4, fontFamily: 'MaterialIcons'),
-    "sort":
-        IconData(0xe5d2, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "sort": IconData(0xe5d2, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "sort_by_alpha": IconData(0xe5d3, fontFamily: 'MaterialIcons'),
     "sort_by_alpha_sharp": IconData(0xecc8, fontFamily: 'MaterialIcons'),
     "sort_by_alpha_rounded": IconData(0xf01a7, fontFamily: 'MaterialIcons'),
     "sort_by_alpha_outlined": IconData(0xf3b5, fontFamily: 'MaterialIcons'),
-    "sort_sharp":
-        IconData(0xecc9, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "sort_rounded": IconData(0xf01a8,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "sort_outlined":
-        IconData(0xf3b6, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "sort_sharp": IconData(0xecc9, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "sort_rounded": IconData(0xf01a8, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "sort_outlined": IconData(0xf3b6, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "source": IconData(0xe5d4, fontFamily: 'MaterialIcons'),
     "source_sharp": IconData(0xecca, fontFamily: 'MaterialIcons'),
     "source_rounded": IconData(0xf01a9, fontFamily: 'MaterialIcons'),
@@ -6858,10 +6120,8 @@ class IconUtil {
     "sports_mma_outlined": IconData(0xf3d0, fontFamily: 'MaterialIcons'),
     "sports_motorsports": IconData(0xe5ef, fontFamily: 'MaterialIcons'),
     "sports_motorsports_sharp": IconData(0xece4, fontFamily: 'MaterialIcons'),
-    "sports_motorsports_rounded":
-        IconData(0xf01c3, fontFamily: 'MaterialIcons'),
-    "sports_motorsports_outlined":
-        IconData(0xf3d1, fontFamily: 'MaterialIcons'),
+    "sports_motorsports_rounded": IconData(0xf01c3, fontFamily: 'MaterialIcons'),
+    "sports_motorsports_outlined": IconData(0xf3d1, fontFamily: 'MaterialIcons'),
     "sports_sharp": IconData(0xece7, fontFamily: 'MaterialIcons'),
     "sports_rounded": IconData(0xf01c4, fontFamily: 'MaterialIcons'),
     "sports_outlined": IconData(0xf3d2, fontFamily: 'MaterialIcons'),
@@ -6895,34 +6155,25 @@ class IconUtil {
     "stacked_bar_chart_outlined": IconData(0xf3d9, fontFamily: 'MaterialIcons'),
     "stacked_line_chart": IconData(0xe5f7, fontFamily: 'MaterialIcons'),
     "stacked_line_chart_sharp": IconData(0xeced, fontFamily: 'MaterialIcons'),
-    "stacked_line_chart_rounded":
-        IconData(0xf01cc, fontFamily: 'MaterialIcons'),
-    "stacked_line_chart_outlined":
-        IconData(0xf3da, fontFamily: 'MaterialIcons'),
+    "stacked_line_chart_rounded": IconData(0xf01cc, fontFamily: 'MaterialIcons'),
+    "stacked_line_chart_outlined": IconData(0xf3da, fontFamily: 'MaterialIcons'),
     "stairs": IconData(0xe5f8, fontFamily: 'MaterialIcons'),
     "stairs_sharp": IconData(0xecee, fontFamily: 'MaterialIcons'),
     "stairs_rounded": IconData(0xf01cd, fontFamily: 'MaterialIcons'),
     "stairs_outlined": IconData(0xf3db, fontFamily: 'MaterialIcons'),
     "star": IconData(0xe5f9, fontFamily: 'MaterialIcons'),
     "star_border": IconData(0xe5fa, fontFamily: 'MaterialIcons'),
-    "star_border_purple500_rounded":
-        IconData(0xf01ce, fontFamily: 'MaterialIcons'),
+    "star_border_purple500_rounded": IconData(0xf01ce, fontFamily: 'MaterialIcons'),
     "star_border_rounded": IconData(0xf01cf, fontFamily: 'MaterialIcons'),
     "star_border_outlined": IconData(0xf3dc, fontFamily: 'MaterialIcons'),
     "star_border_purple500": IconData(0xe5fb, fontFamily: 'MaterialIcons'),
-    "star_border_purple500_sharp":
-        IconData(0xecef, fontFamily: 'MaterialIcons'),
-    "star_border_purple500_outlined":
-        IconData(0xf3dd, fontFamily: 'MaterialIcons'),
+    "star_border_purple500_sharp": IconData(0xecef, fontFamily: 'MaterialIcons'),
+    "star_border_purple500_outlined": IconData(0xf3dd, fontFamily: 'MaterialIcons'),
     "star_border_sharp": IconData(0xecf0, fontFamily: 'MaterialIcons'),
-    "star_half":
-        IconData(0xe5fc, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "star_half_sharp":
-        IconData(0xecf1, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "star_half_rounded": IconData(0xf01d0,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "star_half_outlined":
-        IconData(0xf3de, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "star_half": IconData(0xe5fc, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "star_half_sharp": IconData(0xecf1, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "star_half_rounded": IconData(0xf01d0, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "star_half_outlined": IconData(0xf3de, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "star_outline": IconData(0xe5fd, fontFamily: 'MaterialIcons'),
     "star_outline_sharp": IconData(0xecf2, fontFamily: 'MaterialIcons'),
     "star_outline_rounded": IconData(0xf01d1, fontFamily: 'MaterialIcons'),
@@ -6943,33 +6194,21 @@ class IconUtil {
     "stars_rounded": IconData(0xf01d5, fontFamily: 'MaterialIcons'),
     "stars_outlined": IconData(0xf3e3, fontFamily: 'MaterialIcons'),
     "stay_current_landscape": IconData(0xe601, fontFamily: 'MaterialIcons'),
-    "stay_current_landscape_sharp":
-        IconData(0xecf7, fontFamily: 'MaterialIcons'),
-    "stay_current_landscape_rounded":
-        IconData(0xf01d6, fontFamily: 'MaterialIcons'),
-    "stay_current_landscape_outlined":
-        IconData(0xf3e4, fontFamily: 'MaterialIcons'),
+    "stay_current_landscape_sharp": IconData(0xecf7, fontFamily: 'MaterialIcons'),
+    "stay_current_landscape_rounded": IconData(0xf01d6, fontFamily: 'MaterialIcons'),
+    "stay_current_landscape_outlined": IconData(0xf3e4, fontFamily: 'MaterialIcons'),
     "stay_current_portrait": IconData(0xe602, fontFamily: 'MaterialIcons'),
-    "stay_current_portrait_sharp":
-        IconData(0xecf8, fontFamily: 'MaterialIcons'),
-    "stay_current_portrait_rounded":
-        IconData(0xf01d7, fontFamily: 'MaterialIcons'),
-    "stay_current_portrait_outlined":
-        IconData(0xf3e5, fontFamily: 'MaterialIcons'),
+    "stay_current_portrait_sharp": IconData(0xecf8, fontFamily: 'MaterialIcons'),
+    "stay_current_portrait_rounded": IconData(0xf01d7, fontFamily: 'MaterialIcons'),
+    "stay_current_portrait_outlined": IconData(0xf3e5, fontFamily: 'MaterialIcons'),
     "stay_primary_landscape": IconData(0xe603, fontFamily: 'MaterialIcons'),
-    "stay_primary_landscape_sharp":
-        IconData(0xecf9, fontFamily: 'MaterialIcons'),
-    "stay_primary_landscape_rounded":
-        IconData(0xf01d8, fontFamily: 'MaterialIcons'),
-    "stay_primary_landscape_outlined":
-        IconData(0xf3e6, fontFamily: 'MaterialIcons'),
+    "stay_primary_landscape_sharp": IconData(0xecf9, fontFamily: 'MaterialIcons'),
+    "stay_primary_landscape_rounded": IconData(0xf01d8, fontFamily: 'MaterialIcons'),
+    "stay_primary_landscape_outlined": IconData(0xf3e6, fontFamily: 'MaterialIcons'),
     "stay_primary_portrait": IconData(0xe604, fontFamily: 'MaterialIcons'),
-    "stay_primary_portrait_sharp":
-        IconData(0xecfa, fontFamily: 'MaterialIcons'),
-    "stay_primary_portrait_rounded":
-        IconData(0xf01d9, fontFamily: 'MaterialIcons'),
-    "stay_primary_portrait_outlined":
-        IconData(0xf3e7, fontFamily: 'MaterialIcons'),
+    "stay_primary_portrait_sharp": IconData(0xecfa, fontFamily: 'MaterialIcons'),
+    "stay_primary_portrait_rounded": IconData(0xf01d9, fontFamily: 'MaterialIcons'),
+    "stay_primary_portrait_outlined": IconData(0xf3e7, fontFamily: 'MaterialIcons'),
     "sticky_note_2": IconData(0xe605, fontFamily: 'MaterialIcons'),
     "sticky_note_2_sharp": IconData(0xecfb, fontFamily: 'MaterialIcons'),
     "sticky_note_2_rounded": IconData(0xf01da, fontFamily: 'MaterialIcons'),
@@ -6993,10 +6232,8 @@ class IconUtil {
     "store": IconData(0xe60a, fontFamily: 'MaterialIcons'),
     "store_mall_directory": IconData(0xe60b, fontFamily: 'MaterialIcons'),
     "store_mall_directory_sharp": IconData(0xed00, fontFamily: 'MaterialIcons'),
-    "store_mall_directory_rounded":
-        IconData(0xf01df, fontFamily: 'MaterialIcons'),
-    "store_mall_directory_outlined":
-        IconData(0xf3ed, fontFamily: 'MaterialIcons'),
+    "store_mall_directory_rounded": IconData(0xf01df, fontFamily: 'MaterialIcons'),
+    "store_mall_directory_outlined": IconData(0xf3ed, fontFamily: 'MaterialIcons'),
     "store_sharp": IconData(0xed01, fontFamily: 'MaterialIcons'),
     "store_rounded": IconData(0xf01e0, fontFamily: 'MaterialIcons'),
     "store_outlined": IconData(0xf3ee, fontFamily: 'MaterialIcons'),
@@ -7033,27 +6270,17 @@ class IconUtil {
     "style_rounded": IconData(0xf01e8, fontFamily: 'MaterialIcons'),
     "style_outlined": IconData(0xf3f6, fontFamily: 'MaterialIcons'),
     "subdirectory_arrow_left": IconData(0xe614, fontFamily: 'MaterialIcons'),
-    "subdirectory_arrow_left_sharp":
-        IconData(0xed0a, fontFamily: 'MaterialIcons'),
-    "subdirectory_arrow_left_rounded":
-        IconData(0xf01e9, fontFamily: 'MaterialIcons'),
-    "subdirectory_arrow_left_outlined":
-        IconData(0xf3f7, fontFamily: 'MaterialIcons'),
+    "subdirectory_arrow_left_sharp": IconData(0xed0a, fontFamily: 'MaterialIcons'),
+    "subdirectory_arrow_left_rounded": IconData(0xf01e9, fontFamily: 'MaterialIcons'),
+    "subdirectory_arrow_left_outlined": IconData(0xf3f7, fontFamily: 'MaterialIcons'),
     "subdirectory_arrow_right": IconData(0xe615, fontFamily: 'MaterialIcons'),
-    "subdirectory_arrow_right_sharp":
-        IconData(0xed0b, fontFamily: 'MaterialIcons'),
-    "subdirectory_arrow_right_rounded":
-        IconData(0xf01ea, fontFamily: 'MaterialIcons'),
-    "subdirectory_arrow_right_outlined":
-        IconData(0xf3f8, fontFamily: 'MaterialIcons'),
-    "subject":
-        IconData(0xe616, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "subject_sharp":
-        IconData(0xed0c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "subject_rounded": IconData(0xf01eb,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "subject_outlined":
-        IconData(0xf3f9, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "subdirectory_arrow_right_sharp": IconData(0xed0b, fontFamily: 'MaterialIcons'),
+    "subdirectory_arrow_right_rounded": IconData(0xf01ea, fontFamily: 'MaterialIcons'),
+    "subdirectory_arrow_right_outlined": IconData(0xf3f8, fontFamily: 'MaterialIcons'),
+    "subject": IconData(0xe616, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "subject_sharp": IconData(0xed0c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "subject_rounded": IconData(0xf01eb, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "subject_outlined": IconData(0xf3f9, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "subscript": IconData(0xe617, fontFamily: 'MaterialIcons'),
     "subscript_sharp": IconData(0xed0d, fontFamily: 'MaterialIcons'),
     "subscript_rounded": IconData(0xf01ec, fontFamily: 'MaterialIcons'),
@@ -7083,18 +6310,13 @@ class IconUtil {
     "superscript_rounded": IconData(0xf01f2, fontFamily: 'MaterialIcons'),
     "superscript_outlined": IconData(0xf400, fontFamily: 'MaterialIcons'),
     "supervised_user_circle": IconData(0xe61e, fontFamily: 'MaterialIcons'),
-    "supervised_user_circle_sharp":
-        IconData(0xed14, fontFamily: 'MaterialIcons'),
-    "supervised_user_circle_rounded":
-        IconData(0xf01f3, fontFamily: 'MaterialIcons'),
-    "supervised_user_circle_outlined":
-        IconData(0xf401, fontFamily: 'MaterialIcons'),
+    "supervised_user_circle_sharp": IconData(0xed14, fontFamily: 'MaterialIcons'),
+    "supervised_user_circle_rounded": IconData(0xf01f3, fontFamily: 'MaterialIcons'),
+    "supervised_user_circle_outlined": IconData(0xf401, fontFamily: 'MaterialIcons'),
     "supervisor_account": IconData(0xe61f, fontFamily: 'MaterialIcons'),
     "supervisor_account_sharp": IconData(0xed15, fontFamily: 'MaterialIcons'),
-    "supervisor_account_rounded":
-        IconData(0xf01f4, fontFamily: 'MaterialIcons'),
-    "supervisor_account_outlined":
-        IconData(0xf402, fontFamily: 'MaterialIcons'),
+    "supervisor_account_rounded": IconData(0xf01f4, fontFamily: 'MaterialIcons'),
+    "supervisor_account_outlined": IconData(0xf402, fontFamily: 'MaterialIcons'),
     "support": IconData(0xe620, fontFamily: 'MaterialIcons'),
     "support_agent": IconData(0xe621, fontFamily: 'MaterialIcons'),
     "support_agent_sharp": IconData(0xed16, fontFamily: 'MaterialIcons'),
@@ -7120,12 +6342,9 @@ class IconUtil {
     "swap_horiz_rounded": IconData(0xf01fa, fontFamily: 'MaterialIcons'),
     "swap_horiz_outlined": IconData(0xf408, fontFamily: 'MaterialIcons'),
     "swap_horizontal_circle": IconData(0xe626, fontFamily: 'MaterialIcons'),
-    "swap_horizontal_circle_sharp":
-        IconData(0xed1c, fontFamily: 'MaterialIcons'),
-    "swap_horizontal_circle_rounded":
-        IconData(0xf01fb, fontFamily: 'MaterialIcons'),
-    "swap_horizontal_circle_outlined":
-        IconData(0xf409, fontFamily: 'MaterialIcons'),
+    "swap_horizontal_circle_sharp": IconData(0xed1c, fontFamily: 'MaterialIcons'),
+    "swap_horizontal_circle_rounded": IconData(0xf01fb, fontFamily: 'MaterialIcons'),
+    "swap_horizontal_circle_outlined": IconData(0xf409, fontFamily: 'MaterialIcons'),
     "swap_vert": IconData(0xe627, fontFamily: 'MaterialIcons'),
     "swap_vert_circle": IconData(0xe628, fontFamily: 'MaterialIcons'),
     "swap_vert_circle_sharp": IconData(0xed1e, fontFamily: 'MaterialIcons'),
@@ -7136,10 +6355,8 @@ class IconUtil {
     "swap_vert_outlined": IconData(0xf40a, fontFamily: 'MaterialIcons'),
     "swap_vertical_circle": IconData(0xe628, fontFamily: 'MaterialIcons'),
     "swap_vertical_circle_sharp": IconData(0xed1e, fontFamily: 'MaterialIcons'),
-    "swap_vertical_circle_rounded":
-        IconData(0xf01fd, fontFamily: 'MaterialIcons'),
-    "swap_vertical_circle_outlined":
-        IconData(0xf40b, fontFamily: 'MaterialIcons'),
+    "swap_vertical_circle_rounded": IconData(0xf01fd, fontFamily: 'MaterialIcons'),
+    "swap_vertical_circle_outlined": IconData(0xf40b, fontFamily: 'MaterialIcons'),
     "swipe": IconData(0xe629, fontFamily: 'MaterialIcons'),
     "swipe_sharp": IconData(0xed1f, fontFamily: 'MaterialIcons'),
     "swipe_rounded": IconData(0xf01fe, fontFamily: 'MaterialIcons'),
@@ -7181,28 +6398,17 @@ class IconUtil {
     "sync_problem": IconData(0xe632, fontFamily: 'MaterialIcons'),
     "sync_problem_rounded": IconData(0xf0206, fontFamily: 'MaterialIcons'),
     "system_security_update": IconData(0xe633, fontFamily: 'MaterialIcons'),
-    "system_security_update_good":
-        IconData(0xe634, fontFamily: 'MaterialIcons'),
-    "system_security_update_good_sharp":
-        IconData(0xed29, fontFamily: 'MaterialIcons'),
-    "system_security_update_good_rounded":
-        IconData(0xf0208, fontFamily: 'MaterialIcons'),
-    "system_security_update_good_outlined":
-        IconData(0xf416, fontFamily: 'MaterialIcons'),
-    "system_security_update_sharp":
-        IconData(0xed2a, fontFamily: 'MaterialIcons'),
-    "system_security_update_rounded":
-        IconData(0xf0209, fontFamily: 'MaterialIcons'),
-    "system_security_update_outlined":
-        IconData(0xf417, fontFamily: 'MaterialIcons'),
-    "system_security_update_warning":
-        IconData(0xe635, fontFamily: 'MaterialIcons'),
-    "system_security_update_warning_sharp":
-        IconData(0xed2b, fontFamily: 'MaterialIcons'),
-    "system_security_update_warning_rounded":
-        IconData(0xf020a, fontFamily: 'MaterialIcons'),
-    "system_security_update_warning_outlined":
-        IconData(0xf418, fontFamily: 'MaterialIcons'),
+    "system_security_update_good": IconData(0xe634, fontFamily: 'MaterialIcons'),
+    "system_security_update_good_sharp": IconData(0xed29, fontFamily: 'MaterialIcons'),
+    "system_security_update_good_rounded": IconData(0xf0208, fontFamily: 'MaterialIcons'),
+    "system_security_update_good_outlined": IconData(0xf416, fontFamily: 'MaterialIcons'),
+    "system_security_update_sharp": IconData(0xed2a, fontFamily: 'MaterialIcons'),
+    "system_security_update_rounded": IconData(0xf0209, fontFamily: 'MaterialIcons'),
+    "system_security_update_outlined": IconData(0xf417, fontFamily: 'MaterialIcons'),
+    "system_security_update_warning": IconData(0xe635, fontFamily: 'MaterialIcons'),
+    "system_security_update_warning_sharp": IconData(0xed2b, fontFamily: 'MaterialIcons'),
+    "system_security_update_warning_rounded": IconData(0xf020a, fontFamily: 'MaterialIcons'),
+    "system_security_update_warning_outlined": IconData(0xf418, fontFamily: 'MaterialIcons'),
     "system_update": IconData(0xe636, fontFamily: 'MaterialIcons'),
     "system_update_alt": IconData(0xe637, fontFamily: 'MaterialIcons'),
     "system_update_alt_sharp": IconData(0xed2c, fontFamily: 'MaterialIcons'),
@@ -7305,36 +6511,24 @@ class IconUtil {
     "text_rotate_up_outlined": IconData(0xf42e, fontFamily: 'MaterialIcons'),
     "text_rotate_vertical": IconData(0xe64c, fontFamily: 'MaterialIcons'),
     "text_rotate_vertical_sharp": IconData(0xed42, fontFamily: 'MaterialIcons'),
-    "text_rotate_vertical_rounded":
-        IconData(0xf0221, fontFamily: 'MaterialIcons'),
-    "text_rotate_vertical_outlined":
-        IconData(0xf42f, fontFamily: 'MaterialIcons'),
+    "text_rotate_vertical_rounded": IconData(0xf0221, fontFamily: 'MaterialIcons'),
+    "text_rotate_vertical_outlined": IconData(0xf42f, fontFamily: 'MaterialIcons'),
     "text_rotation_angledown": IconData(0xe64d, fontFamily: 'MaterialIcons'),
-    "text_rotation_angledown_sharp":
-        IconData(0xed43, fontFamily: 'MaterialIcons'),
-    "text_rotation_angledown_rounded":
-        IconData(0xf0222, fontFamily: 'MaterialIcons'),
-    "text_rotation_angledown_outlined":
-        IconData(0xf430, fontFamily: 'MaterialIcons'),
+    "text_rotation_angledown_sharp": IconData(0xed43, fontFamily: 'MaterialIcons'),
+    "text_rotation_angledown_rounded": IconData(0xf0222, fontFamily: 'MaterialIcons'),
+    "text_rotation_angledown_outlined": IconData(0xf430, fontFamily: 'MaterialIcons'),
     "text_rotation_angleup": IconData(0xe64e, fontFamily: 'MaterialIcons'),
-    "text_rotation_angleup_sharp":
-        IconData(0xed44, fontFamily: 'MaterialIcons'),
-    "text_rotation_angleup_rounded":
-        IconData(0xf0223, fontFamily: 'MaterialIcons'),
-    "text_rotation_angleup_outlined":
-        IconData(0xf431, fontFamily: 'MaterialIcons'),
+    "text_rotation_angleup_sharp": IconData(0xed44, fontFamily: 'MaterialIcons'),
+    "text_rotation_angleup_rounded": IconData(0xf0223, fontFamily: 'MaterialIcons'),
+    "text_rotation_angleup_outlined": IconData(0xf431, fontFamily: 'MaterialIcons'),
     "text_rotation_down": IconData(0xe64f, fontFamily: 'MaterialIcons'),
     "text_rotation_down_sharp": IconData(0xed45, fontFamily: 'MaterialIcons'),
-    "text_rotation_down_rounded":
-        IconData(0xf0224, fontFamily: 'MaterialIcons'),
-    "text_rotation_down_outlined":
-        IconData(0xf432, fontFamily: 'MaterialIcons'),
+    "text_rotation_down_rounded": IconData(0xf0224, fontFamily: 'MaterialIcons'),
+    "text_rotation_down_outlined": IconData(0xf432, fontFamily: 'MaterialIcons'),
     "text_rotation_none": IconData(0xe650, fontFamily: 'MaterialIcons'),
     "text_rotation_none_sharp": IconData(0xed46, fontFamily: 'MaterialIcons'),
-    "text_rotation_none_rounded":
-        IconData(0xf0225, fontFamily: 'MaterialIcons'),
-    "text_rotation_none_outlined":
-        IconData(0xf433, fontFamily: 'MaterialIcons'),
+    "text_rotation_none_rounded": IconData(0xf0225, fontFamily: 'MaterialIcons'),
+    "text_rotation_none_outlined": IconData(0xf433, fontFamily: 'MaterialIcons'),
     "text_snippet": IconData(0xe651, fontFamily: 'MaterialIcons'),
     "text_snippet_sharp": IconData(0xed47, fontFamily: 'MaterialIcons'),
     "text_snippet_rounded": IconData(0xf0226, fontFamily: 'MaterialIcons'),
@@ -7378,8 +6572,7 @@ class IconUtil {
     "three_g_mobiledata": IconData(0xe01a, fontFamily: 'MaterialIcons'),
     "three_g_mobiledata_sharp": IconData(0xe71a, fontFamily: 'MaterialIcons'),
     "three_g_mobiledata_rounded": IconData(0xf4f9, fontFamily: 'MaterialIcons'),
-    "three_g_mobiledata_outlined":
-        IconData(0xee0c, fontFamily: 'MaterialIcons'),
+    "three_g_mobiledata_outlined": IconData(0xee0c, fontFamily: 'MaterialIcons'),
     "three_k": IconData(0xe01b, fontFamily: 'MaterialIcons'),
     "three_k_outlined": IconData(0xee0d, fontFamily: 'MaterialIcons'),
     "three_k_plus": IconData(0xe01c, fontFamily: 'MaterialIcons'),
@@ -7411,10 +6604,8 @@ class IconUtil {
     "thumb_down_alt_outlined": IconData(0xf43b, fontFamily: 'MaterialIcons'),
     "thumb_down_off_alt": IconData(0xe65a, fontFamily: 'MaterialIcons'),
     "thumb_down_off_alt_sharp": IconData(0xed4f, fontFamily: 'MaterialIcons'),
-    "thumb_down_off_alt_rounded":
-        IconData(0xf022e, fontFamily: 'MaterialIcons'),
-    "thumb_down_off_alt_outlined":
-        IconData(0xf43c, fontFamily: 'MaterialIcons'),
+    "thumb_down_off_alt_rounded": IconData(0xf022e, fontFamily: 'MaterialIcons'),
+    "thumb_down_off_alt_outlined": IconData(0xf43c, fontFamily: 'MaterialIcons'),
     "thumb_down_sharp": IconData(0xed50, fontFamily: 'MaterialIcons'),
     "thumb_down_rounded": IconData(0xf022f, fontFamily: 'MaterialIcons'),
     "thumb_down_outlined": IconData(0xf43d, fontFamily: 'MaterialIcons'),
@@ -7474,14 +6665,10 @@ class IconUtil {
     "title_sharp": IconData(0xed5e, fontFamily: 'MaterialIcons'),
     "title_rounded": IconData(0xf023d, fontFamily: 'MaterialIcons'),
     "title_outlined": IconData(0xf44b, fontFamily: 'MaterialIcons'),
-    "toc":
-        IconData(0xe669, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "toc_sharp":
-        IconData(0xed5f, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "toc_rounded": IconData(0xf023e,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "toc_outlined":
-        IconData(0xf44c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "toc": IconData(0xe669, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "toc_sharp": IconData(0xed5f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "toc_rounded": IconData(0xf023e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "toc_outlined": IconData(0xf44c, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "today": IconData(0xe66a, fontFamily: 'MaterialIcons'),
     "today_sharp": IconData(0xed60, fontFamily: 'MaterialIcons'),
     "today_rounded": IconData(0xf023f, fontFamily: 'MaterialIcons'),
@@ -7535,12 +6722,9 @@ class IconUtil {
     "tram_rounded": IconData(0xf024b, fontFamily: 'MaterialIcons'),
     "tram_outlined": IconData(0xf459, fontFamily: 'MaterialIcons'),
     "transfer_within_a_station": IconData(0xe677, fontFamily: 'MaterialIcons'),
-    "transfer_within_a_station_sharp":
-        IconData(0xed6d, fontFamily: 'MaterialIcons'),
-    "transfer_within_a_station_rounded":
-        IconData(0xf024c, fontFamily: 'MaterialIcons'),
-    "transfer_within_a_station_outlined":
-        IconData(0xf45a, fontFamily: 'MaterialIcons'),
+    "transfer_within_a_station_sharp": IconData(0xed6d, fontFamily: 'MaterialIcons'),
+    "transfer_within_a_station_rounded": IconData(0xf024c, fontFamily: 'MaterialIcons'),
+    "transfer_within_a_station_outlined": IconData(0xf45a, fontFamily: 'MaterialIcons'),
     "transform": IconData(0xe678, fontFamily: 'MaterialIcons'),
     "transform_sharp": IconData(0xed6e, fontFamily: 'MaterialIcons'),
     "transform_rounded": IconData(0xf024d, fontFamily: 'MaterialIcons'),
@@ -7561,34 +6745,22 @@ class IconUtil {
     "travel_explore_sharp": IconData(0xed72, fontFamily: 'MaterialIcons'),
     "travel_explore_rounded": IconData(0xf0251, fontFamily: 'MaterialIcons'),
     "travel_explore_outlined": IconData(0xf45f, fontFamily: 'MaterialIcons'),
-    "trending_down":
-        IconData(0xe67d, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "trending_down_sharp":
-        IconData(0xed73, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "trending_down_rounded": IconData(0xf0252,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "trending_down_outlined":
-        IconData(0xf460, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "trending_flat":
-        IconData(0xe67e, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "trending_flat_sharp":
-        IconData(0xed74, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "trending_flat_rounded": IconData(0xf0253,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "trending_flat_outlined":
-        IconData(0xf461, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_down": IconData(0xe67d, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_down_sharp": IconData(0xed73, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_down_rounded": IconData(0xf0252, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_down_outlined": IconData(0xf460, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_flat": IconData(0xe67e, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_flat_sharp": IconData(0xed74, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_flat_rounded": IconData(0xf0253, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_flat_outlined": IconData(0xf461, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "trending_neutral": IconData(0xe67e, fontFamily: 'MaterialIcons'),
     "trending_neutral_sharp": IconData(0xed74, fontFamily: 'MaterialIcons'),
     "trending_neutral_rounded": IconData(0xf0253, fontFamily: 'MaterialIcons'),
     "trending_neutral_outlined": IconData(0xf461, fontFamily: 'MaterialIcons'),
-    "trending_up":
-        IconData(0xe67f, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "trending_up_sharp":
-        IconData(0xed75, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "trending_up_rounded": IconData(0xf0254,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "trending_up_outlined":
-        IconData(0xf462, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_up": IconData(0xe67f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_up_sharp": IconData(0xed75, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_up_rounded": IconData(0xf0254, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "trending_up_outlined": IconData(0xf462, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "trip_origin": IconData(0xe680, fontFamily: 'MaterialIcons'),
     "trip_origin_sharp": IconData(0xed76, fontFamily: 'MaterialIcons'),
     "trip_origin_rounded": IconData(0xf0255, fontFamily: 'MaterialIcons'),
@@ -7673,14 +6845,10 @@ class IconUtil {
     "unarchive_sharp": IconData(0xed81, fontFamily: 'MaterialIcons'),
     "unarchive_rounded": IconData(0xf0260, fontFamily: 'MaterialIcons'),
     "unarchive_outlined": IconData(0xf46e, fontFamily: 'MaterialIcons'),
-    "undo":
-        IconData(0xe68c, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "undo_sharp":
-        IconData(0xed82, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "undo_rounded": IconData(0xf0261,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "undo_outlined":
-        IconData(0xf46f, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "undo": IconData(0xe68c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "undo_sharp": IconData(0xed82, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "undo_rounded": IconData(0xf0261, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "undo_outlined": IconData(0xf46f, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "unfold_less": IconData(0xe68d, fontFamily: 'MaterialIcons'),
     "unfold_less_sharp": IconData(0xed83, fontFamily: 'MaterialIcons'),
     "unfold_less_rounded": IconData(0xf0262, fontFamily: 'MaterialIcons'),
@@ -7738,31 +6906,21 @@ class IconUtil {
     "verified_user_rounded": IconData(0xf026f, fontFamily: 'MaterialIcons'),
     "verified_user_outlined": IconData(0xf47d, fontFamily: 'MaterialIcons'),
     "vertical_align_bottom": IconData(0xe69b, fontFamily: 'MaterialIcons'),
-    "vertical_align_bottom_sharp":
-        IconData(0xed91, fontFamily: 'MaterialIcons'),
-    "vertical_align_bottom_rounded":
-        IconData(0xf0270, fontFamily: 'MaterialIcons'),
-    "vertical_align_bottom_outlined":
-        IconData(0xf47e, fontFamily: 'MaterialIcons'),
+    "vertical_align_bottom_sharp": IconData(0xed91, fontFamily: 'MaterialIcons'),
+    "vertical_align_bottom_rounded": IconData(0xf0270, fontFamily: 'MaterialIcons'),
+    "vertical_align_bottom_outlined": IconData(0xf47e, fontFamily: 'MaterialIcons'),
     "vertical_align_center": IconData(0xe69c, fontFamily: 'MaterialIcons'),
-    "vertical_align_center_sharp":
-        IconData(0xed92, fontFamily: 'MaterialIcons'),
-    "vertical_align_center_rounded":
-        IconData(0xf0271, fontFamily: 'MaterialIcons'),
-    "vertical_align_center_outlined":
-        IconData(0xf47f, fontFamily: 'MaterialIcons'),
+    "vertical_align_center_sharp": IconData(0xed92, fontFamily: 'MaterialIcons'),
+    "vertical_align_center_rounded": IconData(0xf0271, fontFamily: 'MaterialIcons'),
+    "vertical_align_center_outlined": IconData(0xf47f, fontFamily: 'MaterialIcons'),
     "vertical_align_top": IconData(0xe69d, fontFamily: 'MaterialIcons'),
     "vertical_align_top_sharp": IconData(0xed93, fontFamily: 'MaterialIcons'),
-    "vertical_align_top_rounded":
-        IconData(0xf0272, fontFamily: 'MaterialIcons'),
-    "vertical_align_top_outlined":
-        IconData(0xf480, fontFamily: 'MaterialIcons'),
+    "vertical_align_top_rounded": IconData(0xf0272, fontFamily: 'MaterialIcons'),
+    "vertical_align_top_outlined": IconData(0xf480, fontFamily: 'MaterialIcons'),
     "vertical_distribute": IconData(0xe69e, fontFamily: 'MaterialIcons'),
     "vertical_distribute_sharp": IconData(0xed94, fontFamily: 'MaterialIcons'),
-    "vertical_distribute_rounded":
-        IconData(0xf0273, fontFamily: 'MaterialIcons'),
-    "vertical_distribute_outlined":
-        IconData(0xf481, fontFamily: 'MaterialIcons'),
+    "vertical_distribute_rounded": IconData(0xf0273, fontFamily: 'MaterialIcons'),
+    "vertical_distribute_outlined": IconData(0xf481, fontFamily: 'MaterialIcons'),
     "vertical_split": IconData(0xe69f, fontFamily: 'MaterialIcons'),
     "vertical_split_sharp": IconData(0xed95, fontFamily: 'MaterialIcons'),
     "vertical_split_rounded": IconData(0xf0274, fontFamily: 'MaterialIcons'),
@@ -7781,10 +6939,8 @@ class IconUtil {
     "video_camera_back_outlined": IconData(0xf485, fontFamily: 'MaterialIcons'),
     "video_camera_front": IconData(0xe6a3, fontFamily: 'MaterialIcons'),
     "video_camera_front_sharp": IconData(0xed99, fontFamily: 'MaterialIcons'),
-    "video_camera_front_rounded":
-        IconData(0xf0278, fontFamily: 'MaterialIcons'),
-    "video_camera_front_outlined":
-        IconData(0xf486, fontFamily: 'MaterialIcons'),
+    "video_camera_front_rounded": IconData(0xf0278, fontFamily: 'MaterialIcons'),
+    "video_camera_front_outlined": IconData(0xf486, fontFamily: 'MaterialIcons'),
     "video_collection": IconData(0xe6a5, fontFamily: 'MaterialIcons'),
     "video_collection_sharp": IconData(0xed9b, fontFamily: 'MaterialIcons'),
     "video_collection_rounded": IconData(0xf027a, fontFamily: 'MaterialIcons'),
@@ -7816,10 +6972,8 @@ class IconUtil {
     "videogame_asset": IconData(0xe6aa, fontFamily: 'MaterialIcons'),
     "videogame_asset_off": IconData(0xe6ab, fontFamily: 'MaterialIcons'),
     "videogame_asset_off_sharp": IconData(0xeda0, fontFamily: 'MaterialIcons'),
-    "videogame_asset_off_rounded":
-        IconData(0xf027f, fontFamily: 'MaterialIcons'),
-    "videogame_asset_off_outlined":
-        IconData(0xf48d, fontFamily: 'MaterialIcons'),
+    "videogame_asset_off_rounded": IconData(0xf027f, fontFamily: 'MaterialIcons'),
+    "videogame_asset_off_outlined": IconData(0xf48d, fontFamily: 'MaterialIcons'),
     "videogame_asset_sharp": IconData(0xeda1, fontFamily: 'MaterialIcons'),
     "videogame_asset_rounded": IconData(0xf0280, fontFamily: 'MaterialIcons'),
     "videogame_asset_outlined": IconData(0xf48e, fontFamily: 'MaterialIcons'),
@@ -7863,26 +7017,18 @@ class IconUtil {
     "view_in_ar_sharp": IconData(0xedaa, fontFamily: 'MaterialIcons'),
     "view_in_ar_rounded": IconData(0xf0289, fontFamily: 'MaterialIcons'),
     "view_in_ar_outlined": IconData(0xf497, fontFamily: 'MaterialIcons'),
-    "view_list":
-        IconData(0xe6b5, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "view_list_sharp":
-        IconData(0xedab, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "view_list_rounded": IconData(0xf028a,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "view_list_outlined":
-        IconData(0xf498, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "view_list": IconData(0xe6b5, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "view_list_sharp": IconData(0xedab, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "view_list_rounded": IconData(0xf028a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "view_list_outlined": IconData(0xf498, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "view_module": IconData(0xe6b6, fontFamily: 'MaterialIcons'),
     "view_module_sharp": IconData(0xedac, fontFamily: 'MaterialIcons'),
     "view_module_rounded": IconData(0xf028b, fontFamily: 'MaterialIcons'),
     "view_module_outlined": IconData(0xf499, fontFamily: 'MaterialIcons'),
-    "view_quilt":
-        IconData(0xe6b7, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "view_quilt_sharp":
-        IconData(0xedad, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "view_quilt_rounded": IconData(0xf028c,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "view_quilt_outlined":
-        IconData(0xf49a, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "view_quilt": IconData(0xe6b7, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "view_quilt_sharp": IconData(0xedad, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "view_quilt_rounded": IconData(0xf028c, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "view_quilt_outlined": IconData(0xf49a, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "view_sidebar": IconData(0xe6b8, fontFamily: 'MaterialIcons'),
     "view_sidebar_sharp": IconData(0xedae, fontFamily: 'MaterialIcons'),
     "view_sidebar_rounded": IconData(0xf028d, fontFamily: 'MaterialIcons'),
@@ -7941,10 +7087,8 @@ class IconUtil {
     "volume_up_outlined": IconData(0xf4a8, fontFamily: 'MaterialIcons'),
     "volunteer_activism": IconData(0xe6c6, fontFamily: 'MaterialIcons'),
     "volunteer_activism_sharp": IconData(0xedbc, fontFamily: 'MaterialIcons'),
-    "volunteer_activism_rounded":
-        IconData(0xf029b, fontFamily: 'MaterialIcons'),
-    "volunteer_activism_outlined":
-        IconData(0xf4a9, fontFamily: 'MaterialIcons'),
+    "volunteer_activism_rounded": IconData(0xf029b, fontFamily: 'MaterialIcons'),
+    "volunteer_activism_outlined": IconData(0xf4a9, fontFamily: 'MaterialIcons'),
     "vpn_key": IconData(0xe6c7, fontFamily: 'MaterialIcons'),
     "vpn_key_sharp": IconData(0xedbd, fontFamily: 'MaterialIcons'),
     "vpn_key_rounded": IconData(0xf029c, fontFamily: 'MaterialIcons'),
@@ -8099,27 +7243,19 @@ class IconUtil {
     "wifi_outlined": IconData(0xf4cc, fontFamily: 'MaterialIcons'),
     "wifi_protected_setup": IconData(0xe6ec, fontFamily: 'MaterialIcons'),
     "wifi_protected_setup_sharp": IconData(0xeddf, fontFamily: 'MaterialIcons'),
-    "wifi_protected_setup_rounded":
-        IconData(0xf02be, fontFamily: 'MaterialIcons'),
-    "wifi_protected_setup_outlined":
-        IconData(0xf4cd, fontFamily: 'MaterialIcons'),
+    "wifi_protected_setup_rounded": IconData(0xf02be, fontFamily: 'MaterialIcons'),
+    "wifi_protected_setup_outlined": IconData(0xf4cd, fontFamily: 'MaterialIcons'),
     "wifi_sharp": IconData(0xede0, fontFamily: 'MaterialIcons'),
     "wifi_rounded": IconData(0xf02bf, fontFamily: 'MaterialIcons'),
     "wifi_tethering": IconData(0xe6ed, fontFamily: 'MaterialIcons'),
-    "wifi_tethering_error_rounded":
-        IconData(0xe6ee, fontFamily: 'MaterialIcons'),
-    "wifi_tethering_error_rounded_sharp":
-        IconData(0xede1, fontFamily: 'MaterialIcons'),
-    "wifi_tethering_error_rounded_rounded":
-        IconData(0xf02c0, fontFamily: 'MaterialIcons'),
-    "wifi_tethering_error_rounded_outlined":
-        IconData(0xf4ce, fontFamily: 'MaterialIcons'),
+    "wifi_tethering_error_rounded": IconData(0xe6ee, fontFamily: 'MaterialIcons'),
+    "wifi_tethering_error_rounded_sharp": IconData(0xede1, fontFamily: 'MaterialIcons'),
+    "wifi_tethering_error_rounded_rounded": IconData(0xf02c0, fontFamily: 'MaterialIcons'),
+    "wifi_tethering_error_rounded_outlined": IconData(0xf4ce, fontFamily: 'MaterialIcons'),
     "wifi_tethering_off": IconData(0xe6ef, fontFamily: 'MaterialIcons'),
     "wifi_tethering_off_sharp": IconData(0xede2, fontFamily: 'MaterialIcons'),
-    "wifi_tethering_off_rounded":
-        IconData(0xf02c1, fontFamily: 'MaterialIcons'),
-    "wifi_tethering_off_outlined":
-        IconData(0xf4cf, fontFamily: 'MaterialIcons'),
+    "wifi_tethering_off_rounded": IconData(0xf02c1, fontFamily: 'MaterialIcons'),
+    "wifi_tethering_off_outlined": IconData(0xf4cf, fontFamily: 'MaterialIcons'),
     "wifi_tethering_sharp": IconData(0xede3, fontFamily: 'MaterialIcons'),
     "wifi_tethering_rounded": IconData(0xf02c2, fontFamily: 'MaterialIcons'),
     "wifi_tethering_outlined": IconData(0xf4d0, fontFamily: 'MaterialIcons'),
@@ -8149,14 +7285,10 @@ class IconUtil {
     "workspaces_sharp": IconData(0xede9, fontFamily: 'MaterialIcons'),
     "workspaces_rounded": IconData(0xf02c8, fontFamily: 'MaterialIcons'),
     "workspaces_outlined": IconData(0xf4d6, fontFamily: 'MaterialIcons'),
-    "wrap_text":
-        IconData(0xe6f8, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "wrap_text_sharp":
-        IconData(0xedea, fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "wrap_text_rounded": IconData(0xf02c9,
-        fontFamily: 'MaterialIcons', matchTextDirection: true),
-    "wrap_text_outlined":
-        IconData(0xf4d7, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "wrap_text": IconData(0xe6f8, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "wrap_text_sharp": IconData(0xedea, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "wrap_text_rounded": IconData(0xf02c9, fontFamily: 'MaterialIcons', matchTextDirection: true),
+    "wrap_text_outlined": IconData(0xf4d7, fontFamily: 'MaterialIcons', matchTextDirection: true),
     "wrong_location": IconData(0xe6f9, fontFamily: 'MaterialIcons'),
     "wrong_location_sharp": IconData(0xedeb, fontFamily: 'MaterialIcons'),
     "wrong_location_rounded": IconData(0xf02ca, fontFamily: 'MaterialIcons'),
@@ -8171,10 +7303,8 @@ class IconUtil {
     "yard_outlined": IconData(0xf4da, fontFamily: 'MaterialIcons'),
     "youtube_searched_for": IconData(0xe6fc, fontFamily: 'MaterialIcons'),
     "youtube_searched_for_sharp": IconData(0xedee, fontFamily: 'MaterialIcons'),
-    "youtube_searched_for_rounded":
-        IconData(0xf02cd, fontFamily: 'MaterialIcons'),
-    "youtube_searched_for_outlined":
-        IconData(0xf4db, fontFamily: 'MaterialIcons'),
+    "youtube_searched_for_rounded": IconData(0xf02cd, fontFamily: 'MaterialIcons'),
+    "youtube_searched_for_outlined": IconData(0xf4db, fontFamily: 'MaterialIcons'),
     "zoom_in": IconData(0xe6fd, fontFamily: 'MaterialIcons'),
     "zoom_in_sharp": IconData(0xedef, fontFamily: 'MaterialIcons'),
     "zoom_in_rounded": IconData(0xf02ce, fontFamily: 'MaterialIcons'),

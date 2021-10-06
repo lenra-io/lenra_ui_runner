@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_components/theme/lenra_theme.dart';
 import 'package:showcase/left_menu.dart';
-import 'package:showcase/my_app.dart';
 import 'package:showcase/pages/lenra_menu_page.dart';
 import 'package:showcase/pages/lenra_radio_page.dart';
 import 'package:showcase/pages/lenra_checkbox_page.dart';
@@ -11,7 +10,7 @@ import 'package:showcase/pages/lenra_status_sticker_page.dart';
 import 'package:showcase/pages/lenra_button_page.dart';
 import 'package:showcase/pages/lenra_flex_page.dart';
 import 'package:showcase/pages/lenra_styled_container_page.dart';
-import 'package:showcase/pages/lenra_Textfield_page.dart';
+import 'package:showcase/pages/lenra_textfield_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,12 +24,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var currentMenu = LeftMenu.myTestApp;
+  var currentMenu = LeftMenu.lenraMenuPage;
 
   Widget buildBody() {
     switch (currentMenu) {
-      case LeftMenu.myTestApp:
-        return MyTestApp();
       case LeftMenu.lenraMenuPage:
         return LenraMenuPage();
       case LeftMenu.radioExample:
@@ -67,7 +64,7 @@ class _MyAppState extends State<MyApp> {
               currentMenu: currentMenu,
               onMenuTapped: (newMenu) {
                 setState(() {
-                  this.currentMenu = newMenu;
+                  currentMenu = newMenu;
                 });
               },
             ),

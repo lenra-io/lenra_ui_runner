@@ -2,28 +2,33 @@ library props_parser;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 
 extension ParserExt on Parser {
   // TODO : Generate this from annotation on class Parser
-  static Map<String, Function> typeParsers = {
-    "String": Parser.parseString,
-    "bool": Parser.parseBool,
-    "double": Parser.parseDouble,
-    "Color": Parser.parseColor,
-    "Map<String, dynamic>": Parser.parseListeners,
-    "MainAxisAlignment": Parser.parseMainAxisAlignment,
-    "CrossAxisAlignment": Parser.parseCrossAxisAlignment,
-    "Axis": Parser.parseAxis,
-    "Border": Parser.parseBorder,
-    "BorderRadius": Parser.parseBorderRadius,
-    "BoxShadow": Parser.parseBoxShadow,
-    "EdgeInsets": Parser.parseEdgeInsets,
-    "Icon": Parser.parseIcon,
+  static Map<Type, Function> typeParsers = {
+    String: Parser.parseString,
+    bool: Parser.parseBool,
+    double: Parser.parseDouble,
+    Color: Parser.parseColor,
+    MainAxisAlignment: Parser.parseMainAxisAlignment,
+    CrossAxisAlignment: Parser.parseCrossAxisAlignment,
+    Axis: Parser.parseAxis,
+    Border: Parser.parseBorder,
+    BorderRadius: Parser.parseBorderRadius,
+    BoxShadow: Parser.parseBoxShadow,
+    EdgeInsets: Parser.parseEdgeInsets,
+    Icon: Parser.parseIcon,
+    Listener: Parser.parseListener,
   };
 }
 
 class Parser {
+  static lenra.Listener parseListener(Map<String, dynamic> listener) {
+    return lenra.Listener(listener["code"]);
+  }
+
   static Axis parseAxis(String axis) {
     switch (axis) {
       case "col":
@@ -97,10 +102,6 @@ class Parser {
     return value.toString().toLowerCase() == "true";
   }
 
-  static Map<String, dynamic> parseListeners(Map<String, dynamic> listeners) {
-    return listeners;
-  }
-
   static double parseDouble(dynamic size) {
     if (size is String) {
       return double.parse(size);
@@ -166,17 +167,17 @@ class Parser {
       bottom: props.containsKey("bottom") ? parseDouble(props["bottom"]) : 0,
     );
   }
-  
+
   static Icon parseIcon(String value) {
     return Icon(IconUtil.fromString(value));
   }
 
-  static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, String> propsTypes) {
+  static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
     Map<Symbol, dynamic> transformedProps = {};
 
     props.forEach((key, value) {
       if (propsTypes.containsKey(key)) {
-        String type = propsTypes[key]!;
+        Type type = propsTypes[key]!;
         if (ParserExt.typeParsers.containsKey(type)) {
           transformedProps[Symbol(key)] = ParserExt.typeParsers[type]!(value);
         }

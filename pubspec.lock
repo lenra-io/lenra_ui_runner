@@ -64,8 +64,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "v1.0.0-beta.16"
-      resolved-ref: ad04f57af63508242b25ff547b5d946d0a8b2534
+      ref: "v1.0.0-beta.17"
+      resolved-ref: "63ad015ccab8dbe13ee0e40c34a6969c12f8a211"
       url: "git@github.com:lenra-io/lenra_components.git"
     source: git
     version: "0.0.0"

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/layout/lenra_styled_container.dart';
-import '../lenra_component.dart';
 import '../../lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraApplicationStyledContainer
@@ -23,12 +22,12 @@ class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplication
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "color": "Color",
-      "border": "Border",
-      "borderRadius": "BorderRadius",
-      "boxShadow": "BoxShadow",
+      "color": Color,
+      "border": Border,
+      "borderRadius": BorderRadius,
+      "boxShadow": BoxShadow,
     };
   }
 
@@ -38,7 +37,7 @@ class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplication
   }
 }
 
-class LenraApplicationStyledContainer extends StatelessLenraComponent {
+class LenraApplicationStyledContainer extends StatelessWidget {
   final Widget child;
   final Color? color;
   final Border? border;

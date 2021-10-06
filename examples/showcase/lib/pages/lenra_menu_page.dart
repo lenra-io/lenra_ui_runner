@@ -1,5 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:showcase/ui_builder.dart';
 
 class LenraMenuPage extends StatefulWidget {
@@ -22,7 +24,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
               {
                 "type": "menuItem",
                 "text": "First",
-                "isSelected": data == "first",
+                "isSelected": DataListElement,
                 "disabled": true,
                 "icon": "ac_unit",
                 "onPressed": {
@@ -32,7 +34,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
               {
                 "type": "menuItem",
                 "text": "Second",
-                "isSelected": data == "second",
+                "isSelected": data,
                 "onPressed": {
                   "code": "second",
                 }
@@ -40,7 +42,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
               {
                 "type": "menuItem",
                 "text": "Third",
-                "isSelected": data == "third",
+                "isSelected": data,
                 "icon": "unarchive",
                 "onPressed": {
                   "code": "third",
@@ -54,7 +56,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
   }
 
   @override
-  getData(LenraEvent event) {
+  getData(Event event) {
     print(event.code);
     return false;
   }

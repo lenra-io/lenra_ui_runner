@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 import 'package:showcase/ui_builder.dart';
 
 class LenraTextFieldPage extends StatefulWidget {
@@ -9,8 +10,7 @@ class LenraTextFieldPage extends StatefulWidget {
   }
 }
 
-class _LenraTextFieldPageState
-    extends UiBuilderState<LenraTextFieldPage, String> {
+class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String> {
   @override
   Map<String, dynamic> get ui {
     return {
@@ -31,10 +31,10 @@ class _LenraTextFieldPageState
   }
 
   @override
-  getData(LenraEvent event) {
+  getData(Event event) {
     switch (event.code) {
       case "CodeA":
-        return event.event["value"];
+        return (event as OnChangedEvent).data.value;
       default:
         return "";
     }

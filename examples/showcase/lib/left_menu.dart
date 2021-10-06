@@ -6,7 +6,6 @@ class LeftMenu extends StatelessWidget {
   final Function(String) onMenuTapped;
   final String currentMenu;
 
-  static const myTestApp = "myTestApp";
   static const lenraMenuPage = "lenraMenuPage";
   static const radioExample = "radioExample";
   static const lenraCheckboxPage = "lenraCheckboxPage";
@@ -29,7 +28,6 @@ class LeftMenu extends StatelessWidget {
           ),
           child: Text('Examples'),
         ),
-        createMenu(context, 'MyTestApp', myTestApp),
         createMenu(context, 'Lenra Menu and Menu Item Page', lenraMenuPage),
         createMenu(context, 'Radio Examples', radioExample),
         createMenu(context, 'Lenra Checkbox', lenraCheckboxPage),
@@ -45,7 +43,7 @@ class LeftMenu extends StatelessWidget {
 
   Widget createMenu(BuildContext context, String title, String id) {
     return ListTile(
-      title: Text(title, style: TextStyle(color: id == this.currentMenu ? Colors.grey : Colors.blue)),
+      title: Text(title, style: TextStyle(color: id == currentMenu ? Colors.grey : Colors.blue)),
       onTap: () {
         onMenuTapped(id);
         Navigator.of(context).pop();

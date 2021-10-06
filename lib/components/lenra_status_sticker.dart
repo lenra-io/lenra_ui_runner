@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_status_sticker.dart';
 import 'package:lenra_components/theme/lenra_color_theme_data.dart';
-import 'lenra_component.dart';
 import '../lenra_component_builder.dart';
 
 // TODO generate this from annotation on LenraStatusSticker
-class LenraStatusStickerBuilder
-    extends LenraComponentBuilder<LenraApplicationStatusSticker> {
+class LenraStatusStickerBuilder extends LenraComponentBuilder<LenraApplicationStatusSticker> {
   @override
   LenraApplicationStatusSticker map({status}) {
     return LenraApplicationStatusSticker(status: status);
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "status": "String",
+      "status": String,
     };
   }
 }
 
-class LenraApplicationStatusSticker extends StatelessLenraComponent {
+class LenraApplicationStatusSticker extends StatelessWidget {
   final String status;
 
   static Color fromStatus(String status) {
