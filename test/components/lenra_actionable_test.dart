@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
 
@@ -12,15 +13,15 @@ void main() {
     StreamController<Map<String, dynamic>> uiStream = StreamController();
     StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
 
-    bool listenerEntered = false;
+    int eventsNb = 0;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
         child: NotificationListener(
           child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
           onNotification: (LenraEvent e) {
-            expect(e.code, "click");
-            listenerEntered = true;
+            expect(e.code, "doublePressed");
+            eventsNb = eventsNb + 1;
             return true;
           },
         ),
@@ -29,13 +30,13 @@ void main() {
 
     Map<String, dynamic> ui = {
       "root": {
-        "type": "clickListener",
+        "type": "actionable",
         "child": {
           "type": "text",
           "value": "foo",
         },
-        "onPressed": {
-          "code": "click",
+        "onDoublePressed": {
+          "code": "doublePressed",
         }
       }
     };
@@ -47,6 +48,9 @@ void main() {
     expect(find.byType(InkWell), findsOneWidget);
 
     await tester.tap(find.byType(InkWell));
-    expect(listenerEntered, true);
+    await tester.pump(kDoubleTapMinTime);
+    await tester.tap(find.byType(InkWell));
+    await tester.pump(kDoubleTapTimeout);
+    expect(eventsNb, 1);
   });
 }

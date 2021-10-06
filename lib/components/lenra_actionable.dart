@@ -70,7 +70,7 @@ class LenraApplicationActionable extends StatelessLenraComponent {
       child: InkWell(
         child: child,
         onTap: () => onAction(onPressed, context),
-        onDoubleTap: () => onAction(onDoublePressed, context),
+        onDoubleTap: onDoublePressed != null ? () => onAction(onDoublePressed, context) : null,
         onLongPress: () => onAction(onLongPressed, context),
         onTapCancel: () => onAction(onPressedCancel, context),
         onHover: (e) => onAction(onHovered, context),
