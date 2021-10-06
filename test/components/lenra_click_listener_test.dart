@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
-  testWidgets('change simple property', (WidgetTester tester) async {
+  testWidgets('Check correctly built and listener working', (WidgetTester tester) async {
     StreamController<Map<String, dynamic>> uiStream = StreamController();
     StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
 
