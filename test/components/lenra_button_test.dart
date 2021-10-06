@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
-  testWidgets('lenraMenu should draw children correctly', (WidgetTester tester) async {
+  testWidgets('LenraButton should work properly', (WidgetTester tester) async {
     StreamController<Map<String, dynamic>> uiStream = StreamController();
     StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
     bool hasBeenNotified = false;
