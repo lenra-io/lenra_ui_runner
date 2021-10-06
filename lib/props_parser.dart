@@ -202,7 +202,20 @@ class Parser {
         return LenraTextStyle.headline3;
       case "headline4":
         return LenraTextStyle.headline4;
-      // TODO: Finish this switch
+      case "headlineBody":
+        return LenraTextStyle.headlineBody;
+      case "bodyText":
+        return LenraTextStyle.bodyText;
+      case "blueBodyText":
+        return LenraTextStyle.blueBodyText;
+      case "subtext":
+        return LenraTextStyle.subtext;
+      case "disabledBodyText":
+        return LenraTextStyle.disabledBodyText;
+      case "underDescriptionText":
+        return LenraTextStyle.underDescriptionText;
+      case "errorText":
+        return LenraTextStyle.errorText;
     }
   }
 
