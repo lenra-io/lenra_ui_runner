@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/helpers/size_helper.dart';
 import 'package:lenra_ui_runner/helpers/style_helper.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
@@ -22,15 +23,15 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "text": "String",
-      "disabled": "bool",
-      "size": "String",
-      "mainStyle": "String",
-      "onPressed": "Map<String, dynamic>",
-      "leftIcon": "Icon",
-      "rightIcon": "Icon",
+      "text": String,
+      "disabled": bool,
+      "size": String,
+      "mainStyle": String,
+      "onPressed": Listener,
+      "leftIcon": Icon,
+      "rightIcon": Icon,
     };
   }
 }
@@ -40,7 +41,7 @@ class LenraApplicationButton extends StatelessWidget {
   final bool? disabled;
   final String? size;
   final String? mainStyle;
-  final Map<String, dynamic>? onPressed;
+  final lenra.Listener? onPressed;
   final Icon? leftIcon;
   final Icon? rightIcon;
 
@@ -55,8 +56,8 @@ class LenraApplicationButton extends StatelessWidget {
   }) : super();
 
   void onButtonPressed(BuildContext context) {
-    if (onPressed != null && onPressed!.containsKey("code")) {
-      OnPressedEvent(code: onPressed!['code']!).dispatch(context);
+    if (onPressed != null) {
+      OnPressedEvent(code: onPressed!.code).dispatch(context);
     }
   }
 

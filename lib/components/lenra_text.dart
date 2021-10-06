@@ -9,11 +9,11 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraText> {
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "value": "String",
-      "color": "Color",
-      "backgroundColor": "Color",
+      "value": String,
+      "color": Color,
+      "backgroundColor": Color,
     };
   }
 }

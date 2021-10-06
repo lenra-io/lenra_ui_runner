@@ -22,12 +22,12 @@ class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplication
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "color": "Color",
-      "border": "Border",
-      "borderRadius": "BorderRadius",
-      "boxShadow": "BoxShadow",
+      "color": Color,
+      "border": Border,
+      "borderRadius": BorderRadius,
+      "boxShadow": BoxShadow,
     };
   }
 

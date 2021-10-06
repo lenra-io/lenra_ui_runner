@@ -29,15 +29,15 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "direction": "Axis",
-      "mainAxisAlignment": "MainAxisAlignment",
-      "crossAxisAlignment": "CrossAxisAlignment",
-      "spacing": "double",
-      "fillParent": "bool",
-      "scroll": "bool",
-      "padding": "EdgeInsets",
+      "direction": Axis,
+      "mainAxisAlignment": MainAxisAlignment,
+      "crossAxisAlignment": CrossAxisAlignment,
+      "spacing": double,
+      "fillParent": bool,
+      "scroll": bool,
+      "padding": EdgeInsets,
     };
   }
 

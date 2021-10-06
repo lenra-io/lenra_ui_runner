@@ -11,11 +11,11 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "path": "String",
-      "width": "double",
-      "height": "double",
+      "path": String,
+      "width": double,
+      "height": double,
     };
   }
 }

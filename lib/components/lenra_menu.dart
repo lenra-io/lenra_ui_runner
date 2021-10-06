@@ -10,7 +10,7 @@ class LenraMenuBuilder extends LenraComponentBuilder<LenraApplicationMenu> {
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {};
   }
 

@@ -11,9 +11,9 @@ class LenraStatusStickerBuilder extends LenraComponentBuilder<LenraApplicationSt
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "status": "String",
+      "status": String,
     };
   }
 }

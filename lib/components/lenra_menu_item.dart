@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
+import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 
@@ -18,13 +19,13 @@ class LenraMenuItemBuilder extends LenraComponentBuilder<LenraApplicationMenuIte
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "text": "String",
-      "isSelected": "bool",
-      "disabled": "bool",
-      "icon": "String",
-      "onPressed": "Map<String, dynamic>",
+      "text": String,
+      "isSelected": bool,
+      "disabled": bool,
+      "icon": String,
+      "onPressed": Listener,
     };
   }
 }
@@ -34,7 +35,7 @@ class LenraApplicationMenuItem extends StatelessWidget {
   final bool? isSelected;
   final bool? disabled;
   final String? icon;
-  final Map<String, dynamic>? onPressed;
+  final lenra.Listener? onPressed;
 
   LenraApplicationMenuItem({
     required this.text,
@@ -45,8 +46,8 @@ class LenraApplicationMenuItem extends StatelessWidget {
   }) : super();
 
   void onMenuItemPressed(BuildContext context) {
-    if (onPressed != null && onPressed!.containsKey("code")) {
-      OnPressedEvent(code: onPressed!['code']!).dispatch(context);
+    if (onPressed != null) {
+      OnPressedEvent(code: onPressed!.code).dispatch(context);
     }
   }
 

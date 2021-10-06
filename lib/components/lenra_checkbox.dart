@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
+import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_components/component/lenra_checkbox.dart';
 
@@ -11,12 +12,12 @@ class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbo
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "value": "bool",
-      "label": "String",
-      "disabled": "bool",
-      "onPressed": "Map<String, dynamic>",
+      "value": bool,
+      "label": String,
+      "disabled": bool,
+      "onPressed": Listener,
     };
   }
 }
@@ -25,7 +26,7 @@ class LenraApplicationCheckbox extends StatelessWidget {
   final bool value;
   final String? label;
   final bool? disabled;
-  final Map<String, dynamic>? onPressed;
+  final lenra.Listener? onPressed;
 
   LenraApplicationCheckbox({
     required this.value,
@@ -35,8 +36,8 @@ class LenraApplicationCheckbox extends StatelessWidget {
   }) : super();
 
   void onCheckboxPressed(BuildContext context) {
-    if (onPressed != null && onPressed!.containsKey("code")) {
-      OnPressedEvent(code: onPressed!['code']!).dispatch(context);
+    if (onPressed != null) {
+      OnPressedEvent(code: onPressed!.code).dispatch(context);
     }
   }
 
