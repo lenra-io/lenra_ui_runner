@@ -1,9 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:lenra_components/lenra_components.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
 
 import "./test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
