@@ -43,7 +43,7 @@ class LeftMenu extends StatelessWidget {
 
   Widget createMenu(BuildContext context, String title, String id) {
     return ListTile(
-      title: Text(title, style: TextStyle(color: id == this.currentMenu ? Colors.grey : Colors.blue)),
+      title: Text(title, style: TextStyle(color: id == currentMenu ? Colors.grey : Colors.blue)),
       onTap: () {
         onMenuTapped(id);
         Navigator.of(context).pop();

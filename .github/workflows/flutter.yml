@@ -23,6 +23,12 @@ jobs:
         run: flutter pub get
       - name: Analyze
         run: flutter analyze --no-congratulate
+      - name: Abalyze Showcase
+        run: |
+          cd examples/showcase \
+          flutter analyze --no-congratulate \
+          cd ../..
+
       - name: Run tests
         run: flutter test --coverage
     # - name: Upload coverage to codecov

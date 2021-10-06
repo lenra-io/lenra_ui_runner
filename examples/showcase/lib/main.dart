@@ -10,7 +10,7 @@ import 'package:showcase/pages/lenra_status_sticker_page.dart';
 import 'package:showcase/pages/lenra_button_page.dart';
 import 'package:showcase/pages/lenra_flex_page.dart';
 import 'package:showcase/pages/lenra_styled_container_page.dart';
-import 'package:showcase/pages/lenra_Textfield_page.dart';
+import 'package:showcase/pages/lenra_textfield_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
               currentMenu: currentMenu,
               onMenuTapped: (newMenu) {
                 setState(() {
-                  this.currentMenu = newMenu;
+                  currentMenu = newMenu;
                 });
               },
             ),

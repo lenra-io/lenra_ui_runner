@@ -26,7 +26,7 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
 
   bool handleNotifications(Event event) {
     data = getData(event);
-    var newUi = this.ui;
+    var newUi = ui;
     var diff = JsonPatch.diff(lastUi, newUi);
     lastUi = newUi;
     patchUiStream.add(diff);
@@ -44,7 +44,7 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
   @override
   Widget build(BuildContext context) {
     return NotificationListener<Event>(
-      onNotification: (Event event) => this.handleNotifications(event),
+      onNotification: (Event event) => handleNotifications(event),
       child: LenraUiBuilder(
         uiStream: uiStreamController,
         patchUiStream: patchUiStream,
