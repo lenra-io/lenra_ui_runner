@@ -20,7 +20,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
     inRow,
     error,
     width,
-    listeners,
+    onChanged,
     size,
   }) {
     return LenraApplicationTextfield(
@@ -34,7 +34,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
       inRow: inRow,
       error: error,
       width: width,
-      listeners: listeners,
+      onChanged: onChanged,
       size: size,
     );
   }
@@ -52,7 +52,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
       "inRow": "bool",
       "error": "bool",
       "width": "double",
-      "listeners": "Map<String, dynamic>",
+      "onChanged": "Map<String, dynamic>",
       "size": "LenraComponentSize"
     };
   }
@@ -70,7 +70,7 @@ class LenraApplicationTextfield extends StatelessLenraComponent implements Lenra
   bool? error;
   double? width;
   LenraComponentSize? size;
-  final Map<String, dynamic>? listeners;
+  final Map<String, dynamic>? onChanged;
   final FocusNode _focusNode;
   final TextEditingController _controller;
 
@@ -86,7 +86,7 @@ class LenraApplicationTextfield extends StatelessLenraComponent implements Lenra
     required this.error,
     required this.width,
     required this.size,
-    required this.listeners,
+    required this.onChanged,
   })  : _controller = TextEditingController(text: value),
         _focusNode = FocusNode(),
         super();
@@ -103,9 +103,8 @@ class LenraApplicationTextfield extends StatelessLenraComponent implements Lenra
       inRow: inRow ?? false,
       error: error ?? false,
       onSubmitted: (value) {
-        final Map<String, dynamic>? listener = listeners?['onChange'];
-        if (listener != null && listener.containsKey("code")) {
-          LenraOnEditEvent(code: listener['code']!, event: {'value': value}).dispatch(context);
+        if (onChanged != null && onChanged!.containsKey("code")) {
+          LenraOnEditEvent(code: onChanged!['code'], event: {'value': value}).dispatch(context);
         }
       },
       size: size ?? LenraComponentSize.medium,
