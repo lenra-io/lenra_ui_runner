@@ -22,6 +22,8 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
     width,
     onChanged,
     size,
+    minLines,
+    maxLines,
   }) {
     return LenraApplicationTextfield(
       value: value,
@@ -36,6 +38,8 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
       width: width,
       onChanged: onChanged,
       size: size,
+      minLines: minLines,
+      maxLines: maxLines,
     );
   }
 
@@ -71,6 +75,8 @@ class LenraApplicationTextfield extends StatelessWidget {
   double? width;
   LenraComponentSize? size;
   final lenra.Listener? onChanged;
+  int? minLines;
+  int? maxLines;
   final FocusNode _focusNode;
   final TextEditingController _controller;
 
@@ -86,6 +92,8 @@ class LenraApplicationTextfield extends StatelessWidget {
     required this.error,
     required this.width,
     required this.size,
+    required this.minLines,
+    required this.maxLines,
     required this.onChanged,
   })  : _controller = TextEditingController(text: value),
         _focusNode = FocusNode(),
@@ -108,6 +116,8 @@ class LenraApplicationTextfield extends StatelessWidget {
         }
       },
       size: size ?? LenraComponentSize.medium,
+      minLines: minLines ?? 1,
+      maxLines: maxLines ?? 1,
       width: width ?? 200.0,
       focusNode: _focusNode,
       controller: _controller,
