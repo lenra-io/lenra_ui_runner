@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_toggle.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_on_press_event.dart';
-import 'package:lenra_ui_runner/components/actionable/lenra_actionable.dart';
-import 'package:lenra_ui_runner/components/lenra_component.dart';
+import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraToggle
 class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
   @override
   LenraApplicationToggle map({value, label, disabled, onPressed}) {
-    return LenraApplicationToggle(
-        value: value, label: label, disabled: disabled, onPressed: onPressed);
+    return LenraApplicationToggle(value: value, label: label, disabled: disabled, onPressed: onPressed);
   }
 
   @override
@@ -24,8 +21,7 @@ class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
   }
 }
 
-class LenraApplicationToggle extends StatelessLenraComponent
-    implements LenraActionable {
+class LenraApplicationToggle extends StatelessWidget {
   final bool value;
   final String? label;
   final bool? disabled;
@@ -40,7 +36,7 @@ class LenraApplicationToggle extends StatelessLenraComponent
 
   void onTogglePressed(BuildContext context) {
     if (onPressed != null && onPressed!.containsKey("code")) {
-      LenraOnPressEvent(code: onPressed!['code']!, event: {}).dispatch(context);
+      OnPressedEvent(code: onPressed!['code']!).dispatch(context);
     }
   }
 

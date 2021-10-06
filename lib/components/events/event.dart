@@ -1,18 +1,22 @@
 //? Here is defined all Event types that can be send to the server.
 import 'package:flutter/material.dart';
 
-class LenraEvent extends Notification {
-  LenraEvent({
+abstract class Jsonifiable {
+  Map<String, dynamic> toMap();
+}
+
+class Event<T extends Jsonifiable> extends Notification {
+  Event({
     required this.code,
-    required this.event,
+    required this.data,
   }) : super();
   final String code;
-  final Map<String, dynamic> event;
+  final T data;
 
   Map<String, dynamic> toMap() {
     return {
       "code": code,
-      "event": event,
+      "event": data.toMap(),
     };
   }
 }

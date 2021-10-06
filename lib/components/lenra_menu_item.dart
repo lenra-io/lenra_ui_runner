@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_menu.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_on_press_event.dart';
+import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
-import 'lenra_component.dart';
 
 // TODO generate this from annotation on LenraMenuItem
-class LenraMenuItemBuilder
-    extends LenraComponentBuilder<LenraApplicationMenuItem> {
+class LenraMenuItemBuilder extends LenraComponentBuilder<LenraApplicationMenuItem> {
   @override
   LenraApplicationMenuItem map({text, isSelected, disabled, icon, onPressed}) {
     return LenraApplicationMenuItem(
@@ -31,7 +29,7 @@ class LenraMenuItemBuilder
   }
 }
 
-class LenraApplicationMenuItem extends StatelessLenraComponent {
+class LenraApplicationMenuItem extends StatelessWidget {
   final String text;
   final bool? isSelected;
   final bool? disabled;
@@ -48,7 +46,7 @@ class LenraApplicationMenuItem extends StatelessLenraComponent {
 
   void onMenuItemPressed(BuildContext context) {
     if (onPressed != null && onPressed!.containsKey("code")) {
-      LenraOnPressEvent(code: onPressed!['code']!, event: {}).dispatch(context);
+      OnPressedEvent(code: onPressed!['code']!).dispatch(context);
     }
   }
 

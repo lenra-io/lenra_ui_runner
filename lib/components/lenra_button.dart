@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/lenra_component.dart';
 import 'package:lenra_ui_runner/helpers/size_helper.dart';
 import 'package:lenra_ui_runner/helpers/style_helper.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
-import 'events/lenra_on_press_event.dart';
-import 'lenra_actionable.dart';
+import 'events/on_pressed_event.dart';
 
 import 'package:lenra_components/component/lenra_button.dart';
 
@@ -37,7 +35,7 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
   }
 }
 
-class LenraApplicationButton extends StatelessLenraComponent implements LenraActionable {
+class LenraApplicationButton extends StatelessWidget {
   final String text;
   final bool? disabled;
   final String? size;
@@ -58,7 +56,7 @@ class LenraApplicationButton extends StatelessLenraComponent implements LenraAct
 
   void onButtonPressed(BuildContext context) {
     if (onPressed != null && onPressed!.containsKey("code")) {
-      LenraOnPressEvent(code: onPressed!['code']!, event: {}).dispatch(context);
+      OnPressedEvent(code: onPressed!['code']!).dispatch(context);
     }
   }
 

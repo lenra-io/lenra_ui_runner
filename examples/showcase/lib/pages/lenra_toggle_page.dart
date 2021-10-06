@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:showcase/ui_builder.dart';
 
 class LenraTogglePage extends StatefulWidget {
@@ -39,7 +39,7 @@ class _LenraTogglePageState extends UiBuilderState<LenraTogglePage, bool> {
   }
 
   @override
-  getData(LenraEvent event) {
+  getData(Event event) {
     if (event.code == "InitData") {
       return true;
     } else if (event.code == "myCode") {

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
+import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
@@ -46,10 +46,10 @@ void main() {
       createBaseTestWidgets(
           child: NotificationListener(
         child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-        onNotification: (LenraEvent e) {
+        onNotification: (OnChangedEvent e) {
           isEnterNotification = true;
           expect(e.code, "yourCode");
-          expect(e.event["value"], "foo");
+          expect(e.data.value, "foo");
           return false;
         },
       )),

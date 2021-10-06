@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:lenra_components/layout/lenra_flex.dart';
-import 'package:lenra_ui_runner/components/lenra_component.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraFlex
@@ -48,7 +47,7 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
   }
 }
 
-class LenraApplicationFlex extends StatelessLenraComponent {
+class LenraApplicationFlex extends StatelessWidget {
   final List<Widget> children;
   final Axis? direction;
   final MainAxisAlignment? mainAxisAlignment;

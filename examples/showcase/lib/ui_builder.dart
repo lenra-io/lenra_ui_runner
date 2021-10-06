@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:json_patch/json_patch.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
 import 'package:lenra_ui_runner/lenra_ui_builder.dart';
 
 abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
@@ -13,23 +14,18 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
 
   Map<String, dynamic> get ui;
 
-  D getData(LenraEvent event);
+  D getData(Event event);
 
   @override
   void initState() {
     super.initState();
-    data = getData(
-      LenraEvent(
-        code: "InitData",
-        event: {},
-      ),
-    );
+    data = getData(OnPressedEvent(code: "InitData"));
     lastUi = ui;
     uiStreamController.sink.add(ui);
   }
 
-  bool handleNotifications(LenraEvent notification) {
-    data = getData(notification);
+  bool handleNotifications(Event event) {
+    data = getData(event);
     var newUi = this.ui;
     var diff = JsonPatch.diff(lastUi, newUi);
     lastUi = newUi;
@@ -47,8 +43,8 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
 
   @override
   Widget build(BuildContext context) {
-    return NotificationListener<LenraEvent>(
-      onNotification: (LenraEvent event) => this.handleNotifications(event),
+    return NotificationListener<Event>(
+      onNotification: (Event event) => this.handleNotifications(event),
       child: LenraUiBuilder(
         uiStream: uiStreamController,
         patchUiStream: patchUiStream,

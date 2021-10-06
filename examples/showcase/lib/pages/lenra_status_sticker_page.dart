@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:showcase/ui_builder.dart';
 
 class LenraStatusStickerPage extends StatefulWidget {
@@ -9,8 +9,7 @@ class LenraStatusStickerPage extends StatefulWidget {
   }
 }
 
-class _LenraStatusStickerPageState
-    extends UiBuilderState<LenraStatusStickerPage, bool> {
+class _LenraStatusStickerPageState extends UiBuilderState<LenraStatusStickerPage, bool> {
   @override
   Map<String, dynamic> get ui {
     return {
@@ -27,7 +26,7 @@ class _LenraStatusStickerPageState
   }
 
   @override
-  getData(LenraEvent event) {
+  getData(Event event) {
     if (event.code == "InitData") {
       return true;
     } else if (event.code == "myCode") {

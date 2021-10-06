@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/container/lenra_styled_container.dart';
+import 'package:lenra_ui_runner/components/lenra_styled_container.dart';
 import 'package:lenra_ui_runner/components/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
-import 'package:lenra_ui_runner/components/actionable/lenra_toggle.dart';
+import 'package:lenra_ui_runner/components/lenra_toggle.dart';
 import 'package:lenra_ui_runner/components/lenra_status_sticker.dart';
-import 'package:lenra_ui_runner/components/container/lenra_flex.dart';
+import 'package:lenra_ui_runner/components/lenra_flex.dart';
 import '../lenra_component_builder.dart';
 import '../lenra_ui_builder.dart';
 import '../props_parser.dart';
 import '../update_props_event.dart';
-import 'actionable/lenra_button.dart';
-import 'actionable/lenra_checkbox.dart';
-import 'actionable/lenra_radio.dart';
-import 'actionable/lenra_textfield.dart';
+import 'lenra_button.dart';
+import 'lenra_checkbox.dart';
+import 'lenra_radio.dart';
+import 'lenra_textfield.dart';
 import 'lenra_image.dart';
 import 'lenra_text.dart';
 

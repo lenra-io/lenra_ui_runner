@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_on_press_event.dart';
-import 'package:lenra_ui_runner/components/lenra_component.dart';
+import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
-import 'lenra_actionable.dart';
 import 'package:lenra_components/component/lenra_checkbox.dart';
 
 // TODO : generate this from annotation on LenraCheckbox
-class LenraCheckboxBuilder
-    extends LenraComponentBuilder<LenraApplicationCheckbox> {
+class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbox> {
   @override
   LenraApplicationCheckbox map({value, label, disabled, onPressed}) {
-    return LenraApplicationCheckbox(
-        value: value, label: label, disabled: disabled, onPressed: onPressed);
+    return LenraApplicationCheckbox(value: value, label: label, disabled: disabled, onPressed: onPressed);
   }
 
   @override
@@ -25,8 +21,7 @@ class LenraCheckboxBuilder
   }
 }
 
-class LenraApplicationCheckbox extends StatelessLenraComponent
-    implements LenraActionable {
+class LenraApplicationCheckbox extends StatelessWidget {
   final bool value;
   final String? label;
   final bool? disabled;
@@ -41,7 +36,7 @@ class LenraApplicationCheckbox extends StatelessLenraComponent
 
   void onCheckboxPressed(BuildContext context) {
     if (onPressed != null && onPressed!.containsKey("code")) {
-      LenraOnPressEvent(code: onPressed!['code']!, event: {}).dispatch(context);
+      OnPressedEvent(code: onPressed!['code']!).dispatch(context);
     }
   }
 

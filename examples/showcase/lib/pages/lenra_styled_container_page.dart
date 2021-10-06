@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:showcase/ui_builder.dart';
 
 class LenraStyledContainerPage extends StatefulWidget {
@@ -59,7 +59,7 @@ class _LenraStyledContainerPageState extends UiBuilderState<LenraStyledContainer
   }
 
   @override
-  getData(LenraEvent event) {
+  getData(Event event) {
     return true;
   }
 }

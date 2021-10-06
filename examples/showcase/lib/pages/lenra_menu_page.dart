@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:showcase/ui_builder.dart';
 
 class LenraMenuPage extends StatefulWidget {
@@ -54,7 +54,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
   }
 
   @override
-  getData(LenraEvent event) {
+  getData(Event event) {
     print(event.code);
     return false;
   }

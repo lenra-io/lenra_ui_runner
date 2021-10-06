@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_components/theme/lenra_theme.dart';
 import 'package:showcase/left_menu.dart';
-import 'package:showcase/my_app.dart';
 import 'package:showcase/pages/lenra_menu_page.dart';
 import 'package:showcase/pages/lenra_radio_page.dart';
 import 'package:showcase/pages/lenra_checkbox_page.dart';
@@ -25,12 +24,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var currentMenu = LeftMenu.myTestApp;
+  var currentMenu = LeftMenu.lenraMenuPage;
 
   Widget buildBody() {
     switch (currentMenu) {
-      case LeftMenu.myTestApp:
-        return MyTestApp();
       case LeftMenu.lenraMenuPage:
         return LenraMenuPage();
       case LeftMenu.radioExample:

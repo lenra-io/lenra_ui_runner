@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'lenra_component.dart';
 import '../lenra_component_builder.dart';
 
 // TODO generate this from annotation on LenraText
@@ -19,7 +18,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraText> {
   }
 }
 
-class LenraText extends StatelessLenraComponent {
+class LenraText extends StatelessWidget {
   final String value;
   final Color? color;
   final Color? backgroundColor;
