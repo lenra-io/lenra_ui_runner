@@ -12,10 +12,11 @@ class LenraMenuBuilder extends LenraComponentBuilder<LenraApplicationMenu> {
 
   @override
   Map<String, String> get propsTypes {
-    return {
-      "children": "List<Widget>",
-    };
+    return {};
   }
+
+  @override
+  List<String> get childrenKeys => ["children"];
 }
 
 class LenraApplicationMenu extends StatelessLenraComponent {
