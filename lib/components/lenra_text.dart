@@ -1,39 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_components/component/lenra_text.dart';
+import 'package:lenra_components/theme/lenra_theme_data.dart';
 import '../lenra_component_builder.dart';
 
 // TODO generate this from annotation on LenraText
-class LenraTextBuilder extends LenraComponentBuilder<LenraText> {
+class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
   @override
-  LenraText map({color, backgroundColor, value}) {
-    return LenraText(color: color, backgroundColor: backgroundColor, value: value);
+  LenraApplicationText map({
+    value,
+    textStyle,
+  }) {
+    return LenraApplicationText(
+      value: value,
+      textStyle: textStyle,
+    );
   }
 
   @override
   Map<String, Type> get propsTypes {
     return {
       "value": String,
-      "color": Color,
-      "backgroundColor": Color,
+      "style": LenraTextStyle,
     };
   }
 }
 
-class LenraText extends StatelessWidget {
+class LenraApplicationText extends StatelessWidget {
   final String value;
-  final Color? color;
-  final Color? backgroundColor;
+  final LenraTextStyle? textStyle;
 
-  LenraText({
-    required this.color,
-    required this.backgroundColor,
+  LenraApplicationText({
     required this.value,
+    required this.textStyle,
   }) : super();
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      value,
-      style: TextStyle(color: color, backgroundColor: backgroundColor),
-    );
+    return LenraText(value, style: textStyle ?? LenraTextStyle.bodyText);
   }
 }

@@ -192,7 +192,21 @@ class Parser {
     return Icon(IconUtil.fromString(value));
   }
 
-  static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
+  static LenraTextStyle parseLenraTextStyle(String value) {
+    switch (value) {
+      case "headline1":
+        return LenraTextStyle.headline1;
+      case "headline2":
+        return LenraTextStyle.headline2;
+      case "headline3":
+        return LenraTextStyle.headline3;
+      case "headline4":
+        return LenraTextStyle.headline4;
+      // TODO: Finish this switch
+    }
+  }
+
+  static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, String> propsTypes) {
     Map<Symbol, dynamic> transformedProps = {};
 
     props.forEach((key, value) {
