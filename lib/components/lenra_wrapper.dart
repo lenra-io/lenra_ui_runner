@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/lenra_styled_container.dart';
-import 'package:lenra_ui_runner/components/lenra_click_listener.dart';
+import 'package:lenra_ui_runner/components/lenra_actionable.dart';
 import 'package:lenra_ui_runner/components/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
 import 'package:lenra_ui_runner/components/lenra_toggle.dart';
@@ -31,7 +31,7 @@ extension LenraComponentWrapperExt on LenraWrapper {
     'statusSticker': LenraStatusStickerBuilder(),
     'flex': LenraFlexBuilder(),
     'styledContainer': LenraStyledContainerBuilder(),
-    'clickListener': LenraClickListenerBuilder(),
+    'actionable': LenraActionableBuilder(),
   };
 }
 
