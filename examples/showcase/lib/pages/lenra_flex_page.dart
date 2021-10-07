@@ -50,10 +50,10 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
             "child": {
               "type": "flex",
               "padding": {
-                "top": 100,
-                "left": 100,
-                "right": 100,
-                "bottom": 100,
+                "top": 10,
+                "left": 10,
+                "right": 10,
+                "bottom": 10,
               },
               "children": [
                 {
