@@ -216,6 +216,8 @@ class Parser {
         return LenraTextStyle.underDescriptionText;
       case "errorText":
         return LenraTextStyle.errorText;
+      default: 
+        return LenraTextStyle.bodyText;
     }
   }
 

@@ -36,6 +36,9 @@ class LenraApplicationText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LenraText(value, style: textStyle ?? LenraTextStyle.bodyText);
+    return LenraText(
+      value,
+      style: textStyle ?? LenraTextStyle.bodyText,
+    );
   }
 }
