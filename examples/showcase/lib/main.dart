@@ -5,6 +5,7 @@ import 'package:showcase/left_menu.dart';
 import 'package:showcase/pages/lenra_menu_page.dart';
 import 'package:showcase/pages/lenra_radio_page.dart';
 import 'package:showcase/pages/lenra_checkbox_page.dart';
+import 'package:showcase/pages/lenra_text_page.dart';
 import 'package:showcase/pages/lenra_toggle_page.dart';
 import 'package:showcase/pages/lenra_status_sticker_page.dart';
 import 'package:showcase/pages/lenra_button_page.dart';
@@ -46,6 +47,8 @@ class _MyAppState extends State<MyApp> {
         return LenraStyledContainerPage();
       case LeftMenu.lenraTextFieldPage:
         return LenraTextFieldPage();
+      case LeftMenu.lenraTextPage:
+        return LenraTextPage();
     }
     return Text("N/A");
   }
