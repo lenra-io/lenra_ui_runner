@@ -221,7 +221,7 @@ class Parser {
     }
   }
 
-  static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, String> propsTypes) {
+  static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
     Map<Symbol, dynamic> transformedProps = {};
 
     props.forEach((key, value) {
