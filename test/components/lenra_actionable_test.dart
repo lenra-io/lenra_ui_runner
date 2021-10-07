@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_event.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
 
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
@@ -24,7 +24,7 @@ void main() {
       createBaseTestWidgets(
         child: NotificationListener(
           child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-          onNotification: (LenraEvent e) {
+          onNotification: (Event e) {
             expect(e.code, "doublePressed");
             eventsNb = eventsNb + 1;
             return true;
@@ -64,7 +64,7 @@ void main() {
       createBaseTestWidgets(
         child: NotificationListener(
           child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-          onNotification: (LenraEvent e) {
+          onNotification: (Event e) {
             expect(e.code, "pressed");
             eventsNb = eventsNb + 1;
             return true;
@@ -98,7 +98,7 @@ void main() {
       createBaseTestWidgets(
         child: NotificationListener(
           child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-          onNotification: (LenraEvent e) {
+          onNotification: (Event e) {
             expect(e.code, "pressed");
             eventsNb = eventsNb + 1;
             return true;
@@ -133,7 +133,7 @@ void main() {
       createBaseTestWidgets(
         child: NotificationListener(
           child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-          onNotification: (LenraEvent e) {
+          onNotification: (Event e) {
             expect(e.code, "doublePressed");
             eventsNb = eventsNb + 1;
             return true;

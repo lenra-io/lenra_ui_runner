@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/actionable/events/lenra_on_press_event.dart';
+import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
-import 'lenra_component.dart';
+import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 
 // TODO generate this from annotation on LenraActionable
 class LenraActionableBuilder extends LenraComponentBuilder<LenraApplicationActionable> {
@@ -25,13 +25,13 @@ class LenraActionableBuilder extends LenraComponentBuilder<LenraApplicationActio
   }
 
   @override
-  Map<String, String> get propsTypes {
+  Map<String, Type> get propsTypes {
     return {
-      "onPressed": "Map<String, dynamic>",
-      "onDoublePressed": "Map<String, dynamic>",
-      "onLongPressed": "Map<String, dynamic>",
-      "onPressedCancel": "Map<String, dynamic>",
-      "onHovered": "Map<String, dynamic>",
+      "onPressed": Listener,
+      "onDoublePressed": Listener,
+      "onLongPressed": Listener,
+      "onPressedCancel": Listener,
+      "onHovered": Listener,
     };
   }
 
@@ -41,13 +41,13 @@ class LenraActionableBuilder extends LenraComponentBuilder<LenraApplicationActio
   }
 }
 
-class LenraApplicationActionable extends StatelessLenraComponent {
+class LenraApplicationActionable extends StatelessWidget {
   final Widget child;
-  final Map<String, dynamic>? onPressed;
-  final Map<String, dynamic>? onDoublePressed;
-  final Map<String, dynamic>? onLongPressed;
-  final Map<String, dynamic>? onPressedCancel;
-  final Map<String, dynamic>? onHovered;
+  final lenra.Listener? onPressed;
+  final lenra.Listener? onDoublePressed;
+  final lenra.Listener? onLongPressed;
+  final lenra.Listener? onPressedCancel;
+  final lenra.Listener? onHovered;
 
   LenraApplicationActionable({
     required this.child,
@@ -58,9 +58,9 @@ class LenraApplicationActionable extends StatelessLenraComponent {
     required this.onHovered,
   }) : super();
 
-  void onAction(Map<String, dynamic>? action, BuildContext context) {
-    if (action != null && action.containsKey("code")) {
-      LenraOnPressEvent(code: action['code']!, event: {}).dispatch(context);
+  void onAction(lenra.Listener? action, BuildContext context) {
+    if (action != null) {
+      OnPressedEvent(code: action.code).dispatch(context);
     }
   }
 
