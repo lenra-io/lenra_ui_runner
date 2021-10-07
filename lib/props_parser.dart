@@ -24,6 +24,7 @@ extension ParserExt on Parser {
     Listener: Parser.parseListener,
     LenraComponentSize: Parser.parseLenraComponentSize,
     int: Parser.parseInteger,
+    LenraTextStyle: Parser.parseLenraTextStyle,
   };
 }
 
