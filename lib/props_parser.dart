@@ -24,6 +24,7 @@ extension ParserExt on Parser {
     Listener: Parser.parseListener,
     LenraComponentSize: Parser.parseLenraComponentSize,
     int: Parser.parseInteger,
+    LenraTextStyle: Parser.parseLenraTextStyle,
   };
 }
 
@@ -190,6 +191,35 @@ class Parser {
 
   static Icon parseIcon(String value) {
     return Icon(IconUtil.fromString(value));
+  }
+
+  static LenraTextStyle parseLenraTextStyle(String value) {
+    switch (value) {
+      case "headline1":
+        return LenraTextStyle.headline1;
+      case "headline2":
+        return LenraTextStyle.headline2;
+      case "headline3":
+        return LenraTextStyle.headline3;
+      case "headline4":
+        return LenraTextStyle.headline4;
+      case "headlineBody":
+        return LenraTextStyle.headlineBody;
+      case "bodyText":
+        return LenraTextStyle.bodyText;
+      case "blueBodyText":
+        return LenraTextStyle.blueBodyText;
+      case "subtext":
+        return LenraTextStyle.subtext;
+      case "disabledBodyText":
+        return LenraTextStyle.disabledBodyText;
+      case "underDescriptionText":
+        return LenraTextStyle.underDescriptionText;
+      case "errorText":
+        return LenraTextStyle.errorText;
+      default: 
+        return LenraTextStyle.bodyText;
+    }
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
