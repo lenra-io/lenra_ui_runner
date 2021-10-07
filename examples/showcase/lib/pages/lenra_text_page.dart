@@ -15,11 +15,19 @@ class _LenraTextPageState extends UiBuilderState<LenraTextPage, bool> {
     return {
       "root": {
         "type": "flex",
+        "direction": "col",
         "children": [
-          {"type": "headline1", "style": "headline1"},
-          {"type": "headline2", "style": "headline2"},
-          {"type": "headline3", "style": "headline3"},
-          {"type": "headline4", "style": "headline4"},
+          {"type": "text", "value": "headline1", "style": "headline1"},
+          {"type": "text", "value": "headline2", "style": "headline2"},
+          {"type": "text", "value": "headline3", "style": "headline3"},
+          {"type": "text", "value": "headline4", "style": "headline4"},
+          {"type": "text", "value": "headlineBody", "style": "headlineBody"},
+          {"type": "text", "value": "bodyText", "style": "bodyText"},
+          {"type": "text", "value": "blueBodyText", "style": "blueBodyText"},
+          {"type": "text", "value": "subtext", "style": "subtext"},
+          {"type": "text", "value": "disabledBodyText", "style": "disabledBodyText"},
+          {"type": "text", "value": "underDescriptionText", "style": "underDescriptionText"},
+          {"type": "text", "value": "errorText", "style": "errorText"},
         ]
       }
     };

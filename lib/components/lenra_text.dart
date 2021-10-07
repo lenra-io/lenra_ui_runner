@@ -8,11 +8,11 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
   @override
   LenraApplicationText map({
     value,
-    textStyle,
+    style,
   }) {
     return LenraApplicationText(
       value: value,
-      textStyle: textStyle,
+      style: style,
     );
   }
 
@@ -27,18 +27,18 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
 
 class LenraApplicationText extends StatelessWidget {
   final String value;
-  final LenraTextStyle? textStyle;
+  final LenraTextStyle? style;
 
   LenraApplicationText({
     required this.value,
-    required this.textStyle,
+    required this.style,
   }) : super();
 
   @override
   Widget build(BuildContext context) {
     return LenraText(
       value,
-      style: textStyle ?? LenraTextStyle.bodyText,
+      style: style ?? LenraTextStyle.bodyText,
     );
   }
 }
