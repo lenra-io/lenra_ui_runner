@@ -18,12 +18,13 @@ class _LenraStyledContainerPageState extends UiBuilderState<LenraStyledContainer
         "children": [
           {
             "type": "styledContainer",
+            "color": 0xFFFFFFFF,
             "child": {"type": "text", "value": "Styled Container"},
             "border": {
-              "top": {"width": 1.0, "color": "#001122"},
-              "left": {"width": 2.0, "color": "#112233"},
-              "bottom": {"width": 3.0, "color": "#223344"},
-              "right": {"width": 4.0, "color": "#334455"},
+              "top": {"width": 1.0, "color": 0xFF000000},
+              "left": {"width": 1.0, "color": 0xFF000000},
+              "bottom": {"width": 1.0, "color": 0xFF000000},
+              "right": {"width": 1.0, "color": 0xFF000000},
             },
             "borderRadius": {
               "topLeft": {
@@ -44,7 +45,7 @@ class _LenraStyledContainerPageState extends UiBuilderState<LenraStyledContainer
               }
             },
             "boxShadow": {
-              "color": "#444444",
+              "color": 0xFF444444,
               "blurRadius": 5,
               "spreadRadius": 5,
               "offset": {
