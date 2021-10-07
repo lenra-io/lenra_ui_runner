@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
-import 'package:showcase/ui_builder.dart';
+import '../ui_builder.dart';
 
 class LenraTextFieldPage extends StatefulWidget {
   @override
@@ -22,6 +22,9 @@ class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String
             "value": "",
             "label": "Quel est votre Prénom ?",
             "hintText": "Pascal",
+            "minLines": 3,
+            "maxLines": 5,
+            "size": "large",
             "onChanged": {"code": "CodeA"}
           },
           {"type": "text", "value": data}

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
-import 'package:lenra_ui_runner/helpers/size_helper.dart';
 import 'package:lenra_ui_runner/helpers/style_helper.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'events/on_pressed_event.dart';
@@ -27,7 +27,7 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
     return {
       "text": String,
       "disabled": bool,
-      "size": String,
+      "size": LenraComponentSize,
       "mainStyle": String,
       "onPressed": Listener,
       "leftIcon": Icon,
@@ -39,7 +39,7 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
 class LenraApplicationButton extends StatelessWidget {
   final String text;
   final bool? disabled;
-  final String? size;
+  final LenraComponentSize? size;
   final String? mainStyle;
   final lenra.Listener? onPressed;
   final Icon? leftIcon;
@@ -66,7 +66,7 @@ class LenraApplicationButton extends StatelessWidget {
     return LenraButton(
       text: text,
       disabled: disabled ?? false,
-      size: SizeHelper.fromString(size),
+      size: size ?? LenraComponentSize.medium,
       type: TypeHelper.fromString(mainStyle),
       onPressed: () => onButtonPressed(context),
       leftIcon: leftIcon,

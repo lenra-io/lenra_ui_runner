@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lenra_components/component/lenra_text_field.dart';
+import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 
 import "../test_helper.dart";
@@ -24,14 +26,20 @@ void main() {
         "type": "textfield",
         "value": "foo",
         "label": "bar",
-        "onChanged": {"code": "yourCode"},
+        "size": "large",
+        "minLines": 2,
+        "maxLines": 4,
       }
     };
 
     uiStream.add(ui);
 
     await tester.pump();
-    expect(find.byType(TextField), findsOneWidget);
+    var textfield = find.byType(LenraTextField);
+    expect(tester.widget<LenraTextField>(textfield).maxLines, 4);
+    expect(tester.widget<LenraTextField>(textfield).minLines, 2);
+    expect(tester.widget<LenraTextField>(textfield).size, LenraComponentSize.large);
+    expect(find.byType(LenraTextField), findsOneWidget);
     expect(find.text("foo"), findsOneWidget);
     expect(find.text("bar"), findsOneWidget);
   });

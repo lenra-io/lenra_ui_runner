@@ -7,7 +7,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.8.1"
+    version: "2.6.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -28,7 +28,7 @@ packages:
       name: charcode
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.3.1"
+    version: "1.2.0"
   clock:
     dependency: transitive
     description:
@@ -78,8 +78,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "v1.0.0-beta.17"
-      resolved-ref: "63ad015ccab8dbe13ee0e40c34a6969c12f8a211"
+      ref: "v1.0.0-beta.19"
+      resolved-ref: "6aebf86b00d6dc4df724da6fb47ca3142d9725f3"
       url: "git@github.com:lenra-io/lenra_components.git"
     source: git
     version: "0.0.0"
@@ -110,7 +110,7 @@ packages:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.0"
+    version: "1.3.0"
   nested:
     dependency: transitive
     description:
@@ -178,7 +178,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.2"
+    version: "0.3.0"
   typed_data:
     dependency: transitive
     description:

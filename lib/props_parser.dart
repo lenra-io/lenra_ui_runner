@@ -2,6 +2,7 @@ library props_parser;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 
@@ -21,12 +22,27 @@ extension ParserExt on Parser {
     EdgeInsets: Parser.parseEdgeInsets,
     Icon: Parser.parseIcon,
     Listener: Parser.parseListener,
+    LenraComponentSize: Parser.parseLenraComponentSize,
+    int: Parser.parseInteger,
   };
 }
 
 class Parser {
   static lenra.Listener parseListener(Map<String, dynamic> listener) {
     return lenra.Listener(listener["code"]);
+  }
+
+  static LenraComponentSize parseLenraComponentSize(String size) {
+    switch (size) {
+      case "small":
+        return LenraComponentSize.small;
+      case "medium":
+        return LenraComponentSize.medium;
+      case "large":
+        return LenraComponentSize.large;
+      default:
+        return LenraComponentSize.medium;
+    }
   }
 
   static Axis parseAxis(String axis) {
@@ -85,6 +101,10 @@ class Parser {
       default:
         return CrossAxisAlignment.start;
     }
+  }
+
+  static int parseInteger(int value) {
+    return value;
   }
 
   static Color parseColor(int color) {
