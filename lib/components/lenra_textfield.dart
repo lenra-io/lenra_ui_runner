@@ -57,7 +57,9 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
       "error": bool,
       "width": double,
       "onChanged": Listener,
-      "size": LenraComponentSize
+      "size": LenraComponentSize,
+      "minLines": int,
+      "maxLines": int,
     };
   }
 }

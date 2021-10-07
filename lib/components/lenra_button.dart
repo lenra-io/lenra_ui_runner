@@ -27,7 +27,7 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
     return {
       "text": String,
       "disabled": bool,
-      "size": String,
+      "size": LenraComponentSize,
       "mainStyle": String,
       "onPressed": Listener,
       "leftIcon": Icon,

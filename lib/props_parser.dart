@@ -22,6 +22,8 @@ extension ParserExt on Parser {
     EdgeInsets: Parser.parseEdgeInsets,
     Icon: Parser.parseIcon,
     Listener: Parser.parseListener,
+    LenraComponentSize: Parser.parseLenraComponentSize,
+    int: Parser.parseInteger,
   };
 }
 
