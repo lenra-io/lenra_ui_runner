@@ -142,6 +142,7 @@ abstract class _TimeoutStrategy {
   void onChanged(BuildContext context, String value, String code);
 }
 
+// ignore: unused_element
 class _AtLeastTimeout extends _TimeoutStrategy {
   Timer? time;
   _AtLeastTimeout({
