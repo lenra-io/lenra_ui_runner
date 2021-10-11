@@ -1,10 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:lenra_components/component/lenra_text_field.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
-import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 
 import "../test_helper.dart";
