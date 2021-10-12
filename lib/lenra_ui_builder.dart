@@ -201,7 +201,7 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     if (patch.childId == null) return;
 
     registerComponent(patch.value as Map<String, dynamic>, patch.childId!);
-    if (patch.childIndex == null) {
+    if (patch.childIndex == null || int.tryParse(patch.childIndex!) == null) {
       properties[patch.propertyPathList.first] = patch.childId;
     } else {
       if (patch.childIndex == '-') {
