@@ -47,6 +47,15 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
                 "onPressed": {
                   "code": "third",
                 }
+              },
+              {
+                "type": "menuItem",
+                "text": "Fourth",
+                "isSelected": data,
+                "icon": "aod",
+                "onPressed": {
+                  "code": "fourth",
+                }
               }
             ]
           },
