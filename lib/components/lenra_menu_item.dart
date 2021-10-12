@@ -67,7 +67,7 @@ class LenraApplicationMenuItem extends StatelessWidget {
     return Icon(
       iconData,
       color: Colors.white,
-      size: 18,
+      size: 16,
     );
   }
 }
