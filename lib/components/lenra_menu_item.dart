@@ -65,7 +65,7 @@ class LenraApplicationMenuItem extends StatelessWidget {
 
   Widget _buildIcon(IconData iconData) {
     return Icon(
-      Icons.airplanemode_active,
+      iconData,
       color: Colors.white,
       size: 16,
     );
