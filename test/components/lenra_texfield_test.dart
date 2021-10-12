@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:lenra_components/component/lenra_text_field.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
@@ -55,8 +54,8 @@ void main() {
           child: NotificationListener(
         child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
         onNotification: (OnChangedEvent e) {
-          isEnterNotification = true;
           expect(e.code, "yourCode");
+          isEnterNotification = true;
           expect(e.data.value, "foo");
           return false;
         },
@@ -76,9 +75,9 @@ void main() {
     await tester.pump();
     var textfield = find.byType(TextField);
     await tester.enterText(textfield, "foo");
-    await tester.testTextInput.receiveAction(TextInputAction.done);
     await tester.pump();
     expect(find.text("foo"), findsOneWidget);
+    await tester.pump(Duration(milliseconds: 500));
     expect(isEnterNotification, true);
   });
 }

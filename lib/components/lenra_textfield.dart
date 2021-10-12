@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
@@ -81,6 +83,7 @@ class LenraApplicationTextfield extends StatelessWidget {
   int? maxLines;
   final FocusNode _focusNode;
   final TextEditingController _controller;
+  _TimeoutStrategy timeoutStrategy = _AtMostTimeout(duration: Duration(milliseconds: 500));
 
   LenraApplicationTextfield({
     required String value,
@@ -101,6 +104,10 @@ class LenraApplicationTextfield extends StatelessWidget {
         _focusNode = FocusNode(),
         super();
 
+  void handleTimeout(BuildContext context, String value) {
+    OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return LenraTextField(
@@ -112,9 +119,9 @@ class LenraApplicationTextfield extends StatelessWidget {
       disabled: disabled ?? false,
       inRow: inRow ?? false,
       error: error ?? false,
-      onSubmitted: (value) {
+      onChanged: (value) {
         if (onChanged != null) {
-          OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
+          timeoutStrategy.onChanged(context, value, onChanged!.code);
         }
       },
       size: size ?? LenraComponentSize.medium,
@@ -124,5 +131,54 @@ class LenraApplicationTextfield extends StatelessWidget {
       focusNode: _focusNode,
       controller: _controller,
     );
+  }
+}
+
+abstract class _TimeoutStrategy {
+  Duration duration;
+  _TimeoutStrategy({
+    required this.duration,
+  });
+  void onChanged(BuildContext context, String value, String code);
+}
+
+// ignore: unused_element
+class _AtLeastTimeout extends _TimeoutStrategy {
+  Timer? time;
+  _AtLeastTimeout({
+    Duration duration = const Duration(milliseconds: 500),
+  }) : super(duration: duration);
+
+  void _handleTimeout(BuildContext context, String value, String code) {
+    OnChangedEvent(code: code, data: ValueData(value)).dispatch(context);
+  }
+
+  @override
+  void onChanged(BuildContext context, String value, String code) {
+    if (time != null && time!.isActive) {
+      time!.cancel();
+    }
+    time = Timer(duration, () => _handleTimeout(context, value, code));
+  }
+}
+
+class _AtMostTimeout extends _TimeoutStrategy {
+  String currentValue = "";
+  Timer? time;
+
+  _AtMostTimeout({
+    Duration duration = const Duration(milliseconds: 500),
+  }) : super(duration: duration);
+
+  void _handleTimeout(BuildContext context, String code) {
+    OnChangedEvent(code: code, data: ValueData(currentValue)).dispatch(context);
+  }
+
+  @override
+  void onChanged(BuildContext context, String value, String code) {
+    currentValue = value;
+    if (time == null || !time!.isActive) {
+      time = Timer(duration, () => _handleTimeout(context, code));
+    }
   }
 }
