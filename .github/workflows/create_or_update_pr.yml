@@ -32,5 +32,9 @@ jobs:
           script: |
             ${{ steps.setup-yq.outputs.yq-binary }} eval ".dependencies.${{ github.event.inputs.origin }}.git.ref = \"${{  github.event.inputs.version }}\"" -i pubspec.yaml
             git add pubspec.yaml
-            git commit -m "deps-bot: Upgrade ${{ github.event.inputs.origin }} to ${{ github.event.inputs.version }}
-            ${{ github.event.inputs.release_notes }}"
+            
+            RELEASE_NOTES="${{ github.event.inputs.release_notes }}"
+            RELEASE_TYPE="${RELEASE_NOTE/:*}"
+            
+            git commit -m "${RELEASE_TYPE}: Upgrade ${{ github.event.inputs.origin }} to ${{ github.event.inputs.version }}
+            ${RELEASE_NOTES}"
