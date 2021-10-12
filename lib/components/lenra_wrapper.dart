@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_ui_runner/components/lenra_dropdown_button.dart';
 import 'package:lenra_ui_runner/components/lenra_styled_container.dart';
 import 'package:lenra_ui_runner/components/lenra_actionable.dart';
 import 'package:lenra_ui_runner/components/lenra_menu.dart';
@@ -32,6 +33,7 @@ extension LenraComponentWrapperExt on LenraWrapper {
     'flex': LenraFlexBuilder(),
     'styledContainer': LenraStyledContainerBuilder(),
     'actionable': LenraActionableBuilder(),
+    'dropdownButton': LenraDropdownButtonBuilder(),
   };
 }
 

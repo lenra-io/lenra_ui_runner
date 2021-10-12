@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_components/theme/lenra_theme.dart';
 import 'package:showcase/left_menu.dart';
+import 'package:showcase/pages/lenra_dropdown_button.dart';
 import 'package:showcase/pages/lenra_menu_page.dart';
 import 'package:showcase/pages/lenra_radio_page.dart';
 import 'package:showcase/pages/lenra_checkbox_page.dart';
@@ -49,6 +50,8 @@ class _MyAppState extends State<MyApp> {
         return LenraTextFieldPage();
       case LeftMenu.lenraTextPage:
         return LenraTextPage();
+      case LeftMenu.lenraDropdownButtonPage:
+        return LenraDropdownButtonPage();
     }
     return Text("N/A");
   }
