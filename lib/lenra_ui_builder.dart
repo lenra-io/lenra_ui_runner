@@ -60,11 +60,17 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   List<String> getChildrenKeys(Map<String, dynamic> properties) {
     String type = properties["type"] as String;
+    if (!LenraComponentWrapperExt.componentsMapping.containsKey(type)) {
+      throw "Componnent mapping does not handle type $type";
+    }
     return LenraComponentWrapperExt.componentsMapping[type]!.childrenKeys;
   }
 
   List<String> getChildKeys(Map<String, dynamic> properties) {
     String type = properties["type"] as String;
+    if (!LenraComponentWrapperExt.componentsMapping.containsKey(type)) {
+      throw "Componnent mapping does not handle type $type";
+    }
     return LenraComponentWrapperExt.componentsMapping[type]!.childKeys;
   }
 
