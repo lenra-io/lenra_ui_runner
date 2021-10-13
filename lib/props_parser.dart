@@ -25,6 +25,7 @@ extension ParserExt on Parser {
     LenraComponentSize: Parser.parseLenraComponentSize,
     int: Parser.parseInteger,
     LenraTextStyle: Parser.parseLenraTextStyle,
+    FlexFit: Parser.parseFlexFit,
   };
 }
 
@@ -43,6 +44,17 @@ class Parser {
         return LenraComponentSize.large;
       default:
         return LenraComponentSize.medium;
+    }
+  }
+
+  static FlexFit parseFlexFit(String flexFit) {
+    switch (flexFit) {
+      case "loose":
+        return FlexFit.loose;
+      case "tight":
+        return FlexFit.tight;
+      default:
+        return FlexFit.loose;
     }
   }
 
@@ -217,7 +229,7 @@ class Parser {
         return LenraTextStyle.underDescriptionText;
       case "errorText":
         return LenraTextStyle.errorText;
-      default: 
+      default:
         return LenraTextStyle.bodyText;
     }
   }
