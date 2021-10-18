@@ -20,10 +20,13 @@ class _LenraDropdownButtonPageState extends UiBuilderState<LenraDropdownButtonPa
             "type": "dropdownButton",
             "text": "basic",
             "child": {
-              "type": "text",
-              "value": "foo",
-            }
+              "type": "button",
+              "text": "foo",
+              "mainStyle": "secondary",
+              "onPressed": {"code": "myCode"},
+            },
           },
+          {"type": "text", "value": "$data"},
           {
             "type": "dropdownButton",
             "text": "with icon",
