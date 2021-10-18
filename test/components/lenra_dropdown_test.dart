@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
-  testWidgets('Test on pressed in a child dropdownButton', (WidgetTester tester) async {
+  testWidgets('Test onPressed in a child dropdownButton', (WidgetTester tester) async {
     StreamController<Map<String, dynamic>> uiStream = StreamController();
     StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
     bool hasBeenNotified = false;
@@ -31,7 +31,7 @@ void main() {
         "child": {
           "type": "button",
           "text": "bar",
-          "onPressed": {"code": "myCode"},
+          "onPressed": {"code": "yourCode"},
         }
       }
     };
