@@ -11,6 +11,7 @@ class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplication
     border,
     borderRadius,
     boxShadow,
+    padding,
   }) {
     return LenraApplicationStyledContainer(
       child: child,
@@ -18,6 +19,7 @@ class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplication
       border: border,
       borderRadius: borderRadius,
       boxShadow: boxShadow,
+      padding: padding,
     );
   }
 
@@ -28,6 +30,7 @@ class LenraStyledContainerBuilder extends LenraComponentBuilder<LenraApplication
       "border": Border,
       "borderRadius": BorderRadius,
       "boxShadow": BoxShadow,
+      "padding": EdgeInsets,
     };
   }
 
@@ -43,6 +46,7 @@ class LenraApplicationStyledContainer extends StatelessWidget {
   final Border? border;
   final BorderRadius? borderRadius;
   final BoxShadow? boxShadow;
+  final EdgeInsets? padding;
 
   LenraApplicationStyledContainer({
     required this.child,
@@ -50,6 +54,7 @@ class LenraApplicationStyledContainer extends StatelessWidget {
     required this.border,
     required this.borderRadius,
     required this.boxShadow,
+    required this.padding,
   }) : super();
 
   @override
@@ -60,6 +65,7 @@ class LenraApplicationStyledContainer extends StatelessWidget {
       border: border,
       borderRadius: borderRadius,
       boxShadow: boxShadow,
+      padding: padding,
     );
   }
 }
