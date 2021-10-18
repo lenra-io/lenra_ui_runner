@@ -2,11 +2,9 @@ name: lenra_ui_runner
 description: Implementation of the Lenra Component API in Dart with the Flutter framework.
 version: 0.0.0
 publish_to: none
-
 environment:
   sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
-
 dependencies:
   flutter:
     sdk: flutter
@@ -14,7 +12,7 @@ dependencies:
   lenra_components:
     git:
       url: git@github.com:lenra-io/lenra_components.git
-      ref: v1.0.0-beta.20
+      ref: v1.0.0-beta.22
 dev_dependencies:
   flutter_test:
     sdk: flutter
