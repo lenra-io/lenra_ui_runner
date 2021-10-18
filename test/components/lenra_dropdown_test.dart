@@ -1,10 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_dropdown_button.dart';
-import 'package:lenra_components/component/lenra_menu.dart';
-import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
-import 'package:lenra_ui_runner/components/lenra_dropdown_button.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
