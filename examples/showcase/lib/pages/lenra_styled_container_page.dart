@@ -52,6 +52,12 @@ class _LenraStyledContainerPageState extends UiBuilderState<LenraStyledContainer
                 "dx": 5,
                 "dy": 5,
               }
+            },
+            "padding": {
+              "top": 10,
+              "right": 10,
+              "bottom": 10,
+              "left": 10,
             }
           }
         ]
