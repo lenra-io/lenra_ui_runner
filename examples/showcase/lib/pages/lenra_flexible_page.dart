@@ -28,7 +28,6 @@ class _LenraFlexiblePageState extends UiBuilderState<LenraFlexiblePage, bool> {
   Map<String, dynamic> lineFlex(int color1, int color2, int flex) {
     return {
       "type": "flexible",
-      "fit": "tight",
       "flex": flex,
       "child": {
         "type": "container",
