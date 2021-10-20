@@ -31,7 +31,8 @@ jobs:
           token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
           script: |
             ${{ steps.setup-yq.outputs.yq-binary }} eval ".dependencies.${{ github.event.inputs.origin }}.git.ref = \"${{  github.event.inputs.version }}\"" -i pubspec.yaml
-            git add pubspec.yaml
+            ${{ steps.setup-yq.outputs.yq-binary }} eval ".dependencies.${{ github.event.inputs.origin }}.git.ref = \"${{  github.event.inputs.version }}\"" -i examples/showcase/pubspec.yaml
+            git add pubspec.yaml examples/showcase/pubspec.yaml
             
             RELEASE_NOTES="${{ github.event.inputs.release_notes }}"
             RELEASE_TYPE="${RELEASE_NOTE/:*}"
