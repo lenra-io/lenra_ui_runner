@@ -15,6 +15,9 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
     fillParent,
     scroll,
     padding,
+    textDirection,
+    verticalDirection,
+    textBaseline,
   }) {
     return LenraApplicationFlex(
       children: children,
@@ -25,6 +28,9 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
       fillParent: fillParent,
       scroll: scroll,
       padding: padding,
+      textDirection: textDirection,
+      verticalDirection: verticalDirection,
+      textBaseline: textBaseline,
     );
   }
 
@@ -38,6 +44,9 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
       "fillParent": bool,
       "scroll": bool,
       "padding": EdgeInsets,
+      "textDirection": TextDirection,
+      "verticalDirection": VerticalDirection,
+      "textBaseline": TextBaseline,
     };
   }
 
@@ -56,6 +65,9 @@ class LenraApplicationFlex extends StatelessWidget {
   final bool? fillParent;
   final bool? scroll;
   final EdgeInsets? padding;
+  final TextDirection? textDirection;
+  final VerticalDirection? verticalDirection;
+  final TextBaseline? textBaseline;
 
   LenraApplicationFlex({
     required this.children,
@@ -66,6 +78,9 @@ class LenraApplicationFlex extends StatelessWidget {
     required this.fillParent,
     required this.scroll,
     required this.padding,
+    required this.textDirection,
+    required this.verticalDirection,
+    required this.textBaseline,
   }) : super();
 
   @override
@@ -79,6 +94,9 @@ class LenraApplicationFlex extends StatelessWidget {
       fillParent: fillParent ?? false,
       scroll: scroll ?? false,
       padding: padding,
+      textDirection: textDirection,
+      verticalDirection: verticalDirection,
+      textBaseline: textBaseline,
     );
   }
 }

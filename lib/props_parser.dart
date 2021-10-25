@@ -234,6 +234,39 @@ class Parser {
     }
   }
 
+  static TextDirection parseTextDirection(String value) {
+    switch (value) {
+      case "ltr":
+        return TextDirection.ltr;
+      case "rtl":
+        return TextDirection.rtl;
+      default:
+        return TextDirection.ltr;
+    }
+  }
+
+  static VerticalDirection parseVerticalDirection(String value) {
+    switch (value) {
+      case "down":
+        return VerticalDirection.down;
+      case "up":
+        return VerticalDirection.up;
+      default:
+        return VerticalDirection.down;
+    }
+  }
+
+  static TextBaseline parseTextBaseline(String value) {
+    switch (value) {
+      case "alphabetic":
+        return TextBaseline.alphabetic;
+      case "ideographic":
+        return TextBaseline.ideographic;
+      default:
+        return TextBaseline.alphabetic;
+    }
+  }
+
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
     Map<Symbol, dynamic> transformedProps = {};
 
