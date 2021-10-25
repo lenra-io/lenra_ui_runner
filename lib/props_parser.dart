@@ -32,6 +32,8 @@ extension ParserExt on Parser {
     BoxConstraints: Parser.parseBoxConstraints,
     BoxDecoration: Parser.parseBoxDecoration,
     BoxShape: Parser.parseBoxShape,
+    WrapCrossAlignment: Parser.parseWrapCrossAlignment,
+    WrapAlignment: Parser.parseWrapAlignment,
   };
 }
 
@@ -436,5 +438,37 @@ class Parser {
     });
 
     return transformedProps;
+  }
+
+  static WrapCrossAlignment parseWrapCrossAlignment(String value) {
+    switch (value) {
+      case " center":
+        return WrapCrossAlignment.center;
+      case "start":
+        return WrapCrossAlignment.start;
+      case "end":
+        return WrapCrossAlignment.end;
+      default:
+        return WrapCrossAlignment.start;
+    }
+  }
+
+  static WrapAlignment parseWrapAlignment(String value) {
+    switch (value) {
+      case "start":
+        return WrapAlignment.start;
+      case "end":
+        return WrapAlignment.end;
+      case "center":
+        return WrapAlignment.center;
+      case "spaceBetween":
+        return WrapAlignment.spaceBetween;
+      case "spaceAround":
+        return WrapAlignment.spaceAround;
+      case "spaceEvenly":
+        return WrapAlignment.spaceEvenly;
+      default:
+        return WrapAlignment.start;
+    }
   }
 }
