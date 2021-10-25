@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:lenra_components/layout/lenra_wrap.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 
@@ -17,15 +17,16 @@ class LenraWrapBuilder extends LenraComponentBuilder<LenraApplicationWrap> {
     verticalDirection,
   }) {
     return LenraApplicationWrap(
-        children: children,
-        direction: direction,
-        crossAxisAlignment: crossAxisAlignment,
-        spacing: spacing,
-        runSpacing: runSpacing,
-        alignment: alignment,
-        runAlignment: runAlignment,
-        textDirection: textDirection,
-        verticalDirection: verticalDirection);
+      children: children,
+      direction: direction,
+      crossAxisAlignment: crossAxisAlignment,
+      spacing: spacing,
+      runSpacing: runSpacing,
+      alignment: alignment,
+      runAlignment: runAlignment,
+      textDirection: textDirection,
+      verticalDirection: verticalDirection,
+    );
   }
 
   @override
@@ -59,17 +60,17 @@ class LenraApplicationWrap extends StatelessWidget {
   final TextDirection? textDirection;
   final VerticalDirection? verticalDirection;
 
-  LenraApplicationWrap(
-      {required this.children,
-      required this.direction,
-      required this.crossAxisAlignment,
-      required this.spacing,
-      required this.runSpacing,
-      required this.alignment,
-      required this.runAlignment,
-      required this.textDirection,
-      required this.verticalDirection})
-      : super();
+  LenraApplicationWrap({
+    required this.children,
+    required this.direction,
+    required this.crossAxisAlignment,
+    required this.spacing,
+    required this.runSpacing,
+    required this.alignment,
+    required this.runAlignment,
+    required this.textDirection,
+    required this.verticalDirection,
+  }) : super();
 
   @override
   Widget build(BuildContext context) {

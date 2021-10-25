@@ -442,10 +442,10 @@ class Parser {
 
   static WrapCrossAlignment parseWrapCrossAlignment(String value) {
     switch (value) {
-      case " center":
-        return WrapCrossAlignment.center;
       case "start":
         return WrapCrossAlignment.start;
+      case " center":
+        return WrapCrossAlignment.center;
       case "end":
         return WrapCrossAlignment.end;
       default:
