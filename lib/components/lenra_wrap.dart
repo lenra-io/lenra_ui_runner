@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:lenra_components/layout/lenra_wrap.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 
-// TODO : generate this from annotation on LenraFlex
+// TODO : generate this from annotation on LenraWrap
 class LenraWrapBuilder extends LenraComponentBuilder<LenraApplicationWrap> {
   @override
   LenraApplicationWrap map({
