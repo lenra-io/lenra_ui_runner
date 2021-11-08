@@ -50,8 +50,22 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
   Map<String, Type> get propsTypes {
     return {
       "path": String,
+      "fromNetwork": bool,
       "width": double,
       "height": double,
+      "alignment": AlignmentGeometry,
+      "centerSlice": Rect,
+      "errorBuilder": ImageErrorWidgetBuilder,
+      "excludeFromSemantics": bool,
+      "filterQuality": FilterQuality,
+      "fit": BoxFit,
+      "frameBuilder": ImageFrameBuilder,
+      "gaplessPlayback": bool,
+      "isAntiAlias": bool,
+      "loadingBuilder": ImageLoadingBuilder,
+      "opacity": Animation,
+      "repeat": ImageRepeat,
+      "semanticLabel": String,
     };
   }
 }
