@@ -58,21 +58,21 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
 
 class LenraApplicationImage extends StatelessWidget {
   final String path;
-  final bool fromNetwork;
+  final bool? fromNetwork;
   final double? height;
   final double? width;
-  final AlignmentGeometry alignment;
+  final AlignmentGeometry? alignment;
   final Rect? centerSlice;
   final ImageErrorWidgetBuilder? errorBuilder;
-  final bool excludeFromSemantics;
-  final FilterQuality filterQuality;
+  final bool? excludeFromSemantics;
+  final FilterQuality? filterQuality;
   final BoxFit? fit;
   final ImageFrameBuilder? frameBuilder;
-  final bool gaplessPlayback;
-  final bool isAntiAlias;
+  final bool? gaplessPlayback;
+  final bool? isAntiAlias;
   final ImageLoadingBuilder? loadingBuilder;
   final Animation<double>? opacity;
-  final ImageRepeat repeat;
+  final ImageRepeat? repeat;
   final String? semanticLabel;
 
   LenraApplicationImage({
@@ -99,24 +99,26 @@ class LenraApplicationImage extends StatelessWidget {
   Widget build(BuildContext context) {
     var model = context.read<LenraApplicationModel>();
 
-    String path = fromNetwork ? this.path : "${model.httpEndpoint}/api/apps/${model.applicationName}/resources/${this.path}?token=${model.accessToken}";
+    String path = fromNetwork != null && fromNetwork!
+        ? this.path
+        : "${model.httpEndpoint}/api/apps/${model.applicationName}/resources/${this.path}?token=${model.accessToken}";
 
     return Image.network(
       path,
       height: height,
       width: width,
-      alignment: alignment,
+      alignment: alignment ?? Alignment.center,
       centerSlice: centerSlice,
       errorBuilder: errorBuilder,
-      excludeFromSemantics: excludeFromSemantics,
-      filterQuality: filterQuality,
+      excludeFromSemantics: excludeFromSemantics ?? false,
+      filterQuality: filterQuality ?? FilterQuality.low,
       fit: fit,
       frameBuilder: frameBuilder,
-      gaplessPlayback: gaplessPlayback,
-      isAntiAlias: isAntiAlias,
+      gaplessPlayback: gaplessPlayback ?? false,
+      isAntiAlias: isAntiAlias ?? false,
       loadingBuilder: loadingBuilder,
       opacity: opacity,
-      repeat: repeat,
+      repeat: repeat ?? ImageRepeat.noRepeat,
       semanticLabel: semanticLabel,
     );
   }
