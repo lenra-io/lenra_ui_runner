@@ -26,6 +26,8 @@ extension ParserExt on Parser {
     int: Parser.parseInteger,
     LenraTextStyle: Parser.parseLenraTextStyle,
     FlexFit: Parser.parseFlexFit,
+    TextStyle: Parser.parseTextStyle,
+    Locale: Parser.parseLocale,
   };
 }
 
@@ -265,6 +267,16 @@ class Parser {
       default:
         return TextBaseline.alphabetic;
     }
+  }
+
+  static TextStyle parseTextStyle(Map<String, dynamic> props) {
+    // TODO : Parse real textStyle
+    return TextStyle();
+  }
+
+  static Locale parseLocale(Map<String, dynamic> props) {
+    // TODO : Parse real locale
+    return Locale('foo', 'bar');
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
