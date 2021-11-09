@@ -44,6 +44,8 @@ extension ParserExt on Parser {
     VisualDensity: Parser.parseVisualDensity,
     DragStartBehavior: Parser.parseDragStartBehavior,
     LenraToggleStyle: Parser.parseLenraToggleStyle,
+    Alignment: Parser.parseAlignment,
+    StackFit: Parser.parseStackFit,
   };
 }
 
@@ -522,6 +524,44 @@ class Parser {
         return WrapAlignment.spaceEvenly;
       default:
         return WrapAlignment.start;
+    }
+  }
+
+  static Alignment parseAlignment(String value) {
+    switch (value) {
+      case "bottomCenter":
+        return Alignment.bottomCenter;
+      case "bottomLeft":
+        return Alignment.bottomLeft;
+      case "bottomRight":
+        return Alignment.bottomRight;
+      case "center":
+        return Alignment.center;
+      case "centerLeft":
+        return Alignment.centerLeft;
+      case "centerRight":
+        return Alignment.centerRight;
+      case "topCenter":
+        return Alignment.topCenter;
+      case "topLeft":
+        return Alignment.topLeft;
+      case "topRight":
+        return Alignment.topRight;
+      default:
+        return Alignment.center;
+    }
+  }
+
+  static StackFit parseStackFit(String value) {
+    switch (value) {
+      case "loose":
+        return StackFit.loose;
+      case "expand":
+        return StackFit.expand;
+      case "passthrough":
+        return StackFit.passthrough;
+      default:
+        return StackFit.loose;
     }
   }
 
