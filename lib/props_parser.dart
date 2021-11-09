@@ -270,13 +270,47 @@ class Parser {
   }
 
   static TextStyle parseTextStyle(Map<String, dynamic> props) {
-    // TODO : Parse real textStyle
-    return TextStyle();
+    return TextStyle(
+      color: props.containsKey("color") ? parseColor(props["color"]) : null,
+      decoration: props.containsKey("decoration") ? parseTextDecoration(props["decoration"]) : null,
+      decorationColor: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      decorationStyle: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      decorationThickness: props.containsKey("decorationThickness") ? parseDouble(props["decorationThickness"]) : null,
+      fontFamily: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      fontFamilyFallback: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      fontSize: props.containsKey("fontSize") ? parseDouble(props["fontSize"]) : null,
+      fontStyle: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      fontWeight: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      height: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      letterSpacing: props.containsKey("letterSpacing") ? parseDouble(props["letterSpacing"]) : null,
+      overflow: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      shadows: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      textBaseline: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      wordSpacing: props.containsKey("wordSpacing") ? parseDouble(props["wordSpacing"]) : null,
+    );
+  }
+
+  static TextDecoration parseTextDecoration(String value) {
+    switch (value) {
+      case "none":
+        return TextDecoration.none;
+      case "underline":
+        return TextDecoration.underline;
+      case "overline":
+        return TextDecoration.overline;
+      case "lineThrough":
+        return TextDecoration.lineThrough;
+      default:
+        return TextDecoration.none;
+    }
   }
 
   static Locale parseLocale(Map<String, dynamic> props) {
-    // TODO : Parse real locale
-    return Locale('foo', 'bar');
+    if (props.containsKey("languageCode") && props.containsKey("countryCode")) {
+      return Locale(props["languageCode"], props["countryCode"]);
+    } else {
+      return Locale('en', 'EN');
+    }
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
