@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/lenra_dropdown_button.dart';
 import 'package:lenra_ui_runner/components/lenra_flexible.dart';
-import 'package:lenra_ui_runner/components/lenra_styled_container.dart';
+import 'package:lenra_ui_runner/components/lenra_container.dart';
 import 'package:lenra_ui_runner/components/lenra_actionable.dart';
 import 'package:lenra_ui_runner/components/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
@@ -32,7 +32,7 @@ extension LenraComponentWrapperExt on LenraWrapper {
     'toggle': LenraToggleBuilder(),
     'statusSticker': LenraStatusStickerBuilder(),
     'flex': LenraFlexBuilder(),
-    'styledContainer': LenraStyledContainerBuilder(),
+    'container': LenraContainerBuilder(),
     'actionable': LenraActionableBuilder(),
     'dropdownButton': LenraDropdownButtonBuilder(),
     'flexible': LenraFlexibleBuilder(),

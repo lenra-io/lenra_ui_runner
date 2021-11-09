@@ -29,6 +29,9 @@ extension ParserExt on Parser {
     TextStyle: Parser.parseTextStyle,
     Locale: Parser.parseLocale,
     List: Parser.parseList,
+    BoxConstraints: Parser.parseBoxConstraints,
+    BoxDecoration: Parser.parseBoxDecoration,
+    BoxShape: Parser.parseBoxShape,
   };
 }
 
@@ -388,6 +391,36 @@ class Parser {
 
   static List<T> parseList<T>(List<T> list) {
     return list;
+  }
+
+  static BoxConstraints parseBoxConstraints(Map<String, dynamic> props) {
+    return BoxConstraints(
+      minWidth: props.containsKey("minWidth") ? parseDouble(props["minWidth"]) : 0,
+      maxWidth: props.containsKey("maxWidth") ? parseDouble(props["maxWidth"]) : -1,
+      minHeight: props.containsKey("minHeight") ? parseDouble(props["minHeight"]) : 0,
+      maxHeight: props.containsKey("maxHeight") ? parseDouble(props["maxHeight"]) : -1,
+    );
+  }
+
+  static BoxDecoration parseBoxDecoration(Map<String, dynamic> props) {
+    return BoxDecoration(
+      border: props.containsKey("border") ? parseBorder(props["border"]) : null,
+      borderRadius: props.containsKey("borderRadius") ? parseBorderRadius(props["borderRadius"]) : null,
+      boxShadow: props.containsKey("boxShadow") ? [parseBoxShadow(props["boxShadow"])] : null,
+      color: props.containsKey("color") ? parseColor(props["color"]) : null,
+      shape: props.containsKey("shape") ? parseBoxShape(props["shape"]) : BoxShape.rectangle,
+    );
+  }
+
+  static BoxShape parseBoxShape(String shape) {
+    switch (shape) {
+      case "rectangle":
+        return BoxShape.rectangle;
+      case "circle":
+        return BoxShape.circle;
+      default:
+        return BoxShape.rectangle;
+    }
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
