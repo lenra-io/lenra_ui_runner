@@ -8,6 +8,7 @@ import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
 import 'package:lenra_ui_runner/components/lenra_toggle.dart';
 import 'package:lenra_ui_runner/components/lenra_status_sticker.dart';
 import 'package:lenra_ui_runner/components/lenra_flex.dart';
+import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 import '../lenra_component_builder.dart';
 import '../lenra_ui_builder.dart';
 import '../props_parser.dart';
@@ -36,6 +37,7 @@ extension LenraComponentWrapperExt on LenraWrapper {
     'actionable': LenraActionableBuilder(),
     'dropdownButton': LenraDropdownButtonBuilder(),
     'flexible': LenraFlexibleBuilder(),
+    'wrap': LenraWrapBuilder(),
   };
 }
 

@@ -8,23 +8,23 @@ class LenraWrapBuilder extends LenraComponentBuilder<LenraApplicationWrap> {
   LenraApplicationWrap map({
     children,
     direction,
-    crossAxisAlignment,
     spacing,
     runSpacing,
+    crossAxisAlignment,
     alignment,
     runAlignment,
-    textDirection,
+    horizontalDirection,
     verticalDirection,
   }) {
     return LenraApplicationWrap(
       children: children,
       direction: direction,
-      crossAxisAlignment: crossAxisAlignment,
       spacing: spacing,
       runSpacing: runSpacing,
+      crossAxisAlignment: crossAxisAlignment,
       alignment: alignment,
       runAlignment: runAlignment,
-      textDirection: textDirection,
+      horizontalDirection: horizontalDirection,
       verticalDirection: verticalDirection,
     );
   }
@@ -33,12 +33,12 @@ class LenraWrapBuilder extends LenraComponentBuilder<LenraApplicationWrap> {
   Map<String, Type> get propsTypes {
     return {
       "direction": Axis,
-      "crossAxisAlignment": WrapCrossAlignment,
       "spacing": double,
       "runSpacing": double,
+      "crossAxisAlignment": WrapCrossAlignment,
       "alignment": WrapAlignment,
       "runAlignment": WrapAlignment,
-      "textDirection": TextDirection,
+      "horizontalDirection": TextDirection,
       "verticalDirection": VerticalDirection
     };
   }
@@ -52,23 +52,23 @@ class LenraWrapBuilder extends LenraComponentBuilder<LenraApplicationWrap> {
 class LenraApplicationWrap extends StatelessWidget {
   final List<Widget> children;
   final Axis? direction;
-  final WrapCrossAlignment? crossAxisAlignment;
   final double? spacing;
   final double? runSpacing;
+  final WrapCrossAlignment? crossAxisAlignment;
   final WrapAlignment? alignment;
   final WrapAlignment? runAlignment;
-  final TextDirection? textDirection;
+  final TextDirection? horizontalDirection;
   final VerticalDirection? verticalDirection;
 
   LenraApplicationWrap({
     required this.children,
     required this.direction,
-    required this.crossAxisAlignment,
     required this.spacing,
     required this.runSpacing,
+    required this.crossAxisAlignment,
     required this.alignment,
     required this.runAlignment,
-    required this.textDirection,
+    required this.horizontalDirection,
     required this.verticalDirection,
   }) : super();
 
@@ -77,12 +77,12 @@ class LenraApplicationWrap extends StatelessWidget {
     return LenraWrap(
       children: children,
       direction: direction ?? Axis.horizontal,
-      crossAxisAlignment: crossAxisAlignment ?? WrapCrossAlignment.start,
       spacing: spacing ?? 0,
       runSpacing: runSpacing ?? 0,
+      crossAxisAlignment: crossAxisAlignment ?? WrapCrossAlignment.start,
       alignment: alignment ?? WrapAlignment.start,
       runAlignment: runAlignment ?? WrapAlignment.start,
-      textDirection: textDirection,
+      horizontalDirection: horizontalDirection,
       verticalDirection: verticalDirection ?? VerticalDirection.down,
     );
   }

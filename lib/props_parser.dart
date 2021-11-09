@@ -34,6 +34,8 @@ extension ParserExt on Parser {
     BoxShape: Parser.parseBoxShape,
     WrapCrossAlignment: Parser.parseWrapCrossAlignment,
     WrapAlignment: Parser.parseWrapAlignment,
+    VerticalDirection: Parser.parseVerticalDirection,
+    TextDirection: Parser.parseTextDirection,
   };
 }
 
@@ -425,21 +427,6 @@ class Parser {
     }
   }
 
-  static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
-    Map<Symbol, dynamic> transformedProps = {};
-
-    props.forEach((key, value) {
-      if (propsTypes.containsKey(key)) {
-        Type type = propsTypes[key]!;
-        if (ParserExt.typeParsers.containsKey(type)) {
-          transformedProps[Symbol(key)] = ParserExt.typeParsers[type]!(value);
-        }
-      }
-    });
-
-    return transformedProps;
-  }
-
   static WrapCrossAlignment parseWrapCrossAlignment(String value) {
     switch (value) {
       case "start":
@@ -470,5 +457,20 @@ class Parser {
       default:
         return WrapAlignment.start;
     }
+  }
+
+  static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
+    Map<Symbol, dynamic> transformedProps = {};
+
+    props.forEach((key, value) {
+      if (propsTypes.containsKey(key)) {
+        Type type = propsTypes[key]!;
+        if (ParserExt.typeParsers.containsKey(type)) {
+          transformedProps[Symbol(key)] = ParserExt.typeParsers[type]!(value);
+        }
+      }
+    });
+
+    return transformedProps;
   }
 }
