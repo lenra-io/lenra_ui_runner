@@ -277,15 +277,15 @@ class Parser {
       decorationStyle: props.containsKey("decorationStyle") ? parseTextDecorationStyle(props["decorationStyle"]) : null,
       decorationThickness: props.containsKey("decorationThickness") ? parseDouble(props["decorationThickness"]) : null,
       fontFamily: props.containsKey("fontFamily") ? parseString(props["fontFamily"]) : null,
-      fontFamilyFallback: props.containsKey("fontFamilyFallback") ? parseColor(props["fontFamilyFallback"]) : null,
+      // fontFamilyFallback: props.containsKey("fontFamilyFallback") ? parseColor(props["fontFamilyFallback"]) : null,
       fontSize: props.containsKey("fontSize") ? parseDouble(props["fontSize"]) : null,
       fontStyle: props.containsKey("fontStyle") ? parseFontStyle(props["fontStyle"]) : null,
       fontWeight: props.containsKey("fontWeight") ? parseFontWeight(props["fontWeight"]) : null,
       height: props.containsKey("height") ? parseDouble(props["height"]) : null,
       letterSpacing: props.containsKey("letterSpacing") ? parseDouble(props["letterSpacing"]) : null,
-      overflow: props.containsKey("overflow") ? parseColor(props["overflow"]) : null,
-      shadows: props.containsKey("shadows") ? parseColor(props["shadows"]) : null,
-      textBaseline: props.containsKey("textBaseline") ? parseColor(props["textBaseline"]) : null,
+      overflow: props.containsKey("overflow") ? parseTextOverflow(props["overflow"]) : null,
+      // shadows: props.containsKey("shadows") ? parseColor(props["shadows"]) : null,
+      textBaseline: props.containsKey("textBaseline") ? parseTextBaseline(props["textBaseline"]) : null,
       wordSpacing: props.containsKey("wordSpacing") ? parseDouble(props["wordSpacing"]) : null,
     );
   }
@@ -367,6 +367,32 @@ class Parser {
         return FontWeight.w900;
       default:
         return FontWeight.normal;
+    }
+  }
+
+  static TextOverflow parseTextOverflow(String value) {
+    switch (value) {
+      case "visible":
+        return TextOverflow.visible;
+      case "clip":
+        return TextOverflow.clip;
+      case "ellipsis":
+        return TextOverflow.ellipsis;
+      case "fade":
+        return TextOverflow.fade;
+      default:
+        return TextOverflow.visible;
+    }
+  }
+
+  static TextBaseline parseTextBaseline(String value) {
+    switch (value) {
+      case "alphabetic":
+        return TextBaseline.alphabetic;
+      case "ideographic":
+        return TextBaseline.ideographic;
+      default:
+        return TextBaseline.alphabetic;
     }
   }
 
