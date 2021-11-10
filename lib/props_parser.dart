@@ -274,18 +274,18 @@ class Parser {
       color: props.containsKey("color") ? parseColor(props["color"]) : null,
       decoration: props.containsKey("decoration") ? parseTextDecoration(props["decoration"]) : null,
       decorationColor: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
-      decorationStyle: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      decorationStyle: props.containsKey("decorationStyle") ? parseTextDecorationStyle(props["decorationStyle"]) : null,
       decorationThickness: props.containsKey("decorationThickness") ? parseDouble(props["decorationThickness"]) : null,
-      fontFamily: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
-      fontFamilyFallback: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      fontFamily: props.containsKey("fontFamily") ? parseString(props["fontFamily"]) : null,
+      fontFamilyFallback: props.containsKey("fontFamilyFallback") ? parseColor(props["fontFamilyFallback"]) : null,
       fontSize: props.containsKey("fontSize") ? parseDouble(props["fontSize"]) : null,
-      fontStyle: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
-      fontWeight: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
-      height: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      fontStyle: props.containsKey("fontStyle") ? parseFontStyle(props["fontStyle"]) : null,
+      fontWeight: props.containsKey("fontWeight") ? parseFontWeight(props["fontWeight"]) : null,
+      height: props.containsKey("height") ? parseDouble(props["height"]) : null,
       letterSpacing: props.containsKey("letterSpacing") ? parseDouble(props["letterSpacing"]) : null,
-      overflow: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
-      shadows: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
-      textBaseline: props.containsKey("decorationColor") ? parseColor(props["decorationColor"]) : null,
+      overflow: props.containsKey("overflow") ? parseColor(props["overflow"]) : null,
+      shadows: props.containsKey("shadows") ? parseColor(props["shadows"]) : null,
+      textBaseline: props.containsKey("textBaseline") ? parseColor(props["textBaseline"]) : null,
       wordSpacing: props.containsKey("wordSpacing") ? parseDouble(props["wordSpacing"]) : null,
     );
   }
@@ -305,11 +305,68 @@ class Parser {
     }
   }
 
+  static TextDecorationStyle parseTextDecorationStyle(String value) {
+    switch (value) {
+      case "solid":
+        return TextDecorationStyle.solid;
+      case "dashed":
+        return TextDecorationStyle.dashed;
+      case "dotted":
+        return TextDecorationStyle.dotted;
+      case "double":
+        return TextDecorationStyle.double;
+      case "wavy":
+        return TextDecorationStyle.wavy;
+      default:
+        return TextDecorationStyle.solid;
+    }
+  }
+
   static Locale parseLocale(Map<String, dynamic> props) {
     if (props.containsKey("languageCode") && props.containsKey("countryCode")) {
       return Locale(props["languageCode"], props["countryCode"]);
     } else {
       return Locale('en', 'EN');
+    }
+  }
+
+  static FontStyle parseFontStyle(String value) {
+    switch (value) {
+      case "normal":
+        return FontStyle.normal;
+      case "italic":
+        return FontStyle.italic;
+      default:
+        return FontStyle.normal;
+    }
+  }
+
+  static FontWeight parseFontWeight(String value) {
+    switch (value) {
+      case "normal":
+        return FontWeight.normal;
+      case "bold":
+        return FontWeight.bold;
+      case "w100":
+        return FontWeight.w100;
+      case "w200":
+        return FontWeight.w200;
+      case "w300":
+        return FontWeight.w300;
+      case "w400":
+        return FontWeight.w400;
+      case "w500":
+        return FontWeight.w500;
+      case "w600":
+        return FontWeight.w600;
+      case "w700":
+        return FontWeight.w700;
+      case "w800":
+        return FontWeight.w800;
+      case "w900":
+        return FontWeight.w900;
+      default:
+        return FontWeight.normal;
     }
   }
 
