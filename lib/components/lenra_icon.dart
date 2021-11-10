@@ -21,8 +21,8 @@ class LenraIconBuilder extends LenraComponentBuilder<LenraApplicationIcon> {
   @override
   Map<String, Type> get propsTypes {
     return {
-      'color': IconData,
-      'icon': Icon,
+      'color': Color,
+      'icon': IconData,
       'semanticLabel': String,
       'size': double,
     };

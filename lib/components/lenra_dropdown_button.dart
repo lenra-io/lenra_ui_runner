@@ -32,7 +32,7 @@ class LenraDropdownButtonBuilder extends LenraComponentBuilder<LenraApplicationD
       "disabled": bool,
       "size": LenraComponentSize,
       "mainStyle": String,
-      "icon": Icon,
+      "icon": Widget,
       "child": Widget,
     };
   }

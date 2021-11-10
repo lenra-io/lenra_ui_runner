@@ -24,7 +24,7 @@ class LenraMenuItemBuilder extends LenraComponentBuilder<LenraApplicationMenuIte
       "text": String,
       "isSelected": bool,
       "disabled": bool,
-      "icon": String,
+      "icon": Widget,
       "onPressed": lenra.Listener,
     };
   }
@@ -34,7 +34,7 @@ class LenraApplicationMenuItem extends StatelessWidget {
   final String text;
   final bool? isSelected;
   final bool? disabled;
-  final String? icon;
+  final IconData? icon;
   final lenra.Listener? onPressed;
 
   LenraApplicationMenuItem({
@@ -53,12 +53,11 @@ class LenraApplicationMenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    IconData? iconData = IconUtil.fromString(icon);
     return LenraMenuItem(
       text: text,
       isSelected: isSelected ?? false,
       disabled: disabled ?? false,
-      icon: iconData == null ? null : _buildIcon(iconData),
+      icon: icon == null ? null : _buildIcon(icon!),
       onPressed: () => onMenuItemPressed(context),
     );
   }

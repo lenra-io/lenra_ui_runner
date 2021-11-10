@@ -30,8 +30,8 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
       "size": LenraComponentSize,
       "mainStyle": String,
       "onPressed": lenra.Listener,
-      "leftIcon": Icon,
-      "rightIcon": Icon,
+      "leftIcon": Widget,
+      "rightIcon": Widget,
     };
   }
 }
