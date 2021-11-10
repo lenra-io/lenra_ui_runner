@@ -28,6 +28,7 @@ extension ParserExt on Parser {
     FlexFit: Parser.parseFlexFit,
     TextStyle: Parser.parseTextStyle,
     Locale: Parser.parseLocale,
+    List: Parser.parseList,
   };
 }
 
@@ -277,14 +278,14 @@ class Parser {
       decorationStyle: props.containsKey("decorationStyle") ? parseTextDecorationStyle(props["decorationStyle"]) : null,
       decorationThickness: props.containsKey("decorationThickness") ? parseDouble(props["decorationThickness"]) : null,
       fontFamily: props.containsKey("fontFamily") ? parseString(props["fontFamily"]) : null,
-      // fontFamilyFallback: props.containsKey("fontFamilyFallback") ? parseColor(props["fontFamilyFallback"]) : null,
+      fontFamilyFallback: props.containsKey("fontFamilyFallback") ? parseList(props["fontFamilyFallback"]) : null,
       fontSize: props.containsKey("fontSize") ? parseDouble(props["fontSize"]) : null,
       fontStyle: props.containsKey("fontStyle") ? parseFontStyle(props["fontStyle"]) : null,
       fontWeight: props.containsKey("fontWeight") ? parseFontWeight(props["fontWeight"]) : null,
       height: props.containsKey("height") ? parseDouble(props["height"]) : null,
       letterSpacing: props.containsKey("letterSpacing") ? parseDouble(props["letterSpacing"]) : null,
       overflow: props.containsKey("overflow") ? parseTextOverflow(props["overflow"]) : null,
-      // shadows: props.containsKey("shadows") ? parseColor(props["shadows"]) : null,
+      shadows: props.containsKey("shadows") ? parseList(props["shadows"]) : null,
       textBaseline: props.containsKey("textBaseline") ? parseTextBaseline(props["textBaseline"]) : null,
       wordSpacing: props.containsKey("wordSpacing") ? parseDouble(props["wordSpacing"]) : null,
     );
@@ -394,6 +395,10 @@ class Parser {
       default:
         return TextBaseline.alphabetic;
     }
+  }
+
+  static List<T> parseList<T>(List<T> list) {
+    return list;
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
