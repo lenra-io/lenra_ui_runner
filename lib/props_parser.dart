@@ -25,7 +25,7 @@ extension ParserExt on Parser {
     BorderRadius: Parser.parseBorderRadius,
     BoxShadow: Parser.parseBoxShadow,
     EdgeInsets: Parser.parseEdgeInsets,
-    Icon: Parser.parseIcon,
+    IconData: Parser.parseIconData,
     lenra.Listener: Parser.parseListener,
     LenraComponentSize: Parser.parseLenraComponentSize,
     int: Parser.parseInteger,
@@ -264,8 +264,8 @@ class Parser {
     );
   }
 
-  static Icon parseIcon(String value) {
-    return Icon(IconUtil.fromString(value));
+  static IconData? parseIconData(String value) {
+    return IconUtil.fromString(value);
   }
 
   static LenraToggleStyle parseLenraToggleStyle(Map<String, dynamic> props) {
