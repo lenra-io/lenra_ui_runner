@@ -3,7 +3,7 @@ import 'package:lenra_components/component/lenra_slider.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 
-// TODO : generate this from annotation on LenraButton
+// TODO : generate this from annotation on LenraSlider
 class LenraSliderBuilder extends LenraComponentBuilder<LenraApplicationSlider> {
   @override
   LenraApplicationSlider map({style, autofocus, divisions, label, max, min, onChanged, onChangeEnd, onChangeStart, value}) {
