@@ -2,6 +2,7 @@ library props_parser;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/utils/icon_util.dart';
@@ -26,6 +27,8 @@ extension ParserExt on Parser {
     int: Parser.parseInteger,
     LenraTextStyle: Parser.parseLenraTextStyle,
     FlexFit: Parser.parseFlexFit,
+    MaterialTapTargetSize: Parser.parseMaterialTapTargetSize,
+    LenraRadioStyle: Parser.parseLenraRadioStyle,
   };
 }
 
@@ -231,6 +234,41 @@ class Parser {
         return LenraTextStyle.errorText;
       default:
         return LenraTextStyle.bodyText;
+    }
+  }
+
+  static MaterialTapTargetSize parseMaterialTapTargetSize(String value) {
+    switch (value) {
+      case "padded":
+        return MaterialTapTargetSize.padded;
+      case "shrinkWrap":
+        return MaterialTapTargetSize.shrinkWrap;
+      default:
+        return MaterialTapTargetSize.shrinkWrap;
+    }
+  }
+
+  static LenraRadioStyle parseLenraRadioStyle(Map<String, dynamic> props) {
+    return LenraRadioStyle(
+      activeColor: props.containsKey("activeColor") ? parseColor(props["activeColor"]) : null,
+      focusColor: props.containsKey("focusColor") ? parseColor(props["focusColor"]) : null,
+      hoverColor: props.containsKey("hoverColor") ? parseColor(props["hoverColor"]) : null,
+      splashRadius: props.containsKey("splashRadius") ? parseDouble(props["splashRadius"]) : null,
+      visualDensity:
+          props.containsKey("visualDensity") ? parseVisualDensity(props["visualDensity"]) : null,
+    );
+  }
+
+  static VisualDensity parseVisualDensity(String value) {
+    switch (value) {
+      case "comfortable":
+        return VisualDensity.comfortable;
+      case "compact":
+        return VisualDensity.compact;
+      case "standard":
+        return VisualDensity.standard;
+      default:
+        return VisualDensity.standard;
     }
   }
 
