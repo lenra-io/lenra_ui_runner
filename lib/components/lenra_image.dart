@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/lenra_application_model.dart';
-import '../lenra_component_builder.dart';
+import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:provider/provider.dart';
 
 // TODO : generate this from annotation on LenraImage
@@ -55,7 +55,6 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
       "height": double,
       "alignment": AlignmentGeometry,
       "centerSlice": Rect,
-      "errorBuilder": ImageErrorWidgetBuilder,
       "excludeFromSemantics": bool,
       "filterQuality": FilterQuality,
       "fit": BoxFit,
@@ -68,6 +67,11 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
       "semanticLabel": String,
     };
   }
+
+  @override
+  List<String> get childKeys {
+    return ["errorBuilder"];
+  }
 }
 
 class LenraApplicationImage extends StatelessWidget {
@@ -77,7 +81,7 @@ class LenraApplicationImage extends StatelessWidget {
   final double? width;
   final AlignmentGeometry? alignment;
   final Rect? centerSlice;
-  final ImageErrorWidgetBuilder? errorBuilder;
+  final Widget? errorBuilder;
   final bool? excludeFromSemantics;
   final FilterQuality? filterQuality;
   final BoxFit? fit;
@@ -109,6 +113,16 @@ class LenraApplicationImage extends StatelessWidget {
     required this.semanticLabel,
   }) : super();
 
+  Widget onError(BuildContext context, Object error, StackTrace? stackTrace) {
+    // TODO: Dispatch an event and return a widget.
+    // if (errorBuilder != null) {
+    //   OnChangedEvent(code: errorBuilder!.code, data: ValueData(error.toString())).dispatch(context);
+    // }
+
+    // TODO : Create a default ImageError widget and return it when errorBuilder is null.
+    return errorBuilder ?? Container();
+  }
+
   @override
   Widget build(BuildContext context) {
     var model = context.read<LenraApplicationModel>();
@@ -123,7 +137,7 @@ class LenraApplicationImage extends StatelessWidget {
       width: width,
       alignment: alignment ?? Alignment.center,
       centerSlice: centerSlice,
-      errorBuilder: errorBuilder,
+      errorBuilder: (context, error, stackTrace) => onError(context, error, stackTrace),
       excludeFromSemantics: excludeFromSemantics ?? false,
       filterQuality: filterQuality ?? FilterQuality.low,
       fit: fit,
