@@ -88,7 +88,7 @@ class LenraApplicationImage extends StatelessWidget {
   final ImageFrameBuilder? frameBuilder;
   final bool? gaplessPlayback;
   final bool? isAntiAlias;
-  final ImageLoadingBuilder? loadingBuilder;
+  final Widget? loadingBuilder;
   final Animation<double>? opacity;
   final ImageRepeat? repeat;
   final String? semanticLabel;
@@ -119,8 +119,14 @@ class LenraApplicationImage extends StatelessWidget {
     //   OnChangedEvent(code: errorBuilder!.code, data: ValueData(error.toString())).dispatch(context);
     // }
 
-    // TODO : Create a default ImageError widget and return it when errorBuilder is null.
+    // TODO: Create a default ImageError widget and return it when errorBuilder is null.
     return errorBuilder ?? Container();
+  }
+
+  Widget loading(BuildContext context, Widget child, ImageChunkEvent? event) {
+    // TODO: Dispatch an event and return a widget.
+    // TODO: Create a default ImageLoader widget and return it when loadingBuilder is null.
+    return loadingBuilder ?? Container();
   }
 
   @override
@@ -144,7 +150,7 @@ class LenraApplicationImage extends StatelessWidget {
       frameBuilder: frameBuilder,
       gaplessPlayback: gaplessPlayback ?? false,
       isAntiAlias: isAntiAlias ?? false,
-      loadingBuilder: loadingBuilder,
+      loadingBuilder: (context, child, event) => loading(context, child, event),
       opacity: opacity,
       repeat: repeat ?? ImageRepeat.noRepeat,
       semanticLabel: semanticLabel,
