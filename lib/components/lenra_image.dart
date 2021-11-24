@@ -14,13 +14,13 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
     alignment,
     centerSlice,
     errorBuilder,
+    loadingBuilder,
     excludeFromSemantics,
     filterQuality,
     fit,
     frameBuilder,
     gaplessPlayback,
     isAntiAlias,
-    loadingBuilder,
     opacity,
     repeat,
     semanticLabel,
@@ -33,13 +33,13 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
       alignment: alignment,
       centerSlice: centerSlice,
       errorBuilder: errorBuilder,
+      loadingBuilder: loadingBuilder,
       excludeFromSemantics: excludeFromSemantics,
       filterQuality: filterQuality,
       fit: fit,
       frameBuilder: frameBuilder,
       gaplessPlayback: gaplessPlayback,
       isAntiAlias: isAntiAlias,
-      loadingBuilder: loadingBuilder,
       opacity: opacity,
       repeat: repeat,
       semanticLabel: semanticLabel,
@@ -61,7 +61,6 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
       "frameBuilder": ImageFrameBuilder,
       "gaplessPlayback": bool,
       "isAntiAlias": bool,
-      "loadingBuilder": ImageLoadingBuilder,
       "opacity": Animation,
       "repeat": ImageRepeat,
       "semanticLabel": String,
@@ -70,7 +69,7 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
 
   @override
   List<String> get childKeys {
-    return ["errorBuilder"];
+    return ["errorBuilder", "loadingBuilder"];
   }
 }
 
@@ -82,13 +81,13 @@ class LenraApplicationImage extends StatelessWidget {
   final AlignmentGeometry? alignment;
   final Rect? centerSlice;
   final Widget? errorBuilder;
+  final Widget? loadingBuilder;
   final bool? excludeFromSemantics;
   final FilterQuality? filterQuality;
   final BoxFit? fit;
   final ImageFrameBuilder? frameBuilder;
   final bool? gaplessPlayback;
   final bool? isAntiAlias;
-  final Widget? loadingBuilder;
   final Animation<double>? opacity;
   final ImageRepeat? repeat;
   final String? semanticLabel;
@@ -101,13 +100,13 @@ class LenraApplicationImage extends StatelessWidget {
     required this.alignment,
     required this.centerSlice,
     required this.errorBuilder,
+    required this.loadingBuilder,
     required this.excludeFromSemantics,
     required this.filterQuality,
     required this.fit,
     required this.frameBuilder,
     required this.gaplessPlayback,
     required this.isAntiAlias,
-    required this.loadingBuilder,
     required this.opacity,
     required this.repeat,
     required this.semanticLabel,
