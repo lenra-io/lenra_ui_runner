@@ -6,7 +6,7 @@ import '../lenra_component_builder.dart';
 class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
   @override
   LenraApplicationText map({
-    text,
+    value,
     children,
     style,
     locale,
@@ -14,7 +14,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
     spellOut,
   }) {
     return LenraApplicationText(
-      text: text,
+      value: value,
       children: children,
       style: style,
       locale: locale,
@@ -26,7 +26,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
   @override
   Map<String, Type> get propsTypes {
     return {
-      "text": String,
+      "value": String,
       "style": TextStyle,
       "locale": Locale,
       "semanticsLabel": String,
@@ -41,7 +41,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
 }
 
 class LenraApplicationText extends StatelessWidget {
-  final String text;
+  final String value;
   final List<LenraText>? children;
   final TextStyle? style;
   final Locale? locale;
@@ -49,7 +49,7 @@ class LenraApplicationText extends StatelessWidget {
   final bool? spellOut;
 
   LenraApplicationText({
-    required this.text,
+    required this.value,
     required this.children,
     required this.style,
     required this.locale,
@@ -60,7 +60,7 @@ class LenraApplicationText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LenraText(
-      text: text,
+      text: value,
       children: children,
       style: style,
       locale: locale,
