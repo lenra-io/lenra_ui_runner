@@ -13,7 +13,7 @@ class LeftMenu extends StatelessWidget {
   static const lenraStatusStickerPage = "lenraStatusStickerPage";
   static const lenraButtonPage = "lenraButtonPage";
   static const lenraFlexPage = "lenraFlexPage";
-  static const lenraStyledContainerPage = "lenraStyledContainerPage";
+  static const lenraContainerPage = "lenraContainerPage";
   static const lenraTextFieldPage = "lenraTextFieldPage";
   static const lenraTextPage = "lenraTextPage";
   static const lenraDropdownButtonPage = "lenraDropdownButtonPage";
@@ -38,7 +38,7 @@ class LeftMenu extends StatelessWidget {
         createMenu(context, 'Lenra Status Sticker', lenraStatusStickerPage),
         createMenu(context, 'LenraButtonPage', lenraButtonPage),
         createMenu(context, 'Lenra Flex', lenraFlexPage),
-        createMenu(context, 'Styled Container', lenraStyledContainerPage),
+        createMenu(context, 'Container', lenraContainerPage),
         createMenu(context, 'Lenra TextField', lenraTextFieldPage),
         createMenu(context, 'Lenra Text', lenraTextPage),
         createMenu(context, 'Dropdown Button', lenraDropdownButtonPage),

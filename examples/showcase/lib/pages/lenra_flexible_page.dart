@@ -16,8 +16,10 @@ class _LenraFlexiblePageState extends UiBuilderState<LenraFlexiblePage, bool> {
       "fit": "tight",
       "flex": flex,
       "child": {
-        "type": "styledContainer",
-        "color": color,
+        "type": "container",
+        "decoration": {
+          "color": color,
+        },
         "child": {"type": "text", "value": " "}
       }
     };
@@ -29,7 +31,7 @@ class _LenraFlexiblePageState extends UiBuilderState<LenraFlexiblePage, bool> {
       "fit": "tight",
       "flex": flex,
       "child": {
-        "type": "styledContainer",
+        "type": "container",
         "child": {
           "type": "flex",
           "fillParent": true,

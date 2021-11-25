@@ -45,8 +45,10 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
             ],
           },
           {
-            "type": "styledContainer",
-            "color": 0xffaabbcc,
+            "type": "container",
+            "decoration": {
+              "color": 0xffaabbcc,
+            },
             "child": {
               "type": "flex",
               "padding": {
@@ -57,8 +59,10 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
               },
               "children": [
                 {
-                  "type": "styledContainer",
-                  "color": 0xffffffff,
+                  "type": "container",
+                  "decoration": {
+                    "color": 0xffffffff,
+                  },
                   "child": {
                     "type": "text",
                     "value": "padding",
