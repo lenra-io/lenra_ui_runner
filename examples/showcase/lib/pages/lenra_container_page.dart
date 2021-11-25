@@ -54,7 +54,7 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
                 }
               }
             },
-            "child": {"type": "text", "value": "Styled Container"},
+            "child": {"type": "text", "value": "Container"},
           }
         ]
       }
