@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-
+import 'package:flutter/widgets.dart';
 import 'package:lenra_components/layout/lenra_flex.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 
@@ -15,6 +14,9 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
     fillParent,
     scroll,
     padding,
+    horizontalDirection,
+    verticalDirection,
+    textBaseline,
   }) {
     return LenraApplicationFlex(
       children: children,
@@ -25,6 +27,9 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
       fillParent: fillParent,
       scroll: scroll,
       padding: padding,
+      horizontalDirection: horizontalDirection,
+      verticalDirection: verticalDirection,
+      textBaseline: textBaseline,
     );
   }
 
@@ -38,6 +43,9 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
       "fillParent": bool,
       "scroll": bool,
       "padding": EdgeInsets,
+      "horizontalDirection": TextDirection,
+      "verticalDirection": VerticalDirection,
+      "textBaseline": TextBaseline,
     };
   }
 
@@ -56,6 +64,9 @@ class LenraApplicationFlex extends StatelessWidget {
   final bool? fillParent;
   final bool? scroll;
   final EdgeInsets? padding;
+  final TextDirection? horizontalDirection;
+  final VerticalDirection? verticalDirection;
+  final TextBaseline? textBaseline;
 
   LenraApplicationFlex({
     required this.children,
@@ -66,6 +77,9 @@ class LenraApplicationFlex extends StatelessWidget {
     required this.fillParent,
     required this.scroll,
     required this.padding,
+    required this.horizontalDirection,
+    required this.verticalDirection,
+    required this.textBaseline,
   }) : super();
 
   @override
@@ -79,6 +93,9 @@ class LenraApplicationFlex extends StatelessWidget {
       fillParent: fillParent ?? false,
       scroll: scroll ?? false,
       padding: padding,
+      horizontalDirection: horizontalDirection,
+      verticalDirection: verticalDirection ?? VerticalDirection.down,
+      textBaseline: textBaseline,
     );
   }
 }
