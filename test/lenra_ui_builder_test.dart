@@ -141,7 +141,7 @@ void main() {
     expect(find.text("bar"), findsOneWidget);
   });
 
-  testWidgets('Change child of styledContainer', (WidgetTester tester) async {
+  testWidgets('Change child of container', (WidgetTester tester) async {
     StreamController<Map<String, dynamic>> uiStream = StreamController();
     StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
 
@@ -162,7 +162,7 @@ void main() {
     List<Map<String, dynamic>> patches = [
       {"op": "remove", "path": "/root/onPressed"},
       {"op": "remove", "path": "/root/text"},
-      {"op": "replace", "path": "/root/type", "value": "styledContainer"},
+      {"op": "replace", "path": "/root/type", "value": "container"},
       {
         "op": "add",
         "path": "/root/child",
