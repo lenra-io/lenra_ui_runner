@@ -386,17 +386,6 @@ class Parser {
     }
   }
 
-  static TextBaseline parseTextBaseline(String value) {
-    switch (value) {
-      case "alphabetic":
-        return TextBaseline.alphabetic;
-      case "ideographic":
-        return TextBaseline.ideographic;
-      default:
-        return TextBaseline.alphabetic;
-    }
-  }
-
   static List<T> parseList<T>(List<T> list) {
     return list;
   }
