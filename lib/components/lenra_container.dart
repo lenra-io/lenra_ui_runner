@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/layout/lenra_container.dart';
 import '../../lenra_component_builder.dart';
 
-// TODO : generate this from annotation on LenraApplicationStyledContainer
+// TODO : generate this from annotation on LenraApplicationContainer
 class LenraContainerBuilder extends LenraComponentBuilder<LenraApplicationContainer> {
   @override
   LenraApplicationContainer map({
