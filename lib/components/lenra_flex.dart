@@ -94,7 +94,7 @@ class LenraApplicationFlex extends StatelessWidget {
       scroll: scroll ?? false,
       padding: padding,
       horizontalDirection: horizontalDirection,
-      verticalDirection: verticalDirection,
+      verticalDirection: verticalDirection ?? VerticalDirection.down,
       textBaseline: textBaseline,
     );
   }
