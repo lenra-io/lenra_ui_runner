@@ -14,6 +14,7 @@ import 'package:showcase/pages/lenra_button_page.dart';
 import 'package:showcase/pages/lenra_flex_page.dart';
 import 'package:showcase/pages/lenra_container_page.dart';
 import 'package:showcase/pages/lenra_textfield_page.dart';
+import 'package:showcase/pages/lenra_wrap_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -55,6 +56,8 @@ class _MyAppState extends State<MyApp> {
         return LenraDropdownButtonPage();
       case LeftMenu.lenraFlexiblePage:
         return LenraFlexiblePage();
+      case LeftMenu.lenraWrapPage:
+        return LenraWrapPage();
     }
     return Text("N/A");
   }
