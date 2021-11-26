@@ -86,8 +86,10 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     String childrenKey,
     String path,
   ) {
-    List<String> newChildrenProps = registerChildren(properties[childrenKey] as List, childrenKey, path);
-    properties[childrenKey] = newChildrenProps;
+    List<String>? newChildrenProps = registerChildren(properties[childrenKey] as List?, childrenKey, path);
+    if (newChildrenProps != null) {
+      properties[childrenKey] = newChildrenProps;
+    }
   }
 
   void registerChildOf(Map<String, dynamic> properties, String path) {
@@ -115,18 +117,20 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     return id;
   }
 
-  List<String> registerChildren(
-    List children,
+  List<String>? registerChildren(
+    List? children,
     String childrenKey,
     String path,
   ) {
     int idx = 0;
-    return children.map((dynamic child) {
-      String id = "$path/$childrenKey/$idx";
-      registerComponent(child as Map<String, dynamic>, id);
-      idx++;
-      return id;
-    }).toList();
+    if (children != null) {
+      return children.map((dynamic child) {
+        String id = "$path/$childrenKey/$idx";
+        registerComponent(child as Map<String, dynamic>, id);
+        idx++;
+        return id;
+      }).toList();
+    }
   }
 
   void registerProperties(String id, Map<String, dynamic> properties) {

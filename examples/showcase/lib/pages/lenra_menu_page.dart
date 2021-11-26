@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:showcase/ui_builder.dart';
@@ -24,7 +22,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
               {
                 "type": "menuItem",
                 "text": "First",
-                "isSelected": DataListElement,
+                "isSelected": data,
                 "disabled": true,
                 "icon": "ac_unit",
                 "onPressed": {
