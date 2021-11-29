@@ -9,7 +9,7 @@ class LenraOverlayEntryPage extends StatefulWidget {
   }
 }
 
-class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, bool> {
+class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, Map<String, dynamic>> {
   @override
   Map<String, dynamic> get ui {
     return {
@@ -40,6 +40,12 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
               },
             }
           },
+          {
+            "type": "button",
+            "text": "Show pop-up",
+            "onPressed": {"code": "showPopUp"}
+          },
+          {"type": "flex", "children": data.containsKey("popups") ? data["popups"] : []}
         ]
       }
     };
@@ -47,6 +53,28 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
 
   @override
   getData(Event event) {
-    return false;
+    if (event.code == "showPopUp") {
+      return {
+        "popups": [
+          {
+            "type": "overlayEntry",
+            "child": {
+              "type": "flex",
+              "mainAxisAlignment": "center",
+              "crossAxisAlignment": "end",
+              "children": [
+                {"type": "text", "value": "This is a pop-up."},
+                {
+                  "type": "button",
+                  "text": "Foo",
+                }
+              ]
+            }
+          }
+        ]
+      };
+    }
+
+    return {};
   }
 }
