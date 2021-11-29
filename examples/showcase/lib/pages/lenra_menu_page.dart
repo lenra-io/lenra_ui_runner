@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:showcase/ui_builder.dart';
