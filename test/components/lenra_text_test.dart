@@ -23,7 +23,7 @@ void main() {
         "value": "foo",
         "spellOut": true,
         "style": {
-          "fontSize": '2',
+          "fontSize": 2,
           "fontStyle": "italic",
         },
         "semanticsLabel": "bar",
@@ -37,19 +37,17 @@ void main() {
     uiStream.add(ui);
 
     await tester.pump();
-    var style = const TextStyle(
-      fontSize: 2,
-      fontStyle: FontStyle.italic,
-    );
+
     var locale = const Locale('fr', 'FR');
     var text = find.byType(LenraText);
-    expect(tester.widget<LenraText>(text).text, "foo");
-    expect(tester.widget<LenraText>(text).spellOut, true);
-    expect(tester.widget<LenraText>(text).style, style);
-    expect(tester.widget<LenraText>(text).semanticsLabel, "bar");
-    expect(tester.widget<LenraText>(text).locale, locale);
+    var textWidget = tester.widget<LenraText>(text);
+    expect(textWidget.text, "foo");
+    expect(textWidget.spellOut, true);
+    expect(textWidget.style!.fontSize, 2);
+    expect(textWidget.style!.fontStyle, FontStyle.italic);
+    expect(textWidget.semanticsLabel, "bar");
+    expect(textWidget.locale, locale);
     expect(find.byType(LenraText), findsOneWidget);
-    expect(find.text("foo"), findsOneWidget);
   });
 
   testWidgets('Test Text children', (WidgetTester tester) async {
