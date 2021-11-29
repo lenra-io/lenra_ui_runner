@@ -70,9 +70,9 @@ class Parser {
 
   static Axis parseAxis(String axis) {
     switch (axis) {
-      case "col":
+      case "vertical":
         return Axis.vertical;
-      case "row":
+      case "horizontal":
         return Axis.horizontal;
       default:
         return Axis.horizontal;
@@ -408,7 +408,6 @@ class Parser {
 
   static BoxDecoration parseBoxDecoration(Map<String, dynamic> props) {
     return BoxDecoration(
-      border: props.containsKey("border") ? parseBorder(props["border"]) : null,
       borderRadius: props.containsKey("borderRadius") ? parseBorderRadius(props["borderRadius"]) : null,
       boxShadow: props.containsKey("boxShadow") ? [parseBoxShadow(props["boxShadow"])] : null,
       color: props.containsKey("color") ? parseColor(props["color"]) : null,

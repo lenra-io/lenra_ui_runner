@@ -52,7 +52,7 @@ class _LenraFlexiblePageState extends UiBuilderState<LenraFlexiblePage, bool> {
     return {
       "root": {
         "type": "flex",
-        "direction": "col",
+        "direction": "vertical",
         "spacing": 1,
         "padding": {"top": 1, "bottom": 1, "right": 1, "left": 1},
         "fillParent": true,

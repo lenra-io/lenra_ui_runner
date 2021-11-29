@@ -15,7 +15,7 @@ class _LenraTextPageState extends UiBuilderState<LenraTextPage, bool> {
     return {
       "root": {
         "type": "flex",
-        "direction": "col",
+        "direction": "vertical",
         "children": [
           {"type": "text", "value": "headline1", "style": "headline1"},
           {"type": "text", "value": "headline2", "style": "headline2"},
