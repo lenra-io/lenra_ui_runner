@@ -15,12 +15,29 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
     return {
       "root": {
         "type": "flex",
+        "fillParent": true,
+        "mainAxisAlignment": "center",
+        "crossAxisAlignment": "center",
         "children": [
           {
             "type": "overlayEntry",
             "child": {
-              "type": "text",
-              "value": "Foo",
+              "type": "container",
+              "decoration": {
+                "color": 0x44000000,
+              },
+              "child": {
+                "type": "flex",
+                "mainAxisAlignment": "center",
+                "crossAxisAlignment": "center",
+                "children": [
+                  {"type": "text", "value": "This is an overlay."},
+                  {
+                    "type": "button",
+                    "text": "Foo",
+                  }
+                ]
+              },
             }
           },
         ]
