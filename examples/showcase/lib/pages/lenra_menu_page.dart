@@ -24,7 +24,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
               {
                 "type": "menuItem",
                 "text": "First",
-                "isSelected": DataListElement,
+                "isSelected": data,
                 "disabled": true,
                 "icon": "ac_unit",
                 "onPressed": {

@@ -8,12 +8,14 @@ class LenraContainerBuilder extends LenraComponentBuilder<LenraApplicationContai
   LenraApplicationContainer map({
     child,
     padding,
+    border,
     constraints,
     decoration,
   }) {
     return LenraApplicationContainer(
       child: child,
       padding: padding,
+      border: border,
       constraints: constraints,
       decoration: decoration,
     );
@@ -23,6 +25,7 @@ class LenraContainerBuilder extends LenraComponentBuilder<LenraApplicationContai
   Map<String, Type> get propsTypes {
     return {
       "padding": EdgeInsets,
+      "border": Border,
       "constraints": BoxConstraints,
       "decoration": BoxDecoration,
     };
@@ -37,21 +40,25 @@ class LenraContainerBuilder extends LenraComponentBuilder<LenraApplicationContai
 class LenraApplicationContainer extends StatelessWidget {
   final Widget child;
   final EdgeInsets? padding;
+  final Border? border;
   final BoxConstraints? constraints;
   final BoxDecoration? decoration;
 
   LenraApplicationContainer({
     required this.child,
     required this.padding,
+    required this.border,
     required this.constraints,
     required this.decoration,
   }) : super();
 
   @override
   Widget build(BuildContext context) {
+    BoxDecoration().copyWith(border: border);
     return LenraContainer(
       child: child,
       padding: padding,
+      border: border,
       constraints: constraints,
       decoration: decoration,
     );

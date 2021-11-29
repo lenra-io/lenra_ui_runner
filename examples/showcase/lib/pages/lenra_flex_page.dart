@@ -21,7 +21,7 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
             "children": [
               {
                 "type": "flex",
-                "direction": "row",
+                "direction": "vertical",
                 "spacing": 3,
                 "children": [
                   {"type": "text", "value": "first"},
@@ -35,7 +35,7 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
             "children": [
               {
                 "type": "flex",
-                "direction": "col",
+                "direction": "vertical",
                 "spacing": 3,
                 "children": [
                   {"type": "text", "value": "first"},
