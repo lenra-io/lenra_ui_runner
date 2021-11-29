@@ -16,16 +16,23 @@ class _LenraTextPageState extends UiBuilderState<LenraTextPage, bool> {
       "root": {
         "type": "text",
         "value": "Test",
-        "children": [
-          {
-            "type": "text",
-            "value": "Foo",
-            "children": [
-              {"type": "text", "value": "Baz"}
-            ]
-          },
-          {"type": "text", "value": "Bar"}
-        ]
+        "style": {
+          "color": 0xFFFF0000,
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "fontStyle": "italic",
+          "textDecoration": "underline",
+        }
+        // "children": [
+        //   {
+        //     "type": "text",
+        //     "value": "Foo",
+        //     "children": [
+        //       {"type": "text", "value": "Baz"}
+        //     ]
+        //   },
+        //   {"type": "text", "value": "Bar"}
+        // ]
       }
     };
   }

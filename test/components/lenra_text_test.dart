@@ -50,35 +50,35 @@ void main() {
     expect(find.byType(LenraText), findsOneWidget);
   });
 
-  testWidgets('Test Text children', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+  // testWidgets('Test Text children', (WidgetTester tester) async {
+  //   StreamController<Map<String, dynamic>> uiStream = StreamController();
+  //   StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
 
-    await tester.pumpWidget(
-      createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-      ),
-    );
+  //   await tester.pumpWidget(
+  //     createBaseTestWidgets(
+  //       child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+  //     ),
+  //   );
 
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "text",
-        "value": "Test",
-        "children": [
-          {
-            "type": "text",
-            "value": "Foo",
-            "children": [
-              {"type": "text", "value": "Baz"}
-            ]
-          },
-          {"type": "text", "value": "Bar"}
-        ]
-      }
-    };
+  //   Map<String, dynamic> ui = {
+  //     "root": {
+  //       "type": "text",
+  //       "value": "Test",
+  //       "children": [
+  //         {
+  //           "type": "text",
+  //           "value": "Foo",
+  //           "children": [
+  //             {"type": "text", "value": "Baz"}
+  //           ]
+  //         },
+  //         {"type": "text", "value": "Bar"}
+  //       ]
+  //     }
+  //   };
 
-    uiStream.add(ui);
-    await tester.pump();
-    expect(find.text("TestFooBazBar"), findsOneWidget);
-  });
+  //   uiStream.add(ui);
+  //   await tester.pump();
+  //   expect(find.text("TestFooBazBar"), findsOneWidget);
+  // });
 }
