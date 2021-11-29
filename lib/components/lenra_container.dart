@@ -54,7 +54,6 @@ class LenraApplicationContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BoxDecoration().copyWith(border: border);
     return LenraContainer(
       child: child,
       padding: padding,
