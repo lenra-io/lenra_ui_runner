@@ -33,8 +33,8 @@ class LenraStackBuilder extends LenraComponentBuilder<LenraApplicationStack> {
 
 class LenraApplicationStack extends StatelessWidget {
   final List<Widget> children;
-  final Alignment alignment;
-  final StackFit fit;
+  final Alignment? alignment;
+  final StackFit? fit;
 
   LenraApplicationStack({
     required this.children,
