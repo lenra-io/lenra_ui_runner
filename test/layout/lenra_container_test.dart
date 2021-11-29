@@ -22,19 +22,24 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "container",
-        "child": {"type": "text", "value": "foo"},
-        "padding": {"top": 2.0, "bottom": 2.0, "right": 2.0, "left": 2.0},
-        "constraints": {},
+        "child": {
+          "type": "text",
+          "value": "foo",
+        },
+        "padding": {
+          "top": 2.0,
+          "bottom": 2.0,
+          "right": 2.0,
+          "left": 2.0,
+        },
       }
     };
 
     uiStream.add(ui);
     await tester.pump();
-    debugDumpApp();
-    var container = find.byType(Container);
-    expect(find.byType(LenraContainer), findsOneWidget);
-    // expect(tester.widget<LenraContainer>(container).padding!.horizontal, 4);
-    // expect(tester.widget<Container>(container).constraints!.minWidth, 0.0);
-    // expect(tester.widget<Container>(container).color, Colors.red[900]);
+    // debugDumpApp();
+    var container = find.byType(LenraContainer);
+    expect(container, findsOneWidget);
+    expect(tester.widget<LenraContainer>(container).padding!.horizontal, 4);
   });
 }

@@ -203,10 +203,6 @@ class Parser {
   }
 
   static EdgeInsets parseEdgeInsets(Map<String, dynamic> props) {
-    print(props.containsKey("left") ? parseDouble(props["left"]) : 0);
-    print(props.containsKey("top") ? parseDouble(props["top"]) : 0);
-    print(props.containsKey("right") ? parseDouble(props["right"]) : 0);
-    print(props.containsKey("bottom") ? parseDouble(props["bottom"]) : 0);
     return EdgeInsets.only(
       left: props.containsKey("left") ? parseDouble(props["left"]) : 0,
       top: props.containsKey("top") ? parseDouble(props["top"]) : 0,
@@ -411,7 +407,6 @@ class Parser {
   }
 
   static BoxDecoration parseBoxDecoration(Map<String, dynamic> props) {
-    print(props.containsKey("color") ? parseColor(props["color"]) : null);
     return BoxDecoration(
       borderRadius: props.containsKey("borderRadius") ? parseBorderRadius(props["borderRadius"]) : null,
       boxShadow: props.containsKey("boxShadow") ? [parseBoxShadow(props["boxShadow"])] : null,
