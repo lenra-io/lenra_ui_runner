@@ -7,7 +7,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
   @override
   LenraApplicationText map({
     value,
-    children,
+    // children,
     style,
     locale,
     semanticsLabel,
@@ -15,7 +15,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
   }) {
     return LenraApplicationText(
       value: value,
-      children: children,
+      // children: children,
       style: style,
       locale: locale,
       semanticsLabel: semanticsLabel,
@@ -34,15 +34,15 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
     };
   }
 
-  @override
-  List<String> get childrenKeys {
-    return ["children"];
-  }
+  // @override
+  // List<String> get childrenKeys {
+  //   return ["children"];
+  // }
 }
 
 class LenraApplicationText extends StatelessWidget {
   final String value;
-  final List<LenraText>? children;
+  // final List<LenraText>? children;
   final TextStyle? style;
   final Locale? locale;
   final String? semanticsLabel;
@@ -50,7 +50,7 @@ class LenraApplicationText extends StatelessWidget {
 
   LenraApplicationText({
     required this.value,
-    required this.children,
+    // required this.children,
     required this.style,
     required this.locale,
     required this.semanticsLabel,
@@ -61,7 +61,7 @@ class LenraApplicationText extends StatelessWidget {
   Widget build(BuildContext context) {
     return LenraText(
       text: value,
-      children: children,
+      // children: children,
       style: style,
       locale: locale,
       semanticsLabel: semanticsLabel,
