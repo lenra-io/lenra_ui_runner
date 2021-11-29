@@ -23,8 +23,8 @@ class LenraFlexibleBuilder extends LenraComponentBuilder<LenraApplicationFlexibl
 
 class LenraApplicationFlexible extends StatelessWidget {
   final Widget child;
-  final FlexFit fit;
-  final int flex;
+  final FlexFit? fit;
+  final int? flex;
 
   LenraApplicationFlexible({
     required this.child,
@@ -36,8 +36,8 @@ class LenraApplicationFlexible extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flexible(
       child: child,
-      fit: fit,
-      flex: flex,
+      fit: fit ?? FlexFit.tight,
+      flex: flex ?? 1,
     );
   }
 }

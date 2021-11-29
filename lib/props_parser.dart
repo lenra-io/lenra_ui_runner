@@ -64,7 +64,7 @@ class Parser {
       case "tight":
         return FlexFit.tight;
       default:
-        return FlexFit.loose;
+        return FlexFit.tight;
     }
   }
 
