@@ -43,12 +43,12 @@ void main() {
 
     uiStream.add(ui);
     await tester.pump();
-    // debugDumpApp();
-    var container = find.byType(LenraContainer);
-    expect(container, findsOneWidget);
-    expect(tester.widget<LenraContainer>(container).padding!.horizontal, 4);
-    expect(tester.widget<LenraContainer>(container).decoration!.color, Colors.white);
-    expect(tester.widget<LenraContainer>(container).constraints!.minWidth, 1.0);
+    var finderContainer = find.byType(LenraContainer);
+    LenraContainer container = tester.widget<LenraContainer>(finderContainer);
+    expect(finderContainer, findsOneWidget);
+    expect(container.padding!.horizontal, 4);
+    expect(container.decoration!.color, Colors.white);
+    expect(container.constraints!.minWidth, 1.0);
   });
 
   testWidgets('LenraContainer test constraints', (WidgetTester tester) async {
@@ -79,12 +79,13 @@ void main() {
 
     uiStream.add(ui);
     await tester.pump();
-    var container = find.byType(LenraContainer);
-    expect(container, findsOneWidget);
-    expect(tester.widget<LenraContainer>(container).constraints!.minWidth, 5);
-    expect(tester.widget<LenraContainer>(container).constraints!.maxWidth, 5);
-    expect(tester.widget<LenraContainer>(container).constraints!.minHeight, 5);
-    expect(tester.widget<LenraContainer>(container).constraints!.maxHeight, 5);
+    var finderContainer = find.byType(LenraContainer);
+    LenraContainer container = tester.widget<LenraContainer>(finderContainer);
+    expect(finderContainer, findsOneWidget);
+    expect(container.constraints!.minWidth, 5);
+    expect(container.constraints!.maxWidth, 5);
+    expect(container.constraints!.minHeight, 5);
+    expect(container.constraints!.maxHeight, 5);
   });
 
   testWidgets('LenraContainer test decoration and border', (WidgetTester tester) async {
@@ -116,10 +117,10 @@ void main() {
 
     uiStream.add(ui);
     await tester.pump();
-    var container = find.byType(LenraContainer);
-    BoxDecoration decoration = tester.widget<LenraContainer>(container).decoration as BoxDecoration;
+    LenraContainer container = tester.widget<LenraContainer>(find.byType(LenraContainer));
+    BoxDecoration decoration = container.decoration as BoxDecoration;
     expect(decoration.color, Colors.white);
-    expect(tester.widget<LenraContainer>(container).border!.bottom.width, 2.0);
-    expect(tester.widget<LenraContainer>(container).border!.top.color, Colors.white);
+    expect(container.border!.bottom.width, 2.0);
+    expect(container.border!.top.color, Colors.white);
   });
 }

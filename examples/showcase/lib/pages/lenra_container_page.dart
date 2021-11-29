@@ -202,7 +202,4 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
       return false;
     }
   }
-
-  @override
-  noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
