@@ -147,41 +147,5 @@ void main() {
 
     expect(tester.getTopLeft(find.text("foo")), const Offset(0, 0));
     expect(tester.getTopLeft(find.text("bar")), const Offset(58, 0));
-  });
-
-  testWidgets('LenraWrap crossAxisAlignment should work', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
-
-    await tester.pumpWidget(
-      createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-      ),
-    );
-
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "flex",
-        "fillParent": true,
-        "children": [
-          {
-            "type": "wrap",
-            "alignment": "end",
-            "children": [
-              {
-                "type": "container",
-                "child": {"type": "text", "value": "bar"}
-              },
-              {"type": "text", "value": "foo"},
-            ]
-          }
-        ]
-      }
-    };
-
-    uiStream.add(ui);
-    await tester.pump();
-
-    expect(tester.getTopLeft(find.text("bar")), const Offset(0, 0));
-  });
+  });  
 }
