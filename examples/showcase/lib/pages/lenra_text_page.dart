@@ -14,21 +14,25 @@ class _LenraTextPageState extends UiBuilderState<LenraTextPage, bool> {
   Map<String, dynamic> get ui {
     return {
       "root": {
-        "type": "flex",
-        "direction": "vertical",
-        "children": [
-          {"type": "text", "value": "headline1", "style": "headline1"},
-          {"type": "text", "value": "headline2", "style": "headline2"},
-          {"type": "text", "value": "headline3", "style": "headline3"},
-          {"type": "text", "value": "headline4", "style": "headline4"},
-          {"type": "text", "value": "headlineBody", "style": "headlineBody"},
-          {"type": "text", "value": "bodyText", "style": "bodyText"},
-          {"type": "text", "value": "blueBodyText", "style": "blueBodyText"},
-          {"type": "text", "value": "subtext", "style": "subtext"},
-          {"type": "text", "value": "disabledBodyText", "style": "disabledBodyText"},
-          {"type": "text", "value": "underDescriptionText", "style": "underDescriptionText"},
-          {"type": "text", "value": "errorText", "style": "errorText"},
-        ]
+        "type": "text",
+        "value": "Test",
+        "style": {
+          "color": 0xFFFF0000,
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "fontStyle": "italic",
+          "textDecoration": "underline",
+        }
+        // "children": [
+        //   {
+        //     "type": "text",
+        //     "value": "Foo",
+        //     "children": [
+        //       {"type": "text", "value": "Baz"}
+        //     ]
+        //   },
+        //   {"type": "text", "value": "Bar"}
+        // ]
       }
     };
   }

@@ -150,6 +150,8 @@ class Parser {
       return double.parse(size);
     } else if (size is double) {
       return size;
+    } else if (size is int) {
+      return size.toDouble();
     }
     return 0;
   }
