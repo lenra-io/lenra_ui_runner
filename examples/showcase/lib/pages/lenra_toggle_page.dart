@@ -19,7 +19,6 @@ class _LenraTogglePageState extends UiBuilderState<LenraTogglePage, bool> {
           {
             "type": "toggle",
             "value": data,
-            "label": "basic",
             "onPressed": {
               "code": "myCode",
             }
@@ -27,7 +26,6 @@ class _LenraTogglePageState extends UiBuilderState<LenraTogglePage, bool> {
           {
             "type": "toggle",
             "value": !data,
-            "label": "disabled",
             "disabled": true,
             "onPressed": {
               "code": "myCode",

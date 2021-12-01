@@ -2,7 +2,9 @@ library props_parser;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
+import 'package:lenra_components/theme/lenra_toggle_syle.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 
@@ -36,6 +38,8 @@ extension ParserExt on Parser {
     WrapAlignment: Parser.parseWrapAlignment,
     VerticalDirection: Parser.parseVerticalDirection,
     TextDirection: Parser.parseTextDirection,
+    LenraToggleStyle: Parser.parseLenraToggleStyle,
+    MaterialTapTargetSize: Parser.parseMaterialTapTargeSize,
   };
 }
 
@@ -413,6 +417,34 @@ class Parser {
       color: props.containsKey("color") ? parseColor(props["color"]) : null,
       shape: props.containsKey("shape") ? parseBoxShape(props["shape"]) : BoxShape.rectangle,
     );
+  }
+
+  static LenraToggleStyle parseLenraToggleStyle(Map<String, dynamic> props) {
+    return LenraToggleStyle(
+      activeColor:
+          props.containsKey("activeColor") ? parseColor(props["activeColor"]) : LenraColorThemeData.lenraFunGreenBase,
+      activeTrackColor: props.containsKey("activeTrackColor") ? parseColor(props["activeTrackColor"]) : null,
+      inactiveTrackColor: props.containsKey("inactiveTrackColor")
+          ? parseColor(props["inactiveTrackColor"])
+          : LenraColorThemeData.greyNature,
+      inactiveThumbColor: props.containsKey("inactiveThumbColor") ? parseColor(props["inactiveThumbColor"]) : null,
+      hoverColor: props.containsKey("hoverColor") ? parseColor(props["hoverColor"]) : null,
+      focusColor: props.containsKey("focusColor") ? parseColor(props["focusColor"]) : null,
+      materialTapTargetSize: props.containsKey("materialTapTargetSize")
+          ? parseMaterialTapTargeSize(props["materialTapTargetSize"])
+          : MaterialTapTargetSize.padded,
+    );
+  }
+
+  static MaterialTapTargetSize parseMaterialTapTargeSize(String size) {
+    switch (size) {
+      case "padded":
+        return MaterialTapTargetSize.padded;
+      case "shrinkWrap":
+        return MaterialTapTargetSize.shrinkWrap;
+      default:
+        return MaterialTapTargetSize.padded;
+    }
   }
 
   static BoxShape parseBoxShape(String shape) {
