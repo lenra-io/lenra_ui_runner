@@ -81,7 +81,11 @@ class LenraWrapperState extends State<LenraWrapper> {
 
     for (var childrenKey in componentBuilder.childrenKeys) {
       if (properties.containsKey(childrenKey)) {
-        parsedProps[Symbol(childrenKey)] = widget.lenraUiBuilderState.getChildrenWidgets(properties[childrenKey]);
+        if(properties[childrenKey] is String) {
+          parsedProps[Symbol(childrenKey)] = widget.lenraUiBuilderState.getChildrenWidgets([properties[childrenKey]]);
+        } else {
+          parsedProps[Symbol(childrenKey)] = widget.lenraUiBuilderState.getChildrenWidgets(properties[childrenKey]);
+        }
       }
     }
 

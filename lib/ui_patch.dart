@@ -98,6 +98,9 @@ class UiPatchEvent {
     }
 
     if (isChildChange) {
+      if(pathList.last == "-") {
+        pathList[pathList.length - 1] = "0";
+      }
       String childId = "$childPath/${pathList.join("/")}";
       return UiPatchEvent(childPath, operation.toChildOperation(), pathList, value, pathList.last, childId);
     }

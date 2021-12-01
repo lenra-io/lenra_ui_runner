@@ -122,12 +122,10 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     String childrenKey,
     String path,
   ) {
-    int idx = 0;
     if (children != null) {
-      return children.map((dynamic child) {
-        String id = "$path/$childrenKey/$idx";
-        registerComponent(child as Map<String, dynamic>, id);
-        idx++;
+      return children.asMap().entries.map<String>((MapEntry<int, dynamic> child) {
+        String id = "$path/$childrenKey/${child.key}";
+        registerComponent(child.value as Map<String, dynamic>, id);
         return id;
       }).toList();
     }
@@ -227,7 +225,7 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     if (properties == null) return;
 
     dynamic childId;
-    if (patch.childIndex == null) {
+    if (patch.childIndex == null || patch.childIndex == patch.propertyPathList.first) {
       childId = properties.remove(patch.propertyPathList.first);
     } else {
       childId = (properties[patch.propertyPathList.first] as List?)?.removeAt(int.parse(patch.childIndex!));
