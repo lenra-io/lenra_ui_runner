@@ -63,9 +63,11 @@ packages:
   lenra_components:
     dependency: "direct main"
     description:
-      path: "../lenra_components"
-      relative: true
-    source: path
+      path: "."
+      ref: "v1.0.0-beta.30"
+      resolved-ref: "63548266626cc9469b53829cd59fcabfd6966a34"
+      url: "git@github.com:lenra-io/lenra_components.git"
+    source: git
     version: "0.0.0"
   lints:
     dependency: "direct dev"
