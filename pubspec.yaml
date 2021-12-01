@@ -10,9 +10,7 @@ dependencies:
     sdk: flutter
   provider: ^5.0.0
   lenra_components:
-    git:
-      url: git@github.com:lenra-io/lenra_components.git
-      ref: v1.0.0-beta.30
+    path: ../lenra_components
 dev_dependencies:
   flutter_test:
     sdk: flutter

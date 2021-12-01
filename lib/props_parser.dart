@@ -1,5 +1,6 @@
 library props_parser;
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:lenra_components/lenra_components.dart';
@@ -40,6 +41,7 @@ extension ParserExt on Parser {
     TextDirection: Parser.parseTextDirection,
     LenraToggleStyle: Parser.parseLenraToggleStyle,
     MaterialTapTargetSize: Parser.parseMaterialTapTargeSize,
+    DragStartBehavior: Parser.parseDragStartBehavior,
   };
 }
 
@@ -455,6 +457,17 @@ class Parser {
         return BoxShape.circle;
       default:
         return BoxShape.rectangle;
+    }
+  }
+
+  static DragStartBehavior parseDragStartBehavior(String behavior) {
+    switch (behavior) {
+      case "start":
+        return DragStartBehavior.start;
+      case "down":
+        return DragStartBehavior.down;
+      default:
+        return DragStartBehavior.start;
     }
   }
 
