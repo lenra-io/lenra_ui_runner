@@ -15,66 +15,101 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
     return {
       "root": {
         "type": "flex",
+        "spacing": 2,
         "children": [
           {
-            "type": "radio",
-            "label": "Basic selected",
-            "value": "a",
-            "groupValue": "a",
-            "onPressed": {
-              "code": "myCode",
-            }
+            "type": "flex",
+            "crossAxisAlignment": "center",
+            "children": [
+              {"type": "text", "value": "Basic selected"},
+              {
+                "type": "radio",
+                "value": "a",
+                "groupValue": "a",
+                "onPressed": {
+                  "code": "myCode",
+                }
+              },
+            ]
           },
           {
-            "type": "radio",
-            "label": "Disabled selected",
-            "disabled": true,
-            "value": "a",
-            "groupValue": "a",
-            "onPressed": {
-              "code": "myCode",
-            }
+            "type": "flex",
+            "crossAxisAlignment": "center",
+            "children": [
+              {"type": "text", "value": "Disabled selected"},
+              {
+                "type": "radio",
+                "value": "a",
+                "groupValue": "a",
+              },
+            ]
           },
           {
-            "type": "radio",
-            "label": "Basic",
-            "value": "a",
-            "groupValue": "b",
-            "onPressed": {
-              "code": "myCode",
-            }
+            "type": "flex",
+            "crossAxisAlignment": "center",
+            "children": [
+              {"type": "text", "value": "Basic"},
+              {
+                "type": "radio",
+                "value": "a",
+                "groupValue": "b",
+                "onPressed": {
+                  "code": "myCode",
+                }
+              },
+            ]
           },
           {
-            "type": "radio",
-            "label": "Disabled",
-            "disabled": true,
-            "value": "a",
-            "groupValue": "b",
-            "onPressed": {
-              "code": "myCode",
-            }
+            "type": "flex",
+            "crossAxisAlignment": "center",
+            "children": [
+              {"type": "text", "value": "Disabled"},
+              {
+                "type": "radio",
+                "value": "a",
+                "groupValue": "b",
+              },
+            ]
           },
           {
-            "type": "radio",
-            "label": "Interactive 1",
-            "value": "a",
-            "groupValue": data,
-            "onPressed": {"code": "actionA"}
+            "type": "flex",
+            "crossAxisAlignment": "center",
+            "children": [
+              {"type": "text", "value": "Interactive 1"},
+              {
+                "type": "radio",
+                "value": "a",
+                "groupValue": data,
+                "onPressed": {"code": "actionA"}
+              },
+            ]
           },
           {
-            "type": "radio",
-            "label": "Interactive 2",
-            "value": "b",
-            "groupValue": data,
-            "onPressed": {"code": "actionB"}
+            "type": "flex",
+            "crossAxisAlignment": "center",
+            "children": [
+              {"type": "text", "value": "Interactive 2"},
+              {
+                "type": "radio",
+                "value": "b",
+                "groupValue": data,
+                "onPressed": {"code": "actionB"}
+              },
+            ]
           },
           {
-            "type": "radio",
-            "label": "Interactive 3",
-            "value": "c",
-            "groupValue": data,
-            "onPressed": {"code": "actionC"}
-          }
+            "type": "flex",
+            "crossAxisAlignment": "center",
+            "children": [
+              {"type": "text", "value": "Interactive 3"},
+              {
+                "type": "radio",
+                "value": "c",
+                "groupValue": data,
+                "onPressed": {"code": "actionC"}
+              }
+            ]
+          },
         ]
       }
     };
