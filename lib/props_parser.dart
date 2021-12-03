@@ -1,9 +1,11 @@
 library props_parser;
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
+import 'package:lenra_components/theme/lenra_toggle_syle.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 
@@ -40,6 +42,8 @@ extension ParserExt on Parser {
     MaterialTapTargetSize: Parser.parseMaterialTapTargetSize,
     LenraRadioStyle: Parser.parseLenraRadioStyle,
     VisualDensity: Parser.parseVisualDensity,
+    DragStartBehavior: Parser.parseDragStartBehavior,
+    LenraToggleStyle: Parser.parseLenraToggleStyle,
   };
 }
 
@@ -224,6 +228,17 @@ class Parser {
     );
   }
 
+  static DragStartBehavior parseDragStartBehavior(String value) {
+    switch (value) {
+      case "down":
+        return DragStartBehavior.down;
+      case "start":
+        return DragStartBehavior.start;
+      default:
+        return DragStartBehavior.start;
+    }
+  }
+
   static Offset parseOffset(Map<String, dynamic> props) {
     return Offset(
       props.containsKey("dx") ? parseDouble(props["dx"]) : 0,
@@ -242,6 +257,29 @@ class Parser {
 
   static Icon parseIcon(String value) {
     return Icon(IconUtil.fromString(value));
+  }
+
+  static LenraToggleStyle parseLenraToggleStyle(Map<String, dynamic> props) {
+    return LenraToggleStyle(
+      activeTrackColor: props.containsKey("activeTrackColor") ? parseColor(props["activeTrackColor"]) : null,
+      inactiveThumbColor: props.containsKey("inactiveThumbColor") ? parseColor(props["inactiveThumbColor"]) : null,
+      hoverColor: props.containsKey("hoverColor") ? parseColor(props["hoverColor"]) : null,
+      focusColor: props.containsKey("focusColor") ? parseColor(props["focusColor"]) : null,
+      materialTapTargetSize: props.containsKey("materialTapTargetSize")
+          ? parseMaterialTapTargeSize(props["materialTapTargetSize"])
+          : MaterialTapTargetSize.padded,
+    );
+  }
+
+  static MaterialTapTargetSize parseMaterialTapTargeSize(String size) {
+    switch (size) {
+      case "padded":
+        return MaterialTapTargetSize.padded;
+      case "shrinkWrap":
+        return MaterialTapTargetSize.shrinkWrap;
+      default:
+        return MaterialTapTargetSize.padded;
+    }
   }
 
   static LenraTextStyle parseLenraTextStyle(String value) {
