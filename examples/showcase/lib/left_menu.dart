@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:showcase/pages/lenra_slider_page.dart';
 
 class LeftMenu extends StatelessWidget {
   LeftMenu({Key? key, required this.onMenuTapped, required this.currentMenu}) : super(key: key);
