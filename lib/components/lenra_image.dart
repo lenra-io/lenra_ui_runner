@@ -9,8 +9,8 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
   LenraApplicationImage map({
     path,
     fromNetwork,
-    height,
     width,
+    height,
     alignment,
     centerSlice,
     errorBuilder,
@@ -76,8 +76,8 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
 class LenraApplicationImage extends StatelessWidget {
   final String path;
   final bool? fromNetwork;
-  final double? height;
   final double? width;
+  final double? height;
   final AlignmentGeometry? alignment;
   final Rect? centerSlice;
   final Widget? errorBuilder;
@@ -95,8 +95,8 @@ class LenraApplicationImage extends StatelessWidget {
   LenraApplicationImage({
     required this.path,
     required this.fromNetwork,
-    required this.height,
     required this.width,
+    required this.height,
     required this.alignment,
     required this.centerSlice,
     required this.errorBuilder,
@@ -138,8 +138,8 @@ class LenraApplicationImage extends StatelessWidget {
 
     return Image.network(
       path,
-      height: height,
       width: width,
+      height: height,
       alignment: alignment ?? Alignment.center,
       centerSlice: centerSlice,
       errorBuilder: (context, error, stackTrace) => onError(context, error, stackTrace),
