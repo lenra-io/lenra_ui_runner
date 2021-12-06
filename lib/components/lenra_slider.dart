@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_slider.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
+import 'events/data/value_data.dart';
+import 'events/on_changed_event.dart';
 
 // TODO : generate this from annotation on LenraSlider
 class LenraSliderBuilder extends LenraComponentBuilder<LenraApplicationSlider> {
   @override
-  LenraApplicationSlider map({style, autofocus, divisions, label, max, min, onChanged, onChangeEnd, onChangeStart, value}) {
+  LenraApplicationSlider map(
+      {style, autofocus, divisions, label, max, min, onChanged, onChangeEnd, onChangeStart, value}) {
     return LenraApplicationSlider(
       style: style,
       autofocus: autofocus,
@@ -39,15 +43,15 @@ class LenraSliderBuilder extends LenraComponentBuilder<LenraApplicationSlider> {
 }
 
 class LenraApplicationSlider extends StatelessWidget {
-  final LenraSliderStyle style;
-  final bool autofocus;
-  final int divisions;
-  final String label;
+  final LenraSliderStyle? style;
+  final bool? autofocus;
+  final int? divisions;
+  final String? label;
   final double max;
   final double min;
-  final ValueChanged<double> onChanged;
-  final ValueChanged<double> onChangeEnd;
-  final ValueChanged<double> onChangeStart;
+  final lenra.Listener? onChanged;
+  final lenra.Listener? onChangeEnd;
+  final lenra.Listener? onChangeStart;
   final double value;
 
   LenraApplicationSlider({
@@ -63,18 +67,36 @@ class LenraApplicationSlider extends StatelessWidget {
     required this.value,
   }) : super();
 
+  void onSliderChange(BuildContext context, double value) {
+    if (onChanged != null) {
+      OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
+    }
+  }
+
+  void onSliderChangeEnd(BuildContext context, double value) {
+    if (onChangeEnd != null) {
+      OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
+    }
+  }
+
+  void onSliderChangeStart(BuildContext context, double value) {
+    if (onChangeStart != null) {
+      OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return LenraSlider(
       style: style,
-      autofocus: autofocus,
+      autofocus: autofocus ?? true,
       divisions: divisions,
       label: label,
       max: max,
       min: min,
-      onChanged: onChanged,
-      onChangeEnd: onChangeEnd,
-      onChangeStart: onChangeStart,
+      onChanged: (value) => onSliderChange(context, value),
+      onChangeEnd: (value) => onSliderChangeEnd(context, value),
+      onChangeStart: (value) => onSliderChangeStart(context, value),
       value: value,
     );
   }
