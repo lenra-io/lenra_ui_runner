@@ -9,7 +9,14 @@ import 'package:lenra_components/component/lenra_checkbox.dart';
 // TODO : generate this from annotation on LenraCheckbox
 class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbox> {
   @override
-  LenraApplicationCheckbox map({value, tristate, onPressed, style, materialTapTargetSize, autofocus}) {
+  LenraApplicationCheckbox map({
+    value,
+    tristate,
+    onPressed,
+    style,
+    materialTapTargetSize,
+    autofocus,
+  }) {
     return LenraApplicationCheckbox(
       value: value,
       tristate: tristate,
@@ -51,6 +58,7 @@ class LenraApplicationCheckbox extends StatelessWidget {
   }) : super();
 
   void onCheck(BuildContext context, bool? value) {
+    print(value);
     if (onPressed != null) {
       OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
     }
@@ -61,7 +69,7 @@ class LenraApplicationCheckbox extends StatelessWidget {
     return LenraCheckbox(
       value: value,
       tristate: tristate ?? false,
-      onPressed: onPressed == null ? null:  (v) => onCheck(context, v),
+      onPressed: onPressed == null ? null : (v) => onCheck(context, v),
       style: style,
       materialTapTargetSize: materialTapTargetSize,
       autofocus: autofocus ?? false,

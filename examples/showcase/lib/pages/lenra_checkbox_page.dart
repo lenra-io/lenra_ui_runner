@@ -61,7 +61,6 @@ class _LenraCheckboxPageState extends UiBuilderState<LenraCheckboxPage, Map<Stri
       data.addAll({"checkbox": event.data.toMap()["value"]});
       return data;
     } else if (event.code == "tristate") {
-      print(event.data.toMap()["value"]);
       data.addAll({"tristate": event.data.toMap()["value"]});
       return data;
     } else {
