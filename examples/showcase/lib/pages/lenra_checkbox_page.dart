@@ -9,28 +9,43 @@ class LenraCheckboxPage extends StatefulWidget {
   }
 }
 
-class _LenraCheckboxPageState extends UiBuilderState<LenraCheckboxPage, bool> {
+class _LenraCheckboxPageState extends UiBuilderState<LenraCheckboxPage, Map<String, dynamic>> {
   @override
   Map<String, dynamic> get ui {
     return {
       "root": {
         "type": "flex",
+        "crossAxisAlignment": "center",
         "children": [
           {
-            "type": "checkbox",
-            "value": data,
-            "label": "basic",
-            "onPressed": {
-              "code": "myCode",
-            }
+            "type": "text",
+            "value": "Basic Checkbox",
           },
           {
             "type": "checkbox",
-            "value": !data,
-            "label": "disabled",
-            "disabled": true,
+            "value": data["checkbox"],
             "onPressed": {
-              "code": "myCode",
+              "code": "checkbox",
+            }
+          },
+          {
+            "type": "text",
+            "value": "Disabled Checkbox",
+          },
+          {
+            "type": "checkbox",
+            "value": data["checkbox"],
+          },
+          {
+            "type": "text",
+            "value": "Tristate Checkbox",
+          },
+          {
+            "type": "checkbox",
+            "value": data["tristate"],
+            "tristate": true,
+            "onPressed": {
+              "code": "tristate"
             }
           },
         ]
@@ -41,11 +56,16 @@ class _LenraCheckboxPageState extends UiBuilderState<LenraCheckboxPage, bool> {
   @override
   getData(Event event) {
     if (event.code == "InitData") {
-      return true;
-    } else if (event.code == "myCode") {
-      return !data;
+      return {"checkbox": true, "tristate": false};
+    } else if (event.code == "checkbox") {
+      data.addAll({"checkbox": event.data.toMap()["value"]});
+      return data;
+    } else if (event.code == "tristate") {
+      print(event.data.toMap()["value"]);
+      data.addAll({"tristate": event.data.toMap()["value"]});
+      return data;
     } else {
-      return false;
+      return data;
     }
   }
 }

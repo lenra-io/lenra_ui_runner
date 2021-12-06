@@ -1,7 +1,7 @@
 import 'package:lenra_ui_runner/components/events/event.dart';
 
 class ValueData implements Jsonifiable {
-  String value;
+  dynamic value;
 
   ValueData(this.value);
 
