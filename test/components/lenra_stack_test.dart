@@ -64,34 +64,9 @@ void main() {
     expect(tester.getTopRight(find.text("loremipsum")), tester.getTopRight(find.text("bar")));
   });
 
-  testWidgets('LenraStack fit.', (WidgetTester tester) async {
+  testWidgets('LenraStack fit expand.', (WidgetTester tester) async {
     StreamController<Map<String, dynamic>> uiStream = StreamController();
     StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
-
-    // await tester.pumpWidget(
-    //   createBaseTestWidgets(
-    //     child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-    //   ),
-    // );
-
-    // Map<String, dynamic> ui = {
-    //   "root": {
-    //     "type": "stack",
-    //     "children": [
-    //       {"type": "text", "value": "loremipsum"},
-    //       {"type": "text", "value": "bar"}
-    //     ],
-    //   }
-    // };
-
-    // uiStream.add(ui);
-
-    // await tester.pump();
-
-    // expect(tester.getSize(find.text("loremipsum")) == tester.getSize(find.text("bar")), false);
-
-    // uiStream = StreamController();
-    // patchUiStream = StreamController();
 
     await tester.pumpWidget(
       createBaseTestWidgets(
@@ -99,7 +74,7 @@ void main() {
       ),
     );
 
-    Map<String, dynamic>ui = {
+    Map<String, dynamic> ui = {
       "root": {
         "type": "stack",
         "fit": "expand",
@@ -115,5 +90,32 @@ void main() {
     await tester.pump();
 
     expect(tester.getSize(find.text("loremipsum")), tester.getSize(find.text("bar")));
+  });
+
+  testWidgets('LenraStack basic fit.', (WidgetTester tester) async {
+    StreamController<Map<String, dynamic>> uiStream = StreamController();
+    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+      ),
+    );
+
+    Map<String, dynamic> ui = {
+      "root": {
+        "type": "stack",
+        "children": [
+          {"type": "text", "value": "loremipsum"},
+          {"type": "text", "value": "bar"}
+        ],
+      }
+    };
+
+    uiStream.add(ui);
+
+    await tester.pump();
+
+    expect(tester.getSize(find.text("loremipsum")) == tester.getSize(find.text("bar")), false);
   });
 }
