@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_toggle.dart';
-import 'package:lenra_ui_runner/components/events/on_pressed_toggle_event.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
@@ -64,7 +64,7 @@ void main() {
       createBaseTestWidgets(
         child: NotificationListener(
           child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-          onNotification: (OnPressedToggleEvent e) {
+          onNotification: (Event e) {
             expect(e.code, "YourCode");
             hasBeenNotified = true;
             return false;
