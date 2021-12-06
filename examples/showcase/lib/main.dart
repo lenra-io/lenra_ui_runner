@@ -8,6 +8,7 @@ import 'package:showcase/pages/lenra_menu_page.dart';
 import 'package:showcase/pages/lenra_radio_page.dart';
 import 'package:showcase/pages/lenra_checkbox_page.dart';
 import 'package:showcase/pages/lenra_stack_page.dart';
+import 'package:showcase/pages/lenra_slider_page.dart';
 import 'package:showcase/pages/lenra_text_page.dart';
 import 'package:showcase/pages/lenra_toggle_page.dart';
 import 'package:showcase/pages/lenra_status_sticker_page.dart';
@@ -61,6 +62,8 @@ class _MyAppState extends State<MyApp> {
         return LenraWrapPage();
       case LeftMenu.lenraStackPage:
         return LenraStackPage();
+      case LeftMenu.lenraSliderPage:
+        return LenraSliderPage();
     }
     return Text("N/A");
   }

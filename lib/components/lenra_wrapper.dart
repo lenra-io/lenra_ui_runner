@@ -3,6 +3,7 @@ import 'package:lenra_ui_runner/components/lenra_dropdown_button.dart';
 import 'package:lenra_ui_runner/components/lenra_flexible.dart';
 import 'package:lenra_ui_runner/components/lenra_container.dart';
 import 'package:lenra_ui_runner/components/lenra_stack.dart';
+import 'package:lenra_ui_runner/components/lenra_slider.dart';
 import 'package:lenra_ui_runner/components/lenra_actionable.dart';
 import 'package:lenra_ui_runner/components/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
@@ -40,6 +41,7 @@ extension LenraComponentWrapperExt on LenraWrapper {
     'flexible': LenraFlexibleBuilder(),
     'wrap': LenraWrapBuilder(),
     'stack': LenraStackBuilder(),
+    'slider': LenraSliderBuilder(),
   };
 }
 

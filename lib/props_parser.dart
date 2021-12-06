@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
+import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_components/theme/lenra_toggle_syle.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
@@ -46,6 +47,7 @@ extension ParserExt on Parser {
     LenraToggleStyle: Parser.parseLenraToggleStyle,
     Alignment: Parser.parseAlignment,
     StackFit: Parser.parseStackFit,
+    LenraSliderStyle: Parser.parseLenraSliderStyle,
   };
 }
 
@@ -563,6 +565,14 @@ class Parser {
       default:
         return StackFit.loose;
     }
+  }
+
+  static LenraSliderStyle parseLenraSliderStyle(Map<String, dynamic> props) {
+    return LenraSliderStyle(
+      activeColor: props.containsKey("activeColor") ? parseColor(props["activeColor"]) : null,
+      inactiveColor: props.containsKey("inactiveColor") ? parseColor(props["inactiveColor"]) : null,
+      thumbColor: props.containsKey("thumbColor") ? parseColor(props["thumbColor"]) : null,
+    );
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {

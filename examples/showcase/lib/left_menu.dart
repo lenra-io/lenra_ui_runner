@@ -20,6 +20,7 @@ class LeftMenu extends StatelessWidget {
   static const lenraFlexiblePage = "lenraFlexiblePage";
   static const lenraWrapPage = "lenraWrapPage";
   static const lenraStackPage = "lenraStackPage";
+  static const lenraSliderPage = "lenraSliderPage";
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +48,7 @@ class LeftMenu extends StatelessWidget {
         createMenu(context, 'Lenra Flexible', lenraFlexiblePage),
         createMenu(context, 'Lenra Wrap', lenraWrapPage),
         createMenu(context, 'Lenra Stack', lenraStackPage),
+        createMenu(context, 'Lenra Slider', lenraSliderPage),
       ],
     );
   }
