@@ -58,7 +58,6 @@ class LenraApplicationCheckbox extends StatelessWidget {
   }) : super();
 
   void onCheck(BuildContext context, bool? value) {
-    print(value);
     if (onPressed != null) {
       OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
     }
