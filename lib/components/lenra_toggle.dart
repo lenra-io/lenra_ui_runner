@@ -2,11 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_toggle.dart';
 import 'package:lenra_components/theme/lenra_toggle_syle.dart';
+import 'package:lenra_ui_runner/components/events/data/value_data.dart';
+import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
-
-import 'events/data/bool_data.dart';
-import 'events/on_pressed_toggle_event.dart';
 
 // TODO : generate this from annotation on LenraToggle
 class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
@@ -61,7 +60,7 @@ class LenraApplicationToggle extends StatelessWidget {
 
   void onTogglePressed(BuildContext context, bool value) {
     if (onPressed != null) {
-      OnPressedToggleEvent(code: onPressed!.code, data: BoolData(value)).dispatch(context);
+      OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
     }
   }
 
