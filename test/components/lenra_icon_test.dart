@@ -1,7 +1,5 @@
 import 'dart:async';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/components/lenra_icon.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';

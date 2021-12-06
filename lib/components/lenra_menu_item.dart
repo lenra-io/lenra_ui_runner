@@ -3,7 +3,6 @@ import 'package:lenra_components/component/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
-import 'package:lenra_ui_runner/utils/icon_util.dart';
 
 // TODO generate this from annotation on LenraMenuItem
 class LenraMenuItemBuilder extends LenraComponentBuilder<LenraApplicationMenuItem> {
