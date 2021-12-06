@@ -41,7 +41,7 @@ class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbo
 }
 
 class LenraApplicationCheckbox extends StatelessWidget {
-  final bool value;
+  final bool? value;
   final bool? tristate;
   final lenra.Listener? onPressed;
   final LenraCheckboxStyle? style;
