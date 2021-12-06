@@ -52,6 +52,7 @@ void main() {
     StreamController<Map<String, dynamic>> uiStream = StreamController();
     StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
     bool hasBeenNotified = false;
+    double value = 0;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
@@ -60,6 +61,7 @@ void main() {
           onNotification: (Event e) {
             expect(e.code, "pressed");
             hasBeenNotified = true;
+            value = e.data.toMap()["value"];
             return false;
           },
         ),
@@ -69,7 +71,7 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "slider",
-        "value": 50,
+        "value": value,
         "min": 0,
         "max": 100,
         "divisions": 100,
@@ -81,12 +83,10 @@ void main() {
 
     await tester.pump();
     var finderSlider = find.byType(LenraSlider);
-    Offset topLeft = tester.getTopLeft(finderSlider);
-    Offset bottomRight = tester.getBottomRight(finderSlider);
-    Offset target = topLeft + (bottomRight - topLeft);
 
     expect(finderSlider, findsOneWidget);
-    await tester.drag(finderSlider, target);
+    await tester.tap(finderSlider);
     expect(hasBeenNotified, true);
+    expect(value, 50);
   });
 }
