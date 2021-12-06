@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraIcon
-class LenraIconBuilder extends LenraComponentBuilder<LenraApplicationIcon> {
+class LenraIconBuilder extends LenraComponentBuilder<LenraIcon> {
   @override
-  LenraApplicationIcon map({
+  LenraIcon map({
     color,
-    icon,
+    value,
     semanticLabel,
     size,
   }) {
-    return LenraApplicationIcon(
+    return LenraIcon(
       color: color,
-      icon: icon,
+      value: value,
       semanticLabel: semanticLabel,
       size: size,
     );
@@ -22,22 +22,22 @@ class LenraIconBuilder extends LenraComponentBuilder<LenraApplicationIcon> {
   Map<String, Type> get propsTypes {
     return {
       'color': Color,
-      'icon': IconData,
+      'value': IconData,
       'semanticLabel': String,
       'size': double,
     };
   }
 }
 
-class LenraApplicationIcon extends StatelessWidget {
+class LenraIcon extends StatelessWidget {
   final Color? color;
-  final IconData? icon;
+  final IconData? value;
   final String? semanticLabel;
   final double? size;
 
-  LenraApplicationIcon({
+  LenraIcon({
     required this.color,
-    required this.icon,
+    required this.value,
     required this.semanticLabel,
     required this.size,
   }) : super();
@@ -45,7 +45,7 @@ class LenraApplicationIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Icon(
-      icon,
+      value,
       color: color,
       semanticLabel: semanticLabel,
       size: size,
