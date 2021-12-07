@@ -23,6 +23,7 @@ import 'lenra_image.dart';
 import 'lenra_text.dart';
 
 extension LenraComponentWrapperExt on LenraWrapper {
+  // KEEP COMPONENTS MAPPING
   static final Map<String, LenraComponentBuilder> componentsMapping = {
     'text': LenraTextBuilder(),
     'textfield': LenraTextfieldBuilder(),
@@ -45,6 +46,7 @@ extension LenraComponentWrapperExt on LenraWrapper {
   };
 }
 
+// VIrer lenraWrapper
 class LenraWrapper extends StatefulWidget {
   final LenraUiBuilderState lenraUiBuilderState;
   final Map<String, dynamic> initialProperties;

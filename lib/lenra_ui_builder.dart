@@ -5,6 +5,10 @@ import 'components/lenra_wrapper.dart';
 import 'ui_patch.dart';
 import 'update_props_event.dart';
 
+// Parser le JSON et renvoyer un widget
+// Le parser du json prend un composant JSON en entrée, récupérer le type et grâce à ça le builder dans le components mapping
+// Exemple avec Flex, 
+
 class LenraUiBuilder extends StatefulWidget {
   final StreamController<Map<String, dynamic>> uiStream;
   final StreamController<Iterable<dynamic>> patchUiStream;
@@ -18,10 +22,6 @@ class LenraUiBuilder extends StatefulWidget {
 }
 
 class LenraUiBuilderState extends State<LenraUiBuilder> {
-  final Map<String, LenraWrapper> wrappers = {};
-  final Map<String, Map<String, dynamic>> componentsProperties = {};
-  final StreamController<UpdatePropsEvent> updateWidgetStream = StreamController.broadcast();
-
   @override
   void initState() {
     super.initState();
@@ -37,7 +37,8 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   void replaceUi(Map<String, dynamic> ui) {
     setState(() {
-      registerComponent(ui["root"] as Map<String, dynamic>, "/root");
+      // Sauvegarder l'ui qu'on lui passe
+      // SetState this.ui = ui;      
     });
   }
 
@@ -241,6 +242,8 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   }
 
   void patchUi(Iterable<dynamic> patches) {
+    // Patch (this.ui, patches)
+
     var parsedPatches = patches.map((e) => UiPatchEvent.fromPatch(e as Map<String, dynamic>, wrappers));
     Set<String> widgetToUpdate = {};
 
@@ -295,6 +298,7 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   @override
   Widget build(BuildContext context) {
+    // Build this.ui récursivement
     Widget app;
     if (wrappers.containsKey("/root")) {
       app = wrappers["/root"]!;

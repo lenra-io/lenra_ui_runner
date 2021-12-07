@@ -49,6 +49,7 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
     };
   }
 
+  // Virer childrenKeys et les mettre dans propsTypes avec un nouveau type exemple WidgetList
   @override
   List<String> get childrenKeys {
     return ["children"];
