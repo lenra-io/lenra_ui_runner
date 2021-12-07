@@ -8,7 +8,9 @@ import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_components/theme/lenra_toggle_syle.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
+import 'package:lenra_ui_runner/lenra_ui_builder.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
+import 'package:lenra_ui_runner/utils/type_utils.dart';
 
 extension ParserExt on Parser {
   // TODO : Generate this from annotation on class Parser
@@ -48,6 +50,8 @@ extension ParserExt on Parser {
     Alignment: Parser.parseAlignment,
     StackFit: Parser.parseStackFit,
     LenraSliderStyle: Parser.parseLenraSliderStyle,
+    ChildrenWidgets: Parser.parseChildrenWidgets,
+    ChildWidget: Parser.parseChildWidget,
   };
 }
 
@@ -573,6 +577,15 @@ class Parser {
       inactiveColor: props.containsKey("inactiveColor") ? parseColor(props["inactiveColor"]) : null,
       thumbColor: props.containsKey("thumbColor") ? parseColor(props["thumbColor"]) : null,
     );
+  }
+
+  static void parseChildrenWidgets(Map<String, dynamic> props) {
+    
+  }
+
+  static Widget parseChildWidget(Map<String, dynamic> props) {
+    
+    return Container();
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {

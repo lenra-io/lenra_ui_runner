@@ -1,0 +1,3 @@
+class ChildrenWidgets {}
+
+class ChildWidget {}
