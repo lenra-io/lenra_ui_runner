@@ -579,13 +579,18 @@ class Parser {
     );
   }
 
-  static void parseChildrenWidgets(Map<String, dynamic> props) {
-    
+  static List<Widget> parseChildrenWidgets(List<Map<String, dynamic>> props) {
+    List<Widget> result = [];
+
+    for (var element in props) {
+      result.add(parseChildWidget(element));
+    }
+
+    return result;
   }
 
   static Widget parseChildWidget(Map<String, dynamic> props) {
-    
-    return Container();
+    return LenraUiBuilderState.parseJson(props);
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {

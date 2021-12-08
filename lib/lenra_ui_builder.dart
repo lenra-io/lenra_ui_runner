@@ -22,10 +22,6 @@ import 'package:lenra_ui_runner/components/lenra_status_sticker.dart';
 import 'package:lenra_ui_runner/components/lenra_flex.dart';
 import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 
-// Parser le JSON et renvoyer un widget
-// Le parser du json prend un composant JSON en entrée, récupérer le type et grâce à ça le builder dans le components mapping
-// Exemple avec Flex,
-
 class LenraUiBuilder extends StatefulWidget {
   final StreamController<Map<String, dynamic>> uiStream;
   final StreamController<Iterable<dynamic>> patchUiStream;

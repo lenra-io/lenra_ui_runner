@@ -1,3 +1,11 @@
-class ChildrenWidgets {}
+class ChildrenWidgets<T> {
+  List<T> widgets;
 
-class ChildWidget {}
+  ChildrenWidgets({required this.widgets});
+}
+
+class ChildWidget<T> {
+  T widget;
+
+  ChildWidget({required this.widget});
+}
