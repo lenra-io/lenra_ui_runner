@@ -1,9 +1,26 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/lenra_wrapper.dart';
+import 'package:lenra_ui_runner/components/lenra_button.dart';
+import 'package:lenra_ui_runner/components/lenra_checkbox.dart';
+import 'package:lenra_ui_runner/components/lenra_image.dart';
+import 'package:lenra_ui_runner/components/lenra_radio.dart';
+import 'package:lenra_ui_runner/components/lenra_text.dart';
+import 'package:lenra_ui_runner/components/lenra_textfield.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/props_parser.dart';
+import 'package:lenra_ui_runner/components/lenra_dropdown_button.dart';
+import 'package:lenra_ui_runner/components/lenra_flexible.dart';
+import 'package:lenra_ui_runner/components/lenra_container.dart';
+import 'package:lenra_ui_runner/components/lenra_stack.dart';
+import 'package:lenra_ui_runner/components/lenra_slider.dart';
+import 'package:lenra_ui_runner/components/lenra_actionable.dart';
+import 'package:lenra_ui_runner/components/lenra_menu.dart';
+import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
+import 'package:lenra_ui_runner/components/lenra_toggle.dart';
+import 'package:lenra_ui_runner/components/lenra_status_sticker.dart';
+import 'package:lenra_ui_runner/components/lenra_flex.dart';
+import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 
 // Parser le JSON et renvoyer un widget
 // Le parser du json prend un composant JSON en entrée, récupérer le type et grâce à ça le builder dans le components mapping
@@ -22,7 +39,7 @@ class LenraUiBuilder extends StatefulWidget {
 }
 
 class LenraUiBuilderState extends State<LenraUiBuilder> {
-  late Map<String, dynamic> ui;
+  Map<String, dynamic> ui = {};
 
   @override
   void initState() {
@@ -36,28 +53,49 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     super.dispose();
   }
 
-  void parseJson(Map<String, dynamic> json) {
+  static final Map<String, LenraComponentBuilder> componentsMapping = {
+    'text': LenraTextBuilder(),
+    'textfield': LenraTextfieldBuilder(),
+    'button': LenraButtonBuilder(),
+    'checkbox': LenraCheckboxBuilder(),
+    'image': LenraImageBuilder(),
+    'radio': LenraRadioBuilder(),
+    'menu': LenraMenuBuilder(),
+    'menuItem': LenraMenuItemBuilder(),
+    'toggle': LenraToggleBuilder(),
+    'statusSticker': LenraStatusStickerBuilder(),
+    'flex': LenraFlexBuilder(),
+    'container': LenraContainerBuilder(),
+    'actionable': LenraActionableBuilder(),
+    'dropdownButton': LenraDropdownButtonBuilder(),
+    'flexible': LenraFlexibleBuilder(),
+    'wrap': LenraWrapBuilder(),
+    'stack': LenraStackBuilder(),
+    'slider': LenraSliderBuilder(),
+  };
+
+  static Widget parseJson(Map<String, dynamic> json) {
     String? type = getType(json);
     if (type == null) throw "No type in component. It should never happen";
     LenraComponentBuilder? builder = getComponentBuilder(type);
     if (builder == null) throw "Componnent mapping does not handle type $type";
     Map<Symbol, dynamic> parsedProps = parseProps(json, builder.propsTypes);
-    builder.build(parsedProps);
+    return builder.build(parsedProps);
   }
 
-  String? getType(Map<String, dynamic> json) {
+  static String? getType(Map<String, dynamic> json) {
     return json['type'] as String?;
   }
 
-  LenraComponentBuilder? getComponentBuilder(String type) {
-    if (LenraComponentWrapperExt.componentsMapping.containsKey(type)) {
-      return LenraComponentWrapperExt.componentsMapping[type];
+  static LenraComponentBuilder? getComponentBuilder(String type) {
+    if (componentsMapping.containsKey(type)) {
+      return componentsMapping[type];
     }
 
     return null;
   }
 
-  Map<Symbol, dynamic> parseProps(Map<String, dynamic> json, Map<String, Type> propsTypes) {
+  static Map<Symbol, dynamic> parseProps(Map<String, dynamic> json, Map<String, Type> propsTypes) {
     Map<Symbol, dynamic> transformedProps = {};
 
     json.forEach((key, value) {
@@ -72,7 +110,7 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
     return transformedProps;
   }
 
-  Function? getParser(Type t) {
+  static Function? getParser(Type t) {
     return ParserExt.typeParsers[t];
   }
 
@@ -90,8 +128,6 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    // Build this.ui récursivement
-
-    return Container();
+    return parseJson(ui);
   }
 }
