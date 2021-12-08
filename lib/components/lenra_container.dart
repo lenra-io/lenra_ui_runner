@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/layout/lenra_container.dart';
+import 'package:lenra_ui_runner/utils/type_utils.dart';
 import '../../lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraApplicationContainer
@@ -28,12 +29,8 @@ class LenraContainerBuilder extends LenraComponentBuilder<LenraApplicationContai
       "border": Border,
       "constraints": BoxConstraints,
       "decoration": BoxDecoration,
+      "child": ChildWidget,
     };
-  }
-
-  @override
-  List<String> get childKeys {
-    return ["child"];
   }
 }
 

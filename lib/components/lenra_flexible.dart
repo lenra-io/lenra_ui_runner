@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/utils/type_utils.dart';
 
 class LenraFlexibleBuilder extends LenraComponentBuilder<LenraApplicationFlexible> {
   @override
@@ -12,12 +13,8 @@ class LenraFlexibleBuilder extends LenraComponentBuilder<LenraApplicationFlexibl
     return {
       "fit": FlexFit,
       "flex": int,
+      "child": ChildWidget,
     };
-  }
-
-  @override
-  List<String> get childKeys {
-    return ["child"];
   }
 }
 

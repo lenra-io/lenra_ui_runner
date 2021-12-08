@@ -34,41 +34,41 @@ void main() {
     expect(find.text("bar"), findsOneWidget);
   });
 
-  testWidgets('Remove children of flex', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+  // testWidgets('Remove children of flex', (WidgetTester tester) async {
+  //   StreamController<Map<String, dynamic>> uiStream = StreamController();
+  //   StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
 
-    await tester.pumpWidget(
-      createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-      ),
-    );
+  //   await tester.pumpWidget(
+  //     createBaseTestWidgets(
+  //       child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+  //     ),
+  //   );
 
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "flex",
-        "children": [
-          {"type": "text", "value": "foo"}
-        ]
-      }
-    };
+  //   Map<String, dynamic> ui = {
+  //     "root": {
+  //       "type": "flex",
+  //       "children": [
+  //         {"type": "text", "value": "foo"}
+  //       ]
+  //     }
+  //   };
 
-    List<Map<String, dynamic>> patches = [
-      {"path": "/root/children", "op": "remove"}
-    ];
+  //   List<Map<String, dynamic>> patches = [
+  //     {"path": "/root/children", "op": "remove"}
+  //   ];
 
-    uiStream.add(ui);
-    await tester.pump();
+  //   uiStream.add(ui);
+  //   await tester.pump();
 
-    LenraUiBuilderState lenraUiBuilderState = tester.state(find.byType(LenraUiBuilder));
+  //   LenraUiBuilderState lenraUiBuilderState = tester.state(find.byType(LenraUiBuilder));
 
-    expect(lenraUiBuilderState.wrappers.containsKey("/root/children/0"), true);
+  //   expect(lenraUiBuilderState.wrappers.containsKey("/root/children/0"), true);
 
-    patchUiStream.add(patches);
-    await tester.pump();
+  //   patchUiStream.add(patches);
+  //   await tester.pump();
 
-    expect(lenraUiBuilderState.wrappers.containsKey("/root/children/0"), false);
-  });
+  //   expect(lenraUiBuilderState.wrappers.containsKey("/root/children/0"), false);
+  // });
 
   testWidgets('Change children of flex', (WidgetTester tester) async {
     StreamController<Map<String, dynamic>> uiStream = StreamController();
