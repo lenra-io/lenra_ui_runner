@@ -71,8 +71,16 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   };
 
   static Widget parseJson(Map<String, dynamic> json) {
+    if (json.isEmpty) return Text("No Components.");
+
+    if (json.keys.contains("root") && json.keys.length == 1) {
+      json = json["root"];
+    }
+
     String? type = getType(json);
-    if (type == null) throw "No type in component. It should never happen";
+    if (type == null) {
+      throw "No type in component. It should never happen";
+    }
     LenraComponentBuilder? builder = getComponentBuilder(type);
     if (builder == null) throw "Componnent mapping does not handle type $type";
     Map<Symbol, dynamic> parsedProps = parseProps(json, builder.propsTypes);
@@ -96,7 +104,7 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
     json.forEach((key, value) {
       if (propsTypes.containsKey(key)) {
-        Function? parser = getParser(propsTypes[value]!);
+        Function? parser = getParser(propsTypes[key]!);
         if (parser != null) {
           transformedProps[Symbol(key)] = parser(value);
         }
