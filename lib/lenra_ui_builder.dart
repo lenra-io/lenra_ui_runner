@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:json_patch/json_patch.dart';
 import 'package:lenra_ui_runner/components/lenra_button.dart';
 import 'package:lenra_ui_runner/components/lenra_checkbox.dart';
 import 'package:lenra_ui_runner/components/lenra_image.dart';
@@ -120,14 +121,12 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   void replaceUi(Map<String, dynamic> ui) {
     setState(() {
-      // Sauvegarder l'ui qu'on lui passe
-      // SetState this.ui = ui;
       this.ui = ui;
     });
   }
 
   void patchUi(Iterable<dynamic> patches) {
-    // Patch (this.ui, patches)
+    replaceUi(JsonPatch.apply(ui, patches as Iterable<Map<String, dynamic>>, strict: false));
   }
 
   @override
