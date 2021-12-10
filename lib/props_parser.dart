@@ -579,7 +579,7 @@ class Parser {
     );
   }
 
-  static List<Widget> parseChildrenWidgets(List<Map<String, dynamic>> props) {
+  static List<Widget> parseChildrenWidgets(List<dynamic> props) {
     List<Widget> result = [];
 
     for (var element in props) {
