@@ -13,7 +13,7 @@ class LenraFlexibleBuilder extends LenraComponentBuilder<LenraApplicationFlexibl
     return {
       "fit": FlexFit,
       "flex": int,
-      "child": ChildWidget,
+      "child": Widget,
     };
   }
 }

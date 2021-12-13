@@ -29,7 +29,7 @@ class LenraContainerBuilder extends LenraComponentBuilder<LenraApplicationContai
       "border": Border,
       "constraints": BoxConstraints,
       "decoration": BoxDecoration,
-      "child": ChildWidget,
+      "child": Widget,
     };
   }
 }

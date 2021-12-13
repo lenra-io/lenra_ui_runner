@@ -74,10 +74,6 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
   static Widget parseJson(Map<String, dynamic> json) {
     if (json.isEmpty) return Text("No Components.");
 
-    if (json.keys.contains("root") && json.keys.length == 1) {
-      json = json["root"];
-    }
-
     String? type = getType(json);
     if (type == null) {
       throw "No type in component. It should never happen";
@@ -131,6 +127,6 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    return parseJson(ui);
+    return parseJson(ui["root"]);
   }
 }

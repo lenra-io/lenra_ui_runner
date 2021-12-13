@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
-import 'package:lenra_ui_runner/utils/type_utils.dart';
 
 // TODO generate this from annotation on LenraActionable
 class LenraActionableBuilder extends LenraComponentBuilder<LenraApplicationActionable> {
@@ -33,7 +32,7 @@ class LenraActionableBuilder extends LenraComponentBuilder<LenraApplicationActio
       "onLongPressed": Listener,
       "onPressedCancel": Listener,
       "onHovered": Listener,
-      "child": ChildWidget,
+      "child": Widget,
     };
   }
 }

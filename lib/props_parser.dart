@@ -51,7 +51,7 @@ extension ParserExt on Parser {
     StackFit: Parser.parseStackFit,
     LenraSliderStyle: Parser.parseLenraSliderStyle,
     ChildrenWidgets: Parser.parseChildrenWidgets,
-    ChildWidget: Parser.parseChildWidget,
+    Widget: Parser.parseWidget,
   };
 }
 
@@ -583,13 +583,13 @@ class Parser {
     List<Widget> result = [];
 
     for (var element in props) {
-      result.add(parseChildWidget(element));
+      result.add(parseWidget(element));
     }
 
     return result;
   }
 
-  static Widget parseChildWidget(Map<String, dynamic> props) {
+  static Widget parseWidget(Map<String, dynamic> props) {
     return LenraUiBuilderState.parseJson(props);
   }
 
