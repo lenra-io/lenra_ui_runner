@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/layout/lenra_container.dart';
-import 'package:lenra_ui_runner/utils/type_utils.dart';
 import '../../lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraApplicationContainer
