@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:lenra_components/layout/lenra_wrap.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
-import 'package:lenra_ui_runner/utils/type_utils.dart';
+import 'package:lenra_ui_runner/components/children_widgets.dart';
 
 // TODO : generate this from annotation on LenraWrap
 class LenraWrapBuilder extends LenraComponentBuilder<LenraApplicationWrap> {
