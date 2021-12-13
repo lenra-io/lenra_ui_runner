@@ -127,6 +127,10 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    return parseJson(ui["root"]);
+    if (ui.keys.contains("root") && ui.keys.length == 1) {
+      return parseJson(ui["root"]);
+    }
+
+    return parseJson(ui);
   }
 }
