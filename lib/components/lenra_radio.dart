@@ -69,7 +69,7 @@ class LenraApplicationRadio extends StatelessWidget {
       value: value,
       groupValue: groupValue,
       materialTapTargetSize: materialTapTargetSize,
-      onPressed: (value) => onRadioPressed(context, groupValue),
+      onPressed: onPressed == null ? null: (value) => onRadioPressed(context, groupValue),
       toggleable: toggleable ?? false,
       style: style,
     );

@@ -46,8 +46,8 @@ class LenraApplicationToggle extends StatelessWidget {
   final lenra.Listener? onPressed;
   final LenraToggleStyle? style;
   final double? splashRadius;
-  final bool autofocus;
-  final DragStartBehavior dragStartBehavior;
+  final bool? autofocus;
+  final DragStartBehavior? dragStartBehavior;
 
   LenraApplicationToggle({
     required this.value,
@@ -68,11 +68,11 @@ class LenraApplicationToggle extends StatelessWidget {
   Widget build(BuildContext context) {
     return LenraToggle(
       value: value,
-      onPressed: (value) => onTogglePressed(context, value),
+      onPressed: onPressed == null ? null : (value) => onTogglePressed(context, value),
       style: style,
       splashRadius: splashRadius,
-      autofocus: autofocus,
-      dragStartBehavior: dragStartBehavior,
+      autofocus: autofocus ?? true,
+      dragStartBehavior: dragStartBehavior ?? DragStartBehavior.start,
     );
   }
 }
