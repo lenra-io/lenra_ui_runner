@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
-import 'package:lenra_components/theme/lenra_theme.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
 import 'package:showcase/left_menu.dart';
