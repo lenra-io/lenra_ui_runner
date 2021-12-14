@@ -33,7 +33,7 @@ class LenraApplicationMenuItem extends StatelessWidget {
   final String text;
   final bool? isSelected;
   final bool? disabled;
-  final IconData? icon;
+  final Widget? icon;
   final lenra.Listener? onPressed;
 
   LenraApplicationMenuItem({
@@ -56,16 +56,8 @@ class LenraApplicationMenuItem extends StatelessWidget {
       text: text,
       isSelected: isSelected ?? false,
       disabled: disabled ?? false,
-      icon: icon == null ? null : _buildIcon(icon!),
+      icon: icon,
       onPressed: () => onMenuItemPressed(context),
-    );
-  }
-
-  Widget _buildIcon(IconData iconData) {
-    return Icon(
-      iconData,
-      color: Colors.white,
-      size: 16,
     );
   }
 }

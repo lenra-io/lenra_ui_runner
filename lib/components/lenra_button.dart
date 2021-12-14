@@ -42,8 +42,8 @@ class LenraApplicationButton extends StatelessWidget {
   final LenraComponentSize? size;
   final String? mainStyle;
   final lenra.Listener? onPressed;
-  final Icon? leftIcon;
-  final Icon? rightIcon;
+  final Widget? leftIcon;
+  final Widget? rightIcon;
 
   LenraApplicationButton({
     required this.text,

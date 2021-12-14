@@ -38,7 +38,10 @@ void main() {
           {
             "type": "menuItem",
             "text": "foo",
-            "icon": "aod",
+            "icon": {
+              "type": "icon",
+              "value": "aod"
+            },
             "onPressed": {"code": "yourCode"}
           },
         ],
