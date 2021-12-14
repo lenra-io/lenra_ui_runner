@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:lenra_components/layout/lenra_flex.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/components/children_widgets.dart';
 
 // TODO : generate this from annotation on LenraFlex
 class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
@@ -46,12 +47,8 @@ class LenraFlexBuilder extends LenraComponentBuilder<LenraApplicationFlex> {
       "horizontalDirection": TextDirection,
       "verticalDirection": VerticalDirection,
       "textBaseline": TextBaseline,
+      "children": ChildrenWidgets,
     };
-  }
-
-  @override
-  List<String> get childrenKeys {
-    return ["children"];
   }
 }
 

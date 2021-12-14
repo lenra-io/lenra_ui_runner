@@ -28,12 +28,8 @@ class LenraContainerBuilder extends LenraComponentBuilder<LenraApplicationContai
       "border": Border,
       "constraints": BoxConstraints,
       "decoration": BoxDecoration,
+      "child": Widget,
     };
-  }
-
-  @override
-  List<String> get childKeys {
-    return ["child"];
   }
 }
 

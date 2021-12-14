@@ -33,12 +33,8 @@ class LenraDropdownButtonBuilder extends LenraComponentBuilder<LenraApplicationD
       "size": LenraComponentSize,
       "mainStyle": String,
       "icon": Icon,
+      "child": Widget,
     };
-  }
-
-  @override
-  List<String> get childKeys {
-    return ["child"];
   }
 }
 

@@ -1,14 +1,12 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:json_patch/json_patch.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
-import 'package:lenra_ui_runner/lenra_ui_builder.dart';
+import 'package:lenra_ui_runner/lenra_widget.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:provider/provider.dart';
 
 abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
-  StreamController<Map<String, dynamic>> uiStreamController = StreamController();
-  StreamController<Iterable<Map<String, dynamic>>> patchUiStream = StreamController();
   late Map<String, dynamic> lastUi;
   late D data;
 
@@ -21,7 +19,9 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
     super.initState();
     data = getData(OnPressedEvent(code: "InitData"));
     lastUi = ui;
-    uiStreamController.sink.add(ui);
+
+    /// replaceUi is called after the first frame is rendered because the provider is only accessible at that point.
+    WidgetsBinding.instance?.addPostFrameCallback((_) => context.read<WidgetModel>().replaceUi(ui));
   }
 
   bool handleNotifications(Event event) {
@@ -29,26 +29,16 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
     var newUi = ui;
     var diff = JsonPatch.diff(lastUi, newUi);
     lastUi = newUi;
-    patchUiStream.add(diff);
+    context.read<WidgetModel>().patchUi(diff);
 
     return true;
-  }
-
-  @override
-  void dispose() {
-    uiStreamController.close();
-    patchUiStream.close();
-    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return NotificationListener<Event>(
       onNotification: (Event event) => handleNotifications(event),
-      child: LenraUiBuilder(
-        uiStream: uiStreamController,
-        patchUiStream: patchUiStream,
-      ),
+      child: LenraWidget(),
     );
   }
 }

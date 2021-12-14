@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
-import 'package:lenra_components/theme/lenra_theme.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:provider/provider.dart';
 import 'package:showcase/left_menu.dart';
 import 'package:showcase/pages/lenra_dropdown_button.dart';
 import 'package:showcase/pages/lenra_flexible_page.dart';
@@ -70,24 +71,29 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return LenraTheme(
-      themeData: LenraThemeData(),
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(),
-        home: Scaffold(
-          appBar: AppBar(),
-          drawer: Drawer(
-            child: LeftMenu(
-              currentMenu: currentMenu,
-              onMenuTapped: (newMenu) {
-                setState(() {
-                  currentMenu = newMenu;
-                });
-              },
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<WidgetModel>(create: (_) => WidgetModel()),
+      ],
+      child: LenraTheme(
+        themeData: LenraThemeData(),
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(),
+          home: Scaffold(
+            appBar: AppBar(),
+            drawer: Drawer(
+              child: LeftMenu(
+                currentMenu: currentMenu,
+                onMenuTapped: (newMenu) {
+                  setState(() {
+                    currentMenu = newMenu;
+                  });
+                },
+              ),
             ),
+            body: buildBody(),
           ),
-          body: buildBody(),
         ),
       ),
     );

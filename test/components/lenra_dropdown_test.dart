@@ -1,27 +1,34 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_dropdown_button.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:provider/provider.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('Test onPressed in a child dropdownButton', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
     bool hasBeenNotified = false;
 
     await tester.pumpWidget(
       NotificationListener(
-          onNotification: (Event e) {
-            expect(e.code, "yourCode");
-            hasBeenNotified = true;
-            return false;
-          },
-          child: createBaseTestWidgets(
-            child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-          )),
+        child: createBaseTestWidgets(
+          child: Builder(
+            builder: (BuildContext context) {
+              _context = context;
+
+              return LenraWidget();
+            },
+          ),
+        ),
+        onNotification: (Event e) {
+          expect(e.code, "yourCode");
+          hasBeenNotified = true;
+          return false;
+        },
+      ),
     );
 
     Map<String, dynamic> ui = {
@@ -36,7 +43,7 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
 
     await tester.pump();
     var dropdownButton = find.byType(LenraDropdownButton);

@@ -1,19 +1,25 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:provider/src/provider.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('LenraRadio should work properly', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
+        ),
       ),
     );
 
@@ -35,7 +41,7 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
     await tester.pump();
     LenraRadio<String> tmp = LenraRadio<String>(
       value: "foo",
@@ -59,14 +65,19 @@ void main() {
   });
 
   testWidgets('LenraRadio onPressed', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
     var eventsNb = 0;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
         child: NotificationListener(
-          child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+          child: Builder(
+            builder: (BuildContext context) {
+              _context = context;
+
+              return LenraWidget();
+            },
+          ),
           onNotification: (Event e) {
             expect(e.code, "pressed");
             eventsNb = eventsNb + 1;
@@ -85,7 +96,7 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
     await tester.pump();
     LenraRadio<String> tmp = LenraRadio<String>(
       value: "foo",

@@ -2,13 +2,14 @@ library props_parser;
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_components/theme/lenra_toggle_syle.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
+import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
+import 'package:lenra_ui_runner/components/children_widgets.dart';
 
 extension ParserExt on Parser {
   // TODO : Generate this from annotation on class Parser
@@ -48,6 +49,8 @@ extension ParserExt on Parser {
     Alignment: Parser.parseAlignment,
     StackFit: Parser.parseStackFit,
     LenraSliderStyle: Parser.parseLenraSliderStyle,
+    ChildrenWidgets: Parser.parseChildrenWidgets,
+    Widget: Parser.parseWidget,
   };
 }
 
@@ -573,6 +576,20 @@ class Parser {
       inactiveColor: props.containsKey("inactiveColor") ? parseColor(props["inactiveColor"]) : null,
       thumbColor: props.containsKey("thumbColor") ? parseColor(props["thumbColor"]) : null,
     );
+  }
+
+  static List<Widget> parseChildrenWidgets(List<dynamic> props) {
+    List<Widget> result = [];
+
+    for (var element in props) {
+      result.add(parseWidget(element));
+    }
+
+    return result;
+  }
+
+  static Widget parseWidget(Map<String, dynamic> props) {
+    return WidgetModel.parseJson(props);
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {

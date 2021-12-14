@@ -6,11 +6,4 @@ abstract class LenraComponentBuilder<T> {
   T map();
 
   Map<String, Type> get propsTypes;
-  List<String> get childrenKeys {
-    return [];
-  }
-
-  List<String> get childKeys {
-    return [];
-  }
 }

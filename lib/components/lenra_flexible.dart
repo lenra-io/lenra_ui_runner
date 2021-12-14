@@ -12,12 +12,8 @@ class LenraFlexibleBuilder extends LenraComponentBuilder<LenraApplicationFlexibl
     return {
       "fit": FlexFit,
       "flex": int,
+      "child": Widget,
     };
-  }
-
-  @override
-  List<String> get childKeys {
-    return ["child"];
   }
 }
 

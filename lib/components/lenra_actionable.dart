@@ -32,12 +32,8 @@ class LenraActionableBuilder extends LenraComponentBuilder<LenraApplicationActio
       "onLongPressed": Listener,
       "onPressedCancel": Listener,
       "onHovered": Listener,
+      "child": Widget,
     };
-  }
-
-  @override
-  List<String> get childKeys {
-    return ["child"];
   }
 }
 
