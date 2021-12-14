@@ -1,18 +1,24 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/layout/lenra_container.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:provider/src/provider.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('LenraContainer test', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
+        ),
       ),
     );
 
@@ -41,7 +47,7 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
     await tester.pump();
     var finderContainer = find.byType(LenraContainer);
     LenraContainer container = tester.widget<LenraContainer>(finderContainer);
@@ -52,12 +58,17 @@ void main() {
   });
 
   testWidgets('LenraContainer test constraints', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
+        ),
       ),
     );
 
@@ -77,7 +88,7 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
     await tester.pump();
     var finderContainer = find.byType(LenraContainer);
     LenraContainer container = tester.widget<LenraContainer>(finderContainer);
@@ -89,12 +100,17 @@ void main() {
   });
 
   testWidgets('LenraContainer test decoration and border', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
+        ),
       ),
     );
 
@@ -115,7 +131,7 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
     await tester.pump();
     LenraContainer container = tester.widget<LenraContainer>(find.byType(LenraContainer));
     BoxDecoration decoration = container.decoration as BoxDecoration;

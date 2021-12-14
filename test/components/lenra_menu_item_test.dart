@@ -1,26 +1,34 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:provider/src/provider.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('lenraMenuItem test all properties', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
     bool hasBeenNotified = false;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-          child: NotificationListener(
-              child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
-              onNotification: (Event e) {
-                expect(e.code, "yourCode");
-                hasBeenNotified = true;
-                return false;
-              })),
+        child: NotificationListener(
+          child: Builder(
+            builder: (BuildContext context) {
+              _context = context;
+
+              return LenraWidget();
+            },
+          ),
+          onNotification: (Event e) {
+            expect(e.code, "yourCode");
+            hasBeenNotified = true;
+            return false;
+          },
+        ),
+      ),
     );
 
     Map<String, dynamic> ui = {
@@ -37,7 +45,7 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
 
     await tester.pump();
     var menuItem = find.byType(LenraMenuItem);

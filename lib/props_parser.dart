@@ -7,7 +7,7 @@ import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_components/theme/lenra_toggle_syle.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
-import 'package:lenra_ui_runner/lenra_ui_builder.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 import 'package:lenra_ui_runner/components/children_widgets.dart';
 
@@ -589,7 +589,7 @@ class Parser {
   }
 
   static Widget parseWidget(Map<String, dynamic> props) {
-    return LenraUiBuilderState.parseJson(props);
+    return WidgetModel.parseJson(props);
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {

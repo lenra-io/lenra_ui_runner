@@ -1,19 +1,24 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:lenra_ui_runner/lenra_widget.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:provider/provider.dart';
 
 import "./test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('change simple property', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
+        ),
       ),
     );
 
@@ -28,8 +33,8 @@ void main() {
       {"path": "/root/value", "value": "bar", "op": "replace"}
     ];
 
-    uiStream.add(ui);
-    patchUiStream.add(patches);
+    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<WidgetModel>().patchUi(patches);
 
     await tester.pump();
     expect(find.text("foo"), findsNothing);
@@ -37,12 +42,17 @@ void main() {
   });
 
   testWidgets('Remove children of flex', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
+        ),
       ),
     );
 
@@ -59,24 +69,29 @@ void main() {
       {"path": "/root/children/0", "op": "remove"}
     ];
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
     await tester.pump();
 
     expect(find.byType(Text), findsOneWidget);
 
-    patchUiStream.add(patches);
+    _context!.read<WidgetModel>().patchUi(patches);
     await tester.pumpAndSettle();
 
     expect(find.byType(Text), findsNothing);
   });
 
   testWidgets('Change children of flex', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
+        ),
       ),
     );
 
@@ -99,8 +114,8 @@ void main() {
       }
     ];
 
-    uiStream.add(ui);
-    patchUiStream.add(patches);
+    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<WidgetModel>().patchUi(patches);
     await tester.pump();
 
     expect(find.text("foo"), findsNothing);
@@ -108,12 +123,17 @@ void main() {
   });
 
   testWidgets('Change children of flex', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
+        ),
       ),
     );
 
@@ -127,13 +147,13 @@ void main() {
       {"path": "/root/text", "value": "bar", "op": "add"}
     ];
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
     await tester.pump();
 
     expect(find.text("foo"), findsOneWidget);
     expect(find.text("bar"), findsNothing);
 
-    patchUiStream.add(patches);
+    _context!.read<WidgetModel>().patchUi(patches);
     await tester.pump();
     await tester.pump();
 
@@ -142,12 +162,17 @@ void main() {
   });
 
   testWidgets('Change child of container', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
+        ),
       ),
     );
 
@@ -174,13 +199,13 @@ void main() {
       }
     ];
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
     await tester.pump();
 
     expect(find.text("foo"), findsOneWidget);
     expect(find.text("bar"), findsNothing);
 
-    patchUiStream.add(patches);
+    _context!.read<WidgetModel>().patchUi(patches);
     await tester.pump();
     await tester.pump();
 

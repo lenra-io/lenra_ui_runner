@@ -1,20 +1,26 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/lenra_widget.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:provider/provider.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('LenraButton should work properly', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
     bool hasBeenNotified = false;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
         child: NotificationListener(
-          child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+          child: Builder(
+            builder: (BuildContext context) {
+              _context = context;
+
+              return LenraWidget();
+            },
+          ),
           onNotification: (Event e) {
             expect(e.code, "pressed");
             hasBeenNotified = true;
@@ -32,7 +38,7 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
 
     await tester.pump();
     expect(find.text("foo"), findsOneWidget);

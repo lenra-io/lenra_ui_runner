@@ -1,19 +1,25 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_slider.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:provider/src/provider.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('LenraSlider test properties', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
+        ),
       ),
     );
 
@@ -31,7 +37,7 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
     await tester.pump();
 
     var finderSlider = find.byType(LenraSlider);
@@ -49,15 +55,20 @@ void main() {
   });
 
   testWidgets('LenraSlider test onChanged', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
     bool hasBeenNotified = false;
     double value = 0;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
         child: NotificationListener(
-          child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+          child: Builder(
+            builder: (BuildContext context) {
+              _context = context;
+
+              return LenraWidget();
+            },
+          ),
           onNotification: (Event e) {
             expect(e.code, "pressed");
             hasBeenNotified = true;
@@ -79,7 +90,7 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
 
     await tester.pump();
     var finderSlider = find.byType(LenraSlider);

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:json_patch/json_patch.dart';
 import 'package:lenra_ui_runner/components/lenra_button.dart';
@@ -23,31 +21,18 @@ import 'package:lenra_ui_runner/components/lenra_status_sticker.dart';
 import 'package:lenra_ui_runner/components/lenra_flex.dart';
 import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 
-class LenraUiBuilder extends StatefulWidget {
-  final StreamController<Map<String, dynamic>> uiStream;
-  final StreamController<Iterable<dynamic>> patchUiStream;
+class WidgetModel extends ChangeNotifier {
+  Map<String, dynamic> _ui = {};
 
-  LenraUiBuilder({required this.uiStream, required this.patchUiStream}) : super();
+  Map<String, dynamic> get ui => _ui;
 
-  @override
-  State<StatefulWidget> createState() {
-    return LenraUiBuilderState();
-  }
-}
-
-class LenraUiBuilderState extends State<LenraUiBuilder> {
-  Map<String, dynamic> ui = {};
-
-  @override
-  void initState() {
-    super.initState();
-    widget.uiStream.stream.listen(replaceUi);
-    widget.patchUiStream.stream.listen(patchUi);
+  void replaceUi(Map<String, dynamic> ui) {
+    _ui = ui;
+    notifyListeners();
   }
 
-  @override
-  void dispose() {
-    super.dispose();
+  void patchUi(Iterable<dynamic> patches) {
+    replaceUi(JsonPatch.apply(_ui, patches as Iterable<Map<String, dynamic>>, strict: false));
   }
 
   static final Map<String, LenraComponentBuilder> componentsMapping = {
@@ -113,24 +98,5 @@ class LenraUiBuilderState extends State<LenraUiBuilder> {
 
   static Function? getParser(Type t) {
     return ParserExt.typeParsers[t];
-  }
-
-  void replaceUi(Map<String, dynamic> ui) {
-    setState(() {
-      this.ui = ui;
-    });
-  }
-
-  void patchUi(Iterable<dynamic> patches) {
-    replaceUi(JsonPatch.apply(ui, patches as Iterable<Map<String, dynamic>>, strict: false));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (ui.keys.contains("root") && ui.keys.length == 1) {
-      return parseJson(ui["root"]);
-    }
-
-    return parseJson(ui);
   }
 }
