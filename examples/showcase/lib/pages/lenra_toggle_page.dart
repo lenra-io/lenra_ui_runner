@@ -17,22 +17,36 @@ class _LenraTogglePageState extends UiBuilderState<LenraTogglePage, bool> {
         "type": "flex",
         "children": [
           {
-            "type": "toggle",
-            "value": data,
-            "label": "basic",
-            "onPressed": {
-              "code": "myCode",
-            }
+            "type": "flex",
+            "crossAxisAlignment": "center",
+            "children": [
+              {
+                "type": "text",
+                "value": "Basic",
+              },
+              {
+                "type": "toggle",
+                "value": data,
+                "onPressed": {
+                  "code": "myCode",
+                }
+              },
+            ]
           },
           {
-            "type": "toggle",
-            "value": !data,
-            "label": "disabled",
-            "disabled": true,
-            "onPressed": {
-              "code": "myCode",
-            }
-          },
+            "type": "flex",
+            "crossAxisAlignment": "center",
+            "children": [
+              {
+                "type": "text",
+                "value": "Disabled",
+              },
+              {
+                "type": "toggle",
+                "value": data,
+              },
+            ]
+          }
         ]
       }
     };
