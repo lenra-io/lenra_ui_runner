@@ -153,8 +153,10 @@ class Parser {
     return value.toString();
   }
 
-  static bool parseBool(dynamic value) {
+  static bool? parseBool(dynamic value) {
     if (value is bool) {
+      return value;
+    } else if (value == null) {
       return value;
     }
     return value.toString().toLowerCase() == "true";
