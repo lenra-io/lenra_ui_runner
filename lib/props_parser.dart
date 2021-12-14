@@ -264,10 +264,6 @@ class Parser {
     );
   }
 
-  static IconData? parseIconData(String value) {
-    return IconUtil.fromString(value);
-  }
-
   static LenraToggleStyle parseLenraToggleStyle(Map<String, dynamic> props) {
     return LenraToggleStyle(
       activeTrackColor: props.containsKey("activeTrackColor") ? parseColor(props["activeTrackColor"]) : null,
