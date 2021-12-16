@@ -58,18 +58,15 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
       "excludeFromSemantics": bool,
       "filterQuality": FilterQuality,
       "fit": BoxFit,
-      "frameBuilder": ImageFrameBuilder,
+      "frameBuilder": Widget,
+      "errorBuilder": Widget,
+      "loadingBuilder": Widget,
       "gaplessPlayback": bool,
       "isAntiAlias": bool,
       "opacity": Animation,
       "repeat": ImageRepeat,
       "semanticLabel": String,
     };
-  }
-
-  @override
-  List<String> get childKeys {
-    return ["errorBuilder", "loadingBuilder"];
   }
 }
 
@@ -85,7 +82,7 @@ class LenraApplicationImage extends StatelessWidget {
   final bool? excludeFromSemantics;
   final FilterQuality? filterQuality;
   final BoxFit? fit;
-  final ImageFrameBuilder? frameBuilder;
+  final Widget? frameBuilder;
   final bool? gaplessPlayback;
   final bool? isAntiAlias;
   final Animation<double>? opacity;
@@ -112,22 +109,6 @@ class LenraApplicationImage extends StatelessWidget {
     required this.semanticLabel,
   }) : super();
 
-  Widget onError(BuildContext context, Object error, StackTrace? stackTrace) {
-    // TODO: Dispatch an event and return a widget.
-    // if (errorBuilder != null) {
-    //   OnChangedEvent(code: errorBuilder!.code, data: ValueData(error.toString())).dispatch(context);
-    // }
-
-    // TODO: Create a default ImageError widget and return it when errorBuilder is null.
-    return errorBuilder ?? Container();
-  }
-
-  Widget loading(BuildContext context, Widget child, ImageChunkEvent? event) {
-    // TODO: Dispatch an event and return a widget.
-    // TODO: Create a default ImageLoader widget and return it when loadingBuilder is null.
-    return loadingBuilder ?? Container();
-  }
-
   @override
   Widget build(BuildContext context) {
     var model = context.read<LenraApplicationModel>();
@@ -142,14 +123,14 @@ class LenraApplicationImage extends StatelessWidget {
       height: height,
       alignment: alignment ?? Alignment.center,
       centerSlice: centerSlice,
-      errorBuilder: (context, error, stackTrace) => onError(context, error, stackTrace),
+      errorBuilder: errorBuilder == null ? null : (_, __, ___) => errorBuilder!,
       excludeFromSemantics: excludeFromSemantics ?? false,
       filterQuality: filterQuality ?? FilterQuality.low,
       fit: fit,
-      frameBuilder: frameBuilder,
+      frameBuilder: frameBuilder == null ? null : (_, __, ___, ____) => frameBuilder!,
       gaplessPlayback: gaplessPlayback ?? false,
       isAntiAlias: isAntiAlias ?? false,
-      loadingBuilder: (context, child, event) => loading(context, child, event),
+      loadingBuilder: loadingBuilder == null ? null : (_, __, ___) => loadingBuilder!,
       opacity: opacity,
       repeat: repeat ?? ImageRepeat.noRepeat,
       semanticLabel: semanticLabel,

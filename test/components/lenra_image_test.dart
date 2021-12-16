@@ -2,23 +2,14 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:lenra_components/theme/lenra_theme.dart';
-import 'package:lenra_components/theme/lenra_theme_data.dart';
-import 'package:lenra_ui_runner/lenra_application_model.dart';
+import 'package:lenra_ui_runner/lenra_widget.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
-const List<int> kTransparentImage = <int>[
-  0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A, 0x00, 0x00, 0x00, 0x0D, 0x49,
-  0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x08, 0x06,
-  0x00, 0x00, 0x00, 0x1F, 0x15, 0xC4, 0x89, 0x00, 0x00, 0x00, 0x0A, 0x49, 0x44,
-  0x41, 0x54, 0x78, 0x9C, 0x63, 0x00, 0x01, 0x00, 0x00, 0x05, 0x00, 0x01, 0x0D,
-  0x0A, 0x2D, 0xB4, 0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4E, 0x44, 0xAE,
-];
+import '../test_helper.dart';
 
 void main() {
-
   late _FakeHttpClient httpClient;
 
   setUp(() {
@@ -33,13 +24,16 @@ void main() {
   });
 
   testWidgets('LenraImage errorBuilder should build error widget when an error occurs.', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+    BuildContext? _context;
 
     await tester.pumpWidget(
-      createProviderImageWidget(
-        child: NotificationListener(
-          child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+      createBaseTestWidgets(
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
         ),
       ),
     );
@@ -55,20 +49,24 @@ void main() {
       }
     };
 
-    uiStream.add(ui);
+    _context!.read<WidgetModel>().replaceUi(ui);
 
     await tester.pumpAndSettle();
     expect(find.text("Error"), findsOneWidget);
   });
 
-  testWidgets('LenraImage loadingBuilder should build loader widget when the image is loading.', (WidgetTester tester) async {
-    StreamController<Map<String, dynamic>> uiStream = StreamController();
-    StreamController<List<Map<String, dynamic>>> patchUiStream = StreamController();
+  testWidgets('LenraImage loadingBuilder should build loader widget when the image is loading.',
+      (WidgetTester tester) async {
+    BuildContext? _context;
 
     await tester.pumpWidget(
-      createProviderImageWidget(
-        child: NotificationListener(
-          child: LenraUiBuilder(uiStream: uiStream, patchUiStream: patchUiStream),
+      createBaseTestWidgets(
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget();
+          },
         ),
       ),
     );
@@ -84,35 +82,17 @@ void main() {
       }
     };
 
-    httpClient.request.response
-    ..statusCode = HttpStatus.ok
-    ..contentLength = kTransparentImage.length
-    ..content = chunks;
-    
-    uiStream.add(ui);
+    // httpClient.request.response
+    //   ..statusCode = HttpStatus.ok
+    //   ..contentLength = kTransparentImage.length
+    //   ..content = chunks;
+
+    _context!.read<WidgetModel>().replaceUi(ui);
 
     await tester.pump();
     await tester.pumpAndSettle();
     expect(find.text("Loading"), findsOneWidget);
   });
-}
-
-Widget createProviderImageWidget({required Widget child}) {
-  return MultiProvider(
-    providers: [
-      ChangeNotifierProvider<LenraApplicationModel>(
-        create: (context) => LenraApplicationModel('foo-url', "appName", ''),
-      ),
-    ],
-    builder: (BuildContext context, _) => MaterialApp(
-      home: LenraTheme(
-        themeData: LenraThemeData(),
-        child: Scaffold(
-          body: child,
-        ),
-      ),
-    ),
-  );
 }
 
 class _FakeHttpClient extends Fake implements HttpClient {
@@ -127,6 +107,7 @@ class _FakeHttpClient extends Fake implements HttpClient {
     return request;
   }
 }
+
 class _FakeHttpClientRequest extends Fake implements HttpClientRequest {
   final _FakeHttpClientResponse response = _FakeHttpClientResponse();
 
@@ -151,7 +132,8 @@ class _FakeHttpClientResponse extends Fake implements HttpClientResponse {
   late List<List<int>> content;
 
   @override
-  StreamSubscription<List<int>> listen(void Function(List<int> event)? onData, {Function? onError, void Function()? onDone, bool? cancelOnError}) {
+  StreamSubscription<List<int>> listen(void Function(List<int> event)? onData,
+      {Function? onError, void Function()? onDone, bool? cancelOnError}) {
     return Stream<List<int>>.fromIterable(content).listen(
       onData,
       onDone: onDone,
