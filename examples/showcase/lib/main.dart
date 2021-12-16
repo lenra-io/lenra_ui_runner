@@ -6,6 +6,7 @@ import 'package:showcase/left_menu.dart';
 import 'package:showcase/pages/lenra_dropdown_button.dart';
 import 'package:showcase/pages/lenra_flexible_page.dart';
 import 'package:showcase/pages/lenra_icon_page.dart';
+import 'package:showcase/pages/lenra_image_page.dart';
 import 'package:showcase/pages/lenra_menu_page.dart';
 import 'package:showcase/pages/lenra_overlay_entry_page.dart';
 import 'package:showcase/pages/lenra_radio_page.dart';
@@ -71,6 +72,8 @@ class _MyAppState extends State<MyApp> {
         return LenraOverlayEntryPage();
       case LeftMenu.lenraIconPage:
         return LenraIconPage();
+      case LeftMenu.lenraImagePage:
+        return LenraImagePage();
     }
     return Text("N/A");
   }

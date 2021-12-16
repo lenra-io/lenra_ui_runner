@@ -111,11 +111,16 @@ class LenraApplicationImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var model = context.read<LenraApplicationModel>();
+    String path;
 
-    String path = fromNetwork != null && fromNetwork!
-        ? this.path
-        : "${model.httpEndpoint}/api/apps/${model.applicationName}/resources/${this.path}?token=${model.accessToken}";
+    if (fromNetwork == null || !fromNetwork!) {
+      var model = context.read<LenraApplicationModel>();
+
+      path =
+          "${model.httpEndpoint}/api/apps/${model.applicationName}/resources/${this.path}?token=${model.accessToken}";
+    } else {
+      path = this.path;
+    }
 
     return Image.network(
       path,
