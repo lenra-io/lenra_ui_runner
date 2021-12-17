@@ -3,6 +3,7 @@ import 'package:json_patch/json_patch.dart';
 import 'package:lenra_ui_runner/components/lenra_button.dart';
 import 'package:lenra_ui_runner/components/lenra_checkbox.dart';
 import 'package:lenra_ui_runner/components/lenra_image.dart';
+import 'package:lenra_ui_runner/components/lenra_overlay_entry.dart';
 import 'package:lenra_ui_runner/components/lenra_radio.dart';
 import 'package:lenra_ui_runner/components/lenra_text.dart';
 import 'package:lenra_ui_runner/components/lenra_textfield.dart';
@@ -54,6 +55,7 @@ class WidgetModel extends ChangeNotifier {
     'wrap': LenraWrapBuilder(),
     'stack': LenraStackBuilder(),
     'slider': LenraSliderBuilder(),
+    'overlayEntry': LenraOverlayEntryBuilder(),
   };
 
   static Widget parseJson(Map<String, dynamic> json) {
