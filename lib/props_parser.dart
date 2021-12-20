@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
-import 'package:lenra_components/theme/lenra_toggle_syle.dart';
+import 'package:lenra_components/theme/lenra_toggle_style.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
