@@ -26,7 +26,7 @@ extension ParserExt on Parser {
     BoxShadow: Parser.parseBoxShadow,
     EdgeInsets: Parser.parseEdgeInsets,
     Icon: Parser.parseIcon,
-    Listener: Parser.parseListener,
+    lenra.Listener: Parser.parseListener,
     LenraComponentSize: Parser.parseLenraComponentSize,
     int: Parser.parseInteger,
     LenraTextStyle: Parser.parseLenraTextStyle,

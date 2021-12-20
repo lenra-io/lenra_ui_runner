@@ -27,11 +27,11 @@ class LenraActionableBuilder extends LenraComponentBuilder<LenraApplicationActio
   @override
   Map<String, Type> get propsTypes {
     return {
-      "onPressed": Listener,
-      "onDoublePressed": Listener,
-      "onLongPressed": Listener,
-      "onPressedCancel": Listener,
-      "onHovered": Listener,
+      "onPressed": lenra.Listener,
+      "onDoublePressed": lenra.Listener,
+      "onLongPressed": lenra.Listener,
+      "onPressedCancel": lenra.Listener,
+      "onHovered": lenra.Listener,
       "child": Widget,
     };
   }

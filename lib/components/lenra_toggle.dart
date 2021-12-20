@@ -32,7 +32,7 @@ class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
   Map<String, Type> get propsTypes {
     return {
       "value": bool,
-      "onPressed": Listener,
+      "onPressed": lenra.Listener,
       "style": LenraToggleStyle,
       "splashRadius": double,
       "autofocus": bool,

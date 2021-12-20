@@ -34,9 +34,9 @@ class LenraSliderBuilder extends LenraComponentBuilder<LenraApplicationSlider> {
       "label": String,
       "max": double,
       "min": double,
-      "onChanged": Listener,
-      "onChangeEnd": Listener,
-      "onChangeStart": Listener,
+      "onChanged": lenra.Listener,
+      "onChangeEnd": lenra.Listener,
+      "onChangeStart": lenra.Listener,
       "value": double,
     };
   }
