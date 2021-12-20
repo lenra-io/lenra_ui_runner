@@ -29,7 +29,7 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
       "disabled": bool,
       "size": LenraComponentSize,
       "mainStyle": String,
-      "onPressed": Listener,
+      "onPressed": lenra.Listener,
       "leftIcon": Icon,
       "rightIcon": Icon,
     };

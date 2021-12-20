@@ -25,7 +25,7 @@ class LenraMenuItemBuilder extends LenraComponentBuilder<LenraApplicationMenuIte
       "isSelected": bool,
       "disabled": bool,
       "icon": String,
-      "onPressed": Listener,
+      "onPressed": lenra.Listener,
     };
   }
 }

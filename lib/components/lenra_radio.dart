@@ -30,7 +30,7 @@ class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
       "value": String,
       "groupValue": String,
       "materialTapTargetSize": MaterialTapTargetSize,
-      "onPressed": Listener,
+      "onPressed": lenra.Listener,
       "toggleable": bool,
       "style": LenraRadioStyle,
     };

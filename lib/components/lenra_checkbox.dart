@@ -32,7 +32,7 @@ class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbo
     return {
       "value": bool,
       "tristate": bool,
-      "onPressed": Listener,
+      "onPressed": lenra.Listener,
       "style": LenraCheckboxStyle,
       "materialTapTargetSize": MaterialTapTargetSize,
       "autofocus": bool,
