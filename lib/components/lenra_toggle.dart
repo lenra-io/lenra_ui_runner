@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_toggle.dart';
-import 'package:lenra_components/theme/lenra_toggle_syle.dart';
+import 'package:lenra_components/theme/lenra_toggle_style.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
