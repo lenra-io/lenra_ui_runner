@@ -1,79 +1,126 @@
-import 'dart:async';
 import 'dart:io';
-import 'dart:ui';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:lenra_ui_runner/components/lenra_image.dart';
 import 'package:lenra_ui_runner/lenra_widget.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../test_helper.dart';
 
+final Uint8List kTransparentImage = Uint8List.fromList(<int>[
+  0x89,
+  0x50,
+  0x4E,
+  0x47,
+  0x0D,
+  0x0A,
+  0x1A,
+  0x0A,
+  0x00,
+  0x00,
+  0x00,
+  0x0D,
+  0x49,
+  0x48,
+  0x44,
+  0x52,
+  0x00,
+  0x00,
+  0x00,
+  0x01,
+  0x00,
+  0x00,
+  0x00,
+  0x01,
+  0x08,
+  0x06,
+  0x00,
+  0x00,
+  0x00,
+  0x1F,
+  0x15,
+  0xC4,
+  0x89,
+  0x00,
+  0x00,
+  0x00,
+  0x0A,
+  0x49,
+  0x44,
+  0x41,
+  0x54,
+  0x78,
+  0x9C,
+  0x63,
+  0x00,
+  0x01,
+  0x00,
+  0x00,
+  0x05,
+  0x00,
+  0x01,
+  0x0D,
+  0x0A,
+  0x2D,
+  0xB4,
+  0x00,
+  0x00,
+  0x00,
+  0x00,
+  0x49,
+  0x45,
+  0x4E,
+  0x44,
+  0xAE,
+]);
+
 void main() {
-  late _FakeHttpClient httpClient;
+  // testWidgets('LenraImage errorBuilder should build error widget when an error occurs.', (WidgetTester tester) async {
+  //   BuildContext? _context;
 
-  setUp(() {
-    httpClient = _FakeHttpClient();
-    debugNetworkImageHttpClientProvider = () => httpClient;
-  });
+  //   await tester.pumpWidget(
+  //     createBaseTestWidgets(
+  //       child: Builder(
+  //         builder: (BuildContext context) {
+  //           _context = context;
 
-  tearDown(() {
-    debugNetworkImageHttpClientProvider = null;
-    PaintingBinding.instance!.imageCache!.clear();
-    PaintingBinding.instance!.imageCache!.clearLiveImages();
-  });
+  //           return LenraWidget();
+  //         },
+  //       ),
+  //     ),
+  //   );
 
-  testWidgets('LenraImage errorBuilder should build error widget when an error occurs.', (WidgetTester tester) async {
-    BuildContext? _context;
+  //   Map<String, dynamic> ui = {
+  //     "root": {
+  //       "type": "image",
+  //       "path": "not-existing-path",
+  //       "errorBuilder": {
+  //         "type": "text",
+  //         "value": "Error",
+  //       }
+  //     }
+  //   };
 
-    await tester.pumpWidget(
-      createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
+  //   _context!.read<WidgetModel>().replaceUi(ui);
 
-            return LenraWidget();
-          },
-        ),
-      ),
-    );
+  //   await tester.pumpAndSettle();
+  //   expect(find.text("Error"), findsOneWidget);
+  // });
 
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "image",
-        "path": "not-existing-path",
-        "errorBuilder": {
-          "type": "text",
-          "value": "Error",
-        }
-      }
-    };
-
-    _context!.read<WidgetModel>().replaceUi(ui);
-
-    await tester.pumpAndSettle();
-    expect(find.text("Error"), findsOneWidget);
-  });
+  final MockHttpClient client = MockHttpClient();
+  final MockHttpClientRequest request = MockHttpClientRequest();
+  final MockHttpClientResponse response = MockHttpClientResponse();
+  final MockHttpHeaders headers = MockHttpHeaders();
 
   testWidgets('LenraImage loadingBuilder should build loader widget when the image is loading.',
       (WidgetTester tester) async {
-    BuildContext? _context;
-
-    await tester.pumpWidget(
-      createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-
-            return LenraWidget();
-          },
-        ),
-      ),
-    );
-
     Map<String, dynamic> ui = {
       "root": {
         "type": "image",
+        "fromNetwork": true,
         "path": "long-to-load-image",
         "loadingBuilder": {
           "type": "text",
@@ -82,85 +129,55 @@ void main() {
       }
     };
 
-    // httpClient.request.response
-    //   ..statusCode = HttpStatus.ok
-    //   ..contentLength = kTransparentImage.length
-    //   ..content = chunks;
+    HttpOverrides.runZoned(() async {
+      BuildContext? _context;
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+      await tester.pumpWidget(
+        createBaseTestWidgets(
+          child: Builder(
+            builder: (BuildContext context) {
+              _context = context;
 
-    await tester.pump();
-    await tester.pumpAndSettle();
-    expect(find.text("Loading"), findsOneWidget);
+              return LenraWidget();
+            },
+          ),
+        ),
+      );
+
+      _context!.read<WidgetModel>().replaceUi(ui);
+
+      await tester.pump();
+      expect(find.byType(LenraApplicationImage), findsOneWidget);
+      expect(find.text("Loading"), findsOneWidget);
+    }, createHttpClient: (_) {
+      print("CREATE HTTP CLIENT");
+
+      when(client.getUrl(Uri.parse("long-to-load-image"))).thenAnswer((_) {
+        print("THEN ANSWER GETURL");
+        print(Future<HttpClientRequest>.value(request));
+        return Future<HttpClientRequest>.value(request);
+      });
+      when(request.headers).thenReturn(headers);
+      when(request.close()).thenAnswer((_) => Future<HttpClientResponse>.value(response));
+      when(response.contentLength).thenReturn(kTransparentImage.length);
+      when(response.statusCode).thenReturn(HttpStatus.ok);
+      when(response.listen(any)).thenAnswer((Invocation invocation) {
+        final void Function(List<int>) onData = invocation.positionalArguments[0];
+        final void Function() onDone = invocation.namedArguments[#onDone];
+        final void Function(Object, [StackTrace]) onError = invocation.namedArguments[#onError];
+        final bool cancelOnError = invocation.namedArguments[#cancelOnError];
+        return Stream<List<int>>.fromIterable(<List<int>>[kTransparentImage])
+            .listen(onData, onDone: onDone, onError: onError, cancelOnError: cancelOnError);
+      });
+      return client;
+    });
   });
 }
 
-class _FakeHttpClient extends Fake implements HttpClient {
-  final _FakeHttpClientRequest request = _FakeHttpClientRequest();
-  Object? thrownError;
+class MockHttpClient extends Mock implements HttpClient {}
 
-  @override
-  Future<HttpClientRequest> getUrl(Uri url) async {
-    if (thrownError != null) {
-      throw thrownError!;
-    }
-    return request;
-  }
-}
+class MockHttpClientRequest extends Mock implements HttpClientRequest {}
 
-class _FakeHttpClientRequest extends Fake implements HttpClientRequest {
-  final _FakeHttpClientResponse response = _FakeHttpClientResponse();
+class MockHttpClientResponse extends Mock implements HttpClientResponse {}
 
-  @override
-  Future<HttpClientResponse> close() async {
-    return response;
-  }
-}
-
-class _FakeHttpClientResponse extends Fake implements HttpClientResponse {
-  bool drained = false;
-
-  @override
-  int statusCode = HttpStatus.ok;
-
-  @override
-  int contentLength = 0;
-
-  @override
-  HttpClientResponseCompressionState get compressionState => HttpClientResponseCompressionState.notCompressed;
-
-  late List<List<int>> content;
-
-  @override
-  StreamSubscription<List<int>> listen(void Function(List<int> event)? onData,
-      {Function? onError, void Function()? onDone, bool? cancelOnError}) {
-    return Stream<List<int>>.fromIterable(content).listen(
-      onData,
-      onDone: onDone,
-      onError: onError,
-      cancelOnError: cancelOnError,
-    );
-  }
-
-  @override
-  Future<E> drain<E>([E? futureValue]) async {
-    drained = true;
-    return futureValue ?? <int>[] as E;
-  }
-}
-
-class FakeCodec implements Codec {
-  @override
-  void dispose() {}
-
-  @override
-  int get frameCount => throw UnimplementedError();
-
-  @override
-  Future<FrameInfo> getNextFrame() {
-    throw UnimplementedError();
-  }
-
-  @override
-  int get repetitionCount => throw UnimplementedError();
-}
+class MockHttpHeaders extends Mock implements HttpHeaders {}
