@@ -25,6 +25,31 @@ final MockHttpClientRequest request = MockHttpClientRequest();
 final MockHttpClientResponse response = MockHttpClientResponse();
 final MockHttpHeaders headers = MockHttpHeaders();
 
+
+HttpClient createClient() {
+  var client = MockHttpClient();
+  Stream<List<int>> stream = Stream<List<int>>.fromIterable([_opImage]);
+  when(client.getUrl(any)).thenAnswer((_) {
+    print('load');
+    return Future<HttpClientRequest>.value(request);
+  });
+  when(request.headers).thenReturn(headers);
+  when(request.close()).thenAnswer((_) => Future<HttpClientResponse>.value(response));
+  when(response.contentLength).thenReturn(_opImage.length);
+  when(response.statusCode).thenReturn(HttpStatus.ok);
+  when(response.compressionState).thenReturn(HttpClientResponseCompressionState.notCompressed);
+  when(response.listen(any,
+          onDone: anyNamed('onDone'), onError: anyNamed('onError'), cancelOnError: anyNamed('cancelOnError')))
+      .thenAnswer((Invocation invocation) {
+    print('listen');
+    return stream.listen((data) {
+      print(data);
+      invocation.positionalArguments[0](data);
+    });
+  });
+  return client;
+
+}
 @GenerateMocks([HttpClient, HttpClientRequest, HttpHeaders], customMocks: [MockSpec<HttpClientResponse>()])
 void main() {
   // testWidgets('LenraImage errorBuilder should build error widget when an error occurs.', (WidgetTester tester) async {
@@ -59,6 +84,11 @@ void main() {
   //   expect(find.text("Error"), findsOneWidget);
   // });
 
+  setUp(() {
+    debugNetworkImageHttpClientProvider = createClient;
+  });
+
+  // Faire un test() avec debugNetworkImageHttpClientProvider = mock 
   testWidgets('LenraImage loadingBuilder should build loader widget when the image is loading.',
       (WidgetTester tester) async {
     Map<String, dynamic> ui = {
@@ -69,14 +99,15 @@ void main() {
         "loadingBuilder": {
           "type": "text",
           "value": "Loading",
+        },
+        "errorBuilder": {
+          "type": "text",
+          "value": "Error",
         }
       }
     };
-
-    HttpOverrides.runZoned(() async {
-      BuildContext? _context;
-
-      await tester.pumpWidget(
+    BuildContext? _context;
+    await tester.pumpWidget(
         createBaseTestWidgets(
           child: Builder(
             builder: (BuildContext context) {
@@ -91,24 +122,43 @@ void main() {
       _context!.read<WidgetModel>().replaceUi(ui);
 
       await tester.pump();
+      await tester.pumpAndSettle(const Duration(minutes: 3000));
+      print("waited");
+      
       expect(find.byType(LenraApplicationImage), findsOneWidget);
       expect(find.text("Loading"), findsOneWidget);
-    }, createHttpClient: (_) {
-      when(client.getUrl(any)).thenAnswer((_) => Future<HttpClientRequest>.value(request));
-      when(request.headers).thenReturn(headers);
-      when(request.close()).thenAnswer((_) => Future<HttpClientResponse>.value(response));
-      when(response.contentLength).thenReturn(_opImage.length);
-      when(response.statusCode).thenReturn(HttpStatus.ok);
-      when(response.compressionState).thenReturn(HttpClientResponseCompressionState.notCompressed);
-      when(response.listen(any)).thenAnswer((Invocation invocation) {
-        final void Function(List<int>) onData = invocation.positionalArguments[0];
-        final void Function() onDone = invocation.namedArguments[#onDone];
-        final void Function(Object, [StackTrace]) onError = invocation.namedArguments[#onError];
-        final bool cancelOnError = invocation.namedArguments[#cancelOnError];
-        return Stream<List<int>>.fromIterable(<List<int>>[_opImage])
-            .listen(onData, onDone: onDone, onError: onError, cancelOnError: cancelOnError);
-      });
-      return client;
-    });
+  //   await HttpOverrides.runZoned(() async {
+  //     BuildContext? _context;
+
+  //     await tester.pumpWidget(
+  //       createBaseTestWidgets(
+  //         child: Builder(
+  //           builder: (BuildContext context) {
+  //             _context = context;
+
+  //             return LenraWidget();
+  //           },
+  //         ),
+  //       ),
+  //     );
+
+  //     _context!.read<WidgetModel>().replaceUi(ui);
+
+  //     await tester.pump();
+  //     await tester.pumpAndSettle(const Duration(minutes: 3000));
+  //     print("waited");
+  //     expect(find.byType(LenraApplicationImage), findsOneWidget);
+  //     expect(find.text("Loading"), findsOneWidget);
+  //   }, createHttpClient: (_) {
+  //     // when(response.listen).thenAnswer((Invocation invocation) {
+  //     //   final void Function(List<int>) onData = invocation.positionalArguments[0];
+  //     //   final void Function() onDone = invocation.namedArguments[#onDone];
+  //     //   final void Function(Object, [StackTrace]) onError = invocation.namedArguments[#onError];
+  //     //   final bool cancelOnError = invocation.namedArguments[#cancelOnError];
+  //     //   return Stream<List<int>>.fromIterable(<List<int>>[_opImage])
+  //     //       .listen(onData, onDone: onDone, onError: onError, cancelOnError: cancelOnError);
+  //     // });
+  //     return client;
+  //   });
   });
 }
