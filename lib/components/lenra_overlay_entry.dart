@@ -12,14 +12,10 @@ class LenraOverlayEntryBuilder extends LenraComponentBuilder<LenraApplicationOve
   @override
   Map<String, Type> get propsTypes {
     return {
+      "child": Widget,
       "maintainState": bool,
       "opaque": bool,
     };
-  }
-
-  @override
-  List<String> get childKeys {
-    return ["child"];
   }
 }
 
