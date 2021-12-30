@@ -50,37 +50,42 @@ HttpClient createClient() {
 
 @GenerateMocks([HttpClient, HttpClientRequest, HttpHeaders], customMocks: [MockSpec<HttpClientResponse>()])
 void main() {
-  // testWidgets('LenraImage errorBuilder should build error widget when an error occurs.', (WidgetTester tester) async {
-  //   BuildContext? _context;
+  testWidgets('LenraImage errorBuilder should build error widget when an error occurs.', (WidgetTester tester) async {
+    Map<String, dynamic> ui = {
+      "root": {
+        "type": "image",
+        "path": "not-existing-path",
+        "errorBuilder": {
+          "type": "text",
+          "value": "Error",
+        }
+      }
+    };
 
-  //   await tester.pumpWidget(
-  //     createBaseTestWidgets(
-  //       child: Builder(
-  //         builder: (BuildContext context) {
-  //           _context = context;
+    BuildContext? _context;
 
-  //           return LenraWidget();
-  //         },
-  //       ),
-  //     ),
-  //   );
+    await HttpOverrides.runZoned(
+      () async {
+        await tester.pumpWidget(
+          createBaseTestWidgets(
+            child: Builder(
+              builder: (BuildContext context) {
+                _context = context;
 
-  //   Map<String, dynamic> ui = {
-  //     "root": {
-  //       "type": "image",
-  //       "path": "not-existing-path",
-  //       "errorBuilder": {
-  //         "type": "text",
-  //         "value": "Error",
-  //       }
-  //     }
-  //   };
+                return LenraWidget();
+              },
+            ),
+          ),
+        );
 
-  //   _context!.read<WidgetModel>().replaceUi(ui);
+        _context!.read<WidgetModel>().replaceUi(ui);
 
-  //   await tester.pumpAndSettle();
-  //   expect(find.text("Error"), findsOneWidget);
-  // });
+        await tester.pumpAndSettle();
+        expect(find.text("Error"), findsOneWidget);
+      },
+      createHttpClient: (_) => createClient(),
+    );
+  });
 
   testWidgets('LenraImage loadingBuilder should build loader widget when the image is loading.',
       (WidgetTester tester) async {
