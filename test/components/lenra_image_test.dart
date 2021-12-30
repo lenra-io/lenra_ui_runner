@@ -131,4 +131,91 @@ void main() {
       createHttpClient: (_) => createClient(),
     );
   });
+
+  testWidgets('LenraImage frameBuilder should build placeholder Widget while the image is loading.',
+      (WidgetTester tester) async {
+    Map<String, dynamic> ui = {
+      "root": {
+        "type": "image",
+        "fromNetwork": true,
+        "path": "long-to-load-image",
+        "frameBuilder": {
+          "type": "text",
+          "value": "Frame",
+        },
+        "errorBuilder": {
+          "type": "text",
+          "value": "Error",
+        }
+      }
+    };
+
+    BuildContext? _context;
+
+    await HttpOverrides.runZoned(
+      () async {
+        await tester.pumpWidget(
+          createBaseTestWidgets(
+            child: Builder(
+              builder: (BuildContext context) {
+                _context = context;
+
+                return LenraWidget();
+              },
+            ),
+          ),
+        );
+
+        _context!.read<WidgetModel>().replaceUi(ui);
+
+        await tester.pump();
+
+        expect(find.byType(LenraApplicationImage), findsOneWidget);
+        expect(find.text("Frame"), findsOneWidget);
+      },
+      createHttpClient: (_) => createClient(),
+    );
+  });
+
+  testWidgets('LenraImage width and height should be properly applied to the component.', (WidgetTester tester) async {
+    Map<String, dynamic> ui = {
+      "root": {
+        "type": "image",
+        "width": 500,
+        "height": 500,
+        "fromNetwork": true,
+        "path": "long-to-load-image",
+        "errorBuilder": {
+          "type": "text",
+          "value": "Error",
+        }
+      }
+    };
+
+    BuildContext? _context;
+
+    await HttpOverrides.runZoned(
+      () async {
+        await tester.pumpWidget(
+          createBaseTestWidgets(
+            child: Builder(
+              builder: (BuildContext context) {
+                _context = context;
+
+                return LenraWidget();
+              },
+            ),
+          ),
+        );
+
+        _context!.read<WidgetModel>().replaceUi(ui);
+
+        await tester.pump();
+
+        expect(find.byType(LenraApplicationImage), findsOneWidget);
+        expect(tester.getSize(find.byType(LenraApplicationImage)), Size(500, 500));
+      },
+      createHttpClient: (_) => createClient(),
+    );
+  });
 }
