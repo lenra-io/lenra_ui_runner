@@ -11,7 +11,6 @@ import 'package:mockito/annotations.dart';
 
 import 'package:provider/provider.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:http/http.dart' as http;
 import 'lenra_image_test.mocks.dart';
 
 import '../test_helper.dart';
@@ -25,11 +24,10 @@ final MockHttpClientRequest request = MockHttpClientRequest();
 final MockHttpClientResponse response = MockHttpClientResponse();
 final MockHttpHeaders headers = MockHttpHeaders();
 
-
 HttpClient createClient() {
   var client = MockHttpClient();
   Stream<List<int>> stream = Stream<List<int>>.fromIterable([_opImage]);
-  when(client.getUrl(any)).thenAnswer((_) {
+  when(client.getUrl(Uri.parse("long-to-load-image"))).thenAnswer((_) {
     print('load');
     return Future<HttpClientRequest>.value(request);
   });
@@ -48,8 +46,8 @@ HttpClient createClient() {
     });
   });
   return client;
-
 }
+
 @GenerateMocks([HttpClient, HttpClientRequest, HttpHeaders], customMocks: [MockSpec<HttpClientResponse>()])
 void main() {
   // testWidgets('LenraImage errorBuilder should build error widget when an error occurs.', (WidgetTester tester) async {
@@ -84,11 +82,6 @@ void main() {
   //   expect(find.text("Error"), findsOneWidget);
   // });
 
-  setUp(() {
-    debugNetworkImageHttpClientProvider = createClient;
-  });
-
-  // Faire un test() avec debugNetworkImageHttpClientProvider = mock 
   testWidgets('LenraImage loadingBuilder should build loader widget when the image is loading.',
       (WidgetTester tester) async {
     Map<String, dynamic> ui = {
@@ -106,59 +99,31 @@ void main() {
         }
       }
     };
+
     BuildContext? _context;
-    await tester.pumpWidget(
-        createBaseTestWidgets(
-          child: Builder(
-            builder: (BuildContext context) {
-              _context = context;
 
-              return LenraWidget();
-            },
+    await HttpOverrides.runZoned(
+      () async {
+        await tester.pumpWidget(
+          createBaseTestWidgets(
+            child: Builder(
+              builder: (BuildContext context) {
+                _context = context;
+
+                return LenraWidget();
+              },
+            ),
           ),
-        ),
-      );
+        );
 
-      _context!.read<WidgetModel>().replaceUi(ui);
+        _context!.read<WidgetModel>().replaceUi(ui);
 
-      await tester.pump();
-      await tester.pumpAndSettle(const Duration(minutes: 3000));
-      print("waited");
-      
-      expect(find.byType(LenraApplicationImage), findsOneWidget);
-      expect(find.text("Loading"), findsOneWidget);
-  //   await HttpOverrides.runZoned(() async {
-  //     BuildContext? _context;
+        await tester.pump();
 
-  //     await tester.pumpWidget(
-  //       createBaseTestWidgets(
-  //         child: Builder(
-  //           builder: (BuildContext context) {
-  //             _context = context;
-
-  //             return LenraWidget();
-  //           },
-  //         ),
-  //       ),
-  //     );
-
-  //     _context!.read<WidgetModel>().replaceUi(ui);
-
-  //     await tester.pump();
-  //     await tester.pumpAndSettle(const Duration(minutes: 3000));
-  //     print("waited");
-  //     expect(find.byType(LenraApplicationImage), findsOneWidget);
-  //     expect(find.text("Loading"), findsOneWidget);
-  //   }, createHttpClient: (_) {
-  //     // when(response.listen).thenAnswer((Invocation invocation) {
-  //     //   final void Function(List<int>) onData = invocation.positionalArguments[0];
-  //     //   final void Function() onDone = invocation.namedArguments[#onDone];
-  //     //   final void Function(Object, [StackTrace]) onError = invocation.namedArguments[#onError];
-  //     //   final bool cancelOnError = invocation.namedArguments[#cancelOnError];
-  //     //   return Stream<List<int>>.fromIterable(<List<int>>[_opImage])
-  //     //       .listen(onData, onDone: onDone, onError: onError, cancelOnError: cancelOnError);
-  //     // });
-  //     return client;
-  //   });
+        expect(find.byType(LenraApplicationImage), findsOneWidget);
+        expect(find.text("Loading"), findsOneWidget);
+      },
+      createHttpClient: (_) => createClient(),
+    );
   });
 }
