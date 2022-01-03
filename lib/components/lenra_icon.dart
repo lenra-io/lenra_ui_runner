@@ -46,7 +46,7 @@ class LenraIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Icon(
       value,
-      color: color ?? Colors.black,
+      color: color,
       semanticLabel: semanticLabel,
       size: size ?? 1,
     );
