@@ -22,3 +22,12 @@ This is the "smart" parent component of all Lenra display components.
 - It instantiates the display component according to the type.
 
 - It parses JSON properties into useful objects for the display component.
+
+## Running tests
+### Prerequisites
+
+You need to generate the mockito mocks for the tests to properly run. This can be done by running the following command :
+
+```bash
+flutter pub run build_runner build
+```
