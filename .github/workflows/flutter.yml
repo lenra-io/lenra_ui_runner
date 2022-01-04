@@ -30,7 +30,9 @@ jobs:
           cd ../..
 
       - name: Run tests
-        run: flutter test --coverage
+        run: |
+          flutter pub run build_runner build
+          flutter test --coverage
     # - name: Upload coverage to codecov
     #   uses: codecov/codecov-action@v2
     #   with:
