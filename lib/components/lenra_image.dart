@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
   @override
   LenraApplicationImage map({
-    path,
+    src,
     width,
     height,
     alignment,
@@ -25,7 +25,7 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
     semanticLabel,
   }) {
     return LenraApplicationImage(
-      path: path,
+      src: src,
       width: width,
       height: height,
       alignment: alignment,
@@ -47,7 +47,7 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
   @override
   Map<String, Type> get propsTypes {
     return {
-      "path": String,
+      "src": String,
       "width": double,
       "height": double,
       "alignment": AlignmentGeometry,
@@ -68,7 +68,7 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
 }
 
 class LenraApplicationImage extends StatelessWidget {
-  final String path;
+  final String src;
   final double? width;
   final double? height;
   final AlignmentGeometry? alignment;
@@ -86,7 +86,7 @@ class LenraApplicationImage extends StatelessWidget {
   final String? semanticLabel;
 
   LenraApplicationImage({
-    required this.path,
+    required this.src,
     required this.width,
     required this.height,
     required this.alignment,
@@ -106,19 +106,18 @@ class LenraApplicationImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String path;
+    String src;
 
-    if (this.path.startsWith("http://") || this.path.startsWith("https://")) {
-      path = this.path;
+    if (this.src.startsWith("http://") || this.src.startsWith("https://")) {
+      src = this.src;
     } else {
       var model = context.read<LenraApplicationModel>();
 
-      path =
-          "${model.httpEndpoint}/api/apps/${model.applicationName}/resources/${this.path}?token=${model.accessToken}";
+      src = "${model.httpEndpoint}/api/apps/${model.applicationName}/resources/${this.src}?token=${model.accessToken}";
     }
 
     return Image.network(
-      path,
+      src,
       width: width,
       height: height,
       alignment: alignment ?? Alignment.center,
