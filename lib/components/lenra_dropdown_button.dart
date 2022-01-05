@@ -32,7 +32,7 @@ class LenraDropdownButtonBuilder extends LenraComponentBuilder<LenraApplicationD
       "disabled": bool,
       "size": LenraComponentSize,
       "mainStyle": String,
-      "icon": Icon,
+      "icon": Widget,
       "child": Widget,
     };
   }
@@ -44,7 +44,7 @@ class LenraApplicationDropdownButton extends StatelessWidget {
   final LenraComponentSize? size;
   final String? mainStyle;
   final Widget child;
-  final Icon? icon;
+  final Widget? icon;
 
   LenraApplicationDropdownButton({
     required this.text,

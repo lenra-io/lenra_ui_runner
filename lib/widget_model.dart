@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:json_patch/json_patch.dart';
 import 'package:lenra_ui_runner/components/lenra_button.dart';
 import 'package:lenra_ui_runner/components/lenra_checkbox.dart';
+import 'package:lenra_ui_runner/components/lenra_icon.dart';
 import 'package:lenra_ui_runner/components/lenra_image.dart';
 import 'package:lenra_ui_runner/components/lenra_overlay_entry.dart';
 import 'package:lenra_ui_runner/components/lenra_radio.dart';
@@ -56,6 +57,7 @@ class WidgetModel extends ChangeNotifier {
     'stack': LenraStackBuilder(),
     'slider': LenraSliderBuilder(),
     'overlayEntry': LenraOverlayEntryBuilder(),
+    'icon': LenraIconBuilder(),
   };
 
   static Widget parseJson(Map<String, dynamic> json) {

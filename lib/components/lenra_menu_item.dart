@@ -3,7 +3,6 @@ import 'package:lenra_components/component/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
-import 'package:lenra_ui_runner/utils/icon_util.dart';
 
 // TODO generate this from annotation on LenraMenuItem
 class LenraMenuItemBuilder extends LenraComponentBuilder<LenraApplicationMenuItem> {
@@ -24,7 +23,7 @@ class LenraMenuItemBuilder extends LenraComponentBuilder<LenraApplicationMenuIte
       "text": String,
       "isSelected": bool,
       "disabled": bool,
-      "icon": String,
+      "icon": Widget,
       "onPressed": lenra.Listener,
     };
   }
@@ -34,7 +33,7 @@ class LenraApplicationMenuItem extends StatelessWidget {
   final String text;
   final bool? isSelected;
   final bool? disabled;
-  final String? icon;
+  final Widget? icon;
   final lenra.Listener? onPressed;
 
   LenraApplicationMenuItem({
@@ -53,21 +52,12 @@ class LenraApplicationMenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    IconData? iconData = IconUtil.fromString(icon);
     return LenraMenuItem(
       text: text,
       isSelected: isSelected ?? false,
       disabled: disabled ?? false,
-      icon: iconData == null ? null : _buildIcon(iconData),
+      icon: icon,
       onPressed: () => onMenuItemPressed(context),
-    );
-  }
-
-  Widget _buildIcon(IconData iconData) {
-    return Icon(
-      iconData,
-      color: Colors.white,
-      size: 16,
     );
   }
 }
