@@ -54,7 +54,7 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "image",
-        "path": "not-existing-path",
+        "src": "not-existing-path",
         "errorBuilder": {
           "type": "text",
           "value": "Error",
@@ -92,7 +92,7 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "image",
-        "path": "long-to-load-image",
+        "src": "long-to-load-image",
         "loadingBuilder": {
           "type": "text",
           "value": "Loading",
@@ -136,7 +136,7 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "image",
-        "path": "long-to-load-image",
+        "src": "long-to-load-image",
         "frameBuilder": {
           "type": "text",
           "value": "Frame",
@@ -181,7 +181,7 @@ void main() {
         "type": "image",
         "width": 500,
         "height": 500,
-        "path": "long-to-load-image",
+        "src": "long-to-load-image",
         "errorBuilder": {
           "type": "text",
           "value": "Error",
