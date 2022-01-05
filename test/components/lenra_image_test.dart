@@ -92,7 +92,6 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "image",
-        "fromNetwork": true,
         "path": "long-to-load-image",
         "loadingBuilder": {
           "type": "text",
@@ -137,7 +136,6 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "image",
-        "fromNetwork": true,
         "path": "long-to-load-image",
         "frameBuilder": {
           "type": "text",
@@ -183,7 +181,6 @@ void main() {
         "type": "image",
         "width": 500,
         "height": 500,
-        "fromNetwork": true,
         "path": "long-to-load-image",
         "errorBuilder": {
           "type": "text",

@@ -8,7 +8,6 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
   @override
   LenraApplicationImage map({
     path,
-    fromNetwork,
     width,
     height,
     alignment,
@@ -27,7 +26,6 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
   }) {
     return LenraApplicationImage(
       path: path,
-      fromNetwork: fromNetwork,
       width: width,
       height: height,
       alignment: alignment,
@@ -50,7 +48,6 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
   Map<String, Type> get propsTypes {
     return {
       "path": String,
-      "fromNetwork": bool,
       "width": double,
       "height": double,
       "alignment": AlignmentGeometry,
@@ -72,7 +69,6 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
 
 class LenraApplicationImage extends StatelessWidget {
   final String path;
-  final bool? fromNetwork;
   final double? width;
   final double? height;
   final AlignmentGeometry? alignment;
@@ -91,7 +87,6 @@ class LenraApplicationImage extends StatelessWidget {
 
   LenraApplicationImage({
     required this.path,
-    required this.fromNetwork,
     required this.width,
     required this.height,
     required this.alignment,
@@ -113,13 +108,13 @@ class LenraApplicationImage extends StatelessWidget {
   Widget build(BuildContext context) {
     String path;
 
-    if (fromNetwork == null || !fromNetwork!) {
+    if (this.path.startsWith("http://") || this.path.startsWith("https://")) {
+      path = this.path;
+    } else {
       var model = context.read<LenraApplicationModel>();
 
       path =
           "${model.httpEndpoint}/api/apps/${model.applicationName}/resources/${this.path}?token=${model.accessToken}";
-    } else {
-      path = this.path;
     }
 
     return Image.network(
