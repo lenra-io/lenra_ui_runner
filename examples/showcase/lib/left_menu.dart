@@ -53,7 +53,7 @@ class LeftMenu extends StatelessWidget {
         createMenu(context, 'Lenra Stack', lenraStackPage),
         createMenu(context, 'Lenra Slider', lenraSliderPage),
         createMenu(context, 'OverlayEntry', lenraOverlayEntryPage),
-        createMenu(context, 'Lenra Icon', lenraIconPage)
+        createMenu(context, 'Lenra Icon', lenraIconPage),
         createMenu(context, 'Lenra Image', lenraImagePage),
       ],
     );
