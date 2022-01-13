@@ -24,7 +24,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
                 "text": "First",
                 "isSelected": data,
                 "disabled": true,
-                "icon": "ac_unit",
+                "icon": {"type": "icon", "value": "ac_unit"},
                 "onPressed": {
                   "code": "first",
                 }
@@ -41,7 +41,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
                 "type": "menuItem",
                 "text": "Third",
                 "isSelected": data,
-                "icon": "unarchive",
+                "icon": {"type": "icon", "value": "unarchive"},
                 "onPressed": {
                   "code": "third",
                 }
@@ -50,7 +50,7 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
                 "type": "menuItem",
                 "text": "Fourth",
                 "isSelected": data,
-                "icon": "aod",
+                "icon": {"type": "icon", "value": "aod"},
                 "onPressed": {
                   "code": "fourth",
                 }

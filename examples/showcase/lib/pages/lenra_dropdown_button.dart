@@ -34,7 +34,7 @@ class _LenraDropdownButtonPageState extends UiBuilderState<LenraDropdownButtonPa
               "type": "text",
               "value": "foo",
             },
-            "icon": "yard_sharp",
+            "icon": {"type": "icon", "value": "yard_sharp"},
           },
           {
             "type": "dropdownButton",
