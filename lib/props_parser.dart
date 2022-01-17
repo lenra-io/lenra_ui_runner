@@ -51,6 +51,10 @@ extension ParserExt on Parser {
     LenraSliderStyle: Parser.parseLenraSliderStyle,
     ChildrenWidgets: Parser.parseChildrenWidgets,
     Widget: Parser.parseWidget,
+    Rect: Parser.parseRect,
+    FilterQuality: Parser.parseFilterQuality,
+    BoxFit: Parser.parseBoxFit,
+    ImageRepeat: Parser.parseImageRepeat,
   };
 }
 
@@ -536,14 +540,14 @@ class Parser {
 
   static Alignment parseAlignment(String value) {
     switch (value) {
+      case "center":
+        return Alignment.center;
       case "bottomCenter":
         return Alignment.bottomCenter;
       case "bottomLeft":
         return Alignment.bottomLeft;
       case "bottomRight":
         return Alignment.bottomRight;
-      case "center":
-        return Alignment.center;
       case "centerLeft":
         return Alignment.centerLeft;
       case "centerRight":
@@ -592,6 +596,66 @@ class Parser {
 
   static Widget parseWidget(Map<String, dynamic> props) {
     return WidgetModel.parseJson(props);
+  }
+
+  static FilterQuality parseFilterQuality(String value) {
+    switch (value) {
+      case "low":
+        return FilterQuality.low;
+      case "medium":
+        return FilterQuality.medium;
+      case "high":
+        return FilterQuality.high;
+      case "none":
+        return FilterQuality.none;
+      default:
+        return FilterQuality.low;
+    }
+  }
+
+  static Rect parseRect(Map<String, dynamic> props) {
+    return Rect.fromLTWH(
+      props.containsKey("left") ? parseDouble(props["left"]) : 0,
+      props.containsKey("top") ? parseDouble(props["top"]) : 0,
+      props.containsKey("width") ? parseDouble(props["width"]) : 0,
+      props.containsKey("height") ? parseDouble(props["height"]) : 0,
+    );
+  }
+
+  static BoxFit parseBoxFit(String value) {
+    switch (value) {
+      case "contain":
+        return BoxFit.contain;
+      case "cover":
+        return BoxFit.cover;
+      case "fill":
+        return BoxFit.fill;
+      case "fitHeight":
+        return BoxFit.fitHeight;
+      case "fitWidth":
+        return BoxFit.fitWidth;
+      case "none":
+        return BoxFit.none;
+      case "scaleDown":
+        return BoxFit.scaleDown;
+      default:
+        return BoxFit.contain;
+    }
+  }
+
+  static ImageRepeat parseImageRepeat(String value) {
+    switch (value) {
+      case "noRepeat":
+        return ImageRepeat.noRepeat;
+      case "repeat":
+        return ImageRepeat.repeat;
+      case "repeatX":
+        return ImageRepeat.repeatX;
+      case "repeatY":
+        return ImageRepeat.repeatY;
+      default:
+        return ImageRepeat.noRepeat;
+    }
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {

@@ -22,7 +22,9 @@ jobs:
       - name: Restore packages
         run: flutter pub get
       - name: Analyze
-        run: flutter analyze --no-congratulate
+        run: |
+          flutter pub run build_runner build
+          flutter analyze --no-congratulate
       - name: Analyze Showcase
         run: |
           cd examples/showcase
