@@ -33,8 +33,8 @@ class WidgetModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void patchUi(Iterable<dynamic> patches) {
-    replaceUi(JsonPatch.apply(_ui, patches as Iterable<Map<String, dynamic>>, strict: false));
+  void patchUi(Iterable<Map<String, dynamic>> patches) {
+    replaceUi(JsonPatch.apply(_ui, patches, strict: false));
   }
 
   static final Map<String, LenraComponentBuilder> componentsMapping = {
