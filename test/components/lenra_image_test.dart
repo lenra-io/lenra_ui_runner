@@ -124,7 +124,7 @@ void main() {
 
         await tester.pump();
 
-        expect(find.byType(LenraApplicationImage), findsOneWidget);
+        expect(find.byType(LenraImage), findsOneWidget);
         expect(find.text("Loading"), findsOneWidget);
       },
       createHttpClient: (_) => createClient(),
@@ -168,7 +168,7 @@ void main() {
 
         await tester.pump();
 
-        expect(find.byType(LenraApplicationImage), findsOneWidget);
+        expect(find.byType(LenraImage), findsOneWidget);
         expect(find.text("Frame"), findsOneWidget);
       },
       createHttpClient: (_) => createClient(),
@@ -209,8 +209,8 @@ void main() {
 
         await tester.pump();
 
-        expect(find.byType(LenraApplicationImage), findsOneWidget);
-        expect(tester.getSize(find.byType(LenraApplicationImage)), Size(500, 500));
+        expect(find.byType(LenraImage), findsOneWidget);
+        expect(tester.getSize(find.byType(LenraImage)), Size(500, 500));
       },
       createHttpClient: (_) => createClient(),
     );
