@@ -4,9 +4,9 @@ import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:provider/provider.dart';
 
 // TODO : generate this from annotation on LenraImage
-class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
+class LenraImageBuilder extends LenraComponentBuilder<LenraImage> {
   @override
-  LenraApplicationImage map({
+  LenraImage map({
     src,
     width,
     height,
@@ -24,7 +24,7 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
     repeat,
     semanticLabel,
   }) {
-    return LenraApplicationImage(
+    return LenraImage(
       src: src,
       width: width,
       height: height,
@@ -67,7 +67,7 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraApplicationImage> {
   }
 }
 
-class LenraApplicationImage extends StatelessWidget {
+class LenraImage extends StatelessWidget {
   final String src;
   final double? width;
   final double? height;
@@ -85,7 +85,7 @@ class LenraApplicationImage extends StatelessWidget {
   final ImageRepeat? repeat;
   final String? semanticLabel;
 
-  LenraApplicationImage({
+  LenraImage({
     required this.src,
     required this.width,
     required this.height,

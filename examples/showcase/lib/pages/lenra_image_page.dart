@@ -18,7 +18,7 @@ class _LenraImagePageState extends UiBuilderState<LenraImagePage, bool> {
         "direction": "vertical",
         "spacing": 1,
         "children": [
-          {"type": "image", "fromNetwork": true, "src": "https://avatars.githubusercontent.com/u/18312505?s=200&v=4"}
+          {"type": "image", "src": "https://avatars.githubusercontent.com/u/18312505?s=200&v=4"}
         ]
       }
     };
