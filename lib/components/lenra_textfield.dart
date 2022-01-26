@@ -67,7 +67,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
 }
 
 // ignore: must_be_immutable
-class LenraApplicationTextfield extends StatelessWidget {
+class LenraApplicationTextfield extends StatefulWidget {
   String? label;
   String? hintText;
   String? description;
@@ -81,12 +81,11 @@ class LenraApplicationTextfield extends StatelessWidget {
   final lenra.Listener? onChanged;
   int? minLines;
   int? maxLines;
-  final FocusNode _focusNode;
-  final TextEditingController _controller;
   _TimeoutStrategy timeoutStrategy = _AtMostTimeout(duration: Duration(milliseconds: 500));
+  String value;
 
   LenraApplicationTextfield({
-    required String value,
+    required this.value,
     required this.label,
     required this.hintText,
     required this.description,
@@ -100,34 +99,50 @@ class LenraApplicationTextfield extends StatelessWidget {
     required this.minLines,
     required this.maxLines,
     required this.onChanged,
-  })  : _controller = TextEditingController(text: value),
-        _focusNode = FocusNode(),
-        super();
+  }) : super();
+
+  @override
+  State<StatefulWidget> createState() {
+    return LenraApplicationTextfieldState();
+  }
+}
+
+class LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
+  final FocusNode _focusNode;
+  late final TextEditingController _controller;
+
+  LenraApplicationTextfieldState() : _focusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController(text: widget.value);
+  }
 
   void handleTimeout(BuildContext context, String value) {
-    OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
+    OnChangedEvent(code: widget.onChanged!.code, data: ValueData(value)).dispatch(context);
   }
 
   @override
   Widget build(BuildContext context) {
     return LenraTextField(
-      label: label,
-      hintText: hintText,
-      description: description,
-      errorMessage: errorMessage,
-      obscure: obscure ?? false,
-      disabled: disabled ?? false,
-      inRow: inRow ?? false,
-      error: error ?? false,
+      label: widget.label,
+      hintText: widget.hintText,
+      description: widget.description,
+      errorMessage: widget.errorMessage,
+      obscure: widget.obscure ?? false,
+      disabled: widget.disabled ?? false,
+      inRow: widget.inRow ?? false,
+      error: widget.error ?? false,
       onChanged: (value) {
-        if (onChanged != null) {
-          timeoutStrategy.onChanged(context, value, onChanged!.code);
+        if (widget.onChanged != null) {
+          widget.timeoutStrategy.onChanged(context, value, widget.onChanged!.code);
         }
       },
-      size: size ?? LenraComponentSize.medium,
-      minLines: minLines ?? 1,
-      maxLines: maxLines ?? 1,
-      width: width ?? 200.0,
+      size: widget.size ?? LenraComponentSize.medium,
+      minLines: widget.minLines ?? 1,
+      maxLines: widget.maxLines ?? 1,
+      width: widget.width ?? 200.0,
       focusNode: _focusNode,
       controller: _controller,
     );
