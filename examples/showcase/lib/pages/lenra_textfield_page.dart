@@ -19,7 +19,7 @@ class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String
         "children": [
           {
             "type": "textfield",
-            "value": "",
+            "value": data,
             "label": "Quel est votre Prénom ?",
             "hintText": "Pascal",
             "minLines": 3,
@@ -39,7 +39,7 @@ class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String
       case "CodeA":
         return (event as OnChangedEvent).data.value;
       default:
-        return "";
+        return "zzzz";
     }
   }
 }
