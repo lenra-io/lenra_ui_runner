@@ -25,11 +25,11 @@ import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 
 class WidgetModel extends ChangeNotifier {
   Map<String, dynamic> _ui = {};
-  List<dynamic> _errors = [];
+  List<Widget> _errors = [];
 
   Map<String, dynamic> get ui => _ui;
 
-  List<dynamic> get errors => _errors;
+  List<Widget> get errors => _errors;
 
   void replaceUi(Map<String, dynamic> ui) {
     _ui = ui;
@@ -40,8 +40,8 @@ class WidgetModel extends ChangeNotifier {
     replaceUi(JsonPatch.apply(_ui, patches, strict: false));
   }
 
-  void AppErrors(Map<dynamic, dynamic>? response) {
-    _errors = response!["errors"];
+  void appErrors(List<Widget> errors, Widget callback) {
+    _errors = errors;
     notifyListeners();
   }
 
