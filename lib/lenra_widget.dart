@@ -17,16 +17,24 @@ class LenraWidget extends StatelessWidget {
             duration: Duration(minutes: 2),
             backgroundColor: LenraColorThemeData.lenraCustomRed,
             content: LenraFlex(
+              spacing: 2,
               direction: Axis.horizontal,
               children: errors +
                   [
                     Spacer(),
-                    //Should consider using api route to notify dev
+                    //TODO: We should consider using api route to notify dev
                     LenraButton(
                       disabled: true,
                       type: LenraComponentType.secondary,
                       onPressed: () {},
                       text: "Contact developper",
+                    ),
+                    LenraButton(
+                      type: LenraComponentType.secondary,
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                      },
+                      leftIcon: Icon(Icons.close),
                     )
                   ],
             ),

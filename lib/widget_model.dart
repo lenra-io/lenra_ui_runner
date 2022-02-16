@@ -40,7 +40,7 @@ class WidgetModel extends ChangeNotifier {
     replaceUi(JsonPatch.apply(_ui, patches, strict: false));
   }
 
-  void appErrors(List<Widget> errors, Widget callback) {
+  void appErrors(List<Widget> errors) {
     _errors = errors;
     notifyListeners();
   }
