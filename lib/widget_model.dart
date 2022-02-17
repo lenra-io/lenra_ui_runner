@@ -24,8 +24,10 @@ import 'package:lenra_ui_runner/components/lenra_flex.dart';
 import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 
 class WidgetModel extends ChangeNotifier {
+  bool error = false;
   Map<String, dynamic> _ui = {};
   List<Widget> _errors = [];
+  static late Widget appErrorUI;
 
   Map<String, dynamic> get ui => _ui;
 
@@ -41,6 +43,7 @@ class WidgetModel extends ChangeNotifier {
   }
 
   void appErrors(List<Widget> errors) {
+    error = true;
     _errors = errors;
     notifyListeners();
   }
@@ -69,7 +72,7 @@ class WidgetModel extends ChangeNotifier {
   };
 
   static Widget parseJson(Map<String, dynamic> json) {
-    if (json.isEmpty) return Text("No Components.");
+    if (json.isEmpty) return appErrorUI;
 
     String? type = getType(json);
     if (type == null) {

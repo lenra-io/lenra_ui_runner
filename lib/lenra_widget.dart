@@ -8,9 +8,9 @@ class LenraWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     WidgetModel widgetModel = context.watch<WidgetModel>();
     Map<String, dynamic> ui = widgetModel.ui;
-    List<Widget> errors = widgetModel.errors;
+    bool error = widgetModel.error;
 
-    if (errors.isNotEmpty) {
+    if (error) {
       WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -19,7 +19,7 @@ class LenraWidget extends StatelessWidget {
             content: LenraFlex(
               spacing: 2,
               direction: Axis.horizontal,
-              children: errors +
+              children: widgetModel.errors +
                   [
                     Spacer(),
                     //TODO: We should consider using api route to notify dev
