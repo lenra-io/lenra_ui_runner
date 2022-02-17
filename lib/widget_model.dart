@@ -27,7 +27,7 @@ class WidgetModel extends ChangeNotifier {
   bool error = false;
   Map<String, dynamic> _ui = {};
   List<Widget> _errors = [];
-  static late Widget appErrorUI;
+  static Widget appErrorUI = Container();
 
   Map<String, dynamic> get ui => _ui;
 
