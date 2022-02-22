@@ -72,7 +72,7 @@ class LenraWidget extends StatelessWidget {
   };
 
   static Widget parseJson(Map<String, dynamic> json) {
-    if (json.isEmpty) return appErrorUI != null ? appErrorUI!(_errors) : Container();
+    if (json.isEmpty) return appErrorUI != null ? appErrorUI!(_errors) : Text("Unknow error");
 
     String? type = getType(json);
     if (type == null) {
