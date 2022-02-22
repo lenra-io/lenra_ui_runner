@@ -25,8 +25,8 @@ import 'package:lenra_ui_runner/components/lenra_flex.dart';
 import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 
 class LenraWidget extends StatelessWidget {
-  static late Function appErrorUI;
-  static late Function appErrorCallback;
+  static Function? appErrorUI;
+  static Function? appErrorCallback;
   static List<Widget> _errors = [];
 
   @override
@@ -38,7 +38,7 @@ class LenraWidget extends StatelessWidget {
     if (error) {
       List<Widget> error = context.select<WidgetModel, List<Widget>>((model) => model.errors);
       LenraWidget._errors = error;
-      appErrorCallback(context, error);
+      appErrorCallback!(context, error);
     }
 
     if (ui.keys.contains("root") && ui.keys.length == 1) {
@@ -72,7 +72,7 @@ class LenraWidget extends StatelessWidget {
   };
 
   static Widget parseJson(Map<String, dynamic> json) {
-    if (json.isEmpty) return appErrorUI(_errors);
+    if (json.isEmpty) return appErrorUI != null ? appErrorUI!(_errors) : Container();
 
     String? type = getType(json);
     if (type == null) {
