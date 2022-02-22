@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
@@ -26,8 +25,8 @@ import 'package:lenra_ui_runner/components/lenra_flex.dart';
 import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 
 class LenraWidget extends StatelessWidget {
-  static Function appErrorUI = () {};
   static List<Widget> _errors = [];
+  static Function appErrorUI = () {};
   static Function appErrorCallback = () {};
 
   @override
