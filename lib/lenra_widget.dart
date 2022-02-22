@@ -25,8 +25,8 @@ import 'package:lenra_ui_runner/components/lenra_flex.dart';
 import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 
 class LenraWidget extends StatelessWidget {
-  static Function appErrorUI = () {};
-  static Function appErrorCallback = () {};
+  static late Function appErrorUI;
+  static late Function appErrorCallback;
   static List<Widget> _errors = [];
 
   @override
