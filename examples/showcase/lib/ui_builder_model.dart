@@ -20,11 +20,13 @@ class UiBuilderModel extends ChangeNotifier {
 
   void initUi(Map<String, dynamic> ui) {
     this.ui = ui;
+    lastUi = ui;
   }
 
   bool handleNotifications(Event event) {
     data = getData(event);
     var diff = JsonPatch.diff(lastUi, ui);
+    lastUi = ui;
     widgetModel.patchUi(diff);
 
     return true;

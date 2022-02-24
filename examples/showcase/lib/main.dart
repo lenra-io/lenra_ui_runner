@@ -84,36 +84,41 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<WidgetModel>(create: (_) => WidgetModel()),
-        ChangeNotifierProxyProvider<WidgetModel, UiBuilderModel>(
-            create: (context) => UiBuilderModel(widgetModel: context.read<WidgetModel>()),
-            update: (_, widgetModel, uiBuilderModel) => uiBuilderModel!)
-      ],
-      child: NotificationListener<Event>(
-        onNotification: (Event event) => context.read<UiBuilderModel>().handleNotifications(event),
-        child: LenraTheme(
-          themeData: LenraThemeData(),
-          child: MaterialApp(
-            title: 'Flutter Demo',
-            theme: ThemeData(),
-            home: Scaffold(
-              appBar: AppBar(),
-              drawer: Drawer(
-                child: LeftMenu(
-                  currentMenu: currentMenu,
-                  onMenuTapped: (newMenu) {
-                    setState(() {
-                      currentMenu = newMenu;
-                    });
-                  },
+        providers: [
+          ChangeNotifierProvider<WidgetModel>(create: (_) => WidgetModel()),
+          ChangeNotifierProxyProvider<WidgetModel, UiBuilderModel>(
+              create: (context) => UiBuilderModel(widgetModel: context.read<WidgetModel>()),
+              update: (_, widgetModel, uiBuilderModel) => uiBuilderModel!)
+        ],
+        builder: (context, child) {
+          var uiBuilderModel = context.read<UiBuilderModel>();
+
+          return NotificationListener<Event>(
+            onNotification: (Event event) {
+              return uiBuilderModel.handleNotifications(event);
+            },
+            child: LenraTheme(
+              themeData: LenraThemeData(),
+              child: MaterialApp(
+                title: 'Flutter Demo',
+                theme: ThemeData(),
+                home: Scaffold(
+                  appBar: AppBar(),
+                  drawer: Drawer(
+                    child: LeftMenu(
+                      currentMenu: currentMenu,
+                      onMenuTapped: (newMenu) {
+                        setState(() {
+                          currentMenu = newMenu;
+                        });
+                      },
+                    ),
+                  ),
+                  body: buildBody(),
                 ),
               ),
-              body: buildBody(),
             ),
-          ),
-        ),
-      ),
-    );
+          );
+        });
   }
 }
