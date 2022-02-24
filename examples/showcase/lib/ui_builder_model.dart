@@ -13,24 +13,19 @@ class UiBuilderModel extends ChangeNotifier {
 
   UiBuilderModel({required this.widgetModel});
 
-  void initUi(Map<String, dynamic> ui, dynamic Function(Event) getData) {
-    print("INIT UI");
+  void initData(dynamic Function(Event) getData) {
     this.getData = getData;
     data = getData(OnPressedEvent(code: "InitData"));
-    this.ui = ui;
+  }
 
-    print(data);
-    print(this.ui);
+  void initUi(Map<String, dynamic> ui) {
+    this.ui = ui;
   }
 
   bool handleNotifications(Event event) {
-    print("HANDLING NOTIFICATION");
     data = getData(event);
     var diff = JsonPatch.diff(lastUi, ui);
     widgetModel.patchUi(diff);
-
-    print(data);
-    print(ui);
 
     return true;
   }

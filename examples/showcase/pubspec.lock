@@ -222,6 +222,9 @@ packages:
     source: hosted
     version: "0.12.11"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fe3cae4 (UI now works, notifications do not)
   material_color_utilities:
     dependency: transitive
     description:
@@ -229,8 +232,11 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.3"
+<<<<<<< HEAD
 =======
 >>>>>>> 3f71b12 (fix: Trying to fix notification listener)
+=======
+>>>>>>> fe3cae4 (UI now works, notifications do not)
   meta:
     dependency: transitive
     description:
@@ -338,10 +344,14 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
 <<<<<<< HEAD
+<<<<<<< HEAD
     version: "0.4.8"
 =======
     version: "0.4.3"
 >>>>>>> 3f71b12 (fix: Trying to fix notification listener)
+=======
+    version: "0.4.8"
+>>>>>>> fe3cae4 (UI now works, notifications do not)
   typed_data:
     dependency: transitive
     description:
