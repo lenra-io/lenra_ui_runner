@@ -11,7 +11,7 @@ class LenraStackPage extends StatefulWidget {
 
 class _LenraStackPageState extends UiBuilderState<LenraStackPage, bool> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "stack",

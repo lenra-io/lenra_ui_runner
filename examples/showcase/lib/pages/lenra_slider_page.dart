@@ -11,7 +11,7 @@ class LenraSliderPage extends StatefulWidget {
 
 class _LenraSliderPageState extends UiBuilderState<LenraSliderPage, Map<String, dynamic>> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "flex",

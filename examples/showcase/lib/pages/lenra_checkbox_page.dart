@@ -11,7 +11,7 @@ class LenraCheckboxPage extends StatefulWidget {
 
 class _LenraCheckboxPageState extends UiBuilderState<LenraCheckboxPage, Map<String, dynamic>> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "flex",

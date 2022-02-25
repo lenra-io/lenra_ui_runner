@@ -11,7 +11,7 @@ class LenraIconPage extends StatefulWidget {
 
 class _LenraIconPageState extends UiBuilderState<LenraIconPage, bool> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "flex",

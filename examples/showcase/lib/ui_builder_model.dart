@@ -10,6 +10,7 @@ class UiBuilderModel extends ChangeNotifier {
   late Map<String, dynamic> ui;
   late dynamic data;
   late dynamic Function(Event) getData;
+  late Map<String, dynamic> Function(dynamic) getUi;
 
   UiBuilderModel({required this.widgetModel});
 
@@ -18,13 +19,15 @@ class UiBuilderModel extends ChangeNotifier {
     data = getData(OnPressedEvent(code: "InitData"));
   }
 
-  void initUi(Map<String, dynamic> ui) {
-    this.ui = ui;
+  void initUi(Map<String, dynamic> Function(dynamic) getUi) {
+    this.getUi = getUi;
+    ui = getUi(data);
     lastUi = ui;
   }
 
   bool handleNotifications(Event event) {
     data = getData(event);
+    ui = getUi(data);
     var diff = JsonPatch.diff(lastUi, ui);
     lastUi = ui;
     widgetModel.patchUi(diff);

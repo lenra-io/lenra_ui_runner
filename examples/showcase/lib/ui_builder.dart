@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'ui_builder_model.dart';
 
 abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
-  Map<String, dynamic> get ui;
+  Map<String, dynamic> getUi(dynamic data);
 
   D get data {
     return context.read<UiBuilderModel>().data;
@@ -21,7 +21,7 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
 
     /// replaceUi is called after the first frame is rendered because the provider is only accessible at that point.
     WidgetsBinding.instance?.addPostFrameCallback((_) {
-      context.read<WidgetModel>().replaceUi(ui);
+      context.read<WidgetModel>().replaceUi(getUi(data));
     });
   }
 

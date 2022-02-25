@@ -11,7 +11,7 @@ class LenraDropdownButtonPage extends StatefulWidget {
 
 class _LenraDropdownButtonPageState extends UiBuilderState<LenraDropdownButtonPage, bool> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "flex",

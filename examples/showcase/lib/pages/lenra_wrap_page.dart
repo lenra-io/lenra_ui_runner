@@ -11,7 +11,7 @@ class LenraWrapPage extends StatefulWidget {
 
 class _LenraWrapPageState extends UiBuilderState<LenraWrapPage, bool> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "wrap",

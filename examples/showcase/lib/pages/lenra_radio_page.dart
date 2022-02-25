@@ -11,7 +11,7 @@ class RadioExample extends StatefulWidget {
 
 class _RadioExampleState extends UiBuilderState<RadioExample, String> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "flex",
