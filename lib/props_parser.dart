@@ -10,6 +10,27 @@ import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/lenra_widget.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 import 'package:lenra_ui_runner/components/children_widgets.dart';
+import 'package:lenra_ui_runner/components/lenra_button.dart';
+import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/components/lenra_checkbox.dart';
+import 'package:lenra_ui_runner/components/lenra_icon.dart';
+import 'package:lenra_ui_runner/components/lenra_image.dart';
+import 'package:lenra_ui_runner/components/lenra_overlay_entry.dart';
+import 'package:lenra_ui_runner/components/lenra_radio.dart';
+import 'package:lenra_ui_runner/components/lenra_text.dart';
+import 'package:lenra_ui_runner/components/lenra_textfield.dart';
+import 'package:lenra_ui_runner/components/lenra_dropdown_button.dart';
+import 'package:lenra_ui_runner/components/lenra_flexible.dart';
+import 'package:lenra_ui_runner/components/lenra_container.dart';
+import 'package:lenra_ui_runner/components/lenra_stack.dart';
+import 'package:lenra_ui_runner/components/lenra_slider.dart';
+import 'package:lenra_ui_runner/components/lenra_actionable.dart';
+import 'package:lenra_ui_runner/components/lenra_menu.dart';
+import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
+import 'package:lenra_ui_runner/components/lenra_toggle.dart';
+import 'package:lenra_ui_runner/components/lenra_status_sticker.dart';
+import 'package:lenra_ui_runner/components/lenra_flex.dart';
+import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 
 extension ParserExt on Parser {
   // TODO : Generate this from annotation on class Parser
@@ -60,6 +81,45 @@ extension ParserExt on Parser {
 }
 
 class Parser {
+  static final Map<String, LenraComponentBuilder> componentsMapping = {
+    'text': LenraTextBuilder(),
+    'textfield': LenraTextfieldBuilder(),
+    'button': LenraButtonBuilder(),
+    'checkbox': LenraCheckboxBuilder(),
+    'image': LenraImageBuilder(),
+    'radio': LenraRadioBuilder(),
+    'menu': LenraMenuBuilder(),
+    'menuItem': LenraMenuItemBuilder(),
+    'toggle': LenraToggleBuilder(),
+    'statusSticker': LenraStatusStickerBuilder(),
+    'flex': LenraFlexBuilder(),
+    'container': LenraContainerBuilder(),
+    'actionable': LenraActionableBuilder(),
+    'dropdownButton': LenraDropdownButtonBuilder(),
+    'flexible': LenraFlexibleBuilder(),
+    'wrap': LenraWrapBuilder(),
+    'stack': LenraStackBuilder(),
+    'slider': LenraSliderBuilder(),
+    'overlayEntry': LenraOverlayEntryBuilder(),
+    'icon': LenraIconBuilder(),
+  };
+
+  static String? getType(Map<String, dynamic> json) {
+    return json['type'] as String?;
+  }
+
+  static LenraComponentBuilder? getComponentBuilder(String type) {
+    if (componentsMapping.containsKey(type)) {
+      return componentsMapping[type];
+    }
+
+    return null;
+  }
+
+  static Function? getParser(Type t) {
+    return ParserExt.typeParsers[t];
+  }
+
   static lenra.Listener parseListener(Map<String, dynamic> listener) {
     return lenra.Listener(listener["code"]);
   }

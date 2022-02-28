@@ -4,11 +4,11 @@ import 'package:json_patch/json_patch.dart';
 class WidgetModel extends ChangeNotifier {
   bool error = false;
   Map<String, dynamic> _ui = {};
-  List<Widget> _errors = [];
+  Map<dynamic, dynamic>? _errors = <dynamic, dynamic>{};
 
   Map<String, dynamic> get ui => _ui;
 
-  List<Widget> get errors => _errors;
+  Map<dynamic, dynamic>? get errors => _errors;
 
   void replaceUi(Map<String, dynamic> ui) {
     _ui = ui;
@@ -19,9 +19,9 @@ class WidgetModel extends ChangeNotifier {
     replaceUi(JsonPatch.apply(_ui, patches, strict: false));
   }
 
-  void appErrors(List<Widget> errors) {
+  void appErrors(Map<dynamic, dynamic>? json) {
     error = true;
-    _errors = errors;
+    _errors = json;
     notifyListeners();
   }
 }
