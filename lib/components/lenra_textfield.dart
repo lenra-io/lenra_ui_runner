@@ -26,6 +26,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
     size,
     minLines,
     maxLines,
+    autofillHints,
   }) {
     return LenraApplicationTextfield(
       value: value,
@@ -42,6 +43,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
       size: size,
       minLines: minLines,
       maxLines: maxLines,
+      autofillHints: autofillHints,
     );
   }
 
@@ -62,6 +64,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
       "size": LenraComponentSize,
       "minLines": int,
       "maxLines": int,
+      "autofillHints": List,
     };
   }
 }
@@ -83,6 +86,7 @@ class LenraApplicationTextfield extends StatefulWidget {
   int? maxLines;
   _TimeoutStrategy timeoutStrategy = _AtMostTimeout(duration: Duration(milliseconds: 500));
   String value;
+  Iterable<String>? autofillHints;
 
   LenraApplicationTextfield({
     required this.value,
@@ -99,6 +103,7 @@ class LenraApplicationTextfield extends StatefulWidget {
     required this.minLines,
     required this.maxLines,
     required this.onChanged,
+    required this.autofillHints,
   }) : super();
 
   @override
@@ -143,6 +148,7 @@ class LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
       minLines: widget.minLines ?? 1,
       maxLines: widget.maxLines ?? 1,
       width: widget.width ?? 200.0,
+      autofillHints: widget.autofillHints,
       focusNode: _focusNode,
       controller: _controller,
     );
