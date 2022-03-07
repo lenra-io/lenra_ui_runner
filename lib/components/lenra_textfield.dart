@@ -64,7 +64,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
       "size": LenraComponentSize,
       "minLines": int,
       "maxLines": int,
-      "autofillHints": List,
+      "autofillHints": AutofillHints,
     };
   }
 }

@@ -55,6 +55,7 @@ extension ParserExt on Parser {
     FilterQuality: Parser.parseFilterQuality,
     BoxFit: Parser.parseBoxFit,
     ImageRepeat: Parser.parseImageRepeat,
+    AutofillHints: Parser.parseAutofillHints,
   };
 }
 
@@ -656,6 +657,10 @@ class Parser {
       default:
         return ImageRepeat.noRepeat;
     }
+  }
+
+  static Iterable<String>? parseAutofillHints(List<dynamic> values) {
+    return values.cast<String>();
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
