@@ -16,18 +16,39 @@ class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String
     return {
       "root": {
         "type": "flex",
+        "direction": "vertical",
         "children": [
           {
-            "type": "textfield",
-            "value": data,
-            "label": "Quel est votre Prénom ?",
-            "hintText": "Pascal",
-            "minLines": 3,
-            "maxLines": 5,
-            "size": "large",
-            "onChanged": {"code": "CodeA"}
+            "type": "flex",
+            "direction": "horizontal",
+            "children": [
+              {
+                "type": "textfield",
+                "value": data,
+                "label": "Quel est votre Prénom ?",
+                "hintText": "Pascal",
+                "minLines": 3,
+                "maxLines": 5,
+                "size": "large",
+                "onChanged": {"code": "CodeA"}
+              },
+              {"type": "text", "value": data}
+            ]
           },
-          {"type": "text", "value": data}
+          {
+            "type": "flex",
+            "direction": "horizontal",
+            "children": [
+              {
+                "type": "textfield",
+                "value": "",
+                "label": "Password manager",
+                "size": "large",
+                "onChanged": {"code": "CodeA"},
+                "autofillHints": ["newPassword"]
+              },
+            ]
+          }
         ]
       }
     };
