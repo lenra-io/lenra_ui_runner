@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:json_patch/json_patch.dart';
 
-class WidgetModel extends ChangeNotifier {
-  bool error = false;
-  Map<String, dynamic> _ui = {};
-  Map<dynamic, dynamic>? _errors = <dynamic, dynamic>{};
+class WidgetModel<E> extends ChangeNotifier {
+  Map<String, dynamic>? _ui;
+  E? _errors;
 
-  Map<String, dynamic> get ui => _ui;
+  Map<String, dynamic> get ui => hasUi() ? _ui! : {};
+  E? get errors => _errors;
 
-  Map<dynamic, dynamic>? get errors => _errors;
+  bool hasError() {
+    return _errors != null;
+  }
+
+  bool hasUi() {
+    return _ui != null;
+  }
 
   void replaceUi(Map<String, dynamic> ui) {
     _ui = ui;
@@ -19,9 +25,8 @@ class WidgetModel extends ChangeNotifier {
     replaceUi(JsonPatch.apply(_ui, patches, strict: false));
   }
 
-  void appErrors(Map<dynamic, dynamic>? json) {
-    error = true;
-    _errors = json;
+  void setErrors(E errors) {
+    _errors = errors;
     notifyListeners();
   }
 }

@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 Widget createBaseTestWidgets({required Widget child}) {
   return MultiProvider(
     providers: [
-      ChangeNotifierProvider<WidgetModel>(create: (_) => WidgetModel()),
+      ChangeNotifierProvider<WidgetModel>(create: (_) => WidgetModel<String>()),
       ChangeNotifierProvider<LenraApplicationModel>(
         create: (context) => LenraApplicationModel('foo-url', "appName", ''),
       ),
