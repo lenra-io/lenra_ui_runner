@@ -2,35 +2,17 @@ library props_parser;
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_components/theme/lenra_toggle_style.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
-import 'package:lenra_ui_runner/lenra_widget.dart';
+import 'package:lenra_ui_runner/utils/lenra_text_field_style.dart';
+import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 import 'package:lenra_ui_runner/components/children_widgets.dart';
-import 'package:lenra_ui_runner/components/lenra_button.dart';
-import 'package:lenra_ui_runner/lenra_component_builder.dart';
-import 'package:lenra_ui_runner/components/lenra_checkbox.dart';
-import 'package:lenra_ui_runner/components/lenra_icon.dart';
-import 'package:lenra_ui_runner/components/lenra_image.dart';
-import 'package:lenra_ui_runner/components/lenra_overlay_entry.dart';
-import 'package:lenra_ui_runner/components/lenra_radio.dart';
-import 'package:lenra_ui_runner/components/lenra_text.dart';
-import 'package:lenra_ui_runner/components/lenra_textfield.dart';
-import 'package:lenra_ui_runner/components/lenra_dropdown_button.dart';
-import 'package:lenra_ui_runner/components/lenra_flexible.dart';
-import 'package:lenra_ui_runner/components/lenra_container.dart';
-import 'package:lenra_ui_runner/components/lenra_stack.dart';
-import 'package:lenra_ui_runner/components/lenra_slider.dart';
-import 'package:lenra_ui_runner/components/lenra_actionable.dart';
-import 'package:lenra_ui_runner/components/lenra_menu.dart';
-import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
-import 'package:lenra_ui_runner/components/lenra_toggle.dart';
-import 'package:lenra_ui_runner/components/lenra_status_sticker.dart';
-import 'package:lenra_ui_runner/components/lenra_flex.dart';
-import 'package:lenra_ui_runner/components/lenra_wrap.dart';
+import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 
 extension ParserExt on Parser {
   // TODO : Generate this from annotation on class Parser
@@ -72,11 +54,12 @@ extension ParserExt on Parser {
     LenraSliderStyle: Parser.parseLenraSliderStyle,
     ChildrenWidgets: Parser.parseChildrenWidgets,
     Widget: Parser.parseWidget,
-    Rect: Parser.parseRect,
-    FilterQuality: Parser.parseFilterQuality,
-    BoxFit: Parser.parseBoxFit,
-    ImageRepeat: Parser.parseImageRepeat,
-    AutofillHints: Parser.parseAutofillHints,
+    LenraTextFieldStyle: Parser.parseLenraTextFieldStyle,
+    TextInputType: Parser.parseTextInputType,
+    MaxLengthEnforcement: Parser.parseMaxLengthEnforcement,
+    TextCapitalization: Parser.parseTextCapitalization,
+    TextInputAction: Parser.parseTextInputAction,
+    ToolbarOptions: Parser.parseToolbarOptions,
   };
 }
 
@@ -721,6 +704,326 @@ class Parser {
 
   static Iterable<String>? parseAutofillHints(List<dynamic> values) {
     return values.cast<String>();
+  }
+
+  static LenraTextFieldStyle parseLenraTextFieldStyle(Map<String, dynamic> props) {
+    return LenraTextFieldStyle(
+      cursorColor: props.containsKey("cursorColor") ? parseColor(props["cursorColor"]) : null,
+      cursorHeight: props.containsKey("cursorHeight") ? parseDouble(props["cursorHeight"]) : null,
+      cursorRadius: props.containsKey("cursorRadius") ? parseRadius(props["cursorRadius"]) : null,
+      cursorWidth: props.containsKey("cursorWidth") ? parseDouble(props["cursorWidth"]) : 2.0,
+      decoration: props.containsKey("decoration") ? parseInputDecoration(props["decoration"]) : const InputDecoration(),
+      keyboardAppearance:
+          props.containsKey("keyboardAppearance") ? parseKeyboardAppearance(props["keyboardAppearance"]) : null,
+      obscuringCharacter: props.containsKey("obscuringCharacter") ? parseString(props["obscuringCharacter"]) : '•',
+      scrollPadding:
+          props.containsKey("scrollPadding") ? parseEdgeInsets(props["scrollPadding"]) : const EdgeInsets.all(20.0),
+      selectionHeightStyle: props.containsKey("selectionHeightStyle")
+          ? parseBoxHeightStyle(props["selectionHeightStyle"])
+          : ui.BoxHeightStyle.tight,
+      selectionWidthStyle: props.containsKey("selectionWidthStyle")
+          ? parseBoxWidthStyle(props["selectionWidthStyle"])
+          : ui.BoxWidthStyle.tight,
+      strutStyle: props.containsKey("strutStyle") ? parseStrutStyle(props["strutStyle"]) : null,
+      textStyle: props.containsKey("textStyle") ? parseTextStyle(props["textStyle"]) : null,
+      textAlign: props.containsKey("textAlign") ? parseTextAlign(props["textAlign"]) : TextAlign.start,
+      textAlignVertical:
+          props.containsKey("textAlignVertical") ? parseTextAlignVertical(props["textAlignVertical"]) : null,
+    );
+  }
+
+  static InputDecoration parseInputDecoration(Map<String, dynamic> props) {
+    return InputDecoration(
+      icon: props.containsKey("icon") ? parseWidget(props["icon"]) : null,
+      iconColor: props.containsKey("iconColor") ? parseColor(props["iconColor"]) : null,
+      label: props.containsKey("label") ? parseWidget(props["label"]) : null,
+      labelText: props.containsKey("labelText") ? parseString(props["labelText"]) : null,
+      labelStyle: props.containsKey("labelStyle") ? parseTextStyle(props["labelStyle"]) : null,
+      floatingLabelStyle: props.containsKey("floatingLabelStyle") ? parseTextStyle(props["floatingLabelStyle"]) : null,
+      helperText: props.containsKey("helperText") ? parseString(props["helperText"]) : null,
+      helperStyle: props.containsKey("helperStyle") ? parseTextStyle(props["helperStyle"]) : null,
+      helperMaxLines: props.containsKey("helperMaxLines") ? parseInteger(props["helperMaxLines"]) : null,
+      hintText: props.containsKey("hintText") ? parseString(props["hintText"]) : null,
+      hintStyle: props.containsKey("hintStyle") ? parseTextStyle(props["hintStyle"]) : null,
+      hintTextDirection: props.containsKey("hintTextDirection") ? parseTextDirection(props["hintTextDirection"]) : null,
+      hintMaxLines: props.containsKey("hintMaxLines") ? parseInteger(props["hintMaxLines"]) : null,
+      errorText: props.containsKey("errorText") ? parseString(props["errorText"]) : null,
+      errorStyle: props.containsKey("errorStyle") ? parseTextStyle(props["errorStyle"]) : null,
+      errorMaxLines: props.containsKey("errorMaxLines") ? parseInteger(props["errorMaxLines"]) : null,
+      floatingLabelBehavior: props.containsKey("floatingLabelBehavior")
+          ? parseFloatingLabelBehavior(props["floatingLabelBehavior"])
+          : null,
+      isCollapsed: props.containsKey("isCollapsed") ? parseBool(props["isCollapsed"]) ?? false : false,
+      isDense: props.containsKey("isDense") ? parseBool(props["isDense"]) : null,
+      contentPadding: props.containsKey("contentPadding") ? parseEdgeInsets(props["contentPadding"]) : null,
+      prefixIcon: props.containsKey("prefixIcon") ? parseWidget(props["prefixIcon"]) : null,
+      prefixIconConstraints:
+          props.containsKey("prefixIconConstraints") ? parseBoxConstraints(props["prefixIconConstraints"]) : null,
+      prefix: props.containsKey("prefix") ? parseWidget(props["prefix"]) : null,
+      prefixText: props.containsKey("prefixText") ? parseString(props["prefixText"]) : null,
+      prefixStyle: props.containsKey("prefixStyle") ? parseTextStyle(props["prefixStyle"]) : null,
+      prefixIconColor: props.containsKey("prefixIconColor") ? parseColor(props["prefixIconColor"]) : null,
+      suffixIcon: props.containsKey("suffixIcon") ? parseWidget(props["suffixIcon"]) : null,
+      suffix: props.containsKey("suffix") ? parseWidget(props["suffix"]) : null,
+      suffixText: props.containsKey("suffixText") ? parseString(props["suffixText"]) : null,
+      suffixStyle: props.containsKey("suffixStyle") ? parseTextStyle(props["suffixStyle"]) : null,
+      suffixIconColor: props.containsKey("suffixIconColor") ? parseColor(props["suffixIconColor"]) : null,
+      suffixIconConstraints:
+          props.containsKey("suffixIconConstraints") ? parseBoxConstraints(props["suffixIconConstraints"]) : null,
+      counter: props.containsKey("counter") ? parseWidget(props["counter"]) : null,
+      counterText: props.containsKey("counterText") ? parseString(props["counterText"]) : null,
+      counterStyle: props.containsKey("counterStyle") ? parseTextStyle(props["counterStyle"]) : null,
+      filled: props.containsKey("filled") ? parseBool(props["filled"]) : null,
+      fillColor: props.containsKey("fillColor") ? parseColor(props["fillColor"]) : null,
+      focusColor: props.containsKey("focusColor") ? parseColor(props["focusColor"]) : null,
+      hoverColor: props.containsKey("hoverColor") ? parseColor(props["hoverColor"]) : null,
+      errorBorder: props.containsKey("errorBorder") ? parseInputBorder(props["errorBorder"]) : null,
+      focusedBorder: props.containsKey("focusedBorder") ? parseInputBorder(props["focusedBorder"]) : null,
+      focusedErrorBorder:
+          props.containsKey("focusedErrorBorder") ? parseInputBorder(props["focusedErrorBorder"]) : null,
+      disabledBorder: props.containsKey("disabledBorder") ? parseInputBorder(props["disabledBorder"]) : null,
+      enabledBorder: props.containsKey("enabledBorder") ? parseInputBorder(props["enabledBorder"]) : null,
+      border: props.containsKey("border") ? parseInputBorder(props["border"]) : null,
+      enabled: props.containsKey("enabled") ? parseBool(props["enabled"]) ?? true : true,
+      semanticCounterText: props.containsKey("semanticCounterText") ? parseString(props["semanticCounterText"]) : null,
+      alignLabelWithHint: props.containsKey("alignLabelWithHint") ? parseBool(props["alignLabelWithHint"]) : null,
+      constraints: props.containsKey("constraints") ? parseBoxConstraints(props["constraints"]) : null,
+    );
+  }
+
+  static InputBorder parseInputBorder(Map<String, dynamic> props) {
+    String? inputBorderType = props.containsKey("type") ? parseString(props["type"]) : null;
+    BorderRadius? borderRadius = props.containsKey("borderRadius") ? parseBorderRadius(props["borderRadius"]) : null;
+    BorderSide? borderSide = props.containsKey("borderSide") ? parseBorderSide(props["borderSide"]) : null;
+
+    switch (inputBorderType) {
+      case "underline":
+        return UnderlineInputBorder(
+          borderRadius:
+              borderRadius ?? const BorderRadius.only(topLeft: Radius.circular(4.0), topRight: Radius.circular(4.0)),
+          borderSide: borderSide ?? const BorderSide(),
+        );
+      case "outline":
+        return OutlineInputBorder(
+          borderRadius: borderRadius ?? const BorderRadius.all(Radius.circular(4.0)),
+          borderSide: borderSide ?? const BorderSide(),
+        );
+    }
+
+    return UnderlineInputBorder();
+  }
+
+  static Brightness parseKeyboardAppearance(String value) {
+    switch (value) {
+      case "light":
+        return Brightness.light;
+      case "dark":
+        return Brightness.dark;
+      default:
+        return Brightness.light;
+    }
+  }
+
+  static ui.BoxHeightStyle parseBoxHeightStyle(String value) {
+    switch (value) {
+      case "includeLineSpacingBottom":
+        return ui.BoxHeightStyle.includeLineSpacingBottom;
+      case "includeLineSpacingMiddle":
+        return ui.BoxHeightStyle.includeLineSpacingMiddle;
+      case "includeLineSpacingTop":
+        return ui.BoxHeightStyle.includeLineSpacingTop;
+      case "max":
+        return ui.BoxHeightStyle.max;
+      case "strut":
+        return ui.BoxHeightStyle.strut;
+      case "tight":
+        return ui.BoxHeightStyle.tight;
+      default:
+        return ui.BoxHeightStyle.tight;
+    }
+  }
+
+  static ui.BoxWidthStyle parseBoxWidthStyle(String value) {
+    switch (value) {
+      case "max":
+        return ui.BoxWidthStyle.max;
+      case "tight":
+        return ui.BoxWidthStyle.tight;
+      default:
+        return ui.BoxWidthStyle.tight;
+    }
+  }
+
+  static StrutStyle parseStrutStyle(Map<String, dynamic> props) {
+    return StrutStyle(
+      fontFamily: props.containsKey("fontFamily") ? parseString(props["fontFamily"]) : null,
+      fontFamilyFallback: props.containsKey("fontFamilyFallback") ? parseList(props["fontFamilyFallback"]) : null,
+      fontSize: props.containsKey("fontSize") ? parseDouble(props["fontSize"]) : null,
+      height: props.containsKey("height") ? parseDouble(props["height"]) : null,
+      leadingDistribution:
+          props.containsKey("leadingDistribution") ? parseTextLeadingDistribution(props["leadingDistribution"]) : null,
+      leading: props.containsKey("leading") ? parseDouble(props["leading"]) : null,
+      fontWeight: props.containsKey("fontWeight") ? parseFontWeight(props["fontWeight"]) : null,
+      fontStyle: props.containsKey("fontStyle") ? parseFontStyle(props["fontStyle"]) : null,
+      forceStrutHeight: props.containsKey("forceStrutHeight") ? parseBool(props["forceStrutHeight"]) : null,
+      debugLabel: props.containsKey("debugLabel") ? parseString(props["debugLabel"]) : null,
+      package: props.containsKey("package") ? parseString(props["package"]) : null,
+    );
+  }
+
+  static TextLeadingDistribution parseTextLeadingDistribution(String value) {
+    switch (value) {
+      case "even":
+        return TextLeadingDistribution.even;
+      case "proportional":
+        return TextLeadingDistribution.proportional;
+      default:
+        return TextLeadingDistribution.even;
+    }
+  }
+
+  static TextAlign parseTextAlign(String value) {
+    switch (value) {
+      case "center":
+        return TextAlign.center;
+      case "end":
+        return TextAlign.end;
+      case "justify":
+        return TextAlign.justify;
+      case "left":
+        return TextAlign.left;
+      case "right":
+        return TextAlign.right;
+      case "start":
+        return TextAlign.start;
+      default:
+        return TextAlign.start;
+    }
+  }
+
+  static TextAlignVertical parseTextAlignVertical(String value) {
+    switch (value) {
+      case "bottom":
+        return TextAlignVertical.bottom;
+      case "center":
+        return TextAlignVertical.center;
+      case "top":
+        return TextAlignVertical.top;
+      default:
+        return TextAlignVertical.center;
+    }
+  }
+
+  static FloatingLabelBehavior parseFloatingLabelBehavior(String value) {
+    switch (value) {
+      case "auto":
+        return FloatingLabelBehavior.auto;
+      case "always":
+        return FloatingLabelBehavior.always;
+      case "never":
+        return FloatingLabelBehavior.never;
+      default:
+        return FloatingLabelBehavior.auto;
+    }
+  }
+
+  static TextInputType parseTextInputType(String value) {
+    switch (value) {
+      case "text":
+        return TextInputType.text;
+      case "multiline":
+        return TextInputType.multiline;
+      case "number":
+        return TextInputType.number;
+      case "phone":
+        return TextInputType.phone;
+      case "datetime":
+        return TextInputType.datetime;
+      case "emailAddress":
+        return TextInputType.emailAddress;
+      case "url":
+        return TextInputType.url;
+      case "visiblePassword":
+        return TextInputType.visiblePassword;
+      case "name":
+        return TextInputType.name;
+      case "streetAddress":
+        return TextInputType.streetAddress;
+      case "none":
+        return TextInputType.none;
+      default:
+        return TextInputType.text;
+    }
+  }
+
+  static MaxLengthEnforcement parseMaxLengthEnforcement(String value) {
+    switch (value) {
+      case "none":
+        return MaxLengthEnforcement.none;
+      case "enforced":
+        return MaxLengthEnforcement.enforced;
+      case "truncateAfterCompositionEnds":
+        return MaxLengthEnforcement.truncateAfterCompositionEnds;
+      default:
+        return MaxLengthEnforcement.none;
+    }
+  }
+
+  static TextCapitalization parseTextCapitalization(String value) {
+    switch (value) {
+      case "none":
+        return TextCapitalization.none;
+      case "characters":
+        return TextCapitalization.characters;
+      case "sentences":
+        return TextCapitalization.sentences;
+      case "words":
+        return TextCapitalization.words;
+      default:
+        return TextCapitalization.none;
+    }
+  }
+
+  static TextInputAction parseTextInputAction(String value) {
+    switch (value) {
+      case "none":
+        return TextInputAction.none;
+      case "unspecified":
+        return TextInputAction.unspecified;
+      case "done":
+        return TextInputAction.done;
+      case "go":
+        return TextInputAction.go;
+      case "next":
+        return TextInputAction.next;
+      case "previous":
+        return TextInputAction.previous;
+      case "search":
+        return TextInputAction.search;
+      case "send":
+        return TextInputAction.send;
+      case "continueAction":
+        return TextInputAction.continueAction;
+      case "join":
+        return TextInputAction.join;
+      case "route":
+        return TextInputAction.route;
+      case "emergencyCall":
+        return TextInputAction.emergencyCall;
+      case "newline":
+        return TextInputAction.newline;
+      default:
+        return TextInputAction.none;
+    }
+  }
+
+  static ToolbarOptions parseToolbarOptions(Map<String, dynamic> props) {
+    return ToolbarOptions(
+      copy: props.containsKey("copy") ? parseBool(props["copy"]) ?? false : false,
+      cut: props.containsKey("cut") ? parseBool(props["cut"]) ?? false : false,
+      paste: props.containsKey("paste") ? parseBool(props["paste"]) ?? false : false,
+      selectAll: props.containsKey("selectAll") ? parseBool(props["selectAll"]) ?? false : false,
+    );
   }
 
   static Map<Symbol, dynamic> parseProps(Map<String, dynamic> props, Map<String, Type> propsTypes) {
