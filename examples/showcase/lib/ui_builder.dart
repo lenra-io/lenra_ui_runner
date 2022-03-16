@@ -38,7 +38,12 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
   Widget build(BuildContext context) {
     return NotificationListener<Event>(
       onNotification: (Event event) => handleNotifications(event),
-      child: LenraWidget(),
+      child: LenraWidget(
+        buildErrorPage: (_context, _error) {
+          return Text("Error");
+        },
+        showSnackBar: (_context, _errors) {},
+      ),
     );
   }
 }

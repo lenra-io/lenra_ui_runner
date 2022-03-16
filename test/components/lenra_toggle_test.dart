@@ -18,7 +18,10 @@ void main() {
           builder: (BuildContext context) {
             _context = context;
 
-            return LenraWidget();
+            return LenraWidget(
+              buildErrorPage: (_ctx, _e) => Text("error"),
+              showSnackBar: (_ctx, _e) => {},
+            );
           },
         ),
       ),
@@ -67,13 +70,17 @@ void main() {
     await tester.pumpWidget(
       createBaseTestWidgets(
         child: NotificationListener(
-          child:Builder(
-          builder: (BuildContext context) {
-            _context = context;
+          child: Builder(
+            builder: (BuildContext context) {
+              _context = context;
 
-            return LenraWidget();
-          },
-        ),onNotification: (Event e) {
+              return LenraWidget(
+                buildErrorPage: (_ctx, _e) => Text("error"),
+                showSnackBar: (_ctx, _e) => {},
+              );
+            },
+          ),
+          onNotification: (Event e) {
             expect(e.code, "YourCode");
             hasBeenNotified = true;
             return false;

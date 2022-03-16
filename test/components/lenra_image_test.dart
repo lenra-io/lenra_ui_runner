@@ -72,7 +72,10 @@ void main() {
               builder: (BuildContext context) {
                 _context = context;
 
-                return LenraWidget();
+                return LenraWidget(
+                  buildErrorPage: (_ctx, _e) => Text("error"),
+                  showSnackBar: (_ctx, _e) => {},
+                );
               },
             ),
           ),
@@ -114,7 +117,10 @@ void main() {
               builder: (BuildContext context) {
                 _context = context;
 
-                return LenraWidget();
+                return LenraWidget(
+                  buildErrorPage: (_ctx, _e) => Text("error"),
+                  showSnackBar: (_ctx, _e) => {},
+                );
               },
             ),
           ),
@@ -158,7 +164,10 @@ void main() {
               builder: (BuildContext context) {
                 _context = context;
 
-                return LenraWidget();
+                return LenraWidget(
+                  buildErrorPage: (_ctx, _e) => Text("error"),
+                  showSnackBar: (_ctx, _e) => {},
+                );
               },
             ),
           ),
@@ -199,7 +208,10 @@ void main() {
               builder: (BuildContext context) {
                 _context = context;
 
-                return LenraWidget();
+                return LenraWidget(
+                  buildErrorPage: (_ctx, _e) => Text("error"),
+                  showSnackBar: (_ctx, _e) => {},
+                );
               },
             ),
           ),

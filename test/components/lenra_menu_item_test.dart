@@ -19,7 +19,10 @@ void main() {
             builder: (BuildContext context) {
               _context = context;
 
-              return LenraWidget();
+              return LenraWidget(
+                buildErrorPage: (_ctx, _e) => Text("error"),
+                showSnackBar: (_ctx, _e) => {},
+              );
             },
           ),
           onNotification: (Event e) {
@@ -38,10 +41,7 @@ void main() {
           {
             "type": "menuItem",
             "text": "foo",
-            "icon": {
-              "type": "icon",
-              "value": "aod"
-            },
+            "icon": {"type": "icon", "value": "aod"},
             "onPressed": {"code": "yourCode"}
           },
         ],
