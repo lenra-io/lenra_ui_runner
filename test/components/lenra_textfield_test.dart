@@ -32,6 +32,7 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "textfield",
+        "value": "",
       }
     };
 
@@ -45,7 +46,6 @@ void main() {
     expect(textfield.autofillHints, []);
     expect(textfield.autofocus, false);
     expect(textfield.buildCounter, null);
-    expect(textfield.controller, null);
     expect(textfield.style, null);
     expect(textfield.dragStartBehavior, DragStartBehavior.start);
     expect(textfield.enabled, null);
@@ -99,6 +99,7 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "textfield",
+        "value": "",
         "onChanged": {"code": "yourCode"},
       }
     };
@@ -136,6 +137,7 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "textfield",
+        "value": "",
         "style": {
           "cursorColor": 0xFFFFFFFF,
           "cursorHeight": 1,
@@ -190,6 +192,7 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "textfield",
+        "value": "",
         "style": {"cursorColor": 0xFF000000},
       }
     };
