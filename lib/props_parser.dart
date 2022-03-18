@@ -7,11 +7,32 @@ import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_components/theme/lenra_toggle_style.dart';
+import 'package:lenra_ui_runner/components/lenra_text.dart';
+import 'package:lenra_ui_runner/components/lenra_textfield.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
+import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/lenra_widget.dart';
 import 'package:lenra_ui_runner/utils/lenra_text_field_style.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 import 'package:lenra_ui_runner/components/children_widgets.dart';
+import 'package:lenra_ui_runner/components/lenra_button.dart';
+import 'package:lenra_ui_runner/components/lenra_checkbox.dart';
+import 'package:lenra_ui_runner/components/lenra_icon.dart';
+import 'package:lenra_ui_runner/components/lenra_image.dart';
+import 'package:lenra_ui_runner/components/lenra_overlay_entry.dart';
+import 'package:lenra_ui_runner/components/lenra_radio.dart';
+import 'package:lenra_ui_runner/components/lenra_dropdown_button.dart';
+import 'package:lenra_ui_runner/components/lenra_flexible.dart';
+import 'package:lenra_ui_runner/components/lenra_container.dart';
+import 'package:lenra_ui_runner/components/lenra_stack.dart';
+import 'package:lenra_ui_runner/components/lenra_slider.dart';
+import 'package:lenra_ui_runner/components/lenra_actionable.dart';
+import 'package:lenra_ui_runner/components/lenra_menu.dart';
+import 'package:lenra_ui_runner/components/lenra_menu_item.dart';
+import 'package:lenra_ui_runner/components/lenra_toggle.dart';
+import 'package:lenra_ui_runner/components/lenra_status_sticker.dart';
+import 'package:lenra_ui_runner/components/lenra_flex.dart';
+import 'package:lenra_ui_runner/components/lenra_wrap.dart';
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 
 extension ParserExt on Parser {
@@ -60,6 +81,11 @@ extension ParserExt on Parser {
     TextCapitalization: Parser.parseTextCapitalization,
     TextInputAction: Parser.parseTextInputAction,
     ToolbarOptions: Parser.parseToolbarOptions,
+    Rect: Parser.parseRect,
+    FilterQuality: Parser.parseFilterQuality,
+    BoxFit: Parser.parseBoxFit,
+    ImageRepeat: Parser.parseImageRepeat,
+    AutofillHints: Parser.parseAutofillHints,
   };
 }
 
