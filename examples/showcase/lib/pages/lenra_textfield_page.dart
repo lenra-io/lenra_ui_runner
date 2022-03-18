@@ -17,6 +17,8 @@ class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String
       "root": {
         "type": "flex",
         "direction": "vertical",
+        "spacing": 4,
+        "mainAxisAlignment": "spaceAround",
         "children": [
           {
             "type": "container",
@@ -26,12 +28,13 @@ class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String
             },
             "child": {
               "type": "textfield",
+              "value": data,
               "style": {
                 "decoration": {
-                  // "icon": {
-                  //   "type": "icon",
-                  //   "value": "star",
-                  // },
+                  "icon": {
+                    "type": "icon",
+                    "value": "star",
+                  },
                   "filled": true,
                   "fillColor": 0xFFBBDEFB,
                   "border": {
@@ -40,7 +43,7 @@ class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String
                   "hintText": "hint",
                   "helperText": "helper",
                   "labelText": "label",
-                  "counterText": "counter"
+                  "counterText": "${data.length}"
                 },
               },
               "minLines": 3,
