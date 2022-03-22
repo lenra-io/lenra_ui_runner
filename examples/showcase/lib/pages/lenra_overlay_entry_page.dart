@@ -20,7 +20,19 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
         "crossAxisAlignment": "center",
         "children": [
           {
+            "type": "text",
+            "value": "You can show another overlay by clicking on the button below.",
+          },
+          {
+            "type": "button",
+            "text": "Show",
+            "onPressed": {
+              "code": "showOverlay",
+            }
+          },
+          {
             "type": "overlayEntry",
+            "showOverlay": data.containsKey("showOverlay") ? data["showOverlay"] : false,
             "child": {
               "type": "container",
               "decoration": {
@@ -31,50 +43,37 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
                 "mainAxisAlignment": "center",
                 "crossAxisAlignment": "center",
                 "children": [
-                  {"type": "text", "value": "This is an overlay."},
+                  {"type": "text", "value": "This is an overlay entry"},
                   {
                     "type": "button",
-                    "text": "Foo",
+                    "text": "Close",
+                    "onPressed": {
+                      "code": "hideOverlay",
+                    }
                   }
                 ]
               },
             }
           },
-          {
-            "type": "button",
-            "text": "Show pop-up",
-            "onPressed": {"code": "showPopUp"}
-          },
-          {"type": "flex", "children": data.containsKey("popups") ? data["popups"] : []}
         ]
       }
     };
   }
 
   @override
-  getData(Event event) {
-    if (event.code == "showPopUp") {
-      return {
-        "popups": [
-          {
-            "type": "overlayEntry",
-            "child": {
-              "type": "flex",
-              "mainAxisAlignment": "center",
-              "crossAxisAlignment": "end",
-              "children": [
-                {"type": "text", "value": "This is a pop-up."},
-                {
-                  "type": "button",
-                  "text": "Foo",
-                }
-              ]
-            }
-          }
-        ]
-      };
+  Map<String, dynamic> getData(Event event) {
+    if (event.code == "InitData") {
+      return {"showOverlay": false};
     }
 
-    return {};
+    if (event.code == "showOverlay") {
+      return {"showOverlay": true};
+    }
+
+    if (event.code == "hideOverlay") {
+      return {"showOverlay": false};
+    }
+
+    return event.data.toMap();
   }
 }
