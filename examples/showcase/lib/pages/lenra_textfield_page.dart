@@ -12,7 +12,7 @@ class LenraTextFieldPage extends StatefulWidget {
 
 class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "flex",

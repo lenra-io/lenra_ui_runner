@@ -11,7 +11,7 @@ class LenraStatusStickerPage extends StatefulWidget {
 
 class _LenraStatusStickerPageState extends UiBuilderState<LenraStatusStickerPage, bool> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "flex",

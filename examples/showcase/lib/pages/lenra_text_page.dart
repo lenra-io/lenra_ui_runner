@@ -11,7 +11,7 @@ class LenraTextPage extends StatefulWidget {
 
 class _LenraTextPageState extends UiBuilderState<LenraTextPage, bool> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "text",

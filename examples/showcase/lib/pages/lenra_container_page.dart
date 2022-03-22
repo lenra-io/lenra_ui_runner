@@ -11,7 +11,7 @@ class LenraContainerPage extends StatefulWidget {
 
 class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> {
   @override
-  Map<String, dynamic> get ui {
+  Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
         "type": "flex",

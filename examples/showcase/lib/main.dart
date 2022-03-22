@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
 import 'package:showcase/left_menu.dart';
@@ -21,6 +22,8 @@ import 'package:showcase/pages/lenra_flex_page.dart';
 import 'package:showcase/pages/lenra_container_page.dart';
 import 'package:showcase/pages/lenra_textfield_page.dart';
 import 'package:showcase/pages/lenra_wrap_page.dart';
+
+import 'ui_builder_model.dart';
 
 void main() {
   runApp(MyApp());
@@ -81,30 +84,41 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<WidgetModel>(create: (_) => WidgetModel()),
-      ],
-      child: LenraTheme(
-        themeData: LenraThemeData(),
-        child: MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(),
-          home: Scaffold(
-            appBar: AppBar(),
-            drawer: Drawer(
-              child: LeftMenu(
-                currentMenu: currentMenu,
-                onMenuTapped: (newMenu) {
-                  setState(() {
-                    currentMenu = newMenu;
-                  });
-                },
+        providers: [
+          ChangeNotifierProvider<WidgetModel>(create: (_) => WidgetModel()),
+          ChangeNotifierProxyProvider<WidgetModel, UiBuilderModel>(
+              create: (context) => UiBuilderModel(widgetModel: context.read<WidgetModel>()),
+              update: (_, widgetModel, uiBuilderModel) => uiBuilderModel!)
+        ],
+        builder: (context, child) {
+          var uiBuilderModel = context.read<UiBuilderModel>();
+
+          return NotificationListener<Event>(
+            onNotification: (Event event) {
+              return uiBuilderModel.handleNotifications(event);
+            },
+            child: LenraTheme(
+              themeData: LenraThemeData(),
+              child: MaterialApp(
+                title: 'Flutter Demo',
+                theme: ThemeData(),
+                home: Scaffold(
+                  appBar: AppBar(),
+                  drawer: Drawer(
+                    child: LeftMenu(
+                      currentMenu: currentMenu,
+                      onMenuTapped: (newMenu) {
+                        setState(() {
+                          currentMenu = newMenu;
+                        });
+                      },
+                    ),
+                  ),
+                  body: buildBody(),
+                ),
               ),
             ),
-            body: buildBody(),
-          ),
-        ),
-      ),
-    );
+          );
+        });
   }
 }
