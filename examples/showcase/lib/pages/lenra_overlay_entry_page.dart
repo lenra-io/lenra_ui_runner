@@ -18,19 +18,27 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
         "fillParent": true,
         "mainAxisAlignment": "center",
         "crossAxisAlignment": "center",
-        "direction": "vertical",
-        "spacing": 2,
         "children": [
           {
-            "type": "text",
-            "value": "You can show another overlay by clicking on the button below.",
-          },
-          {
-            "type": "button",
-            "text": "Show",
-            "onPressed": {
-              "code": "showOverlay",
-            }
+            "type": "flex",
+            "mainAxisAlignment": "center",
+            "crossAxisAlignment": "center",
+            "direction": "vertical",
+            "spacing": 2,
+            "fillParent": true,
+            "children": [
+              {
+                "type": "text",
+                "value": "You can show another overlay by clicking on the button below.",
+              },
+              {
+                "type": "button",
+                "text": "Show",
+                "onPressed": {
+                  "code": "showOverlay",
+                }
+              },
+            ]
           },
           {
             "type": "overlayEntry",
@@ -47,14 +55,32 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
                 "direction": "vertical",
                 "spacing": 2,
                 "children": [
-                  {"type": "text", "value": "This is an overlay entry."},
                   {
-                    "type": "button",
-                    "text": "Close",
-                    "onPressed": {
-                      "code": "hideOverlay",
-                    }
-                  }
+                    "type": "container",
+                    "decoration": {"color": 0xFFFFFFFF},
+                    "padding": {
+                      "left": 2,
+                      "right": 2,
+                      "top": 2,
+                      "bottom": 2,
+                    },
+                    "child": {
+                      "type": "flex",
+                      "crossAxisAlignment": "center",
+                      "direction": "vertical",
+                      "spacing": 2,
+                      "children": [
+                        {"type": "text", "value": "This is an overlay entry."},
+                        {
+                          "type": "button",
+                          "text": "Close",
+                          "onPressed": {
+                            "code": "hideOverlay",
+                          }
+                        }
+                      ],
+                    },
+                  },
                 ]
               },
             }
@@ -72,17 +98,37 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
                 "mainAxisAlignment": "center",
                 "crossAxisAlignment": "center",
                 "direction": "vertical",
-                "spacing": 2,
                 "children": [
-                  {"type": "text", "value": "This is an overlay."},
-                  {"type": "text", "value": "You can close it by clicking on the button."},
                   {
-                    "type": "button",
-                    "text": "Close",
-                    "onPressed": {
-                      "code": "hideOverlay2",
+                    "type": "container",
+                    "decoration": {"color": 0xFFFFFFFF},
+                    "padding": {
+                      "left": 2,
+                      "right": 2,
+                      "top": 2,
+                      "bottom": 2,
+                    },
+                    "child": {
+                      "type": "flex",
+                      "crossAxisAlignment": "center",
+                      "direction": "vertical",
+                      "spacing": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "This is an overlay.",
+                        },
+                        {"type": "text", "value": "You can close it by clicking on the button."},
+                        {
+                          "type": "button",
+                          "text": "Close",
+                          "onPressed": {
+                            "code": "hideOverlay2",
+                          }
+                        }
+                      ]
                     }
-                  }
+                  },
                 ]
               },
             }
