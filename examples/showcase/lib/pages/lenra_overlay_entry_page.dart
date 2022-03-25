@@ -118,7 +118,7 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
                         {
                           "type": "textfield",
                           "value": data["data"]["textfieldValue"],
-                          "label": "Quel est votre Prénom ?",
+                          "label": "What is your name ?",
                           "hintText": "Pascal",
                           "minLines": 3,
                           "maxLines": 5,
@@ -216,6 +216,9 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
 
     return {
       "type": "flex",
+      "fillParent": true,
+      "mainAxisAlignment": "center",
+      "crossAxisAlignment": "center",
       "children": [...getOverlays(data), page]
     };
   }
