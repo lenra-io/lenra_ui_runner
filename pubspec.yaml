@@ -12,7 +12,7 @@ dependencies:
   lenra_components:
     git:
       url: git@github.com:lenra-io/lenra_components.git
-      ref: v1.0.0-beta.36
+      ref: v1.0.0-beta.38
   json_patch: ^3.0.0
   mockito: ^5.0.17
 dev_dependencies:
