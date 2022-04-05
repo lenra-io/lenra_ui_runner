@@ -27,7 +27,7 @@ jobs:
       - name: create_pr
         uses: lenra-io/create-or-update-pr-action@v1.1.0
         with:
-          name: 'Update dependecies'
+          name: 'Update dependencies'
           token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
           script: |
             yq eval ".dependencies.${{ github.event.inputs.origin }}.git.ref = \"${{  github.event.inputs.version }}\"" -i pubspec.yaml
