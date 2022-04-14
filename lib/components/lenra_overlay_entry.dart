@@ -5,8 +5,13 @@ import 'package:lenra_ui_runner/lenra_component_builder.dart';
 // TODO : generate this from annotation on LenraOverlayEntry
 class LenraOverlayEntryBuilder extends LenraComponentBuilder<LenraApplicationOverlayEntry> {
   @override
-  LenraApplicationOverlayEntry map({child, maintainState, opaque}) {
-    return LenraApplicationOverlayEntry(child: child, maintainState: maintainState, opaque: opaque);
+  LenraApplicationOverlayEntry map({child, maintainState, opaque, showOverlay}) {
+    return LenraApplicationOverlayEntry(
+      child: child,
+      maintainState: maintainState,
+      opaque: opaque,
+      showOverlay: showOverlay,
+    );
   }
 
   @override
@@ -15,27 +20,39 @@ class LenraOverlayEntryBuilder extends LenraComponentBuilder<LenraApplicationOve
       "child": Widget,
       "maintainState": bool,
       "opaque": bool,
+      "showOverlay": bool,
     };
   }
 }
 
-class LenraApplicationOverlayEntry extends StatelessWidget {
-  final Widget? child;
-  final bool? maintainState;
-  final bool? opaque;
+// ignore: must_be_immutable
+class LenraApplicationOverlayEntry extends StatefulWidget {
+  Widget? child;
+  bool? maintainState;
+  bool? opaque;
+  bool? showOverlay;
 
   LenraApplicationOverlayEntry({
     required this.child,
     required this.maintainState,
     required this.opaque,
+    required this.showOverlay,
   }) : super();
 
   @override
+  State<LenraApplicationOverlayEntry> createState() {
+    return _LenraApplicationOverlayEntryState();
+  }
+}
+
+class _LenraApplicationOverlayEntryState extends State<LenraApplicationOverlayEntry> {
+  @override
   Widget build(BuildContext context) {
     return LenraOverlayEntry(
-      child: child,
-      maintainState: maintainState ?? false,
-      opaque: opaque ?? false,
+      child: widget.child,
+      maintainState: widget.maintainState ?? false,
+      opaque: widget.opaque ?? false,
+      showOverlay: widget.showOverlay ?? false,
     );
   }
 }
