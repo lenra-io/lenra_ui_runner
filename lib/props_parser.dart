@@ -86,6 +86,7 @@ extension ParserExt on Parser {
     BoxFit: Parser.parseBoxFit,
     ImageRepeat: Parser.parseImageRepeat,
     AutofillHints: Parser.parseAutofillHints,
+    TextAlign: Parser.parseTextAlign,
   };
 }
 

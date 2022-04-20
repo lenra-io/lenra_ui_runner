@@ -12,6 +12,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
     locale,
     semanticsLabel,
     spellOut,
+    textAlign,
   }) {
     return LenraApplicationText(
       value: value,
@@ -20,6 +21,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
       locale: locale,
       semanticsLabel: semanticsLabel,
       spellOut: spellOut,
+      textAlign: textAlign,
     );
   }
 
@@ -31,6 +33,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
       "locale": Locale,
       "semanticsLabel": String,
       "spellOut": bool,
+      "textAlign": TextAlign,
     };
   }
 
@@ -47,6 +50,7 @@ class LenraApplicationText extends StatelessWidget {
   final Locale? locale;
   final String? semanticsLabel;
   final bool? spellOut;
+  final TextAlign? textAlign;
 
   LenraApplicationText({
     required this.value,
@@ -55,6 +59,7 @@ class LenraApplicationText extends StatelessWidget {
     required this.locale,
     required this.semanticsLabel,
     required this.spellOut,
+    required this.textAlign,
   }) : super();
 
   @override
@@ -66,6 +71,7 @@ class LenraApplicationText extends StatelessWidget {
       locale: locale,
       semanticsLabel: semanticsLabel,
       spellOut: spellOut,
+      textAlign: textAlign,
     );
   }
 }
