@@ -48,7 +48,7 @@ class LenraIcon extends StatelessWidget {
       value,
       color: color,
       semanticLabel: semanticLabel,
-      size: size ?? 1,
+      size: size ?? 24.0,
     );
   }
 }
