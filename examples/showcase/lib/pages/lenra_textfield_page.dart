@@ -17,37 +17,43 @@ class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String
       "root": {
         "type": "flex",
         "direction": "vertical",
+        "spacing": 4,
+        "mainAxisAlignment": "spaceAround",
         "children": [
           {
-            "type": "flex",
-            "direction": "horizontal",
-            "children": [
-              {
-                "type": "textfield",
-                "value": data,
-                "label": "Quel est votre Prénom ?",
-                "hintText": "Pascal",
-                "minLines": 3,
-                "maxLines": 5,
-                "size": "large",
-                "onChanged": {"code": "CodeA"}
+            "type": "container",
+            "constraints": {
+              "maxWidth": 400,
+              "maxHeight": 100
+            },
+            "child": {
+              "type": "textfield",
+              "value": data,
+              "style": {
+                "decoration": {
+                  "icon": {
+                    "type": "icon",
+                    "value": "star",
+                  },
+                  "filled": true,
+                  "fillColor": 0xFFBBDEFB,
+                  "border": {
+                    "type": "outline",
+                  },
+                  "hintText": "hint",
+                  "helperText": "helper",
+                  "labelText": "label",
+                  "counterText": "${data.length}"
+                },
               },
-              {"type": "text", "value": data}
-            ]
+              "minLines": 3,
+              "maxLines": 5,
+              "onChanged": {"code": "CodeA"}
+            },
           },
           {
-            "type": "flex",
-            "direction": "horizontal",
-            "children": [
-              {
-                "type": "textfield",
-                "value": "",
-                "label": "Password manager",
-                "size": "large",
-                "onChanged": {"code": "CodeA"},
-                "autofillHints": ["newPassword"]
-              },
-            ]
+            "type": "flexible",
+            "child": {"type": "text", "value": data}
           }
         ]
       }
