@@ -232,7 +232,6 @@ void main() {
 
     _context!.read<WidgetModel>().replaceUi(ui);
     await tester.pump();
-    expect(find.byType(InkWell), findsOneWidget);
     var finder = find.descendant(
       of: find.byType(LenraApplicationActionable),
       matching: find.byType(Material),
