@@ -206,7 +206,7 @@ void main() {
     await tester.pump(kDoubleTapTimeout);
     expect(eventsNb, 1);
   });
-  testWidgets('Test transparent Color for the actionable', (WidgetTester tester) async {
+  testWidgets('Test default Color for the actionable', (WidgetTester tester) async {
     BuildContext? _context;
 
     await tester.pumpWidget(
@@ -238,7 +238,6 @@ void main() {
       of: find.byType(LenraApplicationActionable),
       matching: find.byType(Material),
     );
-
     expect((tester.widget(finder) as Material).color, Colors.transparent);
   });
 }
