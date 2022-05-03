@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lenra_components/layout/lenra_container.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/components/lenra_actionable.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
