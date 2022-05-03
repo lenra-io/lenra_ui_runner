@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:lenra_components/layout/lenra_container.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/components/lenra_actionable.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
 
@@ -203,5 +205,40 @@ void main() {
     await tester.tap(find.byType(InkWell));
     await tester.pump(kDoubleTapTimeout);
     expect(eventsNb, 1);
+  });
+  testWidgets('Test transparent Color for the actionable', (WidgetTester tester) async {
+    BuildContext? _context;
+
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+
+            return LenraWidget(
+              buildErrorPage: (_ctx, _e) => Text("error"),
+              showSnackBar: (_ctx, _e) => {},
+            );
+          },
+        ),
+      ),
+    );
+
+    Map<String, dynamic> ui = {
+      "root": {
+        "type": "actionable",
+        "child": {"type": "text", "value": "Purple"}
+      },
+    };
+
+    _context!.read<WidgetModel>().replaceUi(ui);
+    await tester.pump();
+    expect(find.byType(InkWell), findsOneWidget);
+    var finder = find.descendant(
+      of: find.byType(LenraApplicationActionable),
+      matching: find.byType(Material),
+    );
+
+    expect((tester.widget(finder) as Material).color, Colors.transparent);
   });
 }
