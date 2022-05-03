@@ -24,7 +24,7 @@ class LeftMenu extends StatelessWidget {
   static const lenraOverlayEntryPage = "lenraOverlayEntryPage";
   static const lenraIconPage = "lenraIconPage";
   static const lenraImagePage = "lenraImagePage";
-  static const lenraActionablePage = "LenraActionablePage";
+  static const lenraActionablePage = "lenraActionablePage";
 
   @override
   Widget build(BuildContext context) {
