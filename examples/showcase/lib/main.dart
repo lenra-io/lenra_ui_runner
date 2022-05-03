@@ -22,6 +22,7 @@ import 'package:showcase/pages/lenra_flex_page.dart';
 import 'package:showcase/pages/lenra_container_page.dart';
 import 'package:showcase/pages/lenra_textfield_page.dart';
 import 'package:showcase/pages/lenra_wrap_page.dart';
+import 'package:showcase/pages/lenra_actionable_page.dart';
 
 import 'ui_builder_model.dart';
 
@@ -77,6 +78,8 @@ class _MyAppState extends State<MyApp> {
         return LenraIconPage();
       case LeftMenu.lenraImagePage:
         return LenraImagePage();
+      case LeftMenu.lenraActionablePage:
+        return LenraActionablePage();
     }
     return Text("N/A");
   }

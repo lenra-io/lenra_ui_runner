@@ -63,6 +63,7 @@ class LenraApplicationActionable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.transparent,
       child: InkWell(
         child: child,
         onTap: () => onAction(onPressed, context),
