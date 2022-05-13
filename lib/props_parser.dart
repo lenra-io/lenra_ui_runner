@@ -248,6 +248,14 @@ class Parser {
     return 0;
   }
 
+  static double parseInfinity(double value) {
+    if(value == -1) {
+      return double.infinity;
+    } else {
+      return value;
+    }
+  }
+
   static Border parseBorder(Map<String, dynamic> props) {
     return Border(
       top: props.containsKey("top") ? parseBorderSide(props["top"]) : BorderSide.none,
@@ -550,10 +558,10 @@ class Parser {
 
   static BoxConstraints parseBoxConstraints(Map<String, dynamic> props) {
     return BoxConstraints(
-      minWidth: props.containsKey("minWidth") ? parseDouble(props["minWidth"]) : 0,
-      maxWidth: props.containsKey("maxWidth") ? parseDouble(props["maxWidth"]) : -1,
-      minHeight: props.containsKey("minHeight") ? parseDouble(props["minHeight"]) : 0,
-      maxHeight: props.containsKey("maxHeight") ? parseDouble(props["maxHeight"]) : -1,
+      minWidth: props.containsKey("minWidth") ? parseInfinity(parseDouble(props["minWidth"])) : 0,
+      maxWidth: props.containsKey("maxWidth") ? parseInfinity(parseDouble(props["maxWidth"])) : double.infinity,
+      minHeight: props.containsKey("minHeight") ? parseInfinity(parseDouble(props["minHeight"])) : 0,
+      maxHeight: props.containsKey("maxHeight") ? parseInfinity(parseDouble(props["maxHeight"])) : double.infinity,
     );
   }
 

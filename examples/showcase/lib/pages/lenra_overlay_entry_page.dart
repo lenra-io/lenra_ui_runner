@@ -116,14 +116,23 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
                       "direction": "horizontal",
                       "children": [
                         {
-                          "type": "textfield",
-                          "value": data["data"]["textfieldValue"],
-                          "label": "What is your name ?",
-                          "hintText": "Pascal",
-                          "minLines": 3,
-                          "maxLines": 5,
-                          "size": "large",
-                          "onChanged": {"code": "CodeA"}
+                          "type": "flexible",
+                          "child": {
+                            "type": "textfield",
+                            "value": data["data"]["textfieldValue"],
+                            "style": {
+                              "decoration": {
+                                "label": {
+                                  "type": "text",
+                                  "value": "What is your name ?",
+                                },
+                                "hintText": "Pascal",
+                              }
+                            },
+                            "minLines": 3,
+                            "maxLines": 5,
+                            "onChanged": {"code": "CodeA"}
+                          }
                         },
                         {"type": "text", "value": data["data"]["textfieldValue"]}
                       ]
