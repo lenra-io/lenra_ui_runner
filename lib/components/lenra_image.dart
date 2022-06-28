@@ -12,12 +12,12 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraImage> {
     height,
     alignment,
     centerSlice,
-    errorBuilder,
-    loadingBuilder,
+    errorPlaceHolder,
+    loadingPlaceHolder,
     excludeFromSemantics,
     filterQuality,
     fit,
-    frameBuilder,
+    framePlaceHolder,
     gaplessPlayback,
     isAntiAlias,
     opacity,
@@ -30,12 +30,12 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraImage> {
       height: height,
       alignment: alignment,
       centerSlice: centerSlice,
-      errorBuilder: errorBuilder,
-      loadingBuilder: loadingBuilder,
+      errorPlaceHolder: errorPlaceHolder,
+      loadingPlaceHolder: loadingPlaceHolder,
       excludeFromSemantics: excludeFromSemantics,
       filterQuality: filterQuality,
       fit: fit,
-      frameBuilder: frameBuilder,
+      framePlaceHolder: framePlaceHolder,
       gaplessPlayback: gaplessPlayback,
       isAntiAlias: isAntiAlias,
       opacity: opacity,
@@ -55,9 +55,9 @@ class LenraImageBuilder extends LenraComponentBuilder<LenraImage> {
       "excludeFromSemantics": bool,
       "filterQuality": FilterQuality,
       "fit": BoxFit,
-      "frameBuilder": Widget,
-      "errorBuilder": Widget,
-      "loadingBuilder": Widget,
+      "framePlaceHolder": Widget,
+      "errorPlaceHolder": Widget,
+      "loadingPlaceHolder": Widget,
       "gaplessPlayback": bool,
       "isAntiAlias": bool,
       "opacity": Animation,
@@ -73,12 +73,12 @@ class LenraImage extends StatelessWidget {
   final double? height;
   final AlignmentGeometry? alignment;
   final Rect? centerSlice;
-  final Widget? errorBuilder;
-  final Widget? loadingBuilder;
+  final Widget? errorPlaceHolder;
+  final Widget? loadingPlaceHolder;
   final bool? excludeFromSemantics;
   final FilterQuality? filterQuality;
   final BoxFit? fit;
-  final Widget? frameBuilder;
+  final Widget? framePlaceHolder;
   final bool? gaplessPlayback;
   final bool? isAntiAlias;
   final Animation<double>? opacity;
@@ -91,12 +91,12 @@ class LenraImage extends StatelessWidget {
     required this.height,
     required this.alignment,
     required this.centerSlice,
-    required this.errorBuilder,
-    required this.loadingBuilder,
+    required this.errorPlaceHolder,
+    required this.loadingPlaceHolder,
     required this.excludeFromSemantics,
     required this.filterQuality,
     required this.fit,
-    required this.frameBuilder,
+    required this.framePlaceHolder,
     required this.gaplessPlayback,
     required this.isAntiAlias,
     required this.opacity,
@@ -122,14 +122,14 @@ class LenraImage extends StatelessWidget {
       height: height,
       alignment: alignment ?? Alignment.center,
       centerSlice: centerSlice,
-      errorBuilder: errorBuilder == null ? null : (_, __, ___) => errorBuilder!,
+      errorBuilder: errorPlaceHolder == null ? null : (_, __, ___) => errorPlaceHolder!,
       excludeFromSemantics: excludeFromSemantics ?? false,
       filterQuality: filterQuality ?? FilterQuality.low,
       fit: fit,
-      frameBuilder: frameBuilder == null ? null : (_, __, ___, ____) => frameBuilder!,
+      frameBuilder: framePlaceHolder == null ? null : (_, __, ___, ____) => framePlaceHolder!,
       gaplessPlayback: gaplessPlayback ?? false,
       isAntiAlias: isAntiAlias ?? false,
-      loadingBuilder: loadingBuilder == null ? null : (_, __, ___) => loadingBuilder!,
+      loadingBuilder: loadingPlaceHolder == null ? null : (_, __, ___) => loadingPlaceHolder!,
       opacity: opacity,
       repeat: repeat ?? ImageRepeat.noRepeat,
       semanticLabel: semanticLabel,
