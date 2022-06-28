@@ -20,7 +20,7 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
     super.initState();
 
     /// replaceUi is called after the first frame is rendered because the provider is only accessible at that point.
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<WidgetModel>().replaceUi(getUi(data));
     });
   }
@@ -31,9 +31,9 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
     context.read<UiBuilderModel>().initUi(getUi);
     return LenraWidget(
       buildErrorPage: (_context, _error) {
-          return Text("Error");
-        },
-        showSnackBar: (_context, _errors) {},
+        return Text("Error");
+      },
+      showSnackBar: (_context, _errors) {},
     );
   }
 }
