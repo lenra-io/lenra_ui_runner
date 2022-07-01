@@ -15,7 +15,7 @@ class LenraWidget<E> extends StatelessWidget {
     WidgetModel<E> widgetModel = context.watch<WidgetModel>() as WidgetModel<E>;
     if (widgetModel.hasError() && !widgetModel.hasUi()) return buildErrorPage(context, widgetModel.errors!);
     if (widgetModel.hasError()) {
-      WidgetsBinding.instance?.addPostFrameCallback((_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         showSnackBar(context, widgetModel.errors!);
       });
     }
