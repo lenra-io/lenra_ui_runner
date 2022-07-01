@@ -23,11 +23,8 @@ class _LenraImagePageState extends UiBuilderState<LenraImagePage, bool> {
             "type": "image",
             "src": "https://github.com/lenra-io/client-app/pull/19",
             "errorPlaceHolder": {
-              "type": "button",
-              "text": "Error Button",
-              "onPressed": {
-                "code": "myCode",
-              }
+              "type": "text",
+              "value": "This is an error placeholder shown when an image encounters an error."
             }
           }
         ]
