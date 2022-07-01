@@ -15,10 +15,18 @@ class _LenraImagePageState extends UiBuilderState<LenraImagePage, bool> {
     return {
       "root": {
         "type": "flex",
-        "direction": "vertical",
-        "spacing": 1,
+        "direction": "horizontal",
+        "spacing": 5,
         "children": [
-          {"type": "image", "src": "https://avatars.githubusercontent.com/u/18312505?s=200&v=4"}
+          {"type": "image", "src": "https://avatars.githubusercontent.com/u/18312505?s=200&v=4"},
+          {
+            "type": "image",
+            "src": "https://github.com/lenra-io/client-app/pull/19",
+            "errorPlaceHolder": {
+              "type": "text",
+              "value": "This is an error placeholder shown when an image encounters an error."
+            }
+          }
         ]
       }
     };

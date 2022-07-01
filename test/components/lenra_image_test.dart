@@ -50,12 +50,13 @@ HttpClient createClient() {
 
 @GenerateMocks([HttpClient, HttpClientRequest, HttpHeaders], customMocks: [MockSpec<HttpClientResponse>()])
 void main() {
-  testWidgets('LenraImage errorBuilder should build error widget when an error occurs.', (WidgetTester tester) async {
+  testWidgets('LenraImage errorPlaceHolder should build error widget when an error occurs.',
+      (WidgetTester tester) async {
     Map<String, dynamic> ui = {
       "root": {
         "type": "image",
         "src": "not-existing-path",
-        "errorBuilder": {
+        "errorPlaceHolder": {
           "type": "text",
           "value": "Error",
         }
@@ -90,17 +91,17 @@ void main() {
     );
   });
 
-  testWidgets('LenraImage loadingBuilder should build loader widget when the image is loading.',
+  testWidgets('LenraImage loadingPlaceHolder should build loader widget when the image is loading.',
       (WidgetTester tester) async {
     Map<String, dynamic> ui = {
       "root": {
         "type": "image",
         "src": "long-to-load-image",
-        "loadingBuilder": {
+        "loadingPlaceHolder": {
           "type": "text",
           "value": "Loading",
         },
-        "errorBuilder": {
+        "errorPlaceHolder": {
           "type": "text",
           "value": "Error",
         }
@@ -137,17 +138,17 @@ void main() {
     );
   });
 
-  testWidgets('LenraImage frameBuilder should build placeholder Widget while the image is loading.',
+  testWidgets('LenraImage framePlaceHolder should build placeholder Widget while the image is loading.',
       (WidgetTester tester) async {
     Map<String, dynamic> ui = {
       "root": {
         "type": "image",
         "src": "long-to-load-image",
-        "frameBuilder": {
+        "framePlaceHolder": {
           "type": "text",
           "value": "Frame",
         },
-        "errorBuilder": {
+        "errorPlaceHolder": {
           "type": "text",
           "value": "Error",
         }
@@ -191,7 +192,7 @@ void main() {
         "width": 500,
         "height": 500,
         "src": "long-to-load-image",
-        "errorBuilder": {
+        "errorPlaceHolder": {
           "type": "text",
           "value": "Error",
         }
