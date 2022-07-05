@@ -9,6 +9,7 @@ import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatefulWidget {
+  /// The name of the Lenra application.
   final String appName;
 
   /// The URL of the Lenra server.
