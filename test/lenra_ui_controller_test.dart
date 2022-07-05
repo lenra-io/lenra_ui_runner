@@ -16,6 +16,8 @@ void main() {
             create: (context) => AppSocketModel("random-access-token"),
             child: const App(
               appName: "app-name",
+              httpEndpoint: "http://localhost:4000",
+              accessToken: "random-access-token",
             ),
           ),
         ),
