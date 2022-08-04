@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
+import 'package:lenra_ui_runner/components/lenra_form.dart';
+import 'package:provider/provider.dart';
 import '../../lenra_component_builder.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_components/component/lenra_radio.dart';
@@ -11,7 +13,16 @@ import 'events/on_changed_event.dart';
 class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
   // TODO : Handle focusNode
   @override
-  LenraApplicationRadio map({autofocus, value, groupValue, materialTapTargetSize, onPressed, toggleable, style}) {
+  LenraApplicationRadio map({
+    autofocus,
+    value,
+    groupValue,
+    materialTapTargetSize,
+    onPressed,
+    toggleable,
+    style,
+    name,
+  }) {
     return LenraApplicationRadio(
       autofocus: autofocus,
       value: value,
@@ -20,6 +31,7 @@ class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
       onPressed: onPressed,
       toggleable: toggleable,
       style: style,
+      name: name,
     );
   }
 
@@ -33,6 +45,7 @@ class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
       "onPressed": lenra.Listener,
       "toggleable": bool,
       "style": LenraRadioStyle,
+      "name": String,
     };
   }
 }
@@ -45,6 +58,7 @@ class LenraApplicationRadio extends StatelessWidget {
   final lenra.Listener? onPressed;
   final bool? toggleable;
   final LenraRadioStyle? style;
+  final String? name;
 
   LenraApplicationRadio({
     required this.autofocus,
@@ -54,6 +68,7 @@ class LenraApplicationRadio extends StatelessWidget {
     required this.onPressed,
     required this.toggleable,
     required this.style,
+    required this.name,
   });
 
   void onRadioPressed(BuildContext context, String value) {
@@ -69,7 +84,14 @@ class LenraApplicationRadio extends StatelessWidget {
       value: value,
       groupValue: groupValue,
       materialTapTargetSize: materialTapTargetSize,
-      onPressed: onPressed == null ? null: (value) => onRadioPressed(context, groupValue),
+      onPressed: onPressed == null
+          ? null
+          : (value) {
+              if (name != null) {
+                context.read<FormProvider>().setFormFieldValue(name!, value);
+              }
+              onRadioPressed(context, groupValue);
+            },
       toggleable: toggleable ?? false,
       style: style,
     );

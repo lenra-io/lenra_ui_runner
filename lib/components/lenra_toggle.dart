@@ -4,8 +4,10 @@ import 'package:lenra_components/component/lenra_toggle.dart';
 import 'package:lenra_components/theme/lenra_toggle_style.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
+import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:provider/provider.dart';
 
 // TODO : generate this from annotation on LenraToggle
 class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
@@ -17,6 +19,7 @@ class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
     splashRadius,
     autofocus,
     dragStartBehavior,
+    name,
   }) {
     return LenraApplicationToggle(
       value: value,
@@ -25,6 +28,7 @@ class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
       splashRadius: splashRadius,
       autofocus: autofocus,
       dragStartBehavior: dragStartBehavior,
+      name: name,
     );
   }
 
@@ -37,6 +41,7 @@ class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
       "splashRadius": double,
       "autofocus": bool,
       "dragStartBehavior": DragStartBehavior,
+      "name": String,
     };
   }
 }
@@ -48,6 +53,7 @@ class LenraApplicationToggle extends StatelessWidget {
   final double? splashRadius;
   final bool? autofocus;
   final DragStartBehavior? dragStartBehavior;
+  final String? name;
 
   LenraApplicationToggle({
     required this.value,
@@ -56,6 +62,7 @@ class LenraApplicationToggle extends StatelessWidget {
     required this.splashRadius,
     required this.autofocus,
     required this.dragStartBehavior,
+    required this.name,
   }) : super();
 
   void onTogglePressed(BuildContext context, bool value) {
@@ -68,7 +75,14 @@ class LenraApplicationToggle extends StatelessWidget {
   Widget build(BuildContext context) {
     return LenraToggle(
       value: value,
-      onPressed: onPressed == null ? null : (value) => onTogglePressed(context, value),
+      onPressed: onPressed == null
+          ? null
+          : (value) {
+              if (name != null) {
+                context.read<FormProvider>().setFormFieldValue(name!, value);
+              }
+              onTogglePressed(context, value);
+            },
       style: style,
       splashRadius: splashRadius,
       autofocus: autofocus ?? false,

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/theme/lenra_checkbox_style.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
+import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_components/component/lenra_checkbox.dart';
+import 'package:provider/provider.dart';
 
 // TODO : generate this from annotation on LenraCheckbox
 class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbox> {
@@ -16,6 +18,7 @@ class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbo
     style,
     materialTapTargetSize,
     autofocus,
+    name,
   }) {
     return LenraApplicationCheckbox(
       value: value,
@@ -24,6 +27,7 @@ class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbo
       style: style,
       materialTapTargetSize: materialTapTargetSize,
       autofocus: autofocus,
+      name: name,
     );
   }
 
@@ -36,6 +40,7 @@ class LenraCheckboxBuilder extends LenraComponentBuilder<LenraApplicationCheckbo
       "style": LenraCheckboxStyle,
       "materialTapTargetSize": MaterialTapTargetSize,
       "autofocus": bool,
+      "name": String,
     };
   }
 }
@@ -47,6 +52,7 @@ class LenraApplicationCheckbox extends StatelessWidget {
   final LenraCheckboxStyle? style;
   final MaterialTapTargetSize? materialTapTargetSize;
   final bool? autofocus;
+  final String? name;
 
   LenraApplicationCheckbox({
     required this.value,
@@ -55,6 +61,7 @@ class LenraApplicationCheckbox extends StatelessWidget {
     required this.style,
     required this.materialTapTargetSize,
     required this.autofocus,
+    required this.name,
   }) : super();
 
   void onCheck(BuildContext context, bool? value) {
@@ -68,7 +75,14 @@ class LenraApplicationCheckbox extends StatelessWidget {
     return LenraCheckbox(
       value: value,
       tristate: tristate ?? false,
-      onPressed: onPressed == null ? null : (v) => onCheck(context, v),
+      onPressed: onPressed == null
+          ? null
+          : (v) {
+              if (name != null) {
+                context.read<FormProvider>().setFormFieldValue(name!, value);
+              }
+              onCheck(context, v);
+            },
       style: style,
       materialTapTargetSize: materialTapTargetSize,
       autofocus: autofocus ?? false,

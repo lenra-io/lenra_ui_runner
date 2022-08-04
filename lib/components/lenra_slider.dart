@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_slider.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
+import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
+import 'package:provider/provider.dart';
 import 'events/data/value_data.dart';
 import 'events/on_changed_event.dart';
 
 // TODO : generate this from annotation on LenraSlider
 class LenraSliderBuilder extends LenraComponentBuilder<LenraApplicationSlider> {
   @override
-  LenraApplicationSlider map(
-      {style, autofocus, divisions, label, max, min, onChanged, onChangeEnd, onChangeStart, value}) {
+  LenraApplicationSlider map({
+    style,
+    autofocus,
+    divisions,
+    label,
+    max,
+    min,
+    onChanged,
+    onChangeEnd,
+    onChangeStart,
+    value,
+    name,
+  }) {
     return LenraApplicationSlider(
       style: style,
       autofocus: autofocus,
@@ -22,6 +35,7 @@ class LenraSliderBuilder extends LenraComponentBuilder<LenraApplicationSlider> {
       onChangeEnd: onChangeEnd,
       onChangeStart: onChangeStart,
       value: value,
+      name: name,
     );
   }
 
@@ -38,6 +52,7 @@ class LenraSliderBuilder extends LenraComponentBuilder<LenraApplicationSlider> {
       "onChangeEnd": lenra.Listener,
       "onChangeStart": lenra.Listener,
       "value": double,
+      "name": String,
     };
   }
 }
@@ -53,6 +68,7 @@ class LenraApplicationSlider extends StatelessWidget {
   final lenra.Listener? onChangeEnd;
   final lenra.Listener? onChangeStart;
   final double value;
+  final String? name;
 
   LenraApplicationSlider({
     required this.style,
@@ -65,6 +81,7 @@ class LenraApplicationSlider extends StatelessWidget {
     required this.onChangeEnd,
     required this.onChangeStart,
     required this.value,
+    required this.name,
   }) : super();
 
   void onSliderChange(BuildContext context, double value) {
@@ -94,7 +111,12 @@ class LenraApplicationSlider extends StatelessWidget {
       label: label,
       max: max,
       min: min,
-      onChanged: (value) => onSliderChange(context, value),
+      onChanged: (value) {
+        if (name != null) {
+          context.read<FormProvider>().setFormFieldValue(name!, value);
+        }
+        onSliderChange(context, value);
+      },
       onChangeEnd: (value) => onSliderChangeEnd(context, value),
       onChangeStart: (value) => onSliderChangeStart(context, value),
       value: value,

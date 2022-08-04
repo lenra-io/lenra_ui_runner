@@ -62,7 +62,7 @@ class FormProvider extends ChangeNotifier {
     }
   }
 
-  void addFormFieldValue(String name, dynamic value) {
+  void setFormFieldValue(String name, dynamic value) {
     formFieldValues[name] = value;
   }
 }

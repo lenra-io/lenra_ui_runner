@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
+import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/helpers/style_helper.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:provider/provider.dart';
 import 'events/on_pressed_event.dart';
 
 import 'package:lenra_components/component/lenra_button.dart';
@@ -10,7 +12,16 @@ import 'package:lenra_components/component/lenra_button.dart';
 // TODO : generate this from annotation on LenraButton
 class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
   @override
-  LenraApplicationButton map({text, disabled, size, mainStyle, onPressed, leftIcon, rightIcon}) {
+  LenraApplicationButton map({
+    text,
+    disabled,
+    size,
+    mainStyle,
+    onPressed,
+    leftIcon,
+    rightIcon,
+    submit,
+  }) {
     return LenraApplicationButton(
       text: text,
       disabled: disabled,
@@ -19,6 +30,7 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
       onPressed: onPressed,
       leftIcon: leftIcon,
       rightIcon: rightIcon,
+      submit: submit,
     );
   }
 
@@ -32,6 +44,7 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
       "onPressed": lenra.Listener,
       "leftIcon": Widget,
       "rightIcon": Widget,
+      "submit": bool,
     };
   }
 }
@@ -44,6 +57,7 @@ class LenraApplicationButton extends StatelessWidget {
   final lenra.Listener? onPressed;
   final Widget? leftIcon;
   final Widget? rightIcon;
+  final bool? submit;
 
   LenraApplicationButton({
     required this.text,
@@ -53,6 +67,7 @@ class LenraApplicationButton extends StatelessWidget {
     required this.onPressed,
     required this.leftIcon,
     required this.rightIcon,
+    required this.submit,
   }) : super();
 
   void onButtonPressed(BuildContext context) {
@@ -68,7 +83,12 @@ class LenraApplicationButton extends StatelessWidget {
       disabled: disabled ?? false,
       size: size ?? LenraComponentSize.medium,
       type: TypeHelper.fromString(mainStyle),
-      onPressed: () => onButtonPressed(context),
+      onPressed: () {
+        if (submit != null && submit == true) {
+          context.read<FormProvider>().submitForm();
+        }
+        onButtonPressed(context);
+      },
       leftIcon: leftIcon,
       rightIcon: rightIcon,
     );
