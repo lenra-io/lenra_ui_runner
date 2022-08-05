@@ -79,7 +79,7 @@ class LenraApplicationCheckbox extends StatelessWidget {
           ? null
           : (v) {
               if (name != null) {
-                context.read<FormProvider>().setFormFieldValue(name!, value);
+                context.read<FormProvider>().setFormFieldValue(name!, v);
               }
               onCheck(context, v);
             },

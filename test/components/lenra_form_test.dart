@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_components/component/lenra_checkbox.dart';
 import 'package:lenra_components/component/lenra_toggle.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
@@ -28,7 +29,7 @@ void main() {
           ),
           onNotification: (Event e) {
             if (e.code == "submitted") {
-              expect((e.data as ValueData).value, {"toggleValue": false});
+              expect((e.data as ValueData).value, {"toggleValue": false, "checkboxValue": false});
             }
             hasBeenNotified = true;
             return false;
@@ -51,6 +52,12 @@ void main() {
               "onPressed": {"code": "toggled"}
             },
             {
+              "type": "checkbox",
+              "value": true,
+              "name": "checkboxValue",
+              "onPressed": {"code": "checked"}
+            },
+            {
               "type": "button",
               "text": "Submit",
               "submit": true,
@@ -64,6 +71,7 @@ void main() {
 
     await tester.pump();
     await tester.tap(find.byType(LenraToggle));
+    await tester.tap(find.byType(LenraCheckbox));
     await tester.tap(find.byType(TextButton));
     expect(hasBeenNotified, true);
   });
