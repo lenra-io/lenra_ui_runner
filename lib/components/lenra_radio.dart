@@ -79,6 +79,10 @@ class LenraApplicationRadio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if(name != null) {
+      context.read<FormProvider>().setFormFieldValue(name!, value);
+    }
+
     return LenraRadio<String>(
       autofocus: autofocus ?? false,
       value: value,

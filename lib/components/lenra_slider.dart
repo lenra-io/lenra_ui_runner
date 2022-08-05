@@ -104,6 +104,10 @@ class LenraApplicationSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if(name != null) {
+      context.read<FormProvider>().setFormFieldValue(name!, value);
+    }
+    
     return LenraSlider(
       style: style,
       autofocus: autofocus ?? true,
