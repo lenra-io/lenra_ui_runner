@@ -49,6 +49,9 @@ class LenraApplicationForm extends StatelessWidget {
   }
 }
 
+/// The FormProvider that handles field values for the form widget
+/// 
+/// It facilitates the definition and retrieval of form field values
 class FormProvider extends ChangeNotifier {
   Map<String, dynamic> formFieldValues = {};
   lenra.Listener? onSubmit;
@@ -56,6 +59,7 @@ class FormProvider extends ChangeNotifier {
 
   FormProvider({required this.context, this.onSubmit});
 
+  /// Calling this method will dispatch an event that contains form field values to the Lenra Widget system.
   void submitForm() {
     if (onSubmit != null) {
       OnChangedEvent(code: onSubmit!.code, data: ValueData(formFieldValues)).dispatch(context);
