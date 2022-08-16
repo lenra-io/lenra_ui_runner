@@ -29,7 +29,7 @@ void main() {
           ),
           onNotification: (Event e) {
             if (e.code == "submitted") {
-              expect((e.data as ValueData).value, {"toggleValue": false, "checkboxValue": false});
+              expect((e.data as ValueData).value, {"toggleValue": false, "checkboxValue": false, "radioValue": "radioValue"});
             }
             hasBeenNotified = true;
             return false;
@@ -56,6 +56,18 @@ void main() {
               "value": true,
               "name": "checkboxValue",
               "onPressed": {"code": "checked"}
+            },
+            {
+              "type": "radio",
+              "groupValue": "radioValue",
+              "value": "radioValue",
+              "name": "radioValue",
+            },
+            {
+              "type": "radio",
+              "groupValue": "radioValue",
+              "value": "radioValue2",
+              "name": "radioValue",
             },
             {
               "type": "button",
