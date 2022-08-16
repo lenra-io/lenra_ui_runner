@@ -39,10 +39,8 @@ class LenraApplicationForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      child: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (context) => FormProvider(context: context, onSubmit: onSubmit)),
-        ],
+      child: ChangeNotifierProvider(
+        create: (context) => FormProvider(context: context, onSubmit: onSubmit),
         child: child,
       ),
     );
@@ -50,7 +48,7 @@ class LenraApplicationForm extends StatelessWidget {
 }
 
 /// The FormProvider that handles field values for the form widget
-/// 
+///
 /// It facilitates the definition and retrieval of form field values
 class FormProvider extends ChangeNotifier {
   Map<String, dynamic> formFieldValues = {};
