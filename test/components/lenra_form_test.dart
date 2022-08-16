@@ -29,7 +29,8 @@ void main() {
           ),
           onNotification: (Event e) {
             if (e.code == "submitted") {
-              expect((e.data as ValueData).value, {"toggleValue": false, "checkboxValue": false, "radioValue": "radioValue"});
+              expect((e.data as ValueData).value,
+                  {"toggleValue": false, "checkboxValue": false, "radioValue": "radioValue"});
             }
             hasBeenNotified = true;
             return false;

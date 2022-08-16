@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
+import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/utils/lenra_text_field_style.dart';
+import 'package:provider/provider.dart';
 import '../../lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraTextfield
@@ -41,6 +43,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
     textDirection,
     textInputAction,
     toolbarOptions,
+    name,
   }) {
     return LenraApplicationTextfield(
       value: value,
@@ -70,6 +73,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
       textDirection: textDirection,
       textInputAction: textInputAction,
       toolbarOptions: toolbarOptions,
+      name: name,
     );
   }
 
@@ -103,6 +107,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
       "textDirection": TextDirection,
       "textInputAction": TextInputAction,
       "toolbarOptions": ToolbarOptions,
+      "name": String,
     };
   }
 }
@@ -136,6 +141,7 @@ class LenraApplicationTextfield extends StatefulWidget {
   TextDirection? textDirection;
   TextInputAction? textInputAction;
   ToolbarOptions? toolbarOptions;
+  String? name;
 
   LenraApplicationTextfield({
     required this.value,
@@ -165,6 +171,7 @@ class LenraApplicationTextfield extends StatefulWidget {
     required this.textDirection,
     required this.textInputAction,
     required this.toolbarOptions,
+    required this.name,
   }) : super();
 
   @override
@@ -202,6 +209,10 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.name != null) {
+      context.read<FormProvider>().setFormFieldValue(widget.name!, _controller.text);
+    }
+
     return TextField(
       autocorrect: widget.autocorrect ?? true,
       autofillHints: widget.autofillHints ?? const <String>[],
@@ -233,10 +244,14 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
       maxLines: widget.maxLines ?? 1,
       minLines: widget.minLines ?? 1,
       obscureText: widget.obscureText ?? false,
-      onAppPrivateCommand:
-          widget.onAppPrivateCommand == null ? null : (action, data) => onAppPrivateCommandReceived(context, action, data),
+      onAppPrivateCommand: widget.onAppPrivateCommand == null
+          ? null
+          : (action, data) => onAppPrivateCommandReceived(context, action, data),
       onChanged: (value) {
         if (widget.onChanged != null) {
+          if (widget.name != null) {
+            context.read<FormProvider>().setFormFieldValue(widget.name!, _controller.text);
+          }
           timeoutStrategy.onChanged(context, value, widget.onChanged!.code);
         }
       },
