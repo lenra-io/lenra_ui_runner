@@ -30,7 +30,7 @@ void main() {
           onNotification: (Event e) {
             if (e.code == "submitted") {
               expect((e.data as ValueData).value,
-                  {"toggleValue": false, "checkboxValue": false, "radioValue": "radioValue"});
+                  {"toggleValue": false, "checkboxValue": false, "radio": "radioValue", "textfield": "textfieldValue"});
             }
             hasBeenNotified = true;
             return false;
@@ -62,13 +62,18 @@ void main() {
               "type": "radio",
               "groupValue": "radioValue",
               "value": "radioValue",
-              "name": "radioValue",
+              "name": "radio",
             },
             {
               "type": "radio",
               "groupValue": "radioValue",
               "value": "radioValue2",
-              "name": "radioValue",
+              "name": "radio",
+            },
+            {
+              "type": "container",
+              "constraints": {"maxWidth": 400, "maxHeight": 100},
+              "child": {"type": "textfield", "value": "textfieldValue", "name": "textfield"},
             },
             {
               "type": "button",
