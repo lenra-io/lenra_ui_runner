@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the parseBorderRadius method from the Parser class, for the Dart programming language.">
+  <title>parseBorderRadius method - Parser class - props_parser library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../"
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">lenra_ui_runner</a></li>
+    <li><a href="../../props_parser/props_parser-library.html">props_parser</a></li>
+    <li><a href="../../props_parser/Parser-class.html">Parser</a></li>
+    <li class="self-crumb">parseBorderRadius method</li>
+  </ol>
+  <div class="self-name">parseBorderRadius</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">parseBorderRadius</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype">dynamic</span>
+<span class="name ">parseBorderRadius</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="parseBorderRadius-param-props"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">props</span></span></li>
+</ol>)
+
+      
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">static BorderRadius parseBorderRadius(Map&lt;String, dynamic&gt; props) {
+  return BorderRadius.only(
+    topLeft: props.containsKey(&quot;topLeft&quot;) ? parseRadius(props[&quot;topLeft&quot;]) : Radius.zero,
+    topRight: props.containsKey(&quot;topRight&quot;) ? parseRadius(props[&quot;topRight&quot;]) : Radius.zero,
+    bottomLeft: props.containsKey(&quot;bottomLeft&quot;) ? parseRadius(props[&quot;bottomLeft&quot;]) : Radius.zero,
+    bottomRight: props.containsKey(&quot;bottomRight&quot;) ? parseRadius(props[&quot;bottomRight&quot;]) : Radius.zero,
+  );
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">lenra_ui_runner</a></li>
+  <li><a href="../../props_parser/props_parser-library.html">props_parser</a></li>
+  <li><a href="../../props_parser/Parser-class.html">Parser</a></li>
+  <li class="self-crumb">parseBorderRadius method</li>
+</ol>
+
+
+    <h5>Parser class</h5>
+    <ol>
+
+        <li class="section-title"><a href="../../props_parser/Parser-class.html#constructors">Constructors</a></li>
+          <li><a href="../../props_parser/Parser/Parser.html">Parser</a></li>
+
+
+    <li class="section-title inherited">
+      <a href="../../props_parser/Parser-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+
+    <li class="section-title inherited"><a href="../../props_parser/Parser-class.html#instance-methods">Methods</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
+
+    <li class="section-title inherited"><a href="../../props_parser/Parser-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
+        <li class="section-title"><a href="../../props_parser/Parser-class.html#static-properties">Static properties</a></li>
+          <li><a href="../../props_parser/Parser/componentsMapping.html">componentsMapping</a></li>
+
+        <li class="section-title"><a href="../../props_parser/Parser-class.html#static-methods">Static methods</a></li>
+          <li><a href="../../props_parser/Parser/getComponentBuilder.html">getComponentBuilder</a></li>
+          <li><a href="../../props_parser/Parser/getParser.html">getParser</a></li>
+          <li><a href="../../props_parser/Parser/getType.html">getType</a></li>
+          <li><a href="../../props_parser/Parser/parseAlignment.html">parseAlignment</a></li>
+          <li><a href="../../props_parser/Parser/parseAutofillHints.html">parseAutofillHints</a></li>
+          <li><a href="../../props_parser/Parser/parseAxis.html">parseAxis</a></li>
+          <li><a href="../../props_parser/Parser/parseBool.html">parseBool</a></li>
+          <li><a href="../../props_parser/Parser/parseBorder.html">parseBorder</a></li>
+          <li><a href="../../props_parser/Parser/parseBorderRadius.html">parseBorderRadius</a></li>
+          <li><a href="../../props_parser/Parser/parseBorderSide.html">parseBorderSide</a></li>
+          <li><a href="../../props_parser/Parser/parseBoxConstraints.html">parseBoxConstraints</a></li>
+          <li><a href="../../props_parser/Parser/parseBoxDecoration.html">parseBoxDecoration</a></li>
+          <li><a href="../../props_parser/Parser/parseBoxFit.html">parseBoxFit</a></li>
+          <li><a href="../../props_parser/Parser/parseBoxHeightStyle.html">parseBoxHeightStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseBoxShadow.html">parseBoxShadow</a></li>
+          <li><a href="../../props_parser/Parser/parseBoxShape.html">parseBoxShape</a></li>
+          <li><a href="../../props_parser/Parser/parseBoxWidthStyle.html">parseBoxWidthStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseChildrenWidgets.html">parseChildrenWidgets</a></li>
+          <li><a href="../../props_parser/Parser/parseColor.html">parseColor</a></li>
+          <li><a href="../../props_parser/Parser/parseCrossAxisAlignment.html">parseCrossAxisAlignment</a></li>
+          <li><a href="../../props_parser/Parser/parseDouble.html">parseDouble</a></li>
+          <li><a href="../../props_parser/Parser/parseDragStartBehavior.html">parseDragStartBehavior</a></li>
+          <li><a href="../../props_parser/Parser/parseEdgeInsets.html">parseEdgeInsets</a></li>
+          <li><a href="../../props_parser/Parser/parseFilterQuality.html">parseFilterQuality</a></li>
+          <li><a href="../../props_parser/Parser/parseFlexFit.html">parseFlexFit</a></li>
+          <li><a href="../../props_parser/Parser/parseFloatingLabelBehavior.html">parseFloatingLabelBehavior</a></li>
+          <li><a href="../../props_parser/Parser/parseFontStyle.html">parseFontStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseFontWeight.html">parseFontWeight</a></li>
+          <li><a href="../../props_parser/Parser/parseIconData.html">parseIconData</a></li>
+          <li><a href="../../props_parser/Parser/parseImageRepeat.html">parseImageRepeat</a></li>
+          <li><a href="../../props_parser/Parser/parseInfinity.html">parseInfinity</a></li>
+          <li><a href="../../props_parser/Parser/parseInputBorder.html">parseInputBorder</a></li>
+          <li><a href="../../props_parser/Parser/parseInputDecoration.html">parseInputDecoration</a></li>
+          <li><a href="../../props_parser/Parser/parseInteger.html">parseInteger</a></li>
+          <li><a href="../../props_parser/Parser/parseKeyboardAppearance.html">parseKeyboardAppearance</a></li>
+          <li><a href="../../props_parser/Parser/parseLenraComponentSize.html">parseLenraComponentSize</a></li>
+          <li><a href="../../props_parser/Parser/parseLenraRadioStyle.html">parseLenraRadioStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseLenraSliderStyle.html">parseLenraSliderStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseLenraTextFieldStyle.html">parseLenraTextFieldStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseLenraTextStyle.html">parseLenraTextStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseLenraToggleStyle.html">parseLenraToggleStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseList.html">parseList</a></li>
+          <li><a href="../../props_parser/Parser/parseListener.html">parseListener</a></li>
+          <li><a href="../../props_parser/Parser/parseLocale.html">parseLocale</a></li>
+          <li><a href="../../props_parser/Parser/parseMainAxisAlignment.html">parseMainAxisAlignment</a></li>
+          <li><a href="../../props_parser/Parser/parseMaterialTapTargeSize.html">parseMaterialTapTargeSize</a></li>
+          <li><a href="../../props_parser/Parser/parseMaterialTapTargetSize.html">parseMaterialTapTargetSize</a></li>
+          <li><a href="../../props_parser/Parser/parseMaxLengthEnforcement.html">parseMaxLengthEnforcement</a></li>
+          <li><a href="../../props_parser/Parser/parseOffset.html">parseOffset</a></li>
+          <li><a href="../../props_parser/Parser/parseProps.html">parseProps</a></li>
+          <li><a href="../../props_parser/Parser/parseRadius.html">parseRadius</a></li>
+          <li><a href="../../props_parser/Parser/parseRect.html">parseRect</a></li>
+          <li><a href="../../props_parser/Parser/parseStackFit.html">parseStackFit</a></li>
+          <li><a href="../../props_parser/Parser/parseString.html">parseString</a></li>
+          <li><a href="../../props_parser/Parser/parseStrutStyle.html">parseStrutStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseTextAlign.html">parseTextAlign</a></li>
+          <li><a href="../../props_parser/Parser/parseTextAlignVertical.html">parseTextAlignVertical</a></li>
+          <li><a href="../../props_parser/Parser/parseTextBaseline.html">parseTextBaseline</a></li>
+          <li><a href="../../props_parser/Parser/parseTextCapitalization.html">parseTextCapitalization</a></li>
+          <li><a href="../../props_parser/Parser/parseTextDecoration.html">parseTextDecoration</a></li>
+          <li><a href="../../props_parser/Parser/parseTextDecorationStyle.html">parseTextDecorationStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseTextDirection.html">parseTextDirection</a></li>
+          <li><a href="../../props_parser/Parser/parseTextInputAction.html">parseTextInputAction</a></li>
+          <li><a href="../../props_parser/Parser/parseTextInputType.html">parseTextInputType</a></li>
+          <li><a href="../../props_parser/Parser/parseTextLeadingDistribution.html">parseTextLeadingDistribution</a></li>
+          <li><a href="../../props_parser/Parser/parseTextOverflow.html">parseTextOverflow</a></li>
+          <li><a href="../../props_parser/Parser/parseTextStyle.html">parseTextStyle</a></li>
+          <li><a href="../../props_parser/Parser/parseToolbarOptions.html">parseToolbarOptions</a></li>
+          <li><a href="../../props_parser/Parser/parseVerticalDirection.html">parseVerticalDirection</a></li>
+          <li><a href="../../props_parser/Parser/parseVisualDensity.html">parseVisualDensity</a></li>
+          <li><a href="../../props_parser/Parser/parseWidget.html">parseWidget</a></li>
+          <li><a href="../../props_parser/Parser/parseWrapAlignment.html">parseWrapAlignment</a></li>
+          <li><a href="../../props_parser/Parser/parseWrapCrossAlignment.html">parseWrapCrossAlignment</a></li>
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    lenra_ui_runner
+      0.0.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+
