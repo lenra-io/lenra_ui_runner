@@ -72,6 +72,9 @@ class LenraApplicationButton extends StatelessWidget {
 
   void onButtonPressed(BuildContext context) {
     if (onPressed != null) {
+      if (submit == true) {
+        context.read<FormProvider?>()?.submitForm();
+      }
       OnPressedEvent(code: onPressed!.code).dispatch(context);
     }
   }
@@ -84,9 +87,6 @@ class LenraApplicationButton extends StatelessWidget {
       size: size ?? LenraComponentSize.medium,
       type: TypeHelper.fromString(mainStyle),
       onPressed: () {
-        if (submit != null && submit == true) {
-          context.read<FormProvider>().submitForm();
-        }
         onButtonPressed(context);
       },
       leftIcon: leftIcon,

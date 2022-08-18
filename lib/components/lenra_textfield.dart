@@ -210,7 +210,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
   @override
   Widget build(BuildContext context) {
     if (widget.name != null) {
-      context.read<FormProvider>().setFormFieldValue(widget.name!, _controller.text);
+      context.read<FormProvider?>()?.setFormFieldValue(widget.name!, _controller.text);
     }
 
     return TextField(
@@ -250,7 +250,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
       onChanged: (value) {
         if (widget.onChanged != null) {
           if (widget.name != null) {
-            context.read<FormProvider>().setFormFieldValue(widget.name!, _controller.text);
+            context.read<FormProvider?>()?.setFormFieldValue(widget.name!, _controller.text);
           }
           timeoutStrategy.onChanged(context, value, widget.onChanged!.code);
         }

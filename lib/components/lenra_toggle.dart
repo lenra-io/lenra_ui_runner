@@ -67,6 +67,9 @@ class LenraApplicationToggle extends StatelessWidget {
 
   void onTogglePressed(BuildContext context, bool value) {
     if (onPressed != null) {
+      if (name != null) {
+        context.read<FormProvider?>()?.setFormFieldValue(name!, value);
+      }
       OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
     }
   }
@@ -74,19 +77,12 @@ class LenraApplicationToggle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (name != null) {
-      context.read<FormProvider>().setFormFieldValue(name!, value);
+      context.read<FormProvider?>()?.setFormFieldValue(name!, value);
     }
 
     return LenraToggle(
       value: value,
-      onPressed: onPressed == null
-          ? null
-          : (value) {
-              if (name != null) {
-                context.read<FormProvider>().setFormFieldValue(name!, value);
-              }
-              onTogglePressed(context, value);
-            },
+      onPressed: onPressed == null ? null : (value) => onTogglePressed(context, value),
       style: style,
       splashRadius: splashRadius,
       autofocus: autofocus ?? false,

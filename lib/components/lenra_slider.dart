@@ -85,6 +85,9 @@ class LenraApplicationSlider extends StatelessWidget {
   }) : super();
 
   void onSliderChange(BuildContext context, double value) {
+    if (name != null) {
+      context.read<FormProvider?>()?.setFormFieldValue(name!, value);
+    }
     if (onChanged != null) {
       OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
     }
@@ -104,10 +107,10 @@ class LenraApplicationSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if(name != null) {
-      context.read<FormProvider>().setFormFieldValue(name!, value);
+    if (name != null) {
+      context.read<FormProvider?>()?.setFormFieldValue(name!, value);
     }
-    
+
     return LenraSlider(
       style: style,
       autofocus: autofocus ?? true,
@@ -116,9 +119,6 @@ class LenraApplicationSlider extends StatelessWidget {
       max: max,
       min: min,
       onChanged: (value) {
-        if (name != null) {
-          context.read<FormProvider>().setFormFieldValue(name!, value);
-        }
         onSliderChange(context, value);
       },
       onChangeEnd: (value) => onSliderChangeEnd(context, value),

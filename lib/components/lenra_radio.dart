@@ -73,6 +73,9 @@ class LenraApplicationRadio extends StatelessWidget {
 
   void onRadioPressed(BuildContext context, String value) {
     if (onPressed != null) {
+      if (name != null) {
+        context.read<FormProvider?>()?.setFormFieldValue(name!, value);
+      }
       OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
     }
   }
@@ -80,7 +83,7 @@ class LenraApplicationRadio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (name != null && value == groupValue) {
-      context.read<FormProvider>().setFormFieldValue(name!, value);
+      context.read<FormProvider?>()?.setFormFieldValue(name!, value);
     }
 
     return LenraRadio<String>(
@@ -88,14 +91,7 @@ class LenraApplicationRadio extends StatelessWidget {
       value: value,
       groupValue: groupValue,
       materialTapTargetSize: materialTapTargetSize,
-      onPressed: onPressed == null
-          ? null
-          : (value) {
-              if (name != null) {
-                context.read<FormProvider>().setFormFieldValue(name!, value);
-              }
-              onRadioPressed(context, groupValue);
-            },
+      onPressed: onPressed == null ? null : (value) => onRadioPressed(context, groupValue),
       toggleable: toggleable ?? false,
       style: style,
     );

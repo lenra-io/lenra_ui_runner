@@ -66,27 +66,23 @@ class LenraApplicationCheckbox extends StatelessWidget {
 
   void onCheck(BuildContext context, bool? value) {
     if (onPressed != null) {
+      if (name != null) {
+        context.read<FormProvider?>()?.setFormFieldValue(name!, value);
+      }
       OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if(name != null) {
-      context.read<FormProvider>().setFormFieldValue(name!, value);
+    if (name != null) {
+      context.read<FormProvider?>()?.setFormFieldValue(name!, value);
     }
 
     return LenraCheckbox(
       value: value,
       tristate: tristate ?? false,
-      onPressed: onPressed == null
-          ? null
-          : (v) {
-              if (name != null) {
-                context.read<FormProvider>().setFormFieldValue(name!, v);
-              }
-              onCheck(context, v);
-            },
+      onPressed: onPressed == null ? null : (v) => onCheck(context, v),
       style: style,
       materialTapTargetSize: materialTapTargetSize,
       autofocus: autofocus ?? false,
