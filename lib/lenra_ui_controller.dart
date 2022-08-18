@@ -8,20 +8,8 @@ import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 import 'package:provider/provider.dart';
 
-class LenraUiController extends StatefulWidget {
+class LenraUiController extends StatelessWidget {
   const LenraUiController({Key? key}) : super(key: key);
-
-  @override
-  State<LenraUiController> createState() {
-    return _LenraUiControllerState();
-  }
-}
-
-class _LenraUiControllerState extends State<LenraUiController> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

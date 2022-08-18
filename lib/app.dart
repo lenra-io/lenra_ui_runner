@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
 
-class App extends StatefulWidget {
+class App extends StatelessWidget {
   /// The name of the Lenra application.
   final String appName;
 
@@ -21,24 +21,12 @@ class App extends StatefulWidget {
   const App({Key? key, required this.appName, required this.httpEndpoint, required this.accessToken}) : super(key: key);
 
   @override
-  State<App> createState() {
-    return _AppState();
-  }
-}
-
-class _AppState extends State<App> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<UserApplicationModel>(create: (context) => UserApplicationModel()),
         ChangeNotifierProvider<LenraApplicationModel>(
-          create: (context) => LenraApplicationModel(widget.httpEndpoint, widget.appName, widget.accessToken),
+          create: (context) => LenraApplicationModel(httpEndpoint, appName, accessToken),
         ),
         ChangeNotifierProxyProvider<SocketModel, ChannelModel>(
           create: (context) => ChannelModel(socketModel: context.read<SocketModel>()),
@@ -55,7 +43,7 @@ class _AppState extends State<App> {
         ),
       ],
       builder: (BuildContext context, _) {
-        context.read<ChannelModel>().createChannel(widget.appName);
+        context.read<ChannelModel>().createChannel(appName);
         (context.read<WidgetModel>() as ClientWidgetModel).setupListeners();
 
         return const LenraUiController();
