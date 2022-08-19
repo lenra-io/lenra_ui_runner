@@ -1,6 +1,6 @@
 import 'package:lenra_ui_runner/models/socket_model.dart';
 import 'package:lenra_ui_runner/socket/lenra_channel.dart';
-import 'package:client_common/api/response_models/api_errors.dart';
+import 'package:client_common/api/response_models/api_error.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 
@@ -8,7 +8,7 @@ class ChannelModel extends ChangeNotifier {
   LenraChannel? channel;
   bool hasError = false;
   bool _isInitialized = false;
-  ApiErrors? errors;
+  ApiError? error;
   late SocketModel socketModel;
 
   ChannelModel({required this.socketModel});
@@ -28,7 +28,7 @@ class ChannelModel extends ChangeNotifier {
     channel!.onError((response) {
       hasError = true;
       isInitialized = true;
-      errors = ApiErrors.fromJson(response!["reason"]);
+      error = ApiError.fromJson(response!["reason"]);
       notifyListeners();
     });
   }

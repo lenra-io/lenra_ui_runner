@@ -1,5 +1,5 @@
 import 'package:lenra_ui_runner/models/channel_model.dart';
-import 'package:client_common/api/response_models/api_errors.dart';
+import 'package:client_common/api/response_models/api_error.dart';
 import 'package:client_common/lenra_application/api_error_snack_bar.dart';
 import 'package:client_common/lenra_application/app_error_page.dart';
 import 'package:client_common/lenra_application/lenra_error_page.dart';
@@ -16,17 +16,17 @@ class LenraUiController extends StatelessWidget {
     ChannelModel channelModel = context.watch<ChannelModel>();
     Widget res;
     if (channelModel.hasError) {
-      res = LenraErrorPage(apiErrors: channelModel.errors!);
+      res = LenraErrorPage(apiError: channelModel.error!);
     } else if (!channelModel.isInitialized) {
       res = const Center(
         child: CircularProgressIndicator(),
       );
     } else {
-      res = LenraWidget<ApiErrors>(
-        buildErrorPage: (BuildContext context, ApiErrors errors) => AppErrorPage(apiErrors: errors),
-        showSnackBar: (BuildContext context, ApiErrors errors) => {
+      res = LenraWidget<ApiError>(
+        buildErrorPage: (BuildContext context, ApiError error) => AppErrorPage(apiError: error),
+        showSnackBar: (BuildContext context, ApiError error) => {
           ScaffoldMessenger.of(context).showSnackBar(ApiErrorSnackBar(
-            errors: errors,
+            error: error,
             onPressAction: () => ScaffoldMessenger.of(context).clearSnackBars(),
             actionLabel: "Ok",
           )),
