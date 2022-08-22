@@ -169,8 +169,10 @@ void main() {
 
     await tester.pump();
     await tester.tap(find.byType(LenraCheckbox).at(0));
-    await tester.tap(find.byType(TextButton).at(0));
+    // When switching the places of the following two lines the test fails.
+    // If we find a problem in the future it might come from here.
     await tester.tap(find.byType(LenraCheckbox).at(1));
+    await tester.tap(find.byType(TextButton).at(0));
     await tester.tap(find.byType(TextButton).at(1));
     expect(hasBeenNotified, true);
   });
