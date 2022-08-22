@@ -199,4 +199,42 @@ void main() {
       expect(hasBeenNotified, false);
     },
   );
+
+  testWidgets(
+    'LenraForm Checkbox send default value to form when not clicked',
+    (WidgetTester tester) async {
+      bool hasBeenNotified = false;
+
+      await tester.pumpWidget(
+        createBaseFormTestWidget((e) {
+          if (e.code == "submitted") {
+            expect((e.data as ValueData).value, {
+              "checkboxValue": true,
+            });
+          }
+          hasBeenNotified = true;
+          return false;
+        }),
+      );
+
+      Map<String, dynamic> ui = createBaseFormUi([
+        {
+          "type": "checkbox",
+          "value": true,
+          "name": "checkboxValue",
+        },
+        {
+          "type": "button",
+          "text": "Submit",
+          "submit": true,
+        }
+      ]);
+
+      context!.read<WidgetModel>().replaceUi(ui);
+
+      await tester.pump();
+      await tester.tap(find.byType(LenraButton));
+      expect(hasBeenNotified, true);
+    },
+  );
 }
