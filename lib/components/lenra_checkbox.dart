@@ -37,7 +37,6 @@ class LenraCheckboxBuilder extends LenraComponentBuilder<Widget> {
       style: style,
       materialTapTargetSize: materialTapTargetSize,
       autofocus: autofocus,
-      name: name,
     );
   }
 
@@ -62,7 +61,6 @@ class LenraApplicationCheckbox extends StatelessWidget {
   final LenraCheckboxStyle? style;
   final MaterialTapTargetSize? materialTapTargetSize;
   final bool? autofocus;
-  final String? name;
 
   LenraApplicationCheckbox({
     required this.value,
@@ -71,7 +69,6 @@ class LenraApplicationCheckbox extends StatelessWidget {
     required this.style,
     required this.materialTapTargetSize,
     required this.autofocus,
-    required this.name,
   }) : super();
 
   void onCheck(BuildContext context, bool? value) {

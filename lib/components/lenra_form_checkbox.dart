@@ -14,7 +14,7 @@ class LenraApplicationFormCheckbox extends StatefulWidget {
   final LenraCheckboxStyle? style;
   final MaterialTapTargetSize? materialTapTargetSize;
   final bool? autofocus;
-  final String? name;
+  final String name;
 
   LenraApplicationFormCheckbox({
     required this.value,
@@ -43,9 +43,7 @@ class _LenraApplicationFormCheckboxState extends State<LenraApplicationFormCheck
     setState(() {
       this.value = value;
     });
-    if (widget.name != null) {
-      context.read<FormProvider?>()?.setFormFieldValue(widget.name!, value);
-    }
+    context.read<FormProvider?>()?.setFormFieldValue(widget.name, value);
     if (widget.onPressed != null) {
       OnChangedEvent(code: widget.onPressed!.code, data: ValueData(value)).dispatch(context);
     }
@@ -53,9 +51,7 @@ class _LenraApplicationFormCheckboxState extends State<LenraApplicationFormCheck
 
   @override
   Widget build(BuildContext context) {
-    if (widget.name != null) {
-      context.read<FormProvider?>()?.setFormFieldValue(widget.name!, value);
-    }
+    context.read<FormProvider?>()?.setFormFieldValue(widget.name, value);
 
     return LenraCheckbox(
       value: value,
