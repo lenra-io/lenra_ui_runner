@@ -93,4 +93,85 @@ void main() {
     await tester.tap(find.byType(TextButton));
     expect(hasBeenNotified, true);
   });
+
+  testWidgets('Nested LenraForm should work properly', (WidgetTester tester) async {
+    BuildContext? _context;
+    bool hasBeenNotified = false;
+
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        child: NotificationListener(
+          child: Builder(
+            builder: (BuildContext context) {
+              _context = context;
+
+              return LenraWidget(
+                buildErrorPage: (_ctx, _e) => Text("error"),
+                showSnackBar: (_ctx, _e) => {},
+              );
+            },
+          ),
+          onNotification: (Event e) {
+            if (e.code == "submitted") {
+              expect((e.data as ValueData).value, {"checkboxValue": false});
+            } else if (e.code == "nestedSubmit") {
+              expect((e.data as ValueData).value, {"checkboxValue2": false});
+            }
+            hasBeenNotified = true;
+            return false;
+          },
+        ),
+      ),
+    );
+
+    Map<String, dynamic> ui = {
+      "root": {
+        "type": "form",
+        "onSubmit": {"code": "submitted"},
+        "child": {
+          "type": "flex",
+          "children": [
+            {
+              "type": "checkbox",
+              "value": true,
+              "name": "checkboxValue",
+            },
+            {
+              "type": "form",
+              "onSubmit": {"code": "nestedSubmit"},
+              "child": {
+                "type": "flex",
+                "children": [
+                  {
+                    "type": "checkbox",
+                    "value": true,
+                    "name": "checkboxValue2",
+                  },
+                  {
+                    "type": "button",
+                    "text": "Submit",
+                    "submit": true,
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "text": "Submit",
+              "submit": true,
+            }
+          ]
+        }
+      }
+    };
+
+    _context!.read<WidgetModel>().replaceUi(ui);
+
+    await tester.pump();
+    await tester.tap(find.byType(LenraCheckbox).at(0));
+    await tester.tap(find.byType(TextButton).at(0));
+    await tester.tap(find.byType(LenraCheckbox).at(1));
+    await tester.tap(find.byType(TextButton).at(1));
+    expect(hasBeenNotified, true);
+  });
 }
