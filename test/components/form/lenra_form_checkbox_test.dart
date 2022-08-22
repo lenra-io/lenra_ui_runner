@@ -123,7 +123,8 @@ void main() {
     },
   );
 
-  testWidgets('LenraForm Checkbox should not work when `name` property is not set', (WidgetTester tester) async {
+  testWidgets('LenraForm Checkbox should not update form value when `name` property is not set',
+      (WidgetTester tester) async {
     bool hasBeenNotified = false;
 
     await tester.pumpWidget(
@@ -201,7 +202,7 @@ void main() {
   );
 
   testWidgets(
-    'LenraForm Checkbox send default value to form when not clicked',
+    'LenraForm Checkbox sends default value to form when not clicked',
     (WidgetTester tester) async {
       bool hasBeenNotified = false;
 
@@ -212,6 +213,7 @@ void main() {
               "checkboxValue": true,
             });
           }
+
           hasBeenNotified = true;
           return false;
         }),
@@ -235,6 +237,50 @@ void main() {
       await tester.pump();
       await tester.tap(find.byType(LenraButton));
       expect(hasBeenNotified, true);
+    },
+  );
+
+  testWidgets(
+    'LenraForm Checkbox properly executes listener when inside a Form',
+    (WidgetTester tester) async {
+      bool hasBeenNotified = false;
+      bool hasEnteredListener = false;
+
+      await tester.pumpWidget(
+        createBaseFormTestWidget((e) {
+          if (e.code == "submitted") {
+            expect((e.data as ValueData).value, {
+              "checkboxValue": false,
+            });
+          } else if (e.code == "checked") {
+            hasEnteredListener = true;
+          }
+          hasBeenNotified = true;
+          return false;
+        }),
+      );
+
+      Map<String, dynamic> ui = createBaseFormUi([
+        {
+          "type": "checkbox",
+          "value": true,
+          "name": "checkboxValue",
+          "onPressed": {"code": "checked"}
+        },
+        {
+          "type": "button",
+          "text": "Submit",
+          "submit": true,
+        }
+      ]);
+
+      context!.read<WidgetModel>().replaceUi(ui);
+
+      await tester.pump();
+      await tester.tap(find.byType(LenraCheckbox));
+      await tester.tap(find.byType(LenraButton));
+      expect(hasBeenNotified, true);
+      expect(hasEnteredListener, true);
     },
   );
 }
