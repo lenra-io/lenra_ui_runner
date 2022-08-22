@@ -157,4 +157,46 @@ void main() {
     await tester.tap(find.byType(LenraButton));
     expect(hasBeenNotified, true);
   });
+
+  testWidgets(
+    'LenraForm Checkbox should not crash when `name` property is set outside of a Form',
+    (WidgetTester tester) async {
+      bool hasBeenNotified = false;
+
+      await tester.pumpWidget(
+        createBaseFormTestWidget((e) {
+          if (e.code == "submitted") {
+            expect((e.data as ValueData).value, {});
+          }
+          hasBeenNotified = true;
+          return false;
+        }),
+      );
+
+      Map<String, dynamic> ui = {
+        "root": {
+          "type": "flex",
+          "children": [
+            {
+              "type": "checkbox",
+              "value": true,
+              "name": "checkboxValue",
+            },
+            {
+              "type": "button",
+              "text": "Submit",
+              "submit": true,
+            }
+          ]
+        }
+      };
+
+      context!.read<WidgetModel>().replaceUi(ui);
+
+      await tester.pump();
+      await tester.tap(find.byType(LenraCheckbox));
+      await tester.tap(find.byType(LenraButton));
+      expect(hasBeenNotified, false);
+    },
+  );
 }
