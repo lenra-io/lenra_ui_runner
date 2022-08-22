@@ -20,7 +20,7 @@ class LenraButtonBuilder extends LenraComponentBuilder<LenraApplicationButton> {
     onPressed,
     leftIcon,
     rightIcon,
-    submit,
+    submit = false,
   }) {
     return LenraApplicationButton(
       text: text,
@@ -57,7 +57,7 @@ class LenraApplicationButton extends StatelessWidget {
   final lenra.Listener? onPressed;
   final Widget? leftIcon;
   final Widget? rightIcon;
-  final bool? submit;
+  final bool submit;
 
   LenraApplicationButton({
     required this.text,
@@ -71,7 +71,7 @@ class LenraApplicationButton extends StatelessWidget {
   }) : super();
 
   void onButtonPressed(BuildContext context) {
-    if (submit == true) {
+    if (submit) {
       context.read<FormProvider?>()?.submitForm();
     }
     if (onPressed != null) {
