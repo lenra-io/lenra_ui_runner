@@ -1,3 +1,4 @@
+import 'package:lenra_ui_runner/models/context_model.dart';
 import 'package:lenra_ui_runner/models/socket_model.dart';
 import 'package:lenra_ui_runner/socket/lenra_channel.dart';
 import 'package:client_common/api/response_models/api_error.dart';
@@ -10,8 +11,9 @@ class ChannelModel extends ChangeNotifier {
   bool _isInitialized = false;
   ApiError? error;
   late SocketModel socketModel;
+  late ContextModel contextModel;
 
-  ChannelModel({required this.socketModel});
+  ChannelModel({required this.socketModel, required this.contextModel});
 
   bool get isInitialized {
     return _isInitialized;
@@ -23,7 +25,7 @@ class ChannelModel extends ChangeNotifier {
   }
 
   void createChannel(String appName) {
-    channel = socketModel.channel("app", {"app": appName});
+    channel = socketModel.channel("app", {"app": appName, "context": contextModel.toJson()});
 
     channel!.onError((response) {
       hasError = true;
