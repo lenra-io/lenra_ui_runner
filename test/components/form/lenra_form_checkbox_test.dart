@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:lenra_components/component/lenra_button.dart';
 import 'package:lenra_components/component/lenra_checkbox.dart';
-import 'package:lenra_components/component/lenra_toggle.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/lenra_widget.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
-import "../test_helper.dart";
+import '../../test_helper.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -29,8 +29,10 @@ void main() {
           ),
           onNotification: (Event e) {
             if (e.code == "submitted") {
-              expect((e.data as ValueData).value,
-                  {"toggleValue": false, "checkboxValue": false, "radio": "radioValue", "textfield": "textfieldValue"});
+              expect((e.data as ValueData).value, {
+                "checkboxValue": false,
+                "checkboxValue2": false,
+              });
             }
             hasBeenNotified = true;
             return false;
@@ -47,33 +49,20 @@ void main() {
           "type": "flex",
           "children": [
             {
-              "type": "toggle",
-              "name": "toggleValue",
-              "value": true,
-              "onPressed": {"code": "toggled"}
-            },
-            {
               "type": "checkbox",
               "value": true,
               "name": "checkboxValue",
               "onPressed": {"code": "checked"}
             },
             {
-              "type": "radio",
-              "groupValue": "radioValue",
-              "value": "radioValue",
-              "name": "radio",
+              "type": "checkbox",
+              "value": true,
+              "onPressed": {"code": "checked2"}
             },
             {
-              "type": "radio",
-              "groupValue": "radioValue",
-              "value": "radioValue2",
-              "name": "radio",
-            },
-            {
-              "type": "container",
-              "constraints": {"maxWidth": 400, "maxHeight": 100},
-              "child": {"type": "textfield", "value": "textfieldValue", "name": "textfield"},
+              "type": "checkbox",
+              "value": true,
+              "name": "checkboxValue2",
             },
             {
               "type": "button",
@@ -88,9 +77,10 @@ void main() {
     _context!.read<WidgetModel>().replaceUi(ui);
 
     await tester.pump();
-    await tester.tap(find.byType(LenraToggle));
-    await tester.tap(find.byType(LenraCheckbox));
-    await tester.tap(find.byType(TextButton));
+    await tester.tap(find.byType(LenraCheckbox).at(0));
+    await tester.tap(find.byType(LenraCheckbox).at(1));
+    await tester.tap(find.byType(LenraCheckbox).at(2));
+    await tester.tap(find.byType(LenraButton));
     expect(hasBeenNotified, true);
   });
 }

@@ -58,9 +58,6 @@ class _LenraFormPageState extends UiBuilderState<LenraFormPage, Map<String, dyna
     } else if (event.code == "toggled") {
       data["toggle"] = !data["toggle"];
       return data;
-    } else if (event.code == "checked") {
-      data["checkbox"] = !data["checkbox"];
-      return data;
     } else if (event.code == "submitted") {
       data["text"] = (event.data as ValueData).value;
       return data;
