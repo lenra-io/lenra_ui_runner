@@ -252,10 +252,10 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
           ? null
           : (action, data) => onAppPrivateCommandReceived(context, action, data),
       onChanged: (value) {
+        if (widget.name != null) {
+          context.read<FormProvider?>()?.setFormFieldValue(widget.name!, _controller.text);
+        }
         if (widget.onChanged != null) {
-          if (widget.name != null) {
-            context.read<FormProvider?>()?.setFormFieldValue(widget.name!, _controller.text);
-          }
           timeoutStrategy.onChanged(context, value, widget.onChanged!.code);
         }
       },
