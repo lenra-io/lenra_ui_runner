@@ -107,8 +107,13 @@ class LenraApplicationSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double? formValue;
+
     if (name != null) {
-      context.read<FormProvider?>()?.setFormFieldValue(name!, value);
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+        context.read<FormProvider?>()?.setFormFieldValue(name!, value);
+      });
+      formValue = context.select<FormProvider?, double?>((form) => form?.formFieldValues[name]);
     }
 
     return LenraSlider(
@@ -123,7 +128,7 @@ class LenraApplicationSlider extends StatelessWidget {
       },
       onChangeEnd: (value) => onSliderChangeEnd(context, value),
       onChangeStart: (value) => onSliderChangeStart(context, value),
-      value: value,
+      value: formValue ?? value,
     );
   }
 }

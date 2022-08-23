@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
-import 'package:lenra_ui_runner/components/lenra_form.dart';
-import 'package:provider/provider.dart';
+import 'package:lenra_ui_runner/components/lenra_form_radio.dart';
 import '../../lenra_component_builder.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_components/component/lenra_radio.dart';
@@ -10,10 +9,10 @@ import 'package:lenra_components/component/lenra_radio.dart';
 import 'events/on_changed_event.dart';
 
 // TODO : generate this from annotation on LenraRadio
-class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
+class LenraRadioBuilder extends LenraComponentBuilder<Widget> {
   // TODO : Handle focusNode
   @override
-  LenraApplicationRadio map({
+  Widget map({
     autofocus,
     value,
     groupValue,
@@ -23,6 +22,18 @@ class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
     style,
     name,
   }) {
+    if (name != null) {
+      return LenraApplicationFormRadio(
+        autofocus: autofocus,
+        value: value,
+        groupValue: groupValue,
+        materialTapTargetSize: materialTapTargetSize,
+        onPressed: onPressed,
+        toggleable: toggleable,
+        style: style,
+        name: name,
+      );
+    }
     return LenraApplicationRadio(
       autofocus: autofocus,
       value: value,
@@ -31,7 +42,6 @@ class LenraRadioBuilder extends LenraComponentBuilder<LenraApplicationRadio> {
       onPressed: onPressed,
       toggleable: toggleable,
       style: style,
-      name: name,
     );
   }
 
@@ -58,7 +68,6 @@ class LenraApplicationRadio extends StatelessWidget {
   final lenra.Listener? onPressed;
   final bool? toggleable;
   final LenraRadioStyle? style;
-  final String? name;
 
   LenraApplicationRadio({
     required this.autofocus,
@@ -68,24 +77,16 @@ class LenraApplicationRadio extends StatelessWidget {
     required this.onPressed,
     required this.toggleable,
     required this.style,
-    required this.name,
   });
 
   void onRadioPressed(BuildContext context, String value) {
     if (onPressed != null) {
-      if (name != null) {
-        context.read<FormProvider?>()?.setFormFieldValue(name!, value);
-      }
       OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (name != null && value == groupValue) {
-      context.read<FormProvider?>()?.setFormFieldValue(name!, value);
-    }
-
     return LenraRadio<String>(
       autofocus: autofocus ?? false,
       value: value,

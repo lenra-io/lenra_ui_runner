@@ -210,7 +210,11 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
   @override
   Widget build(BuildContext context) {
     if (widget.name != null) {
-      context.read<FormProvider?>()?.setFormFieldValue(widget.name!, _controller.text);
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+        context.read<FormProvider?>()?.setFormFieldValue(widget.name!, _controller.text);
+      });
+      _controller.text =
+          context.select<FormProvider?, String?>((form) => form?.formFieldValues[widget.name]) ?? widget.value;
     }
 
     return TextField(
