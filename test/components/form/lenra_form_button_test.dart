@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_button.dart';
-import 'package:lenra_components/component/lenra_checkbox.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/lenra_widget.dart';
