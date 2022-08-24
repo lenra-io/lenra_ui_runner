@@ -28,7 +28,7 @@ class ChannelModel extends ChangeNotifier {
     channel!.onError((response) {
       hasError = true;
       isInitialized = true;
-      error = ApiError.fromJson(response!["reason"]);
+      error = ApiError.fromJson(response as Map<String, dynamic>);
       notifyListeners();
     });
   }
