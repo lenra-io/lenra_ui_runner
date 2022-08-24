@@ -71,7 +71,7 @@
   channel!.onError((response) {
     hasError = true;
     isInitialized = true;
-    error = ApiError.fromJson(response![&quot;reason&quot;]);
+    error = ApiError.fromJson(response as Map&lt;String, dynamic&gt;);
     notifyListeners();
   });
 }</code></pre>
