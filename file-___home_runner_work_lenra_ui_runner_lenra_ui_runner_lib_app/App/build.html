@@ -74,15 +74,17 @@
 Widget build(BuildContext context) {
   return MultiProvider(
     providers: [
+      ChangeNotifierProvider&lt;ContextModel&gt;(create: (context) =&gt; ContextModel()),
       ChangeNotifierProvider&lt;UserApplicationModel&gt;(create: (context) =&gt; UserApplicationModel()),
       ChangeNotifierProvider&lt;LenraApplicationModel&gt;(
         create: (context) =&gt; LenraApplicationModel(httpEndpoint, appName, accessToken),
       ),
-      ChangeNotifierProxyProvider&lt;SocketModel, ChannelModel&gt;(
-        create: (context) =&gt; ChannelModel(socketModel: context.read&lt;SocketModel&gt;()),
-        update: (_, socketModel, channelModel) {
+      ChangeNotifierProxyProvider2&lt;SocketModel, ContextModel, ChannelModel&gt;(
+        create: (context) =&gt;
+            ChannelModel(socketModel: context.read&lt;SocketModel&gt;(), contextModel: context.read&lt;ContextModel&gt;()),
+        update: (_, socketModel, contextModel, channelModel) {
           if (channelModel == null) {
-            return ChannelModel(socketModel: socketModel);
+            return ChannelModel(socketModel: socketModel, contextModel: contextModel);
           }
           return channelModel.update(socketModel);
         },
@@ -93,8 +95,12 @@ Widget build(BuildContext context) {
       ),
     ],
     builder: (BuildContext context, _) {
-      context.read&lt;ChannelModel&gt;().createChannel(appName);
-      (context.read&lt;WidgetModel&gt;() as ClientWidgetModel).setupListeners();
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+        context.read&lt;ContextModel&gt;().mediaQueryData = MediaQuery.of(context);
+        &#47;&#47;The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
+        context.read&lt;ChannelModel&gt;().createChannel(appName);
+        (context.read&lt;WidgetModel&gt;() as ClientWidgetModel).setupListeners();
+      });
 
       return const LenraUiController();
     },
