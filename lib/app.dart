@@ -1,4 +1,5 @@
 import 'package:client_common/models/user_application_model.dart';
+import 'package:client_common/views/stateful_wrapper.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/lenra_application_model.dart';
 import 'package:lenra_ui_runner/lenra_ui_controller.dart';
@@ -47,23 +48,25 @@ class App extends StatelessWidget {
         ),
       ],
       builder: (BuildContext context, _) {
-        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-          context.read<ContextModel>().mediaQueryData = MediaQuery.of(context);
-          //The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
-          context.read<ChannelModel>().createChannel(appName);
-          (context.read<WidgetModel>() as ClientWidgetModel).setupListeners();
-        });
-
-        return NotificationListener<Event>(
-          onNotification: (Event event) => context.read<ChannelModel>().handleNotifications(event),
-          child: Overlay(
-            initialEntries: [
-              OverlayEntry(
-                builder: (context) => const LenraUiController(),
+        return StatefulWrapper(
+            builder: (context) => NotificationListener<Event>(
+              onNotification: (Event event) => context.read<ChannelModel>().handleNotifications(event),
+              child: Overlay(
+                initialEntries: [
+                  OverlayEntry(
+                    builder: (context) => const LenraUiController(),
+                  ),
+                ],
               ),
-            ],
-          ),
-        );
+            ),
+            onInit: () {
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                context.read<ContextModel>().mediaQueryData = MediaQuery.of(context);
+                //The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
+                context.read<ChannelModel>().createChannel(appName);
+                (context.read<WidgetModel>() as ClientWidgetModel).setupListeners();
+              });
+            });
       },
     );
   }
