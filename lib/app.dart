@@ -1,4 +1,5 @@
 import 'package:client_common/models/user_application_model.dart';
+import 'package:client_common/views/stateful_wrapper.dart';
 import 'package:lenra_ui_runner/lenra_application_model.dart';
 import 'package:lenra_ui_runner/lenra_ui_controller.dart';
 import 'package:lenra_ui_runner/models/channel_model.dart';
@@ -46,14 +47,16 @@ class App extends StatelessWidget {
         ),
       ],
       builder: (BuildContext context, _) {
-        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-          context.read<ContextModel>().mediaQueryData = MediaQuery.of(context);
-          //The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
-          context.read<ChannelModel>().createChannel(appName);
-          (context.read<WidgetModel>() as ClientWidgetModel).setupListeners();
-        });
-
-        return const LenraUiController();
+        return StatefulWrapper(
+            builder: (context) => const LenraUiController(),
+            onInit: () {
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                context.read<ContextModel>().mediaQueryData = MediaQuery.of(context);
+                //The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
+                context.read<ChannelModel>().createChannel(appName);
+                (context.read<WidgetModel>() as ClientWidgetModel).setupListeners();
+              });
+            });
       },
     );
   }
