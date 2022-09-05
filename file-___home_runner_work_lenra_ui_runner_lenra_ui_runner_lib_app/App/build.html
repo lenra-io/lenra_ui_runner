@@ -102,7 +102,16 @@ Widget build(BuildContext context) {
         (context.read&lt;WidgetModel&gt;() as ClientWidgetModel).setupListeners();
       });
 
-      return const LenraUiController();
+      return NotificationListener&lt;Event&gt;(
+        onNotification: (Event event) =&gt; context.read&lt;ChannelModel&gt;().handleNotifications(event),
+        child: Overlay(
+          initialEntries: [
+            OverlayEntry(
+              builder: (context) =&gt; const LenraUiController(),
+            ),
+          ],
+        ),
+      );
     },
   );
 }</code></pre>
