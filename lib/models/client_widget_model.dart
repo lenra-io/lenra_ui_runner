@@ -28,7 +28,7 @@ class ClientWidgetModel extends WidgetModel<ApiError> {
         channelModel.isInitialized = true;
       }
 
-      setErrors(ApiError.fromJson(json["errors"]));
+      setErrors(ApiError.fromJson(json as Map<String, dynamic>));
     });
   }
 }
