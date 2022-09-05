@@ -92,7 +92,10 @@ Widget build(BuildContext context) {
       },
     );
   }
-  return Scaffold(body: res);
+  return NotificationListener(
+    onNotification: (Event event) =&gt; context.read&lt;ChannelModel&gt;().handleNotifications(event),
+    child: Scaffold(body: res),
+  );
 }</code></pre>
 </section>
 
