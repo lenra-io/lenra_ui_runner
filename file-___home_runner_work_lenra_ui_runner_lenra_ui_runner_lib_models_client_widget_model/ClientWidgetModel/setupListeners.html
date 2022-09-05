@@ -85,7 +85,7 @@
       channelModel.isInitialized = true;
     }
 
-    setErrors(ApiError.fromJson(json[&quot;errors&quot;]));
+    setErrors(ApiError.fromJson(json as Map&lt;String, dynamic&gt;));
   });
 }</code></pre>
 </section>

@@ -95,14 +95,16 @@ Widget build(BuildContext context) {
       ),
     ],
     builder: (BuildContext context, _) {
-      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-        context.read&lt;ContextModel&gt;().mediaQueryData = MediaQuery.of(context);
-        &#47;&#47;The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
-        context.read&lt;ChannelModel&gt;().createChannel(appName);
-        (context.read&lt;WidgetModel&gt;() as ClientWidgetModel).setupListeners();
-      });
-
-      return const LenraUiController();
+      return StatefulWrapper(
+          builder: (context) =&gt; const LenraUiController(),
+          onInit: () {
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              context.read&lt;ContextModel&gt;().mediaQueryData = MediaQuery.of(context);
+              &#47;&#47;The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
+              context.read&lt;ChannelModel&gt;().createChannel(appName);
+              (context.read&lt;WidgetModel&gt;() as ClientWidgetModel).setupListeners();
+            });
+          });
     },
   );
 }</code></pre>
