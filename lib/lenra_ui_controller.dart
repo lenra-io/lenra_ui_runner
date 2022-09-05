@@ -4,7 +4,6 @@ import 'package:client_common/lenra_application/api_error_snack_bar.dart';
 import 'package:client_common/lenra_application/app_error_page.dart';
 import 'package:client_common/lenra_application/lenra_error_page.dart';
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 import 'package:provider/provider.dart';
 
@@ -33,9 +32,6 @@ class LenraUiController extends StatelessWidget {
         },
       );
     }
-    return NotificationListener(
-      onNotification: (Event event) => context.read<ChannelModel>().handleNotifications(event),
-      child: Scaffold(body: res),
-    );
+    return Scaffold(body: res);
   }
 }
