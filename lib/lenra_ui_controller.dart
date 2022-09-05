@@ -33,9 +33,6 @@ class LenraUiController extends StatelessWidget {
         },
       );
     }
-    return NotificationListener(
-      onNotification: (Event event) => context.read<ChannelModel>().handleNotifications(event),
-      child: Scaffold(body: res),
-    );
+    return Scaffold(body: res);
   }
 }

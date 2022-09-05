@@ -1,4 +1,5 @@
 import 'package:client_common/models/user_application_model.dart';
+import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/lenra_application_model.dart';
 import 'package:lenra_ui_runner/lenra_ui_controller.dart';
 import 'package:lenra_ui_runner/models/channel_model.dart';
@@ -53,7 +54,16 @@ class App extends StatelessWidget {
           (context.read<WidgetModel>() as ClientWidgetModel).setupListeners();
         });
 
-        return const LenraUiController();
+        return NotificationListener<Event>(
+          onNotification: (Event event) => context.read<ChannelModel>().handleNotifications(event),
+          child: Overlay(
+            initialEntries: [
+              OverlayEntry(
+                builder: (context) => const LenraUiController(),
+              ),
+            ],
+          ),
+        );
       },
     );
   }
