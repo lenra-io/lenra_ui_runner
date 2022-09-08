@@ -7,6 +7,7 @@ import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_components/theme/lenra_toggle_style.dart';
+import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/lenra_text.dart';
 import 'package:lenra_ui_runner/components/lenra_textfield.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
@@ -112,6 +113,7 @@ class Parser {
     'slider': LenraSliderBuilder(),
     'overlayEntry': LenraOverlayEntryBuilder(),
     'icon': LenraIconBuilder(),
+    'form': LenraFormBuilder(),
   };
 
   static String? getType(Map<String, dynamic> json) {
@@ -249,7 +251,7 @@ class Parser {
   }
 
   static double parseInfinity(double value) {
-    if(value == -1) {
+    if (value == -1) {
       return double.infinity;
     } else {
       return value;
