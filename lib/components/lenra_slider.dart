@@ -1,3 +1,4 @@
+import 'package:client_common/views/stateful_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_slider.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
@@ -110,13 +111,10 @@ class LenraApplicationSlider extends StatelessWidget {
     double? formValue;
 
     if (name != null) {
-      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-        context.read<FormProvider?>()?.setFormFieldValue(name!, value);
-      });
       formValue = context.select<FormProvider?, double?>((form) => form?.formFieldValues[name]);
     }
 
-    return LenraSlider(
+    Widget res = LenraSlider(
       style: style,
       autofocus: autofocus ?? true,
       divisions: divisions,
@@ -130,5 +128,20 @@ class LenraApplicationSlider extends StatelessWidget {
       onChangeStart: (value) => onSliderChangeStart(context, value),
       value: formValue ?? value,
     );
+
+    if (name != null) {
+      return StatefulWrapper(
+        onInit: () {
+          WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+            context.read<FormProvider?>()?.setFormFieldValue(name!, value);
+          });
+        },
+        builder: (context) {
+          return res;
+        },
+      );
+    }
+
+    return res;
   }
 }

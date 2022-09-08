@@ -31,7 +31,18 @@ class LenraApplicationFormCheckbox extends StatefulWidget {
 }
 
 class _LenraApplicationFormCheckboxState extends State<LenraApplicationFormCheckbox> {
+  @override
+  void initState() {
+    // This post frame callback is needed because otherwise the context.select would be triggered during the build process.
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context.read<FormProvider?>()?.setFormFieldValue(widget.name, widget.value);
+    });
+
+    super.initState();
+  }
+
   void onCheck(BuildContext context, bool? value) {
+    print("CHECKBOX CHECKED");
     context.read<FormProvider?>()?.setFormFieldValue(widget.name, value);
     if (widget.onPressed != null) {
       OnChangedEvent(code: widget.onPressed!.code, data: ValueData(value)).dispatch(context);
@@ -40,11 +51,6 @@ class _LenraApplicationFormCheckboxState extends State<LenraApplicationFormCheck
 
   @override
   Widget build(BuildContext context) {
-    // This post frame callback is needed because otherwise the context.select would be triggered during the build process.
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      context.read<FormProvider?>()?.setFormFieldValue(widget.name, widget.value);
-    });
-
     bool tristate = widget.tristate ?? false;
     bool? value = context.select<FormProvider?, bool?>((form) => form?.formFieldValues[widget.name]);
 

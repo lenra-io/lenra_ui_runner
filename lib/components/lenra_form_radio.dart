@@ -1,3 +1,4 @@
+import 'package:client_common/views/stateful_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
@@ -39,22 +40,27 @@ class LenraApplicationFormRadio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (value == groupValue) {
-      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-        context.read<FormProvider?>()?.setFormFieldValue(name, value);
-      });
-    }
-
     String? formGroupValue = context.select<FormProvider?, String?>((form) => form?.formFieldValues[name]);
 
-    return LenraRadio<String>(
-      autofocus: autofocus ?? false,
-      value: value,
-      groupValue: formGroupValue ?? groupValue,
-      materialTapTargetSize: materialTapTargetSize,
-      onPressed: onPressed == null ? null : (value) => onRadioPressed(context, value!),
-      toggleable: toggleable ?? false,
-      style: style,
+    return StatefulWrapper(
+      onInit: () {
+        if (value == groupValue) {
+          WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+            context.read<FormProvider?>()?.setFormFieldValue(name, value);
+          });
+        }
+      },
+      builder: (context) {
+        return LenraRadio<String>(
+          autofocus: autofocus ?? false,
+          value: value,
+          groupValue: formGroupValue ?? groupValue,
+          materialTapTargetSize: materialTapTargetSize,
+          onPressed: onPressed == null ? null : (value) => onRadioPressed(context, value!),
+          toggleable: toggleable ?? false,
+          style: style,
+        );
+      },
     );
   }
 }
