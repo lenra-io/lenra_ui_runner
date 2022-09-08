@@ -18,6 +18,7 @@ class LenraApplicationFormRadio extends StatelessWidget {
   final bool? toggleable;
   final LenraRadioStyle? style;
   final String name;
+  final bool disabled;
 
   LenraApplicationFormRadio({
     required this.autofocus,
@@ -28,6 +29,7 @@ class LenraApplicationFormRadio extends StatelessWidget {
     required this.toggleable,
     required this.style,
     required this.name,
+    required this.disabled,
   });
 
   void onRadioPressed(BuildContext context, String value) {
@@ -56,7 +58,7 @@ class LenraApplicationFormRadio extends StatelessWidget {
           value: value,
           groupValue: formGroupValue ?? groupValue,
           materialTapTargetSize: materialTapTargetSize,
-          onPressed: onPressed == null ? null : (value) => onRadioPressed(context, value!),
+          onPressed: disabled ? null : (value) => onRadioPressed(context, value!),
           toggleable: toggleable ?? false,
           style: style,
         );

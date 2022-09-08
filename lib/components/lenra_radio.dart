@@ -21,6 +21,7 @@ class LenraRadioBuilder extends LenraComponentBuilder<Widget> {
     toggleable,
     style,
     name,
+    disabled = false,
   }) {
     if (name != null) {
       return LenraApplicationFormRadio(
@@ -32,6 +33,7 @@ class LenraRadioBuilder extends LenraComponentBuilder<Widget> {
         toggleable: toggleable,
         style: style,
         name: name,
+        disabled: disabled,
       );
     }
     return LenraApplicationRadio(
@@ -42,6 +44,7 @@ class LenraRadioBuilder extends LenraComponentBuilder<Widget> {
       onPressed: onPressed,
       toggleable: toggleable,
       style: style,
+      disabled: disabled,
     );
   }
 
@@ -56,6 +59,7 @@ class LenraRadioBuilder extends LenraComponentBuilder<Widget> {
       "toggleable": bool,
       "style": LenraRadioStyle,
       "name": String,
+      "disabled": bool,
     };
   }
 }
@@ -68,6 +72,7 @@ class LenraApplicationRadio extends StatelessWidget {
   final lenra.Listener? onPressed;
   final bool? toggleable;
   final LenraRadioStyle? style;
+  final bool disabled;
 
   LenraApplicationRadio({
     required this.autofocus,
@@ -77,6 +82,7 @@ class LenraApplicationRadio extends StatelessWidget {
     required this.onPressed,
     required this.toggleable,
     required this.style,
+    required this.disabled,
   });
 
   void onRadioPressed(BuildContext context, String value) {
@@ -92,7 +98,7 @@ class LenraApplicationRadio extends StatelessWidget {
       value: value,
       groupValue: groupValue,
       materialTapTargetSize: materialTapTargetSize,
-      onPressed: onPressed == null ? null : (value) => onRadioPressed(context, groupValue),
+      onPressed: disabled ? null : (value) => onRadioPressed(context, groupValue),
       toggleable: toggleable ?? false,
       style: style,
     );
