@@ -72,6 +72,15 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  double? formValue;
+
+  if (name != null) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context.read&lt;FormProvider?&gt;()?.setFormFieldValue(name!, value);
+    });
+    formValue = context.select&lt;FormProvider?, double?&gt;((form) =&gt; form?.formFieldValues[name]);
+  }
+
   return LenraSlider(
     style: style,
     autofocus: autofocus ?? true,
@@ -79,10 +88,12 @@ Widget build(BuildContext context) {
     label: label,
     max: max,
     min: min,
-    onChanged: (value) =&gt; onSliderChange(context, value),
+    onChanged: (value) {
+      onSliderChange(context, value);
+    },
     onChangeEnd: (value) =&gt; onSliderChangeEnd(context, value),
     onChangeStart: (value) =&gt; onSliderChangeStart(context, value),
-    value: value,
+    value: formValue ?? value,
   );
 }</code></pre>
 </section>
@@ -121,6 +132,7 @@ Widget build(BuildContext context) {
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/label.html">label</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/max.html">max</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/min.html">min</a></li>
+    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/name.html">name</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/onChanged.html">onChanged</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/onChangeEnd.html">onChangeEnd</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/onChangeStart.html">onChangeStart</a></li>

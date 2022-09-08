@@ -64,7 +64,8 @@
 <li><span class="parameter" id="map-param-mainStyle"><span class="type-annotation">dynamic</span> <span class="parameter-name">mainStyle</span>, </span></li>
 <li><span class="parameter" id="map-param-onPressed"><span class="type-annotation">dynamic</span> <span class="parameter-name">onPressed</span>, </span></li>
 <li><span class="parameter" id="map-param-leftIcon"><span class="type-annotation">dynamic</span> <span class="parameter-name">leftIcon</span>, </span></li>
-<li><span class="parameter" id="map-param-rightIcon"><span class="type-annotation">dynamic</span> <span class="parameter-name">rightIcon</span>}</span></li>
+<li><span class="parameter" id="map-param-rightIcon"><span class="type-annotation">dynamic</span> <span class="parameter-name">rightIcon</span>, </span></li>
+<li><span class="parameter" id="map-param-submit"><span class="type-annotation">dynamic</span> <span class="parameter-name">submit</span> = <span class="default-value">false</span>}</span></li>
 </ol>)
 
       
@@ -77,7 +78,16 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-LenraApplicationButton map({text, disabled, size, mainStyle, onPressed, leftIcon, rightIcon}) {
+LenraApplicationButton map({
+  text,
+  disabled,
+  size,
+  mainStyle,
+  onPressed,
+  leftIcon,
+  rightIcon,
+  submit = false,
+}) {
   return LenraApplicationButton(
     text: text,
     disabled: disabled,
@@ -86,6 +96,7 @@ LenraApplicationButton map({text, disabled, size, mainStyle, onPressed, leftIcon
     onPressed: onPressed,
     leftIcon: leftIcon,
     rightIcon: rightIcon,
+    submit: submit,
   );
 }</code></pre>
 </section>

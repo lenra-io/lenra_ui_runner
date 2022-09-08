@@ -67,6 +67,9 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void onSliderChange(BuildContext context, double value) {
+  if (name != null) {
+    context.read&lt;FormProvider?&gt;()?.setFormFieldValue(name!, value);
+  }
   if (onChanged != null) {
     OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
   }
@@ -107,6 +110,7 @@
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/label.html">label</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/max.html">max</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/min.html">min</a></li>
+    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/name.html">name</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/onChanged.html">onChanged</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/onChangeEnd.html">onChangeEnd</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_slider/LenraApplicationSlider/onChangeStart.html">onChangeStart</a></li>

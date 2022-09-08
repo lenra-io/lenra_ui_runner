@@ -67,7 +67,8 @@
 <li><span class="parameter" id="map-param-onChanged"><span class="type-annotation">dynamic</span> <span class="parameter-name">onChanged</span>, </span></li>
 <li><span class="parameter" id="map-param-onChangeEnd"><span class="type-annotation">dynamic</span> <span class="parameter-name">onChangeEnd</span>, </span></li>
 <li><span class="parameter" id="map-param-onChangeStart"><span class="type-annotation">dynamic</span> <span class="parameter-name">onChangeStart</span>, </span></li>
-<li><span class="parameter" id="map-param-value"><span class="type-annotation">dynamic</span> <span class="parameter-name">value</span>}</span></li>
+<li><span class="parameter" id="map-param-value"><span class="type-annotation">dynamic</span> <span class="parameter-name">value</span>, </span></li>
+<li><span class="parameter" id="map-param-name"><span class="type-annotation">dynamic</span> <span class="parameter-name">name</span>}</span></li>
 </ol>)
 
       
@@ -80,8 +81,19 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-LenraApplicationSlider map(
-    {style, autofocus, divisions, label, max, min, onChanged, onChangeEnd, onChangeStart, value}) {
+LenraApplicationSlider map({
+  style,
+  autofocus,
+  divisions,
+  label,
+  max,
+  min,
+  onChanged,
+  onChangeEnd,
+  onChangeStart,
+  value,
+  name,
+}) {
   return LenraApplicationSlider(
     style: style,
     autofocus: autofocus,
@@ -93,6 +105,7 @@ LenraApplicationSlider map(
     onChangeEnd: onChangeEnd,
     onChangeStart: onChangeStart,
     value: value,
+    name: name,
   );
 }</code></pre>
 </section>

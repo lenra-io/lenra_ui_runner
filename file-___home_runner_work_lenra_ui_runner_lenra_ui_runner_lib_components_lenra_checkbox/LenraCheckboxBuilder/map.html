@@ -57,13 +57,14 @@
   </ol>
 </div>
 
-<span class="returntype"><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_checkbox/LenraApplicationCheckbox-class.html">LenraApplicationCheckbox</a></span>
+<span class="returntype">dynamic</span>
 <span class="name ">map</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="map-param-value">{<span class="type-annotation">dynamic</span> <span class="parameter-name">value</span>, </span></li>
 <li><span class="parameter" id="map-param-tristate"><span class="type-annotation">dynamic</span> <span class="parameter-name">tristate</span>, </span></li>
 <li><span class="parameter" id="map-param-onPressed"><span class="type-annotation">dynamic</span> <span class="parameter-name">onPressed</span>, </span></li>
 <li><span class="parameter" id="map-param-style"><span class="type-annotation">dynamic</span> <span class="parameter-name">style</span>, </span></li>
 <li><span class="parameter" id="map-param-materialTapTargetSize"><span class="type-annotation">dynamic</span> <span class="parameter-name">materialTapTargetSize</span>, </span></li>
-<li><span class="parameter" id="map-param-autofocus"><span class="type-annotation">dynamic</span> <span class="parameter-name">autofocus</span>}</span></li>
+<li><span class="parameter" id="map-param-autofocus"><span class="type-annotation">dynamic</span> <span class="parameter-name">autofocus</span>, </span></li>
+<li><span class="parameter" id="map-param-name"><span class="type-annotation">dynamic</span> <span class="parameter-name">name</span>}</span></li>
 </ol>)
 
       
@@ -76,14 +77,26 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
-LenraApplicationCheckbox map({
+Widget map({
   value,
   tristate,
   onPressed,
   style,
   materialTapTargetSize,
   autofocus,
+  name,
 }) {
+  if (name != null) {
+    return LenraApplicationFormCheckbox(
+      value: value,
+      tristate: tristate,
+      onPressed: onPressed,
+      style: style,
+      materialTapTargetSize: materialTapTargetSize,
+      autofocus: autofocus,
+      name: name,
+    );
+  }
   return LenraApplicationCheckbox(
     value: value,
     tristate: tristate,

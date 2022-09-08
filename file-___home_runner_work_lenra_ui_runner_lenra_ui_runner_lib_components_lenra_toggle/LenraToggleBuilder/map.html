@@ -63,7 +63,9 @@
 <li><span class="parameter" id="map-param-style"><span class="type-annotation">dynamic</span> <span class="parameter-name">style</span>, </span></li>
 <li><span class="parameter" id="map-param-splashRadius"><span class="type-annotation">dynamic</span> <span class="parameter-name">splashRadius</span>, </span></li>
 <li><span class="parameter" id="map-param-autofocus"><span class="type-annotation">dynamic</span> <span class="parameter-name">autofocus</span>, </span></li>
-<li><span class="parameter" id="map-param-dragStartBehavior"><span class="type-annotation">dynamic</span> <span class="parameter-name">dragStartBehavior</span>}</span></li>
+<li><span class="parameter" id="map-param-dragStartBehavior"><span class="type-annotation">dynamic</span> <span class="parameter-name">dragStartBehavior</span>, </span></li>
+<li><span class="parameter" id="map-param-name"><span class="type-annotation">dynamic</span> <span class="parameter-name">name</span>, </span></li>
+<li><span class="parameter" id="map-param-disabled"><span class="type-annotation">dynamic</span> <span class="parameter-name">disabled</span> = <span class="default-value">false</span>}</span></li>
 </ol>)
 
       
@@ -83,6 +85,8 @@ LenraApplicationToggle map({
   splashRadius,
   autofocus,
   dragStartBehavior,
+  name,
+  disabled = false,
 }) {
   return LenraApplicationToggle(
     value: value,
@@ -91,6 +95,8 @@ LenraApplicationToggle map({
     splashRadius: splashRadius,
     autofocus: autofocus,
     dragStartBehavior: dragStartBehavior,
+    name: name,
+    disabled: disabled,
   );
 }</code></pre>
 </section>
