@@ -33,9 +33,9 @@ class LenraApplicationFormRadio extends StatelessWidget {
   });
 
   void onRadioPressed(BuildContext context, String value) {
-    if (onPressed != null) {
-      context.read<FormProvider?>()?.setFormFieldValue(name, value);
+    context.read<FormProvider?>()?.setFormFieldValue(name, value);
 
+    if (onPressed != null) {
       OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
     }
   }
