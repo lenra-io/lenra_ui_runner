@@ -185,13 +185,11 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
 
   @override
   void initState() {
+    _controller = TextEditingController(text: widget.value);
     if (widget.name != null) {
-      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-        context.read<FormProvider?>()?.setFormFieldValue(widget.name!, _controller.text);
-      });
+      context.read<FormProvider?>()?.initFormFieldValue(widget.name!, _controller.text);
     }
     super.initState();
-    _controller = TextEditingController(text: widget.value);
   }
 
   _LenraApplicationTextfieldState() : _focusNode = FocusNode();
@@ -209,6 +207,15 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
   void onAppPrivateCommandReceived(BuildContext context, String action, Map<String, dynamic> data) {
     if (widget.onAppPrivateCommand != null) {
       OnChangedEvent(code: widget.onAppPrivateCommand!.code, data: ValueData(action)).dispatch(context);
+    }
+  }
+
+  void onChanged(String value) {
+    if (widget.name != null) {
+      context.read<FormProvider?>()?.setFormFieldValue(widget.name!, _controller.text);
+    }
+    if (widget.onChanged != null) {
+      timeoutStrategy.onChanged(context, value, widget.onChanged!.code);
     }
   }
 
@@ -248,14 +255,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
       onAppPrivateCommand: widget.onAppPrivateCommand == null
           ? null
           : (action, data) => onAppPrivateCommandReceived(context, action, data),
-      onChanged: (value) {
-        if (widget.name != null) {
-          context.read<FormProvider?>()?.setFormFieldValue(widget.name!, _controller.text);
-        }
-        if (widget.onChanged != null) {
-          timeoutStrategy.onChanged(context, value, widget.onChanged!.code);
-        }
-      },
+      onChanged: onChanged,
       onEditingComplete: widget.onEditingComplete == null ? null : () => widget.onEditingComplete,
       onSubmitted: widget.onSubmitted == null ? null : (value) => handleTimeout(context, value),
       onTap: widget.onTap == null ? null : () => widget.onTap,

@@ -38,11 +38,9 @@ class LenraApplicationForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      child: ChangeNotifierProvider(
-        create: (context) => FormProvider(context: context, onSubmit: onSubmit),
-        child: child,
-      ),
+    return ChangeNotifierProvider(
+      create: (context) => FormProvider(context: context, onSubmit: onSubmit),
+      child: child,
     );
   }
 }
@@ -62,6 +60,10 @@ class FormProvider extends ChangeNotifier {
     if (onSubmit != null) {
       OnChangedEvent(code: onSubmit!.code, data: ValueData(formFieldValues)).dispatch(context);
     }
+  }
+
+  void initFormFieldValue(String name, dynamic value) {
+    formFieldValues[name] = value;
   }
 
   void setFormFieldValue(String name, dynamic value) {

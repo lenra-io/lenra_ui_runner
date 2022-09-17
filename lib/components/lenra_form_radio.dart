@@ -47,9 +47,7 @@ class LenraApplicationFormRadio extends StatelessWidget {
     return StatefulWrapper(
       onInit: () {
         if (value == groupValue) {
-          WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-            context.read<FormProvider?>()?.setFormFieldValue(name, value);
-          });
+          context.read<FormProvider?>()?.initFormFieldValue(name, value);
         }
       },
       builder: (context) {
