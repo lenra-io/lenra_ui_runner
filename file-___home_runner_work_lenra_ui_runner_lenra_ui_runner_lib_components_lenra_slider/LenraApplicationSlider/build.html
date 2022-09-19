@@ -75,13 +75,10 @@ Widget build(BuildContext context) {
   double? formValue;
 
   if (name != null) {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      context.read&lt;FormProvider?&gt;()?.setFormFieldValue(name!, value);
-    });
     formValue = context.select&lt;FormProvider?, double?&gt;((form) =&gt; form?.formFieldValues[name]);
   }
 
-  return LenraSlider(
+  Widget res = LenraSlider(
     style: style,
     autofocus: autofocus ?? true,
     divisions: divisions,
@@ -95,6 +92,19 @@ Widget build(BuildContext context) {
     onChangeStart: (value) =&gt; onSliderChangeStart(context, value),
     value: formValue ?? value,
   );
+
+  if (name != null) {
+    return StatefulWrapper(
+      onInit: () {
+        context.read&lt;FormProvider?&gt;()?.initFormFieldValue(name!, value);
+      },
+      builder: (context) {
+        return res;
+      },
+    );
+  }
+
+  return res;
 }</code></pre>
 </section>
 

@@ -67,9 +67,9 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void onRadioPressed(BuildContext context, String value) {
-  if (onPressed != null) {
-    context.read&lt;FormProvider?&gt;()?.setFormFieldValue(name, value);
+  context.read&lt;FormProvider?&gt;()?.setFormFieldValue(name, value);
 
+  if (onPressed != null) {
     OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
   }
 }</code></pre>
@@ -104,6 +104,7 @@
       <a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_form_radio/LenraApplicationFormRadio-class.html#instance-properties">Properties</a>
     </li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_form_radio/LenraApplicationFormRadio/autofocus.html">autofocus</a></li>
+    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_form_radio/LenraApplicationFormRadio/disabled.html">disabled</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_form_radio/LenraApplicationFormRadio/groupValue.html">groupValue</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_form_radio/LenraApplicationFormRadio/materialTapTargetSize.html">materialTapTargetSize</a></li>

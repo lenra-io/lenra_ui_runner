@@ -72,11 +72,9 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  return Form(
-    child: ChangeNotifierProvider(
-      create: (context) =&gt; FormProvider(context: context, onSubmit: onSubmit),
-      child: child,
-    ),
+  return ChangeNotifierProvider(
+    create: (context) =&gt; FormProvider(context: context, onSubmit: onSubmit),
+    child: child,
   );
 }</code></pre>
 </section>

@@ -72,22 +72,24 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  if (value == groupValue) {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      context.read&lt;FormProvider?&gt;()?.setFormFieldValue(name, value);
-    });
-  }
-
-  String? formGroupValue = context.select&lt;FormProvider?, String?&gt;((form) =&gt; form?.formFieldValues[name]);
-
-  return LenraRadio&lt;String&gt;(
-    autofocus: autofocus ?? false,
-    value: value,
-    groupValue: formGroupValue ?? groupValue,
-    materialTapTargetSize: materialTapTargetSize,
-    onPressed: onPressed == null ? null : (value) =&gt; onRadioPressed(context, value!),
-    toggleable: toggleable ?? false,
-    style: style,
+  return StatefulWrapper(
+    onInit: () {
+      if (value == groupValue) {
+        context.read&lt;FormProvider?&gt;()?.initFormFieldValue(name, value);
+      }
+    },
+    builder: (context) {
+      String? formGroupValue = context.select&lt;FormProvider?, String?&gt;((form) =&gt; form?.formFieldValues[name]);
+      return LenraRadio&lt;String&gt;(
+        autofocus: autofocus ?? false,
+        value: value,
+        groupValue: formGroupValue ?? groupValue,
+        materialTapTargetSize: materialTapTargetSize,
+        onPressed: disabled ? null : (value) =&gt; onRadioPressed(context, value!),
+        toggleable: toggleable ?? false,
+        style: style,
+      );
+    },
   );
 }</code></pre>
 </section>
@@ -121,6 +123,7 @@ Widget build(BuildContext context) {
       <a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_form_radio/LenraApplicationFormRadio-class.html#instance-properties">Properties</a>
     </li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_form_radio/LenraApplicationFormRadio/autofocus.html">autofocus</a></li>
+    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_form_radio/LenraApplicationFormRadio/disabled.html">disabled</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_form_radio/LenraApplicationFormRadio/groupValue.html">groupValue</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_form_radio/LenraApplicationFormRadio/materialTapTargetSize.html">materialTapTargetSize</a></li>

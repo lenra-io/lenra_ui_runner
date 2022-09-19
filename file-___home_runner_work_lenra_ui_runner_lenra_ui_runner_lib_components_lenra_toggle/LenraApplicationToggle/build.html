@@ -75,13 +75,10 @@ Widget build(BuildContext context) {
   bool? formValue;
 
   if (name != null) {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      context.read&lt;FormProvider?&gt;()?.setFormFieldValue(name!, value);
-    });
     formValue = context.select&lt;FormProvider?, bool?&gt;((form) =&gt; form?.formFieldValues[name]);
   }
 
-  return LenraToggle(
+  Widget res = LenraToggle(
     value: formValue ?? value,
     onPressed: disabled ? null : (value) =&gt; onTogglePressed(context, value),
     style: style,
@@ -89,6 +86,19 @@ Widget build(BuildContext context) {
     autofocus: autofocus ?? false,
     dragStartBehavior: dragStartBehavior ?? DragStartBehavior.start,
   );
+
+  if (name != null) {
+    return StatefulWrapper(
+      onInit: () {
+        context.read&lt;FormProvider?&gt;()?.initFormFieldValue(name!, value);
+      },
+      builder: (context) {
+        return res;
+      },
+    );
+  }
+
+  return res;
 }</code></pre>
 </section>
 
