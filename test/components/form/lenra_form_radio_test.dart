@@ -109,7 +109,7 @@ void main() {
         createBaseFormTestWidget((e) {
           if (e.code == "submitted") {
             expect((e.data as ValueData).value, {
-              "radioValue": "radio1",
+              "radioValue": "radio2",
             });
           }
           hasBeenNotified = true;
