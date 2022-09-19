@@ -128,8 +128,8 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "wrap",
-        "spacing": 100.0,
-        "runSpacing": 2.0,
+        "spacing": 8000,
+        "runSpacing": 16.0,
         "children": [
           {"type": "text", "value": "foo"},
           {"type": "text", "value": "bar"},
@@ -165,8 +165,8 @@ void main() {
     Map<String, dynamic> ui = {
       "root": {
         "type": "wrap",
-        "spacing": 75.0,
-        "runSpacing": 2.0,
+        "spacing": 1000,
+        "runSpacing": 16.0,
         "direction": "vertical",
         "children": [
           {"type": "text", "value": "foo"},
