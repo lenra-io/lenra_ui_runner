@@ -1,3 +1,4 @@
+import 'package:client_common/views/stateful_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
@@ -17,6 +18,7 @@ class LenraApplicationFormRadio extends StatelessWidget {
   final bool? toggleable;
   final LenraRadioStyle? style;
   final String name;
+  final bool disabled;
 
   LenraApplicationFormRadio({
     required this.autofocus,
@@ -27,34 +29,37 @@ class LenraApplicationFormRadio extends StatelessWidget {
     required this.toggleable,
     required this.style,
     required this.name,
+    required this.disabled,
   });
 
   void onRadioPressed(BuildContext context, String value) {
-    if (onPressed != null) {
-      context.read<FormProvider?>()?.setFormFieldValue(name, value);
+    context.read<FormProvider?>()?.setFormFieldValue(name, value);
 
+    if (onPressed != null) {
       OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (value == groupValue) {
-      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-        context.read<FormProvider?>()?.setFormFieldValue(name, value);
-      });
-    }
-
-    String? formGroupValue = context.select<FormProvider?, String?>((form) => form?.formFieldValues[name]);
-
-    return LenraRadio<String>(
-      autofocus: autofocus ?? false,
-      value: value,
-      groupValue: formGroupValue ?? groupValue,
-      materialTapTargetSize: materialTapTargetSize,
-      onPressed: onPressed == null ? null : (value) => onRadioPressed(context, value!),
-      toggleable: toggleable ?? false,
-      style: style,
+    return StatefulWrapper(
+      onInit: () {
+        if (value == groupValue) {
+          context.read<FormProvider?>()?.initFormFieldValue(name, value);
+        }
+      },
+      builder: (context) {
+        String? formGroupValue = context.select<FormProvider?, String?>((form) => form?.formFieldValues[name]);
+        return LenraRadio<String>(
+          autofocus: autofocus ?? false,
+          value: value,
+          groupValue: formGroupValue ?? groupValue,
+          materialTapTargetSize: materialTapTargetSize,
+          onPressed: disabled ? null : (value) => onRadioPressed(context, value!),
+          toggleable: toggleable ?? false,
+          style: style,
+        );
+      },
     );
   }
 }

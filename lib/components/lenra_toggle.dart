@@ -1,3 +1,4 @@
+import 'package:client_common/views/stateful_wrapper.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_toggle.dart';
@@ -30,7 +31,7 @@ class LenraToggleBuilder extends LenraComponentBuilder<LenraApplicationToggle> {
       autofocus: autofocus,
       dragStartBehavior: dragStartBehavior,
       name: name,
-      disabled: disabled, 
+      disabled: disabled,
     );
   }
 
@@ -84,13 +85,10 @@ class LenraApplicationToggle extends StatelessWidget {
     bool? formValue;
 
     if (name != null) {
-      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-        context.read<FormProvider?>()?.setFormFieldValue(name!, value);
-      });
       formValue = context.select<FormProvider?, bool?>((form) => form?.formFieldValues[name]);
     }
 
-    return LenraToggle(
+    Widget res = LenraToggle(
       value: formValue ?? value,
       onPressed: disabled ? null : (value) => onTogglePressed(context, value),
       style: style,
@@ -98,5 +96,18 @@ class LenraApplicationToggle extends StatelessWidget {
       autofocus: autofocus ?? false,
       dragStartBehavior: dragStartBehavior ?? DragStartBehavior.start,
     );
+
+    if (name != null) {
+      return StatefulWrapper(
+        onInit: () {
+          context.read<FormProvider?>()?.initFormFieldValue(name!, value);
+        },
+        builder: (context) {
+          return res;
+        },
+      );
+    }
+
+    return res;
   }
 }

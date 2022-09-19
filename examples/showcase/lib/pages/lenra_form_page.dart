@@ -33,6 +33,23 @@ class _LenraFormPageState extends UiBuilderState<LenraFormPage, Map<String, dyna
               "onPressed": {"code": "checked"}
             },
             {
+              "type": "flex",
+              "children": [
+                {
+                  "type": "radio",
+                  "name": "radioValue",
+                  "value": "radio1",
+                  "groupValue": data["radioValue"],
+                },
+                {
+                  "type": "radio",
+                  "name": "radioValue",
+                  "value": "radio2",
+                  "groupValue": data["radioValue"],
+                }
+              ]
+            },
+            {
               "type": "button",
               "text": "Submit",
               "submit": true,
@@ -54,6 +71,7 @@ class _LenraFormPageState extends UiBuilderState<LenraFormPage, Map<String, dyna
         "toggle": false,
         "checkbox": false,
         "text": "",
+        "radioValue": "radio1",
       };
     } else if (event.code == "toggled") {
       data["toggle"] = !data["toggle"];
