@@ -42,8 +42,6 @@ class LenraApplicationFormRadio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? formGroupValue = context.select<FormProvider?, String?>((form) => form?.formFieldValues[name]);
-
     return StatefulWrapper(
       onInit: () {
         if (value == groupValue) {
@@ -51,6 +49,7 @@ class LenraApplicationFormRadio extends StatelessWidget {
         }
       },
       builder: (context) {
+        String? formGroupValue = context.select<FormProvider?, String?>((form) => form?.formFieldValues[name]);
         return LenraRadio<String>(
           autofocus: autofocus ?? false,
           value: value,

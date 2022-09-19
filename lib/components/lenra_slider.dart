@@ -132,9 +132,7 @@ class LenraApplicationSlider extends StatelessWidget {
     if (name != null) {
       return StatefulWrapper(
         onInit: () {
-          WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-            context.read<FormProvider?>()?.setFormFieldValue(name!, value);
-          });
+          context.read<FormProvider?>()?.initFormFieldValue(name!, value);
         },
         builder: (context) {
           return res;
