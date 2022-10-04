@@ -182,12 +182,17 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
   _TimeoutStrategy timeoutStrategy = _AtMostTimeout(duration: Duration(milliseconds: 500));
   final FocusNode _focusNode;
   late final TextEditingController _controller;
+  TextInputAction? textInputAction;
 
   @override
   void initState() {
     _controller = TextEditingController(text: widget.value);
     if (widget.name != null) {
       context.read<FormProvider?>()?.initFormFieldValue(widget.name!, _controller.text);
+
+      textInputAction = TextInputAction.next;
+    } else {
+      textInputAction = widget.textInputAction;
     }
     super.initState();
   }
@@ -263,7 +268,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
       showCursor: widget.showCursor,
       textCapitalization: widget.textCapitalization ?? TextCapitalization.none,
       textDirection: widget.textDirection,
-      textInputAction: widget.textInputAction,
+      textInputAction: textInputAction,
       toolbarOptions: widget.toolbarOptions,
     );
   }
