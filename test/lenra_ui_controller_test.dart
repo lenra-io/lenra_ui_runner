@@ -13,7 +13,7 @@ void main() {
       () => tester.pumpWidget(
         createAppTestWidgets(
           ChangeNotifierProvider<SocketModel>(
-            create: (context) => AppSocketModel("random-access-token"),
+            create: (context) => AppSocketModel("random-access-token", "app-name"),
             child: const App(
               appName: "app-name",
               httpEndpoint: "http://localhost:4000",
