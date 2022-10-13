@@ -14,6 +14,8 @@ class App extends StatelessWidget {
   /// The name of the Lenra application.
   final String appName;
 
+  final String routeName = "route:/";
+
   /// The URL of the Lenra server.
   final String httpEndpoint;
 
@@ -59,7 +61,7 @@ class App extends StatelessWidget {
               WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
                 context.read<ContextModel>().mediaQueryData = MediaQuery.of(context);
                 //The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
-                context.read<ChannelModel>().createChannel(appName);
+                context.read<ChannelModel>().createChannel(routeName);
                 (context.read<WidgetModel>() as ClientWidgetModel).setupListeners();
               });
             });

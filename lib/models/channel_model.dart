@@ -26,8 +26,8 @@ class ChannelModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void createChannel(String appName) {
-    channel = socketModel.channel("app", {"app": appName, "context": contextModel.toJson()});
+  void createChannel(String routeName) {
+    channel = socketModel.channel(routeName, {"mode": "lenra"});
 
     channel!.onError((response) {
       hasError = true;

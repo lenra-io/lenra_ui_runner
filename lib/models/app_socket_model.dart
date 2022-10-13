@@ -8,9 +8,10 @@ import 'package:phoenix_wings/phoenix_wings.dart';
 
 class AppSocketModel extends SocketModel {
   String accessToken;
+  String appName;
   PhoenixSocket? _socket;
 
-  AppSocketModel(this.accessToken) {
+  AppSocketModel(this.accessToken, this.appName) {
     _updateSocket();
   }
 
@@ -19,7 +20,7 @@ class AppSocketModel extends SocketModel {
 
     _socket = createPhoenixSocket(
       Config.instance.wsEndpoint,
-      {"token": accessToken},
+      {"token": accessToken, "app": appName},
     );
     _socket?.connect();
   }
@@ -31,9 +32,9 @@ class AppSocketModel extends SocketModel {
   }
 
   @override
-  LenraChannel channel(String channelName, Map<String, dynamic> params) {
+  LenraChannel channel(String routeName, Map<String, dynamic> params) {
     if (_socket == null) throw "Socket must not be null";
 
-    return LenraChannel(_socket!, channelName, params);
+    return LenraChannel(_socket!, routeName, params);
   }
 }
