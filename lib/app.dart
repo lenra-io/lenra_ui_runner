@@ -1,6 +1,5 @@
 import 'package:client_common/models/user_application_model.dart';
 import 'package:client_common/views/stateful_wrapper.dart';
-import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/lenra_application_model.dart';
 import 'package:lenra_ui_runner/lenra_ui_controller.dart';
 import 'package:lenra_ui_runner/models/channel_model.dart';
