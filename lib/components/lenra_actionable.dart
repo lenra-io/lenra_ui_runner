@@ -58,9 +58,10 @@ class LenraApplicationActionable extends StatelessWidget {
 
   void onAction(lenra.Listener? action, BuildContext context) {
     if (action != null) {
-      context.read<ChannelModel>().sendEvent(OnPressedEvent(code: action.code), (payload) {
-        // implement loading
-      });
+      context.read<ChannelModel>().sendEvent(OnPressedEvent(code: action.code)).then(
+            //implement loading
+            (value) => null,
+          );
     }
   }
 

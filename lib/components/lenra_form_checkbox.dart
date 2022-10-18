@@ -42,10 +42,10 @@ class _LenraApplicationFormCheckboxState extends State<LenraApplicationFormCheck
   void onCheck(BuildContext context, bool? value) {
     context.read<FormProvider?>()?.setFormFieldValue(widget.name, value);
     if (widget.onPressed != null) {
-      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: widget.onPressed!.code, data: ValueData(value)),
-          (payload) {
-        // implement loading
-      });
+      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: widget.onPressed!.code, data: ValueData(value))).then(
+            //implement loading
+            (value) => null,
+          );
     }
   }
 

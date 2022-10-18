@@ -25,13 +25,13 @@ class UiBuilderModel extends ChangeNotifier {
     lastUi = ui;
   }
 
-  bool handleNotifications(Event event) {
+  void handleNotifications(Event event, Function callback) {
     data = getData(event);
     ui = getUi(data);
     var diff = JsonPatch.diff(lastUi, ui);
     lastUi = ui;
     widgetModel.patchUi(diff);
 
-    return true;
+    callback("terminated");
   }
 }

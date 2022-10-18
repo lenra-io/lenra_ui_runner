@@ -59,10 +59,13 @@ class FormProvider extends ChangeNotifier {
   /// Calling this method will dispatch an event that contains form field values to the Lenra Widget system.
   void submitForm() {
     if (onSubmit != null) {
-      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: onSubmit!.code, data: ValueData(formFieldValues)),
-          (payload) {
-        // implement loading
-      });
+      context
+          .read<ChannelModel>()
+          .sendEvent(OnChangedEvent(code: onSubmit!.code, data: ValueData(formFieldValues)))
+          .then(
+            //implement loading
+            (value) => null,
+          );
     }
   }
 
