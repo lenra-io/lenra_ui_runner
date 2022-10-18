@@ -1,5 +1,4 @@
 //? Here is defined all Event types that can be send to the server.
-
 abstract class Jsonifiable {
   Map<String, dynamic> toMap();
 }

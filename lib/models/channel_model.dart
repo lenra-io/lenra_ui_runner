@@ -4,7 +4,6 @@ import 'package:lenra_ui_runner/socket/lenra_channel.dart';
 import 'package:client_common/api/response_models/api_error.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
-import 'package:phoenix_wings/phoenix_wings.dart';
 
 class ChannelModel extends ChangeNotifier {
   LenraChannel? channel;
