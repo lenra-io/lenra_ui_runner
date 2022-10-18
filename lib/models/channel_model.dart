@@ -4,6 +4,7 @@ import 'package:lenra_ui_runner/socket/lenra_channel.dart';
 import 'package:client_common/api/response_models/api_error.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:phoenix_wings/phoenix_wings.dart';
 
 class ChannelModel extends ChangeNotifier {
   LenraChannel? channel;
@@ -41,9 +42,8 @@ class ChannelModel extends ChangeNotifier {
     return this;
   }
 
-  bool handleNotifications(Event notification) {
-    channel!.send('run', notification.toMap());
-    return true;
+  void sendEvent(Event notification, Function(Map<dynamic, dynamic>) callback) {
+    channel!.send('run', notification.toMap())!.receive("ok", (response) => callback(response!));
   }
 
   void close() {

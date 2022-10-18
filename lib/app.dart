@@ -49,16 +49,13 @@ class App extends StatelessWidget {
       ],
       builder: (BuildContext context, _) {
         return StatefulWrapper(
-            builder: (context) => NotificationListener<Event>(
-              onNotification: (Event event) => context.read<ChannelModel>().handleNotifications(event),
-              child: Overlay(
-                initialEntries: [
-                  OverlayEntry(
-                    builder: (context) => const LenraUiController(),
-                  ),
-                ],
-              ),
-            ),
+            builder: (context) => Overlay(
+                  initialEntries: [
+                    OverlayEntry(
+                      builder: (context) => const LenraUiController(),
+                    ),
+                  ],
+                ),
             onInit: () {
               WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
                 context.read<ContextModel>().mediaQueryData = MediaQuery.of(context);

@@ -1,11 +1,10 @@
 //? Here is defined all Event types that can be send to the server.
-import 'package:flutter/material.dart';
 
 abstract class Jsonifiable {
   Map<String, dynamic> toMap();
 }
 
-class Event<T extends Jsonifiable> extends Notification {
+class Event<T extends Jsonifiable> {
   Event({
     required this.code,
     required this.data,

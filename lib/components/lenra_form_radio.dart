@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/lenra_form.dart';
+import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:provider/provider.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_components/component/lenra_radio.dart';
@@ -36,7 +37,9 @@ class LenraApplicationFormRadio extends StatelessWidget {
     context.read<FormProvider?>()?.setFormFieldValue(name, value);
 
     if (onPressed != null) {
-      OnChangedEvent(code: onPressed!.code, data: ValueData(value)).dispatch(context);
+      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: onPressed!.code, data: ValueData(value)), (payload) {
+        // implement loading
+      });
     }
   }
 

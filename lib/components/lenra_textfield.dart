@@ -8,6 +8,7 @@ import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
+import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:lenra_ui_runner/utils/lenra_text_field_style.dart';
 import 'package:provider/provider.dart';
 import '../../lenra_component_builder.dart';
@@ -200,18 +201,28 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
   _LenraApplicationTextfieldState() : _focusNode = FocusNode();
 
   void handleTimeout(BuildContext context, String value) {
-    OnChangedEvent(code: widget.onChanged!.code, data: ValueData(value)).dispatch(context);
+    context.read<ChannelModel>().sendEvent(OnChangedEvent(code: widget.onChanged!.code, data: ValueData(value)),
+        (payload) {
+      // implement loading
+    });
   }
 
   void onTextFieldSubmitted(BuildContext context, String value) {
     if (widget.onSubmitted != null) {
-      OnChangedEvent(code: widget.onSubmitted!.code, data: ValueData(value)).dispatch(context);
+      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: widget.onSubmitted!.code, data: ValueData(value)),
+          (payload) {
+        // implement loading
+      });
     }
   }
 
   void onAppPrivateCommandReceived(BuildContext context, String action, Map<String, dynamic> data) {
     if (widget.onAppPrivateCommand != null) {
-      OnChangedEvent(code: widget.onAppPrivateCommand!.code, data: ValueData(action)).dispatch(context);
+      context
+          .read<ChannelModel>()
+          .sendEvent(OnChangedEvent(code: widget.onAppPrivateCommand!.code, data: ValueData(action)), (payload) {
+        // implement loading
+      });
     }
   }
 
@@ -290,7 +301,9 @@ class _AtLeastTimeout extends _TimeoutStrategy {
   }) : super(duration: duration);
 
   void _handleTimeout(BuildContext context, String value, String code) {
-    OnChangedEvent(code: code, data: ValueData(value)).dispatch(context);
+    context.read<ChannelModel>().sendEvent(OnChangedEvent(code: code, data: ValueData(value)), (payload) {
+      // implement loading
+    });
   }
 
   @override
@@ -311,7 +324,9 @@ class _AtMostTimeout extends _TimeoutStrategy {
   }) : super(duration: duration);
 
   void _handleTimeout(BuildContext context, String code) {
-    OnChangedEvent(code: code, data: ValueData(currentValue)).dispatch(context);
+    context.read<ChannelModel>().sendEvent(OnChangedEvent(code: code, data: ValueData(currentValue)), (payload) {
+      // implement loading
+    });
   }
 
   @override
