@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_button.dart';
 import 'package:lenra_components/component/lenra_radio.dart';
-import 'package:lenra_ui_runner/components/events/data/value_data.dart';
-import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/lenra_widget.dart';
+import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
+import '../../mock_channel_model.dart';
 import '../../test_helper.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 BuildContext? context;
 
-Widget createBaseFormTestWidget(bool Function(Event) onNotification) {
+Widget createBaseFormTestWidget(Function callback) {
   return createBaseTestWidgets(
     child: NotificationListener(
       child: Builder(
         builder: (BuildContext ctx) {
           context = ctx;
+          (Provider.of<ChannelModel>(ctx, listen: false) as MockChannelModel).setCallBack(callback);
 
           return LenraWidget(
             buildErrorPage: (_ctx, _e) => Text("error"),
@@ -24,7 +25,6 @@ Widget createBaseFormTestWidget(bool Function(Event) onNotification) {
           );
         },
       ),
-      onNotification: onNotification,
     ),
   );
 }
@@ -48,10 +48,10 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "radioPressed") {
-            groupValue = (e.data as ValueData).value;
-          } else if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {
+          if (e["code"] == "radioPressed") {
+            groupValue = e["event"]["value"];
+          } else if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {
               "radioValue": "radio2",
             });
           }
@@ -107,8 +107,8 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {
+          if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {
               "radioValue": "radio2",
             });
           }
@@ -152,10 +152,10 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "radioPressed") {
-            groupValue = (e.data as ValueData).value;
-          } else if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {});
+          if (e["code"] == "radioPressed") {
+            groupValue = e["event"]["value"];
+          } else if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {});
           }
           hasBeenNotified = true;
           return false;
@@ -207,10 +207,10 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "radioPressed") {
-            groupValue = (e.data as ValueData).value;
-          } else if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {});
+          if (e["code"] == "radioPressed") {
+            groupValue = e["event"]["value"];
+          } else if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {});
           }
           hasBeenNotified = true;
           return false;
@@ -267,8 +267,8 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {
+          if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {
               "radioValue": "radio1",
             });
           }
@@ -317,12 +317,12 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {
+          if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {
               "radioValue": "radio2",
             });
-          } else if (e.code == "radioPressed") {
-            groupValue = (e.data as ValueData).value;
+          } else if (e["code"] == "radioPressed") {
+            groupValue = e["event"]["value"];
             hasEnteredListener = true;
           }
           hasBeenNotified = true;

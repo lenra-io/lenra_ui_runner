@@ -78,6 +78,7 @@ class LenraApplicationButton extends StatelessWidget {
     if (onPressed != null) {
       context.read<ChannelModel>().sendEvent(OnPressedEvent(code: onPressed!.code)).then(
             //implement loading
+
             (value) => null,
           );
     }

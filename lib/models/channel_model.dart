@@ -45,7 +45,10 @@ class ChannelModel extends ChangeNotifier {
 
   Future sendEvent(Event notification) {
     final completer = Completer();
-    channel!.send('run', notification.toMap())!.receive("ok", (response) => completer.complete(response));
+    channel!
+        .send('run', notification.toMap())!
+        .receive("ok", (body) => completer.complete(body))
+        .receive("error", (error) => completer.complete(error));
     return completer.future;
   }
 
