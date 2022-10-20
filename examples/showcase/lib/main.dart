@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
-import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +26,6 @@ import 'package:showcase/pages/lenra_wrap_page.dart';
 import 'package:showcase/pages/lenra_actionable_page.dart';
 
 import 'mock_channel_model.dart';
-import 'left_menu.dart';
 import 'ui_builder_model.dart';
 
 void main() {
@@ -102,8 +100,6 @@ class _MyAppState extends State<MyApp> {
               create: (context) => MockChannelModel(uiBuilderModel: context.read<UiBuilderModel>())),
         ],
         builder: (context, child) {
-          var uiBuilderModel = context.read<UiBuilderModel>();
-
           return LenraTheme(
             themeData: LenraThemeData(),
             child: MaterialApp(

@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:client_common/api/response_models/api_response.dart';
+import 'package:client_common/views/error.dart';
 import 'package:lenra_ui_runner/models/context_model.dart';
 import 'package:lenra_ui_runner/models/socket_model.dart';
 import 'package:lenra_ui_runner/socket/lenra_channel.dart';
@@ -48,7 +50,7 @@ class ChannelModel extends ChangeNotifier {
     channel!
         .send('run', notification.toMap())!
         .receive("ok", (body) => completer.complete(body))
-        .receive("error", (error) => completer.complete(error));
+        .receive("error", (error) => completer.completeError(error.toString()));
     return completer.future;
   }
 
