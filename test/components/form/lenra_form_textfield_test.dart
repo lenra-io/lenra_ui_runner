@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_button.dart';
-import 'package:lenra_ui_runner/components/events/data/value_data.dart';
-import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/lenra_widget.dart';
+import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
+import '../../mock_channel_model.dart';
 import '../../test_helper.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 BuildContext? context;
 
-Widget createBaseFormTestWidget(bool Function(Event) onNotification) {
+Widget createBaseFormTestWidget(Function callback) {
   return createBaseTestWidgets(
-    child: NotificationListener(
-      child: Builder(
-        builder: (BuildContext ctx) {
-          context = ctx;
+    child: Builder(
+      builder: (BuildContext ctx) {
+        context = ctx;
+        (Provider.of<ChannelModel>(ctx, listen: false) as MockChannelModel).setCallBack(callback);
 
-          return LenraWidget(
-            buildErrorPage: (_ctx, _e) => Text("error"),
-            showSnackBar: (_ctx, _e) => {},
-          );
-        },
-      ),
-      onNotification: onNotification,
+        return LenraWidget(
+          buildErrorPage: (_ctx, _e) => Text("error"),
+          showSnackBar: (_ctx, _e) => {},
+        );
+      },
     ),
   );
 }
@@ -46,8 +44,8 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {
+          if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {
               "textfieldValue": "hi",
             });
           }
@@ -93,8 +91,8 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {
+          if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {
               "textfieldValue": "hi",
             });
           }
@@ -137,11 +135,11 @@ void main() {
 
     await tester.pumpWidget(
       createBaseFormTestWidget((e) {
-        if (e.code == "submitted") {
+        if (e["code"] == "submitted") {
           // Expected value of Form should be empty
-          expect((e.data as ValueData).value, {});
-        } else if (e.code == "changed") {
-          expect((e.data as ValueData).value, "hi");
+          expect(e["event"]["value"], {});
+        } else if (e["code"] == "changed") {
+          expect(e["event"]["value"], "hi");
         }
         hasBeenNotified = true;
         return false;
@@ -181,8 +179,8 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {});
+          if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {});
           }
           hasBeenNotified = true;
           return false;
@@ -228,8 +226,8 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {
+          if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {
               "textfieldValue": "default",
             });
           }
@@ -272,11 +270,11 @@ void main() {
 
       await tester.pumpWidget(
         createBaseFormTestWidget((e) {
-          if (e.code == "submitted") {
-            expect((e.data as ValueData).value, {
+          if (e["code"] == "submitted") {
+            expect(e["event"]["value"], {
               "textfieldValue": "hi",
             });
-          } else if (e.code == "changed") {
+          } else if (e["code"] == "changed") {
             hasEnteredListener = true;
           }
           hasBeenNotified = true;
