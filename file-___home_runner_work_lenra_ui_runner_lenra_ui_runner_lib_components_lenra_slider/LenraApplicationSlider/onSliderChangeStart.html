@@ -68,7 +68,10 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void onSliderChangeStart(BuildContext context, double value) {
   if (onChangeStart != null) {
-    OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
+    context.read&lt;ChannelModel&gt;().sendEvent(OnChangedEvent(code: onChanged!.code, data: ValueData(value))).then(
+          &#47;&#47;implement loading
+          (value) =&gt; null,
+        );
   }
 }</code></pre>
 </section>

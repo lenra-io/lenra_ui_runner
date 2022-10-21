@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the handleNotifications method from the ChannelModel class, for the Dart programming language.">
-  <title>handleNotifications method - ChannelModel class - channel_model library - Dart API</title>
+  <meta name="description" content="API docs for the sendEvent method from the ChannelModel class, for the Dart programming language.">
+  <title>sendEvent method - ChannelModel class - channel_model library - Dart API</title>
 
 
   
@@ -32,9 +32,9 @@
     <li><a href="../../index.html">lenra_ui_runner</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model-library.html">channel_model</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model/ChannelModel-class.html">ChannelModel</a></li>
-    <li class="self-crumb">handleNotifications method</li>
+    <li class="self-crumb">sendEvent method</li>
   </ol>
-  <div class="self-name">handleNotifications</div>
+  <div class="self-name">sendEvent</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,15 +45,15 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">handleNotifications</span> method 
+<h1><span class="kind-method">sendEvent</span> method 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-<span class="name ">handleNotifications</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="handleNotifications-param-notification"><span class="type-annotation">dynamic</span> <span class="parameter-name">notification</span></span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a></span>
+<span class="name ">sendEvent</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="sendEvent-param-notification"><span class="type-annotation">dynamic</span> <span class="parameter-name">notification</span></span></li>
 </ol>)
 
       
@@ -65,9 +65,13 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">bool handleNotifications(Event notification) {
-  channel!.send(&#39;run&#39;, notification.toMap());
-  return true;
+  <pre class="language-dart"><code class="language-dart">Future sendEvent(Event notification) {
+  final completer = Completer();
+  channel!
+      .send(&#39;run&#39;, notification.toMap())!
+      .receive(&quot;ok&quot;, (body) =&gt; completer.complete(body))
+      .receive(&quot;error&quot;, (error) =&gt; completer.completeError(error.toString()));
+  return completer.future;
 }</code></pre>
 </section>
 
@@ -85,7 +89,7 @@
   <li><a href="../../index.html">lenra_ui_runner</a></li>
   <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model-library.html">channel_model</a></li>
   <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model/ChannelModel-class.html">ChannelModel</a></li>
-  <li class="self-crumb">handleNotifications method</li>
+  <li class="self-crumb">sendEvent method</li>
 </ol>
 
 
@@ -111,8 +115,8 @@
     <li class="section-title"><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model/ChannelModel-class.html#instance-methods">Methods</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model/ChannelModel/close.html">close</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model/ChannelModel/createChannel.html">createChannel</a></li>
-    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model/ChannelModel/handleNotifications.html">handleNotifications</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model/ChannelModel/sendEvent.html">sendEvent</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_models_channel_model/ChannelModel/update.html">update</a></li>
 

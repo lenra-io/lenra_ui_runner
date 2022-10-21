@@ -96,16 +96,13 @@ Widget build(BuildContext context) {
     ],
     builder: (BuildContext context, _) {
       return StatefulWrapper(
-          builder: (context) =&gt; NotificationListener&lt;Event&gt;(
-            onNotification: (Event event) =&gt; context.read&lt;ChannelModel&gt;().handleNotifications(event),
-            child: Overlay(
-              initialEntries: [
-                OverlayEntry(
-                  builder: (context) =&gt; const LenraUiController(),
-                ),
-              ],
-            ),
-          ),
+          builder: (context) =&gt; Overlay(
+                initialEntries: [
+                  OverlayEntry(
+                    builder: (context) =&gt; const LenraUiController(),
+                  ),
+                ],
+              ),
           onInit: () {
             WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
               context.read&lt;ContextModel&gt;().mediaQueryData = MediaQuery.of(context);

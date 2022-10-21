@@ -52,7 +52,7 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype">void</span>
+<span class="returntype">dynamic</span>
 <span class="name ">send</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="send-param-event"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">event</span>, </span></li>
 <li><span class="parameter" id="send-param-data"><span class="type-annotation">dynamic</span> <span class="parameter-name">data</span></span></li>
 </ol>)
@@ -66,8 +66,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">void send(String event, dynamic data) {
-  _channel.push(event: event, payload: data as Map&lt;dynamic, dynamic&gt;);
+  <pre class="language-dart"><code class="language-dart">PhoenixPush? send(String event, dynamic data) {
+  return _channel.push(event: event, payload: data as Map&lt;dynamic, dynamic&gt;);
 }</code></pre>
 </section>
 
