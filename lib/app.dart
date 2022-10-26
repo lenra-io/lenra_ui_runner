@@ -1,6 +1,5 @@
 import 'package:client_common/models/user_application_model.dart';
 import 'package:client_common/views/stateful_wrapper.dart';
-import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/lenra_application_model.dart';
 import 'package:lenra_ui_runner/lenra_ui_controller.dart';
 import 'package:lenra_ui_runner/models/channel_model.dart';
@@ -49,16 +48,13 @@ class App extends StatelessWidget {
       ],
       builder: (BuildContext context, _) {
         return StatefulWrapper(
-            builder: (context) => NotificationListener<Event>(
-              onNotification: (Event event) => context.read<ChannelModel>().handleNotifications(event),
-              child: Overlay(
-                initialEntries: [
-                  OverlayEntry(
-                    builder: (context) => const LenraUiController(),
-                  ),
-                ],
-              ),
-            ),
+            builder: (context) => Overlay(
+                  initialEntries: [
+                    OverlayEntry(
+                      builder: (context) => const LenraUiController(),
+                    ),
+                  ],
+                ),
             onInit: () {
               WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
                 context.read<ContextModel>().mediaQueryData = MediaQuery.of(context);

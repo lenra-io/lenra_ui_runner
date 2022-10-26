@@ -5,6 +5,7 @@ import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
+import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:provider/provider.dart';
 import 'events/data/value_data.dart';
 import 'events/on_changed_event.dart';
@@ -90,19 +91,28 @@ class LenraApplicationSlider extends StatelessWidget {
       context.read<FormProvider?>()?.setFormFieldValue(name!, value);
     }
     if (onChanged != null) {
-      OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
+      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: onChanged!.code, data: ValueData(value))).then(
+            //implement loading
+            (value) => null,
+          );
     }
   }
 
   void onSliderChangeEnd(BuildContext context, double value) {
     if (onChangeEnd != null) {
-      OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
+      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: onChanged!.code, data: ValueData(value))).then(
+            //implement loading
+            (value) => null,
+          );
     }
   }
 
   void onSliderChangeStart(BuildContext context, double value) {
     if (onChangeStart != null) {
-      OnChangedEvent(code: onChanged!.code, data: ValueData(value)).dispatch(context);
+      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: onChanged!.code, data: ValueData(value))).then(
+            //implement loading
+            (value) => null,
+          );
     }
   }
 

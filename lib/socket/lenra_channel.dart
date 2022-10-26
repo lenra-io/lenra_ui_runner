@@ -46,7 +46,7 @@ class LenraChannel {
     _errorCallbacks.add(callback);
   }
 
-  void send(String event, dynamic data) {
-    _channel.push(event: event, payload: data as Map<dynamic, dynamic>);
+  PhoenixPush? send(String event, dynamic data) {
+    return _channel.push(event: event, payload: data as Map<dynamic, dynamic>);
   }
 }

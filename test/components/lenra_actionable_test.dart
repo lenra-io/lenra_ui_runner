@@ -1,10 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/components/lenra_actionable.dart';
+import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
 
+import '../mock_channel_model.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lenra_ui_runner/lenra_ui_runner.dart';
@@ -18,24 +19,21 @@ void main() {
 
   testWidgets('Check correctly built and listener working', (WidgetTester tester) async {
     BuildContext? _context;
+    eventsNb = 0;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: NotificationListener(
-          child: Builder(
-            builder: (BuildContext context) {
-              _context = context;
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+            (Provider.of<ChannelModel>(context, listen: false) as MockChannelModel).setCallBack((value) {
+              eventsNb += 1;
+            });
 
-              return LenraWidget(
-                buildErrorPage: (_ctx, _e) => Text("error"),
-                showSnackBar: (_ctx, _e) => {},
-              );
-            },
-          ),
-          onNotification: (Event e) {
-            expect(e.code, "doublePressed");
-            eventsNb = eventsNb + 1;
-            return true;
+            return LenraWidget(
+              buildErrorPage: (_ctx, _e) => Text("error"),
+              showSnackBar: (_ctx, _e) => {},
+            );
           },
         ),
       ),
@@ -72,21 +70,17 @@ void main() {
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: NotificationListener(
-          child: Builder(
-            builder: (BuildContext context) {
-              _context = context;
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+            (Provider.of<ChannelModel>(context, listen: false) as MockChannelModel).setCallBack((value) {
+              eventsNb += 1;
+            });
 
-              return LenraWidget(
-                buildErrorPage: (_ctx, _e) => Text("error"),
-                showSnackBar: (_ctx, _e) => {},
-              );
-            },
-          ),
-          onNotification: (Event e) {
-            expect(e.code, "pressed");
-            eventsNb = eventsNb + 1;
-            return true;
+            return LenraWidget(
+              buildErrorPage: (_ctx, _e) => Text("error"),
+              showSnackBar: (_ctx, _e) => {},
+            );
           },
         ),
       ),
@@ -117,21 +111,17 @@ void main() {
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: NotificationListener(
-          child: Builder(
-            builder: (BuildContext context) {
-              _context = context;
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+            (Provider.of<ChannelModel>(context, listen: false) as MockChannelModel).setCallBack((value) {
+              eventsNb += 1;
+            });
 
-              return LenraWidget(
-                buildErrorPage: (_ctx, _e) => Text("error"),
-                showSnackBar: (_ctx, _e) => {},
-              );
-            },
-          ),
-          onNotification: (Event e) {
-            expect(e.code, "pressed");
-            eventsNb = eventsNb + 1;
-            return true;
+            return LenraWidget(
+              buildErrorPage: (_ctx, _e) => Text("error"),
+              showSnackBar: (_ctx, _e) => {},
+            );
           },
         ),
       ),
@@ -163,21 +153,17 @@ void main() {
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: NotificationListener(
-          child: Builder(
-            builder: (BuildContext context) {
-              _context = context;
+        child: Builder(
+          builder: (BuildContext context) {
+            _context = context;
+            (Provider.of<ChannelModel>(context, listen: false) as MockChannelModel).setCallBack((value) {
+              eventsNb += 1;
+            });
 
-              return LenraWidget(
-                buildErrorPage: (_ctx, _e) => Text("error"),
-                showSnackBar: (_ctx, _e) => {},
-              );
-            },
-          ),
-          onNotification: (Event e) {
-            expect(e.code, "doublePressed");
-            eventsNb = eventsNb + 1;
-            return true;
+            return LenraWidget(
+              buildErrorPage: (_ctx, _e) => Text("error"),
+              showSnackBar: (_ctx, _e) => {},
+            );
           },
         ),
       ),

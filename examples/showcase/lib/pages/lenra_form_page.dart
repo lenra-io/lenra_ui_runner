@@ -19,6 +19,7 @@ class _LenraFormPageState extends UiBuilderState<LenraFormPage, Map<String, dyna
         "onSubmit": {"code": "submitted"},
         "child": {
           "type": "flex",
+          "direction": "vertical",
           "children": [
             {
               "type": "toggle",
@@ -31,6 +32,18 @@ class _LenraFormPageState extends UiBuilderState<LenraFormPage, Map<String, dyna
               "value": data["checkbox"],
               "name": "checkboxValue",
               "onPressed": {"code": "checked"}
+            },
+            {
+              "type": "flexible",
+              "child": {"type": "textfield", "value": "", "name": "t1"}
+            },
+            {
+              "type": "flexible",
+              "child": {"type": "textfield", "value": "", "name": "t2"}
+            },
+            {
+              "type": "flexible",
+              "child": {"type": "textfield", "value": "", "name": "t3"}
             },
             {
               "type": "flex",

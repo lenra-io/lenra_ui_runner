@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:lenra_ui_runner/models/context_model.dart';
 import 'package:lenra_ui_runner/models/socket_model.dart';
 import 'package:lenra_ui_runner/socket/lenra_channel.dart';
@@ -41,9 +43,13 @@ class ChannelModel extends ChangeNotifier {
     return this;
   }
 
-  bool handleNotifications(Event notification) {
-    channel!.send('run', notification.toMap());
-    return true;
+  Future sendEvent(Event notification) {
+    final completer = Completer();
+    channel!
+        .send('run', notification.toMap())!
+        .receive("ok", (body) => completer.complete(body))
+        .receive("error", (error) => completer.completeError(error.toString()));
+    return completer.future;
   }
 
   void close() {

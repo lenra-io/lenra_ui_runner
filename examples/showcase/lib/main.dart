@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
-import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 import 'package:provider/provider.dart';
 import 'package:showcase/left_menu.dart';
@@ -25,6 +25,7 @@ import 'package:showcase/pages/lenra_textfield_page.dart';
 import 'package:showcase/pages/lenra_wrap_page.dart';
 import 'package:showcase/pages/lenra_actionable_page.dart';
 
+import 'mock_channel_model.dart';
 import 'ui_builder_model.dart';
 
 void main() {
@@ -94,34 +95,29 @@ class _MyAppState extends State<MyApp> {
           ChangeNotifierProvider<WidgetModel>(create: (_) => WidgetModel()),
           ChangeNotifierProxyProvider<WidgetModel, UiBuilderModel>(
               create: (context) => UiBuilderModel(widgetModel: context.read<WidgetModel>()),
-              update: (_, widgetModel, uiBuilderModel) => uiBuilderModel!)
+              update: (_, widgetModel, uiBuilderModel) => uiBuilderModel!),
+          ChangeNotifierProvider<ChannelModel>(
+              create: (context) => MockChannelModel(uiBuilderModel: context.read<UiBuilderModel>())),
         ],
         builder: (context, child) {
-          var uiBuilderModel = context.read<UiBuilderModel>();
-
-          return NotificationListener<Event>(
-            onNotification: (Event event) {
-              return uiBuilderModel.handleNotifications(event);
-            },
-            child: LenraTheme(
-              themeData: LenraThemeData(),
-              child: MaterialApp(
-                title: 'Flutter Demo',
-                theme: ThemeData(),
-                home: Scaffold(
-                  appBar: AppBar(),
-                  drawer: Drawer(
-                    child: LeftMenu(
-                      currentMenu: currentMenu,
-                      onMenuTapped: (newMenu) {
-                        setState(() {
-                          currentMenu = newMenu;
-                        });
-                      },
-                    ),
+          return LenraTheme(
+            themeData: LenraThemeData(),
+            child: MaterialApp(
+              title: 'Flutter Demo',
+              theme: ThemeData(),
+              home: Scaffold(
+                appBar: AppBar(),
+                drawer: Drawer(
+                  child: LeftMenu(
+                    currentMenu: currentMenu,
+                    onMenuTapped: (newMenu) {
+                      setState(() {
+                        currentMenu = newMenu;
+                      });
+                    },
                   ),
-                  body: buildBody(),
                 ),
+                body: buildBody(),
               ),
             ),
           );
