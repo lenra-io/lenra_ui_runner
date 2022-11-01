@@ -6,7 +6,7 @@ import 'package:lenra_ui_runner/models/context_model.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 
 class MockChannelModel extends ChannelModel {
-  MockChannelModel() : super(contextModel: ContextModel(), socketModel: AppSocketModel("accessToken"));
+  MockChannelModel() : super(contextModel: ContextModel(), socketModel: AppSocketModel("accessToken", "app"));
 
   Function callback = (value) {};
 
