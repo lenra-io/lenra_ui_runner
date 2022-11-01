@@ -53,7 +53,7 @@
       
 
 <span class="returntype">void</span>
-<span class="name ">createChannel</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="createChannel-param-appName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">appName</span></span></li>
+<span class="name ">createChannel</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="createChannel-param-routeName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">routeName</span></span></li>
 </ol>)
 
       
@@ -65,8 +65,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">void createChannel(String appName) {
-  channel = socketModel.channel(&quot;app&quot;, {&quot;app&quot;: appName, &quot;context&quot;: contextModel.toJson()});
+  <pre class="language-dart"><code class="language-dart">void createChannel(String routeName) {
+  channel = socketModel.channel(routeName, {&quot;mode&quot;: &quot;lenra&quot;});
 
   channel!.onError((response) {
     hasError = true;

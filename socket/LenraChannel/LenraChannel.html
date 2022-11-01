@@ -51,7 +51,7 @@
 
     <section class="multi-line-signature">
       <span class="name ">LenraChannel</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-socket"><span class="type-annotation">dynamic</span> <span class="parameter-name">socket</span>, </span></li>
-<li><span class="parameter" id="-param-channelName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">channelName</span>, </span></li>
+<li><span class="parameter" id="-param-routeName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">routeName</span>, </span></li>
 <li><span class="parameter" id="-param-params"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">params</span></span></li>
 </ol>)
     </section>
@@ -62,8 +62,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">LenraChannel(PhoenixSocket socket, String channelName, Map&lt;String, dynamic&gt; params) {
-  _channel = socket.channel(channelName, params);
+  <pre class="language-dart"><code class="language-dart">LenraChannel(PhoenixSocket socket, String routeName, Map&lt;String, dynamic&gt; params) {
+  _channel = socket.channel(routeName, params);
   _channel.join()?.receive(&quot;error&quot;, (Map&lt;dynamic, dynamic&gt;? response) {
     for (var c in _errorCallbacks) {
       c(response);
