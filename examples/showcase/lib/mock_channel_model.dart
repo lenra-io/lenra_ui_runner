@@ -12,7 +12,7 @@ class MockChannelModel extends ChannelModel {
 
   MockChannelModel({
     required this.uiBuilderModel,
-  }) : super(contextModel: ContextModel(), socketModel: AppSocketModel("accessToken"));
+  }) : super(contextModel: ContextModel(), socketModel: AppSocketModel("accessToken", "app"));
 
   @override
   Future sendEvent(Event notification) {
