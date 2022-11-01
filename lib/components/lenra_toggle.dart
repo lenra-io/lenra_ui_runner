@@ -7,7 +7,7 @@ import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
-import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/components/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:provider/provider.dart';
 

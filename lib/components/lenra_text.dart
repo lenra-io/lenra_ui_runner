@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_text.dart';
-import '../lenra_component_builder.dart';
+import 'lenra_component_builder.dart';
 
 // TODO generate this from annotation on LenraText
 class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {

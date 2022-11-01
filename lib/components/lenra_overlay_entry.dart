@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/layout/lenra_overlay_entry.dart';
-import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/components/lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraOverlayEntry
 class LenraOverlayEntryBuilder extends LenraComponentBuilder<LenraApplicationOverlayEntry> {

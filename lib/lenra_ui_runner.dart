@@ -1,3 +1,3 @@
 library lenra_ui_runner;
 
-export 'lenra_widget.dart';
+export 'io_components/lenra_widget.dart';

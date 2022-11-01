@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_status_sticker.dart';
 import 'package:lenra_components/theme/lenra_color_theme_data.dart';
-import '../lenra_component_builder.dart';
+import 'lenra_component_builder.dart';
 
 // TODO generate this from annotation on LenraStatusSticker
 class LenraStatusStickerBuilder extends LenraComponentBuilder<LenraApplicationStatusSticker> {

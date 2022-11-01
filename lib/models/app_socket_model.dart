@@ -9,18 +9,27 @@ import 'package:phoenix_wings/phoenix_wings.dart';
 class AppSocketModel extends SocketModel {
   String accessToken;
   String appName;
+  String wsEndpoint;
+  Map<String, String> customParams;
   PhoenixSocket? _socket;
 
-  AppSocketModel(this.accessToken, this.appName) {
+  AppSocketModel({
+    required this.wsEndpoint,
+    required this.accessToken,
+    required this.appName,
+    this.customParams = const <String, String>{},
+  }) {
     _updateSocket();
   }
 
   void _updateSocket() {
     _socket?.disconnect();
+    Map<String, String> baseParams = {"token": accessToken, "app": appName};
+    baseParams.addAll(customParams);
 
     _socket = createPhoenixSocket(
       Config.instance.wsEndpoint,
-      {"token": accessToken, "app": appName},
+      baseParams,
     );
     _socket?.connect();
   }

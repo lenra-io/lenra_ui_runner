@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_checkbox.dart';
 import 'package:lenra_ui_runner/models/channel_model.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:lenra_ui_runner/models/widget_model.dart';
 import 'package:provider/provider.dart';
 import '../mock_channel_model.dart';
 import "../test_helper.dart";

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_dropdown_button.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_ui_runner/helpers/style_helper.dart';
-import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/components/lenra_component_builder.dart';
 
 // TODO : generate this from annotation on LenraButton
 class LenraDropdownButtonBuilder extends LenraComponentBuilder<LenraApplicationDropdownButton> {

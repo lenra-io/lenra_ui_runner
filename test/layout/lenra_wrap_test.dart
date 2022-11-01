@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/layout/lenra_wrap.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:lenra_ui_runner/models/widget_model.dart';
 import 'package:provider/src/provider.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';

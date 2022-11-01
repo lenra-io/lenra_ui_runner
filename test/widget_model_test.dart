@@ -1,11 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:lenra_ui_runner/models/widget_model.dart';
+
+import 'mock_channel_model.dart';
 
 void main() {
   test('Check parser working', () {
-    WidgetModel model = WidgetModel();
+    WidgetModel model = WidgetModel(channelModel: MockChannelModel());
     var ui = {
       "root": {
         "children": [

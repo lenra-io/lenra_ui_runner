@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/layout/lenra_stack.dart';
-import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/components/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/components/children_widgets.dart';
 
 // TODO : generate this from annotation on LenraStack

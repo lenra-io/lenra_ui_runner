@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:lenra_ui_runner/lenra_component_builder.dart';
+import 'package:lenra_ui_runner/components/lenra_component_builder.dart';
 
 class LenraFlexibleBuilder extends LenraComponentBuilder<LenraApplicationFlexible> {
   @override
