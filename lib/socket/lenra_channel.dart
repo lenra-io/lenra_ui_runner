@@ -5,8 +5,8 @@ import 'package:phoenix_wings/phoenix_wings.dart';
 class LenraChannel {
   late PhoenixChannel _channel;
   final List<dynamic Function(Map<dynamic, dynamic>?)> _errorCallbacks = [];
-  LenraChannel(PhoenixSocket socket, String channelName, Map<String, dynamic> params) {
-    _channel = socket.channel(channelName, params);
+  LenraChannel(PhoenixSocket socket, String routeName, Map<String, dynamic> params) {
+    _channel = socket.channel(routeName, params);
     _channel.join()?.receive("error", (Map<dynamic, dynamic>? response) {
       for (var c in _errorCallbacks) {
         c(response);
