@@ -1,25 +1,16 @@
 import 'dart:async';
 
-import 'package:lenra_ui_runner/models/app_socket_model.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
+import 'package:lenra_ui_runner/models/socket_model.dart';
 import 'package:lenra_ui_runner/models/context_model.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/socket/lenra_channel.dart';
 
-class MockChannelModel extends ChannelModel {
-  MockChannelModel() : super(contextModel: ContextModel(), socketModel: AppSocketModel("accessToken", "app"));
+class MockSocketModel extends SocketModel {
+  MockSocketModel() : super(contextModel: ContextModel(), socketModel: AppSocketModel("accessToken", "app"));
 
-  Function callback = (value) {};
+  LenraChannel channel(String routeName, Map<String, dynamic> params) {
+    if (_socket == null) throw "Socket must not be null";
 
-  void setCallBack(Function function) {
-    callback = function;
-  }
-
-  @override
-  Future sendEvent(Event notification) {
-    final completer = Completer();
-
-    completer.future.then((value) => callback((value)));
-    completer.complete(notification.toMap());
-    return completer.future;
+    return LenraChannel(_socket!, routeName, params);
   }
 }

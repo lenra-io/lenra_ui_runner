@@ -6,7 +6,7 @@ import 'package:lenra_ui_runner/components/lenra_form_checkbox.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/components/lenra_component_builder.dart';
 import 'package:lenra_components/component/lenra_checkbox.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
+import 'package:lenra_ui_runner/io_components/lenra_route.dart';
 import 'package:provider/provider.dart';
 
 // TODO : generate this from annotation on LenraCheckbox
@@ -75,10 +75,7 @@ class LenraApplicationCheckbox extends StatelessWidget {
 
   void onCheck(BuildContext context, bool? value) {
     if (onPressed != null) {
-      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: onPressed!.code, data: ValueData(value))).then(
-            //implement loading
-            (value) => null,
-          );
+      onPressed!.run(context, (code) => OnChangedEvent(code: code, data: ValueData(value)));
     }
   }
 

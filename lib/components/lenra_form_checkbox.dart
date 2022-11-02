@@ -5,7 +5,7 @@ import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_components/component/lenra_checkbox.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
+import 'package:lenra_ui_runner/io_components/lenra_route.dart';
 import 'package:provider/provider.dart';
 
 class LenraApplicationFormCheckbox extends StatefulWidget {
@@ -42,10 +42,7 @@ class _LenraApplicationFormCheckboxState extends State<LenraApplicationFormCheck
   void onCheck(BuildContext context, bool? value) {
     context.read<FormProvider?>()?.setFormFieldValue(widget.name, value);
     if (widget.onPressed != null) {
-      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: widget.onPressed!.code, data: ValueData(value))).then(
-            //implement loading
-            (value) => null,
-          );
+      widget.onPressed!.run(context, (code) => OnChangedEvent(code: code, data: ValueData(value)));
     }
   }
 

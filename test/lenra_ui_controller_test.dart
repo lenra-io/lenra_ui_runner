@@ -1,30 +1,25 @@
 import 'package:lenra_ui_runner/app.dart';
-import 'package:lenra_ui_runner/lenra_ui_controller.dart';
-import 'package:lenra_ui_runner/models/app_socket_model.dart';
-import 'package:lenra_ui_runner/models/socket_model.dart';
+import 'package:lenra_ui_runner/io_components/lenra_route.dart';
 import 'package:client_common/test/lenra_page_test_help.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   testWidgets('LenraUiController simple instantiation', (WidgetTester tester) async {
     await tester.runAsync(
       () => tester.pumpWidget(
         createAppTestWidgets(
-          ChangeNotifierProvider<SocketModel>(
-            create: (context) => AppSocketModel("random-access-token", "app-name"),
-            child: const App(
-              appName: "app-name",
-              httpEndpoint: "http://localhost:4000",
-              accessToken: "random-access-token",
-            ),
+          const App(
+            appName: "app-name",
+            httpEndpoint: "http://localhost:4000",
+            wsEndpoint: "http://localhost:4000",
+            accessToken: "random-access-token",
           ),
         ),
       ),
     );
 
-    expect(find.byType(LenraUiController), findsOneWidget);
+    expect(find.byType(LenraRoute), findsOneWidget);
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
   });
 

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:lenra_ui_runner/models/app_socket_model.dart';
+import 'package:lenra_ui_runner/models/socket_model.dart';
 import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:lenra_ui_runner/models/context_model.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';

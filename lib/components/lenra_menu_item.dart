@@ -3,7 +3,7 @@ import 'package:lenra_components/component/lenra_menu.dart';
 import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/components/lenra_component_builder.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
+import 'package:lenra_ui_runner/io_components/lenra_route.dart';
 import 'package:provider/provider.dart';
 
 // TODO generate this from annotation on LenraMenuItem
@@ -48,10 +48,7 @@ class LenraApplicationMenuItem extends StatelessWidget {
 
   void onMenuItemPressed(BuildContext context) {
     if (onPressed != null) {
-      context.read<ChannelModel>().sendEvent(OnPressedEvent(code: onPressed!.code)).then(
-            //implement loading
-            (value) => null,
-          );
+      onPressed!.run(context, (code) => OnPressedEvent(code: code));
     }
   }
 

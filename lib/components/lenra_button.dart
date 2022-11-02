@@ -4,7 +4,7 @@ import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/helpers/style_helper.dart';
 import 'package:lenra_ui_runner/components/lenra_component_builder.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
+import 'package:lenra_ui_runner/io_components/lenra_route.dart';
 import 'package:provider/provider.dart';
 import 'events/on_pressed_event.dart';
 
@@ -76,11 +76,9 @@ class LenraApplicationButton extends StatelessWidget {
       context.read<FormProvider?>()?.submitForm();
     }
     if (onPressed != null) {
-      context.read<ChannelModel>().sendEvent(OnPressedEvent(code: onPressed!.code)).then(
-            //implement loading
-
-            (value) => null,
-          );
+      onPressed!.run(context, (code) {
+        return OnPressedEvent(code: code);
+      });
     }
   }
 
