@@ -3,6 +3,7 @@ library props_parser;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lenra_components/component/lenra_text.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
@@ -88,6 +89,7 @@ extension ParserExt on Parser {
     ImageRepeat: Parser.parseImageRepeat,
     AutofillHints: Parser.parseAutofillHints,
     TextAlign: Parser.parseTextAlign,
+    LenraText: Parser.parseLenraTextWidget,
   };
 }
 
@@ -673,6 +675,27 @@ class Parser {
     }
 
     return result;
+  }
+
+  static List<LenraText> parseLenraTextWidgets(List<dynamic> props) {
+    List<LenraText> result = [];
+
+    for (var element in props) {
+      result.add(parseLenraTextWidget(element));
+    }
+
+    return result;
+  }
+
+  static LenraText parseLenraTextWidget(Map<String, dynamic> props) {
+    String? type = Parser.getType(props);
+    if (type == null) {
+      throw "No type in component. It should never happen";
+    }
+    LenraComponentBuilder? builder = Parser.getComponentBuilder(type);
+    if (builder == null) throw "Componnent mapping does not handle type $type";
+    Map<Symbol, dynamic> parsedProps = Parser.parseProps(props, builder.propsTypes);
+    return builder.build(parsedProps);
   }
 
   static Widget parseWidget(Map<String, dynamic> props) {

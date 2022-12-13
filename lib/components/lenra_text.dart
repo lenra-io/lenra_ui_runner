@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_text.dart';
+import 'package:lenra_ui_runner/components/children_widgets.dart';
 import '../lenra_component_builder.dart';
 
 // TODO generate this from annotation on LenraText
@@ -7,7 +8,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
   @override
   LenraApplicationText map({
     value,
-    // children,
+    children,
     style,
     locale,
     semanticsLabel,
@@ -16,7 +17,7 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
   }) {
     return LenraApplicationText(
       value: value,
-      // children: children,
+      children: children,
       style: style,
       locale: locale,
       semanticsLabel: semanticsLabel,
@@ -34,18 +35,14 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
       "semanticsLabel": String,
       "spellOut": bool,
       "textAlign": TextAlign,
+      "children": ChildrenWidgets
     };
   }
-
-  // @override
-  // List<String> get childrenKeys {
-  //   return ["children"];
-  // }
 }
 
 class LenraApplicationText extends StatelessWidget {
   final String value;
-  // final List<LenraText>? children;
+  final List<Widget>? children;
   final TextStyle? style;
   final Locale? locale;
   final String? semanticsLabel;
@@ -54,7 +51,7 @@ class LenraApplicationText extends StatelessWidget {
 
   LenraApplicationText({
     required this.value,
-    // required this.children,
+    required this.children,
     required this.style,
     required this.locale,
     required this.semanticsLabel,
@@ -66,7 +63,7 @@ class LenraApplicationText extends StatelessWidget {
   Widget build(BuildContext context) {
     return LenraText(
       text: value,
-      // children: children,
+      children: children as List<LenraText>?,
       style: style,
       locale: locale,
       semanticsLabel: semanticsLabel,
