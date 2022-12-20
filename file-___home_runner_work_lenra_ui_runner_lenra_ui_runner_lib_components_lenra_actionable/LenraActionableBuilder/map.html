@@ -62,7 +62,8 @@
 <li><span class="parameter" id="map-param-onDoublePressed"><span class="type-annotation">dynamic</span> <span class="parameter-name">onDoublePressed</span>, </span></li>
 <li><span class="parameter" id="map-param-onLongPressed"><span class="type-annotation">dynamic</span> <span class="parameter-name">onLongPressed</span>, </span></li>
 <li><span class="parameter" id="map-param-onPressedCancel"><span class="type-annotation">dynamic</span> <span class="parameter-name">onPressedCancel</span>, </span></li>
-<li><span class="parameter" id="map-param-onHovered"><span class="type-annotation">dynamic</span> <span class="parameter-name">onHovered</span>}</span></li>
+<li><span class="parameter" id="map-param-onHovered"><span class="type-annotation">dynamic</span> <span class="parameter-name">onHovered</span>, </span></li>
+<li><span class="parameter" id="map-param-submit"><span class="type-annotation">dynamic</span> <span class="parameter-name">submit</span> = <span class="default-value">false</span>}</span></li>
 </ol>)
 
       
@@ -82,6 +83,7 @@ LenraApplicationActionable map({
   onLongPressed,
   onPressedCancel,
   onHovered,
+  submit = false,
 }) {
   return LenraApplicationActionable(
     child: child,
@@ -90,6 +92,7 @@ LenraApplicationActionable map({
     onLongPressed: onLongPressed,
     onPressedCancel: onPressedCancel,
     onHovered: onHovered,
+    submit: submit,
   );
 }</code></pre>
 </section>
