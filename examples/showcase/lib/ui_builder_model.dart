@@ -5,14 +5,14 @@ import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 
 class UiBuilderModel extends ChangeNotifier {
-  late WidgetModel widgetModel;
+  late ViewModel viewModel;
   late Map<String, dynamic> lastUi;
   late Map<String, dynamic> ui;
   late dynamic data;
   late dynamic Function(Event) getData;
   late Map<String, dynamic> Function(dynamic) getUi;
 
-  UiBuilderModel({required this.widgetModel});
+  UiBuilderModel({required this.viewModel});
 
   void initData(dynamic Function(Event) getData) {
     this.getData = getData;
@@ -30,7 +30,7 @@ class UiBuilderModel extends ChangeNotifier {
     ui = getUi(data);
     var diff = JsonPatch.diff(lastUi, ui);
     lastUi = ui;
-    widgetModel.patchUi(diff);
+    viewModel.patchUi(diff);
 
     callback("terminated");
   }

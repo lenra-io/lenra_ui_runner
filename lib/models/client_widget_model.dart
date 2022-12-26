@@ -2,10 +2,10 @@ import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:client_common/api/response_models/api_error.dart';
 import 'package:lenra_ui_runner/widget_model.dart';
 
-class ClientWidgetModel extends WidgetModel<ApiError> {
+class ClientViewModel extends ViewModel<ApiError> {
   late ChannelModel channelModel;
 
-  ClientWidgetModel({required this.channelModel});
+  ClientViewModel({required this.channelModel});
 
   void setupListeners() {
     channelModel.channel!.onUi((Map<dynamic, dynamic>? ui) {

@@ -36,7 +36,7 @@ void main() {
 
     expect(find.byType(LenraButton), findsNothing);
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
 

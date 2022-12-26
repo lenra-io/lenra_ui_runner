@@ -21,7 +21,7 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
 
     /// replaceUi is called after the first frame is rendered because the provider is only accessible at that point.
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<WidgetModel>().replaceUi(getUi(data));
+      context.read<ViewModel>().replaceUi(getUi(data));
     });
   }
 

@@ -71,7 +71,7 @@ void main() {
         ],
       );
 
-      context!.read<WidgetModel>().replaceUi(ui);
+      context!.read<ViewModel>().replaceUi(ui);
 
       await tester.pump();
       await tester.tap(find.byType(LenraToggle));
@@ -112,7 +112,7 @@ void main() {
         ],
       );
 
-      context!.read<WidgetModel>().replaceUi(ui);
+      context!.read<ViewModel>().replaceUi(ui);
 
       await tester.pump();
       await tester.tap(find.byType(LenraToggle));
@@ -149,7 +149,7 @@ void main() {
       }
     ]);
 
-    context!.read<WidgetModel>().replaceUi(ui);
+    context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     await tester.tap(find.byType(LenraToggle));
@@ -190,7 +190,7 @@ void main() {
         }
       };
 
-      context!.read<WidgetModel>().replaceUi(ui);
+      context!.read<ViewModel>().replaceUi(ui);
 
       await tester.pump();
       await tester.tap(find.byType(LenraToggle));
@@ -230,7 +230,7 @@ void main() {
         }
       ]);
 
-      context!.read<WidgetModel>().replaceUi(ui);
+      context!.read<ViewModel>().replaceUi(ui);
 
       await tester.pump();
       await tester.tap(find.byType(LenraButton));
@@ -272,7 +272,7 @@ void main() {
         }
       ]);
 
-      context!.read<WidgetModel>().replaceUi(ui);
+      context!.read<ViewModel>().replaceUi(ui);
 
       await tester.pump();
       await tester.tap(find.byType(LenraToggle));

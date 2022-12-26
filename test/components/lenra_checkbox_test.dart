@@ -35,7 +35,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
 
     var checkbox = tester.widget<Checkbox>(find.byType(Checkbox));
@@ -73,7 +73,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
 
     var checkbox = tester.widget<Checkbox>(find.byType(Checkbox));

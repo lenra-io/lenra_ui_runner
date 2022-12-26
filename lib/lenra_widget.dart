@@ -12,19 +12,19 @@ class LenraWidget<E> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetModel<E> widgetModel = context.watch<WidgetModel>() as WidgetModel<E>;
-    if (widgetModel.hasError() && !widgetModel.hasUi()) return buildErrorPage(context, widgetModel.errors!);
-    if (widgetModel.hasError()) {
+    ViewModel<E> viewModel = context.watch<ViewModel>() as ViewModel<E>;
+    if (viewModel.hasError() && !viewModel.hasUi()) return buildErrorPage(context, viewModel.errors!);
+    if (viewModel.hasError()) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        showSnackBar(context, widgetModel.errors!);
+        showSnackBar(context, viewModel.errors!);
       });
     }
 
-    if (!widgetModel.hasUi()) {
+    if (!viewModel.hasUi()) {
       return CircularProgressIndicator();
     }
 
-    Map<String, dynamic> ui = widgetModel.ui;
+    Map<String, dynamic> ui = viewModel.ui;
     if (ui.keys.contains("root") && ui.keys.length == 1) {
       return LenraWidget.parseJson(ui["root"]);
     }
