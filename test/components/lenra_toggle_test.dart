@@ -46,7 +46,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
 
     var finderToggle = find.byType(LenraToggle);
@@ -97,7 +97,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
 
     var toggle = find.byType(LenraToggle);

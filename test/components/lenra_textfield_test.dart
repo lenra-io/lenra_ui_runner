@@ -37,7 +37,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     var textfieldFinder = find.byType(TextField);
@@ -100,7 +100,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     var textfield = find.byType(TextField);
@@ -149,7 +149,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     var textfieldFinder = find.byType(TextField);
@@ -193,7 +193,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     var textfieldFinder = find.byType(TextField);

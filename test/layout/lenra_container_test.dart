@@ -50,7 +50,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
     var finderContainer = find.byType(LenraContainer);
     LenraContainer container = tester.widget<LenraContainer>(finderContainer);
@@ -94,7 +94,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
     var finderContainer = find.byType(LenraContainer);
     LenraContainer container = tester.widget<LenraContainer>(finderContainer);
@@ -140,7 +140,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
     LenraContainer container = tester.widget<LenraContainer>(find.byType(LenraContainer));
     BoxDecoration decoration = container.decoration as BoxDecoration;

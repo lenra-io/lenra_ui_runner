@@ -36,8 +36,8 @@ void main() {
       {"path": "/root/value", "value": "bar", "op": "replace"}
     ];
 
-    _context!.read<WidgetModel>().replaceUi(ui);
-    _context!.read<WidgetModel>().patchUi(patches);
+    _context!.read<ViewModel>().replaceUi(ui);
+    _context!.read<ViewModel>().patchUi(patches);
 
     await tester.pump();
     expect(find.text("foo"), findsNothing);
@@ -75,12 +75,12 @@ void main() {
       {"path": "/root/children/0", "op": "remove"}
     ];
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
 
     expect(find.byType(Text), findsOneWidget);
 
-    _context!.read<WidgetModel>().patchUi(patches);
+    _context!.read<ViewModel>().patchUi(patches);
     await tester.pumpAndSettle();
 
     expect(find.byType(Text), findsNothing);
@@ -123,8 +123,8 @@ void main() {
       }
     ];
 
-    _context!.read<WidgetModel>().replaceUi(ui);
-    _context!.read<WidgetModel>().patchUi(patches);
+    _context!.read<ViewModel>().replaceUi(ui);
+    _context!.read<ViewModel>().patchUi(patches);
     await tester.pump();
 
     expect(find.text("foo"), findsNothing);
@@ -159,13 +159,13 @@ void main() {
       {"path": "/root/text", "value": "bar", "op": "add"}
     ];
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
 
     expect(find.text("foo"), findsOneWidget);
     expect(find.text("bar"), findsNothing);
 
-    _context!.read<WidgetModel>().patchUi(patches);
+    _context!.read<ViewModel>().patchUi(patches);
     await tester.pump();
     await tester.pump();
 
@@ -214,13 +214,13 @@ void main() {
       }
     ];
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
 
     expect(find.text("foo"), findsOneWidget);
     expect(find.text("bar"), findsNothing);
 
-    _context!.read<WidgetModel>().patchUi(patches);
+    _context!.read<ViewModel>().patchUi(patches);
     await tester.pump();
     await tester.pump();
 

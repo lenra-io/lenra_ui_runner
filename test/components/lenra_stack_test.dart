@@ -35,7 +35,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     expect(find.byType(LenraText), findsNWidgets(2));
@@ -74,7 +74,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
 
@@ -111,7 +111,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
 
@@ -146,7 +146,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
 

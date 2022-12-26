@@ -35,7 +35,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
     var finderIcon = find.byType(LenraIcon);
     var icon = tester.widget<LenraIcon>(finderIcon);

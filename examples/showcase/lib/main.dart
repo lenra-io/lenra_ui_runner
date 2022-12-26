@@ -92,10 +92,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider<WidgetModel>(create: (_) => WidgetModel()),
-          ChangeNotifierProxyProvider<WidgetModel, UiBuilderModel>(
-              create: (context) => UiBuilderModel(widgetModel: context.read<WidgetModel>()),
-              update: (_, widgetModel, uiBuilderModel) => uiBuilderModel!),
+          ChangeNotifierProvider<ViewModel>(create: (_) => ViewModel()),
+          ChangeNotifierProxyProvider<ViewModel, UiBuilderModel>(
+              create: (context) => UiBuilderModel(viewModel: context.read<ViewModel>()),
+              update: (_, viewModel, uiBuilderModel) => uiBuilderModel!),
           ChangeNotifierProvider<ChannelModel>(
               create: (context) => MockChannelModel(uiBuilderModel: context.read<UiBuilderModel>())),
         ],
