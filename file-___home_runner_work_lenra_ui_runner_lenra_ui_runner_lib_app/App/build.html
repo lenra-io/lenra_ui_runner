@@ -88,9 +88,9 @@ Widget build(BuildContext context) {
           return channelModel.update(socketModel);
         },
       ),
-      ChangeNotifierProxyProvider&lt;ChannelModel, WidgetModel&gt;(
-        create: (context) =&gt; ClientWidgetModel(channelModel: context.read&lt;ChannelModel&gt;()),
-        update: (_, channelModel, clientWidgetModel) =&gt; clientWidgetModel!,
+      ChangeNotifierProxyProvider&lt;ChannelModel, ViewModel&gt;(
+        create: (context) =&gt; ClientViewModel(channelModel: context.read&lt;ChannelModel&gt;()),
+        update: (_, channelModel, clientViewModel) =&gt; clientViewModel!,
       ),
     ],
     builder: (BuildContext context, _) {
@@ -107,7 +107,7 @@ Widget build(BuildContext context) {
               context.read&lt;ContextModel&gt;().mediaQueryData = MediaQuery.of(context);
               &#47;&#47;The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
               context.read&lt;ChannelModel&gt;().createChannel(routeName);
-              (context.read&lt;WidgetModel&gt;() as ClientWidgetModel).setupListeners();
+              (context.read&lt;ViewModel&gt;() as ClientViewModel).setupListeners();
             });
           });
     },

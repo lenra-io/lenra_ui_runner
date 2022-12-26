@@ -71,19 +71,19 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  WidgetModel&lt;E&gt; widgetModel = context.watch&lt;WidgetModel&gt;() as WidgetModel&lt;E&gt;;
-  if (widgetModel.hasError() &amp;&amp; !widgetModel.hasUi()) return buildErrorPage(context, widgetModel.errors!);
-  if (widgetModel.hasError()) {
+  ViewModel&lt;E&gt; viewModel = context.watch&lt;ViewModel&gt;() as ViewModel&lt;E&gt;;
+  if (viewModel.hasError() &amp;&amp; !viewModel.hasUi()) return buildErrorPage(context, viewModel.errors!);
+  if (viewModel.hasError()) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      showSnackBar(context, widgetModel.errors!);
+      showSnackBar(context, viewModel.errors!);
     });
   }
 
-  if (!widgetModel.hasUi()) {
+  if (!viewModel.hasUi()) {
     return CircularProgressIndicator();
   }
 
-  Map&lt;String, dynamic&gt; ui = widgetModel.ui;
+  Map&lt;String, dynamic&gt; ui = viewModel.ui;
   if (ui.keys.contains(&quot;root&quot;) &amp;&amp; ui.keys.length == 1) {
     return LenraWidget.parseJson(ui[&quot;root&quot;]);
   }
