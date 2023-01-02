@@ -12,11 +12,11 @@ dependencies:
   lenra_components:
     git:
       url: git@github.com:lenra-io/lenra_components.git
-      ref: v1.0.0-beta.50
+      ref: v1.0.0-beta.51
   client_common:
     git:
       url: git@github.com:lenra-io/client-common.git
-      ref: v1.0.0-beta.25
+      ref: v1.0.0-beta.26
   json_patch: ^3.0.0
   mockito: ^5.0.17
   phoenix_wings: ^1.0.2
