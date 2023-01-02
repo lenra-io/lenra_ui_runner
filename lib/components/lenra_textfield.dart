@@ -188,12 +188,11 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
   @override
   void initState() {
     _controller = TextEditingController(text: widget.value);
+    textInputAction = widget.textInputAction;
     if (widget.name != null) {
       context.read<FormProvider?>()?.initFormFieldValue(widget.name!, _controller.text);
 
-      textInputAction = TextInputAction.next;
-    } else {
-      textInputAction = widget.textInputAction;
+      if (widget.textInputAction == null) textInputAction = TextInputAction.next;
     }
     super.initState();
   }
