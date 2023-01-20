@@ -32,7 +32,7 @@ dependencies:
   provider: ^6.0.1
   client_common:
     git:
-      ref: v1.0.0-beta.29
+      ref: v1.0.0-beta.31
 dev_dependencies:
   flutter_test:
     sdk: flutter
