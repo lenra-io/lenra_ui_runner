@@ -1,11 +1,8 @@
-import 'package:client_common/models/user_application_model.dart';
-import 'package:client_common/views/stateful_wrapper.dart';
-import 'package:go_router/go_router.dart';
-import 'package:lenra_ui_runner/io_components/lenra_router.dart';
+import 'package:lenra_ui_runner/io_components/lenra_route.dart';
+import 'package:lenra_ui_runner/io_components/lenra_socket.dart';
 import 'package:lenra_ui_runner/models/lenra_application_model.dart';
-import 'package:lenra_ui_runner/models/context_model.dart';
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/models/socket_model.dart';
+import 'package:lenra_ui_runner/models/lenra_route_model.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
@@ -25,9 +22,11 @@ class App extends StatelessWidget {
 
   final Map<String, String> customParams;
 
-  final Widget Function(BuildContext, List<RouteBase>) builder;
-
   final String baseRoute;
+
+  final Widget routeWidget;
+
+  final void Function(BuildContext, String) navTo;
 
   const App({
     Key? key,
@@ -35,28 +34,39 @@ class App extends StatelessWidget {
     required this.httpEndpoint,
     required this.accessToken,
     required this.wsEndpoint,
-    required this.builder,
     required this.baseRoute,
+    required this.routeWidget,
+    required this.navTo,
     this.customParams = const <String, String>{},
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    print("App rebuild");
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<SocketModel>(
-            create: (context) => SocketModel(
-                wsEndpoint: wsEndpoint, accessToken: accessToken, appName: appName, customParams: customParams)),
         ChangeNotifierProvider<LenraApplicationModel>(
-          create: (context) => LenraApplicationModel(httpEndpoint, appName, accessToken),
+          create: (context) => LenraApplicationModel(
+            httpEndpoint: httpEndpoint,
+            applicationName: appName,
+            accessToken: accessToken,
+          ),
+        ),
+        ChangeNotifierProxyProvider0<LenraRouteModel>(
+          create: (context) => LenraRouteModel(
+            baseRoute: baseRoute,
+            navTo: navTo,
+            routeWidget: routeWidget,
+          ),
+          update: (context, lenraRouteModel) => lenraRouteModel!.update(routeWidget),
         ),
       ],
-      builder: (BuildContext context, _) {
-        return LenraRouter(
-          baseRoute: baseRoute,
-          builder: builder,
-        );
-      },
+      child: LenraSocket(
+        accessToken: accessToken,
+        appName: appName,
+        wsEndpoint: wsEndpoint,
+        customParams: customParams,
+      ),
     );
   }
 }

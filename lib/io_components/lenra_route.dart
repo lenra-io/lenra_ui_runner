@@ -5,13 +5,12 @@ import 'package:client_common/lenra_application/api_error_snack_bar.dart';
 import 'package:client_common/lenra_application/app_error_page.dart';
 import 'package:client_common/lenra_application/lenra_error_page.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
+import 'package:lenra_ui_runner/io_components/lenra_socket.dart';
 import 'package:lenra_ui_runner/io_components/lenra_widget.dart';
-import 'package:lenra_ui_runner/models/socket_model.dart';
 import 'package:lenra_ui_runner/socket/lenra_channel.dart';
-import 'package:provider/provider.dart';
 import 'package:json_patch/json_patch.dart';
+import 'package:phoenix_wings/phoenix_wings.dart';
 
 class LenraRoute extends StatefulWidget {
   final String route;
@@ -38,14 +37,14 @@ class LenraRouteState extends State<LenraRoute> {
 
   @override
   void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      setupChannel();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setupChannel(LenraSocket.of(context).socket);
     });
+    super.initState();
   }
 
-  void setupChannel() {
-    channel = context.read<SocketModel>().channel("route:" + widget.route, {"mode": "lenra"});
+  void setupChannel(PhoenixSocket socket) {
+    channel = LenraChannel(socket, "route:" + widget.route, {"mode": "lenra"});
 
     channel!.onError((response) {
       setState(() {
@@ -131,11 +130,6 @@ class LenraRouteIO extends InheritedWidget {
         .receive("ok", (body) => completer.complete(body))
         .receive("error", (error) => completer.completeError(error.toString()));
     return completer.future;
-  }
-
-  Future navTo(BuildContext context, String path) {
-    GoRouter.of(context).go(path);
-    return Future.value(true);
   }
 
   @override
