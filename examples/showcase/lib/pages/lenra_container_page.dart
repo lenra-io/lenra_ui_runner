@@ -157,6 +157,11 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
               },
               {
                 "type": "container",
+                "alignment": "center",
+                "constraints": {
+                  "minWidth": 80,
+                  "minHeight": 80
+                },
                 "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                 "border": {
                   "top": {"width": 3, "color": 0xFF000000},
