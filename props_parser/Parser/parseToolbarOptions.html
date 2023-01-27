@@ -65,6 +65,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">static ToolbarOptions parseToolbarOptions(Map&lt;String, dynamic&gt; props) {
+  &#47;&#47; ignore: deprecated_member_use
   return ToolbarOptions(
     copy: props.containsKey(&quot;copy&quot;) ? parseBool(props[&quot;copy&quot;]) ?? false : false,
     cut: props.containsKey(&quot;cut&quot;) ? parseBool(props[&quot;cut&quot;]) ?? false : false,
