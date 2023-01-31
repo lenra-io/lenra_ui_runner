@@ -712,21 +712,6 @@ class Parser {
     return builder.build(parsedProps);
   }
 
-  // static TextSpan parseTextSpan(Map<String, dynamic> props) {
-  //   return TextSpan(
-  //     text: props.containsKey("value") ? parseString(props["value"]) : null,
-  //     children: props.containsKey("children") ? parseTextSpans(props["children"]) : null,
-  //     style: props.containsKey("style") ? parseTextStyle(props["style"]) : null,
-  //     locale: props.containsKey("locale") ? parseLocale(props["locale"]) : null,
-  //     semanticsLabel: props.containsKey("semanticsLabel") ? parseString(props["semanticsLabel"]) : null,
-  //     spellOut: props.containsKey("spellOut") ? parseBool(props["spellOut"]) : null,
-  //   );
-  // }
-
-  // static List<TextSpan> parseTextSpans(List<dynamic> textSpans) {
-  //   return textSpans.map((e) => parseTextSpan(e)).toList();
-  // }
-
   static Widget parseWidget(Map<String, dynamic> props) {
     return LenraWidget.parseJson(props);
   }
