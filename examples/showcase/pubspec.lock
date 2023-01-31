@@ -85,8 +85,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "v1.0.0-beta.33"
-      resolved-ref: "09cefae3eab693474a5abe4c301f34bb2624d2a4"
+      ref: "v1.0.0-beta.34"
+      resolved-ref: f136cf14abff4f5100cd184bf964e0d6072b2a23
       url: "git@github.com:lenra-io/client-common.git"
     source: git
     version: "1.0.0"
