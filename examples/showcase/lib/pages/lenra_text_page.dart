@@ -60,7 +60,7 @@ class _LenraTextPageState extends UiBuilderState<LenraTextPage, bool> {
             "value": "This text has children",
             "children": [
               {
-                "type": "text",
+                "type": "textSpan",
                 "style": {
                   "color": 0xFFFF0000,
                 },

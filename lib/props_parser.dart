@@ -92,6 +92,7 @@ extension ParserExt on Parser {
     AutofillHints: Parser.parseAutofillHints,
     TextAlign: Parser.parseTextAlign,
     LenraText: Parser.parseLenraTextWidget,
+    List<LenraText>: Parser.parseLenraTextWidgets,
   };
 }
 
@@ -683,10 +684,21 @@ class Parser {
     List<LenraText> result = [];
 
     for (var element in props) {
-      result.add(parseLenraTextWidget(element));
+      result.add(parseLenraTextChildWidget(element));
     }
 
     return result;
+  }
+
+  static LenraText parseLenraTextChildWidget(dynamic text) {
+    return LenraText(
+      text: text.containsKey("value") ? parseString(text["value"]) : "",
+      children: text.containsKey("children") ? parseLenraTextWidgets(text["children"]) : null,
+      style: text.containsKey("style") ? parseTextStyle(text["style"]) : null,
+      locale: text.containsKey("locale") ? parseLocale(text["locale"]) : null,
+      semanticsLabel: text.containsKey("semanticsLabel") ? parseString(text["semanticsLabel"]) : null,
+      spellOut: text.containsKey("spellOut") ? parseBool(text["spellOut"]) : null,
+    );
   }
 
   static LenraText parseLenraTextWidget(Map<String, dynamic> props) {
@@ -699,6 +711,21 @@ class Parser {
     Map<Symbol, dynamic> parsedProps = Parser.parseProps(props, builder.propsTypes);
     return builder.build(parsedProps);
   }
+
+  // static TextSpan parseTextSpan(Map<String, dynamic> props) {
+  //   return TextSpan(
+  //     text: props.containsKey("value") ? parseString(props["value"]) : null,
+  //     children: props.containsKey("children") ? parseTextSpans(props["children"]) : null,
+  //     style: props.containsKey("style") ? parseTextStyle(props["style"]) : null,
+  //     locale: props.containsKey("locale") ? parseLocale(props["locale"]) : null,
+  //     semanticsLabel: props.containsKey("semanticsLabel") ? parseString(props["semanticsLabel"]) : null,
+  //     spellOut: props.containsKey("spellOut") ? parseBool(props["spellOut"]) : null,
+  //   );
+  // }
+
+  // static List<TextSpan> parseTextSpans(List<dynamic> textSpans) {
+  //   return textSpans.map((e) => parseTextSpan(e)).toList();
+  // }
 
   static Widget parseWidget(Map<String, dynamic> props) {
     return LenraWidget.parseJson(props);

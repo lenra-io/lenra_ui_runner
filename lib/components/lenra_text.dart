@@ -35,14 +35,14 @@ class LenraTextBuilder extends LenraComponentBuilder<LenraApplicationText> {
       "semanticsLabel": String,
       "spellOut": bool,
       "textAlign": TextAlign,
-      "children": ChildrenWidgets
+      "children": List<LenraText>
     };
   }
 }
 
 class LenraApplicationText extends StatelessWidget {
   final String value;
-  final List<Widget>? children;
+  final List<LenraText>? children;
   final TextStyle? style;
   final Locale? locale;
   final String? semanticsLabel;
@@ -63,7 +63,7 @@ class LenraApplicationText extends StatelessWidget {
   Widget build(BuildContext context) {
     return LenraText(
       text: value,
-      children: children as List<LenraText>?,
+      children: children,
       style: style,
       locale: locale,
       semanticsLabel: semanticsLabel,
