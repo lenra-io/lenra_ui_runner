@@ -82,7 +82,7 @@ void main() {
           ),
         );
 
-        _context!.read<WidgetModel>().replaceUi(ui);
+        _context!.read<ViewModel>().replaceUi(ui);
 
         await tester.pumpAndSettle();
         expect(find.text("Error"), findsOneWidget);
@@ -127,7 +127,7 @@ void main() {
           ),
         );
 
-        _context!.read<WidgetModel>().replaceUi(ui);
+        _context!.read<ViewModel>().replaceUi(ui);
 
         await tester.pump();
 
@@ -174,7 +174,7 @@ void main() {
           ),
         );
 
-        _context!.read<WidgetModel>().replaceUi(ui);
+        _context!.read<ViewModel>().replaceUi(ui);
 
         await tester.pump();
 
@@ -218,7 +218,7 @@ void main() {
           ),
         );
 
-        _context!.read<WidgetModel>().replaceUi(ui);
+        _context!.read<ViewModel>().replaceUi(ui);
 
         await tester.pump();
 

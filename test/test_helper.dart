@@ -11,7 +11,7 @@ import 'mock_channel_model.dart';
 Widget createBaseTestWidgets({required Widget child}) {
   return MultiProvider(
     providers: [
-      ChangeNotifierProvider<WidgetModel>(create: (_) => WidgetModel<String>()),
+      ChangeNotifierProvider<ViewModel>(create: (_) => ViewModel<String>()),
       ChangeNotifierProvider<ChannelModel>(create: (_) => MockChannelModel()),
       ChangeNotifierProvider<LenraApplicationModel>(
         create: (context) => LenraApplicationModel('foo-url', "appName", ''),

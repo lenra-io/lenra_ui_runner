@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:json_patch/json_patch.dart';
 
-class WidgetModel<E> extends ChangeNotifier {
+class ViewModel<E> extends ChangeNotifier {
   Map<String, dynamic>? _ui;
   E? _errors;
 

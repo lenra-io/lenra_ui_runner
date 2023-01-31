@@ -73,6 +73,7 @@ extension ParserExt on Parser {
     DragStartBehavior: Parser.parseDragStartBehavior,
     LenraToggleStyle: Parser.parseLenraToggleStyle,
     Alignment: Parser.parseAlignment,
+    AlignmentGeometry: Parser.parseAlignment,
     StackFit: Parser.parseStackFit,
     LenraSliderStyle: Parser.parseLenraSliderStyle,
     ChildrenWidgets: Parser.parseChildrenWidgets,
@@ -82,6 +83,7 @@ extension ParserExt on Parser {
     MaxLengthEnforcement: Parser.parseMaxLengthEnforcement,
     TextCapitalization: Parser.parseTextCapitalization,
     TextInputAction: Parser.parseTextInputAction,
+    // ignore: deprecated_member_use
     ToolbarOptions: Parser.parseToolbarOptions,
     Rect: Parser.parseRect,
     FilterQuality: Parser.parseFilterQuality,
@@ -1077,7 +1079,9 @@ class Parser {
     }
   }
 
+  // ignore: deprecated_member_use
   static ToolbarOptions parseToolbarOptions(Map<String, dynamic> props) {
+    // ignore: deprecated_member_use
     return ToolbarOptions(
       copy: props.containsKey("copy") ? parseBool(props["copy"]) ?? false : false,
       cut: props.containsKey("cut") ? parseBool(props["cut"]) ?? false : false,

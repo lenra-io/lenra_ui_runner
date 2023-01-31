@@ -107,6 +107,7 @@ class LenraTextfieldBuilder extends LenraComponentBuilder<LenraApplicationTextfi
       "textCapitalization": TextCapitalization,
       "textDirection": TextDirection,
       "textInputAction": TextInputAction,
+      // ignore: deprecated_member_use
       "toolbarOptions": ToolbarOptions,
       "name": String,
     };
@@ -141,6 +142,7 @@ class LenraApplicationTextfield extends StatefulWidget {
   TextCapitalization? textCapitalization;
   TextDirection? textDirection;
   TextInputAction? textInputAction;
+  // ignore: deprecated_member_use
   ToolbarOptions? toolbarOptions;
   String? name;
 
@@ -188,12 +190,11 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
   @override
   void initState() {
     _controller = TextEditingController(text: widget.value);
+    textInputAction = widget.textInputAction;
     if (widget.name != null) {
       context.read<FormProvider?>()?.initFormFieldValue(widget.name!, _controller.text);
 
-      textInputAction = TextInputAction.next;
-    } else {
-      textInputAction = widget.textInputAction;
+      if (widget.textInputAction == null) textInputAction = TextInputAction.next;
     }
     super.initState();
   }
@@ -285,6 +286,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
       textCapitalization: widget.textCapitalization ?? TextCapitalization.none,
       textDirection: widget.textDirection,
       textInputAction: textInputAction,
+      // ignore: deprecated_member_use
       toolbarOptions: widget.toolbarOptions,
     );
   }

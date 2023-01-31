@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
+import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/models/channel_model.dart';
@@ -15,6 +16,7 @@ class LenraActionableBuilder extends LenraComponentBuilder<LenraApplicationActio
     onLongPressed,
     onPressedCancel,
     onHovered,
+    submit = false,
   }) {
     return LenraApplicationActionable(
       child: child,
@@ -23,6 +25,7 @@ class LenraActionableBuilder extends LenraComponentBuilder<LenraApplicationActio
       onLongPressed: onLongPressed,
       onPressedCancel: onPressedCancel,
       onHovered: onHovered,
+      submit: submit,
     );
   }
 
@@ -35,6 +38,7 @@ class LenraActionableBuilder extends LenraComponentBuilder<LenraApplicationActio
       "onPressedCancel": lenra.Listener,
       "onHovered": lenra.Listener,
       "child": Widget,
+      "submit": bool,
     };
   }
 }
@@ -46,6 +50,7 @@ class LenraApplicationActionable extends StatelessWidget {
   final lenra.Listener? onLongPressed;
   final lenra.Listener? onPressedCancel;
   final lenra.Listener? onHovered;
+  final bool submit;
 
   LenraApplicationActionable({
     required this.child,
@@ -54,6 +59,7 @@ class LenraApplicationActionable extends StatelessWidget {
     required this.onLongPressed,
     required this.onPressedCancel,
     required this.onHovered,
+    required this.submit,
   }) : super();
 
   void onAction(lenra.Listener? action, BuildContext context) {
@@ -65,13 +71,24 @@ class LenraApplicationActionable extends StatelessWidget {
     }
   }
 
+  void onTap(BuildContext context) {
+    if (submit) {
+      context.read<FormProvider?>()?.submitForm();
+    }
+    if (onPressed != null) {
+      context.read<ChannelModel>().sendEvent(OnPressedEvent(code: onPressed!.code)).then(
+            (value) => null,
+          );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.transparent,
       child: InkWell(
         child: child,
-        onTap: () => onAction(onPressed, context),
+        onTap: () => onTap(context),
         onDoubleTap: onDoublePressed != null ? () => onAction(onDoublePressed, context) : null,
         onLongPress: () => onAction(onLongPressed, context),
         onTapCancel: () => onAction(onPressedCancel, context),

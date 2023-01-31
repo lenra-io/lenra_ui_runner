@@ -43,9 +43,9 @@ class App extends StatelessWidget {
             return channelModel.update(socketModel);
           },
         ),
-        ChangeNotifierProxyProvider<ChannelModel, WidgetModel>(
-          create: (context) => ClientWidgetModel(channelModel: context.read<ChannelModel>()),
-          update: (_, channelModel, clientWidgetModel) => clientWidgetModel!,
+        ChangeNotifierProxyProvider<ChannelModel, ViewModel>(
+          create: (context) => ClientViewModel(channelModel: context.read<ChannelModel>()),
+          update: (_, channelModel, clientViewModel) => clientViewModel!,
         ),
       ],
       builder: (BuildContext context, _) {
@@ -62,7 +62,7 @@ class App extends StatelessWidget {
                 context.read<ContextModel>().mediaQueryData = MediaQuery.of(context);
                 //The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
                 context.read<ChannelModel>().createChannel(routeName);
-                (context.read<WidgetModel>() as ClientWidgetModel).setupListeners();
+                (context.read<ViewModel>() as ClientViewModel).setupListeners();
               });
             });
       },

@@ -52,7 +52,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     expect(find.text("foo"), findsOneWidget);
@@ -99,7 +99,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
     await tester.tap(find.byType(InkWell));
     await tester.pump(kDoubleTapMinTime);
@@ -141,7 +141,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
     await tester.tap(find.byType(InkWell));
     await tester.pump(kDoubleTapTimeout);
@@ -183,7 +183,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
     await tester.tap(find.byType(InkWell));
     await tester.pump(kDoubleTapMinTime);
@@ -216,7 +216,7 @@ void main() {
       },
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
     var finder = find.descendant(
       of: find.byType(LenraApplicationActionable),

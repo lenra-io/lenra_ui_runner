@@ -43,7 +43,7 @@ void main() {
       }
     };
 
-    _context!.read<WidgetModel>().replaceUi(ui);
+    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     var dropdownButton = find.byType(LenraDropdownButton);

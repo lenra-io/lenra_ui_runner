@@ -5,7 +5,7 @@ import 'package:lenra_ui_runner/widget_model.dart';
 
 void main() {
   test('Check parser working', () {
-    WidgetModel model = WidgetModel();
+    ViewModel model = ViewModel();
     var ui = {
       "root": {
         "children": [
