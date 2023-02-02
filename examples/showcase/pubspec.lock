@@ -85,8 +85,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "v1.0.0-beta.33"
-      resolved-ref: "09cefae3eab693474a5abe4c301f34bb2624d2a4"
+      ref: "v1.0.0-beta.35"
+      resolved-ref: a086892c18b6b2e572328c499d731f19eed3c3ed
       url: "git@github.com:lenra-io/client-common.git"
     source: git
     version: "1.0.0"
@@ -543,5 +543,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.18.0 <4.0.0"
+  dart: ">=2.18.0 <3.0.0"
   flutter: ">=3.3.0"
