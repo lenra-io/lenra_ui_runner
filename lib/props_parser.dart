@@ -277,6 +277,7 @@ class Parser {
       activeColor: props.containsKey("activeColor") ? parseColor(props["activeColor"]) : null,
       focusColor: props.containsKey("focusColor") ? parseColor(props["focusColor"]) : null,
       hoverColor: props.containsKey("hoverColor") ? parseColor(props["hoverColor"]) : null,
+      unselectedColor: props.containsKey("unselectedColor") ? parseColor(props["unselectedColor"]) : null,
       splashRadius: props.containsKey("splashRadius") ? parseDouble(props["splashRadius"]) : null,
       visualDensity: props.containsKey("visualDensity") ? parseVisualDensity(props["visualDensity"]) : null,
     );
