@@ -54,6 +54,24 @@ class _LenraTextPageState extends UiBuilderState<LenraTextPage, bool> {
               "value": "This is a justified text. This is a justified text.",
               "textAlign": "justify",
             }
+          },
+          {
+            "type": "text",
+            "value": "This text has children",
+            "children": [
+              {
+                "style": {
+                  "color": 0xFFFF0000,
+                },
+                "value": "Like this one"
+              },
+              {
+                "style": {
+                  "color": 0xFF00FF00,
+                },
+                "value": "Or this one"
+              }
+            ]
           }
         ]
       }
