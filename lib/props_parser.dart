@@ -13,7 +13,7 @@ import 'package:lenra_ui_runner/components/lenra_text.dart';
 import 'package:lenra_ui_runner/components/lenra_textfield.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
-import 'package:lenra_ui_runner/lenra_widget.dart';
+import 'package:lenra_ui_runner/io_components/lenra_widget.dart';
 import 'package:lenra_ui_runner/utils/lenra_text_field_style.dart';
 import 'package:lenra_ui_runner/utils/icon_util.dart';
 import 'package:lenra_ui_runner/components/children_widgets.dart';
@@ -138,7 +138,14 @@ class Parser {
   }
 
   static lenra.Listener parseListener(Map<String, dynamic> listener) {
-    return lenra.Listener(listener["code"]);
+    if (listener["code"] != null) {
+      return lenra.ActionListener(listener["code"]);
+    }
+
+    if (listener["navTo"] != null) {
+      return lenra.NavListener(listener["navTo"]);
+    }
+    return lenra.NavListener("/");
   }
 
   static LenraComponentSize parseLenraComponentSize(String size) {

@@ -3,9 +3,8 @@ import 'package:flutter/widgets.dart';
 class ContextModel extends ChangeNotifier {
   Size screenSize = const Size(0, 0);
 
-  set mediaQueryData(MediaQueryData mediaQuery) {
-    screenSize = mediaQuery.size;
-    notifyListeners();
+  ContextModel(BuildContext context) {
+    screenSize = MediaQuery.of(context).size;
   }
 
   Map<String, dynamic> toJson() {

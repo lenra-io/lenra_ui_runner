@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/lenra_application_model.dart';
+import 'package:lenra_ui_runner/models/lenra_application_model.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:provider/provider.dart';
 
