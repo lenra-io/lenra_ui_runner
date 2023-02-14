@@ -75,7 +75,9 @@ class LenraSocketState extends State<LenraSocket> {
 
     _socket!.connect();
     _socket!.onOpen(() {
-      completer.complete(_socket);
+      if (!completer.isCompleted) {
+        completer.complete(_socket);
+      }
     });
     _socket!.onError((error) {
       completer.completeError("Can't connect to the socket.");

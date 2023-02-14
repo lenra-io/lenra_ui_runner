@@ -54,7 +54,9 @@ class LenraRouteState extends State<LenraRoutes> {
     });
 
     _channel!.onResponse((response) {
-      completer.complete(response!["lenraRoutes"] as List<dynamic>);
+      if (!completer.isCompleted) {
+        completer.complete(response!["lenraRoutes"] as List<dynamic>);
+      }
     });
 
     return completer.future;
