@@ -48,10 +48,7 @@ class LenraApplicationMenuItem extends StatelessWidget {
 
   void onMenuItemPressed(BuildContext context) {
     if (onPressed != null) {
-      context.read<ChannelModel>().sendEvent(OnPressedEvent(code: onPressed!.code)).then(
-            //implement loading
-            (value) => null,
-          );
+      onPressed!.run(context, (code) => OnPressedEvent(code: code));
     }
   }
 
