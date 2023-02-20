@@ -24,16 +24,6 @@ class LenraRoutesState extends State<LenraRoutes> {
   void initState() {
     future = loadRoutes(widget.socket);
 
-    _channel!.onNavTo((Map<dynamic, dynamic>? newPage) {
-      if (newPage == null) return;
-      print("RECEIVED ON NAV TO");
-      print("NAV TO PAGE $newPage");
-      // setState(() {
-      //   if (!isInitialized) isInitialized = true;
-      //   ui = newUi;
-      // });
-    });
-
     super.initState();
   }
 
@@ -62,6 +52,17 @@ class LenraRoutesState extends State<LenraRoutes> {
 
     _channel!.onError((error) {
       completer.completeError("Route channel connexion failed");
+    });
+
+    _channel!.onNavTo((Map<dynamic, dynamic>? newPage) {
+      if (newPage == null) return;
+      print("RECEIVED ON NAV TO");
+      print("NAV TO PAGE $newPage");
+      context.read<LenraRouteModel>().navTo(context, newPage["page"]);
+      // setState(() {
+      //   if (!isInitialized) isInitialized = true;
+      //   ui = newUi;
+      // });
     });
 
     _channel!.onResponse((response) {
