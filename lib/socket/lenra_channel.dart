@@ -42,6 +42,14 @@ class LenraChannel {
     return this;
   }
 
+  LenraChannel onNavTo(void Function(Map<dynamic, dynamic>) callback) {
+    _channel.on("navTo", (payload, ref, joinRef) {
+      if (payload == null) return;
+      callback(payload);
+    });
+    return this;
+  }
+
   LenraChannel onAppError(void Function(Map<dynamic, dynamic>) callback) {
     _channel.on("error", (payload, ref, joinRef) {
       if (payload == null) return;

@@ -12,17 +12,28 @@ class LenraRoutes extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return LenraRouteState();
+    return LenraRoutesState();
   }
 }
 
-class LenraRouteState extends State<LenraRoutes> {
+class LenraRoutesState extends State<LenraRoutes> {
   LenraChannel? _channel;
   late Future<List<dynamic>> future;
 
   @override
   void initState() {
     future = loadRoutes(widget.socket);
+
+    _channel!.onNavTo((Map<dynamic, dynamic>? newPage) {
+      if (newPage == null) return;
+      print("RECEIVED ON NAV TO");
+      print("NAV TO PAGE $newPage");
+      // setState(() {
+      //   if (!isInitialized) isInitialized = true;
+      //   ui = newUi;
+      // });
+    });
+
     super.initState();
   }
 
