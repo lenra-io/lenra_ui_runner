@@ -3,6 +3,7 @@ library props_parser;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lenra_components/component/lenra_text.dart';
 import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
@@ -90,6 +91,8 @@ extension ParserExt on Parser {
     ImageRepeat: Parser.parseImageRepeat,
     AutofillHints: Parser.parseAutofillHints,
     TextAlign: Parser.parseTextAlign,
+    LenraText: Parser.parseLenraTextWidget,
+    List<LenraText>: Parser.parseLenraTextWidgets,
   };
 }
 
@@ -274,6 +277,7 @@ class Parser {
       activeColor: props.containsKey("activeColor") ? parseColor(props["activeColor"]) : null,
       focusColor: props.containsKey("focusColor") ? parseColor(props["focusColor"]) : null,
       hoverColor: props.containsKey("hoverColor") ? parseColor(props["hoverColor"]) : null,
+      unselectedColor: props.containsKey("unselectedColor") ? parseColor(props["unselectedColor"]) : null,
       splashRadius: props.containsKey("splashRadius") ? parseDouble(props["splashRadius"]) : null,
       visualDensity: props.containsKey("visualDensity") ? parseVisualDensity(props["visualDensity"]) : null,
     );
@@ -675,6 +679,38 @@ class Parser {
     }
 
     return result;
+  }
+
+  static List<LenraText> parseLenraTextWidgets(List<dynamic> props) {
+    List<LenraText> result = [];
+
+    for (var element in props) {
+      result.add(parseLenraTextChildWidget(element));
+    }
+
+    return result;
+  }
+
+  static LenraText parseLenraTextChildWidget(dynamic text) {
+    return LenraText(
+      text: text.containsKey("value") ? parseString(text["value"]) : "",
+      children: text.containsKey("children") ? parseLenraTextWidgets(text["children"]) : null,
+      style: text.containsKey("style") ? parseTextStyle(text["style"]) : null,
+      locale: text.containsKey("locale") ? parseLocale(text["locale"]) : null,
+      semanticsLabel: text.containsKey("semanticsLabel") ? parseString(text["semanticsLabel"]) : null,
+      spellOut: text.containsKey("spellOut") ? parseBool(text["spellOut"]) : null,
+    );
+  }
+
+  static LenraText parseLenraTextWidget(Map<String, dynamic> props) {
+    String? type = Parser.getType(props);
+    if (type == null) {
+      throw "No type in component. It should never happen";
+    }
+    LenraComponentBuilder? builder = Parser.getComponentBuilder(type);
+    if (builder == null) throw "Componnent mapping does not handle type $type";
+    Map<Symbol, dynamic> parsedProps = Parser.parseProps(props, builder.propsTypes);
+    return builder.build(parsedProps);
   }
 
   static Widget parseWidget(Map<String, dynamic> props) {

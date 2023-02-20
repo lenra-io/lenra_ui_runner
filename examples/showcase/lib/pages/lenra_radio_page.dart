@@ -75,6 +75,24 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
             "type": "flex",
             "crossAxisAlignment": "center",
             "children": [
+              {"type": "text", "value": "Unselected Color"},
+              {
+                "type": "radio",
+                "value": "a",
+                "groupValue": "b",
+                "style": {
+                  "unselectedColor": 0xFFFF0000
+                },
+                "onPressed": {
+                  "code": "myCode",
+                }
+              },
+            ]
+          },
+          {
+            "type": "flex",
+            "crossAxisAlignment": "center",
+            "children": [
               {"type": "text", "value": "Interactive 1"},
               {
                 "type": "radio",
