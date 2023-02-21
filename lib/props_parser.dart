@@ -138,14 +138,7 @@ class Parser {
   }
 
   static lenra.Listener parseListener(Map<String, dynamic> listener) {
-    if (listener["code"] != null) {
-      return lenra.ActionListener(listener["code"]);
-    }
-
-    if (listener["navTo"] != null) {
-      return lenra.NavListener(listener["navTo"]);
-    }
-    return lenra.NavListener("/");
+    return lenra.Listener(listener["code"]);
   }
 
   static LenraComponentSize parseLenraComponentSize(String size) {
