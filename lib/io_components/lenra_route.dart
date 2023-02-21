@@ -14,7 +14,7 @@ import 'package:phoenix_wings/phoenix_wings.dart';
 
 class LenraRoute extends StatefulWidget {
   final String route;
-  LenraRoute(this.route);
+  LenraRoute(this.route, {Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {

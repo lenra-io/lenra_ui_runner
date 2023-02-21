@@ -54,15 +54,9 @@ class LenraRoutesState extends State<LenraRoutes> {
       completer.completeError("Route channel connexion failed");
     });
 
-    _channel!.onNavTo((Map<dynamic, dynamic>? newPage) {
-      if (newPage == null) return;
-      print("RECEIVED ON NAV TO");
-      print("NAV TO PAGE $newPage");
-      context.read<LenraRouteModel>().navTo(context, newPage["page"]);
-      // setState(() {
-      //   if (!isInitialized) isInitialized = true;
-      //   ui = newUi;
-      // });
+    _channel!.onNavTo((Map<dynamic, dynamic>? path) {
+      if (path == null) return;
+      context.read<LenraRouteModel>().navTo(context, path["path"]);
     });
 
     _channel!.onResponse((response) {
