@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:phoenix_wings/html.dart';
+import 'package:phoenix_wings/phoenix_wings.dart';
 
 class MockWebSocket {
   HttpServer? _server;

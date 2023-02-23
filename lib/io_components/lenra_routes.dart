@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/models/lenra_route_model.dart';
 import 'package:lenra_ui_runner/socket/lenra_channel.dart';
-import 'package:phoenix_wings/html.dart';
+import 'package:phoenix_wings/phoenix_wings.dart';
+
 import 'package:provider/provider.dart';
 
 class LenraRoutes extends StatefulWidget {
