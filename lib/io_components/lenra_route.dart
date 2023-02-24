@@ -44,6 +44,7 @@ class LenraRouteState extends State<LenraRoute> {
   }
 
   void setupChannel(PhoenixSocket socket) {
+    print("SETTING UP CHANNEL route:${widget.route}");
     channel = LenraChannel(socket, "route:" + widget.route, {"mode": "lenra"});
 
     channel!.onError((response) {
@@ -55,6 +56,8 @@ class LenraRouteState extends State<LenraRoute> {
     });
 
     channel!.onUi((Map<String, dynamic>? newUi) {
+      print("LENRA ROUTE UI");
+      print(newUi);
       if (newUi == null) return;
       setState(() {
         if (!isInitialized) isInitialized = true;
@@ -63,6 +66,8 @@ class LenraRouteState extends State<LenraRoute> {
     });
 
     channel!.onPatchUi((Map<dynamic, dynamic>? json) {
+      print("LENRA ROUTE PATCH UI");
+      print(json);
       Iterable<Map<String, dynamic>> patches = (json?["patch"] as Iterable).map((e) => e as Map<String, dynamic>);
       setState(() {
         ui = JsonPatch.apply(ui, patches, strict: false);

@@ -44,17 +44,21 @@ class LenraSocketState extends State<LenraSocket> {
 
   @override
   Widget build(BuildContext context) {
+    print("BUILDING LENRA SOCKET");
     return FutureBuilder(
       builder: (context, AsyncSnapshot<PhoenixSocket> snapshot) {
         if (snapshot.hasError) {
+          print(snapshot.error.toString());
           return Text(snapshot.error.toString());
         }
         if (snapshot.connectionState == ConnectionState.done) {
+          print("CONNECTION SUCCESSFUL");
           return LenraSocketIO(
             socket: snapshot.data!,
             child: LenraRoutes(snapshot.data!),
           );
         }
+        print("LOADING...");
         return CircularProgressIndicator();
       },
       future: future,
@@ -62,6 +66,7 @@ class LenraSocketState extends State<LenraSocket> {
   }
 
   Future<PhoenixSocket> connect() {
+    print("LENRA SOCKET CONNECT");
     Completer<PhoenixSocket> completer = Completer();
     Map<String, String> baseParams = {"token": widget.accessToken, "app": widget.appName};
     baseParams.addAll(widget.customParams);
@@ -73,13 +78,17 @@ class LenraSocketState extends State<LenraSocket> {
       );
     });
 
+    print("CONNECTING TO SOCKET");
     _socket!.connect();
+    
     _socket!.onOpen(() {
+      print("OPENED SOCKET");
       if (!completer.isCompleted) {
         completer.complete(_socket);
       }
     });
     _socket!.onError((error) {
+      print("CAN'T CONNECT");
       completer.completeError("Can't connect to the socket.");
     });
 

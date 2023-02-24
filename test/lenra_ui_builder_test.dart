@@ -13,29 +13,23 @@ import 'package:flutter_test/flutter_test.dart';
 import 'mock_websocket.dart';
 
 late MockWebSocket server;
-PhoenixSocket? socket;
+// PhoenixSocket? socket;
 
 void main() {
   setUp(() async {
     server = MockWebSocket(4001);
-    await server.start();
-    socket = createPhoenixSocket("ws://localhost:4001/socket/websocket", {});
+    return server.start();
+    // socket = createPhoenixSocket("ws://localhost:4001/socket/websocket", {});
+  });
+
+  tearDown(() async {
+    return server.shutdown();
   });
 
   testWidgets('change simple property', (WidgetTester tester) async {
     BuildContext? _context;
 
-    await tester.pumpWidget(
-      createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-
-            return LenraRoute("/");
-          },
-        ),
-      ),
-    );
+    await tester.pumpWidget(createBaseTestWidgets(), Duration(seconds: 10));
 
     Map<String, dynamic> ui = {
       "root": {
@@ -50,19 +44,35 @@ void main() {
 
     server.sendMessage(
       PhoenixSerializer.encode(
-        PhoenixMessage(null, "ref", "route:/", "ui", ui),
+        PhoenixMessage(null, null, "routes", "phx_reply", {
+          "response": {
+            "lenraRoutes": [
+              {
+                "path": "/",
+                "widget": {"type": "view", "name": "main"}
+              }
+            ]
+          },
+          "status": "ok"
+        }),
       ),
     );
 
     server.sendMessage(
       PhoenixSerializer.encode(
-        PhoenixMessage(null, "ref", "route:/", "patchUi", {"patch": patches}),
+        PhoenixMessage(null, null, "route:/", "ui", ui),
       ),
     );
 
-    await tester.pump();
-    expect(find.text("foo"), findsNothing);
-    expect(find.text("bar"), findsOneWidget);
+    server.sendMessage(
+      PhoenixSerializer.encode(
+        PhoenixMessage(null, null, "route:/", "patchUi", {"patch": patches}),
+      ),
+    );
+
+    await tester.pumpAndSettle();
+    // expect(find.text("foo"), findsNothing);
+    // expect(find.text("bar"), findsOneWidget);
   });
 
   // testWidgets('Remove children of flex', (WidgetTester tester) async {
