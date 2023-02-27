@@ -91,28 +91,19 @@ class LenraApplicationSlider extends StatelessWidget {
       context.read<FormProvider?>()?.setFormFieldValue(name!, value);
     }
     if (onChanged != null) {
-      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: onChanged!.code, data: ValueData(value))).then(
-            //implement loading
-            (value) => null,
-          );
+      onChanged!.run(context, (code) => OnChangedEvent(code: code, data: ValueData(value)));
     }
   }
 
   void onSliderChangeEnd(BuildContext context, double value) {
     if (onChangeEnd != null) {
-      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: onChanged!.code, data: ValueData(value))).then(
-            //implement loading
-            (value) => null,
-          );
+      onChangeEnd!.run(context, (code) => OnChangedEvent(code: code, data: ValueData(value)));
     }
   }
 
   void onSliderChangeStart(BuildContext context, double value) {
     if (onChangeStart != null) {
-      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: onChanged!.code, data: ValueData(value))).then(
-            //implement loading
-            (value) => null,
-          );
+      onChangeStart!.run(context, (code) => OnChangedEvent(code: code, data: ValueData(value)));
     }
   }
 

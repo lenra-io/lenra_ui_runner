@@ -5,5 +5,9 @@ class LenraApplicationModel extends ChangeNotifier {
   final String applicationName;
   final String accessToken;
 
-  LenraApplicationModel(this.httpEndpoint, this.applicationName, this.accessToken);
+  LenraApplicationModel({
+    required this.httpEndpoint,
+    required this.applicationName,
+    required this.accessToken,
+  });
 }

@@ -89,10 +89,7 @@ class LenraApplicationRadio extends StatelessWidget {
 
   void onRadioPressed(BuildContext context, String value) {
     if (onPressed != null) {
-      context.read<ChannelModel>().sendEvent(OnChangedEvent(code: onPressed!.code, data: ValueData(value))).then(
-            //implement loading
-            (value) => null,
-          );
+      onPressed!.run(context, (code) => OnChangedEvent(code: code, data: ValueData(value)));
     }
   }
 

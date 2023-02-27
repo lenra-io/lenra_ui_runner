@@ -8,6 +8,7 @@ import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
+import 'package:lenra_ui_runner/io_components/lenra_route.dart';
 import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:lenra_ui_runner/utils/lenra_text_field_style.dart';
 import 'package:provider/provider.dart';
@@ -202,10 +203,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
   _LenraApplicationTextfieldState() : _focusNode = FocusNode();
 
   void handleTimeout(BuildContext context, String value) {
-    context.read<ChannelModel>().sendEvent(OnChangedEvent(code: widget.onChanged!.code, data: ValueData(value))).then(
-          //implement loading
-          (value) => null,
-        );
+    widget.onChanged!.run(context, (code) => OnChangedEvent(code: code, data: ValueData(value)));
   }
 
   void onTextFieldSubmitted(BuildContext context, String value) {
@@ -308,7 +306,7 @@ class _AtLeastTimeout extends _TimeoutStrategy {
   }) : super(duration: duration);
 
   void _handleTimeout(BuildContext context, String value, String code) {
-    context.read<ChannelModel>().sendEvent(OnChangedEvent(code: code, data: ValueData(value))).then(
+    LenraRoute.of(context).sendEvent(OnChangedEvent(code: code, data: ValueData(value))).then(
           //implement loading
           (value) => null,
         );
@@ -333,7 +331,7 @@ class _AtMostTimeout extends _TimeoutStrategy {
 
   void _handleTimeout(BuildContext context, String code) {
     context
-        .read<ChannelModel>()
+        .read<LenraRouteIO>()
         .sendEvent(
           OnChangedEvent(code: code, data: ValueData(currentValue)),
         )
