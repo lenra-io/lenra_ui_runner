@@ -23,4 +23,4 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
-        run: npx semantic-release@18
+        run: npx semantic-release@20
