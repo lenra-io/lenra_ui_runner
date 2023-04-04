@@ -8,6 +8,7 @@ import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_components/theme/lenra_toggle_style.dart';
+import 'package:lenra_ui_runner/components/lenra_carousel.dart';
 import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/lenra_text.dart';
 import 'package:lenra_ui_runner/components/lenra_textfield.dart';
@@ -119,6 +120,7 @@ class Parser {
     'overlayEntry': LenraOverlayEntryBuilder(),
     'icon': LenraIconBuilder(),
     'form': LenraFormBuilder(),
+    'carousel': LenraCarouselBuilder(),
   };
 
   static String? getType(Map<String, dynamic> json) {
