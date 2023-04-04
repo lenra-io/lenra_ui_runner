@@ -1,5 +1,6 @@
 library props_parser;
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -94,6 +95,8 @@ extension ParserExt on Parser {
     TextAlign: Parser.parseTextAlign,
     LenraText: Parser.parseLenraTextWidget,
     List<LenraText>: Parser.parseLenraTextWidgets,
+    CarouselOptions: Parser.parseCarouselOptions,
+    Duration: Parser.parseDuration(),
   };
 }
 
@@ -1129,5 +1132,41 @@ class Parser {
       default:
         return MaterialTapTargetSize.padded;
     }
+  }
+
+  static CarouselOptions parseCarouselOptions(Map<String, dynamic> props) {
+    return CarouselOptions(
+      height: props.containsKey("height") ? parseDouble(props["height"]) : null,
+      enlargeCenterPage: props.containsKey("enlargeCenterPage") ? parseBool(props["enlargeCenterPage"]) : null,
+      autoPlay: props.containsKey("autoPlay") ? parseBool(props["autoPlay"])! : false,
+      autoPlayInterval:
+          props.containsKey("autoPlayInterval") ? parseDuration(props["autoPlayInterval"]) : const Duration(seconds: 4),
+      autoPlayAnimationDuration: props.containsKey("autoPlayAnimationDuration")
+          ? parseDuration(props["autoPlayAnimationDuration"])
+          : const Duration(milliseconds: 800),
+      autoPlayCurve: props.containsKey("autoPlayCurve") ? parseCurve(props["autoPlayCurve"]) : null,
+      pauseAutoPlayOnTouch: props.containsKey("pauseAutoPlayOnTouch") ? parseBool(props["pauseAutoPlayOnTouch"]) : null,
+      aspectRatio: props.containsKey("aspectRatio") ? parseDouble(props["aspectRatio"]) : null,
+      initialPage: props.containsKey("initialPage") ? parseInt(props["initialPage"]) : null,
+      enableInfiniteScroll: props.containsKey("enableInfiniteScroll") ? parseBool(props["enableInfiniteScroll"]) : null,
+      reverse: props.containsKey("reverse") ? parseBool(props["reverse"]) : null,
+      scrollDirection: props.containsKey("scrollDirection") ? parseAxis(props["scrollDirection"]) : null,
+      viewportFraction: props.containsKey("viewportFraction") ? parseDouble(props["viewportFraction"]) : null,
+      onPageChanged: props.containsKey("onPageChanged") ? parseVoidCallback(props["onPageChanged"]) : null,
+      scrollPhysics: props.containsKey("scrollPhysics") ? parseScrollPhysics(props["scrollPhysics"]) : null,
+      enlargeStrategy:
+          props.containsKey("enlargeStrategy") ? parseViewportFractionOffset(props["enlargeStrategy"]) : null,
+    );
+  }
+
+  static Duration parseDuration(Map<String, dynamic> props) {
+    return Duration(
+      days: props.containsKey("days") ? parseInteger(props["days"]) : 0,
+      hours: props.containsKey("hours") ? parseInteger(props["hours"]) : 0,
+      minutes: props.containsKey("minutes") ? parseInteger(props["minutes"]) : 0,
+      seconds: props.containsKey("seconds") ? parseInteger(props["seconds"]) : 0,
+      milliseconds: props.containsKey("milliseconds") ? parseInteger(props["milliseconds"]) : 0,
+      microseconds: props.containsKey("microseconds") ? parseInteger(props["microseconds"]) : 0,
+    );
   }
 }
