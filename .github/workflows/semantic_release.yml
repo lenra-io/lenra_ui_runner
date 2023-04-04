@@ -18,9 +18,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "18"
-      - name: Setup node deps
-        run: npm i conventional-changelog-conventionalcommits@5 -D
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
-        run: npx semantic-release@20
+        run: npx --force -p conventional-changelog-conventionalcommits@5 -p https://github.com/Tlepel/semantic-release.git#fix-versions-share-head semantic-release
