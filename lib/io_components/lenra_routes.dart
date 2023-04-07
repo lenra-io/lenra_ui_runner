@@ -46,7 +46,6 @@ class LenraRoutesState extends State<LenraRoutes> {
   }
 
   Future<List<dynamic>> loadRoutes(PhoenixSocket socket) {
-    print("LOADING ROUTES");
     Completer<List<dynamic>> completer = Completer();
     setState(() {
       _channel = LenraChannel(socket, "routes", {"mode": "lenra"});
@@ -57,15 +56,11 @@ class LenraRoutesState extends State<LenraRoutes> {
     });
 
     _channel!.onNavTo((Map<dynamic, dynamic>? path) {
-      print("NAV TO");
-      print(path);
       if (path == null) return;
       context.read<LenraRouteModel>().navTo(context, path["path"]);
     });
 
     _channel!.onResponse((response) {
-      print("LENRA ROUTES ON RESPONSE");
-      print(response);
       if (!completer.isCompleted) {
         completer.complete(response!["lenraRoutes"] as List<dynamic>);
       }

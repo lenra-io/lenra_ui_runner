@@ -41,7 +41,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("App rebuild");
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<LenraApplicationModel>(

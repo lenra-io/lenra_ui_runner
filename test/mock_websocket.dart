@@ -18,16 +18,11 @@ class MockWebSocket {
   }
 
   _serve() async {
-    print("SERVING");
     await for (HttpRequest req in _server!) {
-      print("SERVE AFTER AWAIT");
-      print(req.uri.path);
       if (req.uri.path == '/socket/websocket') {
         _socket = await WebSocketTransformer.upgrade(req);
         _socket!.listen((msg) {
           final message = PhoenixSerializer.decode(msg);
-          print("RECEIVED MESSAGE");
-          print(message);
           if (message.event == 'heartbeat') {
             heartbeatMessageReceived = msg;
             handleHeartbeat(message);
@@ -65,11 +60,7 @@ class MockWebSocket {
   }
 
   sendMessage(String msg) {
-    print("msg");
-    print(msg);
-    print(_socket?.readyState);
     if (_socket?.readyState != WebSocket.open) {
-      print("DOES NOT SEND MESSAGE");
       return;
     }
     _socket!.add(msg);
