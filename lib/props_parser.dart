@@ -96,7 +96,7 @@ extension ParserExt on Parser {
     LenraText: Parser.parseLenraTextWidget,
     List<LenraText>: Parser.parseLenraTextWidgets,
     CarouselOptions: Parser.parseCarouselOptions,
-    Duration: Parser.parseDuration(),
+    Duration: Parser.parseDuration,
   };
 }
 
@@ -1137,25 +1137,25 @@ class Parser {
   static CarouselOptions parseCarouselOptions(Map<String, dynamic> props) {
     return CarouselOptions(
       height: props.containsKey("height") ? parseDouble(props["height"]) : null,
-      enlargeCenterPage: props.containsKey("enlargeCenterPage") ? parseBool(props["enlargeCenterPage"]) : null,
+      enlargeCenterPage: props.containsKey("enlargeCenterPage") ? parseBool(props["enlargeCenterPage"]) : false,
       autoPlay: props.containsKey("autoPlay") ? parseBool(props["autoPlay"])! : false,
       autoPlayInterval:
           props.containsKey("autoPlayInterval") ? parseDuration(props["autoPlayInterval"]) : const Duration(seconds: 4),
       autoPlayAnimationDuration: props.containsKey("autoPlayAnimationDuration")
           ? parseDuration(props["autoPlayAnimationDuration"])
           : const Duration(milliseconds: 800),
-      autoPlayCurve: props.containsKey("autoPlayCurve") ? parseCurve(props["autoPlayCurve"]) : null,
-      pauseAutoPlayOnTouch: props.containsKey("pauseAutoPlayOnTouch") ? parseBool(props["pauseAutoPlayOnTouch"]) : null,
-      aspectRatio: props.containsKey("aspectRatio") ? parseDouble(props["aspectRatio"]) : null,
-      initialPage: props.containsKey("initialPage") ? parseInt(props["initialPage"]) : null,
-      enableInfiniteScroll: props.containsKey("enableInfiniteScroll") ? parseBool(props["enableInfiniteScroll"]) : null,
-      reverse: props.containsKey("reverse") ? parseBool(props["reverse"]) : null,
-      scrollDirection: props.containsKey("scrollDirection") ? parseAxis(props["scrollDirection"]) : null,
-      viewportFraction: props.containsKey("viewportFraction") ? parseDouble(props["viewportFraction"]) : null,
-      onPageChanged: props.containsKey("onPageChanged") ? parseVoidCallback(props["onPageChanged"]) : null,
-      scrollPhysics: props.containsKey("scrollPhysics") ? parseScrollPhysics(props["scrollPhysics"]) : null,
-      enlargeStrategy:
-          props.containsKey("enlargeStrategy") ? parseViewportFractionOffset(props["enlargeStrategy"]) : null,
+      pauseAutoPlayOnTouch:
+          props.containsKey("pauseAutoPlayOnTouch") ? parseBool(props["pauseAutoPlayOnTouch"])! : true,
+      aspectRatio: props.containsKey("aspectRatio") ? parseDouble(props["aspectRatio"]) : 16 / 9,
+      initialPage: props.containsKey("initialPage") ? parseInteger(props["initialPage"]) : 0,
+      enableInfiniteScroll:
+          props.containsKey("enableInfiniteScroll") ? parseBool(props["enableInfiniteScroll"])! : true,
+      reverse: props.containsKey("reverse") ? parseBool(props["reverse"])! : false,
+      scrollDirection: props.containsKey("scrollDirection") ? parseAxis(props["scrollDirection"]) : Axis.horizontal,
+      viewportFraction: props.containsKey("viewportFraction") ? parseDouble(props["viewportFraction"]) : 0.8,
+      enlargeStrategy: props.containsKey("enlargeStrategy")
+          ? parseCenterPageEnlargeStrategy(props["enlargeStrategy"])
+          : CenterPageEnlargeStrategy.scale,
     );
   }
 
@@ -1168,5 +1168,18 @@ class Parser {
       milliseconds: props.containsKey("milliseconds") ? parseInteger(props["milliseconds"]) : 0,
       microseconds: props.containsKey("microseconds") ? parseInteger(props["microseconds"]) : 0,
     );
+  }
+
+  static CenterPageEnlargeStrategy parseCenterPageEnlargeStrategy(String value) {
+    switch (value) {
+      case "height":
+        return CenterPageEnlargeStrategy.height;
+      case "scale":
+        return CenterPageEnlargeStrategy.scale;
+      case "zoom":
+        return CenterPageEnlargeStrategy.zoom;
+      default:
+        return CenterPageEnlargeStrategy.scale;
+    }
   }
 }
