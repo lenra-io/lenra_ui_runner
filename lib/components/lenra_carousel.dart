@@ -26,7 +26,7 @@ class LenraCarouselBuilder extends LenraComponentBuilder<LenraApplicationCarouse
 
 class LenraApplicationCarousel extends StatelessWidget {
   final List<Widget> children;
-  final CarouselOptions options;
+  final CarouselOptions? options;
 
   LenraApplicationCarousel({
     required this.children,
@@ -37,7 +37,7 @@ class LenraApplicationCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
       items: children,
-      options: options,
+      options: options ?? CarouselOptions(),
     );
   }
 }
