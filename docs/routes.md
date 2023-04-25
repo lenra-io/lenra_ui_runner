@@ -45,3 +45,15 @@ The `LenraRoute` widget opens a new channel with a name such as `route:/foo`, wh
 ## Event handling
 
 When interacting with a component, such as a button, an event is sent via the `sendEvent` method to the furthest `LenraRouteIO` widget, which is instantiated in the build method of `LenraRoute`. This sends a message on the `route:/foo` channel with the event name as `run` and the corresponding listener's data in JSON format. The server responds with a new UI, which triggers a reload of the `LenraRoute` widget with the updated UI.
+
+## TLDR 
+
+1. `App` widget is used to open the app and has parameters related to routing.
+2. `LenraSocket` handles the connection with the server's WebSocket (Phoenix socket).
+3. If the connection with the Phoenix socket is successful, `LenraRoutes` widget is called, which opens a new channel (`routes`) in the socket to receive app routes from the app manifest.
+4. `LenraRoutes` listens for `navTo` event on the `routes` channel and calls `LenraRouteModel.navTo()` when received.
+5. If the connection to the `routes` channel is successful, the `routeWidget` of `App` widget is called, which is the `LenraRoute` widget used as the default route widget.
+6. `LenraRoute` opens a new channel with a name such as `route:/foo`, depending on the current route, and listens for `onUi` and `onPatchUi` events to receive and patch the UI.
+7. `LenraWidget` is called with the current UI in the state of `LenraRoute`.
+8. When interacting with a component, an event is sent via `sendEvent` method to the furthest `LenraRouteIO` widget, which sends a message on the `route:/foo` channel with the event name and data.
+9. The server responds with a new UI, triggering a reload of `LenraRoute` widget with the updated UI.
