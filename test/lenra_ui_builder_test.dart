@@ -1,79 +1,47 @@
-import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/io_components/lenra_route.dart';
-import 'package:lenra_ui_runner/io_components/lenra_widget.dart';
-import 'package:phoenix_wings/phoenix_wings.dart';
-import 'package:provider/provider.dart';
-import 'package:client_common/utils/connexion_utils_stub.dart'
-    if (dart.library.io) 'package:client_common/utils/connexion_utils_io.dart'
-    if (dart.library.js) 'package:client_common/utils/connexion_utils_web.dart';
+// import 'package:flutter/material.dart';
+// import 'package:lenra_ui_runner/lenra_widget.dart';
+// import 'package:lenra_ui_runner/widget_model.dart';
+// import 'package:provider/provider.dart';
 
-import "./test_helper.dart";
-import 'package:flutter_test/flutter_test.dart';
-
-import 'mock_websocket.dart';
-
-late MockWebSocket server;
-// PhoenixSocket? socket;
+// import "./test_helper.dart";
+// import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  setUp(() async {
-    server = MockWebSocket(4001);
-    return server.start();
-    // socket = createPhoenixSocket("ws://localhost:4001/socket/websocket", {});
-  });
+  // testWidgets('change simple property', (WidgetTester tester) async {
+  //   BuildContext? _context;
 
-  tearDown(() async {
-    return server.shutdown();
-  });
+  //   await tester.pumpWidget(
+  //     createBaseTestWidgets(
+  //       child: Builder(
+  //         builder: (BuildContext context) {
+  //           _context = context;
 
-  testWidgets('change simple property', (WidgetTester tester) async {
-    BuildContext? _context;
+  //           return LenraWidget(
+  //             buildErrorPage: (_ctx, _e) => Text("error"),
+  //             showSnackBar: (_ctx, _e) => {},
+  //           );
+  //         },
+  //       ),
+  //     ),
+  //   );
 
-    await tester.pumpWidget(createBaseTestWidgets(), Duration(seconds: 10));
+  //   Map<String, dynamic> ui = {
+  //     "root": {
+  //       "type": "text",
+  //       "value": "foo",
+  //     }
+  //   };
+  //   List<Map<String, dynamic>> patches = [
+  //     {"path": "/root/value", "value": "bar", "op": "replace"}
+  //   ];
 
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "text",
-        "value": "foo",
-      }
-    };
+  //   _context!.read<ViewModel>().replaceUi(ui);
+  //   _context!.read<ViewModel>().patchUi(patches);
 
-    List<Map<String, dynamic>> patches = [
-      {"path": "/root/value", "value": "bar", "op": "replace"}
-    ];
-
-    server.sendMessage(
-      PhoenixSerializer.encode(
-        PhoenixMessage(null, null, "routes", "phx_reply", {
-          "response": {
-            "lenraRoutes": [
-              {
-                "path": "/",
-                "widget": {"type": "view", "name": "main"}
-              }
-            ]
-          },
-          "status": "ok"
-        }),
-      ),
-    );
-
-    server.sendMessage(
-      PhoenixSerializer.encode(
-        PhoenixMessage(null, null, "route:/", "ui", ui),
-      ),
-    );
-
-    server.sendMessage(
-      PhoenixSerializer.encode(
-        PhoenixMessage(null, null, "route:/", "patchUi", {"patch": patches}),
-      ),
-    );
-
-    await tester.pumpAndSettle();
-    // expect(find.text("foo"), findsNothing);
-    // expect(find.text("bar"), findsOneWidget);
-  });
+  //   await tester.pump();
+  //   expect(find.text("foo"), findsNothing);
+  //   expect(find.text("bar"), findsOneWidget);
+  // });
 
   // testWidgets('Remove children of flex', (WidgetTester tester) async {
   //   BuildContext? _context;

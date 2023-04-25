@@ -306,7 +306,7 @@ class _AtLeastTimeout extends _TimeoutStrategy {
   }) : super(duration: duration);
 
   void _handleTimeout(BuildContext context, String value, String code) {
-    LenraRoute.of(context).sendEvent(OnChangedEvent(code: code, data: ValueData(value))).then(
+    EventManager.of(context).sendEvent(OnChangedEvent(code: code, data: ValueData(value))).then(
           //implement loading
           (value) => null,
         );
@@ -331,7 +331,7 @@ class _AtMostTimeout extends _TimeoutStrategy {
 
   void _handleTimeout(BuildContext context, String code) {
     context
-        .read<LenraRouteIO>()
+        .read<EventManager>()
         .sendEvent(
           OnChangedEvent(code: code, data: ValueData(currentValue)),
         )

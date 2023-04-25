@@ -1,85 +1,72 @@
-// import 'package:flutter/material.dart';
-// import 'package:lenra_components/component/lenra_checkbox.dart';
-// import 'package:lenra_ui_runner/models/channel_model.dart';
-// import 'package:lenra_ui_runner/widget_model.dart';
-// import 'package:provider/provider.dart';
-// import '../mock_channel_model.dart';
-// import "../test_helper.dart";
-// import 'package:flutter_test/flutter_test.dart';
-// import 'package:lenra_ui_runner/lenra_ui_runner.dart';
+import 'package:flutter/material.dart';
+import 'package:lenra_components/component/lenra_checkbox.dart';
+import "../test_helper.dart";
+import 'package:flutter_test/flutter_test.dart';
+import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
-//   testWidgets('Basic LenraCheckbox should work properly', (WidgetTester tester) async {
-//     BuildContext? _context;
+  testWidgets('Basic LenraCheckbox should work properly', (WidgetTester tester) async {
+    LenraWidget widget = LenraWidget(
+      buildErrorPage: (_ctx, _e) => Text("error"),
+      showSnackBar: (_ctx, _e) => {},
+      error: null,
+      ui: {
+        "root": {
+          "type": "checkbox",
+          "value": true,
+          "onPressed": {"code": "check"}
+        }
+      },
+    );
 
-//     await tester.pumpWidget(
-//       createBaseTestWidgets(
-//         child: Builder(
-//           builder: (BuildContext context) {
-//             _context = context;
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        child: widget,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-//             return LenraWidget(
-//               buildErrorPage: (_ctx, _e) => Text("error"),
-//               showSnackBar: (_ctx, _e) => {},
-//             );
-//           },
-//         ),
-//       ),
-//     );
+    await tester.pump();
 
-//     Map<String, dynamic> ui = {
-//       "root": {
-//         "type": "checkbox",
-//         "value": true,
-//         "onPressed": {"code": "check"}
-//       }
-//     };
+    var checkbox = tester.widget<Checkbox>(find.byType(Checkbox));
+    expect(find.byType(Checkbox), findsOneWidget);
+    expect(checkbox.value, true);
+  });
 
-//     _context!.read<ViewModel>().replaceUi(ui);
-//     await tester.pump();
+  testWidgets('LenraCheckbox onPressed should work properly', (WidgetTester tester) async {
+    bool hasBeenNotified = false;
 
-//     var checkbox = tester.widget<Checkbox>(find.byType(Checkbox));
-//     expect(find.byType(Checkbox), findsOneWidget);
-//     expect(checkbox.value, true);
-//   });
+    LenraWidget widget = LenraWidget(
+      buildErrorPage: (_ctx, _e) => Text("error"),
+      showSnackBar: (_ctx, _e) => {},
+      error: null,
+      ui: {
+        "root": {
+          "type": "checkbox",
+          "value": true,
+          "onPressed": {"code": "check"}
+        }
+      },
+    );
 
-//   testWidgets('LenraCheckbox onPressed should work properly', (WidgetTester tester) async {
-//     BuildContext? _context;
-//     bool hasBeenNotified = false;
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        child: widget,
+        sendEventFn: (_) {
+          hasBeenNotified = true;
+          return Future.value(true);
+        },
+      ),
+    );
 
-//     await tester.pumpWidget(
-//       createBaseTestWidgets(
-//         child: Builder(
-//           builder: (BuildContext context) {
-//             _context = context;
-//             (Provider.of<ChannelModel>(context, listen: false) as MockChannelModel).setCallBack((value) {
-//               hasBeenNotified = true;
-//             });
+    await tester.pump();
 
-//             return LenraWidget(
-//               buildErrorPage: (_ctx, _e) => Text("error"),
-//               showSnackBar: (_ctx, _e) => {},
-//             );
-//           },
-//         ),
-//       ),
-//     );
-
-//     Map<String, dynamic> ui = {
-//       "root": {
-//         "type": "checkbox",
-//         "value": true,
-//         "onPressed": {"code": "check"}
-//       }
-//     };
-
-//     _context!.read<ViewModel>().replaceUi(ui);
-//     await tester.pump();
-
-//     var checkbox = tester.widget<Checkbox>(find.byType(Checkbox));
-//     expect(find.byType(Checkbox), findsOneWidget);
-//     expect(checkbox.value, true);
-//     await tester.tap(find.byType(LenraCheckbox));
-//     expect(hasBeenNotified, true);
-//   });
+    var checkbox = tester.widget<Checkbox>(find.byType(Checkbox));
+    expect(find.byType(Checkbox), findsOneWidget);
+    expect(checkbox.value, true);
+    await tester.tap(find.byType(LenraCheckbox));
+    expect(hasBeenNotified, true);
+  });
 }
