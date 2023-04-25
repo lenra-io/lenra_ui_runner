@@ -6,22 +6,15 @@ import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('Basic LenraCheckbox should work properly', (WidgetTester tester) async {
-    LenraWidget widget = LenraWidget(
-      buildErrorPage: (_ctx, _e) => Text("error"),
-      showSnackBar: (_ctx, _e) => {},
-      error: null,
-      ui: {
-        "root": {
-          "type": "checkbox",
-          "value": true,
-          "onPressed": {"code": "check"}
-        }
-      },
-    );
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: widget,
+        ui: {
+          "root": {
+            "type": "checkbox",
+            "value": true,
+            "onPressed": {"code": "check"}
+          }
+        },
         sendEventFn: (_) {
           return Future.value(true);
         },
@@ -38,22 +31,15 @@ void main() {
   testWidgets('LenraCheckbox onPressed should work properly', (WidgetTester tester) async {
     bool hasBeenNotified = false;
 
-    LenraWidget widget = LenraWidget(
-      buildErrorPage: (_ctx, _e) => Text("error"),
-      showSnackBar: (_ctx, _e) => {},
-      error: null,
-      ui: {
-        "root": {
-          "type": "checkbox",
-          "value": true,
-          "onPressed": {"code": "check"}
-        }
-      },
-    );
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: widget,
+        ui: {
+          "root": {
+            "type": "checkbox",
+            "value": true,
+            "onPressed": {"code": "check"}
+          }
+        },
         sendEventFn: (_) {
           hasBeenNotified = true;
           return Future.value(true);

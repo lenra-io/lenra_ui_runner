@@ -4,7 +4,6 @@ import 'package:lenra_ui_runner/components/lenra_actionable.dart';
 
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   late int eventsNb;
@@ -16,27 +15,20 @@ void main() {
   testWidgets('Check correctly built and listener working', (WidgetTester tester) async {
     eventsNb = 0;
 
-    LenraWidget widget = LenraWidget(
-      buildErrorPage: (_ctx, _e) => Text("error"),
-      showSnackBar: (_ctx, _e) => {},
-      ui: {
-        "root": {
-          "type": "actionable",
-          "child": {
-            "type": "text",
-            "value": "foo",
-          },
-          "onDoublePressed": {
-            "code": "doublePressed",
-          }
-        }
-      },
-      error: null,
-    );
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: widget,
+        ui: {
+          "root": {
+            "type": "actionable",
+            "child": {
+              "type": "text",
+              "value": "foo",
+            },
+            "onDoublePressed": {
+              "code": "doublePressed",
+            }
+          }
+        },
         sendEventFn: (_) {
           eventsNb += 1;
           return Future.value(true);
@@ -56,27 +48,20 @@ void main() {
   });
 
   testWidgets('onPressed working', (WidgetTester tester) async {
-    LenraWidget widget = LenraWidget(
-      buildErrorPage: (_ctx, _e) => Text("error"),
-      showSnackBar: (_ctx, _e) => {},
-      ui: {
-        "root": {
-          "type": "actionable",
-          "child": {
-            "type": "text",
-            "value": "foo",
-          },
-          "onPressed": {
-            "code": "pressed",
-          }
-        }
-      },
-      error: null,
-    );
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: widget,
+        ui: {
+          "root": {
+            "type": "actionable",
+            "child": {
+              "type": "text",
+              "value": "foo",
+            },
+            "onPressed": {
+              "code": "pressed",
+            }
+          }
+        },
         sendEventFn: (_) {
           eventsNb += 1;
           return Future.value(true);
@@ -91,28 +76,21 @@ void main() {
   });
 
   testWidgets('onPressed does not conflict with onDoublePressed', (WidgetTester tester) async {
-    LenraWidget widget = LenraWidget(
-      buildErrorPage: (_ctx, _e) => Text("error"),
-      showSnackBar: (_ctx, _e) => {},
-      ui: {
-        "root": {
-          "type": "actionable",
-          "child": {
-            "type": "text",
-            "value": "foo",
-          },
-          "onPressed": {
-            "code": "pressed",
-          },
-          "onDoublePressed": {"code": "doublePressed"}
-        }
-      },
-      error: null,
-    );
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: widget,
+        ui: {
+          "root": {
+            "type": "actionable",
+            "child": {
+              "type": "text",
+              "value": "foo",
+            },
+            "onPressed": {
+              "code": "pressed",
+            },
+            "onDoublePressed": {"code": "doublePressed"}
+          }
+        },
         sendEventFn: (_) {
           eventsNb += 1;
           return Future.value(true);
@@ -127,28 +105,21 @@ void main() {
   });
 
   testWidgets('onDoublePressed does not conflict with onPressed', (WidgetTester tester) async {
-    LenraWidget widget = LenraWidget(
-      buildErrorPage: (_ctx, _e) => Text("error"),
-      showSnackBar: (_ctx, _e) => {},
-      ui: {
-        "root": {
-          "type": "actionable",
-          "child": {
-            "type": "text",
-            "value": "foo",
-          },
-          "onPressed": {
-            "code": "pressed",
-          },
-          "onDoublePressed": {"code": "doublePressed"}
-        }
-      },
-      error: null,
-    );
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: widget,
+        ui: {
+          "root": {
+            "type": "actionable",
+            "child": {
+              "type": "text",
+              "value": "foo",
+            },
+            "onPressed": {
+              "code": "pressed",
+            },
+            "onDoublePressed": {"code": "doublePressed"}
+          }
+        },
         sendEventFn: (_) {
           eventsNb += 1;
           return Future.value(true);
@@ -164,21 +135,14 @@ void main() {
     expect(eventsNb, 1);
   });
   testWidgets('Test default Color for the actionable', (WidgetTester tester) async {
-    LenraWidget widget = LenraWidget(
-      buildErrorPage: (_ctx, _e) => Text("error"),
-      showSnackBar: (_ctx, _e) => {},
-      ui: {
-        "root": {
-          "type": "actionable",
-          "child": {"type": "text", "value": "Purple"}
-        },
-      },
-      error: null,
-    );
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: widget,
+        ui: {
+          "root": {
+            "type": "actionable",
+            "child": {"type": "text", "value": "Purple"}
+          },
+        },
         sendEventFn: (_) {
           eventsNb += 1;
           return Future.value(true);
