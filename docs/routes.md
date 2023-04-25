@@ -29,7 +29,7 @@ If the connection with the Phoenix socket is successful, the `LenraRoutes` widge
 
 Note: It appears that the result (i.e., the list of routes) of the connection to the `routes` channel is not used in `lenra_ui_runner`. Perhaps there could be some error handling implemented for cases when trying to redirect to an unknown route, to avoid sending a request to the server that would result in an error response.
 
-If the connection to the `routes` channel is successful, the `routeWidget` of the `App` widget is be called. The `routeWidget` is the `LenraRoute` widget, which is used as the default route widget. For example in the `devtool` :
+If the connection to the `routes` channel is successful, the `routeWidget` of the `App` widget is called. The `routeWidget` is the `LenraRoute` widget, which is used as the default route widget. For example in the `devtool` :
 ```flutter
 routeWidget: LenraRoute(
     "/${state.params['path']!}",
