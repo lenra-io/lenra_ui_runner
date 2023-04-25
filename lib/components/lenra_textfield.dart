@@ -208,10 +208,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
 
   void onTextFieldSubmitted(BuildContext context, String value) {
     if (widget.onSubmitted != null) {
-      context
-          .read<ChannelModel>()
-          .sendEvent(OnChangedEvent(code: widget.onSubmitted!.code, data: ValueData(value)))
-          .then(
+      EventManager.of(context).sendEvent(OnChangedEvent(code: widget.onSubmitted!.code, data: ValueData(value))).then(
             //implement loading
             (value) => null,
           );
@@ -220,8 +217,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
 
   void onAppPrivateCommandReceived(BuildContext context, String action, Map<String, dynamic> data) {
     if (widget.onAppPrivateCommand != null) {
-      context
-          .read<ChannelModel>()
+      EventManager.of(context)
           .sendEvent(OnChangedEvent(code: widget.onAppPrivateCommand!.code, data: ValueData(action)))
           .then(
             //implement loading
@@ -330,8 +326,7 @@ class _AtMostTimeout extends _TimeoutStrategy {
   }) : super(duration: duration);
 
   void _handleTimeout(BuildContext context, String code) {
-    context
-        .read<EventManager>()
+    EventManager.of(context)
         .sendEvent(
           OnChangedEvent(code: code, data: ValueData(currentValue)),
         )

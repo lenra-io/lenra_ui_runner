@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_checkbox.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('Basic LenraCheckbox should work properly', (WidgetTester tester) async {
