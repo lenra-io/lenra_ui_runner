@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
-import 'package:lenra_ui_runner/lenra_widget.dart';
+import 'package:lenra_ui_runner/io_components/lenra_widget.dart';
 
 import 'package:provider/provider.dart';
 
@@ -17,23 +17,18 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
 
   @override
   void initState() {
+    context.read<UiBuilderModel>().initData(getData);
+    context.read<UiBuilderModel>().initUi(getUi);
     super.initState();
-
-    /// replaceUi is called after the first frame is rendered because the provider is only accessible at that point.
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<ViewModel>().replaceUi(getUi(data));
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    context.read<UiBuilderModel>().initData(getData);
-    context.read<UiBuilderModel>().initUi(getUi);
     return LenraWidget(
-      buildErrorPage: (_context, _error) {
-        return Text("Error");
-      },
-      showSnackBar: (_context, _errors) {},
+      buildErrorPage: (_ctx, _e) => Text("error"),
+      showSnackBar: (_ctx, _e) => {},
+      error: null,
+      ui: context.select<UiBuilderModel, Map<String, dynamic>>((value) => value.ui),
     );
   }
 }
