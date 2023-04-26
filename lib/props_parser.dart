@@ -1,5 +1,6 @@
 library props_parser;
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,6 +9,7 @@ import 'package:lenra_components/theme/lenra_radio_style.dart';
 import 'package:lenra_components/theme/lenra_slider_style.dart';
 import 'package:lenra_components/theme/lenra_theme_data.dart';
 import 'package:lenra_components/theme/lenra_toggle_style.dart';
+import 'package:lenra_ui_runner/components/lenra_carousel.dart';
 import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/lenra_text.dart';
 import 'package:lenra_ui_runner/components/lenra_textfield.dart';
@@ -93,6 +95,8 @@ extension ParserExt on Parser {
     TextAlign: Parser.parseTextAlign,
     LenraText: Parser.parseLenraTextWidget,
     List<LenraText>: Parser.parseLenraTextWidgets,
+    CarouselOptions: Parser.parseCarouselOptions,
+    Duration: Parser.parseDuration,
   };
 }
 
@@ -119,6 +123,7 @@ class Parser {
     'overlayEntry': LenraOverlayEntryBuilder(),
     'icon': LenraIconBuilder(),
     'form': LenraFormBuilder(),
+    'carousel': LenraCarouselBuilder(),
   };
 
   static String? getType(Map<String, dynamic> json) {
@@ -1126,6 +1131,55 @@ class Parser {
         return MaterialTapTargetSize.shrinkWrap;
       default:
         return MaterialTapTargetSize.padded;
+    }
+  }
+
+  static CarouselOptions parseCarouselOptions(Map<String, dynamic> props) {
+    return CarouselOptions(
+      height: props.containsKey("height") ? parseDouble(props["height"]) : null,
+      enlargeCenterPage: props.containsKey("enlargeCenterPage") ? parseBool(props["enlargeCenterPage"]) : false,
+      autoPlay: props.containsKey("autoPlay") ? parseBool(props["autoPlay"])! : false,
+      autoPlayInterval:
+          props.containsKey("autoPlayInterval") ? parseDuration(props["autoPlayInterval"]) : const Duration(seconds: 4),
+      autoPlayAnimationDuration: props.containsKey("autoPlayAnimationDuration")
+          ? parseDuration(props["autoPlayAnimationDuration"])
+          : const Duration(milliseconds: 800),
+      pauseAutoPlayOnTouch:
+          props.containsKey("pauseAutoPlayOnTouch") ? parseBool(props["pauseAutoPlayOnTouch"])! : true,
+      aspectRatio: props.containsKey("aspectRatio") ? parseDouble(props["aspectRatio"]) : 16 / 9,
+      initialPage: props.containsKey("initialPage") ? parseInteger(props["initialPage"]) : 0,
+      enableInfiniteScroll:
+          props.containsKey("enableInfiniteScroll") ? parseBool(props["enableInfiniteScroll"])! : true,
+      reverse: props.containsKey("reverse") ? parseBool(props["reverse"])! : false,
+      scrollDirection: props.containsKey("scrollDirection") ? parseAxis(props["scrollDirection"]) : Axis.horizontal,
+      viewportFraction: props.containsKey("viewportFraction") ? parseDouble(props["viewportFraction"]) : 0.8,
+      enlargeStrategy: props.containsKey("enlargeStrategy")
+          ? parseCenterPageEnlargeStrategy(props["enlargeStrategy"])
+          : CenterPageEnlargeStrategy.scale,
+    );
+  }
+
+  static Duration parseDuration(Map<String, dynamic> props) {
+    return Duration(
+      days: props.containsKey("days") ? parseInteger(props["days"]) : 0,
+      hours: props.containsKey("hours") ? parseInteger(props["hours"]) : 0,
+      minutes: props.containsKey("minutes") ? parseInteger(props["minutes"]) : 0,
+      seconds: props.containsKey("seconds") ? parseInteger(props["seconds"]) : 0,
+      milliseconds: props.containsKey("milliseconds") ? parseInteger(props["milliseconds"]) : 0,
+      microseconds: props.containsKey("microseconds") ? parseInteger(props["microseconds"]) : 0,
+    );
+  }
+
+  static CenterPageEnlargeStrategy parseCenterPageEnlargeStrategy(String value) {
+    switch (value) {
+      case "height":
+        return CenterPageEnlargeStrategy.height;
+      case "scale":
+        return CenterPageEnlargeStrategy.scale;
+      case "zoom":
+        return CenterPageEnlargeStrategy.zoom;
+      default:
+        return CenterPageEnlargeStrategy.scale;
     }
   }
 }
