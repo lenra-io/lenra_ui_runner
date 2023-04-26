@@ -7,6 +7,6 @@ class Listener {
   Listener(this.code) : super();
 
   Future run(BuildContext context, Event Function(String) eventBuilder) {
-    return LenraRoute.of(context).sendEvent(eventBuilder(code));
+    return EventManager.of(context).sendEvent(eventBuilder(code));
   }
 }

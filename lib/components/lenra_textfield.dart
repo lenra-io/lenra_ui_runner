@@ -9,7 +9,6 @@ import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
 import 'package:lenra_ui_runner/components/lenra_form.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
 import 'package:lenra_ui_runner/io_components/lenra_route.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:lenra_ui_runner/utils/lenra_text_field_style.dart';
 import 'package:provider/provider.dart';
 import '../../lenra_component_builder.dart';
@@ -208,10 +207,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
 
   void onTextFieldSubmitted(BuildContext context, String value) {
     if (widget.onSubmitted != null) {
-      context
-          .read<ChannelModel>()
-          .sendEvent(OnChangedEvent(code: widget.onSubmitted!.code, data: ValueData(value)))
-          .then(
+      EventManager.of(context).sendEvent(OnChangedEvent(code: widget.onSubmitted!.code, data: ValueData(value))).then(
             //implement loading
             (value) => null,
           );
@@ -220,8 +216,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
 
   void onAppPrivateCommandReceived(BuildContext context, String action, Map<String, dynamic> data) {
     if (widget.onAppPrivateCommand != null) {
-      context
-          .read<ChannelModel>()
+      EventManager.of(context)
           .sendEvent(OnChangedEvent(code: widget.onAppPrivateCommand!.code, data: ValueData(action)))
           .then(
             //implement loading
@@ -306,7 +301,7 @@ class _AtLeastTimeout extends _TimeoutStrategy {
   }) : super(duration: duration);
 
   void _handleTimeout(BuildContext context, String value, String code) {
-    LenraRoute.of(context).sendEvent(OnChangedEvent(code: code, data: ValueData(value))).then(
+    EventManager.of(context).sendEvent(OnChangedEvent(code: code, data: ValueData(value))).then(
           //implement loading
           (value) => null,
         );
@@ -330,8 +325,7 @@ class _AtMostTimeout extends _TimeoutStrategy {
   }) : super(duration: duration);
 
   void _handleTimeout(BuildContext context, String code) {
-    context
-        .read<LenraRouteIO>()
+    EventManager.of(context)
         .sendEvent(
           OnChangedEvent(code: code, data: ValueData(currentValue)),
         )

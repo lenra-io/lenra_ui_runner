@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/lenra_components.dart';
 import 'package:lenra_ui_runner/models/channel_model.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
+
 import 'package:provider/provider.dart';
 import 'package:showcase/left_menu.dart';
+import 'package:showcase/pages/lenra_carousel_page.dart';
 import 'package:showcase/pages/lenra_dropdown_button.dart';
 import 'package:showcase/pages/lenra_flexible_page.dart';
 import 'package:showcase/pages/lenra_form_page.dart';
@@ -84,6 +85,8 @@ class _MyAppState extends State<MyApp> {
         return LenraActionablePage();
       case LeftMenu.lenraFormPage:
         return LenraFormPage();
+      case LeftMenu.lenraCarouselPage:
+        return LenraCarouselPage();
     }
     return Text("N/A");
   }

@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:json_patch/json_patch.dart';
 import 'package:lenra_ui_runner/components/events/event.dart';
 import 'package:lenra_ui_runner/components/events/on_pressed_event.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
+
 
 class UiBuilderModel extends ChangeNotifier {
   late ViewModel viewModel;

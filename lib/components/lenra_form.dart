@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:lenra_ui_runner/components/events/data/value_data.dart';
 import 'package:lenra_ui_runner/components/events/on_changed_event.dart';
+import 'package:lenra_ui_runner/io_components/lenra_route.dart';
 import 'package:lenra_ui_runner/lenra_component_builder.dart';
 import 'package:lenra_ui_runner/components/listeners/listener.dart' as lenra;
-import 'package:lenra_ui_runner/models/channel_model.dart';
 import 'package:provider/provider.dart';
 
 // TODO : generate this from annotation on LenraForm
@@ -59,10 +59,7 @@ class FormProvider extends ChangeNotifier {
   /// Calling this method will dispatch an event that contains form field values to the Lenra Widget system.
   void submitForm() {
     if (onSubmit != null) {
-      context
-          .read<ChannelModel>()
-          .sendEvent(OnChangedEvent(code: onSubmit!.code, data: ValueData(formFieldValues)))
-          .then(
+      EventManager.of(context).sendEvent(OnChangedEvent(code: onSubmit!.code, data: ValueData(formFieldValues))).then(
             //implement loading
             (value) => null,
           );
