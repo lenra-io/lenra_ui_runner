@@ -20,12 +20,6 @@ class LenraRoute extends StatefulWidget {
   State<StatefulWidget> createState() {
     return LenraRouteState();
   }
-
-  static LenraRouteIO of(BuildContext context) {
-    var res = context.dependOnInheritedWidgetOfExactType<LenraRouteIO>();
-    assert(res != null);
-    return res!;
-  }
 }
 
 class LenraRouteState extends State<LenraRoute> {
@@ -91,7 +85,7 @@ class LenraRouteState extends State<LenraRoute> {
       );
     }
 
-    return LenraRouteIO(
+    return ChannelEventManager(
       child: Scaffold(
         body: LenraWidget(
           error: error,
@@ -117,22 +111,48 @@ class LenraRouteState extends State<LenraRoute> {
   }
 }
 
-class LenraRouteIO extends InheritedWidget {
+class ChannelEventManager extends InheritedWidget {
   final LenraChannel channel;
 
-  LenraRouteIO({required this.channel, required child}) : super(child: child);
+  ChannelEventManager({required this.channel, required child})
+      : super(
+          child: EventManager(
+            child: child,
+            sendEventFn: (Event notification) {
+              Completer completer = Completer();
+              channel
+                  .send('run', notification.toMap())!
+                  .receive("ok", (body) => completer.complete(body))
+                  .receive("error", (error) => completer.completeError(error.toString()));
+              return completer.future;
+            },
+          ),
+        );
+
+  @override
+  bool updateShouldNotify(covariant ChannelEventManager oldWidget) {
+    return channel != oldWidget.channel;
+  }
+}
+
+class EventManager extends StatelessWidget {
+  final Future Function(Event) sendEventFn;
+  final Widget child;
+
+  EventManager({required this.child, required this.sendEventFn});
 
   Future sendEvent(Event notification) {
-    final completer = Completer();
-    channel
-        .send('run', notification.toMap())!
-        .receive("ok", (body) => completer.complete(body))
-        .receive("error", (error) => completer.completeError(error.toString()));
-    return completer.future;
+    return sendEventFn(notification);
+  }
+
+  static EventManager of(BuildContext context) {
+    var res = context.findAncestorWidgetOfExactType<EventManager>();
+    assert(res != null);
+    return res!;
   }
 
   @override
-  bool updateShouldNotify(covariant LenraRouteIO oldWidget) {
-    return channel != oldWidget.channel;
+  Widget build(BuildContext context) {
+    return child;
   }
 }

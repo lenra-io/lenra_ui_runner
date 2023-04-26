@@ -1,47 +1,30 @@
-// import 'package:flutter/widgets.dart';
-// import 'package:lenra_components/lenra_components.dart';
-// import 'package:lenra_ui_runner/widget_model.dart';
-
-// import "./test_helper.dart";
-// import 'package:flutter_test/flutter_test.dart';
-// import 'package:lenra_ui_runner/lenra_ui_runner.dart';
-// import 'package:provider/provider.dart';
+import 'package:lenra_components/lenra_components.dart';
+import "./test_helper.dart";
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-//   testWidgets('check size lenraButton properties', (WidgetTester tester) async {
-//     BuildContext? _context;
+  testWidgets('check size lenraButton properties', (WidgetTester tester) async {
+    expect(find.byType(LenraButton), findsNothing);
 
-//     await tester.pumpWidget(
-//       createBaseTestWidgets(
-//         child: Builder(
-//           builder: (BuildContext context) {
-//             _context = context;
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: {
+          "root": {
+            "type": "button",
+            "text": "foo",
+            "size": "small",
+          }
+        },
+        sendEventFn: (e) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-//             return LenraWidget(
-//               buildErrorPage: (_ctx, _e) => Text("error"),
-//               showSnackBar: (_ctx, _e) => {},
-//             );
-//           },
-//         ),
-//       ),
-//     );
+    await tester.pump();
 
-//     Map<String, dynamic> ui = {
-//       "root": {
-//         "type": "button",
-//         "text": "foo",
-//         "size": "small",
-//       }
-//     };
-
-//     expect(find.byType(LenraButton), findsNothing);
-
-//     _context!.read<ViewModel>().replaceUi(ui);
-
-//     await tester.pump();
-
-//     var button = find.byType(LenraButton);
-//     expect(find.byType(LenraButton), findsOneWidget);
-//     expect(tester.widget<LenraButton>(button).size, LenraComponentSize.small);
-//   });
+    var button = find.byType(LenraButton);
+    expect(find.byType(LenraButton), findsOneWidget);
+    expect(tester.widget<LenraButton>(button).size, LenraComponentSize.small);
+  });
 }
