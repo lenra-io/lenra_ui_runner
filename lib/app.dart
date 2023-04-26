@@ -8,8 +8,6 @@ class App extends StatelessWidget {
   /// The name of the Lenra application.
   final String appName;
 
-  final String routeName = "/";
-
   /// The URL of the Lenra server.
   final String httpEndpoint;
 
