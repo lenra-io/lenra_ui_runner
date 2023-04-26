@@ -1,229 +1,232 @@
-// import 'package:flutter/material.dart';
-// import 'package:lenra_ui_runner/lenra_widget.dart';
-
-// import 'package:provider/provider.dart';
-
-// import "./test_helper.dart";
-// import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/material.dart';
+import 'package:json_patch/json_patch.dart';
+import 'package:provider/provider.dart';
+import "./test_helper.dart";
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  // testWidgets('change simple property', (WidgetTester tester) async {
-  //   BuildContext? _context;
+  testWidgets('change simple property', (WidgetTester tester) async {
+    Map<String, dynamic> ui = {
+      "root": {
+        "type": "text",
+        "value": "foo",
+      }
+    };
 
-  //   await tester.pumpWidget(
-  //     createBaseTestWidgets(
-  //       child: Builder(
-  //         builder: (BuildContext context) {
-  //           _context = context;
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: ui,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-  //           return LenraWidget(
-  //             buildErrorPage: (_ctx, _e) => Text("error"),
-  //             showSnackBar: (_ctx, _e) => {},
-  //           );
-  //         },
-  //       ),
-  //     ),
-  //   );
+    List<Map<String, dynamic>> patches = [
+      {"path": "/root/value", "value": "bar", "op": "replace"}
+    ];
 
-  //   Map<String, dynamic> ui = {
-  //     "root": {
-  //       "type": "text",
-  //       "value": "foo",
-  //     }
-  //   };
-  //   List<Map<String, dynamic>> patches = [
-  //     {"path": "/root/value", "value": "bar", "op": "replace"}
-  //   ];
+    ui = JsonPatch.apply(ui, patches, strict: false);
 
-  //   _
-  //   _context!.read<ViewModel>().patchUi(patches);
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: ui,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-  //   await tester.pump();
-  //   expect(find.text("foo"), findsNothing);
-  //   expect(find.text("bar"), findsOneWidget);
-  // });
+    await tester.pump();
+    expect(find.text("foo"), findsNothing);
+    expect(find.text("bar"), findsOneWidget);
+  });
 
-  // testWidgets('Remove children of flex', (WidgetTester tester) async {
-  //   BuildContext? _context;
+  testWidgets('Remove children of flex', (WidgetTester tester) async {
+    Map<String, dynamic> ui = {
+      "root": {
+        "type": "flex",
+        "children": [
+          {"type": "text", "value": "foo"}
+        ]
+      }
+    };
 
-  //   await tester.pumpWidget(
-  //     createBaseTestWidgets(
-  //       child: Builder(
-  //         builder: (BuildContext context) {
-  //           _context = context;
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: ui,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-  //           return LenraWidget(
-  //             buildErrorPage: (_ctx, _e) => Text("error"),
-  //             showSnackBar: (_ctx, _e) => {},
-  //           );
-  //         },
-  //       ),
-  //     ),
-  //   );
+    await tester.pump();
 
-  //   Map<String, dynamic> ui = {
-  //     "root": {
-  //       "type": "flex",
-  //       "children": [
-  //         {"type": "text", "value": "foo"}
-  //       ]
-  //     }
-  //   };
+    expect(find.byType(Text), findsOneWidget);
 
-  //   List<Map<String, dynamic>> patches = [
-  //     {"path": "/root/children/0", "op": "remove"}
-  //   ];
+    List<Map<String, dynamic>> patches = [
+      {"path": "/root/children/0", "op": "remove"}
+    ];
 
-  //   _
-  //   await tester.pump();
+    ui = JsonPatch.apply(ui, patches, strict: false);
 
-  //   expect(find.byType(Text), findsOneWidget);
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: ui,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-  //   _context!.read<ViewModel>().patchUi(patches);
-  //   await tester.pumpAndSettle();
+    await tester.pumpAndSettle();
 
-  //   expect(find.byType(Text), findsNothing);
-  // });
+    expect(find.byType(Text), findsNothing);
+  });
 
-  // testWidgets('Change children of flex', (WidgetTester tester) async {
-  //   BuildContext? _context;
+  testWidgets('Change children of flex', (WidgetTester tester) async {
+    Map<String, dynamic> ui = {
+      "root": {
+        "type": "flex",
+        "children": [
+          {"type": "text", "value": "foo"}
+        ]
+      }
+    };
 
-  //   await tester.pumpWidget(
-  //     createBaseTestWidgets(
-  //       child: Builder(
-  //         builder: (BuildContext context) {
-  //           _context = context;
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: ui,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-  //           return LenraWidget(
-  //             buildErrorPage: (_ctx, _e) => Text("error"),
-  //             showSnackBar: (_ctx, _e) => {},
-  //           );
-  //         },
-  //       ),
-  //     ),
-  //   );
+    List<Map<String, dynamic>> patches = [
+      {
+        "path": "/root/children",
+        "value": [
+          {"type": "text", "value": "bar"}
+        ],
+        "op": "replace"
+      }
+    ];
 
-  //   Map<String, dynamic> ui = {
-  //     "root": {
-  //       "type": "flex",
-  //       "children": [
-  //         {"type": "text", "value": "foo"}
-  //       ]
-  //     }
-  //   };
+    ui = JsonPatch.apply(ui, patches, strict: false);
 
-  //   List<Map<String, dynamic>> patches = [
-  //     {
-  //       "path": "/root/children",
-  //       "value": [
-  //         {"type": "text", "value": "bar"}
-  //       ],
-  //       "op": "replace"
-  //     }
-  //   ];
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: ui,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-  //   _
-  //   _context!.read<ViewModel>().patchUi(patches);
-  //   await tester.pump();
+    await tester.pump();
 
-  //   expect(find.text("foo"), findsNothing);
-  //   expect(find.text("bar"), findsOneWidget);
-  // });
+    expect(find.text("foo"), findsNothing);
+    expect(find.text("bar"), findsOneWidget);
+  });
 
-  // testWidgets('Change children of flex', (WidgetTester tester) async {
-  //   BuildContext? _context;
+  testWidgets('Change children of flex', (WidgetTester tester) async {
+    Map<String, dynamic> ui = {
+      "root": {"type": "text", "value": "foo"}
+    };
 
-  //   await tester.pumpWidget(
-  //     createBaseTestWidgets(
-  //       child: Builder(
-  //         builder: (BuildContext context) {
-  //           _context = context;
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: ui,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-  //           return LenraWidget(
-  //             buildErrorPage: (_ctx, _e) => Text("error"),
-  //             showSnackBar: (_ctx, _e) => {},
-  //           );
-  //         },
-  //       ),
-  //     ),
-  //   );
+    List<Map<String, dynamic>> patches = [
+      {"path": "/root/type", "value": "button", "op": "replace"},
+      {"path": "/root/value", "op": "remove"},
+      {"path": "/root/text", "value": "bar", "op": "add"}
+    ];
 
-  //   Map<String, dynamic> ui = {
-  //     "root": {"type": "text", "value": "foo"}
-  //   };
+    await tester.pump();
 
-  //   List<Map<String, dynamic>> patches = [
-  //     {"path": "/root/type", "value": "button", "op": "replace"},
-  //     {"path": "/root/value", "op": "remove"},
-  //     {"path": "/root/text", "value": "bar", "op": "add"}
-  //   ];
+    expect(find.text("foo"), findsOneWidget);
+    expect(find.text("bar"), findsNothing);
 
-  //   _
-  //   await tester.pump();
+    ui = JsonPatch.apply(ui, patches, strict: false);
 
-  //   expect(find.text("foo"), findsOneWidget);
-  //   expect(find.text("bar"), findsNothing);
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: ui,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-  //   _context!.read<ViewModel>().patchUi(patches);
-  //   await tester.pump();
-  //   await tester.pump();
+    await tester.pump();
+    await tester.pump();
 
-  //   expect(find.text("foo"), findsNothing);
-  //   expect(find.text("bar"), findsOneWidget);
-  // });
+    expect(find.text("foo"), findsNothing);
+    expect(find.text("bar"), findsOneWidget);
+  });
 
-  // testWidgets('Change child of container', (WidgetTester tester) async {
-  //   BuildContext? _context;
+  testWidgets('Change child of container', (WidgetTester tester) async {
+    Map<String, dynamic> ui = {
+      "root": {
+        "type": "button",
+        "text": "foo",
+        "onPressed": {"code": "john"}
+      }
+    };
 
-  //   await tester.pumpWidget(
-  //     createBaseTestWidgets(
-  //       child: Builder(
-  //         builder: (BuildContext context) {
-  //           _context = context;
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: ui,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-  //           return LenraWidget(
-  //             buildErrorPage: (_ctx, _e) => Text("error"),
-  //             showSnackBar: (_ctx, _e) => {},
-  //           );
-  //         },
-  //       ),
-  //     ),
-  //   );
+    List<Map<String, dynamic>> patches = [
+      {"op": "remove", "path": "/root/onPressed"},
+      {"op": "remove", "path": "/root/text"},
+      {"op": "replace", "path": "/root/type", "value": "container"},
+      {
+        "op": "add",
+        "path": "/root/child",
+        "value": {
+          "type": "button",
+          "text": "bar",
+          "onPressed": {"code": "doe"}
+        }
+      }
+    ];
 
-  //   Map<String, dynamic> ui = {
-  //     "root": {
-  //       "type": "button",
-  //       "text": "foo",
-  //       "onPressed": {"code": "john"}
-  //     }
-  //   };
+    await tester.pump();
 
-  //   List<Map<String, dynamic>> patches = [
-  //     {"op": "remove", "path": "/root/onPressed"},
-  //     {"op": "remove", "path": "/root/text"},
-  //     {"op": "replace", "path": "/root/type", "value": "container"},
-  //     {
-  //       "op": "add",
-  //       "path": "/root/child",
-  //       "value": {
-  //         "type": "button",
-  //         "text": "bar",
-  //         "onPressed": {"code": "doe"}
-  //       }
-  //     }
-  //   ];
+    expect(find.text("foo"), findsOneWidget);
+    expect(find.text("bar"), findsNothing);
 
-  //   _
-  //   await tester.pump();
+    ui = JsonPatch.apply(ui, patches, strict: false);
 
-  //   expect(find.text("foo"), findsOneWidget);
-  //   expect(find.text("bar"), findsNothing);
+    await tester.pumpWidget(
+      createBaseTestWidgets(
+        ui: ui,
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
+      ),
+    );
 
-  //   _context!.read<ViewModel>().patchUi(patches);
-  //   await tester.pump();
-  //   await tester.pump();
+    await tester.pump();
+    await tester.pump();
 
-  //   expect(find.text("bar"), findsOneWidget);
-  //   expect(find.text("foo"), findsNothing);
-  // });
+    expect(find.text("bar"), findsOneWidget);
+    expect(find.text("foo"), findsNothing);
+  });
 }
