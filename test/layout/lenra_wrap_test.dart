@@ -38,7 +38,7 @@ void main() {
 //       }
 //     };
 
-//     _context!.read<ViewModel>().replaceUi(ui);
+//     _
 //     await tester.pump();
 
 //     var finderWrap = find.byType(LenraWrap);
@@ -91,7 +91,7 @@ void main() {
 //       }
 //     };
 
-//     _context!.read<ViewModel>().replaceUi(ui);
+//     _
 //     await tester.pump();
 
 //     var finderWrap = find.byType(LenraWrap);
@@ -137,7 +137,7 @@ void main() {
 //       }
 //     };
 
-//     _context!.read<ViewModel>().replaceUi(ui);
+//     _
 //     await tester.pump();
 
 //     expect(tester.getTopLeft(find.text("foo")), const Offset(0, 0));
@@ -175,7 +175,7 @@ void main() {
 //       }
 //     };
 
-//     _context!.read<ViewModel>().replaceUi(ui);
+//     _
 //     await tester.pump();
 
 //     expect(tester.getTopLeft(find.text("foo")), const Offset(0, 0));

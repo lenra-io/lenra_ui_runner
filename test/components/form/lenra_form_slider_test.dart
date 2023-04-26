@@ -45,8 +45,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "sliderValue": 0.5,
 //             });
 //           }
@@ -73,7 +73,7 @@ void main() {
 //         ],
 //       );
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraSlider));
@@ -89,8 +89,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "sliderValue": 0.5,
 //             });
 //           }
@@ -116,7 +116,7 @@ void main() {
 //         ],
 //       );
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraSlider));
@@ -131,9 +131,9 @@ void main() {
 
 //     await tester.pumpWidget(
 //       createBaseFormTestWidget((e) {
-//         if (e["code"] == "submitted") {
+//         if (e.code == "submitted") {
 //           // Expected value of Form should be empty
-//           expect(e["event"]["value"], {});
+//           expect(e.data.toMap()["value"], {});
 //         }
 //         hasBeenNotified = true;
 //         return false;
@@ -154,7 +154,7 @@ void main() {
 //       }
 //     ]);
 
-//     context!.read<ViewModel>().replaceUi(ui);
+//     
 
 //     await tester.pump();
 //     await tester.tap(find.byType(LenraSlider));
@@ -169,8 +169,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {});
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {});
 //           }
 //           hasBeenNotified = true;
 //           return false;
@@ -197,7 +197,7 @@ void main() {
 //         }
 //       };
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraSlider));
@@ -213,8 +213,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "sliderValue": 0.0,
 //             });
 //           }
@@ -239,7 +239,7 @@ void main() {
 //         }
 //       ]);
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraButton));
@@ -255,11 +255,11 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "sliderValue": 0.5,
 //             });
-//           } else if (e["code"] == "changed") {
+//           } else if (e.code == "changed") {
 //             hasEnteredListener = true;
 //           }
 //           hasBeenNotified = true;
@@ -283,7 +283,7 @@ void main() {
 //         }
 //       ]);
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraSlider));

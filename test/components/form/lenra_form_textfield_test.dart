@@ -44,8 +44,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "textfieldValue": "hi",
 //             });
 //           }
@@ -74,7 +74,7 @@ void main() {
 //         ],
 //       );
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.enterText(find.byType(TextField), "hi");
@@ -91,8 +91,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "textfieldValue": "hi",
 //             });
 //           }
@@ -120,7 +120,7 @@ void main() {
 //         ],
 //       );
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.enterText(find.byType(TextField), "hi");
@@ -135,11 +135,11 @@ void main() {
 
 //     await tester.pumpWidget(
 //       createBaseFormTestWidget((e) {
-//         if (e["code"] == "submitted") {
+//         if (e.code == "submitted") {
 //           // Expected value of Form should be empty
-//           expect(e["event"]["value"], {});
-//         } else if (e["code"] == "changed") {
-//           expect(e["event"]["value"], "hi");
+//           expect(e.data.toMap()["value"], {});
+//         } else if (e.code == "changed") {
+//           expect(e.data.toMap()["value"], "hi");
 //         }
 //         hasBeenNotified = true;
 //         return false;
@@ -163,7 +163,7 @@ void main() {
 //       }
 //     ]);
 
-//     context!.read<ViewModel>().replaceUi(ui);
+//     
 
 //     await tester.pump();
 //     await tester.enterText(find.byType(TextField), "hi");
@@ -179,8 +179,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {});
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {});
 //           }
 //           hasBeenNotified = true;
 //           return false;
@@ -209,7 +209,7 @@ void main() {
 //         }
 //       };
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.enterText(find.byType(TextField), "hi");
@@ -226,8 +226,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "textfieldValue": "default",
 //             });
 //           }
@@ -254,7 +254,7 @@ void main() {
 //         }
 //       ]);
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraButton));
@@ -270,11 +270,11 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "textfieldValue": "hi",
 //             });
-//           } else if (e["code"] == "changed") {
+//           } else if (e.code == "changed") {
 //             hasEnteredListener = true;
 //           }
 //           hasBeenNotified = true;
@@ -300,7 +300,7 @@ void main() {
 //         }
 //       ]);
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.enterText(find.byType(TextField), "hi");

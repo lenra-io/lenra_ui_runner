@@ -35,7 +35,7 @@ void main() {
   //     {"path": "/root/value", "value": "bar", "op": "replace"}
   //   ];
 
-  //   _context!.read<ViewModel>().replaceUi(ui);
+  //   _
   //   _context!.read<ViewModel>().patchUi(patches);
 
   //   await tester.pump();
@@ -74,7 +74,7 @@ void main() {
   //     {"path": "/root/children/0", "op": "remove"}
   //   ];
 
-  //   _context!.read<ViewModel>().replaceUi(ui);
+  //   _
   //   await tester.pump();
 
   //   expect(find.byType(Text), findsOneWidget);
@@ -122,7 +122,7 @@ void main() {
   //     }
   //   ];
 
-  //   _context!.read<ViewModel>().replaceUi(ui);
+  //   _
   //   _context!.read<ViewModel>().patchUi(patches);
   //   await tester.pump();
 
@@ -158,7 +158,7 @@ void main() {
   //     {"path": "/root/text", "value": "bar", "op": "add"}
   //   ];
 
-  //   _context!.read<ViewModel>().replaceUi(ui);
+  //   _
   //   await tester.pump();
 
   //   expect(find.text("foo"), findsOneWidget);
@@ -213,7 +213,7 @@ void main() {
   //     }
   //   ];
 
-  //   _context!.read<ViewModel>().replaceUi(ui);
+  //   _
   //   await tester.pump();
 
   //   expect(find.text("foo"), findsOneWidget);

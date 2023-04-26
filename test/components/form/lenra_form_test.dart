@@ -20,8 +20,8 @@ void main() {
 //           builder: (BuildContext context) {
 //             _context = context;
 //             (Provider.of<ChannelModel>(context, listen: false) as MockChannelModel).setCallBack((e) {
-//               if (e["code"] == "submitted") {
-//                 expect(e["event"]["value"], {
+//               if (e.code == "submitted") {
+//                 expect(e.data.toMap()["value"], {
 //                   "toggleValue": false,
 //                   "checkboxValue": false,
 //                   "radio": "radioValue",
@@ -87,7 +87,7 @@ void main() {
 //       }
 //     };
 
-//     _context!.read<ViewModel>().replaceUi(ui);
+//     _
 
 //     await tester.pump();
 //     await tester.tap(find.byType(LenraToggle));
@@ -106,10 +106,10 @@ void main() {
 //           _context = context;
 
 //           (Provider.of<ChannelModel>(context, listen: false) as MockChannelModel).setCallBack((e) {
-//             if (e["code"] == "submitted") {
-//               expect(e["event"]["value"], {"checkboxValue": false});
-//             } else if (e["code"] == "nestedSubmit") {
-//               expect(e["event"]["value"], {"checkboxValue2": false});
+//             if (e.code == "submitted") {
+//               expect(e.data.toMap()["value"], {"checkboxValue": false});
+//             } else if (e.code == "nestedSubmit") {
+//               expect(e.data.toMap()["value"], {"checkboxValue2": false});
 //             }
 //             hasBeenNotified = true;
 //             return false;
@@ -164,7 +164,7 @@ void main() {
 //       }
 //     };
 
-//     _context!.read<ViewModel>().replaceUi(ui);
+//     _
 
 //     await tester.pump();
 //     await tester.tap(find.byType(LenraCheckbox).at(0));

@@ -45,8 +45,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "toggleValue": false,
 //             });
 //           }
@@ -71,7 +71,7 @@ void main() {
 //         ],
 //       );
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraToggle));
@@ -87,8 +87,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "toggleValue": false,
 //             });
 //           }
@@ -112,7 +112,7 @@ void main() {
 //         ],
 //       );
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraToggle));
@@ -127,9 +127,9 @@ void main() {
 
 //     await tester.pumpWidget(
 //       createBaseFormTestWidget((e) {
-//         if (e["code"] == "submitted") {
+//         if (e.code == "submitted") {
 //           // Expected value of Form should be empty
-//           expect(e["event"]["value"], {});
+//           expect(e.data.toMap()["value"], {});
 //         }
 //         hasBeenNotified = true;
 //         return false;
@@ -149,7 +149,7 @@ void main() {
 //       }
 //     ]);
 
-//     context!.read<ViewModel>().replaceUi(ui);
+//     
 
 //     await tester.pump();
 //     await tester.tap(find.byType(LenraToggle));
@@ -164,8 +164,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {});
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {});
 //           }
 //           hasBeenNotified = true;
 //           return false;
@@ -190,7 +190,7 @@ void main() {
 //         }
 //       };
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraToggle));
@@ -206,8 +206,8 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "toggleValue": true,
 //             });
 //           }
@@ -230,7 +230,7 @@ void main() {
 //         }
 //       ]);
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraButton));
@@ -246,11 +246,11 @@ void main() {
 
 //       await tester.pumpWidget(
 //         createBaseFormTestWidget((e) {
-//           if (e["code"] == "submitted") {
-//             expect(e["event"]["value"], {
+//           if (e.code == "submitted") {
+//             expect(e.data.toMap()["value"], {
 //               "toggleValue": false,
 //             });
-//           } else if (e["code"] == "checked") {
+//           } else if (e.code == "checked") {
 //             hasEnteredListener = true;
 //           }
 //           hasBeenNotified = true;
@@ -272,7 +272,7 @@ void main() {
 //         }
 //       ]);
 
-//       context!.read<ViewModel>().replaceUi(ui);
+//       
 
 //       await tester.pump();
 //       await tester.tap(find.byType(LenraToggle));
