@@ -24,8 +24,6 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
 
   @override
   Widget build(BuildContext context) {
-    print("BUILDING UI");
-
     return LenraWidget(
       buildErrorPage: (_ctx, _e) => Text("error"),
       showSnackBar: (_ctx, _e) => {},

@@ -119,7 +119,6 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
             sendEventFn: (event) {
-              print(event.data.toMap());
               context.read<UiBuilderModel>().handleNotifications(event, (_) {});
               return Future.value(true);
             },
