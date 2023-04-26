@@ -16,14 +16,21 @@ abstract class UiBuilderState<T extends StatefulWidget, D> extends State<T> {
   D getData(Event event);
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
     context.read<UiBuilderModel>().initData(getData);
     context.read<UiBuilderModel>().initUi(getUi);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print("BUILDING UI");
+
     return LenraWidget(
       buildErrorPage: (_ctx, _e) => Text("error"),
       showSnackBar: (_ctx, _e) => {},
       error: null,
-      ui: getUi(data),
+      ui: context.select<UiBuilderModel, Map<String, dynamic>>((value) => value.ui),
     );
   }
 }

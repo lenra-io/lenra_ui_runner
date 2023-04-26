@@ -29,6 +29,10 @@ class UiBuilderModel extends ChangeNotifier {
     ui = getUi(data);
     var diff = JsonPatch.diff(lastUi, ui);
     lastUi = ui;
+
+    print("HANDLE NOTIFICATION");
+
+    notifyListeners();
     
     // viewModel.patchUi(diff);
 
