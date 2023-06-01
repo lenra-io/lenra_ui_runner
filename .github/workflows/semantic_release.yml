@@ -3,22 +3,12 @@ on:
   push:
     branches:
       - main
+      - rc
       - beta
       - alpha
       - "*.x"
 jobs:
   release:
-    name: Release
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
-        run: npx --force -p conventional-changelog-conventionalcommits@5 -p @semantic-release/git -p https://github.com/Tlepel/semantic-release.git#fix-versions-share-head semantic-release
+    uses: lenra-io/github-actions/workflows/release.yml@2-task-add-semantic-release
+    secrets:
+      token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
