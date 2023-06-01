@@ -9,6 +9,6 @@ on:
       - "*.x"
 jobs:
   release:
-    uses: lenra-io/github-actions/.github/workflows/release.yml@c143fa6a470cd4da270356bfa073d3a89bbe6496
+    uses: lenra-io/github-actions/.github/workflows/release.yml@2-task-add-semantic-release
     secrets:
       token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
