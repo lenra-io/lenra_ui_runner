@@ -10,6 +10,6 @@ on:
 
 jobs:
   release:
-    uses: ${{env.WORKFLOW_PATH}}/release.yml@${{env.WORKFLOW_REF}}
+    uses: lenra-io/github-actions/.github/workflows/release.yml@2-task-add-semantic-release
     secrets:
       token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
