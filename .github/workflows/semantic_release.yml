@@ -8,12 +8,8 @@ on:
       - alpha
       - "*.x"
 
-env:
-  WORKFLOW_PATH: ${{ env.WORKFLOW_PATH }}
-  WORKFLOW_REF: ${{ env.WORKFLOW_REF }}
-
 jobs:
   release:
-    uses: ${{ env.WORKFLOW_PATH }}/release.yml@${{ env.WORKFLOW_REF }}
+    uses: lenra-io/github-actions/.github/workflows/release.yml@main
     secrets:
       token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
