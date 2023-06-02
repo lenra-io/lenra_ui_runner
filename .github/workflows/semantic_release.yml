@@ -10,6 +10,6 @@ on:
 
 jobs:
   release:
-    uses: lenra-io/github-actions/.github/workflows/release.yml@main
+    uses: ${{env.WORKFLOW_PATH}}/release.yml@${{env.WORKFLOW_REF}}
     secrets:
       token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
