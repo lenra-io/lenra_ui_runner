@@ -9,6 +9,6 @@ on:
       - "*.x"
 jobs:
   release:
-    uses: ${{env.WORKFLOW_PATH}}/release.yml@${{env.WORKFLOW_REF}}
+    uses: ${WORKFLOW_PATH}/release.yml@${WORKFLOW_REF}
     secrets:
       token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
