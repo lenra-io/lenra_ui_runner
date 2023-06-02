@@ -7,8 +7,13 @@ on:
       - beta
       - alpha
       - "*.x"
+
+env:
+  WORKFLOW_PATH: ${{ env.WORKFLOW_PATH }}
+  WORKFLOW_REF: ${{ env.WORKFLOW_REF }}
+
 jobs:
   release:
-    uses: ${WORKFLOW_PATH}/release.yml@${WORKFLOW_REF}
+    uses: ${{ env.WORKFLOW_PATH }}/release.yml@${{ env.WORKFLOW_REF }}
     secrets:
       token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
