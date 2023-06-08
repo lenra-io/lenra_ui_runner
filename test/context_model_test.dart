@@ -9,27 +9,26 @@ void main() {
   testWidgets('Context model send JSON', (WidgetTester tester) async {
     late BuildContext contextLocal;
     await tester.pumpWidget(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider<ContextModel>(create: (context) => ContextModel()),
-        ],
-        child: MaterialApp(
-          home: LenraTheme(
-            themeData: LenraThemeData(),
-            child: Scaffold(
-              body: StatefulBuilder(
-                builder: (context, setState) {
+      MaterialApp(
+        home: LenraTheme(
+          themeData: LenraThemeData(),
+          child: Scaffold(
+            body: Builder(builder: (BuildContext context) {
+              return MultiProvider(
+                providers: [
+                  ChangeNotifierProvider<ContextModel>(create: (_) => ContextModel(context)),
+                ],
+                child: Builder(builder: (BuildContext context) {
                   contextLocal = context;
-
                   return Container();
-                },
-              ),
-            ),
+                }),
+              );
+            }),
           ),
         ),
       ),
     );
-    contextLocal.read<ContextModel>().mediaQueryData = MediaQuery.of(contextLocal);
+    
     await tester.pump();
     var contextModel = contextLocal.read<ContextModel>();
     var contextJSON = contextModel.toJson();

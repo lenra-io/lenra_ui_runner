@@ -1,41 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_button.dart';
 import 'package:lenra_components/component/lenra_toggle.dart';
-import 'package:lenra_ui_runner/lenra_widget.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
-import 'package:provider/provider.dart';
-import '../../mock_channel_model.dart';
-import '../../test_helper.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-BuildContext? context;
-
-Widget createBaseFormTestWidget(Function callback) {
-  return createBaseTestWidgets(
-    child: Builder(
-      builder: (BuildContext ctx) {
-        context = ctx;
-        (Provider.of<ChannelModel>(ctx, listen: false) as MockChannelModel).setCallBack(callback);
-
-        return LenraWidget(
-          buildErrorPage: (_ctx, _e) => Text("error"),
-          showSnackBar: (_ctx, _e) => {},
-        );
-      },
-    ),
-  );
-}
-
-Map<String, dynamic> createBaseFormUi(List<Map<String, dynamic>> children) {
-  return {
-    "root": {
-      "type": "form",
-      "onSubmit": {"code": "submitted"},
-      "child": {"type": "flex", "children": children}
-    }
-  };
-}
+import '../../test_helper.dart';
 
 void main() {
   testWidgets(
@@ -44,34 +11,40 @@ void main() {
       bool hasBeenNotified = false;
 
       await tester.pumpWidget(
-        createBaseFormTestWidget((e) {
-          if (e["code"] == "submitted") {
-            expect(e["event"]["value"], {
-              "toggleValue": false,
-            });
-          }
-          hasBeenNotified = true;
-          return false;
-        }),
-      );
-
-      Map<String, dynamic> ui = createBaseFormUi(
-        [
-          {
-            "type": "toggle",
-            "value": true,
-            "name": "toggleValue",
-            "onPressed": {"code": "checked"}
+        createBaseTestWidgets(
+          ui: {
+            "root": {
+              "type": "form",
+              "onSubmit": {"code": "submitted"},
+              "child": {
+                "type": "flex",
+                "children": [
+                  {
+                    "type": "toggle",
+                    "value": true,
+                    "name": "toggleValue",
+                    "onPressed": {"code": "checked"}
+                  },
+                  {
+                    "type": "button",
+                    "text": "Submit",
+                    "submit": true,
+                  },
+                ]
+              }
+            }
           },
-          {
-            "type": "button",
-            "text": "Submit",
-            "submit": true,
+          sendEventFn: (e) {
+            if (e.code == "submitted") {
+              expect(e.data.toMap()["value"], {
+                "toggleValue": false,
+              });
+            }
+            hasBeenNotified = true;
+            return Future.value(true);
           },
-        ],
+        ),
       );
-
-      context!.read<ViewModel>().replaceUi(ui);
 
       await tester.pump();
       await tester.tap(find.byType(LenraToggle));
@@ -86,33 +59,39 @@ void main() {
       bool hasBeenNotified = false;
 
       await tester.pumpWidget(
-        createBaseFormTestWidget((e) {
-          if (e["code"] == "submitted") {
-            expect(e["event"]["value"], {
-              "toggleValue": false,
-            });
-          }
-          hasBeenNotified = true;
-          return false;
-        }),
-      );
-
-      Map<String, dynamic> ui = createBaseFormUi(
-        [
-          {
-            "type": "toggle",
-            "value": true,
-            "name": "toggleValue",
+        createBaseTestWidgets(
+          ui: {
+            "root": {
+              "type": "form",
+              "onSubmit": {"code": "submitted"},
+              "child": {
+                "type": "flex",
+                "children": [
+                  {
+                    "type": "toggle",
+                    "value": true,
+                    "name": "toggleValue",
+                  },
+                  {
+                    "type": "button",
+                    "text": "Submit",
+                    "submit": true,
+                  },
+                ]
+              }
+            }
           },
-          {
-            "type": "button",
-            "text": "Submit",
-            "submit": true,
+          sendEventFn: (e) {
+            if (e.code == "submitted") {
+              expect(e.data.toMap()["value"], {
+                "toggleValue": false,
+              });
+            }
+            hasBeenNotified = true;
+            return Future.value(true);
           },
-        ],
+        ),
       );
-
-      context!.read<ViewModel>().replaceUi(ui);
 
       await tester.pump();
       await tester.tap(find.byType(LenraToggle));
@@ -126,30 +105,38 @@ void main() {
     bool hasBeenNotified = false;
 
     await tester.pumpWidget(
-      createBaseFormTestWidget((e) {
-        if (e["code"] == "submitted") {
-          // Expected value of Form should be empty
-          expect(e["event"]["value"], {});
-        }
-        hasBeenNotified = true;
-        return false;
-      }),
+      createBaseTestWidgets(
+        ui: {
+          "root": {
+            "type": "form",
+            "onSubmit": {"code": "submitted"},
+            "child": {
+              "type": "flex",
+              "children": [
+                {
+                  "type": "toggle",
+                  "value": true,
+                  "onPressed": {"code": "checked"}
+                },
+                {
+                  "type": "button",
+                  "text": "Submit",
+                  "submit": true,
+                }
+              ]
+            }
+          }
+        },
+        sendEventFn: (e) {
+          if (e.code == "submitted") {
+            // Expected value of Form should be empty
+            expect(e.data.toMap()["value"], {});
+          }
+          hasBeenNotified = true;
+          return Future.value(true);
+        },
+      ),
     );
-
-    Map<String, dynamic> ui = createBaseFormUi([
-      {
-        "type": "toggle",
-        "value": true,
-        "onPressed": {"code": "checked"}
-      },
-      {
-        "type": "button",
-        "text": "Submit",
-        "submit": true,
-      }
-    ]);
-
-    context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     await tester.tap(find.byType(LenraToggle));
@@ -163,34 +150,33 @@ void main() {
       bool hasBeenNotified = false;
 
       await tester.pumpWidget(
-        createBaseFormTestWidget((e) {
-          if (e["code"] == "submitted") {
-            expect(e["event"]["value"], {});
-          }
-          hasBeenNotified = true;
-          return false;
-        }),
-      );
-
-      Map<String, dynamic> ui = {
-        "root": {
-          "type": "flex",
-          "children": [
-            {
-              "type": "toggle",
-              "value": true,
-              "name": "toggleValue",
-            },
-            {
-              "type": "button",
-              "text": "Submit",
-              "submit": true,
+        createBaseTestWidgets(
+          ui: {
+            "root": {
+              "type": "flex",
+              "children": [
+                {
+                  "type": "toggle",
+                  "value": true,
+                  "name": "toggleValue",
+                },
+                {
+                  "type": "button",
+                  "text": "Submit",
+                  "submit": true,
+                }
+              ]
             }
-          ]
-        }
-      };
-
-      context!.read<ViewModel>().replaceUi(ui);
+          },
+          sendEventFn: (e) {
+            if (e.code == "submitted") {
+              expect(e.data.toMap()["value"], {});
+            }
+            hasBeenNotified = true;
+            return Future.value(true);
+          },
+        ),
+      );
 
       await tester.pump();
       await tester.tap(find.byType(LenraToggle));
@@ -205,32 +191,39 @@ void main() {
       bool hasBeenNotified = false;
 
       await tester.pumpWidget(
-        createBaseFormTestWidget((e) {
-          if (e["code"] == "submitted") {
-            expect(e["event"]["value"], {
-              "toggleValue": true,
-            });
-          }
-
-          hasBeenNotified = true;
-          return false;
-        }),
+        createBaseTestWidgets(
+          ui: {
+            "root": {
+              "type": "form",
+              "onSubmit": {"code": "submitted"},
+              "child": {
+                "type": "flex",
+                "children": [
+                  {
+                    "type": "toggle",
+                    "value": true,
+                    "name": "toggleValue",
+                  },
+                  {
+                    "type": "button",
+                    "text": "Submit",
+                    "submit": true,
+                  }
+                ]
+              }
+            }
+          },
+          sendEventFn: (e) {
+            if (e.code == "submitted") {
+              expect(e.data.toMap()["value"], {
+                "toggleValue": true,
+              });
+            }
+            hasBeenNotified = true;
+            return Future.value(true);
+          },
+        ),
       );
-
-      Map<String, dynamic> ui = createBaseFormUi([
-        {
-          "type": "toggle",
-          "value": true,
-          "name": "toggleValue",
-        },
-        {
-          "type": "button",
-          "text": "Submit",
-          "submit": true,
-        }
-      ]);
-
-      context!.read<ViewModel>().replaceUi(ui);
 
       await tester.pump();
       await tester.tap(find.byType(LenraButton));
@@ -245,34 +238,42 @@ void main() {
       bool hasEnteredListener = false;
 
       await tester.pumpWidget(
-        createBaseFormTestWidget((e) {
-          if (e["code"] == "submitted") {
-            expect(e["event"]["value"], {
-              "toggleValue": false,
-            });
-          } else if (e["code"] == "checked") {
-            hasEnteredListener = true;
-          }
-          hasBeenNotified = true;
-          return false;
-        }),
+        createBaseTestWidgets(
+          ui: {
+            "root": {
+              "type": "form",
+              "onSubmit": {"code": "submitted"},
+              "child": {
+                "type": "flex",
+                "children": [
+                  {
+                    "type": "toggle",
+                    "value": true,
+                    "name": "toggleValue",
+                    "onPressed": {"code": "checked"}
+                  },
+                  {
+                    "type": "button",
+                    "text": "Submit",
+                    "submit": true,
+                  }
+                ]
+              }
+            }
+          },
+          sendEventFn: (e) {
+            if (e.code == "submitted") {
+              expect(e.data.toMap()["value"], {
+                "toggleValue": false,
+              });
+            } else if (e.code == "checked") {
+              hasEnteredListener = true;
+            }
+            hasBeenNotified = true;
+            return Future.value(true);
+          },
+        ),
       );
-
-      Map<String, dynamic> ui = createBaseFormUi([
-        {
-          "type": "toggle",
-          "value": true,
-          "name": "toggleValue",
-          "onPressed": {"code": "checked"}
-        },
-        {
-          "type": "button",
-          "text": "Submit",
-          "submit": true,
-        }
-      ]);
-
-      context!.read<ViewModel>().replaceUi(ui);
 
       await tester.pump();
       await tester.tap(find.byType(LenraToggle));

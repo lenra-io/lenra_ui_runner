@@ -1,47 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_slider.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
-import 'package:provider/src/provider.dart';
-import '../mock_channel_model.dart';
+
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('LenraSlider test properties', (WidgetTester tester) async {
-    BuildContext? _context;
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "slider",
+            "value": 10,
+            "autofocus": true,
+            "min": 0,
+            "max": 100,
+            "divisions": 100,
+            "label": 12,
+            "style": {"activeColor": 0xFF000000, "inactiveColor": 0xFF000000, "thumbColor": 0xFF000000},
+            "onPressed": {"code": "pressed"}
+          }
+        },
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
       ),
     );
 
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "slider",
-        "value": 10,
-        "autofocus": true,
-        "min": 0,
-        "max": 100,
-        "divisions": 100,
-        "label": 12,
-        "style": {"activeColor": 0xFF000000, "inactiveColor": 0xFF000000, "thumbColor": 0xFF000000},
-        "onPressed": {"code": "pressed"}
-      }
-    };
-
-    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
 
     var finderSlider = find.byType(LenraSlider);
@@ -59,41 +44,28 @@ void main() {
   });
 
   testWidgets('LenraSlider test onChanged', (WidgetTester tester) async {
-    BuildContext? _context;
     bool hasBeenNotified = false;
     double value = 0;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-            (Provider.of<ChannelModel>(context, listen: false) as MockChannelModel).setCallBack((data) {
-              hasBeenNotified = true;
-              value = data["event"]["value"];
-            });
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "slider",
+            "value": value,
+            "min": 0,
+            "max": 100,
+            "divisions": 100,
+            "onChanged": {"code": "pressed"}
+          }
+        },
+        sendEventFn: (event) {
+          hasBeenNotified = true;
+          value = event.data.toMap()["value"];
+          return Future.value(true);
+        },
       ),
     );
-
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "slider",
-        "value": value,
-        "min": 0,
-        "max": 100,
-        "divisions": 100,
-        "onChanged": {"code": "pressed"}
-      }
-    };
-
-    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     var finderSlider = find.byType(LenraSlider);

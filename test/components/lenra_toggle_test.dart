@@ -1,52 +1,36 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lenra_components/component/lenra_toggle.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
-import 'package:provider/src/provider.dart';
-import '../mock_channel_model.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('LenraToggle property', (WidgetTester tester) async {
-    BuildContext? _context;
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "toggle",
+            "value": true,
+            "onPressed": {"code": "YourCode"},
+            "style": {
+              "activeTrackColor": 0xFF000000,
+              "focusColor": 0xFF000000,
+              "inactiveThumbColor": 0xFF000000,
+              "hoverColor": 0xFF000000,
+              "materialTapTargetSize": "padded",
+            },
+            "autofocus": true,
+            "splashRadius": 2.0,
+            "dragStartBehavior": "down",
+          }
+        },
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
       ),
     );
 
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "toggle",
-        "value": true,
-        "onPressed": {"code": "YourCode"},
-        "style": {
-          "activeTrackColor": 0xFF000000,
-          "focusColor": 0xFF000000,
-          "inactiveThumbColor": 0xFF000000,
-          "hoverColor": 0xFF000000,
-          "materialTapTargetSize": "padded",
-        },
-        "autofocus": true,
-        "splashRadius": 2.0,
-        "dragStartBehavior": "down",
-      }
-    };
-
-    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
 
     var finderToggle = find.byType(LenraToggle);
@@ -65,39 +49,27 @@ void main() {
   });
 
   testWidgets('LenraToggle test onPressed', (WidgetTester tester) async {
-    BuildContext? _context;
     bool hasBeenNotified = false;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-            (Provider.of<ChannelModel>(context, listen: false) as MockChannelModel).setCallBack((value) {
-              hasBeenNotified = true;
-            });
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "toggle",
+            "value": true,
+            "onPressed": {"code": "YourCode"},
+            "autofocus": true,
+            "splashRadius": 2.0,
+            "dragStartBehavior": "down",
+          }
+        },
+        sendEventFn: (_) {
+          hasBeenNotified = true;
+          return Future.value(true);
+        },
       ),
     );
 
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "toggle",
-        "value": true,
-        "onPressed": {"code": "YourCode"},
-        "autofocus": true,
-        "splashRadius": 2.0,
-        "dragStartBehavior": "down",
-      }
-    };
-
-    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
 
     var toggle = find.byType(LenraToggle);

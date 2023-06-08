@@ -1,42 +1,25 @@
-import 'package:flutter/widgets.dart';
 import 'package:lenra_components/lenra_components.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
-
 import "./test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/lenra_ui_runner.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   testWidgets('check size lenraButton properties', (WidgetTester tester) async {
-    BuildContext? _context;
+    expect(find.byType(LenraButton), findsNothing);
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "button",
+            "text": "foo",
+            "size": "small",
+          }
+        },
+        sendEventFn: (e) {
+          return Future.value(true);
+        },
       ),
     );
-
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "button",
-        "text": "foo",
-        "size": "small",
-      }
-    };
-
-    expect(find.byType(LenraButton), findsNothing);
-
-    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
 

@@ -1,43 +1,24 @@
 import 'dart:ui';
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
-import 'package:provider/src/provider.dart';
-
-import '../mock_channel_model.dart';
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('check textfield properties', (WidgetTester tester) async {
-    BuildContext? _context;
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "textfield",
+            "value": "",
+          }
+        },
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
       ),
     );
-
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "textfield",
-        "value": "",
-      }
-    };
-
-    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     var textfieldFinder = find.byType(TextField);
@@ -71,36 +52,23 @@ void main() {
   });
 
   testWidgets('test onChanged', (WidgetTester tester) async {
-    BuildContext? _context;
-    bool isEnterNotification = false;
+    bool hasBeenNotified = false;
 
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-            (Provider.of<ChannelModel>(context, listen: false) as MockChannelModel).setCallBack((value) {
-              isEnterNotification = true;
-            });
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "textfield",
+            "value": "",
+            "onChanged": {"code": "yourCode"},
+          }
+        },
+        sendEventFn: (_) {
+          hasBeenNotified = true;
+          return Future.value(true);
+        },
       ),
     );
-
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "textfield",
-        "value": "",
-        "onChanged": {"code": "yourCode"},
-      }
-    };
-
-    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     var textfield = find.byType(TextField);
@@ -109,47 +77,35 @@ void main() {
     await tester.pump();
     expect(find.text("foo"), findsOneWidget);
     await tester.pump(Duration(milliseconds: 500));
-    expect(isEnterNotification, true);
+    expect(hasBeenNotified, true);
   });
 
   testWidgets('check textfield style properties', (WidgetTester tester) async {
-    BuildContext? _context;
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "textfield",
+            "value": "",
+            "style": {
+              "cursorColor": 0xFFFFFFFF,
+              "cursorHeight": 1,
+              "cursorRadius": {"x": 0, "y": 0},
+              "keyboardAppearance": "light",
+              "obscuringCharacter": "*",
+              "scrollPadding": {"top": 2.0, "bottom": 2.0, "right": 2.0, "left": 2.0},
+              "selectionHeightStyle": "max",
+              "selectionWidthStyle": "max",
+              "strutStyle": {"fontSize": 12},
+              "textAlignVertical": "bottom"
+            }
+          }
+        },
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
       ),
     );
-
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "textfield",
-        "value": "",
-        "style": {
-          "cursorColor": 0xFFFFFFFF,
-          "cursorHeight": 1,
-          "cursorRadius": {"x": 0, "y": 0},
-          "keyboardAppearance": "light",
-          "obscuringCharacter": "*",
-          "scrollPadding": {"top": 2.0, "bottom": 2.0, "right": 2.0, "left": 2.0},
-          "selectionHeightStyle": "max",
-          "selectionWidthStyle": "max",
-          "strutStyle": {"fontSize": 12},
-          "textAlignVertical": "bottom"
-        }
-      }
-    };
-
-    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     var textfieldFinder = find.byType(TextField);
@@ -168,32 +124,20 @@ void main() {
   });
 
   testWidgets('check textfield style default properties', (WidgetTester tester) async {
-    BuildContext? _context;
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "textfield",
+            "value": "",
+            "style": {"cursorColor": 0xFF000000},
+          }
+        },
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
       ),
     );
-
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "textfield",
-        "value": "",
-        "style": {"cursorColor": 0xFF000000},
-      }
-    };
-
-    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
     var textfieldFinder = find.byType(TextField);

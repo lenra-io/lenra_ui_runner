@@ -1,71 +1,68 @@
-import 'package:client_common/models/user_application_model.dart';
-import 'package:client_common/views/stateful_wrapper.dart';
-import 'package:lenra_ui_runner/lenra_application_model.dart';
-import 'package:lenra_ui_runner/lenra_ui_controller.dart';
-import 'package:lenra_ui_runner/models/channel_model.dart';
-import 'package:lenra_ui_runner/models/client_widget_model.dart';
-import 'package:lenra_ui_runner/models/context_model.dart';
-import 'package:lenra_ui_runner/models/socket_model.dart';
+import 'package:lenra_ui_runner/io_components/lenra_socket.dart';
+import 'package:lenra_ui_runner/models/lenra_application_model.dart';
 import 'package:flutter/material.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
+import 'package:lenra_ui_runner/models/lenra_route_model.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
   /// The name of the Lenra application.
   final String appName;
 
-  final String routeName = "route:/";
-
   /// The URL of the Lenra server.
   final String httpEndpoint;
+
+  /// The URL of the Lenra socket.
+  final String wsEndpoint;
 
   /// The access token to use for the Lenra server.
   final String accessToken;
 
-  const App({Key? key, required this.appName, required this.httpEndpoint, required this.accessToken}) : super(key: key);
+  final Map<String, String> customParams;
+
+  final String baseRoute;
+
+  final Widget routeWidget;
+
+  final void Function(BuildContext, String) navTo;
+
+  const App({
+    Key? key,
+    required this.appName,
+    required this.httpEndpoint,
+    required this.accessToken,
+    required this.wsEndpoint,
+    required this.baseRoute,
+    required this.routeWidget,
+    required this.navTo,
+    this.customParams = const <String, String>{},
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<ContextModel>(create: (context) => ContextModel()),
-        ChangeNotifierProvider<UserApplicationModel>(create: (context) => UserApplicationModel()),
         ChangeNotifierProvider<LenraApplicationModel>(
-          create: (context) => LenraApplicationModel(httpEndpoint, appName, accessToken),
+          create: (context) => LenraApplicationModel(
+            httpEndpoint: httpEndpoint,
+            applicationName: appName,
+            accessToken: accessToken,
+          ),
         ),
-        ChangeNotifierProxyProvider2<SocketModel, ContextModel, ChannelModel>(
-          create: (context) =>
-              ChannelModel(socketModel: context.read<SocketModel>(), contextModel: context.read<ContextModel>()),
-          update: (_, socketModel, contextModel, channelModel) {
-            if (channelModel == null) {
-              return ChannelModel(socketModel: socketModel, contextModel: contextModel);
-            }
-            return channelModel.update(socketModel);
-          },
-        ),
-        ChangeNotifierProxyProvider<ChannelModel, ViewModel>(
-          create: (context) => ClientViewModel(channelModel: context.read<ChannelModel>()),
-          update: (_, channelModel, clientViewModel) => clientViewModel!,
+        ChangeNotifierProxyProvider0<LenraRouteModel>(
+          create: (context) => LenraRouteModel(
+            baseRoute: baseRoute,
+            navTo: navTo,
+            routeWidget: routeWidget,
+          ),
+          update: (context, lenraRouteModel) => lenraRouteModel!.update(routeWidget),
         ),
       ],
-      builder: (BuildContext context, _) {
-        return StatefulWrapper(
-            builder: (context) => Overlay(
-                  initialEntries: [
-                    OverlayEntry(
-                      builder: (context) => const LenraUiController(),
-                    ),
-                  ],
-                ),
-            onInit: () {
-              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-                context.read<ContextModel>().mediaQueryData = MediaQuery.of(context);
-                //The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
-                context.read<ChannelModel>().createChannel(routeName);
-                (context.read<ViewModel>() as ClientViewModel).setupListeners();
-              });
-            });
-      },
+      child: LenraSocket(
+        accessToken: accessToken,
+        appName: appName,
+        wsEndpoint: wsEndpoint,
+        customParams: customParams,
+      ),
     );
   }
 }

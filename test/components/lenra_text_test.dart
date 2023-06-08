@@ -1,49 +1,33 @@
 import 'package:flutter/widgets.dart';
 import 'package:lenra_components/component/lenra_text.dart';
-import 'package:lenra_ui_runner/widget_model.dart';
-import 'package:provider/src/provider.dart';
-
 import "../test_helper.dart";
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lenra_ui_runner/lenra_ui_runner.dart';
 
 void main() {
   testWidgets('check text properties', (WidgetTester tester) async {
-    BuildContext? _context;
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "text",
+            "value": "foo",
+            "spellOut": true,
+            "style": {
+              "fontSize": 2,
+              "fontStyle": "italic",
+            },
+            "semanticsLabel": "bar",
+            "locale": {
+              "languageCode": "fr",
+              "countryCode": "FR",
+            },
+          }
+        },
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
       ),
     );
-
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "text",
-        "value": "foo",
-        "spellOut": true,
-        "style": {
-          "fontSize": 2,
-          "fontStyle": "italic",
-        },
-        "semanticsLabel": "bar",
-        "locale": {
-          "languageCode": "fr",
-          "countryCode": "FR",
-        },
-      }
-    };
-
-    _context!.read<ViewModel>().replaceUi(ui);
 
     await tester.pump();
 
@@ -60,41 +44,30 @@ void main() {
   });
 
   testWidgets('Test Text children', (WidgetTester tester) async {
-    BuildContext? _context;
-
     await tester.pumpWidget(
       createBaseTestWidgets(
-        child: Builder(
-          builder: (BuildContext context) {
-            _context = context;
-
-            return LenraWidget(
-              buildErrorPage: (_ctx, _e) => Text("error"),
-              showSnackBar: (_ctx, _e) => {},
-            );
-          },
-        ),
+        ui: {
+          "root": {
+            "type": "text",
+            "value": "Test",
+            "children": [
+              {
+                "type": "text",
+                "value": "Foo",
+                "children": [
+                  {"type": "text", "value": "Baz"}
+                ]
+              },
+              {"type": "text", "value": "Bar"}
+            ]
+          }
+        },
+        sendEventFn: (_) {
+          return Future.value(true);
+        },
       ),
     );
 
-    Map<String, dynamic> ui = {
-      "root": {
-        "type": "text",
-        "value": "Test",
-        "children": [
-          {
-            "type": "text",
-            "value": "Foo",
-            "children": [
-              {"type": "text", "value": "Baz"}
-            ]
-          },
-          {"type": "text", "value": "Bar"}
-        ]
-      }
-    };
-
-    _context!.read<ViewModel>().replaceUi(ui);
     await tester.pump();
     expect(find.text("TestFooBazBar"), findsOneWidget);
   });
