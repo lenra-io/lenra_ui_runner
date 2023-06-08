@@ -67,10 +67,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void onAction(lenra.Listener? action, BuildContext context) {
   if (action != null) {
-    context.read&lt;ChannelModel&gt;().sendEvent(OnPressedEvent(code: action.code)).then(
-          &#47;&#47;implement loading
-          (value) =&gt; null,
-        );
+    action.run(context, (code) =&gt; OnPressedEvent(code: code));
   }
 }</code></pre>
 </section>

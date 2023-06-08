@@ -66,10 +66,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void onMenuItemPressed(BuildContext context) {
   if (onPressed != null) {
-    context.read&lt;ChannelModel&gt;().sendEvent(OnPressedEvent(code: onPressed!.code)).then(
-          &#47;&#47;implement loading
-          (value) =&gt; null,
-        );
+    onPressed!.run(context, (code) =&gt; OnPressedEvent(code: code));
   }
 }</code></pre>
 </section>

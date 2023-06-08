@@ -70,10 +70,7 @@
     context.read&lt;FormProvider?&gt;()?.setFormFieldValue(name!, value);
   }
   if (onChanged != null) {
-    context.read&lt;ChannelModel&gt;().sendEvent(OnChangedEvent(code: onChanged!.code, data: ValueData(value))).then(
-          &#47;&#47;implement loading
-          (value) =&gt; null,
-        );
+    onChanged!.run(context, (code) =&gt; OnChangedEvent(code: code, data: ValueData(value)));
   }
 }</code></pre>
 </section>

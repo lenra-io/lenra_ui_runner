@@ -67,10 +67,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void onRadioPressed(BuildContext context, String value) {
   if (onPressed != null) {
-    context.read&lt;ChannelModel&gt;().sendEvent(OnChangedEvent(code: onPressed!.code, data: ValueData(value))).then(
-          &#47;&#47;implement loading
-          (value) =&gt; null,
-        );
+    onPressed!.run(context, (code) =&gt; OnChangedEvent(code: code, data: ValueData(value)));
   }
 }</code></pre>
 </section>

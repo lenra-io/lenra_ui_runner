@@ -73,44 +73,28 @@
 Widget build(BuildContext context) {
   return MultiProvider(
     providers: [
-      ChangeNotifierProvider&lt;ContextModel&gt;(create: (context) =&gt; ContextModel()),
-      ChangeNotifierProvider&lt;UserApplicationModel&gt;(create: (context) =&gt; UserApplicationModel()),
       ChangeNotifierProvider&lt;LenraApplicationModel&gt;(
-        create: (context) =&gt; LenraApplicationModel(httpEndpoint, appName, accessToken),
+        create: (context) =&gt; LenraApplicationModel(
+          httpEndpoint: httpEndpoint,
+          applicationName: appName,
+          accessToken: accessToken,
+        ),
       ),
-      ChangeNotifierProxyProvider2&lt;SocketModel, ContextModel, ChannelModel&gt;(
-        create: (context) =&gt;
-            ChannelModel(socketModel: context.read&lt;SocketModel&gt;(), contextModel: context.read&lt;ContextModel&gt;()),
-        update: (_, socketModel, contextModel, channelModel) {
-          if (channelModel == null) {
-            return ChannelModel(socketModel: socketModel, contextModel: contextModel);
-          }
-          return channelModel.update(socketModel);
-        },
-      ),
-      ChangeNotifierProxyProvider&lt;ChannelModel, ViewModel&gt;(
-        create: (context) =&gt; ClientViewModel(channelModel: context.read&lt;ChannelModel&gt;()),
-        update: (_, channelModel, clientViewModel) =&gt; clientViewModel!,
+      ChangeNotifierProxyProvider0&lt;LenraRouteModel&gt;(
+        create: (context) =&gt; LenraRouteModel(
+          baseRoute: baseRoute,
+          navTo: navTo,
+          routeWidget: routeWidget,
+        ),
+        update: (context, lenraRouteModel) =&gt; lenraRouteModel!.update(routeWidget),
       ),
     ],
-    builder: (BuildContext context, _) {
-      return StatefulWrapper(
-          builder: (context) =&gt; Overlay(
-                initialEntries: [
-                  OverlayEntry(
-                    builder: (context) =&gt; const LenraUiController(),
-                  ),
-                ],
-              ),
-          onInit: () {
-            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-              context.read&lt;ContextModel&gt;().mediaQueryData = MediaQuery.of(context);
-              &#47;&#47;The model calls are in the postframe callback because the mediaquerydata is not set until the first frame
-              context.read&lt;ChannelModel&gt;().createChannel(routeName);
-              (context.read&lt;ViewModel&gt;() as ClientViewModel).setupListeners();
-            });
-          });
-    },
+    child: LenraSocket(
+      accessToken: accessToken,
+      appName: appName,
+      wsEndpoint: wsEndpoint,
+      customParams: customParams,
+    ),
   );
 }</code></pre>
 </section>
@@ -145,10 +129,14 @@ Widget build(BuildContext context) {
     </li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App/accessToken.html">accessToken</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App/appName.html">appName</a></li>
+    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App/baseRoute.html">baseRoute</a></li>
+    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App/customParams.html">customParams</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App/httpEndpoint.html">httpEndpoint</a></li>
-    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App/routeName.html">routeName</a></li>
+    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App/navTo.html">navTo</a></li>
+    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App/routeWidget.html">routeWidget</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App/wsEndpoint.html">wsEndpoint</a></li>
 
     <li class="section-title"><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App-class.html#instance-methods">Methods</a></li>
     <li><a href="../../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_app/App/build.html">build</a></li>

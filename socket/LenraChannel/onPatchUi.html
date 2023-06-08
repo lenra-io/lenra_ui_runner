@@ -51,7 +51,7 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype">void</span>
+<span class="returntype"><a href="../../socket/LenraChannel-class.html">LenraChannel</a></span>
 <span class="name ">onPatchUi</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="onPatchUi-param-callback"><span class="type-annotation">void</span> <span class="parameter-name">callback</span>(<ol class="parameter-list"><li><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a></span></span></li>
 </ol>
 )</span></li>
@@ -66,11 +66,12 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">void onPatchUi(void Function(Map&lt;dynamic, dynamic&gt;) callback) {
+  <pre class="language-dart"><code class="language-dart">LenraChannel onPatchUi(void Function(Map&lt;dynamic, dynamic&gt;) callback) {
   _channel.on(&quot;patchUi&quot;, (payload, ref, joinRef) {
     if (payload == null) return;
     callback(payload);
   });
+  return this;
 }</code></pre>
 </section>
 
@@ -110,7 +111,9 @@
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../socket/LenraChannel/onAppError.html">onAppError</a></li>
     <li><a href="../../socket/LenraChannel/onError.html">onError</a></li>
+    <li><a href="../../socket/LenraChannel/onNavTo.html">onNavTo</a></li>
     <li><a href="../../socket/LenraChannel/onPatchUi.html">onPatchUi</a></li>
+    <li><a href="../../socket/LenraChannel/onResponse.html">onResponse</a></li>
     <li><a href="../../socket/LenraChannel/onUi.html">onUi</a></li>
     <li><a href="../../socket/LenraChannel/send.html">send</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>

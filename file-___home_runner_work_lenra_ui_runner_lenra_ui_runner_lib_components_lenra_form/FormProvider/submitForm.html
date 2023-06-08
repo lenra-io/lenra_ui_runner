@@ -68,10 +68,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void submitForm() {
   if (onSubmit != null) {
-    context
-        .read&lt;ChannelModel&gt;()
-        .sendEvent(OnChangedEvent(code: onSubmit!.code, data: ValueData(formFieldValues)))
-        .then(
+    EventManager.of(context).sendEvent(OnChangedEvent(code: onSubmit!.code, data: ValueData(formFieldValues))).then(
           &#47;&#47;implement loading
           (value) =&gt; null,
         );

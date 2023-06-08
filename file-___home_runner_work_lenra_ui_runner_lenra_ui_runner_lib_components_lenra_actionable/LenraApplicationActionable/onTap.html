@@ -69,9 +69,7 @@
     context.read&lt;FormProvider?&gt;()?.submitForm();
   }
   if (onPressed != null) {
-    context.read&lt;ChannelModel&gt;().sendEvent(OnPressedEvent(code: onPressed!.code)).then(
-          (value) =&gt; null,
-        );
+    onPressed!.run(context, (code) =&gt; OnPressedEvent(code: code));
   }
 }</code></pre>
 </section>
