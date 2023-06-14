@@ -56,7 +56,11 @@ class LenraSocketState extends State<LenraSocket> {
             child: LenraRoutes(snapshot.data!),
           );
         }
-        return CircularProgressIndicator();
+        return Container(
+          child: CircularProgressIndicator(),
+          alignment: Alignment.center,
+          color: Colors.white,
+        );
       },
       future: future,
     );
@@ -75,7 +79,7 @@ class LenraSocketState extends State<LenraSocket> {
     });
 
     _socket!.connect();
-    
+
     _socket!.onOpen(() {
       if (!completer.isCompleted) {
         completer.complete(_socket);

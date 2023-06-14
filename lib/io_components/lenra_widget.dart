@@ -26,7 +26,11 @@ class LenraWidget extends StatelessWidget {
     }
 
     if (!hasUi()) {
-      return CircularProgressIndicator();
+      return Container(
+        child: CircularProgressIndicator(),
+        alignment: Alignment.center,
+        color: Colors.white,
+      );
     }
 
     if (ui!.keys.contains("root") && ui!.keys.length == 1) {
