@@ -79,8 +79,10 @@ class LenraRouteState extends State<LenraRoute> {
 
     if (!isInitialized) {
       return Scaffold(
-        body: const Center(
+        body: Container(
           child: CircularProgressIndicator(),
+          alignment: Alignment.center,
+          color: Colors.white,
         ),
       );
     }

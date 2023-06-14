@@ -40,7 +40,11 @@ class LenraRoutesState extends State<LenraRoutes> {
           Widget routeWidget = context.select<LenraRouteModel, Widget>((model) => model.routeWidget);
           return routeWidget;
         }
-        return CircularProgressIndicator();
+        return Container(
+          child: CircularProgressIndicator(),
+          alignment: Alignment.center,
+          color: Colors.white,
+        );
       },
     );
   }
