@@ -83,7 +83,11 @@ Widget build(BuildContext context) {
           child: LenraRoutes(snapshot.data!),
         );
       }
-      return CircularProgressIndicator();
+      return Container(
+        child: CircularProgressIndicator(),
+        alignment: Alignment.center,
+        color: Colors.white,
+      );
     },
     future: future,
   );

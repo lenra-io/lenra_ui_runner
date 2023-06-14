@@ -81,7 +81,11 @@ Widget build(BuildContext context) {
         Widget routeWidget = context.select&lt;LenraRouteModel, Widget&gt;((model) =&gt; model.routeWidget);
         return routeWidget;
       }
-      return CircularProgressIndicator();
+      return Container(
+        child: CircularProgressIndicator(),
+        alignment: Alignment.center,
+        color: Colors.white,
+      );
     },
   );
 }</code></pre>
