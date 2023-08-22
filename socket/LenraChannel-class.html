@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
   <link rel="stylesheet" href="../static-assets/github.css?v1">
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
@@ -21,12 +21,12 @@
 </head>
 
 
-<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<body data-base-href="../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
 <header id="title">
-  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">lenra_ui_runner</a></li>
     <li><a href="../socket/socket-library.html">socket</a></li>
@@ -36,23 +36,15 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button">
-    <label for="theme">
-      <input type="checkbox" id="theme" value="light-theme">
-      <span id="dark-theme-button" class="material-symbols-outlined">
-        brightness_4
-      </span>
-      <span id="light-theme-button" class="material-symbols-outlined">
-        brightness_5
-      </span>
-    </label>
-  </div>
 </header>
+
 <main>
+
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-class">LenraChannel</span> class 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -85,7 +77,7 @@
 </dt>
 <dd class="inherited">
   The hash code for this object.
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features">read-only, inherited</div>
 
 </dd>
 
@@ -96,7 +88,7 @@
 </dt>
 <dd class="inherited">
   A representation of the runtime type of the object.
-  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+  <div class="features">read-only, inherited</div>
 
 </dd>
 
@@ -130,8 +122,8 @@
 
 </dt>
 <dd class="inherited">
-  Invoked when a nonexistent method or property is accessed.
-  <div class="features"><span class="feature">inherited</span></div>
+  Invoked when a non-existent method or property is accessed.
+  <div class="features">inherited</div>
 
 </dd>
 
@@ -235,7 +227,7 @@
 </dt>
 <dd class="inherited">
   A string representation of this object.
-  <div class="features"><span class="feature">inherited</span></div>
+  <div class="features">inherited</div>
 
 </dd>
 
@@ -256,7 +248,7 @@
 </dt>
 <dd class="inherited">
   The equality operator.
-  <div class="features"><span class="feature">inherited</span></div>
+  <div class="features">inherited</div>
 
 </dd>
 
@@ -285,8 +277,8 @@
 
     <h5>socket library</h5>
     <ol>
-      <li class="section-title"><a href="../socket/socket-library.html#classes">Classes</a></li>
-        <li><a href="../socket/LenraChannel-class.html">LenraChannel</a></li>
+  <li class="section-title"><a href="../socket/socket-library.html#classes">Classes</a></li>
+  <li><a href="../socket/LenraChannel-class.html">LenraChannel</a></li>
 
 
 
@@ -306,26 +298,26 @@
           <li><a href="../socket/LenraChannel/LenraChannel.html">LenraChannel</a></li>
 
 
-        <li class="section-title inherited">
-          <a href="../socket/LenraChannel-class.html#instance-properties">Properties</a>
-        </li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li class="section-title inherited">
+      <a href="../socket/LenraChannel-class.html#instance-properties">Properties</a>
+    </li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
-        <li class="section-title"><a href="../socket/LenraChannel-class.html#instance-methods">Methods</a></li>
-          <li><a href="../socket/LenraChannel/close.html">close</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li><a href="../socket/LenraChannel/onAppError.html">onAppError</a></li>
-          <li><a href="../socket/LenraChannel/onError.html">onError</a></li>
-          <li><a href="../socket/LenraChannel/onNavTo.html">onNavTo</a></li>
-          <li><a href="../socket/LenraChannel/onPatchUi.html">onPatchUi</a></li>
-          <li><a href="../socket/LenraChannel/onResponse.html">onResponse</a></li>
-          <li><a href="../socket/LenraChannel/onUi.html">onUi</a></li>
-          <li><a href="../socket/LenraChannel/send.html">send</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
+    <li class="section-title"><a href="../socket/LenraChannel-class.html#instance-methods">Methods</a></li>
+    <li><a href="../socket/LenraChannel/close.html">close</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
+    <li><a href="../socket/LenraChannel/onAppError.html">onAppError</a></li>
+    <li><a href="../socket/LenraChannel/onError.html">onError</a></li>
+    <li><a href="../socket/LenraChannel/onNavTo.html">onNavTo</a></li>
+    <li><a href="../socket/LenraChannel/onPatchUi.html">onPatchUi</a></li>
+    <li><a href="../socket/LenraChannel/onResponse.html">onResponse</a></li>
+    <li><a href="../socket/LenraChannel/onUi.html">onUi</a></li>
+    <li><a href="../socket/LenraChannel/send.html">send</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
 
-        <li class="section-title inherited"><a href="../socket/LenraChannel-class.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
+    <li class="section-title inherited"><a href="../socket/LenraChannel-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
 
 
 
