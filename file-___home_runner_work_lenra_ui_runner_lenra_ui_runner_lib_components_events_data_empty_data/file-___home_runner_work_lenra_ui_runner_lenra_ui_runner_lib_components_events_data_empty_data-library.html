@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
   
   <link rel="stylesheet" href="../static-assets/github.css?v1">
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
@@ -21,12 +21,12 @@
 </head>
 
 
-<body data-base-href="../" data-using-base-href="false">
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
 
 <div id="overlay-under-drawer"></div>
 
 <header id="title">
-  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">lenra_ui_runner</a></li>
     <li class="self-crumb">empty_data library</li>
@@ -35,15 +35,24 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
 </header>
-
 <main>
 
-
   <div id="dartdoc-main-content" class="main-content">
+    
       <div>
 <h1><span class="kind-library">empty_data</span> library 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -104,8 +113,8 @@
       <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_button/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_button-library.html">lenra_button</a></li>
       <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_carousel/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_carousel-library.html">lenra_carousel</a></li>
       <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_checkbox/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_checkbox-library.html">lenra_checkbox</a></li>
-      <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lenra_component_builder/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lenra_component_builder-library.html">lenra_component_builder</a></li>
       <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_lenra_component_builder/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_lenra_component_builder-library.html">lenra_component_builder</a></li>
+      <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lenra_component_builder/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lenra_component_builder-library.html">lenra_component_builder</a></li>
       <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_container/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_container-library.html">lenra_container</a></li>
       <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_dropdown_button/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_dropdown_button-library.html">lenra_dropdown_button</a></li>
       <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_flex/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_lenra_flex-library.html">lenra_flex</a></li>
@@ -149,8 +158,8 @@
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <h5>empty_data library</h5>
     <ol>
-  <li class="section-title"><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_events_data_empty_data/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_events_data_empty_data-library.html#classes">Classes</a></li>
-  <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_events_data_empty_data/EmptyData-class.html">EmptyData</a></li>
+      <li class="section-title"><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_events_data_empty_data/file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_events_data_empty_data-library.html#classes">Classes</a></li>
+        <li><a href="../file-___home_runner_work_lenra_ui_runner_lenra_ui_runner_lib_components_events_data_empty_data/EmptyData-class.html">EmptyData</a></li>
 
 
 
