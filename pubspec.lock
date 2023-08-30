@@ -150,8 +150,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "v1.0.0-alpha.5"
-      resolved-ref: e2808046f3c7ebb2f798497bd87f4cdeb3014a0b
+      ref: "v1.0.0-beta.45"
+      resolved-ref: "0b7891871299c854445b30c0dac78553ca6a3005"
       url: "https://github.com/lenra-io/client-common.git"
     source: git
     version: "1.0.0"
