@@ -10,7 +10,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "toggle",
+            "_type": "toggle",
             "value": true,
             "onPressed": {"code": "YourCode"},
             "style": {
@@ -55,7 +55,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "toggle",
+            "_type": "toggle",
             "value": true,
             "onPressed": {"code": "YourCode"},
             "autofocus": true,

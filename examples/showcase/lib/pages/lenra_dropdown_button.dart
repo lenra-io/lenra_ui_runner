@@ -14,44 +14,44 @@ class _LenraDropdownButtonPageState extends UiBuilderState<LenraDropdownButtonPa
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "children": [
           {
-            "type": "dropdownButton",
+            "_type": "dropdownButton",
             "text": "basic",
             "child": {
-              "type": "button",
+              "_type": "button",
               "text": "foo",
               "mainStyle": "secondary",
               "onPressed": {"code": "myCode"},
             },
           },
-          {"type": "text", "value": "$data"},
+          {"_type": "text", "value": "$data"},
           {
-            "type": "dropdownButton",
+            "_type": "dropdownButton",
             "text": "with icon",
             "child": {
-              "type": "text",
+              "_type": "text",
               "value": "foo",
             },
-            "icon": {"type": "icon", "value": "yard_sharp"},
+            "icon": {"_type": "icon", "value": "yard_sharp"},
           },
           {
-            "type": "dropdownButton",
+            "_type": "dropdownButton",
             "text": "disabled",
             "disabled": true,
             "child": {
-              "type": "text",
+              "_type": "text",
               "value": "foo",
             }
           },
           {
-            "type": "dropdownButton",
+            "_type": "dropdownButton",
             "text": "size & style",
             "size": "large",
             "mainStyle": "tertiary",
             "child": {
-              "type": "text",
+              "_type": "text",
               "value": "foo",
             }
           },

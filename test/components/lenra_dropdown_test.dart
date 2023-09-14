@@ -10,10 +10,10 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "dropdownButton",
+            "_type": "dropdownButton",
             "text": "foo",
             "child": {
-              "type": "button",
+              "_type": "button",
               "text": "bar",
               "onPressed": {"code": "yourCode"},
             }

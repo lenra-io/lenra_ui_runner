@@ -14,10 +14,10 @@ class _LenraStackPageState extends UiBuilderState<LenraStackPage, bool> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "stack",
+        "_type": "stack",
         "children": [
           {
-            "type": "container",
+            "_type": "container",
             "decoration": {"color": 0xFFFF0000},
             "constraints": {
               "minWidth": 100,
@@ -25,10 +25,10 @@ class _LenraStackPageState extends UiBuilderState<LenraStackPage, bool> {
               "minHeight": 100,
               "maxHeight": 100,
             },
-            "child": {"type": "text", "value": ""}
+            "child": {"_type": "text", "value": ""}
           },
           {
-            "type": "container",
+            "_type": "container",
             "decoration": {"color": 0xFF00FF00},
             "constraints": {
               "minWidth": 60,
@@ -36,7 +36,7 @@ class _LenraStackPageState extends UiBuilderState<LenraStackPage, bool> {
               "minHeight": 60,
               "maxHeight": 60,
             },
-            "child": {"type": "text", "value": "This is stacked."}
+            "child": {"_type": "text", "value": "This is stacked."}
           },
         ]
       }

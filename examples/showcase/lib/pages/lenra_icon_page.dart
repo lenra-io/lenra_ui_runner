@@ -14,12 +14,12 @@ class _LenraIconPageState extends UiBuilderState<LenraIconPage, bool> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "mainAxisAlignment": "center",
         "crossAxisAlignment": "center",
         "children": [
           {
-            "type": "icon",
+            "_type": "icon",
             "value": "fingerprint_outlined",
             "color": 0xFFFF0000,
             "size": 200,

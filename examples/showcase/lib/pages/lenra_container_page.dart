@@ -14,7 +14,7 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "direction": "vertical",
         "mainAxisAlignment": "center",
         "crossAxisAlignment": "center",
@@ -22,45 +22,45 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
         "spacing": 2,
         "children": [
           {
-            "type": "flex",
+            "_type": "flex",
             "mainAxisAlignment": "center",
             "spacing": 2,
             "fillParent": true,
             "children": [
               {
-                "type": "container",
+                "_type": "container",
                 "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                 "decoration": {
                   "color": 0xFF9B69DE,
                 },
-                "child": {"type": "text", "value": "Purple"}
+                "child": {"_type": "text", "value": "Purple"}
               },
               {
-                "type": "container",
+                "_type": "container",
                 "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                 "decoration": {
                   "color": 0xFF4AC54A,
                 },
-                "child": {"type": "text", "value": "Green"}
+                "child": {"_type": "text", "value": "Green"}
               },
               {
-                "type": "container",
+                "_type": "container",
                 "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                 "decoration": {
                   "color": 0xFFEE820E,
                 },
-                "child": {"type": "text", "value": "Orange"}
+                "child": {"_type": "text", "value": "Orange"}
               },
             ]
           },
           {
-            "type": "flex",
+            "_type": "flex",
             "mainAxisAlignment": "center",
             "spacing": 2,
             "fillParent": true,
             "children": [
               {
-                "type": "container",
+                "_type": "container",
                 "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                 "decoration": {
                   "color": 0xFFEEEEEE,
@@ -71,10 +71,10 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
                   "bottom": {"width": 3, "color": 0xFF36D8F1},
                   "right": {"width": 3, "color": 0xFF36D8F1},
                 },
-                "child": {"type": "text", "value": "Border Color"}
+                "child": {"_type": "text", "value": "Border Color"}
               },
               {
-                "type": "container",
+                "_type": "container",
                 "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                 "decoration": {
                   "color": 0xFFEEEEEE,
@@ -85,10 +85,10 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
                   "bottom": {"width": 1, "color": 0xFF000000},
                   "right": {"width": 1, "color": 0xFF000000},
                 },
-                "child": {"type": "text", "value": "Border 1px"}
+                "child": {"_type": "text", "value": "Border 1px"}
               },
               {
-                "type": "container",
+                "_type": "container",
                 "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                 "decoration": {
                   "color": 0xFFEEEEEE,
@@ -117,18 +117,18 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
                   "bottom": {"width": 1, "color": 0xFF000000},
                   "right": {"width": 1, "color": 0xFF000000},
                 },
-                "child": {"type": "text", "value": "border radius"}
+                "child": {"_type": "text", "value": "border radius"}
               },
             ]
           },
           {
-            "type": "flex",
+            "_type": "flex",
             "mainAxisAlignment": "center",
             "spacing": 3,
             "fillParent": true,
             "children": [
               {
-                "type": "container",
+                "_type": "container",
                 "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                 "decoration": {
                   "color": 0xFFEEEEEE,
@@ -139,10 +139,10 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
                     "offset": {"dx": 5, "dy": 5}
                   }
                 },
-                "child": {"type": "text", "value": "Shadow"}
+                "child": {"_type": "text", "value": "Shadow"}
               },
               {
-                "type": "container",
+                "_type": "container",
                 "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                 "decoration": {
                   "color": 0xFFEEEEEE,
@@ -153,10 +153,10 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
                     "offset": {"dx": 5, "dy": 5}
                   }
                 },
-                "child": {"type": "text", "value": "shadow color"}
+                "child": {"_type": "text", "value": "shadow color"}
               },
               {
-                "type": "container",
+                "_type": "container",
                 "alignment": "center",
                 "constraints": {
                   "minWidth": 80,
@@ -188,7 +188,7 @@ class _LenraContainerPageState extends UiBuilderState<LenraContainerPage, bool> 
                     "offset": {"dx": 5, "dy": 2}
                   }
                 },
-                "child": {"type": "text", "value": "All in one"}
+                "child": {"_type": "text", "value": "All in one"}
               },
             ]
           },

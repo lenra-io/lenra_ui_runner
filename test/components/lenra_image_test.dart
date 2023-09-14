@@ -53,10 +53,10 @@ void main() {
           createBaseTestWidgets(
             ui: {
               "root": {
-                "type": "image",
+                "_type": "image",
                 "src": "not-existing-path",
                 "errorPlaceHolder": {
-                  "type": "text",
+                  "_type": "text",
                   "value": "Error",
                 }
               }
@@ -82,14 +82,14 @@ void main() {
   //     error: null,
   //     ui: {
   //       "root": {
-  //         "type": "image",
+  //         "_type": "image",
   //         "src": "long-to-load-image",
   //         "loadingPlaceHolder": {
-  //           "type": "text",
+  //           "_type": "text",
   //           "value": "Loading",
   //         },
   //         "errorPlaceHolder": {
-  //           "type": "text",
+  //           "_type": "text",
   //           "value": "Error",
   //         }
   //       }
@@ -124,14 +124,14 @@ void main() {
   //     error: null,
   //     ui: {
   //       "root": {
-  //         "type": "image",
+  //         "_type": "image",
   //         "src": "long-to-load-image",
   //         "framePlaceHolder": {
-  //           "type": "text",
+  //           "_type": "text",
   //           "value": "Frame",
   //         },
   //         "errorPlaceHolder": {
-  //           "type": "text",
+  //           "_type": "text",
   //           "value": "Error",
   //         }
   //       }
@@ -165,12 +165,12 @@ void main() {
   //     error: null,
   //     ui: {
   //       "root": {
-  //         "type": "image",
+  //         "_type": "image",
   //         "width": 500,
   //         "height": 500,
   //         "src": "long-to-load-image",
   //         "errorPlaceHolder": {
-  //           "type": "text",
+  //           "_type": "text",
   //           "value": "Error",
   //         }
   //       }

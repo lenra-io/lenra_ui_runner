@@ -10,7 +10,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "slider",
+            "_type": "slider",
             "value": 10,
             "autofocus": true,
             "min": 0,
@@ -51,7 +51,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "slider",
+            "_type": "slider",
             "value": value,
             "min": 0,
             "max": 100,

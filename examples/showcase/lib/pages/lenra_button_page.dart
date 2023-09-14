@@ -14,17 +14,17 @@ class _LenraButtonPageState extends UiBuilderState<LenraButtonPage, bool> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "children": [
           {
-            "type": "button",
+            "_type": "button",
             "text": "basic",
             "onPressed": {
               "code": "myCode",
             }
           },
           {
-            "type": "button",
+            "_type": "button",
             "text": "disabled",
             "disabled": true,
             "onPressed": {
@@ -32,14 +32,14 @@ class _LenraButtonPageState extends UiBuilderState<LenraButtonPage, bool> {
             }
           },
           {
-            "type": "button",
+            "_type": "button",
             "text": "Changing value $data",
             "onPressed": {
               "code": "myCode",
             }
           },
           {
-            "type": "button",
+            "_type": "button",
             "text": "large secondary",
             "size": "large",
             "mainStyle": "secondary",
@@ -48,7 +48,7 @@ class _LenraButtonPageState extends UiBuilderState<LenraButtonPage, bool> {
             }
           },
           {
-            "type": "button",
+            "_type": "button",
             "text": "small tertiary",
             "size": "small",
             "mainStyle": "tertiary",

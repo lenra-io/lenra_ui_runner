@@ -14,11 +14,11 @@ class _LenraWrapPageState extends UiBuilderState<LenraWrapPage, bool> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "wrap",
+        "_type": "wrap",
         "alignment": "center",
         "children": [
           {
-            "type": "container",
+            "_type": "container",
             "padding": {"top": 8, "bottom": 8, "right": 8, "left": 8},
             "decoration": {"color": 0xFF03A9F8},
             "border": {
@@ -28,22 +28,22 @@ class _LenraWrapPageState extends UiBuilderState<LenraWrapPage, bool> {
               "right": {"width": 1.0, "color": 0xFF000000},
             },
             "child": {
-              "type": "wrap",
+              "_type": "wrap",
               "spacing": 10,
               "children": [
                 {
-                  "type": "text",
+                  "_type": "text",
                   "value": "Foo",
                 },
                 {
-                  "type": "text",
+                  "_type": "text",
                   "value": "Wrapped",
                 }
               ]
             }
           },
           {
-            "type": "container",
+            "_type": "container",
             "padding": {"top": 8, "bottom": 8, "right": 8, "left": 8},
             "decoration": {"color": 0xFF03A9F8},
             "border": {
@@ -53,23 +53,23 @@ class _LenraWrapPageState extends UiBuilderState<LenraWrapPage, bool> {
               "right": {"width": 1.0, "color": 0xFF000000},
             },
             "child": {
-              "type": "wrap",
+              "_type": "wrap",
               "spacing": 10,
               "runspacing": 1,
               "children": [
                 {
-                  "type": "text",
+                  "_type": "text",
                   "value": "Foo",
                 },
                 {
-                  "type": "text",
+                  "_type": "text",
                   "value": "Wrapped",
                 }
               ]
             }
           },
           {
-            "type": "container",
+            "_type": "container",
             "padding": {"top": 8, "bottom": 8, "right": 8, "left": 8},
             "decoration": {"color": 0xFF03A9F8},
             "border": {
@@ -79,23 +79,23 @@ class _LenraWrapPageState extends UiBuilderState<LenraWrapPage, bool> {
               "right": {"width": 1.0, "color": 0xFF000000},
             },
             "child": {
-              "type": "wrap",
+              "_type": "wrap",
               "direction": "vertical",
               "spacing": 10,
               "children": [
                 {
-                  "type": "text",
+                  "_type": "text",
                   "value": "Foo",
                 },
                 {
-                  "type": "text",
+                  "_type": "text",
                   "value": "Wrapped",
                 }
               ]
             }
           },
           {
-            "type": "container",
+            "_type": "container",
             "padding": {"top": 8, "bottom": 8, "right": 8, "left": 8},
             "decoration": {"color": 0xFF03A9F4},
             "border": {
@@ -105,24 +105,24 @@ class _LenraWrapPageState extends UiBuilderState<LenraWrapPage, bool> {
               "right": {"width": 1.0, "color": 0xFF000000},
             },
             "child": {
-              "type": "wrap",
+              "_type": "wrap",
               "direction": "vertical",
               "spacing": 10,
               "runSpacing": 1,
               "children": [
                 {
-                  "type": "text",
+                  "_type": "text",
                   "value": "Foo",
                 },
                 {
-                  "type": "text",
+                  "_type": "text",
                   "value": "Wrapped",
                 }
               ]
             }
           },
           {
-            "type": "container",
+            "_type": "container",
             "padding": {"top": 8, "bottom": 8, "right": 8, "left": 8},
             "decoration": {"color": 0xFF03A9F4},
             "border": {
@@ -132,20 +132,20 @@ class _LenraWrapPageState extends UiBuilderState<LenraWrapPage, bool> {
               "right": {"width": 1.0, "color": 0xFF000000},
             },
             "child": {
-              "type": "wrap",
+              "_type": "wrap",
               "crossAxisAlignment": "start",
               "children": [
                 {
-                  "type": "container",
+                  "_type": "container",
                   "padding": {"top": 5, "bottom": 5, "right": 5, "left": 5},
                   "decoration": {"color": 0xFF8BC34A},
-                  "child": {"type": "text", "value": "foo"}
+                  "child": {"_type": "text", "value": "foo"}
                 },
                 {
-                  "type": "container",
+                  "_type": "container",
                   "padding": {"top": 3, "bottom": 3, "right": 3, "left": 3},
                   "decoration": {"color": 0xFF8BC34A},
-                  "child": {"type": "text", "value": "foo"}
+                  "child": {"_type": "text", "value": "foo"}
                 }
               ]
             }

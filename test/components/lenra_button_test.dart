@@ -11,7 +11,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "button",
+            "_type": "button",
             "text": "foo",
             "onPressed": {"code": "pressed"}
           }

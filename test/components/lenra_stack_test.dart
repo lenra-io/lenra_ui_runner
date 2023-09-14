@@ -8,10 +8,10 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "stack",
+            "_type": "stack",
             "children": [
-              {"type": "text", "value": "foo"},
-              {"type": "text", "value": "bar"}
+              {"_type": "text", "value": "foo"},
+              {"_type": "text", "value": "bar"}
             ],
           }
         },
@@ -34,11 +34,11 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "stack",
+            "_type": "stack",
             "alignment": "topRight",
             "children": [
-              {"type": "text", "value": "loremipsum"},
-              {"type": "text", "value": "bar"}
+              {"_type": "text", "value": "loremipsum"},
+              {"_type": "text", "value": "bar"}
             ],
           }
         },
@@ -59,11 +59,11 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "stack",
+            "_type": "stack",
             "fit": "expand",
             "children": [
-              {"type": "text", "value": "loremipsum"},
-              {"type": "text", "value": "bar"}
+              {"_type": "text", "value": "loremipsum"},
+              {"_type": "text", "value": "bar"}
             ],
           }
         },
@@ -83,10 +83,10 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "stack",
+            "_type": "stack",
             "children": [
-              {"type": "text", "value": "loremipsum"},
-              {"type": "text", "value": "bar"}
+              {"_type": "text", "value": "loremipsum"},
+              {"_type": "text", "value": "bar"}
             ],
           }
         },

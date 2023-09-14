@@ -9,7 +9,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "radio",
+            "_type": "radio",
             "value": "foo",
             "groupValue": "bar",
             "autofocus": true,
@@ -59,7 +59,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "radio",
+            "_type": "radio",
             "value": true,
             "groupValue": "a",
             "onPressed": {"code": "pressed"},

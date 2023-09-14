@@ -81,22 +81,22 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
   List getOverlays(Map<String, dynamic> data) {
     return [
       {
-        "type": "overlayEntry",
+        "_type": "overlayEntry",
         "showOverlay": data["data"].containsKey("showOverlay") ? data["data"]["showOverlay"] : false,
         "child": {
-          "type": "container",
+          "_type": "container",
           "decoration": {
             "color": 0x44000000,
           },
           "child": {
-            "type": "flex",
+            "_type": "flex",
             "mainAxisAlignment": "center",
             "crossAxisAlignment": "center",
             "direction": "vertical",
             "spacing": 2,
             "children": [
               {
-                "type": "container",
+                "_type": "container",
                 "decoration": {"color": 0xFFFFFFFF},
                 "padding": {
                   "left": 2,
@@ -105,25 +105,25 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
                   "bottom": 2,
                 },
                 "child": {
-                  "type": "flex",
+                  "_type": "flex",
                   "crossAxisAlignment": "center",
                   "direction": "vertical",
                   "spacing": 2,
                   "children": [
-                    {"type": "text", "value": "This is an overlay entry."},
+                    {"_type": "text", "value": "This is an overlay entry."},
                     {
-                      "type": "flex",
+                      "_type": "flex",
                       "direction": "horizontal",
                       "children": [
                         {
-                          "type": "flexible",
+                          "_type": "flexible",
                           "child": {
-                            "type": "textfield",
+                            "_type": "textfield",
                             "value": data["data"]["textfieldValue"],
                             "style": {
                               "decoration": {
                                 "label": {
-                                  "type": "text",
+                                  "_type": "text",
                                   "value": "What is your name ?",
                                 },
                                 "hintText": "Pascal",
@@ -134,18 +134,18 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
                             "onChanged": {"code": "CodeA"}
                           }
                         },
-                        {"type": "text", "value": data["data"]["textfieldValue"]}
+                        {"_type": "text", "value": data["data"]["textfieldValue"]}
                       ]
                     },
                     {
-                      "type": "button",
+                      "_type": "button",
                       "text": "New page",
                       "onPressed": {
                         "code": "NewPage",
                       }
                     },
                     {
-                      "type": "button",
+                      "_type": "button",
                       "text": "Close",
                       "onPressed": {
                         "code": "hideOverlay",
@@ -159,21 +159,21 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
         }
       },
       {
-        "type": "overlayEntry",
+        "_type": "overlayEntry",
         "showOverlay": data["data"].containsKey("showOverlay2") ? data["data"]["showOverlay2"] : true,
         "child": {
-          "type": "container",
+          "_type": "container",
           "decoration": {
             "color": 0x44000000,
           },
           "child": {
-            "type": "flex",
+            "_type": "flex",
             "mainAxisAlignment": "center",
             "crossAxisAlignment": "center",
             "direction": "vertical",
             "children": [
               {
-                "type": "container",
+                "_type": "container",
                 "decoration": {"color": 0xFFFFFFFF},
                 "padding": {
                   "left": 2,
@@ -182,18 +182,18 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
                   "bottom": 2,
                 },
                 "child": {
-                  "type": "flex",
+                  "_type": "flex",
                   "crossAxisAlignment": "center",
                   "direction": "vertical",
                   "spacing": 2,
                   "children": [
                     {
-                      "type": "text",
+                      "_type": "text",
                       "value": "This is an overlay.",
                     },
-                    {"type": "text", "value": "You can close it by clicking on the button."},
+                    {"_type": "text", "value": "You can close it by clicking on the button."},
                     {
-                      "type": "button",
+                      "_type": "button",
                       "text": "Close",
                       "onPressed": {
                         "code": "hideOverlay2",
@@ -224,7 +224,7 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
     }
 
     return {
-      "type": "flex",
+      "_type": "flex",
       "fillParent": true,
       "mainAxisAlignment": "center",
       "crossAxisAlignment": "center",
@@ -234,13 +234,13 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
 
   Map<String, dynamic> homePage() {
     return {
-      "type": "flex",
+      "_type": "flex",
       "fillParent": true,
       "mainAxisAlignment": "center",
       "crossAxisAlignment": "center",
       "children": [
         {
-          "type": "flex",
+          "_type": "flex",
           "mainAxisAlignment": "center",
           "crossAxisAlignment": "center",
           "direction": "vertical",
@@ -248,11 +248,11 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
           "fillParent": true,
           "children": [
             {
-              "type": "text",
+              "_type": "text",
               "value": "You can show another overlay by clicking on the button below.",
             },
             {
-              "type": "button",
+              "_type": "button",
               "text": "Show",
               "onPressed": {
                 "code": "showOverlay",
@@ -266,13 +266,13 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
 
   Map<String, dynamic> newPage() {
     return {
-      "type": "flex",
+      "_type": "flex",
       "fillParent": true,
       "mainAxisAlignment": "center",
       "crossAxisAlignment": "center",
       "children": [
         {
-          "type": "flex",
+          "_type": "flex",
           "mainAxisAlignment": "center",
           "crossAxisAlignment": "center",
           "direction": "vertical",
@@ -280,11 +280,11 @@ class _LenraOverlayEntryPageState extends UiBuilderState<LenraOverlayEntryPage, 
           "fillParent": true,
           "children": [
             {
-              "type": "text",
+              "_type": "text",
               "value": "This is another page.",
             },
             {
-              "type": "button",
+              "_type": "button",
               "text": "Go back to the first page",
               "onPressed": {
                 "code": "InitData",
