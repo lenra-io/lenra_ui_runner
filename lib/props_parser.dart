@@ -872,7 +872,7 @@ class Parser {
   }
 
   static InputBorder parseInputBorder(Map<String, dynamic> props) {
-    String? inputBorderType = props.containsKey("_type") ? parseString(props["_type"]) : null;
+    String? inputBorderType = props.containsKey("type") ? parseString(props["type"]) : null;
     BorderRadius? borderRadius = props.containsKey("borderRadius") ? parseBorderRadius(props["borderRadius"]) : null;
     BorderSide? borderSide = props.containsKey("borderSide") ? parseBorderSide(props["borderSide"]) : null;
 
