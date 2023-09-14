@@ -14,43 +14,43 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "children": [
           {
-            "type": "flex",
+            "_type": "flex",
             "children": [
               {
-                "type": "flex",
+                "_type": "flex",
                 "direction": "vertical",
                 "spacing": 3,
                 "children": [
-                  {"type": "text", "value": "first"},
-                  {"type": "text", "value": "second"}
+                  {"_type": "text", "value": "first"},
+                  {"_type": "text", "value": "second"}
                 ]
               },
             ],
           },
           {
-            "type": "flex",
+            "_type": "flex",
             "children": [
               {
-                "type": "flex",
+                "_type": "flex",
                 "direction": "vertical",
                 "spacing": 3,
                 "children": [
-                  {"type": "text", "value": "first"},
-                  {"type": "text", "value": "second"}
+                  {"_type": "text", "value": "first"},
+                  {"_type": "text", "value": "second"}
                 ]
               },
             ],
           },
           {
-            "type": "container",
+            "_type": "container",
             "decoration": {
               "color": 0xffaabbcc,
             },
             "child": {
-              "type": "flex",
+              "_type": "flex",
               "padding": {
                 "top": 10,
                 "left": 10,
@@ -59,12 +59,12 @@ class _LenraFlexPageState extends UiBuilderState<LenraFlexPage, bool> {
               },
               "children": [
                 {
-                  "type": "container",
+                  "_type": "container",
                   "decoration": {
                     "color": 0xffffffff,
                   },
                   "child": {
-                    "type": "text",
+                    "_type": "text",
                     "value": "padding",
                   }
                 }

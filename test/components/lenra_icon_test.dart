@@ -9,7 +9,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "icon",
+            "_type": "icon",
             "value": "fingerprint",
             "size": 6,
             "color": 0xFF000000,

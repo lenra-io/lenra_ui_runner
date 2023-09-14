@@ -9,13 +9,13 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "wrap",
+            "_type": "wrap",
             "children": [
-              {"type": "text", "value": "foo"},
-              {"type": "text", "value": "bar"},
-              {"type": "text", "value": "test"},
-              {"type": "text", "value": "lorem"},
-              {"type": "text", "value": "ipsum"}
+              {"_type": "text", "value": "foo"},
+              {"_type": "text", "value": "bar"},
+              {"_type": "text", "value": "test"},
+              {"_type": "text", "value": "lorem"},
+              {"_type": "text", "value": "ipsum"}
             ]
           }
         },
@@ -45,7 +45,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "wrap",
+            "_type": "wrap",
             "direction": "vertical",
             "crossAxisAlignment": "end",
             "runAlignment": "end",
@@ -55,9 +55,9 @@ void main() {
             "verticalDirection": "up",
             "horizontalDirection": "rtl",
             "children": [
-              {"type": "text", "value": "foo"},
-              {"type": "text", "value": "bar"},
-              {"type": "text", "value": "test"},
+              {"_type": "text", "value": "foo"},
+              {"_type": "text", "value": "bar"},
+              {"_type": "text", "value": "test"},
             ]
           }
         },
@@ -87,12 +87,12 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "wrap",
+            "_type": "wrap",
             "spacing": 8000,
             "runSpacing": 16.0,
             "children": [
-              {"type": "text", "value": "foo"},
-              {"type": "text", "value": "bar"},
+              {"_type": "text", "value": "foo"},
+              {"_type": "text", "value": "bar"},
             ]
           }
         },
@@ -113,13 +113,13 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "wrap",
+            "_type": "wrap",
             "spacing": 1000,
             "runSpacing": 16.0,
             "direction": "vertical",
             "children": [
-              {"type": "text", "value": "foo"},
-              {"type": "text", "value": "bar"},
+              {"_type": "text", "value": "foo"},
+              {"_type": "text", "value": "bar"},
             ]
           }
         },

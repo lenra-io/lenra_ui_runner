@@ -9,7 +9,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "checkbox",
+            "_type": "checkbox",
             "value": true,
             "onPressed": {"code": "check"}
           }
@@ -34,7 +34,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "checkbox",
+            "_type": "checkbox",
             "value": true,
             "onPressed": {"code": "check"}
           }

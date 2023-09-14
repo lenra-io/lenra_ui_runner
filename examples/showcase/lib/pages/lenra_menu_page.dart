@@ -14,23 +14,23 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "children": [
           {
-            "type": "menu",
+            "_type": "menu",
             "children": [
               {
-                "type": "menuItem",
+                "_type": "menuItem",
                 "text": "First",
                 "isSelected": data,
                 "disabled": true,
-                "icon": {"type": "icon", "value": "ac_unit"},
+                "icon": {"_type": "icon", "value": "ac_unit"},
                 "onPressed": {
                   "code": "first",
                 }
               },
               {
-                "type": "menuItem",
+                "_type": "menuItem",
                 "text": "Second",
                 "isSelected": data,
                 "onPressed": {
@@ -38,19 +38,19 @@ class _LenraMenuPageState extends UiBuilderState<LenraMenuPage, bool> {
                 }
               },
               {
-                "type": "menuItem",
+                "_type": "menuItem",
                 "text": "Third",
                 "isSelected": data,
-                "icon": {"type": "icon", "value": "unarchive"},
+                "icon": {"_type": "icon", "value": "unarchive"},
                 "onPressed": {
                   "code": "third",
                 }
               },
               {
-                "type": "menuItem",
+                "_type": "menuItem",
                 "text": "Fourth",
                 "isSelected": data,
-                "icon": {"type": "icon", "value": "aod"},
+                "icon": {"_type": "icon", "value": "aod"},
                 "onPressed": {
                   "code": "fourth",
                 }

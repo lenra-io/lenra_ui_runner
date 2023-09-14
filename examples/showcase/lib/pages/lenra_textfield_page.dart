@@ -15,30 +15,30 @@ class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "direction": "vertical",
         "spacing": 4,
         "mainAxisAlignment": "spaceAround",
         "children": [
           {
-            "type": "container",
+            "_type": "container",
             "constraints": {
               "maxWidth": 400,
               "maxHeight": 100
             },
             "child": {
-              "type": "textfield",
+              "_type": "textfield",
               "value": data,
               "style": {
                 "decoration": {
                   "icon": {
-                    "type": "icon",
+                    "_type": "icon",
                     "value": "star",
                   },
                   "filled": true,
                   "fillColor": 0xFFBBDEFB,
                   "border": {
-                    "type": "outline",
+                    "_type": "outline",
                   },
                   "hintText": "hint",
                   "helperText": "helper",
@@ -52,8 +52,8 @@ class _LenraTextFieldPageState extends UiBuilderState<LenraTextFieldPage, String
             },
           },
           {
-            "type": "flexible",
-            "child": {"type": "text", "value": data}
+            "_type": "flexible",
+            "child": {"_type": "text", "value": data}
           }
         ]
       }

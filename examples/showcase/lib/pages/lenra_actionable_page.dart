@@ -14,17 +14,17 @@ class _LenraActionablePage extends UiBuilderState<LenraActionablePage, bool> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "children": [
           {
-            "type": "container",
+            "_type": "container",
             "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
             "decoration": {
               "color": 0xFF9B69DE,
             },
             "child": {
-              "type": "actionable",
-              "child": {"type": "text", "value": "Purple"}
+              "_type": "actionable",
+              "child": {"_type": "text", "value": "Purple"}
             },
           }
         ]

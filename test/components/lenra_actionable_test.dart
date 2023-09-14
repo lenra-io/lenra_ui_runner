@@ -19,9 +19,9 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "actionable",
+            "_type": "actionable",
             "child": {
-              "type": "text",
+              "_type": "text",
               "value": "foo",
             },
             "onDoublePressed": {
@@ -52,9 +52,9 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "actionable",
+            "_type": "actionable",
             "child": {
-              "type": "text",
+              "_type": "text",
               "value": "foo",
             },
             "onPressed": {
@@ -80,9 +80,9 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "actionable",
+            "_type": "actionable",
             "child": {
-              "type": "text",
+              "_type": "text",
               "value": "foo",
             },
             "onPressed": {
@@ -109,9 +109,9 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "actionable",
+            "_type": "actionable",
             "child": {
-              "type": "text",
+              "_type": "text",
               "value": "foo",
             },
             "onPressed": {
@@ -139,8 +139,8 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "actionable",
-            "child": {"type": "text", "value": "Purple"}
+            "_type": "actionable",
+            "child": {"_type": "text", "value": "Purple"}
           },
         },
         sendEventFn: (_) {

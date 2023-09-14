@@ -14,12 +14,12 @@ class _LenraStatusStickerPageState extends UiBuilderState<LenraStatusStickerPage
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "children": [
-          {"type": "statusSticker", "status": "success"},
-          {"type": "statusSticker", "status": "warning"},
-          {"type": "statusSticker", "status": "error"},
-          {"type": "statusSticker", "status": "pending"},
+          {"_type": "statusSticker", "status": "success"},
+          {"_type": "statusSticker", "status": "warning"},
+          {"_type": "statusSticker", "status": "error"},
+          {"_type": "statusSticker", "status": "pending"},
         ]
       }
     };

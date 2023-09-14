@@ -14,16 +14,16 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "spacing": 2,
         "children": [
           {
-            "type": "flex",
+            "_type": "flex",
             "crossAxisAlignment": "center",
             "children": [
-              {"type": "text", "value": "Basic selected"},
+              {"_type": "text", "value": "Basic selected"},
               {
-                "type": "radio",
+                "_type": "radio",
                 "value": "a",
                 "groupValue": "a",
                 "onPressed": {
@@ -33,24 +33,24 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
             ]
           },
           {
-            "type": "flex",
+            "_type": "flex",
             "crossAxisAlignment": "center",
             "children": [
-              {"type": "text", "value": "Disabled selected"},
+              {"_type": "text", "value": "Disabled selected"},
               {
-                "type": "radio",
+                "_type": "radio",
                 "value": "a",
                 "groupValue": "a",
               },
             ]
           },
           {
-            "type": "flex",
+            "_type": "flex",
             "crossAxisAlignment": "center",
             "children": [
-              {"type": "text", "value": "Basic"},
+              {"_type": "text", "value": "Basic"},
               {
-                "type": "radio",
+                "_type": "radio",
                 "value": "a",
                 "groupValue": "b",
                 "onPressed": {
@@ -60,24 +60,24 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
             ]
           },
           {
-            "type": "flex",
+            "_type": "flex",
             "crossAxisAlignment": "center",
             "children": [
-              {"type": "text", "value": "Disabled"},
+              {"_type": "text", "value": "Disabled"},
               {
-                "type": "radio",
+                "_type": "radio",
                 "value": "a",
                 "groupValue": "b",
               },
             ]
           },
           {
-            "type": "flex",
+            "_type": "flex",
             "crossAxisAlignment": "center",
             "children": [
-              {"type": "text", "value": "Unselected Color"},
+              {"_type": "text", "value": "Unselected Color"},
               {
-                "type": "radio",
+                "_type": "radio",
                 "value": "a",
                 "groupValue": "b",
                 "style": {
@@ -90,41 +90,41 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
             ]
           },
           {
-            "type": "flex",
+            "_type": "flex",
             "crossAxisAlignment": "center",
             "children": [
-              {"type": "text", "value": "Interactive 1"},
+              {"_type": "text", "value": "Interactive 1"},
               {
-                "type": "radio",
+                "_type": "radio",
                 "value": "a",
                 "groupValue": data,
-                "onPressed": {"code": "actionA"}
+                "onPressed": {"code": "listenerA"}
               },
             ]
           },
           {
-            "type": "flex",
+            "_type": "flex",
             "crossAxisAlignment": "center",
             "children": [
-              {"type": "text", "value": "Interactive 2"},
+              {"_type": "text", "value": "Interactive 2"},
               {
-                "type": "radio",
+                "_type": "radio",
                 "value": "b",
                 "groupValue": data,
-                "onPressed": {"code": "actionB"}
+                "onPressed": {"code": "listenerB"}
               },
             ]
           },
           {
-            "type": "flex",
+            "_type": "flex",
             "crossAxisAlignment": "center",
             "children": [
-              {"type": "text", "value": "Interactive 3"},
+              {"_type": "text", "value": "Interactive 3"},
               {
-                "type": "radio",
+                "_type": "radio",
                 "value": "c",
                 "groupValue": data,
-                "onPressed": {"code": "actionC"}
+                "onPressed": {"code": "listenerC"}
               }
             ]
           },
@@ -138,11 +138,11 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
     switch (event.code) {
       case "InitData":
         return "a";
-      case "actionA":
+      case "listenerA":
         return "a";
-      case "actionB":
+      case "listenerB":
         return "b";
-      case "actionC":
+      case "listenerC":
         return "c";
       default:
         return "a";

@@ -9,7 +9,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "text",
+            "_type": "text",
             "value": "foo",
             "spellOut": true,
             "style": {
@@ -48,17 +48,17 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "text",
+            "_type": "text",
             "value": "Test",
             "children": [
               {
-                "type": "text",
+                "_type": "text",
                 "value": "Foo",
                 "children": [
-                  {"type": "text", "value": "Baz"}
+                  {"_type": "text", "value": "Baz"}
                 ]
               },
-              {"type": "text", "value": "Bar"}
+              {"_type": "text", "value": "Bar"}
             ]
           }
         },

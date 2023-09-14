@@ -13,13 +13,13 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   },
@@ -52,7 +52,7 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "button",
+              "_type": "button",
               "text": "Submit",
               "submit": true,
             }
@@ -77,13 +77,13 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                   },
                 ]
@@ -115,13 +115,13 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                     "onPressed": {"code": "pressed"}

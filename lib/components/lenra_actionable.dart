@@ -61,9 +61,9 @@ class LenraApplicationActionable extends StatelessWidget {
     required this.submit,
   }) : super();
 
-  void onAction(lenra.Listener? action, BuildContext context) {
-    if (action != null) {
-      action.run(context, (code) => OnPressedEvent(code: code));
+  void onAction(lenra.Listener? listener, BuildContext context) {
+    if (listener != null) {
+      listener.run(context, (code) => OnPressedEvent(code: code));
     }
   }
 

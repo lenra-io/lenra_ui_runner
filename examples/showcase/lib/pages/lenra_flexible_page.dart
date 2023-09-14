@@ -12,27 +12,27 @@ class LenraFlexiblePage extends StatefulWidget {
 class _LenraFlexiblePageState extends UiBuilderState<LenraFlexiblePage, bool> {
   Map<String, dynamic> littleSquare(int color, int flex) {
     return {
-      "type": "flexible",
+      "_type": "flexible",
       "fit": "tight",
       "flex": flex,
       "child": {
-        "type": "container",
+        "_type": "container",
         "decoration": {
           "color": color,
         },
-        "child": {"type": "text", "value": " "}
+        "child": {"_type": "text", "value": " "}
       }
     };
   }
 
   Map<String, dynamic> lineFlex(int color1, int color2, int flex) {
     return {
-      "type": "flexible",
+      "_type": "flexible",
       "flex": flex,
       "child": {
-        "type": "container",
+        "_type": "container",
         "child": {
-          "type": "flex",
+          "_type": "flex",
           "fillParent": true,
           "mainAxisAlignment": "spaceEvenly",
           "crossAxisAlignment": "stretch",
@@ -51,7 +51,7 @@ class _LenraFlexiblePageState extends UiBuilderState<LenraFlexiblePage, bool> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "direction": "vertical",
         "spacing": 1,
         "padding": {"top": 1, "bottom": 1, "right": 1, "left": 1},

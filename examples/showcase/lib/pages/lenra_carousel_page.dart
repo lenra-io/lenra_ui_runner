@@ -14,24 +14,24 @@ class _LenraCarouselPage extends UiBuilderState<LenraCarouselPage, bool> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "spacing": 16,
         "children": [
           {
-            "type": "container",
+            "_type": "container",
             "constraints": {
               "maxWidth": 200,
               "maxHeight": 200,
             },
             "child": {
-              "type": "carousel",
+              "_type": "carousel",
               "children": List<Map<String, dynamic>>.generate(
                 40,
                 (index) => {
-                  "type": "container",
+                  "_type": "container",
                   "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                   "child": {
-                    "type": "container",
+                    "_type": "container",
                     "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                     "decoration": {
                       "color": 0xFFA8A8A8,
@@ -54,20 +54,20 @@ class _LenraCarouselPage extends UiBuilderState<LenraCarouselPage, bool> {
                         },
                       },
                     },
-                    "child": {"type": "text", "value": "This is element number $index"}
+                    "child": {"_type": "text", "value": "This is element number $index"}
                   },
                 },
               )
             },
           },
           {
-            "type": "container",
+            "_type": "container",
             "constraints": {
               "maxWidth": 200,
               "maxHeight": 200,
             },
             "child": {
-              "type": "carousel",
+              "_type": "carousel",
               "options": {
                 "aspectRatio": 2.0,
                 "enlargeCenterPage": true,
@@ -76,10 +76,10 @@ class _LenraCarouselPage extends UiBuilderState<LenraCarouselPage, bool> {
               "children": List<Map<String, dynamic>>.generate(
                 40,
                 (index) => {
-                  "type": "container",
+                  "_type": "container",
                   "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                   "child": {
-                    "type": "container",
+                    "_type": "container",
                     "padding": {"top": 8, "left": 8, "bottom": 8, "right": 8},
                     "decoration": {
                       "color": 0xFFA8A8A8,
@@ -102,7 +102,7 @@ class _LenraCarouselPage extends UiBuilderState<LenraCarouselPage, bool> {
                         },
                       },
                     },
-                    "child": {"type": "text", "value": "This is element number $index"}
+                    "child": {"_type": "text", "value": "This is element number $index"}
                   },
                 },
               )

@@ -7,7 +7,7 @@ void main() {
   testWidgets('change simple property', (WidgetTester tester) async {
     Map<String, dynamic> ui = {
       "root": {
-        "type": "text",
+        "_type": "text",
         "value": "foo",
       }
     };
@@ -44,9 +44,9 @@ void main() {
   testWidgets('Remove children of flex', (WidgetTester tester) async {
     Map<String, dynamic> ui = {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "children": [
-          {"type": "text", "value": "foo"}
+          {"_type": "text", "value": "foo"}
         ]
       }
     };
@@ -87,9 +87,9 @@ void main() {
   testWidgets('Change children of flex', (WidgetTester tester) async {
     Map<String, dynamic> ui = {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "children": [
-          {"type": "text", "value": "foo"}
+          {"_type": "text", "value": "foo"}
         ]
       }
     };
@@ -107,7 +107,7 @@ void main() {
       {
         "path": "/root/children",
         "value": [
-          {"type": "text", "value": "bar"}
+          {"_type": "text", "value": "bar"}
         ],
         "op": "replace"
       }
@@ -132,7 +132,7 @@ void main() {
 
   testWidgets('Change children of flex', (WidgetTester tester) async {
     Map<String, dynamic> ui = {
-      "root": {"type": "text", "value": "foo"}
+      "root": {"_type": "text", "value": "foo"}
     };
 
     await tester.pumpWidget(
@@ -145,7 +145,7 @@ void main() {
     );
 
     List<Map<String, dynamic>> patches = [
-      {"path": "/root/type", "value": "button", "op": "replace"},
+      {"path": "/root/_type", "value": "button", "op": "replace"},
       {"path": "/root/value", "op": "remove"},
       {"path": "/root/text", "value": "bar", "op": "add"}
     ];
@@ -176,7 +176,7 @@ void main() {
   testWidgets('Change child of container', (WidgetTester tester) async {
     Map<String, dynamic> ui = {
       "root": {
-        "type": "button",
+        "_type": "button",
         "text": "foo",
         "onPressed": {"code": "john"}
       }
@@ -194,12 +194,12 @@ void main() {
     List<Map<String, dynamic>> patches = [
       {"op": "remove", "path": "/root/onPressed"},
       {"op": "remove", "path": "/root/text"},
-      {"op": "replace", "path": "/root/type", "value": "container"},
+      {"op": "replace", "path": "/root/_type", "value": "container"},
       {
         "op": "add",
         "path": "/root/child",
         "value": {
-          "type": "button",
+          "_type": "button",
           "text": "bar",
           "onPressed": {"code": "doe"}
         }

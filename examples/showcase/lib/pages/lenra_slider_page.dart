@@ -14,12 +14,12 @@ class _LenraSliderPageState extends UiBuilderState<LenraSliderPage, Map<String, 
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "mainAxisAlignment": "center",
         "crossAxisAlignment": "center",
         "children": [
           {
-            "type": "slider",
+            "_type": "slider",
             "autofocus": true,
             "value": data["slider"],
             "divisions": 100,

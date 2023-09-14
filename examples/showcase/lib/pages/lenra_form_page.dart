@@ -15,47 +15,47 @@ class _LenraFormPageState extends UiBuilderState<LenraFormPage, Map<String, dyna
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "form",
+        "_type": "form",
         "onSubmit": {"code": "submitted"},
         "child": {
-          "type": "flex",
+          "_type": "flex",
           "direction": "vertical",
           "children": [
             {
-              "type": "toggle",
+              "_type": "toggle",
               "name": "toggleValue",
               "value": data["toggle"],
               "onPressed": {"code": "toggled"}
             },
             {
-              "type": "checkbox",
+              "_type": "checkbox",
               "value": data["checkbox"],
               "name": "checkboxValue",
               "onPressed": {"code": "checked"}
             },
             {
-              "type": "flexible",
-              "child": {"type": "textfield", "value": "", "name": "t1"}
+              "_type": "flexible",
+              "child": {"_type": "textfield", "value": "", "name": "t1"}
             },
             {
-              "type": "flexible",
-              "child": {"type": "textfield", "value": "", "name": "t2"}
+              "_type": "flexible",
+              "child": {"_type": "textfield", "value": "", "name": "t2"}
             },
             {
-              "type": "flexible",
-              "child": {"type": "textfield", "value": "", "name": "t3"}
+              "_type": "flexible",
+              "child": {"_type": "textfield", "value": "", "name": "t3"}
             },
             {
-              "type": "flex",
+              "_type": "flex",
               "children": [
                 {
-                  "type": "radio",
+                  "_type": "radio",
                   "name": "radioValue",
                   "value": "radio1",
                   "groupValue": data["radioValue"],
                 },
                 {
-                  "type": "radio",
+                  "_type": "radio",
                   "name": "radioValue",
                   "value": "radio2",
                   "groupValue": data["radioValue"],
@@ -63,12 +63,12 @@ class _LenraFormPageState extends UiBuilderState<LenraFormPage, Map<String, dyna
               ]
             },
             {
-              "type": "button",
+              "_type": "button",
               "text": "Submit",
               "submit": true,
             },
             {
-              "type": "text",
+              "_type": "text",
               "value": "Form data : ${data['text']}",
             }
           ]

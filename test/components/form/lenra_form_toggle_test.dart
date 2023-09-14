@@ -14,19 +14,19 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "toggle",
+                    "_type": "toggle",
                     "value": true,
                     "name": "toggleValue",
                     "onPressed": {"code": "checked"}
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   },
@@ -62,18 +62,18 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "toggle",
+                    "_type": "toggle",
                     "value": true,
                     "name": "toggleValue",
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   },
@@ -108,18 +108,18 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "form",
+            "_type": "form",
             "onSubmit": {"code": "submitted"},
             "child": {
-              "type": "flex",
+              "_type": "flex",
               "children": [
                 {
-                  "type": "toggle",
+                  "_type": "toggle",
                   "value": true,
                   "onPressed": {"code": "checked"}
                 },
                 {
-                  "type": "button",
+                  "_type": "button",
                   "text": "Submit",
                   "submit": true,
                 }
@@ -153,15 +153,15 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "flex",
+              "_type": "flex",
               "children": [
                 {
-                  "type": "toggle",
+                  "_type": "toggle",
                   "value": true,
                   "name": "toggleValue",
                 },
                 {
-                  "type": "button",
+                  "_type": "button",
                   "text": "Submit",
                   "submit": true,
                 }
@@ -194,18 +194,18 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "toggle",
+                    "_type": "toggle",
                     "value": true,
                     "name": "toggleValue",
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   }
@@ -241,19 +241,19 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "toggle",
+                    "_type": "toggle",
                     "value": true,
                     "name": "toggleValue",
                     "onPressed": {"code": "checked"}
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   }

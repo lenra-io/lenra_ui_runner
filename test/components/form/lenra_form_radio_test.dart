@@ -14,27 +14,27 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "radio",
+                    "_type": "radio",
                     "value": "radio1",
                     "groupValue": groupValue,
                     "onPressed": {"code": "radioPressed"},
                     "name": "radioValue"
                   },
                   {
-                    "type": "radio",
+                    "_type": "radio",
                     "value": "radio2",
                     "groupValue": groupValue,
                     "onPressed": {"code": "radioPressed"},
                     "name": "radioValue"
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   },
@@ -79,15 +79,15 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
-                  {"type": "radio", "value": "radio1", "groupValue": groupValue, "name": "radioValue"},
-                  {"type": "radio", "value": "radio2", "groupValue": groupValue, "name": "radioValue"},
+                  {"_type": "radio", "value": "radio1", "groupValue": groupValue, "name": "radioValue"},
+                  {"_type": "radio", "value": "radio2", "groupValue": groupValue, "name": "radioValue"},
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   },
@@ -130,25 +130,25 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "radio",
+                    "_type": "radio",
                     "value": "radio1",
                     "groupValue": groupValue,
                     "onPressed": {"code": "radioPressed"},
                   },
                   {
-                    "type": "radio",
+                    "_type": "radio",
                     "value": "radio2",
                     "groupValue": groupValue,
                     "onPressed": {"code": "radioPressed"},
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   },
@@ -191,24 +191,24 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "flex",
+              "_type": "flex",
               "children": [
                 {
-                  "type": "radio",
+                  "_type": "radio",
                   "value": "radio1",
                   "groupValue": groupValue,
                   "onPressed": {"code": "radioPressed"},
                   "name": "radioValue",
                 },
                 {
-                  "type": "radio",
+                  "_type": "radio",
                   "value": "radio2",
                   "groupValue": groupValue,
                   "onPressed": {"code": "radioPressed"},
                   "name": "radioValue",
                 },
                 {
-                  "type": "button",
+                  "_type": "button",
                   "text": "Submit",
                   "submit": true,
                 }
@@ -250,27 +250,27 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "radio",
+                    "_type": "radio",
                     "value": "radio1",
                     "groupValue": "radio1",
                     "onPressed": {"code": "radioPressed"},
                     "name": "radioValue",
                   },
                   {
-                    "type": "radio",
+                    "_type": "radio",
                     "value": "radio2",
                     "groupValue": "radio1",
                     "onPressed": {"code": "radioPressed"},
                     "name": "radioValue",
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   }
@@ -307,27 +307,27 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "radio",
+                    "_type": "radio",
                     "value": "radio1",
                     "groupValue": groupValue,
                     "onPressed": {"code": "radioPressed"},
                     "name": "radioValue",
                   },
                   {
-                    "type": "radio",
+                    "_type": "radio",
                     "value": "radio2",
                     "groupValue": groupValue,
                     "onPressed": {"code": "radioPressed"},
                     "name": "radioValue",
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   }

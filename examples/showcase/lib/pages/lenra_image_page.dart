@@ -14,16 +14,16 @@ class _LenraImagePageState extends UiBuilderState<LenraImagePage, bool> {
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "direction": "horizontal",
         "spacing": 5,
         "children": [
-          {"type": "image", "src": "https://avatars.githubusercontent.com/u/18312505?s=200&v=4"},
+          {"_type": "image", "src": "https://avatars.githubusercontent.com/u/18312505?s=200&v=4"},
           {
-            "type": "image",
+            "_type": "image",
             "src": "https://github.com/lenra-io/client-app/pull/19",
             "errorPlaceHolder": {
-              "type": "text",
+              "_type": "text",
               "value": "This is an error placeholder shown when an image encounters an error."
             }
           }

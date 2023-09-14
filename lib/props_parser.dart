@@ -127,7 +127,7 @@ class Parser {
   };
 
   static String? getType(Map<String, dynamic> json) {
-    return json['type'] as String?;
+    return json['_type'] as String?;
   }
 
   static LenraComponentBuilder? getComponentBuilder(String type) {

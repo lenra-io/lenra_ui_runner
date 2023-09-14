@@ -12,42 +12,42 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "form",
+            "_type": "form",
             "onSubmit": {"code": "submitted"},
             "child": {
-              "type": "flex",
+              "_type": "flex",
               "children": [
                 {
-                  "type": "toggle",
+                  "_type": "toggle",
                   "name": "toggleValue",
                   "value": true,
                   "onPressed": {"code": "toggled"}
                 },
                 {
-                  "type": "checkbox",
+                  "_type": "checkbox",
                   "value": true,
                   "name": "checkboxValue",
                   "onPressed": {"code": "checked"}
                 },
                 {
-                  "type": "radio",
+                  "_type": "radio",
                   "groupValue": "radioValue",
                   "value": "radioValue",
                   "name": "radio",
                 },
                 {
-                  "type": "radio",
+                  "_type": "radio",
                   "groupValue": "radioValue",
                   "value": "radioValue2",
                   "name": "radio",
                 },
                 {
-                  "type": "container",
+                  "_type": "container",
                   "constraints": {"maxWidth": 400, "maxHeight": 100},
-                  "child": {"type": "textfield", "value": "textfieldValue", "name": "textfield"},
+                  "child": {"_type": "textfield", "value": "textfieldValue", "name": "textfield"},
                 },
                 {
-                  "type": "button",
+                  "_type": "button",
                   "text": "Submit",
                   "submit": true,
                 }
@@ -80,29 +80,29 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "form",
+            "_type": "form",
             "onSubmit": {"code": "submitted"},
             "child": {
-              "type": "flex",
+              "_type": "flex",
               "children": [
                 {
-                  "type": "checkbox",
+                  "_type": "checkbox",
                   "value": true,
                   "name": "checkboxValue",
                 },
                 {
-                  "type": "form",
+                  "_type": "form",
                   "onSubmit": {"code": "nestedSubmit"},
                   "child": {
-                    "type": "flex",
+                    "_type": "flex",
                     "children": [
                       {
-                        "type": "checkbox",
+                        "_type": "checkbox",
                         "value": true,
                         "name": "checkboxValue2",
                       },
                       {
-                        "type": "button",
+                        "_type": "button",
                         "text": "Submit",
                         "submit": true,
                       }
@@ -110,7 +110,7 @@ void main() {
                   }
                 },
                 {
-                  "type": "button",
+                  "_type": "button",
                   "text": "Submit",
                   "submit": true,
                 }

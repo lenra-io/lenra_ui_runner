@@ -9,10 +9,10 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "menu",
+            "_type": "menu",
             "children": [
-              {"type": "menuItem", "text": "foo"},
-              {"type": "menuItem", "text": "bar"}
+              {"_type": "menuItem", "text": "foo"},
+              {"_type": "menuItem", "text": "bar"}
             ],
           }
         },
@@ -34,10 +34,10 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "menu",
+            "_type": "menu",
             "children": [
-              {"type": "text", "value": "foo"},
-              {"type": "text", "value": "bar"}
+              {"_type": "text", "value": "foo"},
+              {"_type": "text", "value": "bar"}
             ],
           }
         },

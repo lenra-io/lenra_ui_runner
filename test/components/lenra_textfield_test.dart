@@ -10,7 +10,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "textfield",
+            "_type": "textfield",
             "value": "",
           }
         },
@@ -58,7 +58,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "textfield",
+            "_type": "textfield",
             "value": "",
             "onChanged": {"code": "yourCode"},
           }
@@ -85,7 +85,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "textfield",
+            "_type": "textfield",
             "value": "",
             "style": {
               "cursorColor": 0xFFFFFFFF,
@@ -128,7 +128,7 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "textfield",
+            "_type": "textfield",
             "value": "",
             "style": {"cursorColor": 0xFF000000},
           }

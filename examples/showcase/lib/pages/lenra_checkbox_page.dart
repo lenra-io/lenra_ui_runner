@@ -14,34 +14,34 @@ class _LenraCheckboxPageState extends UiBuilderState<LenraCheckboxPage, Map<Stri
   Map<String, dynamic> getUi(dynamic data) {
     return {
       "root": {
-        "type": "flex",
+        "_type": "flex",
         "crossAxisAlignment": "center",
         "children": [
           {
-            "type": "text",
+            "_type": "text",
             "value": "Basic Checkbox",
           },
           {
-            "type": "checkbox",
+            "_type": "checkbox",
             "value": data["checkbox"],
             "onPressed": {
               "code": "checkbox",
             }
           },
           {
-            "type": "text",
+            "_type": "text",
             "value": "Disabled Checkbox",
           },
           {
-            "type": "checkbox",
+            "_type": "checkbox",
             "value": data["checkbox"],
           },
           {
-            "type": "text",
+            "_type": "text",
             "value": "Tristate Checkbox",
           },
           {
-            "type": "checkbox",
+            "_type": "checkbox",
             "value": data["tristate"],
             "tristate": true,
             "onPressed": {

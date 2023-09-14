@@ -9,9 +9,9 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "container",
+            "_type": "container",
             "child": {
-              "type": "text",
+              "_type": "text",
               "value": "foo",
             },
             "padding": {
@@ -51,9 +51,9 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "container",
+            "_type": "container",
             "child": {
-              "type": "text",
+              "_type": "text",
               "value": "foo",
             },
             "constraints": {
@@ -85,9 +85,9 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "container",
+            "_type": "container",
             "child": {
-              "type": "text",
+              "_type": "text",
               "value": "foo",
             },
             "border": {

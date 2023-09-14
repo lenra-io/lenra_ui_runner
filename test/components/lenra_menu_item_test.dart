@@ -11,12 +11,12 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "menu",
+            "_type": "menu",
             "children": [
               {
-                "type": "menuItem",
+                "_type": "menuItem",
                 "text": "foo",
-                "icon": {"type": "icon", "value": "aod"},
+                "icon": {"_type": "icon", "value": "aod"},
                 "onPressed": {"code": "yourCode"}
               },
             ],

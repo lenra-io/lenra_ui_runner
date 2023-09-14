@@ -14,23 +14,23 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "container",
+                    "_type": "container",
                     "constraints": {"maxWidth": 400, "maxHeight": 100},
                     "child": {
-                      "type": "textfield",
+                      "_type": "textfield",
                       "value": "",
                       "name": "textfieldValue",
                       "onChanged": {"code": "changed"}
                     }
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   },
@@ -67,22 +67,22 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "container",
+                    "_type": "container",
                     "constraints": {"maxWidth": 400, "maxHeight": 100},
                     "child": {
-                      "type": "textfield",
+                      "_type": "textfield",
                       "value": "",
                       "name": "textfieldValue",
                     }
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   },
@@ -117,22 +117,22 @@ void main() {
       createBaseTestWidgets(
         ui: {
           "root": {
-            "type": "form",
+            "_type": "form",
             "onSubmit": {"code": "submitted"},
             "child": {
-              "type": "flex",
+              "_type": "flex",
               "children": [
                 {
-                  "type": "container",
+                  "_type": "container",
                   "constraints": {"maxWidth": 400, "maxHeight": 100},
                   "child": {
-                    "type": "textfield",
+                    "_type": "textfield",
                     "value": "",
                     "onChanged": {"code": "changed"}
                   }
                 },
                 {
-                  "type": "button",
+                  "_type": "button",
                   "text": "Submit",
                   "submit": true,
                 }
@@ -169,19 +169,19 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "flex",
+              "_type": "flex",
               "children": [
                 {
-                  "type": "container",
+                  "_type": "container",
                   "constraints": {"maxWidth": 400, "maxHeight": 100},
                   "child": {
-                    "type": "textfield",
+                    "_type": "textfield",
                     "value": "",
                     "name": "textfieldValue",
                   }
                 },
                 {
-                  "type": "button",
+                  "_type": "button",
                   "text": "Submit",
                   "submit": true,
                 }
@@ -215,22 +215,22 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "container",
+                    "_type": "container",
                     "constraints": {"maxWidth": 400, "maxHeight": 100},
                     "child": {
-                      "type": "textfield",
+                      "_type": "textfield",
                       "value": "default",
                       "name": "textfieldValue",
                     }
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   }
@@ -267,23 +267,23 @@ void main() {
         createBaseTestWidgets(
           ui: {
             "root": {
-              "type": "form",
+              "_type": "form",
               "onSubmit": {"code": "submitted"},
               "child": {
-                "type": "flex",
+                "_type": "flex",
                 "children": [
                   {
-                    "type": "container",
+                    "_type": "container",
                     "constraints": {"maxWidth": 400, "maxHeight": 100},
                     "child": {
-                      "type": "textfield",
+                      "_type": "textfield",
                       "value": "",
                       "name": "textfieldValue",
                       "onChanged": {"code": "changed"}
                     }
                   },
                   {
-                    "type": "button",
+                    "_type": "button",
                     "text": "Submit",
                     "submit": true,
                   }
