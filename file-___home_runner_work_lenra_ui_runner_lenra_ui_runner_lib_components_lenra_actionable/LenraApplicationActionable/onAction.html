@@ -60,7 +60,7 @@
       
 
 <span class="returntype">void</span>
-<span class="name ">onAction</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="onAction-param-action"><span class="type-annotation">dynamic</span> <span class="parameter-name">action</span>, </span></li>
+<span class="name ">onAction</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="onAction-param-listener"><span class="type-annotation">dynamic</span> <span class="parameter-name">listener</span>, </span></li>
 <li><span class="parameter" id="onAction-param-context"><span class="type-annotation">dynamic</span> <span class="parameter-name">context</span></span></li>
 </ol>)
 
@@ -73,9 +73,9 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">void onAction(lenra.Listener? action, BuildContext context) {
-  if (action != null) {
-    action.run(context, (code) =&gt; OnPressedEvent(code: code));
+  <pre class="language-dart"><code class="language-dart">void onAction(lenra.Listener? listener, BuildContext context) {
+  if (listener != null) {
+    listener.run(context, (code) =&gt; OnPressedEvent(code: code));
   }
 }</code></pre>
 </section>
