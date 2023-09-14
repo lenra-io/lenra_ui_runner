@@ -98,7 +98,7 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
                 "_type": "radio",
                 "value": "a",
                 "groupValue": data,
-                "onPressed": {"code": "actionA"}
+                "onPressed": {"code": "listenerA"}
               },
             ]
           },
@@ -111,7 +111,7 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
                 "_type": "radio",
                 "value": "b",
                 "groupValue": data,
-                "onPressed": {"code": "actionB"}
+                "onPressed": {"code": "listenerB"}
               },
             ]
           },
@@ -124,7 +124,7 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
                 "_type": "radio",
                 "value": "c",
                 "groupValue": data,
-                "onPressed": {"code": "actionC"}
+                "onPressed": {"code": "listenerC"}
               }
             ]
           },
@@ -138,11 +138,11 @@ class _RadioExampleState extends UiBuilderState<RadioExample, String> {
     switch (event.code) {
       case "InitData":
         return "a";
-      case "actionA":
+      case "listenerA":
         return "a";
-      case "actionB":
+      case "listenerB":
         return "b";
-      case "actionC":
+      case "listenerC":
         return "c";
       default:
         return "a";

@@ -214,10 +214,10 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
     }
   }
 
-  void onAppPrivateCommandReceived(BuildContext context, String action, Map<String, dynamic> data) {
+  void onAppPrivateCommandReceived(BuildContext context, String listener, Map<String, dynamic> data) {
     if (widget.onAppPrivateCommand != null) {
       EventManager.of(context)
-          .sendEvent(OnChangedEvent(code: widget.onAppPrivateCommand!.code, data: ValueData(action)))
+          .sendEvent(OnChangedEvent(code: widget.onAppPrivateCommand!.code, data: ValueData(listener)))
           .then(
             //implement loading
             (value) => null,
@@ -269,7 +269,7 @@ class _LenraApplicationTextfieldState extends State<LenraApplicationTextfield> {
       obscureText: widget.obscureText ?? false,
       onAppPrivateCommand: widget.onAppPrivateCommand == null
           ? null
-          : (action, data) => onAppPrivateCommandReceived(context, action, data),
+          : (listener, data) => onAppPrivateCommandReceived(context, listener, data),
       onChanged: onChanged,
       onEditingComplete: widget.onEditingComplete == null ? null : () => widget.onEditingComplete,
       onSubmitted: widget.onSubmitted == null ? null : (value) => handleTimeout(context, value),
