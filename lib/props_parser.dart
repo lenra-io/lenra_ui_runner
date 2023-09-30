@@ -708,6 +708,8 @@ class Parser {
   }
 
   static LenraText parseLenraTextWidget(Map<String, dynamic> props) {
+    print("PARSE LENRA TEXT WIDGET");
+    print(props);
     String? type = Parser.getType(props);
     if (type == null) {
       throw "No type in component. It should never happen";

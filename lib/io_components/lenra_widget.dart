@@ -41,6 +41,8 @@ class LenraWidget extends StatelessWidget {
   }
 
   static Widget parseJson(Map<String, dynamic> json) {
+    print("PARSE LENRA TEXT WIDGET");
+    print(json);
     String? type = Parser.getType(json);
     if (type == null) {
       throw "No type in component. It should never happen";
