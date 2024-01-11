@@ -26,6 +26,47 @@ class _LenraDropdownButtonPageState extends UiBuilderState<LenraDropdownButtonPa
               "onPressed": {"code": "myCode"},
             },
           },
+          {
+            "_type": "dropdownButton",
+            "text": "multiple children",
+            "child": {
+              "_type": "flex",
+              "direction": "vertical",
+              "children": [
+                {
+                  "_type": "button",
+                  "text": "foo",
+                  "mainStyle": "secondary",
+                  "onPressed": {"code": "myCode"},
+                },
+                {
+                  "_type": "button",
+                  "text": "bar",
+                  "mainStyle": "secondary",
+                  "onPressed": {"code": "myCode"},
+                },
+              ],
+            }
+          },
+          {
+            "_type": "dropdownButton",
+            "text": "Menu child",
+            "child": {
+              "_type": "menu",
+              "children": [
+                {
+                  "_type": "menuItem",
+                  "text": "foo",
+                  "onPressed": {"code": "myCode"},
+                },
+                {
+                  "_type": "menuItem",
+                  "text": "bar",
+                  "onPressed": {"code": "myCode"},
+                },
+              ],
+            }
+          },
           {"_type": "text", "value": "$data"},
           {
             "_type": "dropdownButton",
